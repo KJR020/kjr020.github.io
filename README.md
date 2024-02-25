@@ -1,4 +1,4 @@
-# KJR020 Learning Notes
+# [KJR020 Learning Notes](https://kjr020.github.io/)
 学習ノートです。日々勉強した事を記録したメモを公開します。
 
 Welcome to my learning notes! Here you can find my personal notes on various topics.   
