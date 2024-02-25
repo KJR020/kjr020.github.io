@@ -1,0 +1,30 @@
+name: Update README
+
+on:
+  push:
+    paths:
+      - 'LearningNotes/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Update README
+      run: |
+        echo "## Learning Notes" >> README.md
+        for file in LearningNotes/*; do
+          if [[ -f "$file" && "$file" == *.md ]]; then
+            echo "- [$(basename $file)]($file)" >> README.md
+          fi
+        done
+
+    - name: Commit and push if changed
+      run: |
+        git diff
+        git config --global user.email "action@github.com"
+        git config --global user.name "GitHub Action"
+        git commit -am "Update README with links to LearningNotes" || exit 0
+        git push
