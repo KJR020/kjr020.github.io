@@ -15,7 +15,6 @@ Merge made by the 'ort' strategy.
 optionで指定もできるが、自動的に選択されるもので、
 'ort' strategyがデフォルトになっている。
 
-## 
 
 
 ## 参考
