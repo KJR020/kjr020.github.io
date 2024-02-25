@@ -1,6 +1,8 @@
 # KJR020 Learning Notes
+学習ノートです。日々勉強した事を記録したメモを公開します。
 
-Welcome to my learning notes! Here you can find my personal notes on various topics like React, Statistics, and more. These notes are a reflection of my learning journey and I hope they can be useful for you as well.
+Welcome to my learning notes! Here you can find my personal notes on various topics.   
+These notes are a reflection of my learning journey and I hope they can be useful for you as well.
 
 
 
