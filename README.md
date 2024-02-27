@@ -39,3 +39,12 @@ For more information, follow me on [GitHub](https://github.com/kjr020)!
 - [git_merge_strategy.md](LearningNotes/git_merge_strategy.md)
 - [git_stash.md](LearningNotes/git_stash.md)
 - [wireless_keyboard.md](LearningNotes/wireless_keyboard.md)
+## Learning Notes
+- [ReactLearningNote.md](LearningNotes/ReactLearningNote.md)
+- [StatisticLearningNote.md](LearningNotes/StatisticLearningNote.md)
+- [TypeScript_types.md](LearningNotes/TypeScript_types.md)
+- [auto-update-timestamp.md](LearningNotes/auto-update-timestamp.md)
+- [cookie.md](LearningNotes/cookie.md)
+- [git_merge_strategy.md](LearningNotes/git_merge_strategy.md)
+- [git_stash.md](LearningNotes/git_stash.md)
+- [wireless_keyboard.md](LearningNotes/wireless_keyboard.md)
