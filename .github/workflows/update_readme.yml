@@ -18,7 +18,7 @@ jobs:
         awk '/## Updates/{exit} {print}' README.md > README.tmp
 
         # Append the Updates Header
-        echo "## Updates" >> README.tmp
+        echo "## Updates\n" >> README.tmp
 
         # Append the list of learning note to the Updates section
         for file in LearningNotes/*.md; do
