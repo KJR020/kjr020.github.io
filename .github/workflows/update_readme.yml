@@ -22,7 +22,7 @@ jobs:
 
         # Append the list of learning note to the Updates section
         for file in LearningNotes/*.md; do
-          if [[ -f "$file"]]; then
+          if [[ -f "$file" ]]; then
             echo "- [$(basename "$file" .md)]($file)" >> README.tmp
           fi
         done
