@@ -12,7 +12,7 @@ Merge made by the 'ort' strategy.
 
 ## Merge Strategyとは？
 
-マージ実行時のバックグラウンドのメカニズムらしい。
+マージ実行時のバックグラウンドのメカニズムらしい。  
 マージ(git pull or git merge)を実行した時に、バックエンドで動くマージ処理の種類らしいが選べるということ。
 
 optionで指定もできるが、自動的に選択されるもので、
