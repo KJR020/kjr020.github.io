@@ -12,7 +12,7 @@ for file in LearningNotes/*.md; do
 done
 
 # Append the rest of the README.md after Updates section if it exists
-awk '/## Updates\{f=1;next} f' README.md >> README.tmp || true
+awk '/## Updates/ {f=1; next} f' README.md >> README.tmp || true
 
 # Replace the old README with the new one
 mv README.tmp README.md
