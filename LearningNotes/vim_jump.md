@@ -35,3 +35,8 @@ GitHub Copilot chatに聞いてみたら、
 これは便利な機能だと思った。  
 `:changes`で表示ができる。  
 `g;`で戻る。`g,`でやり直し。
+
+## 参考
+
+- https://vim-jp.org/vimdoc-ja/motion.html#jump-motions
+- https://baubaubau.hatenablog.com/entry/2020/09/19/203537
