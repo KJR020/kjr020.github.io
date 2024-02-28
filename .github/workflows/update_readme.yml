@@ -45,4 +45,3 @@ jobs:
         git add README.md
         git commit -m "Update README with links to LearningNotes"
         git push
-        shell: /usr/bin/bash -e {0}
