@@ -31,6 +31,16 @@ These notes are a reflection of my learning journey and I hope they can be usefu
 - [git_stash](LearningNotes/git_stash.md)
 - [vim_jump](LearningNotes/vim_jump.md)
 - [wireless_keyboard](LearningNotes/wireless_keyboard.md)
+- [ReactLearningNote](LearningNotes/ReactLearningNote.md)
+- [StatisticLearningNote](LearningNotes/StatisticLearningNote.md)
+- [TypeScript_types](LearningNotes/TypeScript_types.md)
+- [VSCode_tasks](LearningNotes/VSCode_tasks.md)
+- [auto-update-timestamp](LearningNotes/auto-update-timestamp.md)
+- [cookie](LearningNotes/cookie.md)
+- [git_merge_strategy](LearningNotes/git_merge_strategy.md)
+- [git_stash](LearningNotes/git_stash.md)
+- [vim_jump](LearningNotes/vim_jump.md)
+- [wireless_keyboard](LearningNotes/wireless_keyboard.md)
 
 ## Contact
 
