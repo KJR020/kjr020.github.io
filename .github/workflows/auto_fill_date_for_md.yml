@@ -16,22 +16,17 @@ jobs:
 
       - name: Update 'updated' date in pushed markdown files
         run: |
-          DATE=`date +%Y-%m-%d %H:%M:%S`
+          DATE=$(date '+%Y-%m-%d %H:%M:%S')
           FILES=$(git diff --name-only HEAD^ HEAD | grep '\.md$')
           if [ -z "$FILES" ]; then
             echo "No markdown files to update."
           else
-            echo "$FILES" | xargs -I {} sed -i "s/updated: .*/updated: $DATE/" {}
-          fi
-
-      - name: Commit and push if necessary
-        run: |
-          git config --global user.email "action@github.com"
-          git config --global user.name "GitHub Action"
-          if git diff --quiet; then
-            echo "No changes to commit."
-          else
-            git add .
+            for FILE in $FILES; do
+              awk '/^---$/{flag++} flag==1 {print} /^---$/{flag++}' $FILE | sed "/^updated:.*$/s//updated: $DATE/" > temp.md
+              sed '1,/---/!b;//{//!d;};r temp.md' $FILE > temp2.md && mv temp2.md $FILE
+              rm temp.md
+            done
+            echo "$FILES" | xargs git add
             git commit -m "Automatically update 'updated' date in markdown files"
             git push
           fi
