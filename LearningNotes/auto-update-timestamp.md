@@ -1,7 +1,5 @@
 ---
-title: My Awesome Document
-author: John Doe
-Last updated: {{ page.last_modified_at | date: '%Y-%m-%d %H:%M:%S' }}
+update: 2024-03-02 09:51:23
 ---
 
 # GitHub Pages のマークダウンに自動更新日時を入れたい
@@ -10,7 +8,8 @@ Last updated: {{ page.last_modified_at | date: '%Y-%m-%d %H:%M:%S' }}
 ## 経緯
 
 GitHub Pagesで学習ノートを公開していた。  
-「ページに更新日時があるといいな～」と思ったため、自動で更新日時を付与できないか？  
+「ページに更新日時があるといいな」と思ったが、
+毎回書き込むのは手間がかかるため、自動で更新日時を付与できないか？と考えた。
 調べて実装してみた。  
 
 ## 参考
