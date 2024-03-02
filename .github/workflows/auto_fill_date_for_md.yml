@@ -14,17 +14,24 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Update 'updated' date in pushed markdown files
+      - name: Update 'updated' date in markdown files
         run: |
           DATE=$(date '+%Y-%m-%d %H:%M:%S')
-          FILES=$(git diff --name-only HEAD^ HEAD | grep '\.md$')
+          git fetch --depth=2  # Ensure we have at least 2 commits of history for comparison.
+          if [ "$(git rev-list --count HEAD)" -gt 1 ]; then
+            FILES=$(git diff --name-only HEAD HEAD~1 -- '*.md')
+          else
+            FILES=$(git ls-tree --name-only -r HEAD -- '*.md')
+          fi
           if [ -z "$FILES" ]; then
             echo "No markdown files to update."
           else
             for FILE in $FILES; do
-              awk '/^---$/{flag++} flag==1 {print} /^---$/{flag++}' $FILE | sed "/^updated:.*$/s//updated: $DATE/" > temp.md
-              sed '1,/---/!b;//{//!d;};r temp.md' $FILE > temp2.md && mv temp2.md $FILE
-              rm temp.md
+              if grep -q '^---' $FILE; then
+                awk '/^---$/{flag++} flag==1 {print} /^---$/{flag++}' $FILE | sed "/^updated:.*$/s//updated: $DATE/" > temp.md
+                sed '1,/---/!b;//{//!d;};r temp.md' $FILE > temp2.md && mv temp2.md $FILE
+                rm temp.md
+              fi
             done
             echo "$FILES" | xargs git add
             git commit -m "Automatically update 'updated' date in markdown files"
