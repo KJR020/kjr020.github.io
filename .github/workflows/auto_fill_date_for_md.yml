@@ -14,10 +14,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Update date in markdown files
+      - name: Update 'updated' date in markdown files
         run: |
-          DATE=`date +%Y-%m-%d\ %H:%M:%S`
-          find . -name '*.md' -exec sed -i "s/updated:.*/updated: $DATE/" {} \;
+         DATE=`date +%Y-%m-%d %H:%M:%S`
+          find . -name '*.md' -exec sed -i "s/updated: .*/updated: $DATE/" {} \;
 
       - name: Commit and push if necessary
         run: |
@@ -26,3 +26,4 @@ jobs:
           git add README.md
           git commit -m "Update README with links to LearningNotes"
           git push
+    
