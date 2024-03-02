@@ -6,7 +6,9 @@ updated: 2024-03-02 09:51:23
 ---
 
 # {{ page.title }}
-最終更新: {{ page.date }} 
+
+公開: {{ page.published }} 
+最終更新: {{ page.updated }} 
 
 
 ## 経緯
