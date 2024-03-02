@@ -1,8 +1,8 @@
 ---
 layout: default
 title: GitHub Pages のマークダウンに自動更新日時を入れたい
-published: 2024-03-02 09:51:23
-updated: 2024-03-02 09:51:23
+published: 
+updated: 
 ---
 
 # {{ page.title }}
