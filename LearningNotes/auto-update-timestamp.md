@@ -24,9 +24,7 @@ GitHub Pagesで学習ノートを公開していた。
 このメタデータは、ページ内で `{{ page.update }}` のように記述すると、
 GitHub Pages 上で自動的に更新日時が挿入されて表示されるようになる。
 
-　GitHub Pagesには、Jekyllという静的サイトジェネレータが組み込まれており、
-
-
+　GitHub Pagesには、Jekyllという静的サイトジェネレータが組み込まれている
 
 ```markdown
 
