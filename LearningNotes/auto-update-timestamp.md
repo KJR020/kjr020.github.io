@@ -1,6 +1,11 @@
+---
+title: My Awesome Document
+author: John Doe
+Last updated: {{ page.last_modified_at | date: '%Y-%m-%d %H:%M:%S' }}
+---
+
 # GitHub Pages のマークダウンに自動更新日時を入れたい
 
-Last updated: {{ page.last_modified_at | date: '%Y-%m-%d %H:%M:%S' }}
 
 ## 経緯
 
