@@ -5,9 +5,7 @@ update: 2024-03-02 09:51:23
 ---
 
 # {{ page.title }}
-{% if page.update %}
 最終更新日: {{ page.update }}
-{% endif %}
 
 
 ## 経緯
