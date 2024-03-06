@@ -7,12 +7,22 @@ These notes are a reflection of my learning journey and I hope they can be usefu
 
 ## Learning Notes
 
-### Updates
-=======
-- [React](/LearningNotes/ReactLearningNote.md)
-- [Statistic](/LearningNotes/StatisticLearningNote.md)
 
-## Updates/n
+
+## Updates /n
+- [Cookieとは](LearningNotes/Cookieとは.md)
+- [GitHubPagesに自動で更新日付を入れたい](LearningNotes/GitHubPagesに自動で更新日付を入れたい.md)
+- [ReactLearningNote](LearningNotes/ReactLearningNote.md)
+- [StatisticLearningNote](LearningNotes/StatisticLearningNote.md)
+- [TypeScript_types](LearningNotes/TypeScript_types.md)
+- [VSCode_tasks](LearningNotes/VSCode_tasks.md)
+- [git_fix_commit_user](LearningNotes/git_fix_commit_user.md)
+- [git_merge_strategy](LearningNotes/git_merge_strategy.md)
+- [git_stash](LearningNotes/git_stash.md)
+- [pytest_import_error](LearningNotes/pytest_import_error.md)
+- [vim_jump](LearningNotes/vim_jump.md)
+- [無線キーボードが遅延する仕組み](LearningNotes/無線キーボードが遅延する仕組み.md)
+- [計算量の見積もり](LearningNotes/計算量の見積もり.md)
 
 ## Contact
 
