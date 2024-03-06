@@ -8,6 +8,7 @@ These notes are a reflection of my learning journey and I hope they can be usefu
 ## Learning Notes
 
 
+
 ## Updates /n
 - [Cookieとは](LearningNotes/Cookieとは.md)
 - [GitHubPagesに自動で更新日付を入れたい](LearningNotes/GitHubPagesに自動で更新日付を入れたい.md)
