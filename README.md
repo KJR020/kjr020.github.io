@@ -7,12 +7,7 @@ These notes are a reflection of my learning journey and I hope they can be usefu
 
 ## Learning Notes
 
-### Updates
-=======
-- [React](/LearningNotes/ReactLearningNote.md)
-- [Statistic](/LearningNotes/StatisticLearningNote.md)
-
-## Updates/n
+## Updates
 
 ## Contact
 
