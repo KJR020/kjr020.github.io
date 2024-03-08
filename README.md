@@ -8,13 +8,21 @@ These notes are a reflection of my learning journey and I hope they can be usefu
 ## Learning Notes
 
 
+
+
+
+
+
 ## Updates /n
 - [Cookieとは](LearningNotes/Cookieとは.md)
+- [Django入門チュートリアル](LearningNotes/Django入門チュートリアル.md)
 - [GitHubPagesに自動で更新日付を入れたい](LearningNotes/GitHubPagesに自動で更新日付を入れたい.md)
 - [ReactLearningNote](LearningNotes/ReactLearningNote.md)
 - [StatisticLearningNote](LearningNotes/StatisticLearningNote.md)
 - [TypeScript_types](LearningNotes/TypeScript_types.md)
+- [VIFとは](LearningNotes/VIFとは.md)
 - [VSCode_tasks](LearningNotes/VSCode_tasks.md)
+- [VSCodeでファイルエクスプローラのアイコンが消えたときの対処法](LearningNotes/VSCodeでファイルエクスプローラのアイコンが消えたときの対処法.md)
 - [git_fix_commit_user](LearningNotes/git_fix_commit_user.md)
 - [git_merge_strategy](LearningNotes/git_merge_strategy.md)
 - [git_stash](LearningNotes/git_stash.md)
