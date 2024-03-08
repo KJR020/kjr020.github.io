@@ -13,6 +13,7 @@ These notes are a reflection of my learning journey and I hope they can be usefu
 
 
 
+
 ## Updates /n
 - [Cookieとは](LearningNotes/Cookieとは.md)
 - [Django入門チュートリアル](LearningNotes/Django入門チュートリアル.md)
