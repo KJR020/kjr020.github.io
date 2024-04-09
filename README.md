@@ -12,11 +12,13 @@ These notes are a reflection of my learning journey and I hope they can be usefu
 
 
 
+
 ## Updates /n
 - [Cookieとは](LearningNotes/Cookieとは.md)
 - [Django入門チュートリアル](LearningNotes/Django入門チュートリアル.md)
 - [GitHubPagesに自動で更新日付を入れたい](LearningNotes/GitHubPagesに自動で更新日付を入れたい.md)
 - [ReactLearningNote](LearningNotes/ReactLearningNote.md)
+- [SQL Serverの認証方式](LearningNotes/SQL Serverの認証方式.md)
 - [StatisticLearningNote](LearningNotes/StatisticLearningNote.md)
 - [TypeScript_types](LearningNotes/TypeScript_types.md)
 - [VIFとは](LearningNotes/VIFとは.md)
@@ -28,6 +30,7 @@ These notes are a reflection of my learning journey and I hope they can be usefu
 - [pytest_import_error](LearningNotes/pytest_import_error.md)
 - [vim_jump](LearningNotes/vim_jump.md)
 - [無線キーボードが遅延する仕組み](LearningNotes/無線キーボードが遅延する仕組み.md)
+- [良いコードを書くために実践したいこと](LearningNotes/良いコードを書くために実践したいこと.md)
 - [計算量の見積もり](LearningNotes/計算量の見積もり.md)
 
 ## Contact
