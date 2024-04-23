@@ -15,6 +15,7 @@ These notes are a reflection of my learning journey and I hope they can be usefu
 
 
 
+
 ## Updates /n
 - [Cookieとは](LearningNotes/Cookieとは.md)
 - [Django入門チュートリアル](LearningNotes/Django入門チュートリアル.md)
@@ -24,6 +25,7 @@ These notes are a reflection of my learning journey and I hope they can be usefu
 - [SQL Serverの認証方式](LearningNotes/SQL Serverの認証方式.md)
 - [StatisticLearningNote](LearningNotes/StatisticLearningNote.md)
 - [TypeScript_types](LearningNotes/TypeScript_types.md)
+- [Unittestのコメント](LearningNotes/Unittestのコメント.md)
 - [VIFとは](LearningNotes/VIFとは.md)
 - [VSCode_tasks](LearningNotes/VSCode_tasks.md)
 - [VSCodeでファイルエクスプローラのアイコンが消えたときの対処法](LearningNotes/VSCodeでファイルエクスプローラのアイコンが消えたときの対処法.md)
