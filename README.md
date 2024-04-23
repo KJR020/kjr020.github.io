@@ -7,7 +7,8 @@ These notes are a reflection of my learning journey and I hope they can be usefu
 
 ## Learning Notes
 
-## Updates
+
+## Updates /n
 - [Cookieとは](LearningNotes/Cookieとは.md)
 - [GitHubPagesに自動で更新日付を入れたい](LearningNotes/GitHubPagesに自動で更新日付を入れたい.md)
 - [PowerPointでpixcel画像を作る](LearningNotes/PowerPointでpixcel画像を作る.md)
@@ -21,6 +22,7 @@ These notes are a reflection of my learning journey and I hope they can be usefu
 - [git_fix_commit_user](LearningNotes/git_fix_commit_user.md)
 - [git_merge_strategy](LearningNotes/git_merge_strategy.md)
 - [git_stash](LearningNotes/git_stash.md)
+- [navタグ](LearningNotes/navタグ.md)
 - [pytest_import_error](LearningNotes/pytest_import_error.md)
 - [vim_jump](LearningNotes/vim_jump.md)
 - [無線キーボードが遅延する仕組み](LearningNotes/無線キーボードが遅延する仕組み.md)
