@@ -18,6 +18,7 @@ These notes are a reflection of my learning journey and I hope they can be usefu
 
 
 
+
 ## Updates /n
 - [CORSに関するメモ](LearningNotes/CORSに関するメモ.md)
 - [Cookieとは](LearningNotes/Cookieとは.md)
@@ -38,6 +39,7 @@ These notes are a reflection of my learning journey and I hope they can be usefu
 - [git_stash](LearningNotes/git_stash.md)
 - [pytest_import_error](LearningNotes/pytest_import_error.md)
 - [vim_jump](LearningNotes/vim_jump.md)
+- [ソケットについて](LearningNotes/ソケットについて.md)
 - [無線キーボードが遅延する仕組み](LearningNotes/無線キーボードが遅延する仕組み.md)
 - [良いコードを書くために実践したいこと](LearningNotes/良いコードを書くために実践したいこと.md)
 - [計算量の見積もり](LearningNotes/計算量の見積もり.md)
