@@ -17,7 +17,9 @@ These notes are a reflection of my learning journey and I hope they can be usefu
 
 
 
+
 ## Updates /n
+- [CORSに関するメモ](LearningNotes/CORSに関するメモ.md)
 - [Cookieとは](LearningNotes/Cookieとは.md)
 - [Django入門チュートリアル](LearningNotes/Django入門チュートリアル.md)
 - [Ed25519とは](LearningNotes/Ed25519とは.md)
