@@ -8,12 +8,13 @@ These notes are a reflection of my learning journey and I hope they can be usefu
 ## Learning Notes
 
 
+
 ## Updates /n
 - [Cookieとは](LearningNotes/Cookieとは.md)
 - [GitHubPagesに自動で更新日付を入れたい](LearningNotes/GitHubPagesに自動で更新日付を入れたい.md)
 - [PowerPointでpixcel画像を作る](LearningNotes/PowerPointでpixcel画像を作る.md)
 - [ReactLearningNote](LearningNotes/ReactLearningNote.md)
-- [SQL Serverの認証方式](LearningNotes/SQL Serverの認証方式.md)
+- [SQLServerの認証方式](LearningNotes/SQLServerの認証方式.md)
 - [StatisticLearningNote](LearningNotes/StatisticLearningNote.md)
 - [TypeScript_types](LearningNotes/TypeScript_types.md)
 - [VIFとは](LearningNotes/VIFとは.md)
