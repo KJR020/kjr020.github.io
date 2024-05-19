@@ -19,7 +19,7 @@ jobs:
 
         # Append the Updates Header
         echo "" >> README.tmp
-        echo "## Updates /n" >> README.tmp
+        echo "## Updates" >> README.tmp
 
         # Append the list of learning note to the Updates section
         for file in LearningNotes/*.md; do
