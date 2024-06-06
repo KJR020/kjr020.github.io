@@ -17,7 +17,11 @@ jobs:
       - name: Update 'published' and 'updated' date in markdown files
         run: |
           DATE=$(date '+%Y-%m-%d %H:%M:%S')
+          echo "Current date: $DATE"
+
           FILES=$(git diff --name-only HEAD HEAD~1 | grep '\.md$')
+          echo "Files to update: $FILES"
+
           if [ -z "$FILES" ]; then
             echo "No markdown files to update."
           else
@@ -26,6 +30,7 @@ jobs:
                 sed -i "/^published:.*$/s//published: $DATE/" $FILE
               fi
               sed -i "/^updated:.*$/s//updated: $DATE/" $FILE
+              cat $FILE
               git add $FILE
             done
             git commit -m "Automatically update 'published' and 'updated' date in markdown files"

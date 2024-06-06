@@ -14,14 +14,14 @@ jobs:
 
     - name: Update README
       run: |
-        # Backup the README.md excluding the Updates section
-        awk '/## Updates/{exit} {print}' README.md > README.tmp
+        # Backup the README.md excluding the Learning Notes section
+        awk '/## Learning Notes/{exit} {print}' README.md > README.tmp
 
-        # Append the Updates Header
+        # Append the ## Learning Notes Header
+        echo "## Learning Notes " >> README.tmp
         echo "" >> README.tmp
-        echo "## Updates" >> README.tmp
 
-        # Append the list of learning note to the Updates section
+        # Append the list of learning note to the Learning Notes section
         for file in LearningNotes/*.md; do
             if [[ -f "$file" ]]; then
             echo "- [$(basename "$file" .md)]($file)" >> README.tmp
@@ -32,21 +32,23 @@ jobs:
         echo "" >> README.tmp
         echo "## Contact" >> README.tmp
 
-        # Append the rest of the README.md after Updates section if it exists
+        # Append the rest of the README.md after Learning Notes section if it exists
         awk '/## Contact/ {f=1; next} f' README.md >> README.tmp || true
 
         # Replace the old README with the new one
         mv README.tmp README.md
+        
+        cat README.md
 
-    - name: Commit and push if changed
-      run: |
-        git diff
-        if git diff --quiet; then
-          echo "No changes to commit."
-          exit 0
-        fi
-        git config --global user.email "action@github.com"
-        git config --global user.name "GitHub Action"
-        git add README.md
-        git commit -m "Update README with links to LearningNotes"
-        git push
+    # - name: Commit and push if changed
+    #   run: |
+    #     git diff
+    #     if git diff --quiet; then
+    #       echo "No changes to commit."
+    #       exit 0
+    #     fi
+    #     git config --global user.email "action@github.com"
+    #     git config --global user.name "GitHub Action"
+    #     git add README.md
+    #     git commit -m "Update README with links to LearningNotes"
+    #     git push
