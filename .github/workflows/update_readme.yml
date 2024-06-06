@@ -40,15 +40,15 @@ jobs:
         
         cat README.md
 
-    # - name: Commit and push if changed
-    #   run: |
-    #     git diff
-    #     if git diff --quiet; then
-    #       echo "No changes to commit."
-    #       exit 0
-    #     fi
-    #     git config --global user.email "action@github.com"
-    #     git config --global user.name "GitHub Action"
-    #     git add README.md
-    #     git commit -m "Update README with links to LearningNotes"
-    #     git push
+    - name: Commit and push if changed
+      run: |
+        git diff
+        if git diff --quiet; then
+          echo "No changes to commit."
+          exit 0
+        fi
+        git config --global user.email "action@github.com"
+        git config --global user.name "GitHub Action"
+        git add README.md
+        git commit -m "Update README with links to LearningNotes"
+        git push
