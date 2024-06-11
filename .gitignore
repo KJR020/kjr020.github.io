@@ -1,4 +1,5 @@
 node_modules/
 .pytest_cache/
-.next/
+/.next
+/out
 README.tmp
