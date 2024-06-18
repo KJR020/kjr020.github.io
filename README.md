@@ -13,6 +13,7 @@ These notes are a reflection of my learning journey and I hope they can be usefu
 - [Ed25519とは](LearningNotes/Ed25519とは.md)
 - [GitHubPagesに自動で更新日付を入れたい](LearningNotes/GitHubPagesに自動で更新日付を入れたい.md)
 - [PowerPointでpixcel画像を作る](LearningNotes/PowerPointでpixcel画像を作る.md)
+- [PromiseAll](LearningNotes/PromiseAll.md)
 - [ReactLearningNote](LearningNotes/ReactLearningNote.md)
 - [Reactのstate管理](LearningNotes/Reactのstate管理.md)
 - [React再レンダリング](LearningNotes/React再レンダリング.md)
