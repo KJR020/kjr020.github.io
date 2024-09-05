@@ -1,5 +1,6 @@
 baseURL: https://kjr020.github.io/
+canonifyurls: false
 languageCode: ja
-title: KJR020's Blog
-theme: ["PaperMod"]
-publishDir: docs
+title: "KJR020's Blog"
+theme: "PaperMod"
+publishDir: "docs"
