@@ -1,6 +1,6 @@
 +++
 title = ValueObjectとは
-date = 2024-08-29
+date = 2024-08-29T23:06:21+09:00
 draft = false
 +++
 
