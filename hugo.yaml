@@ -4,3 +4,49 @@ languageCode: ja
 title: "KJR020's Blog"
 theme: "PaperMod"
 publishDir: "docs"
+
+enableInlineShortcodes: true
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+enableEmoji: true
+pygmentsUseClasses: true
+mainsections: ["posts"]
+
+params:
+  env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  author: KJR020
+
+  profileMode:
+    enabled: false
+    title: Profile
+    # imageUrl: "#"
+    # imageTitle: my image
+    # imageWidth: 120
+    # imageHeight: 120
+    buttons:
+      - name: Archives
+        url: archives
+      - name: Tags
+        url: tags
+
+  homeInfoParams:
+    Title: "KJR020's Blog"
+    Content: >
+      ブログです。誰に見せるでもなく、自分のために書いています。
+
+  socialIcons:
+    - name: github
+      url: "https://github.com/KJR020"
+    - name: X
+      url: "https://x.com/KJR020_K"
+
+menu:
+  main:
+    - name: Archive
+      url: archives
+      weight: 5
+    - name: Search
+      url: search/
+      weight: 10
