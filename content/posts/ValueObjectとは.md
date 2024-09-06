@@ -4,9 +4,7 @@ date = 2024-08-29T23:06:21+09:00
 draft = false
 +++
 
-# ValueObjectとは
-
-## 経緯
+### 経緯
 
 <https://zenn.dev/339/articles/e3c174fdcc083e>
 
@@ -14,7 +12,7 @@ draft = false
 記事によると、基本的には、くまぎさんの書いたwikiの翻訳を信じたら良いらしい  
 確かに、くまぎさんの書いたwikiなら信頼できそうだなと思った
 
-## 調べてみる
+### 調べてみる
 
 リファレンスもみてみる  
 
@@ -30,7 +28,7 @@ Martin Fowler氏のサイトによると、
 
 とある
 
-## 自分の理解
+### 自分の理解
 
 自分の理解としては、  
 
@@ -40,7 +38,7 @@ Martin Fowler氏のサイトによると、
 
 DDDで提唱された概念の一つで、ドメインモデルを表現するために使われるらしい
 
-## 参考
+### 参考
 
 - <https://ja.m.wikipedia.org/wiki/Value_object>
 - <https://martinfowler.com/eaaCatalog/valueObject.html>
