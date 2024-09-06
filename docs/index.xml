@@ -13,19 +13,41 @@
       <link>https://kjr020.github.io/posts/vscode%E3%81%A7%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%A8%E3%82%AF%E3%82%B9%E3%83%97%E3%83%AD%E3%83%BC%E3%83%A9%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3%E3%81%8C%E6%B6%88%E3%81%88%E3%81%9F%E3%81%A8%E3%81%8D%E3%81%AE%E5%AF%BE%E5%87%A6%E6%B3%95/</link>
       <pubDate>Thu, 05 Sep 2024 23:06:21 +0900</pubDate>
       <guid>https://kjr020.github.io/posts/vscode%E3%81%A7%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%A8%E3%82%AF%E3%82%B9%E3%83%97%E3%83%AD%E3%83%BC%E3%83%A9%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3%E3%81%8C%E6%B6%88%E3%81%88%E3%81%9F%E3%81%A8%E3%81%8D%E3%81%AE%E5%AF%BE%E5%87%A6%E6%B3%95/</guid>
-      <description>&lt;h2 id=&#34;経緯&#34;&gt;経緯&lt;/h2&gt;
+      <description>&lt;h3 id=&#34;経緯&#34;&gt;経緯&lt;/h3&gt;
 &lt;p&gt;VSCodeを使用していた。
 サイドバーのメニューでファイルエクスプローラーをドラッグしたら、アイコンが消えた。&lt;br&gt;
 以前にも戻し方が分からず調べた事があったが、忘れてしまった。
 2度ある事は3度あるかもしれないので、まとめておく。&lt;/p&gt;
-&lt;h2 id=&#34;対処法&#34;&gt;対処法&lt;/h2&gt;
+&lt;h3 id=&#34;対処法&#34;&gt;対処法&lt;/h3&gt;
 &lt;p&gt;コマンドパレットからリセットすれば、初期状態に戻せる。&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;&amp;gt;View: Reset View Locations&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;もっと良い方法があったら、調べて追記したい。&lt;/p&gt;
-&lt;h2 id=&#34;参考&#34;&gt;参考&lt;/h2&gt;
+&lt;h3 id=&#34;参考&#34;&gt;参考&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.webdesignleaves.com/wp/htmlcss/2294/#google_vignette&#34;&gt;https://www.webdesignleaves.com/wp/htmlcss/2294/#google_vignette&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>ValueObjectとは</title>
+      <link>https://kjr020.github.io/posts/valueobject%E3%81%A8%E3%81%AF/</link>
+      <pubDate>Thu, 29 Aug 2024 23:06:21 +0900</pubDate>
+      <guid>https://kjr020.github.io/posts/valueobject%E3%81%A8%E3%81%AF/</guid>
+      <description>&lt;h3 id=&#34;経緯&#34;&gt;経緯&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://zenn.dev/339/articles/e3c174fdcc083e&#34;&gt;https://zenn.dev/339/articles/e3c174fdcc083e&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;を読んでいて、バリューオブジェクトの理解が曖昧だなと思ったので再確認&lt;br&gt;
+記事によると、基本的には、くまぎさんの書いたwikiの翻訳を信じたら良いらしい&lt;br&gt;
+確かに、くまぎさんの書いたwikiなら信頼できそうだなと思った&lt;/p&gt;
+&lt;h3 id=&#34;調べてみる&#34;&gt;調べてみる&lt;/h3&gt;
+&lt;p&gt;リファレンスもみてみる&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;^ Fowler, Martin (2003年). “Value Object”. Catalog of Patterns of Enterprise Application Architecture. Martin Fowler (martinfowler.com). 2011年7月17日閲覧。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;第一参考文献にある、Martin Fowler氏の説明を読む&lt;/p&gt;
+&lt;p&gt;Martin Fowler氏のサイトによると、&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Value Object
+A small simple object, like money or a date range, whose equality isn&amp;rsquo;t based on identity.&lt;/p&gt;
+&lt;p&gt;With object systems of various kinds, I&amp;rsquo;ve found it useful to distinguish between reference objects and Value Objects. Of the two a Value Object is usually the smaller; it&amp;rsquo;s similar to the primitive types present in many languages that aren&amp;rsquo;t purely object-oriented.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
