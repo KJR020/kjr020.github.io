@@ -6,31 +6,12 @@
     <description>Recent content in Posts on KJR020&#39;s Blog</description>
     <generator>Hugo -- 0.134.0</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 05 Sep 2024 23:06:21 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 29 Aug 2024 07:43:34 +0900</lastBuildDate>
     <atom:link href="https://kjr020.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>VSCodeでファイルエクスプローラアイコンが消えたときの対処法</title>
-      <link>https://kjr020.github.io/posts/vscode%E3%81%A7%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%A8%E3%82%AF%E3%82%B9%E3%83%97%E3%83%AD%E3%83%BC%E3%83%A9%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3%E3%81%8C%E6%B6%88%E3%81%88%E3%81%9F%E3%81%A8%E3%81%8D%E3%81%AE%E5%AF%BE%E5%87%A6%E6%B3%95/</link>
-      <pubDate>Thu, 05 Sep 2024 23:06:21 +0900</pubDate>
-      <guid>https://kjr020.github.io/posts/vscode%E3%81%A7%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%A8%E3%82%AF%E3%82%B9%E3%83%97%E3%83%AD%E3%83%BC%E3%83%A9%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3%E3%81%8C%E6%B6%88%E3%81%88%E3%81%9F%E3%81%A8%E3%81%8D%E3%81%AE%E5%AF%BE%E5%87%A6%E6%B3%95/</guid>
-      <description>&lt;h3 id=&#34;経緯&#34;&gt;経緯&lt;/h3&gt;
-&lt;p&gt;VSCodeを使用していた。
-サイドバーのメニューでファイルエクスプローラーをドラッグしたら、アイコンが消えた。&lt;br&gt;
-以前にも戻し方が分からず調べた事があったが、忘れてしまった。
-2度ある事は3度あるかもしれないので、まとめておく。&lt;/p&gt;
-&lt;h3 id=&#34;対処法&#34;&gt;対処法&lt;/h3&gt;
-&lt;p&gt;コマンドパレットからリセットすれば、初期状態に戻せる。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;&amp;gt;View: Reset View Locations&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;もっと良い方法があったら、調べて追記したい。&lt;/p&gt;
-&lt;h3 id=&#34;参考&#34;&gt;参考&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.webdesignleaves.com/wp/htmlcss/2294/#google_vignette&#34;&gt;https://www.webdesignleaves.com/wp/htmlcss/2294/#google_vignette&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
-    </item>
     <item>
       <title>ValueObjectとは</title>
       <link>https://kjr020.github.io/posts/valueobject%E3%81%A8%E3%81%AF/</link>
-      <pubDate>Thu, 29 Aug 2024 23:06:21 +0900</pubDate>
+      <pubDate>Thu, 29 Aug 2024 07:43:34 +0900</pubDate>
       <guid>https://kjr020.github.io/posts/valueobject%E3%81%A8%E3%81%AF/</guid>
       <description>&lt;h3 id=&#34;経緯&#34;&gt;経緯&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&#34;https://zenn.dev/339/articles/e3c174fdcc083e&#34;&gt;https://zenn.dev/339/articles/e3c174fdcc083e&lt;/a&gt;&lt;/p&gt;
@@ -48,6 +29,355 @@
 &lt;p&gt;Value Object
 A small simple object, like money or a date range, whose equality isn&amp;rsquo;t based on identity.&lt;/p&gt;
 &lt;p&gt;With object systems of various kinds, I&amp;rsquo;ve found it useful to distinguish between reference objects and Value Objects. Of the two a Value Object is usually the smaller; it&amp;rsquo;s similar to the primitive types present in many languages that aren&amp;rsquo;t purely object-oriented.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>CRLFについて</title>
+      <link>https://kjr020.github.io/posts/crlf%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/</link>
+      <pubDate>Sun, 25 Aug 2024 17:06:03 +0900</pubDate>
+      <guid>https://kjr020.github.io/posts/crlf%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/</guid>
+      <description>&lt;h3 id=&#34;背景&#34;&gt;背景&lt;/h3&gt;
+&lt;p&gt;８月からWebエンジニアに転職し、業務でmacOSを使用することになった。&lt;br&gt;
+学生時代ぶりのmacOSで、ターミナルの操作や環境構築に戸惑いを感じることが多い。
+環境構築の際に、Windows環境で使用していた&lt;code&gt;.vimrc&lt;/code&gt;をmacで使用したが、
+CRLFに由来するエラーに遭遇した。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$  kjr020.github.io git:&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;main&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; ✗ vim
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/Users/hoge/.vimrc の処理中にエラーが検出されました:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;行    3:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;E492: エディタのコマンドではありません: ^M
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;行    6:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;E492: エディタのコマンドではありません: ^M
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;行    8:
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;今までCRLFについては、WindowsとLinuxでの改行コードの違いとして認識していたが、
+macOSでCRLFが問題になることがあることを知らなかった。&lt;br&gt;
+この機会に調べてみることにした&lt;/p&gt;
+&lt;h3 id=&#34;crlfとは&#34;&gt;CRLFとは&lt;/h3&gt;
+&lt;p&gt;CRLFはCarriage Return Line Feedの略で、&lt;br&gt;
+CR(Carriage Return)は復帰、(Line Feed)は改行のための制御文字である。
+CRは行の先頭にカーソルを移動させる制御文字で、LFは次の行にカーソルを移動させる制御文字である。
+macOS(unix系OS)では、LFのみを改行コードとして使用しているため、CRが処理されず問題になる&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Cookieとは</title>
+      <link>https://kjr020.github.io/posts/cookie%E3%81%A8%E3%81%AF/</link>
+      <pubDate>Sun, 25 Aug 2024 17:03:17 +0900</pubDate>
+      <guid>https://kjr020.github.io/posts/cookie%E3%81%A8%E3%81%AF/</guid>
+      <description>&lt;h1 id=&#34;cookieについて&#34;&gt;Cookieについて&lt;/h1&gt;
+&lt;p&gt;技術面接に関して、どのような事を聞かれるのか気になった&lt;br&gt;
+Cookieについて、十分に理解してなかったと気づいた&lt;/p&gt;
+&lt;p&gt;「サーバーとブラウザで通信したセッションに関する情報を記録し、
+再度アクセスしたときに状態を復帰できるように、保存する仕組み」&lt;/p&gt;
+&lt;p&gt;調べてみた。&lt;/p&gt;
+&lt;h2 id=&#34;cookieとは&#34;&gt;Cookieとは？&lt;/h2&gt;
+&lt;p&gt;理解はおおよそ合っている。
+HTTP Cookieとも呼ばれるらしい。
+ユーザーがウェブサイトにアクセスした時にブラウザに送られてくるテキストデータ。&lt;br&gt;
+Edgeでは、下記のpathに存在する&lt;br&gt;
+&lt;code&gt;C:\Users\&amp;lt;ユーザー名&amp;gt;\AppData\Local\Microsoft\Edge\User Data\Default\Cookies&lt;/code&gt;&lt;br&gt;
+ユーザーがアクセスしたときの情報を保存しておいて、再度アクセスしたときに状態を復元できる&lt;/p&gt;
+&lt;p&gt;セッションCookieとパーシステントCookieがあるらしい。&lt;br&gt;
+セッションCookieは一時的なもので、ブラウザを閉じると削除される。&lt;br&gt;
+パーシステントCookieは、有効期限が設定されていて、有効期限まではデバイスに残る。&lt;/p&gt;
+&lt;h2 id=&#34;参考&#34;&gt;参考&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://zenn.dev/hidebon0630/articles/75022374e28cdf&#34;&gt;面接で聞かれた技術的質問🚀&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://policies.google.com/technologies/cookies?hl=ja&#34;&gt;Googleのポリシーと規約&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://learn.microsoft.com/ja-jp/microsoft-edge/devtools-guide-chromium/storage/cookies&#34;&gt;https://learn.microsoft.com/ja-jp/microsoft-edge/devtools-guide-chromium/storage/cookies&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>CORSに関するメモ</title>
+      <link>https://kjr020.github.io/posts/cors%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E3%83%A1%E3%83%A2/</link>
+      <pubDate>Sun, 25 Aug 2024 17:03:17 +0900</pubDate>
+      <guid>https://kjr020.github.io/posts/cors%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E3%83%A1%E3%83%A2/</guid>
+      <description>&lt;h2 id=&#34;経緯&#34;&gt;経緯&lt;/h2&gt;
+&lt;p&gt;Djangoの本番環境を構築しているとき、CORSの設定をしないと、CORSエラーが発生しコンテンツが読み込めないことがあった。
+CORSとは、Cross-Origin Resource Sharingの略で、異なるオリジン間でのリソース共有を許可するための仕組みらしいが、
+あまり理解していなかったので、調べてみた。&lt;/p&gt;
+&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
+&lt;p&gt;CORS(Cross Origin Resource Sharing)は、異なるオリジン間で安全にリソース共有するための仕組みである。
+主に、APIリクエストや非静的ファイルのリクエストに適用される。&lt;/p&gt;
+&lt;h3 id=&#34;オリジンとは&#34;&gt;オリジンとは&lt;/h3&gt;
+&lt;p&gt;そもそもオリジンについて、明確な定義を知らないと気付いた。
+スキーマ、ホスト、ポートの組み合わせで識別されるものがオリジンらしい。
+RFC6454に定義されている。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;https://www.example.com:8080
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;上記の例では、&lt;code&gt;https&lt;/code&gt;がスキーマ、&lt;code&gt;www.example.com&lt;/code&gt;がFQDN、&lt;code&gt;8080&lt;/code&gt;がポートである。&lt;/p&gt;
+&lt;h2 id=&#34;参考&#34;&gt;参考&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://datatracker.ietf.org/doc/html/rfc6454&#34;&gt;https://datatracker.ietf.org/doc/html/rfc6454&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://qiita.com/shun198/items/9ebf19d8fd2c412396dd&#34;&gt;https://qiita.com/shun198/items/9ebf19d8fd2c412396dd&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://tech.asahi.co.jp/posts/20231005-bbf6&#34;&gt;https://tech.asahi.co.jp/posts/20231005-bbf6&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://qiita.com/takegons/items/706dc2d3d883d4a289bd&#34;&gt;https://qiita.com/takegons/items/706dc2d3d883d4a289bd&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://atmarkit.itmedia.co.jp/ait/articles/1311/26/news007.html&#34;&gt;https://atmarkit.itmedia.co.jp/ait/articles/1311/26/news007.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Djangoチュートリアルその1</title>
+      <link>https://kjr020.github.io/posts/django%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB%E3%81%9D%E3%81%AE1/</link>
+      <pubDate>Sun, 25 Aug 2024 17:03:17 +0900</pubDate>
+      <guid>https://kjr020.github.io/posts/django%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB%E3%81%9D%E3%81%AE1/</guid>
+      <description>&lt;p&gt;チュートリアルでは、簡単な(Poll)アプリケーションの作成に取り組む。
+Pollアプリケーションでは、２つのサイトからなる。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ユーザーが投票と投票結果の確認ができる公開用サイト&lt;/li&gt;
+&lt;li&gt;投票項目の追加や変更、削除ができる管理(admin)サイト&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;プロジェクトを作成する&#34;&gt;プロジェクトを作成する&lt;/h2&gt;
+&lt;p&gt;下記コマンドを実行することで、projectのコードを自動生成できる。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;django-admin startproject mysite
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;開発用サーバー&#34;&gt;開発用サーバー&lt;/h2&gt;
+&lt;h2 id=&#34;polls-アプリケーションをつくる&#34;&gt;Polls アプリケーションをつくる&lt;/h2&gt;
+&lt;h2 id=&#34;はじめてのビュー作成&#34;&gt;はじめてのビュー作成&lt;/h2&gt;
+&lt;h3 id=&#34;path関数&#34;&gt;path関数&lt;/h3&gt;
+&lt;p&gt;include関数は、URLconfへの参照が可能。include()に遭遇すると、
+そのポイントまでに一致したURLの部分を切り落とし、次の処理のために残りの文字列をインクルードされたURLconfへ渡す
+背景にある考えは、URLをプラグ&amp;amp;プレイ可能にすることらしい
+pollsは独自のURLconfを持っている&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;4つの引数を取る。&lt;code&gt;route&lt;/code&gt;と&lt;code&gt;view&lt;/code&gt;は必須。&lt;code&gt;kwargs&lt;/code&gt;, &lt;code&gt;name&lt;/code&gt;はoptional&lt;/li&gt;
+&lt;li&gt;route: URLパターンを含む文字列。&lt;code&gt;urlpatterns&lt;/code&gt;のパターンから始まる。リストを順に下から参照し、URLと一致するものを探す。&lt;/li&gt;
+&lt;li&gt;view: マッチする正規表現を見つけると&lt;code&gt;view&lt;/code&gt;関数が呼び出される。&lt;br&gt;
+その際は、&lt;code&gt;HttpRequest&lt;/code&gt;オブジェクトを第一引数。&lt;br&gt;
+キーワード引数として、&lt;code&gt;route&lt;/code&gt;からキャプチャされた値を渡す。&lt;/li&gt;
+&lt;li&gt;kwargs: 任意のキーワード引数を辞書としてビューにわたす。&lt;/li&gt;
+&lt;li&gt;name: urlに名前をつけておくと、Djangoのどこからでも参照できるらしい。便利そう。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;疑問&#34;&gt;疑問&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;URLConf
+&lt;ul&gt;
+&lt;li&gt;URL configの略っぽい。URLconf内の定数などを参照するということか？どこで定義されるのか？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;ディスパッチャ
+&lt;ul&gt;
+&lt;li&gt;プログラム内で、特定の処理を実行するために、適切なコードや関数を呼び出すものらしい&lt;/li&gt;
+&lt;li&gt;「急いで送る」という意味らしい。&lt;a href=&#34;https://p-cs.work/interrupt/&#34;&gt;参考&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;イベントハンドラと何が違うのか？気になったので調べた
+&lt;ul&gt;
+&lt;li&gt;イベントハンドラーにイベントを転送するのがディスパッチャ&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;参照&#34;&gt;参照&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://p-cs.work/interrupt/&#34;&gt;https://p-cs.work/interrupt/&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>git merge strategyとは</title>
+      <link>https://kjr020.github.io/posts/git_merge_strategy/</link>
+      <pubDate>Sun, 25 Aug 2024 17:03:17 +0900</pubDate>
+      <guid>https://kjr020.github.io/posts/git_merge_strategy/</guid>
+      <description>&lt;h2 id=&#34;経緯&#34;&gt;経緯&lt;/h2&gt;
+&lt;p&gt;Git を使っていて、 &amp;lsquo;ort&amp;rsquo; strategyについて気になった。
+それまであまり気にしていなかったが、調べてみた&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ git merge lesson38
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Merge made by the &lt;span class=&#34;s1&#34;&gt;&amp;#39;ort&amp;#39;&lt;/span&gt; strategy.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; src/index.js &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;23&lt;/span&gt; ++++++++++++++++++-----
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; file changed, &lt;span class=&#34;m&#34;&gt;18&lt;/span&gt; insertions&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;+&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;, &lt;span class=&#34;m&#34;&gt;5&lt;/span&gt; deletions&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;-&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;merge-strategyとは&#34;&gt;Merge Strategyとは？&lt;/h2&gt;
+&lt;p&gt;マージ実行時のバックグラウンドのメカニズムらしい。&lt;br&gt;
+マージ(git pull or git merge)を実行した時に、バックエンドで動くマージ処理の種類らしいが選べるということ。&lt;/p&gt;
+&lt;p&gt;optionで指定もできるが、自動的に選択されるもので、
+&amp;lsquo;ort&amp;rsquo; strategyがデフォルトになっている。&lt;/p&gt;
+&lt;h2 id=&#34;参考&#34;&gt;参考&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://git-scm.com/docs/merge-strategies&#34;&gt;https://git-scm.com/docs/merge-strategies&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.atlassian.com/ja/git/tutorials/using-branches/merge-strategy&#34;&gt;https://www.atlassian.com/ja/git/tutorials/using-branches/merge-strategy&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>git_stash</title>
+      <link>https://kjr020.github.io/posts/git_stash/</link>
+      <pubDate>Sun, 25 Aug 2024 17:03:17 +0900</pubDate>
+      <guid>https://kjr020.github.io/posts/git_stash/</guid>
+      <description>&lt;h2 id=&#34;経緯s&#34;&gt;経緯S&lt;/h2&gt;
+&lt;p&gt;コマンドラインから&lt;code&gt;git stash&lt;/code&gt;しようとして&lt;br&gt;
+使い方を忘れてしまった。ちゃんと覚えていなかった。
+調べてみた&lt;/p&gt;
+&lt;h2 id=&#34;git-stash-とは&#34;&gt;git stash とは&lt;/h2&gt;
+&lt;h2 id=&#34;使い方&#34;&gt;使い方&lt;/h2&gt;
+&lt;p&gt;git stash して退避した変更を再び反映する場合には、２種類の方法がある&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git stash apply  // stashリストから削除せず適用
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git stash pop //  変更を適用して,stashリストから削除して
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    <item>
+      <title>gitでcommit userを変更する</title>
+      <link>https://kjr020.github.io/posts/git_fix_commit_user/</link>
+      <pubDate>Sun, 25 Aug 2024 17:03:17 +0900</pubDate>
+      <guid>https://kjr020.github.io/posts/git_fix_commit_user/</guid>
+      <description>&lt;h2 id=&#34;経緯&#34;&gt;経緯&lt;/h2&gt;
+&lt;p&gt;gitを使用していたとき、
+「リモートリポジトリにpush済みのコミットの、ユーザー情報を修正したい」
+ということがあった。
+修正する方法を調べてみた&lt;/p&gt;
+&lt;h2 id=&#34;コード&#34;&gt;コード&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git filter-branch --env-filter &lt;span class=&#34;s1&#34;&gt;&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt;OLD_EMAIL=[古いメールアドレス]
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt;CORRECT_NAME= [新しい名前]
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt;CORRECT_EMAIL= [新しいメールアドレス]
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt;if [ &amp;#34;$GIT_COMMITTER_EMAIL&amp;#34; = &amp;#34;$OLD_EMAIL&amp;#34; ]
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt;then
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt;    export GIT_COMMITTER_NAME=&amp;#34;$CORRECT_NAME&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt;    export GIT_COMMITTER_EMAIL=&amp;#34;$CORRECT_EMAIL&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt;fi
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt;if [ &amp;#34;$GIT_AUTHOR_EMAIL&amp;#34; = &amp;#34;$OLD_EMAIL&amp;#34; ]
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt;then
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt;    export GIT_AUTHOR_NAME=&amp;#34;$CORRECT_NAME&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt;    export GIT_AUTHOR_EMAIL=&amp;#34;$CORRECT_EMAIL&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt;fi
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;&lt;/span&gt; --tag-name-filter cat -- --branches --tags
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pr</description>
+    </item>
+    <item>
+      <title>PromiseAll</title>
+      <link>https://kjr020.github.io/posts/promiseall/</link>
+      <pubDate>Sun, 25 Aug 2024 17:03:17 +0900</pubDate>
+      <guid>https://kjr020.github.io/posts/promiseall/</guid>
+      <description>&lt;p&gt;Promise.allについて調べたときのメモ&lt;/p&gt;
+&lt;h2 id=&#34;経緯&#34;&gt;経緯&lt;/h2&gt;
+&lt;p&gt;なぜか忘れたけど、Promise.allについて調べていた。
+記事にまとめておく。&lt;/p&gt;
+&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;Promise.all()&lt;/code&gt;は、JavaScriptの組み込みの静的メソッドである。
+iterableなPromiseを入力として受取る。
+それらのPromiseが全てresolveされた際に、新しいPromiseを返す。&lt;/p&gt;
+&lt;h2 id=&#34;使い方&#34;&gt;使い方&lt;/h2&gt;
+&lt;p&gt;mdnのデモを引用すると、以下のような構文となる。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kr&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;promise1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;Promise&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;resolve&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kr&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;promise2&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;42&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kr&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;promise3&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;Promise&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;((&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;resolve&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;reject&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;setTimeout&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;resolve&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;100&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;foo&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;});&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;Promise&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;([&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;promise1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;promise2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;promise3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]).&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;then&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;((&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;values&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&amp;gt;&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;console&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;values&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// Expected output: Array [3, 42, &amp;#34;foo&amp;#34;]
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pr</description>
+    </item>
+    <item>
+      <title>VIFとは</title>
+      <link>https://kjr020.github.io/posts/vif%E3%81%A8%E3%81%AF/</link>
+      <pubDate>Sun, 25 Aug 2024 17:03:17 +0900</pubDate>
+      <guid>https://kjr020.github.io/posts/vif%E3%81%A8%E3%81%AF/</guid>
+      <description>&lt;h2 id=&#34;経緯&#34;&gt;経緯&lt;/h2&gt;
+&lt;p&gt;製造業におけるデータ分析関連のカンファレンスで発表を聞いていた。&lt;br&gt;
+VIFってなんだっけ？と思った。&lt;br&gt;
+多重共線性を評価する文脈で使われていたが、
+具体的な計算方法が思い出せなかったので、まとめる&lt;/p&gt;
+&lt;h2 id=&#34;vifについて調べた&#34;&gt;VIFについて調べた&lt;/h2&gt;
+&lt;p&gt;Variance Inflation Factorの略。
+最小二乗回帰において、多重共線性の影響を定量化する指標。&lt;br&gt;
+具体的には、どうやって定量化しているか？
+推定された回帰係数の分散(推定値の標準偏差)がどれだけ多重共線性の影響で増大したかを図る&lt;br&gt;
+説明変数ごとに、評価する値になる&lt;/p&gt;
+&lt;p&gt;$$VIF_i = frac{1}{1-R_i^2}$$&lt;/p&gt;
+&lt;p&gt;一般的には１０以下が多重共線性がないと、判断する目安らしいが根拠は不明。&lt;/p&gt;
+&lt;h2 id=&#34;相関係数との違い多重共線性を評価するのにvifを用いる理由&#34;&gt;相関係数との違い、多重共線性を評価するのにVIFを用いる理由&lt;/h2&gt;
+&lt;p&gt;相関係数は２変数だけの相関を見ていないため、多重共線性を評価するには不十分。&lt;br&gt;
+VIFでは、すべての変数を計算に用いるため、全変数間の相関を考慮できる。ということらしい。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;どうやら多重共線性を判定する際には、相関係数では不適切であり、代わりに分散拡大要因(Variance Inflation Factor: VIF)を用いて判定することが推奨されているそうです。ではなぜ相関係数では不適切なのでしょうか。
+それは、相関係数が2変数間の関係だけしか見ていないからです。
+多変量解析の分析なら、多変量の相関で考えるべきなので、2変数間の関係しかみれない相関係数だと、不十分なのです。
+それに対してVIFは全ての変数を使って計算していますので、多変数間の相関も考慮してくれます。&lt;/p&gt;
+&lt;p&gt;また、正確に基準が定まっているわけではないようですが、VIFの値が
+を超えると多重共線性を認めていると言えるそうです。
+ただVIFが10というのも、かなり甘めの基準であるようです。
+本来多変量解析は説明変数（独立変数）同士が全く相関していない状態であることが望ましいようです。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;参考&#34;&gt;参考&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://ja.wikipedia.org/wiki/%E5%88%86%E6%95%A3%E6%8B%A1%E5%A4%A7%E4%BF%82%E6%95%B0&#34;&gt;https://ja.wikipedia.org/wiki/分散拡大係数&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://qiita.com/Ogin0pan/items/4105c0c39869d31f4a75&#34;&gt;https://qiita.com/Ogin0pan/items/4105c0c39869d31f4a75&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>VSCodeのtaskについて調べた</title>
+      <link>https://kjr020.github.io/posts/vscode_tasks/</link>
+      <pubDate>Sun, 25 Aug 2024 17:03:17 +0900</pubDate>
+      <guid>https://kjr020.github.io/posts/vscode_tasks/</guid>
+      <description>&lt;h2 id=&#34;経緯&#34;&gt;経緯&lt;/h2&gt;
+&lt;p&gt;VSCode上でTypeScriptのデバッグをしたいと思って調べた。
+やり方として、launch.json上で、TypeScriptのコンパイルするtaskを定義して、&lt;br&gt;
+デバッグ前に呼び出し実行させる必要があるという事を学んだ。&lt;br&gt;
+taskについてよく知らなかったため調べてみた。&lt;/p&gt;
+&lt;h2 id=&#34;taskとは&#34;&gt;Taskとは？&lt;/h2&gt;
+&lt;p&gt;VSCodeには、コマンドライン上の一連の作業をコードとして定義し、呼出せるTask機能があるらしい。&lt;br&gt;
+今のところ理解した情報は以下の通り&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;tasks.json&lt;/code&gt;上で定義できる&lt;/li&gt;
+&lt;li&gt;デバッグ前に呼び出して実行できる(&lt;code&gt;launch.json&lt;/code&gt;に&amp;quot;preLaunchTask&amp;quot;として設定する)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;印象としては、GitHub ActionsやPower Automateと似ていると思った。&lt;br&gt;
+細かい記法など調べながらであれば、なんとか使えそう。&lt;/p&gt;
+&lt;h2 id=&#34;参考&#34;&gt;参考&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://code.visualstudio.com/docs/editor/tasks&#34;&gt;公式ドキュメント&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://kenpos.dev/2022-09-21-vscode%E3%81%AEtasks%E6%A9%9F%E8%83%BD%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BE%E3%81%A8%E3%82%81%E3%81%A6%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%82%92%E5%AE%9F%E8%A1%8C%E3%81%97%E3%82%88%E3%81%86/&#34;&gt;2022-09-21-VSCodeのTasks機能を使ってまとめてコマンドを実行しよう - 心のデブを信じろ&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://dev.classmethod.jp/articles/tasks-json-vscode-automation/&#34;&gt;【VS Code】tasks.jsonで決まった作業を自動化する&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>WinSWとは</title>
+      <link>https://kjr020.github.io/posts/winsw/</link>
+      <pubDate>Sun, 25 Aug 2024 17:03:17 +0900</pubDate>
+      <guid>https://kjr020.github.io/posts/winsw/</guid>
+      <description>&lt;h2 id=&#34;経緯&#34;&gt;経緯&lt;/h2&gt;
+&lt;p&gt;Windows Server上で実行するDjangoとnginxのプロセスをサービスとして登録したいと考えた。&lt;br&gt;
+当初、NSSMを使用することを検討したが、セキュリティツールで弾かれた。&lt;br&gt;
+開発も止まっている様子なので、WinSWを使うことにした。&lt;/p&gt;
+&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
+&lt;p&gt;Windows Service Wrapperの略らしい。&lt;br&gt;
+Windows上でサービスとしてプロセスを登録するためのツール。&lt;/p&gt;
+&lt;p&gt;サービスとして登録するための設定ファイル(xml形式)を作成し、&lt;code&gt;install&lt;/code&gt;コマンドを実行することで、サービスとして登録できる。
+使い勝手としては、手頃で良さそう。
+いつかまとめる&amp;hellip;かも&lt;/p&gt;
+&lt;h2 id=&#34;参考&#34;&gt;参考&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/winsw/winsw&#34;&gt;https://github.com/winsw/winsw&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://kiririmode.hatenablog.jp/entry/20170407/1491490800&#34;&gt;https://kiririmode.hatenablog.jp/entry/20170407/1491490800&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://qiita.com/moni-hide/items/fd26fb223f2d4736cf55&#34;&gt;https://qiita.com/moni-hide/items/fd26fb223f2d4736cf55&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.rinsymbol.net/entry/2022/03/13/191249&#34;&gt;https://www.rinsymbol.net/entry/2022/03/13/191249&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>無線キーボードが遅延する仕組み</title>
+      <link>https://kjr020.github.io/posts/%E7%84%A1%E7%B7%9A%E3%82%AD%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%89%E3%81%8C%E9%81%85%E5%BB%B6%E3%81%99%E3%82%8B%E4%BB%95%E7%B5%84%E3%81%BF/</link>
+      <pubDate>Sun, 25 Aug 2024 17:03:17 +0900</pubDate>
+      <guid>https://kjr020.github.io/posts/%E7%84%A1%E7%B7%9A%E3%82%AD%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%89%E3%81%8C%E9%81%85%E5%BB%B6%E3%81%99%E3%82%8B%E4%BB%95%E7%B5%84%E3%81%BF/</guid>
+      <description>&lt;h2 id=&#34;無線キーボードの遅延がなぜ起きるのか&#34;&gt;無線キーボードの遅延がなぜ起きるのか？&lt;/h2&gt;
+&lt;p&gt;職場での雑談中に、Logicoolのワイヤレスキーボードが不調であるという話が出た。&lt;br&gt;
+操作に遅延がある、または反応しないという問題があり、その原因を調べたところ、USB3.0の機器を使用している場合に2.4GHz帯の電波と干渉することがあることがわかった。&lt;/p&gt;
+&lt;h2 id=&#34;疑問&#34;&gt;疑問&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;電波干渉が発生した際に、通信が途切れて操作が効かなくなるのは直感的に理解できる。しかし、なぜ遅延が生じるのか、そのメカニズムが気になる。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;無線通信のチャネル図が台形になっている理由は何か？以前から、チャネルが20MHzごとに区切られている理由に興味があった。恐らく、10MHzずつの間隔を設けた結果、1チャネルが10MHz幅になったと推測している。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;感想&#34;&gt;感想&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;電波が干渉するとSNRが低下し、信号の読み取りが難しくなるということを知り、以下の内容との関連性が興味深いと感じた。統計学の勉強中に、中心極限定理がどのような場面で応用されるのかを調べていた際、測定回数を増やすことでSNRを向上させるという知識を得た。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;参考&#34;&gt;参考&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://milestone-of-se.nesuke.com/nw-basic/wireless/wifi-summary/&#34;&gt;https://milestone-of-se.nesuke.com/nw-basic/wireless/wifi-summary/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.perkinelmer.co.jp/tabid/2312/Default.aspx&#34;&gt;https://www.perkinelmer.co.jp/tabid/2312/Default.aspx&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
     </item>
   </channel>
 </rss>

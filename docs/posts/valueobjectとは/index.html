@@ -89,8 +89,8 @@ A small simple object, like money or a date range, whose equality isn&rsquo;t ba
 With object systems of various kinds, I&rsquo;ve found it useful to distinguish between reference objects and Value Objects. Of the two a Value Object is usually the smaller; it&rsquo;s similar to the primitive types present in many languages that aren&rsquo;t purely object-oriented." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://kjr020.github.io/posts/valueobject%E3%81%A8%E3%81%AF/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2024-08-29T23:06:21+09:00" />
-<meta property="article:modified_time" content="2024-08-29T23:06:21+09:00" />
+<meta property="article:published_time" content="2024-08-29T07:43:34+09:00" />
+<meta property="article:modified_time" content="2024-08-29T07:43:34+09:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="ValueObjectとは"/>
@@ -142,11 +142,11 @@ With object systems of various kinds, I&rsquo;ve found it useful to distinguish 
   "keywords": [
     
   ],
-  "articleBody": "経緯 https://zenn.dev/339/articles/e3c174fdcc083e\nを読んでいて、バリューオブジェクトの理解が曖昧だなと思ったので再確認\n記事によると、基本的には、くまぎさんの書いたwikiの翻訳を信じたら良いらしい\n確かに、くまぎさんの書いたwikiなら信頼できそうだなと思った\n調べてみる リファレンスもみてみる\n^ Fowler, Martin (2003年). “Value Object”. Catalog of Patterns of Enterprise Application Architecture. Martin Fowler (martinfowler.com). 2011年7月17日閲覧。\n第一参考文献にある、Martin Fowler氏の説明を読む\nMartin Fowler氏のサイトによると、\nValue Object A small simple object, like money or a date range, whose equality isn’t based on identity.\nWith object systems of various kinds, I’ve found it useful to distinguish between reference objects and Value Objects. Of the two a Value Object is usually the smaller; it’s similar to the primitive types present in many languages that aren’t purely object-oriented.\nとある\n自分の理解 自分の理解としては、\nValueObjectは、小さなシンプルなオブジェクトで、同等性が同一性に基づくものではない。 ここで言うidentityは,同一性で、それがメモリの位置や識別子に値する。\n等価性を満たすのに、必ずしも同一性を持つ必要がない DDDで提唱された概念の一つで、ドメインモデルを表現するために使われるらしい\n参考 https://ja.m.wikipedia.org/wiki/Value_object https://martinfowler.com/eaaCatalog/valueObject.html ",
-  "wordCount" : "98",
+  "articleBody": "経緯 https://zenn.dev/339/articles/e3c174fdcc083e\nを読んでいて、バリューオブジェクトの理解が曖昧だなと思ったので再確認\n記事によると、基本的には、くまぎさんの書いたwikiの翻訳を信じたら良いらしい\n確かに、くまぎさんの書いたwikiなら信頼できそうだなと思った\n調べてみる リファレンスもみてみる\n^ Fowler, Martin (2003年). “Value Object”. Catalog of Patterns of Enterprise Application Architecture. Martin Fowler (martinfowler.com). 2011年7月17日閲覧。\n第一参考文献にある、Martin Fowler氏の説明を読む\nMartin Fowler氏のサイトによると、\nValue Object A small simple object, like money or a date range, whose equality isn’t based on identity.\nWith object systems of various kinds, I’ve found it useful to distinguish between reference objects and Value Objects. Of the two a Value Object is usually the smaller; it’s similar to the primitive types present in many languages that aren’t purely object-oriented.\nとある\n自分の理解 自分の理解としては、\nValueObjectは、小さなシンプルなオブジェクトで、同等性が同一性に基づくものではない。 ここで言うidentityは,同一性で、それがメモリの位置や識別子に値する。\n等価性を満たすのに、必ずしも同一性を持つ必要がない DDDで提唱された概念の一つで、ドメインモデルを表現するために使われるらしい\n参考 https://ja.m.wikipedia.org/wiki/Value_object https://martinfowler.com/eaaCatalog/valueObject.html ValueObjectとは 経緯 https://zenn.dev/339/articles/e3c174fdcc083e\nを読んでいて、バリューオブジェクトの理解が曖昧だなと思ったので再確認\n記事によると、基本的には、くまぎさんの書いたwikiの翻訳を信じたら良いらしい\n確かに、くまぎさんの書いたwikiなら信頼できそうだなと思った\n調べてみる リファレンスもみてみる\n^ Fowler, Martin (2003年). “Value Object”. Catalog of Patterns of Enterprise Application Architecture. Martin Fowler (martinfowler.com). 2011年7月17日閲覧。\n第一参考文献にある、Martin Fowler氏の説明を読む\nMartin Fowler氏のサイトによると、\nValue Object A small simple object, like money or a date range, whose equality isn’t based on identity.\nWith object systems of various kinds, I’ve found it useful to distinguish between reference objects and Value Objects. Of the two a Value Object is usually the smaller; it’s similar to the primitive types present in many languages that aren’t purely object-oriented.\nとある\n自分の理解 自分の理解としては、\nValueObjectは、小さなシンプルなオブジェクトで、同等性が同一性に基づくものではない。 ここで言うidentityは,同一性で、それがメモリの位置や識別子に値する。\n等価性を満たすのに、必ずしも同一性を持つ必要がない という感じだ。\n参考 https://ja.m.wikipedia.org/wiki/Value_object https://martinfowler.com/eaaCatalog/valueObject.html ",
+  "wordCount" : "197",
   "inLanguage": "en",
-  "datePublished": "2024-08-29T23:06:21+09:00",
-  "dateModified": "2024-08-29T23:06:21+09:00",
+  "datePublished": "2024-08-29T07:43:34+09:00",
+  "dateModified": "2024-08-29T07:43:34+09:00",
   "author":{
     "@type": "Person",
     "name": "KJR020"
@@ -228,7 +228,7 @@ With object systems of various kinds, I&rsquo;ve found it useful to distinguish 
     <h1 class="post-title entry-hint-parent">
       ValueObjectとは
     </h1>
-    <div class="post-meta"><span title='2024-08-29 23:06:21 +0900 JST'>August 29, 2024</span>&nbsp;·&nbsp;KJR020
+    <div class="post-meta"><span title='2024-08-29 07:43:34 +0900 JST'>August 29, 2024</span>&nbsp;·&nbsp;KJR020
 
 </div>
   </header> 
@@ -259,6 +259,38 @@ A small simple object, like money or a date range, whose equality isn&rsquo;t ba
 </ul>
 <p>DDDで提唱された概念の一つで、ドメインモデルを表現するために使われるらしい</p>
 <h3 id="参考">参考<a hidden class="anchor" aria-hidden="true" href="#参考">#</a></h3>
+<ul>
+<li><a href="https://ja.m.wikipedia.org/wiki/Value_object">https://ja.m.wikipedia.org/wiki/Value_object</a></li>
+<li><a href="https://martinfowler.com/eaaCatalog/valueObject.html">https://martinfowler.com/eaaCatalog/valueObject.html</a></li>
+</ul>
+<h1 id="valueobjectとは">ValueObjectとは<a hidden class="anchor" aria-hidden="true" href="#valueobjectとは">#</a></h1>
+<h2 id="経緯-1">経緯<a hidden class="anchor" aria-hidden="true" href="#経緯-1">#</a></h2>
+<p><a href="https://zenn.dev/339/articles/e3c174fdcc083e">https://zenn.dev/339/articles/e3c174fdcc083e</a></p>
+<p>を読んでいて、バリューオブジェクトの理解が曖昧だなと思ったので再確認<br>
+記事によると、基本的には、くまぎさんの書いたwikiの翻訳を信じたら良いらしい<br>
+確かに、くまぎさんの書いたwikiなら信頼できそうだなと思った</p>
+<h2 id="調べてみる-1">調べてみる<a hidden class="anchor" aria-hidden="true" href="#調べてみる-1">#</a></h2>
+<p>リファレンスもみてみる</p>
+<blockquote>
+<p>^ Fowler, Martin (2003年). “Value Object”. Catalog of Patterns of Enterprise Application Architecture. Martin Fowler (martinfowler.com). 2011年7月17日閲覧。</p>
+</blockquote>
+<p>第一参考文献にある、Martin Fowler氏の説明を読む</p>
+<p>Martin Fowler氏のサイトによると、</p>
+<blockquote>
+<p>Value Object
+A small simple object, like money or a date range, whose equality isn&rsquo;t based on identity.</p>
+<p>With object systems of various kinds, I&rsquo;ve found it useful to distinguish between reference objects and Value Objects. Of the two a Value Object is usually the smaller; it&rsquo;s similar to the primitive types present in many languages that aren&rsquo;t purely object-oriented.</p>
+</blockquote>
+<p>とある</p>
+<h2 id="自分の理解-1">自分の理解<a hidden class="anchor" aria-hidden="true" href="#自分の理解-1">#</a></h2>
+<p>自分の理解としては、</p>
+<ul>
+<li>ValueObjectは、小さなシンプルなオブジェクトで、同等性が同一性に基づくものではない。</li>
+<li>ここで言うidentityは,同一性で、それがメモリの位置や識別子に値する。<br>
+等価性を満たすのに、必ずしも同一性を持つ必要がない</li>
+</ul>
+<p>という感じだ。</p>
+<h2 id="参考-1">参考<a hidden class="anchor" aria-hidden="true" href="#参考-1">#</a></h2>
 <ul>
 <li><a href="https://ja.m.wikipedia.org/wiki/Value_object">https://ja.m.wikipedia.org/wiki/Value_object</a></li>
 <li><a href="https://martinfowler.com/eaaCatalog/valueObject.html">https://martinfowler.com/eaaCatalog/valueObject.html</a></li>
