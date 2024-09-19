@@ -1,9 +1,8 @@
 +++
 title = 'VSCodeでファイルエクスプローラのアイコンが消えたときの対処法'
 date = '2024-08-25T17:03:17+09:00'
-draft = true
+draft = false
 +++
-# VSCode タスク
 
 ## 経緯
 

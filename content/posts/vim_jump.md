@@ -1,7 +1,7 @@
 +++
 title = 'Vimのジャンプ'
 date = '2024-08-25T17:03:17+09:00'
-draft = true
+draft = false
 +++
 
 ## 経緯

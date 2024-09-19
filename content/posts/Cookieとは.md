@@ -5,15 +5,14 @@ draft = false
 tags = ["Cookie", "Web", "HTTP"]
 +++
 
-# Cookieについて
+技術面接に関して、どのような事を聞かれるのか調べていた
+たまたまCookieについて目に入ったとき、説明できる自信がなかった。
 
-技術面接に関して、どのような事を聞かれるのか気になった  
-Cookieについて、十分に理解してなかったと気づいた  
-
+ざっくりと、考えてみた
 「サーバーとブラウザで通信したセッションに関する情報を記録し、
 再度アクセスしたときに状態を復帰できるように、保存する仕組み」
 
-調べてみた。
+Cookieについて、十分に理解してなかったと気づいたので、調べてみた。
 
 ## Cookieとは？
 
@@ -31,9 +30,5 @@ Edgeでは、下記のpathに存在する
 ## 参考
 
 - [面接で聞かれた技術的質問🚀](https://zenn.dev/hidebon0630/articles/75022374e28cdf)
-
 - [Googleのポリシーと規約](https://policies.google.com/technologies/cookies?hl=ja)
-
-- https://learn.microsoft.com/ja-jp/microsoft-edge/devtools-guide-chromium/storage/cookies
-
- 
+- <https://learn.microsoft.com/ja-jp/microsoft-edge/devtools-guide-chromium/storage/cookies>

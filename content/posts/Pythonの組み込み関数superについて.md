@@ -1,7 +1,7 @@
 +++
 title = 'Pythonの組み込み関数superについて'
 date = '2024-09-03T21:51:30+09:00'
-draft = true
+draft = false
 +++
 
 Python組み込み関数のsuperについて調べたことをまとめる
@@ -20,10 +20,10 @@ DjangoのCreateViewの実装を理解したいと思い、その一環でsuper()
 > メソッドの呼び出しを type の親または兄弟クラスに委譲するプロキシオブジェクトを返します。  
 > これはクラスの中でオーバーライドされた継承メソッドにアクセスするのに便利です。
 
-プロ棋士オブジェクトを消すらしいが、まだ良くわかってない
+proxyオブジェクトを渡すらしいが、まだ良くわかってない
 super().get()とかsuper().post()とか具体的に動かしてみるとする
 
-```
+```python
 class Parent:
     def greet(self):
         """親クラスの挨拶メソッド"""
@@ -46,7 +46,8 @@ child_instance.greet()
 ```
 
 出力
-```
+
+```shell
 > Hello from Child
 > Hello from Parent
 ```
@@ -56,13 +57,15 @@ super()は、親クラスのメソッドを呼び出すための関数である�
 super()の引数がどこからわたっているのか不思議だったが、  
 どうやら自動的にClassとselfが渡されるらしい
 
-```
+```python
 class C(B):
     def method(self, arg):
         super().method(arg)    # This does the same thing as:
                                # super(C, self).method(arg)
 ```
 
-どうやって渡されているのかは、よく理解できていないが、下記記事で調査されていた。
+どうやって渡されているのかは、下記記事で調査されていた
 
 <https://shomah4a.hatenadiary.org/entry/20120316/1331864078>
+
+あまり理解できていないので、いずれもう少し深堀りしてみたい
