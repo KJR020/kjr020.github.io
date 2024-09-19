@@ -5,11 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Web | KJR020&#39;s Blog</title>
+<title>Posts | KJR020&#39;s Blog</title>
 <meta name="keywords" content="">
-<meta name="description" content="">
+<meta name="description" content="Posts - KJR020&#39;s Blog">
 <meta name="author" content="KJR020">
-<link rel="canonical" href="https://kjr020.github.io/tags/web/">
+<link rel="canonical" href="https://kjr020.github.io/posts/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.fc220c15db4aef0318bbf30adc45d33d4d7c88deff3238b23eb255afdc472ca6.css" integrity="sha256-/CIMFdtK7wMYu/MK3EXTPU18iN7/MjiyPrJVr9xHLKY=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://kjr020.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://kjr020.github.io/favicon-16x16.png">
@@ -18,8 +18,8 @@
 <link rel="mask-icon" href="https://kjr020.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="https://kjr020.github.io/tags/web/index.xml">
-<link rel="alternate" hreflang="en" href="https://kjr020.github.io/tags/web/">
+<link rel="alternate" type="application/rss+xml" href="https://kjr020.github.io/posts/index.xml">
+<link rel="alternate" hreflang="en" href="https://kjr020.github.io/posts/">
 <noscript>
     <style>
         #theme-toggle,
@@ -56,15 +56,30 @@
         }
 
     </style>
-</noscript><meta property="og:title" content="Web" />
+</noscript><meta property="og:title" content="Posts" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://kjr020.github.io/tags/web/" />
+<meta property="og:url" content="https://kjr020.github.io/posts/" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Web"/>
+<meta name="twitter:title" content="Posts"/>
 <meta name="twitter:description" content=""/>
 
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://kjr020.github.io/posts/"
+    }
+  ]
+}
+</script>
 </head>
 
 <body class="list" id="top">
@@ -123,31 +138,32 @@
 <main class="main"> 
 <header class="page-header">
   <h1>
-    Web
+    Posts
   </h1>
 </header>
 
-<article class="post-entry tag-entry"> 
+<article class="post-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">Cookieとは
+    <h2 class="entry-hint-parent">無線キーボードが遅延する仕組み
     </h2>
   </header>
   <div class="entry-content">
-    <p>技術面接に関して、どのような事を聞かれるのか調べていた たまたまCookieについて目に入ったとき、説明できる自信がなかった。
-ざっくりと、考えてみた 「サーバーとブラウザで通信したセッションに関する情報を記録し、 再度アクセスしたときに状態を復帰できるように、保存する仕組み」
-Cookieについて、十分に理解してなかったと気づいたので、調べてみた。
-Cookieとは？ 理解はおおよそ合っている。 HTTP Cookieとも呼ばれるらしい。 ユーザーがウェブサイトにアクセスした時にブラウザに送られてくるテキストデータ。
-Edgeでは、下記のpathに存在する
-C:\Users\&lt;ユーザー名&gt;\AppData\Local\Microsoft\Edge\User Data\Default\Cookies
-ユーザーがアクセスしたときの情報を保存しておいて、再度アクセスしたときに状態を復元できる
-セッションCookieとパーシステントCookieがあるらしい。
-セッションCookieは一時的なもので、ブラウザを閉じると削除される。
-パーシステントCookieは、有効期限が設定されていて、有効期限まではデバイスに残る。
-参考 面接で聞かれた技術的質問🚀 Googleのポリシーと規約 https://learn.microsoft.com/ja-jp/microsoft-edge/devtools-guide-chromium/storage/cookies </p>
+    <p>無線キーボードの遅延がなぜ起きるのか？ 職場での雑談中に、Logicoolのワイヤレスキーボードが不調であるという話が出た。
+操作に遅延がある、または反応しないという問題があり、その原因を調べたところ、USB3.0の機器を使用している場合に2.4GHz帯の電波と干渉することがあることがわかった。
+疑問 電波干渉が発生した際に、通信が途切れて操作が効かなくなるのは直感的に理解できる。しかし、なぜ遅延が生じるのか、そのメカニズムが気になる。
+無線通信のチャネル図が台形になっている理由は何か？以前から、チャネルが20MHzごとに区切られている理由に興味があった。恐らく、10MHzずつの間隔を設けた結果、1チャネルが10MHz幅になったと推測している。
+感想 電波が干渉するとSNRが低下し、信号の読み取りが難しくなるということを知り、以下の内容との関連性が興味深いと感じた。統計学の勉強中に、中心極限定理がどのような場面で応用されるのかを調べていた際、測定回数を増やすことでSNRを向上させるという知識を得た。 参考 https://milestone-of-se.nesuke.com/nw-basic/wireless/wifi-summary/ https://www.perkinelmer.co.jp/tabid/2312/Default.aspx </p>
   </div>
   <footer class="entry-footer"><span title='2024-08-25 17:03:17 +0900 JST'>August 25, 2024</span>&nbsp;·&nbsp;KJR020</footer>
-  <a class="entry-link" aria-label="post link to Cookieとは" href="https://kjr020.github.io/posts/cookie%E3%81%A8%E3%81%AF/"></a>
+  <a class="entry-link" aria-label="post link to 無線キーボードが遅延する仕組み" href="https://kjr020.github.io/posts/%E7%84%A1%E7%B7%9A%E3%82%AD%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%89%E3%81%8C%E9%81%85%E5%BB%B6%E3%81%99%E3%82%8B%E4%BB%95%E7%B5%84%E3%81%BF/"></a>
 </article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="prev" href="https://kjr020.github.io/posts/page/2/">
+      «&nbsp;Prev&nbsp;
+    </a>
+  </nav>
+</footer>
     </main>
     
 <footer class="footer">
