@@ -12,20 +12,31 @@ Djangoの本番環境を構築しているとき、CORSの設定をしないと�
 CORSとは、Cross-Origin Resource Sharingの略で、異なるオリジン間でのリソース共有を許可するための仕組みらしいが、
 あまり理解していなかったので、調べてみた。
 概要
-CORS(Cross Origin Resource Sharing)は、異なるオリジン間で安全にリソース共有するための仕組みである。
+CORS(Cross Origin Resource Sharing)は、異なるオリジン間で安全にリソース共有するための仕組みである。(XSSやCSRFなどのセキュリティ上のリスクがあるためである。)
+通常ブラウザでは、異なるオリジン間でのリソース共有はセキュリティ上の理由から制限されている。SOP(Same Origin Policy)という制約がある。
 主に、APIリクエストや非静的ファイルのリクエストに適用される。
+
+https://developer.mozilla.org/ja/docs/Web/Security/Same-origin_policy
+
 オリジンとは
 そもそもオリジンについて、明確な定義を知らないと気付いた。
-スキーマ、ホスト、ポートの組み合わせで識別されるものがオリジンらしい。
+オリジンは、スキーマ、ホスト、ポートの組み合わせで識別される。
 RFC6454に定義されている。
 https://www.example.com:8080
 上記の例では、httpsがスキーマ、www.example.comがFQDN、8080がポートである。
+SOP(Same Origin Policy)
+SOPは、異なるオリジン間でのリソース共有を制限するための仕組みである。
+異なるオリジン間でのリソース共有は、クロスサイトスクリプティング(XSS)やクロスサイトリクエストフォージェリ(CSRF)などのセキュリティ上のリスクがあるため、制限されている。
+セキュリティ的に外部のオリジンが信用できる場合,CORSによって制限を解除することができる。
+cors-headerを付与すると何が起こるのか
+CORSヘッダーを付与すると、
+リクエストの際にブラウザはCORSポリシーに従ってリクエストを送信する。
+CORSポリシーは、リクエストを送信する際に、リクエストヘッダーにOriginを付与する。
+サーバーは、リクエストヘッダーのOriginを見て、リクエストを許可するかどうかを判断する。
 参考
 
 https://datatracker.ietf.org/doc/html/rfc6454
 https://qiita.com/shun198/items/9ebf19d8fd2c412396dd
-https://tech.asahi.co.jp/posts/20231005-bbf6
-https://qiita.com/takegons/items/706dc2d3d883d4a289bd
 https://atmarkit.itmedia.co.jp/ait/articles/1311/26/news007.html
 ">
 <meta name="author" content="KJR020">
@@ -81,20 +92,31 @@ Djangoの本番環境を構築しているとき、CORSの設定をしないと�
 CORSとは、Cross-Origin Resource Sharingの略で、異なるオリジン間でのリソース共有を許可するための仕組みらしいが、
 あまり理解していなかったので、調べてみた。
 概要
-CORS(Cross Origin Resource Sharing)は、異なるオリジン間で安全にリソース共有するための仕組みである。
+CORS(Cross Origin Resource Sharing)は、異なるオリジン間で安全にリソース共有するための仕組みである。(XSSやCSRFなどのセキュリティ上のリスクがあるためである。)
+通常ブラウザでは、異なるオリジン間でのリソース共有はセキュリティ上の理由から制限されている。SOP(Same Origin Policy)という制約がある。
 主に、APIリクエストや非静的ファイルのリクエストに適用される。
+
+https://developer.mozilla.org/ja/docs/Web/Security/Same-origin_policy
+
 オリジンとは
 そもそもオリジンについて、明確な定義を知らないと気付いた。
-スキーマ、ホスト、ポートの組み合わせで識別されるものがオリジンらしい。
+オリジンは、スキーマ、ホスト、ポートの組み合わせで識別される。
 RFC6454に定義されている。
 https://www.example.com:8080
 上記の例では、httpsがスキーマ、www.example.comがFQDN、8080がポートである。
+SOP(Same Origin Policy)
+SOPは、異なるオリジン間でのリソース共有を制限するための仕組みである。
+異なるオリジン間でのリソース共有は、クロスサイトスクリプティング(XSS)やクロスサイトリクエストフォージェリ(CSRF)などのセキュリティ上のリスクがあるため、制限されている。
+セキュリティ的に外部のオリジンが信用できる場合,CORSによって制限を解除することができる。
+cors-headerを付与すると何が起こるのか
+CORSヘッダーを付与すると、
+リクエストの際にブラウザはCORSポリシーに従ってリクエストを送信する。
+CORSポリシーは、リクエストを送信する際に、リクエストヘッダーにOriginを付与する。
+サーバーは、リクエストヘッダーのOriginを見て、リクエストを許可するかどうかを判断する。
 参考
 
 https://datatracker.ietf.org/doc/html/rfc6454
 https://qiita.com/shun198/items/9ebf19d8fd2c412396dd
-https://tech.asahi.co.jp/posts/20231005-bbf6
-https://qiita.com/takegons/items/706dc2d3d883d4a289bd
 https://atmarkit.itmedia.co.jp/ait/articles/1311/26/news007.html
 " />
 <meta property="og:type" content="article" />
@@ -109,20 +131,31 @@ Djangoの本番環境を構築しているとき、CORSの設定をしないと�
 CORSとは、Cross-Origin Resource Sharingの略で、異なるオリジン間でのリソース共有を許可するための仕組みらしいが、
 あまり理解していなかったので、調べてみた。
 概要
-CORS(Cross Origin Resource Sharing)は、異なるオリジン間で安全にリソース共有するための仕組みである。
+CORS(Cross Origin Resource Sharing)は、異なるオリジン間で安全にリソース共有するための仕組みである。(XSSやCSRFなどのセキュリティ上のリスクがあるためである。)
+通常ブラウザでは、異なるオリジン間でのリソース共有はセキュリティ上の理由から制限されている。SOP(Same Origin Policy)という制約がある。
 主に、APIリクエストや非静的ファイルのリクエストに適用される。
+
+https://developer.mozilla.org/ja/docs/Web/Security/Same-origin_policy
+
 オリジンとは
 そもそもオリジンについて、明確な定義を知らないと気付いた。
-スキーマ、ホスト、ポートの組み合わせで識別されるものがオリジンらしい。
+オリジンは、スキーマ、ホスト、ポートの組み合わせで識別される。
 RFC6454に定義されている。
 https://www.example.com:8080
 上記の例では、httpsがスキーマ、www.example.comがFQDN、8080がポートである。
+SOP(Same Origin Policy)
+SOPは、異なるオリジン間でのリソース共有を制限するための仕組みである。
+異なるオリジン間でのリソース共有は、クロスサイトスクリプティング(XSS)やクロスサイトリクエストフォージェリ(CSRF)などのセキュリティ上のリスクがあるため、制限されている。
+セキュリティ的に外部のオリジンが信用できる場合,CORSによって制限を解除することができる。
+cors-headerを付与すると何が起こるのか
+CORSヘッダーを付与すると、
+リクエストの際にブラウザはCORSポリシーに従ってリクエストを送信する。
+CORSポリシーは、リクエストを送信する際に、リクエストヘッダーにOriginを付与する。
+サーバーは、リクエストヘッダーのOriginを見て、リクエストを許可するかどうかを判断する。
 参考
 
 https://datatracker.ietf.org/doc/html/rfc6454
 https://qiita.com/shun198/items/9ebf19d8fd2c412396dd
-https://tech.asahi.co.jp/posts/20231005-bbf6
-https://qiita.com/takegons/items/706dc2d3d883d4a289bd
 https://atmarkit.itmedia.co.jp/ait/articles/1311/26/news007.html
 "/>
 
@@ -153,12 +186,12 @@ https://atmarkit.itmedia.co.jp/ait/articles/1311/26/news007.html
   "@type": "BlogPosting",
   "headline": "CORSに関するメモ",
   "name": "CORSに関するメモ",
-  "description": "経緯 Djangoの本番環境を構築しているとき、CORSの設定をしないと、CORSエラーが発生しコンテンツが読み込めないことがあった。 CORSとは、Cross-Origin Resource Sharingの略で、異なるオリジン間でのリソース共有を許可するための仕組みらしいが、 あまり理解していなかったので、調べてみた。\n概要 CORS(Cross Origin Resource Sharing)は、異なるオリジン間で安全にリソース共有するための仕組みである。 主に、APIリクエストや非静的ファイルのリクエストに適用される。\nオリジンとは そもそもオリジンについて、明確な定義を知らないと気付いた。 スキーマ、ホスト、ポートの組み合わせで識別されるものがオリジンらしい。 RFC6454に定義されている。\nhttps://www.example.com:8080 上記の例では、httpsがスキーマ、www.example.comがFQDN、8080がポートである。\n参考 https://datatracker.ietf.org/doc/html/rfc6454 https://qiita.com/shun198/items/9ebf19d8fd2c412396dd https://tech.asahi.co.jp/posts/20231005-bbf6 https://qiita.com/takegons/items/706dc2d3d883d4a289bd https://atmarkit.itmedia.co.jp/ait/articles/1311/26/news007.html ",
+  "description": "経緯 Djangoの本番環境を構築しているとき、CORSの設定をしないと、CORSエラーが発生しコンテンツが読み込めないことがあった。 CORSとは、Cross-Origin Resource Sharingの略で、異なるオリジン間でのリソース共有を許可するための仕組みらしいが、 あまり理解していなかったので、調べてみた。\n概要 CORS(Cross Origin Resource Sharing)は、異なるオリジン間で安全にリソース共有するための仕組みである。(XSSやCSRFなどのセキュリティ上のリスクがあるためである。) 通常ブラウザでは、異なるオリジン間でのリソース共有はセキュリティ上の理由から制限されている。SOP(Same Origin Policy)という制約がある。 主に、APIリクエストや非静的ファイルのリクエストに適用される。\nhttps://developer.mozilla.org/ja/docs/Web/Security/Same-origin_policy オリジンとは そもそもオリジンについて、明確な定義を知らないと気付いた。 オリジンは、スキーマ、ホスト、ポートの組み合わせで識別される。 RFC6454に定義されている。\nhttps://www.example.com:8080 上記の例では、httpsがスキーマ、www.example.comがFQDN、8080がポートである。\nSOP(Same Origin Policy) SOPは、異なるオリジン間でのリソース共有を制限するための仕組みである。 異なるオリジン間でのリソース共有は、クロスサイトスクリプティング(XSS)やクロスサイトリクエストフォージェリ(CSRF)などのセキュリティ上のリスクがあるため、制限されている。 セキュリティ的に外部のオリジンが信用できる場合,CORSによって制限を解除することができる。\ncors-headerを付与すると何が起こるのか CORSヘッダーを付与すると、 リクエストの際にブラウザはCORSポリシーに従ってリクエストを送信する。 CORSポリシーは、リクエストを送信する際に、リクエストヘッダーにOriginを付与する。 サーバーは、リクエストヘッダーのOriginを見て、リクエストを許可するかどうかを判断する。\n参考 https://datatracker.ietf.org/doc/html/rfc6454 https://qiita.com/shun198/items/9ebf19d8fd2c412396dd https://atmarkit.itmedia.co.jp/ait/articles/1311/26/news007.html ",
   "keywords": [
     
   ],
-  "articleBody": "経緯 Djangoの本番環境を構築しているとき、CORSの設定をしないと、CORSエラーが発生しコンテンツが読み込めないことがあった。 CORSとは、Cross-Origin Resource Sharingの略で、異なるオリジン間でのリソース共有を許可するための仕組みらしいが、 あまり理解していなかったので、調べてみた。\n概要 CORS(Cross Origin Resource Sharing)は、異なるオリジン間で安全にリソース共有するための仕組みである。 主に、APIリクエストや非静的ファイルのリクエストに適用される。\nオリジンとは そもそもオリジンについて、明確な定義を知らないと気付いた。 スキーマ、ホスト、ポートの組み合わせで識別されるものがオリジンらしい。 RFC6454に定義されている。\nhttps://www.example.com:8080 上記の例では、httpsがスキーマ、www.example.comがFQDN、8080がポートである。\n参考 https://datatracker.ietf.org/doc/html/rfc6454 https://qiita.com/shun198/items/9ebf19d8fd2c412396dd https://tech.asahi.co.jp/posts/20231005-bbf6 https://qiita.com/takegons/items/706dc2d3d883d4a289bd https://atmarkit.itmedia.co.jp/ait/articles/1311/26/news007.html ",
-  "wordCount" : "24",
+  "articleBody": "経緯 Djangoの本番環境を構築しているとき、CORSの設定をしないと、CORSエラーが発生しコンテンツが読み込めないことがあった。 CORSとは、Cross-Origin Resource Sharingの略で、異なるオリジン間でのリソース共有を許可するための仕組みらしいが、 あまり理解していなかったので、調べてみた。\n概要 CORS(Cross Origin Resource Sharing)は、異なるオリジン間で安全にリソース共有するための仕組みである。(XSSやCSRFなどのセキュリティ上のリスクがあるためである。) 通常ブラウザでは、異なるオリジン間でのリソース共有はセキュリティ上の理由から制限されている。SOP(Same Origin Policy)という制約がある。 主に、APIリクエストや非静的ファイルのリクエストに適用される。\nhttps://developer.mozilla.org/ja/docs/Web/Security/Same-origin_policy オリジンとは そもそもオリジンについて、明確な定義を知らないと気付いた。 オリジンは、スキーマ、ホスト、ポートの組み合わせで識別される。 RFC6454に定義されている。\nhttps://www.example.com:8080 上記の例では、httpsがスキーマ、www.example.comがFQDN、8080がポートである。\nSOP(Same Origin Policy) SOPは、異なるオリジン間でのリソース共有を制限するための仕組みである。 異なるオリジン間でのリソース共有は、クロスサイトスクリプティング(XSS)やクロスサイトリクエストフォージェリ(CSRF)などのセキュリティ上のリスクがあるため、制限されている。 セキュリティ的に外部のオリジンが信用できる場合,CORSによって制限を解除することができる。\ncors-headerを付与すると何が起こるのか CORSヘッダーを付与すると、 リクエストの際にブラウザはCORSポリシーに従ってリクエストを送信する。 CORSポリシーは、リクエストを送信する際に、リクエストヘッダーにOriginを付与する。 サーバーは、リクエストヘッダーのOriginを見て、リクエストを許可するかどうかを判断する。\n参考 https://datatracker.ietf.org/doc/html/rfc6454 https://qiita.com/shun198/items/9ebf19d8fd2c412396dd https://atmarkit.itmedia.co.jp/ait/articles/1311/26/news007.html ",
+  "wordCount" : "37",
   "inLanguage": "en",
   "datePublished": "2024-08-25T17:03:17+09:00",
   "dateModified": "2024-08-25T17:03:17+09:00",
@@ -252,20 +285,31 @@ https://atmarkit.itmedia.co.jp/ait/articles/1311/26/news007.html
 CORSとは、Cross-Origin Resource Sharingの略で、異なるオリジン間でのリソース共有を許可するための仕組みらしいが、
 あまり理解していなかったので、調べてみた。</p>
 <h2 id="概要">概要<a hidden class="anchor" aria-hidden="true" href="#概要">#</a></h2>
-<p>CORS(Cross Origin Resource Sharing)は、異なるオリジン間で安全にリソース共有するための仕組みである。
+<p>CORS(Cross Origin Resource Sharing)は、異なるオリジン間で安全にリソース共有するための仕組みである。(XSSやCSRFなどのセキュリティ上のリスクがあるためである。)
+通常ブラウザでは、異なるオリジン間でのリソース共有はセキュリティ上の理由から制限されている。SOP(Same Origin Policy)という制約がある。
 主に、APIリクエストや非静的ファイルのリクエストに適用される。</p>
+<ul>
+<li><a href="https://developer.mozilla.org/ja/docs/Web/Security/Same-origin_policy">https://developer.mozilla.org/ja/docs/Web/Security/Same-origin_policy</a></li>
+</ul>
 <h3 id="オリジンとは">オリジンとは<a hidden class="anchor" aria-hidden="true" href="#オリジンとは">#</a></h3>
 <p>そもそもオリジンについて、明確な定義を知らないと気付いた。
-スキーマ、ホスト、ポートの組み合わせで識別されるものがオリジンらしい。
+オリジンは、スキーマ、ホスト、ポートの組み合わせで識別される。
 RFC6454に定義されている。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">https://www.example.com:8080
 </span></span></code></pre></div><p>上記の例では、<code>https</code>がスキーマ、<code>www.example.com</code>がFQDN、<code>8080</code>がポートである。</p>
+<h3 id="sopsame-origin-policy">SOP(Same Origin Policy)<a hidden class="anchor" aria-hidden="true" href="#sopsame-origin-policy">#</a></h3>
+<p>SOPは、異なるオリジン間でのリソース共有を制限するための仕組みである。
+異なるオリジン間でのリソース共有は、クロスサイトスクリプティング(XSS)やクロスサイトリクエストフォージェリ(CSRF)などのセキュリティ上のリスクがあるため、制限されている。
+セキュリティ的に外部のオリジンが信用できる場合,CORSによって制限を解除することができる。</p>
+<h2 id="cors-headerを付与すると何が起こるのか">cors-headerを付与すると何が起こるのか<a hidden class="anchor" aria-hidden="true" href="#cors-headerを付与すると何が起こるのか">#</a></h2>
+<p>CORSヘッダーを付与すると、
+リクエストの際にブラウザはCORSポリシーに従ってリクエストを送信する。
+CORSポリシーは、リクエストを送信する際に、リクエストヘッダーに<code>Origin</code>を付与する。
+サーバーは、リクエストヘッダーの<code>Origin</code>を見て、リクエストを許可するかどうかを判断する。</p>
 <h2 id="参考">参考<a hidden class="anchor" aria-hidden="true" href="#参考">#</a></h2>
 <ul>
 <li><a href="https://datatracker.ietf.org/doc/html/rfc6454">https://datatracker.ietf.org/doc/html/rfc6454</a></li>
 <li><a href="https://qiita.com/shun198/items/9ebf19d8fd2c412396dd">https://qiita.com/shun198/items/9ebf19d8fd2c412396dd</a></li>
-<li><a href="https://tech.asahi.co.jp/posts/20231005-bbf6">https://tech.asahi.co.jp/posts/20231005-bbf6</a></li>
-<li><a href="https://qiita.com/takegons/items/706dc2d3d883d4a289bd">https://qiita.com/takegons/items/706dc2d3d883d4a289bd</a></li>
 <li><a href="https://atmarkit.itmedia.co.jp/ait/articles/1311/26/news007.html">https://atmarkit.itmedia.co.jp/ait/articles/1311/26/news007.html</a></li>
 </ul>
 

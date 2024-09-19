@@ -6,8 +6,49 @@
     <description>Recent content in Posts on KJR020&#39;s Blog</description>
     <generator>Hugo -- 0.134.0</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 29 Aug 2024 07:43:34 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 19 Sep 2024 20:32:22 +0900</lastBuildDate>
     <atom:link href="https://kjr020.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DbCについて調べた</title>
+      <link>https://kjr020.github.io/posts/dbc%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E8%AA%BF%E3%81%B9%E3%81%9F/</link>
+      <pubDate>Thu, 19 Sep 2024 20:32:22 +0900</pubDate>
+      <guid>https://kjr020.github.io/posts/dbc%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E8%AA%BF%E3%81%B9%E3%81%9F/</guid>
+      <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
+&lt;p&gt;DbC(Design by Contract)というプログラミング設計手法について、達人プログラマーを読んでいて知った。
+あらかじめ決めた契約を満たすようにプログラムを設計する手法らしい。&lt;/p&gt;
+&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
+&lt;p&gt;定義を調べておこう
+Wikipediaを見てみると、&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;契約プログラミング（けいやくプログラミング、英: Contract programming）または契約による設計（けいやくによるせっけい、英: Design by Contract; DbC）は、ソフトウェアの正確性と頑健性を高めるためのソフトウェア設計の方法論である&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;DbCにおける契約は、&lt;br&gt;
+クラスのインスタンスとそのメソッドの利用に関する取り決めを明示するものらしい&lt;br&gt;
+ここでいう契約は、クライアントとサプライヤの間の契約として考えることができるようだ&lt;/p&gt;
+&lt;p&gt;以下の３つの契約で構成される&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;前提条件&lt;/strong&gt;&lt;br&gt;
+クラスのメソッドが呼び出される前に満たされているべき条件
+メソッドの利用者が果たすべき責任として考える事ができる&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;事後条件&lt;/strong&gt;&lt;br&gt;
+メソッドが終了した時点で保証される条件
+これは、利用者がメソッドを呼び出した後にどういう状態になるかを示す。
+契約になぞらえると、サプライヤが果たすべき責任として考える事ができる&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;クラス不変条件&lt;/strong&gt;
+クラスがインスタンス化された時点から破壊されることのない条件
+この条件は、クラスのインスタンスが生成された時点から破壊されることのない条件を示す
+クラアントとサプライヤ双方の責任として考える事ができる&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;まとめ&#34;&gt;まとめ&lt;/h2&gt;
+&lt;p&gt;DbCについて調べてみた
+文章を書く練習も兼ねて、30分で記事を書こうと思ったが時間が足りなかった&lt;br&gt;
+さわりのみになってしまったので、もう少し時間をかけて調べてみたい&lt;/p&gt;
+&lt;h2 id=&#34;参考文献&#34;&gt;参考文献&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Design_by_contract&#34;&gt;https://en.wikipedia.org/wiki/Design_by_contract&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://ja.wikipedia.org/wiki/%E5%A5%91%E7%B4%84%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0&#34;&gt;https://ja.wikipedia.org/wiki/契約プログラミング&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
     <item>
       <title>ValueObjectとは</title>
       <link>https://kjr020.github.io/posts/valueobject%E3%81%A8%E3%81%AF/</link>
@@ -100,20 +141,31 @@ Edgeでは、下記のpathに存在する&lt;br&gt;
 CORSとは、Cross-Origin Resource Sharingの略で、異なるオリジン間でのリソース共有を許可するための仕組みらしいが、
 あまり理解していなかったので、調べてみた。&lt;/p&gt;
 &lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
-&lt;p&gt;CORS(Cross Origin Resource Sharing)は、異なるオリジン間で安全にリソース共有するための仕組みである。
+&lt;p&gt;CORS(Cross Origin Resource Sharing)は、異なるオリジン間で安全にリソース共有するための仕組みである。(XSSやCSRFなどのセキュリティ上のリスクがあるためである。)
+通常ブラウザでは、異なるオリジン間でのリソース共有はセキュリティ上の理由から制限されている。SOP(Same Origin Policy)という制約がある。
 主に、APIリクエストや非静的ファイルのリクエストに適用される。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://developer.mozilla.org/ja/docs/Web/Security/Same-origin_policy&#34;&gt;https://developer.mozilla.org/ja/docs/Web/Security/Same-origin_policy&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h3 id=&#34;オリジンとは&#34;&gt;オリジンとは&lt;/h3&gt;
 &lt;p&gt;そもそもオリジンについて、明確な定義を知らないと気付いた。
-スキーマ、ホスト、ポートの組み合わせで識別されるものがオリジンらしい。
+オリジンは、スキーマ、ホスト、ポートの組み合わせで識別される。
 RFC6454に定義されている。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;https://www.example.com:8080
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;上記の例では、&lt;code&gt;https&lt;/code&gt;がスキーマ、&lt;code&gt;www.example.com&lt;/code&gt;がFQDN、&lt;code&gt;8080&lt;/code&gt;がポートである。&lt;/p&gt;
+&lt;h3 id=&#34;sopsame-origin-policy&#34;&gt;SOP(Same Origin Policy)&lt;/h3&gt;
+&lt;p&gt;SOPは、異なるオリジン間でのリソース共有を制限するための仕組みである。
+異なるオリジン間でのリソース共有は、クロスサイトスクリプティング(XSS)やクロスサイトリクエストフォージェリ(CSRF)などのセキュリティ上のリスクがあるため、制限されている。
+セキュリティ的に外部のオリジンが信用できる場合,CORSによって制限を解除することができる。&lt;/p&gt;
+&lt;h2 id=&#34;cors-headerを付与すると何が起こるのか&#34;&gt;cors-headerを付与すると何が起こるのか&lt;/h2&gt;
+&lt;p&gt;CORSヘッダーを付与すると、
+リクエストの際にブラウザはCORSポリシーに従ってリクエストを送信する。
+CORSポリシーは、リクエストを送信する際に、リクエストヘッダーに&lt;code&gt;Origin&lt;/code&gt;を付与する。
+サーバーは、リクエストヘッダーの&lt;code&gt;Origin&lt;/code&gt;を見て、リクエストを許可するかどうかを判断する。&lt;/p&gt;
 &lt;h2 id=&#34;参考&#34;&gt;参考&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://datatracker.ietf.org/doc/html/rfc6454&#34;&gt;https://datatracker.ietf.org/doc/html/rfc6454&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://qiita.com/shun198/items/9ebf19d8fd2c412396dd&#34;&gt;https://qiita.com/shun198/items/9ebf19d8fd2c412396dd&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://tech.asahi.co.jp/posts/20231005-bbf6&#34;&gt;https://tech.asahi.co.jp/posts/20231005-bbf6&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://qiita.com/takegons/items/706dc2d3d883d4a289bd&#34;&gt;https://qiita.com/takegons/items/706dc2d3d883d4a289bd&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://atmarkit.itmedia.co.jp/ait/articles/1311/26/news007.html&#34;&gt;https://atmarkit.itmedia.co.jp/ait/articles/1311/26/news007.html&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>

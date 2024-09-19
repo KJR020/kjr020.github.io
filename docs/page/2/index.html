@@ -138,6 +138,30 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">VIFとは
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>経緯 製造業におけるデータ分析関連のカンファレンスで発表を聞いていた。
+VIFってなんだっけ？と思った。
+多重共線性を評価する文脈で使われていたが、 具体的な計算方法が思い出せなかったので、まとめる
+VIFについて調べた Variance Inflation Factorの略。 最小二乗回帰において、多重共線性の影響を定量化する指標。
+具体的には、どうやって定量化しているか？ 推定された回帰係数の分散(推定値の標準偏差)がどれだけ多重共線性の影響で増大したかを図る
+説明変数ごとに、評価する値になる
+$$VIF_i = frac{1}{1-R_i^2}$$
+一般的には１０以下が多重共線性がないと、判断する目安らしいが根拠は不明。
+相関係数との違い、多重共線性を評価するのにVIFを用いる理由 相関係数は２変数だけの相関を見ていないため、多重共線性を評価するには不十分。
+VIFでは、すべての変数を計算に用いるため、全変数間の相関を考慮できる。ということらしい。
+どうやら多重共線性を判定する際には、相関係数では不適切であり、代わりに分散拡大要因(Variance Inflation Factor: VIF)を用いて判定することが推奨されているそうです。ではなぜ相関係数では不適切なのでしょうか。 それは、相関係数が2変数間の関係だけしか見ていないからです。 多変量解析の分析なら、多変量の相関で考えるべきなので、2変数間の関係しかみれない相関係数だと、不十分なのです。 それに対してVIFは全ての変数を使って計算していますので、多変数間の相関も考慮してくれます。
+また、正確に基準が定まっているわけではないようですが、VIFの値が を超えると多重共線性を認めていると言えるそうです。 ただVIFが10というのも、かなり甘めの基準であるようです。 本来多変量解析は説明変数（独立変数）同士が全く相関していない状態であることが望ましいようです。
+参考 https://ja.wikipedia.org/wiki/分散拡大係数 https://qiita.com/Ogin0pan/items/4105c0c39869d31f4a75 </p>
+  </div>
+  <footer class="entry-footer"><span title='2024-08-25 17:03:17 +0900 JST'>August 25, 2024</span>&nbsp;·&nbsp;KJR020</footer>
+  <a class="entry-link" aria-label="post link to VIFとは" href="https://kjr020.github.io/posts/vif%E3%81%A8%E3%81%AF/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">VSCodeのtaskについて調べた
     </h2>
   </header>

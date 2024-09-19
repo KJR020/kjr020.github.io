@@ -168,6 +168,29 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">DbCについて調べた
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>背景 DbC(Design by Contract)というプログラミング設計手法について、達人プログラマーを読んでいて知った。 あらかじめ決めた契約を満たすようにプログラムを設計する手法らしい。
+概要 定義を調べておこう Wikipediaを見てみると、
+契約プログラミング（けいやくプログラミング、英: Contract programming）または契約による設計（けいやくによるせっけい、英: Design by Contract; DbC）は、ソフトウェアの正確性と頑健性を高めるためのソフトウェア設計の方法論である
+DbCにおける契約は、
+クラスのインスタンスとそのメソッドの利用に関する取り決めを明示するものらしい
+ここでいう契約は、クライアントとサプライヤの間の契約として考えることができるようだ
+以下の３つの契約で構成される
+前提条件
+クラスのメソッドが呼び出される前に満たされているべき条件 メソッドの利用者が果たすべき責任として考える事ができる 事後条件
+メソッドが終了した時点で保証される条件 これは、利用者がメソッドを呼び出した後にどういう状態になるかを示す。 契約になぞらえると、サプライヤが果たすべき責任として考える事ができる クラス不変条件 クラスがインスタンス化された時点から破壊されることのない条件 この条件は、クラスのインスタンスが生成された時点から破壊されることのない条件を示す クラアントとサプライヤ双方の責任として考える事ができる まとめ DbCについて調べてみた 文章を書く練習も兼ねて、30分で記事を書こうと思ったが時間が足りなかった
+さわりのみになってしまったので、もう少し時間をかけて調べてみたい
+参考文献 https://en.wikipedia.org/wiki/Design_by_contract https://ja.wikipedia.org/wiki/契約プログラミング </p>
+  </div>
+  <footer class="entry-footer"><span title='2024-09-19 20:32:22 +0900 JST'>September 19, 2024</span>&nbsp;·&nbsp;KJR020</footer>
+  <a class="entry-link" aria-label="post link to DbCについて調べた" href="https://kjr020.github.io/posts/dbc%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E8%AA%BF%E3%81%B9%E3%81%9F/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">ValueObjectとは
     </h2>
   </header>
@@ -239,10 +262,12 @@ https://learn.microsoft.com/ja-jp/microsoft-edge/devtools-guide-chromium/storage
   </header>
   <div class="entry-content">
     <p>経緯 Djangoの本番環境を構築しているとき、CORSの設定をしないと、CORSエラーが発生しコンテンツが読み込めないことがあった。 CORSとは、Cross-Origin Resource Sharingの略で、異なるオリジン間でのリソース共有を許可するための仕組みらしいが、 あまり理解していなかったので、調べてみた。
-概要 CORS(Cross Origin Resource Sharing)は、異なるオリジン間で安全にリソース共有するための仕組みである。 主に、APIリクエストや非静的ファイルのリクエストに適用される。
-オリジンとは そもそもオリジンについて、明確な定義を知らないと気付いた。 スキーマ、ホスト、ポートの組み合わせで識別されるものがオリジンらしい。 RFC6454に定義されている。
+概要 CORS(Cross Origin Resource Sharing)は、異なるオリジン間で安全にリソース共有するための仕組みである。(XSSやCSRFなどのセキュリティ上のリスクがあるためである。) 通常ブラウザでは、異なるオリジン間でのリソース共有はセキュリティ上の理由から制限されている。SOP(Same Origin Policy)という制約がある。 主に、APIリクエストや非静的ファイルのリクエストに適用される。
+https://developer.mozilla.org/ja/docs/Web/Security/Same-origin_policy オリジンとは そもそもオリジンについて、明確な定義を知らないと気付いた。 オリジンは、スキーマ、ホスト、ポートの組み合わせで識別される。 RFC6454に定義されている。
 https://www.example.com:8080 上記の例では、httpsがスキーマ、www.example.comがFQDN、8080がポートである。
-参考 https://datatracker.ietf.org/doc/html/rfc6454 https://qiita.com/shun198/items/9ebf19d8fd2c412396dd https://tech.asahi.co.jp/posts/20231005-bbf6 https://qiita.com/takegons/items/706dc2d3d883d4a289bd https://atmarkit.itmedia.co.jp/ait/articles/1311/26/news007.html </p>
+SOP(Same Origin Policy) SOPは、異なるオリジン間でのリソース共有を制限するための仕組みである。 異なるオリジン間でのリソース共有は、クロスサイトスクリプティング(XSS)やクロスサイトリクエストフォージェリ(CSRF)などのセキュリティ上のリスクがあるため、制限されている。 セキュリティ的に外部のオリジンが信用できる場合,CORSによって制限を解除することができる。
+cors-headerを付与すると何が起こるのか CORSヘッダーを付与すると、 リクエストの際にブラウザはCORSポリシーに従ってリクエストを送信する。 CORSポリシーは、リクエストを送信する際に、リクエストヘッダーにOriginを付与する。 サーバーは、リクエストヘッダーのOriginを見て、リクエストを許可するかどうかを判断する。
+参考 https://datatracker.ietf.org/doc/html/rfc6454 https://qiita.com/shun198/items/9ebf19d8fd2c412396dd https://atmarkit.itmedia.co.jp/ait/articles/1311/26/news007.html </p>
   </div>
   <footer class="entry-footer"><span title='2024-08-25 17:03:17 +0900 JST'>August 25, 2024</span>&nbsp;·&nbsp;KJR020</footer>
   <a class="entry-link" aria-label="post link to CORSに関するメモ" href="https://kjr020.github.io/posts/cors%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E3%83%A1%E3%83%A2/"></a>
@@ -323,30 +348,6 @@ const promise1 = Promise.resolve(3); const promise2 = 42; const promise3 = new P
   </div>
   <footer class="entry-footer"><span title='2024-08-25 17:03:17 +0900 JST'>August 25, 2024</span>&nbsp;·&nbsp;KJR020</footer>
   <a class="entry-link" aria-label="post link to PromiseAll" href="https://kjr020.github.io/posts/promiseall/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">VIFとは
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>経緯 製造業におけるデータ分析関連のカンファレンスで発表を聞いていた。
-VIFってなんだっけ？と思った。
-多重共線性を評価する文脈で使われていたが、 具体的な計算方法が思い出せなかったので、まとめる
-VIFについて調べた Variance Inflation Factorの略。 最小二乗回帰において、多重共線性の影響を定量化する指標。
-具体的には、どうやって定量化しているか？ 推定された回帰係数の分散(推定値の標準偏差)がどれだけ多重共線性の影響で増大したかを図る
-説明変数ごとに、評価する値になる
-$$VIF_i = frac{1}{1-R_i^2}$$
-一般的には１０以下が多重共線性がないと、判断する目安らしいが根拠は不明。
-相関係数との違い、多重共線性を評価するのにVIFを用いる理由 相関係数は２変数だけの相関を見ていないため、多重共線性を評価するには不十分。
-VIFでは、すべての変数を計算に用いるため、全変数間の相関を考慮できる。ということらしい。
-どうやら多重共線性を判定する際には、相関係数では不適切であり、代わりに分散拡大要因(Variance Inflation Factor: VIF)を用いて判定することが推奨されているそうです。ではなぜ相関係数では不適切なのでしょうか。 それは、相関係数が2変数間の関係だけしか見ていないからです。 多変量解析の分析なら、多変量の相関で考えるべきなので、2変数間の関係しかみれない相関係数だと、不十分なのです。 それに対してVIFは全ての変数を使って計算していますので、多変数間の相関も考慮してくれます。
-また、正確に基準が定まっているわけではないようですが、VIFの値が を超えると多重共線性を認めていると言えるそうです。 ただVIFが10というのも、かなり甘めの基準であるようです。 本来多変量解析は説明変数（独立変数）同士が全く相関していない状態であることが望ましいようです。
-参考 https://ja.wikipedia.org/wiki/分散拡大係数 https://qiita.com/Ogin0pan/items/4105c0c39869d31f4a75 </p>
-  </div>
-  <footer class="entry-footer"><span title='2024-08-25 17:03:17 +0900 JST'>August 25, 2024</span>&nbsp;·&nbsp;KJR020</footer>
-  <a class="entry-link" aria-label="post link to VIFとは" href="https://kjr020.github.io/posts/vif%E3%81%A8%E3%81%AF/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
