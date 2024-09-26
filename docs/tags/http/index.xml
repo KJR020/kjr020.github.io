@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>HTTP on KJR020&#39;s Blog</title>
     <link>https://kjr020.github.io/tags/http/</link>
     <description>Recent content in HTTP on KJR020&#39;s Blog</description>
-    <generator>Hugo -- 0.134.0</generator>
+    <generator>Hugo</generator>
     <language>ja</language>
     <lastBuildDate>Sun, 25 Aug 2024 17:03:17 +0900</lastBuildDate>
     <atom:link href="https://kjr020.github.io/tags/http/index.xml" rel="self" type="application/rss+xml" />
@@ -13,28 +13,7 @@
       <link>https://kjr020.github.io/posts/cookie%E3%81%A8%E3%81%AF/</link>
       <pubDate>Sun, 25 Aug 2024 17:03:17 +0900</pubDate>
       <guid>https://kjr020.github.io/posts/cookie%E3%81%A8%E3%81%AF/</guid>
-      <description>&lt;p&gt;技術面接に関して、どのような事を聞かれるのか調べていた
-たまたまCookieについて目に入ったとき、説明できる自信がなかった。&lt;/p&gt;
-&lt;p&gt;ざっくりと、考えてみた
-「サーバーとブラウザで通信したセッションに関する情報を記録し、
-再度アクセスしたときに状態を復帰できるように、保存する仕組み」&lt;/p&gt;
-&lt;p&gt;Cookieについて、十分に理解してなかったと気づいたので、調べてみた。&lt;/p&gt;
-&lt;h2 id=&#34;cookieとは&#34;&gt;Cookieとは？&lt;/h2&gt;
-&lt;p&gt;理解はおおよそ合っている。
-HTTP Cookieとも呼ばれるらしい。
-ユーザーがウェブサイトにアクセスした時にブラウザに送られてくるテキストデータ。&lt;br&gt;
-Edgeでは、下記のpathに存在する&lt;br&gt;
-&lt;code&gt;C:\Users\&amp;lt;ユーザー名&amp;gt;\AppData\Local\Microsoft\Edge\User Data\Default\Cookies&lt;/code&gt;&lt;br&gt;
-ユーザーがアクセスしたときの情報を保存しておいて、再度アクセスしたときに状態を復元できる&lt;/p&gt;
-&lt;p&gt;セッションCookieとパーシステントCookieがあるらしい。&lt;br&gt;
-セッションCookieは一時的なもので、ブラウザを閉じると削除される。&lt;br&gt;
-パーシステントCookieは、有効期限が設定されていて、有効期限まではデバイスに残る。&lt;/p&gt;
-&lt;h2 id=&#34;参考&#34;&gt;参考&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://zenn.dev/hidebon0630/articles/75022374e28cdf&#34;&gt;面接で聞かれた技術的質問🚀&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://policies.google.com/technologies/cookies?hl=ja&#34;&gt;Googleのポリシーと規約&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://learn.microsoft.com/ja-jp/microsoft-edge/devtools-guide-chromium/storage/cookies&#34;&gt;https://learn.microsoft.com/ja-jp/microsoft-edge/devtools-guide-chromium/storage/cookies&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
+      <description>&lt;h1 id=&#34;cookieについて&#34;&gt;Cookieについて&lt;/h1&gt;&#xA;&lt;p&gt;技術面接に関して、どのような事を聞かれるのか気になった&lt;br&gt;&#xA;Cookieについて、十分に理解してなかったと気づいた&lt;/p&gt;&#xA;&lt;p&gt;「サーバーとブラウザで通信したセッションに関する情報を記録し、&#xA;再度アクセスしたときに状態を復帰できるように、保存する仕組み」&lt;/p&gt;&#xA;&lt;p&gt;調べてみた。&lt;/p&gt;&#xA;&lt;h2 id=&#34;cookieとは&#34;&gt;Cookieとは？&lt;/h2&gt;&#xA;&lt;p&gt;理解はおおよそ合っている。&#xA;HTTP Cookieとも呼ばれるらしい。&#xA;ユーザーがウェブサイトにアクセスした時にブラウザに送られてくるテキストデータ。&lt;br&gt;&#xA;Edgeでは、下記のpathに存在する&lt;br&gt;&#xA;&lt;code&gt;C:\Users\&amp;lt;ユーザー名&amp;gt;\AppData\Local\Microsoft\Edge\User Data\Default\Cookies&lt;/code&gt;&lt;br&gt;&#xA;ユーザーがアクセスしたときの情報を保存しておいて、再度アクセスしたときに状態を復元できる&lt;/p&gt;&#xA;&lt;p&gt;セッションCookieとパーシステントCookieがあるらしい。&lt;br&gt;&#xA;セッションCookieは一時的なもので、ブラウザを閉じると削除される。&lt;br&gt;&#xA;パーシステントCookieは、有効期限が設定されていて、有効期限まではデバイスに残る。&lt;/p&gt;&#xA;&lt;h2 id=&#34;参考&#34;&gt;参考&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://zenn.dev/hidebon0630/articles/75022374e28cdf&#34;&gt;面接で聞かれた技術的質問🚀&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://policies.google.com/technologies/cookies?hl=ja&#34;&gt;Googleのポリシーと規約&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://learn.microsoft.com/ja-jp/microsoft-edge/devtools-guide-chromium/storage/cookies&#34;&gt;https://learn.microsoft.com/ja-jp/microsoft-edge/devtools-guide-chromium/storage/cookies&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
   </channel>
 </rss>
