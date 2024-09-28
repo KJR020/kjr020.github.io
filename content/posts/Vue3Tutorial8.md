@@ -1,7 +1,7 @@
 +++
 title = 'Vue3 Tutorial8 算出プロパティ'
 date = 2024-09-26T07:02:19+09:00
-draft = true
+draft = false
 +++
 
 ## Vue3の復習 tutorial-step8  
