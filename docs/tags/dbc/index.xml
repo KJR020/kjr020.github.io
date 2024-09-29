@@ -1,19 +1,53 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>DbC on KJR020&#39;s Blog</title>
-    <link>https://kjr020.github.io/tags/dbc/</link>
+    <link>http://localhost:1313/tags/dbc/</link>
     <description>Recent content in DbC on KJR020&#39;s Blog</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- 0.134.0</generator>
     <language>ja</language>
     <lastBuildDate>Thu, 19 Sep 2024 20:32:22 +0900</lastBuildDate>
-    <atom:link href="https://kjr020.github.io/tags/dbc/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/dbc/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>DbCについて調べた</title>
-      <link>https://kjr020.github.io/posts/dbc%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E8%AA%BF%E3%81%B9%E3%81%9F/</link>
+      <link>http://localhost:1313/posts/dbc%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E8%AA%BF%E3%81%B9%E3%81%9F/</link>
       <pubDate>Thu, 19 Sep 2024 20:32:22 +0900</pubDate>
-      <guid>https://kjr020.github.io/posts/dbc%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E8%AA%BF%E3%81%B9%E3%81%9F/</guid>
-      <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;&#xA;&lt;p&gt;DbC(Design by Contract)というプログラミング設計手法について、達人プログラマーを読んでいて知った。&#xA;あらかじめ決めた契約を満たすようにプログラムを設計する手法らしい。&lt;/p&gt;&#xA;&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;&#xA;&lt;p&gt;定義を調べておこう&#xA;Wikipediaを見てみると、&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;契約プログラミング（けいやくプログラミング、英: Contract programming）または契約による設計（けいやくによるせっけい、英: Design by Contract; DbC）は、ソフトウェアの正確性と頑健性を高めるためのソフトウェア設計の方法論である&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;DbCにおける契約は、&lt;br&gt;&#xA;クラスのインスタンスとそのメソッドの利用に関する取り決めを明示するものらしい&lt;br&gt;&#xA;ここでいう契約は、クライアントとサプライヤの間の契約として考えることができるようだ&lt;/p&gt;&#xA;&lt;p&gt;以下の３つの契約で構成される&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;前提条件&lt;/strong&gt;&lt;br&gt;&#xA;クラスのメソッドが呼び出される前に満たされているべき条件&#xA;メソッドの利用者が果たすべき責任として考える事ができる&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;事後条件&lt;/strong&gt;&lt;br&gt;&#xA;メソッドが終了した時点で保証される条件&#xA;これは、利用者がメソッドを呼び出した後にどういう状態になるかを示す。&#xA;契約になぞらえると、サプライヤが果たすべき責任として考える事ができる&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;クラス不変条件&lt;/strong&gt;&#xA;クラスがインスタンス化された時点から破壊されることのない条件&#xA;この条件は、クラスのインスタンスが生成された時点から破壊されることのない条件を示す&#xA;クラアントとサプライヤ双方の責任として考える事ができる&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;まとめ&#34;&gt;まとめ&lt;/h2&gt;&#xA;&lt;p&gt;DbCについて調べてみた&#xA;文章を書く練習も兼ねて、30分で記事を書こうと思ったが時間が足りなかった&lt;br&gt;&#xA;さわりのみになってしまったので、もう少し時間をかけて調べてみたい&lt;/p&gt;&#xA;&lt;h2 id=&#34;参考文献&#34;&gt;参考文献&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Design_by_contract&#34;&gt;https://en.wikipedia.org/wiki/Design_by_contract&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://ja.wikipedia.org/wiki/%E5%A5%91%E7%B4%84%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0&#34;&gt;https://ja.wikipedia.org/wiki/契約プログラミング&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+      <guid>http://localhost:1313/posts/dbc%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E8%AA%BF%E3%81%B9%E3%81%9F/</guid>
+      <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
+&lt;p&gt;DbC(Design by Contract)というプログラミング設計手法について、達人プログラマーを読んでいて知った。
+あらかじめ決めた契約を満たすようにプログラムを設計する手法らしい。&lt;/p&gt;
+&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
+&lt;p&gt;定義を調べておこう
+Wikipediaを見てみると、&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;契約プログラミング（けいやくプログラミング、英: Contract programming）または契約による設計（けいやくによるせっけい、英: Design by Contract; DbC）は、ソフトウェアの正確性と頑健性を高めるためのソフトウェア設計の方法論である&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;DbCにおける契約は、&lt;br&gt;
+クラスのインスタンスとそのメソッドの利用に関する取り決めを明示するものらしい&lt;br&gt;
+ここでいう契約は、クライアントとサプライヤの間の契約として考えることができるようだ&lt;/p&gt;
+&lt;p&gt;以下の３つの契約で構成される&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;前提条件&lt;/strong&gt;&lt;br&gt;
+クラスのメソッドが呼び出される前に満たされているべき条件
+メソッドの利用者が果たすべき責任として考える事ができる&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;事後条件&lt;/strong&gt;&lt;br&gt;
+メソッドが終了した時点で保証される条件
+これは、利用者がメソッドを呼び出した後にどういう状態になるかを示す。
+契約になぞらえると、サプライヤが果たすべき責任として考える事ができる&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;クラス不変条件&lt;/strong&gt;
+クラスがインスタンス化された時点から破壊されることのない条件
+この条件は、クラスのインスタンスが生成された時点から破壊されることのない条件を示す
+クラアントとサプライヤ双方の責任として考える事ができる&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;まとめ&#34;&gt;まとめ&lt;/h2&gt;
+&lt;p&gt;DbCについて調べてみた
+文章を書く練習も兼ねて、30分で記事を書こうと思ったが時間が足りなかった&lt;br&gt;
+さわりのみになってしまったので、もう少し時間をかけて調べてみたい&lt;/p&gt;
+&lt;h2 id=&#34;参考文献&#34;&gt;参考文献&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Design_by_contract&#34;&gt;https://en.wikipedia.org/wiki/Design_by_contract&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://ja.wikipedia.org/wiki/%E5%A5%91%E7%B4%84%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0&#34;&gt;https://ja.wikipedia.org/wiki/契約プログラミング&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
   </channel>
 </rss>

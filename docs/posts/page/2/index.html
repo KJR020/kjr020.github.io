@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><meta charset="utf-8">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
@@ -9,17 +9,17 @@
 <meta name="keywords" content="">
 <meta name="description" content="Posts - KJR020&#39;s Blog">
 <meta name="author" content="KJR020">
-<link rel="canonical" href="https://kjr020.github.io/posts/">
+<link rel="canonical" href="http://localhost:1313/posts/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.fc220c15db4aef0318bbf30adc45d33d4d7c88deff3238b23eb255afdc472ca6.css" integrity="sha256-/CIMFdtK7wMYu/MK3EXTPU18iN7/MjiyPrJVr9xHLKY=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://kjr020.github.io/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://kjr020.github.io/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://kjr020.github.io/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://kjr020.github.io/apple-touch-icon.png">
-<link rel="mask-icon" href="https://kjr020.github.io/safari-pinned-tab.svg">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="https://kjr020.github.io/posts/index.xml">
-<link rel="alternate" hreflang="en" href="https://kjr020.github.io/posts/">
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/posts/index.xml">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/">
 <noscript>
     <style>
         #theme-toggle,
@@ -59,7 +59,7 @@
 </noscript><meta property="og:title" content="Posts" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://kjr020.github.io/posts/" />
+<meta property="og:url" content="http://localhost:1313/posts/" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Posts"/>
@@ -75,7 +75,7 @@
       "@type": "ListItem",
       "position":  1 ,
       "name": "Posts",
-      "item": "https://kjr020.github.io/posts/"
+      "item": "http://localhost:1313/posts/"
     }
   ]
 }
@@ -97,7 +97,7 @@
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://kjr020.github.io/" accesskey="h" title="KJR020&#39;s Blog (Alt + H)">KJR020&#39;s Blog</a>
+            <a href="http://localhost:1313/" accesskey="h" title="KJR020&#39;s Blog (Alt + H)">KJR020&#39;s Blog</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -123,12 +123,12 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="https://kjr020.github.io/archives" title="Archive">
+                <a href="http://localhost:1313/archives" title="Archive">
                     <span>Archive</span>
                 </a>
             </li>
             <li>
-                <a href="https://kjr020.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
                     <span>Search</span>
                 </a>
             </li>
@@ -144,6 +144,68 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">Djangoチュートリアルその1
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>チュートリアルでは、簡単な(Poll)アプリケーションの作成に取り組む。 Pollアプリケーションでは、２つのサイトからなる。
+ユーザーが投票と投票結果の確認ができる公開用サイト 投票項目の追加や変更、削除ができる管理(admin)サイト プロジェクトを作成する 下記コマンドを実行することで、projectのコードを自動生成できる。
+django-admin startproject mysite 開発用サーバー Polls アプリケーションをつくる はじめてのビュー作成 path関数 include関数は、URLconfへの参照が可能。include()に遭遇すると、 そのポイントまでに一致したURLの部分を切り落とし、次の処理のために残りの文字列をインクルードされたURLconfへ渡す 背景にある考えは、URLをプラグ&amp;プレイ可能にすることらしい pollsは独自のURLconfを持っている
+4つの引数を取る。routeとviewは必須。kwargs, nameはoptional route: URLパターンを含む文字列。urlpatternsのパターンから始まる。リストを順に下から参照し、URLと一致するものを探す。 view: マッチする正規表現を見つけるとview関数が呼び出される。
+その際は、HttpRequestオブジェクトを第一引数。
+キーワード引数として、routeからキャプチャされた値を渡す。 kwargs: 任意のキーワード引数を辞書としてビューにわたす。 name: urlに名前をつけておくと、Djangoのどこからでも参照できるらしい。便利そう。 疑問 URLConf URL configの略っぽい。URLconf内の定数などを参照するということか？どこで定義されるのか？ ディスパッチャ プログラム内で、特定の処理を実行するために、適切なコードや関数を呼び出すものらしい 「急いで送る」という意味らしい。参考 イベントハンドラと何が違うのか？気になったので調べた イベントハンドラーにイベントを転送するのがディスパッチャ 参照 https://p-cs.work/interrupt/ </p>
+  </div>
+  <footer class="entry-footer"><span title='2024-08-25 17:03:17 +0900 JST'>August 25, 2024</span>&nbsp;·&nbsp;KJR020</footer>
+  <a class="entry-link" aria-label="post link to Djangoチュートリアルその1" href="http://localhost:1313/posts/django%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB%E3%81%9D%E3%81%AE1/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Ed25519とは
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>経緯 Giteaサーバーに登録しようと思い、sshの暗号キーペアを生成していた。 暗号化方式で、それまではrsaを選択していたが、ed25519という方式が良いという記事を見かけたので、それを選択した。 Ed25519の利点とRSAとの違いについて調べた。
+Ed25519とは Ed25519は、楕円曲線暗号の一種である。 楕円曲線暗号は、楕円曲線上の点の演算を基にした暗号方式であり、RSA暗号と比べて同じレベルのセキュリティを持つ場合に、より短い鍵長で済むという特徴があるらしい。
+参考 https://tech.asahi.co.jp/posts/20231005-bbf6 https://qiita.com/takegons/items/706dc2d3d883d4a289bd </p>
+  </div>
+  <footer class="entry-footer"><span title='2024-08-25 17:03:17 +0900 JST'>August 25, 2024</span>&nbsp;·&nbsp;KJR020</footer>
+  <a class="entry-link" aria-label="post link to Ed25519とは" href="http://localhost:1313/posts/ed25519%E3%81%A8%E3%81%AF/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">git merge strategyとは
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>経緯 Git を使っていて、 ‘ort’ strategyについて気になった。 それまであまり気にしていなかったが、調べてみた
+$ git merge lesson38 Merge made by the &#39;ort&#39; strategy. src/index.js | 23 &#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;----- 1 file changed, 18 insertions(&#43;), 5 deletions(-) Merge Strategyとは？ マージ実行時のバックグラウンドのメカニズムらしい。
+マージ(git pull or git merge)を実行した時に、バックエンドで動くマージ処理の種類らしいが選べるということ。
+optionで指定もできるが、自動的に選択されるもので、 ‘ort’ strategyがデフォルトになっている。
+参考 https://git-scm.com/docs/merge-strategies https://www.atlassian.com/ja/git/tutorials/using-branches/merge-strategy </p>
+  </div>
+  <footer class="entry-footer"><span title='2024-08-25 17:03:17 +0900 JST'>August 25, 2024</span>&nbsp;·&nbsp;KJR020</footer>
+  <a class="entry-link" aria-label="post link to git merge strategyとは" href="http://localhost:1313/posts/git_merge_strategy/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">git_stash
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>経緯S コマンドラインからgit stashしようとして
+使い方を忘れてしまった。ちゃんと覚えていなかった。 調べてみた
+git stash とは 使い方 git stash して退避した変更を再び反映する場合には、２種類の方法がある
+git stash apply // stashリストから削除せず適用 git stash pop // 変更を適用して,stashリストから削除して </p>
+  </div>
+  <footer class="entry-footer"><span title='2024-08-25 17:03:17 +0900 JST'>August 25, 2024</span>&nbsp;·&nbsp;KJR020</footer>
+  <a class="entry-link" aria-label="post link to git_stash" href="http://localhost:1313/posts/git_stash/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">gitでcommit userを変更する
     </h2>
   </header>
@@ -152,7 +214,7 @@
 コード git filter-branch --env-filter &#39; OLD_EMAIL=[古いメールアドレス] CORRECT_NAME= [新しい名前] CORRECT_EMAIL= [新しいメールアドレス] if [ &#34;$GIT_COMMITTER_EMAIL&#34; = &#34;$OLD_EMAIL&#34; ] then export GIT_COMMITTER_NAME=&#34;$CORRECT_NAME&#34; export GIT_COMMITTER_EMAIL=&#34;$CORRECT_EMAIL&#34; fi if [ &#34;$GIT_AUTHOR_EMAIL&#34; = &#34;$OLD_EMAIL&#34; ] then export GIT_AUTHOR_NAME=&#34;$CORRECT_NAME&#34; export GIT_AUTHOR_EMAIL=&#34;$CORRECT_EMAIL&#34; fi &#39; --tag-name-filter cat -- --branches --tags ...</p>
   </div>
   <footer class="entry-footer"><span title='2024-08-25 17:03:17 +0900 JST'>August 25, 2024</span>&nbsp;·&nbsp;KJR020</footer>
-  <a class="entry-link" aria-label="post link to gitでcommit userを変更する" href="https://kjr020.github.io/posts/git_fix_commit_user/"></a>
+  <a class="entry-link" aria-label="post link to gitでcommit userを変更する" href="http://localhost:1313/posts/git_fix_commit_user/"></a>
 </article>
 
 <article class="post-entry"> 
@@ -168,7 +230,7 @@
 const promise1 = Promise.resolve(3); const promise2 = 42; const promise3 = new Promise((resolve, reject) =&gt; { setTimeout(resolve, 100, &#39;foo&#39;); }); Promise([promise1, promise2, promise3]).then((values) =&gt; console.log(values) ); // Expected output: Array [3, 42, &#34;foo&#34;] ...</p>
   </div>
   <footer class="entry-footer"><span title='2024-08-25 17:03:17 +0900 JST'>August 25, 2024</span>&nbsp;·&nbsp;KJR020</footer>
-  <a class="entry-link" aria-label="post link to PromiseAll" href="https://kjr020.github.io/posts/promiseall/"></a>
+  <a class="entry-link" aria-label="post link to PromiseAll" href="http://localhost:1313/posts/promiseall/"></a>
 </article>
 
 <article class="post-entry"> 
@@ -186,7 +248,7 @@ Context API Context APIは、Reactの公式で提供されているstateのグ�
 </p>
   </div>
   <footer class="entry-footer"><span title='2024-08-25 17:03:17 +0900 JST'>August 25, 2024</span>&nbsp;·&nbsp;KJR020</footer>
-  <a class="entry-link" aria-label="post link to Reactのstate管理" href="https://kjr020.github.io/posts/react%E3%81%AEstate%E7%AE%A1%E7%90%86/"></a>
+  <a class="entry-link" aria-label="post link to Reactのstate管理" href="http://localhost:1313/posts/react%E3%81%AEstate%E7%AE%A1%E7%90%86/"></a>
 </article>
 
 <article class="post-entry"> 
@@ -200,7 +262,7 @@ SQL Serverの認証方式の種類 大きく Windows認証 と SQL Server認証 
 SQL Server認証 (SQL Server Authentication) SQL Serverのユーザー名とパスワードを使用して認証する方法 Windows統合認証 Windows資格情報を使用する Active Directory ユーザーアカウントを使用して認証も可能 参考 https://learn.microsoft.com/ja-jp/sql/relational-databases/security/choose-an-authentication-mode?view=sql-server-ver16 https://www.kwbtblog.com/entry/2019/10/11/030233 https://qiita.com/kazumatsukazu/items/d754457712963c447a50 </p>
   </div>
   <footer class="entry-footer"><span title='2024-08-25 17:03:17 +0900 JST'>August 25, 2024</span>&nbsp;·&nbsp;KJR020</footer>
-  <a class="entry-link" aria-label="post link to SQLServerの認証方式" href="https://kjr020.github.io/posts/sqlserver%E3%81%AE%E8%AA%8D%E8%A8%BC%E6%96%B9%E5%BC%8F/"></a>
+  <a class="entry-link" aria-label="post link to SQLServerの認証方式" href="http://localhost:1313/posts/sqlserver%E3%81%AE%E8%AA%8D%E8%A8%BC%E6%96%B9%E5%BC%8F/"></a>
 </article>
 
 <article class="post-entry"> 
@@ -224,7 +286,7 @@ VIFでは、すべての変数を計算に用いるため、全変数間の相�
 参考 https://ja.wikipedia.org/wiki/分散拡大係数 https://qiita.com/Ogin0pan/items/4105c0c39869d31f4a75 </p>
   </div>
   <footer class="entry-footer"><span title='2024-08-25 17:03:17 +0900 JST'>August 25, 2024</span>&nbsp;·&nbsp;KJR020</footer>
-  <a class="entry-link" aria-label="post link to VIFとは" href="https://kjr020.github.io/posts/vif%E3%81%A8%E3%81%AF/"></a>
+  <a class="entry-link" aria-label="post link to VIFとは" href="http://localhost:1313/posts/vif%E3%81%A8%E3%81%AF/"></a>
 </article>
 
 <article class="post-entry"> 
@@ -245,97 +307,21 @@ g;で戻る。g,でやり直し。
 参考 https://vim-jp.org/vimdoc-ja/motion.html#jump-motions https://baubaubau.hatenablog.com/entry/2020/09/19/203537 </p>
   </div>
   <footer class="entry-footer"><span title='2024-08-25 17:03:17 +0900 JST'>August 25, 2024</span>&nbsp;·&nbsp;KJR020</footer>
-  <a class="entry-link" aria-label="post link to Vimのジャンプ" href="https://kjr020.github.io/posts/vim_jump/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">VSCodeでファイルエクスプローラのアイコンが消えたときの対処法
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>経緯 VSCodeを使用していた。 サイドバーのメニューでファイルエクスプローラーをドラッグしたら、アイコンが消えた。
-以前にも戻し方が分からず調べた事があったが、忘れてしまった。 2度ある事は3度あるかもしれないので、まとめておく。
-対処法 コマンドパレットからリセットすれば、初期状態に戻せる。
-‘&gt;View: Reset View Locations’
-もっと良い方法があったら、調べて追記したい。
-参考 https://www.webdesignleaves.com/wp/htmlcss/2294/#google_vignette </p>
-  </div>
-  <footer class="entry-footer"><span title='2024-08-25 17:03:17 +0900 JST'>August 25, 2024</span>&nbsp;·&nbsp;KJR020</footer>
-  <a class="entry-link" aria-label="post link to VSCodeでファイルエクスプローラのアイコンが消えたときの対処法" href="https://kjr020.github.io/posts/vscode%E3%81%A7%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%A8%E3%82%AF%E3%82%B9%E3%83%97%E3%83%AD%E3%83%BC%E3%83%A9%E3%81%AE%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3%E3%81%8C%E6%B6%88%E3%81%88%E3%81%9F%E3%81%A8%E3%81%8D%E3%81%AE%E5%AF%BE%E5%87%A6%E6%B3%95/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">VSCodeのtaskについて調べた
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>経緯 VSCode上でTypeScriptのデバッグをしたいと思って調べた。 やり方として、launch.json上で、TypeScriptのコンパイルするtaskを定義して、
-デバッグ前に呼び出し実行させる必要があるという事を学んだ。
-taskについてよく知らなかったため調べてみた。
-Taskとは？ VSCodeには、コマンドライン上の一連の作業をコードとして定義し、呼出せるTask機能があるらしい。
-今のところ理解した情報は以下の通り
-tasks.json上で定義できる デバッグ前に呼び出して実行できる(launch.jsonに&#34;preLaunchTask&#34;として設定する) 印象としては、GitHub ActionsやPower Automateと似ていると思った。
-細かい記法など調べながらであれば、なんとか使えそう。
-参考 公式ドキュメント 2022-09-21-VSCodeのTasks機能を使ってまとめてコマンドを実行しよう - 心のデブを信じろ 【VS Code】tasks.jsonで決まった作業を自動化する </p>
-  </div>
-  <footer class="entry-footer"><span title='2024-08-25 17:03:17 +0900 JST'>August 25, 2024</span>&nbsp;·&nbsp;KJR020</footer>
-  <a class="entry-link" aria-label="post link to VSCodeのtaskについて調べた" href="https://kjr020.github.io/posts/vscode_tasks/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">WinSWとは
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>経緯 Windows Server上で実行するDjangoとnginxのプロセスをサービスとして登録したいと考えた。
-当初、NSSMを使用することを検討したが、セキュリティツールで弾かれた。
-開発も止まっている様子なので、WinSWを使うことにした。
-概要 Windows Service Wrapperの略らしい。
-Windows上でサービスとしてプロセスを登録するためのツール。
-サービスとして登録するための設定ファイル(xml形式)を作成し、installコマンドを実行することで、サービスとして登録できる。 使い勝手としては、手頃で良さそう。 いつかまとめる…かも
-参考 https://github.com/winsw/winsw https://kiririmode.hatenablog.jp/entry/20170407/1491490800 https://qiita.com/moni-hide/items/fd26fb223f2d4736cf55 https://www.rinsymbol.net/entry/2022/03/13/191249 </p>
-  </div>
-  <footer class="entry-footer"><span title='2024-08-25 17:03:17 +0900 JST'>August 25, 2024</span>&nbsp;·&nbsp;KJR020</footer>
-  <a class="entry-link" aria-label="post link to WinSWとは" href="https://kjr020.github.io/posts/winsw/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">ソケットについて
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>経緯 「DockerのCLIがうまくdocker engineと接続できない」という事があったため、Dockerについて調べた。
-HTTPで通信しているという事をfukabori.FMで聞いた事があったので、解決に向けて調査を進めた。
-その最中、コンテナ間のHTTP通信は、UNIXソケットを介して実行されていることを知った。
-UNIXソケットは、ネットワークを介さずにプロセス間通信を行うための仕組みらしい。
-ネットワークスタックを通過することなく、高速でセキュアな通信が可能とのこと。
-UNIXソケット以外のソケットについても調べてみた。
-ソケット TCPソケット:
-ネットワークを通じての信頼性の高い、順序正しいデータ伝送が可能 コネクション指向のプロトコルで、データが正確に、確実に届くことを保証する UDPソケット:
-ネットワークを通じての高速だが信頼性の低いデータ伝送 コネクションレスプロトコルで、オーバーヘッドが少なく高速。データの順序や完全性は保証されない Rawソケット:
-低レベルのネットワークプロトコルアクセス。カスタムプロトコルの実装やネットワークトラフィックの監視に使用 ヘッダを含めたパケットを直接読み書きする能力を持ち、通常のデータ転送よりもさらに詳細な制御が可能 Bluetoothソケット:
-Bluetoothデバイス間の通信 低エネルギーネットワークでの短距離無線通信に適している </p>
-  </div>
-  <footer class="entry-footer"><span title='2024-08-25 17:03:17 +0900 JST'>August 25, 2024</span>&nbsp;·&nbsp;KJR020</footer>
-  <a class="entry-link" aria-label="post link to ソケットについて" href="https://kjr020.github.io/posts/%E3%82%BD%E3%82%B1%E3%83%83%E3%83%88%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/"></a>
+  <a class="entry-link" aria-label="post link to Vimのジャンプ" href="http://localhost:1313/posts/vim_jump/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
-    <a class="prev" href="https://kjr020.github.io/posts/">
+    <a class="prev" href="http://localhost:1313/posts/">
       «&nbsp;Prev&nbsp;
     </a>
-    <a class="next" href="https://kjr020.github.io/posts/page/3/">Next&nbsp;&nbsp;»
+    <a class="next" href="http://localhost:1313/posts/page/3/">Next&nbsp;&nbsp;»
     </a>
   </nav>
 </footer>
     </main>
     
 <footer class="footer">
-        <span>&copy; 2024 <a href="https://kjr020.github.io/">KJR020&#39;s Blog</a></span> · 
+        <span>&copy; 2024 <a href="http://localhost:1313/">KJR020&#39;s Blog</a></span> · 
 
     <span>
         Powered by
