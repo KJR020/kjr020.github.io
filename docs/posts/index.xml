@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Posts on KJR020&#39;s Blog</title>
-    <link>http://localhost:1313/posts/</link>
+    <link>https://kjr020.github.io/posts/</link>
     <description>Recent content in Posts on KJR020&#39;s Blog</description>
     <generator>Hugo -- 0.134.0</generator>
     <language>ja</language>
     <lastBuildDate>Fri, 27 Sep 2024 07:43:52 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://kjr020.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Vue3 Tutorial Step9 ライフサイクルとテンプレート参照</title>
-      <link>http://localhost:1313/posts/vue3tutorial9/</link>
+      <link>https://kjr020.github.io/posts/vue/vue3tutorial9/</link>
       <pubDate>Fri, 27 Sep 2024 07:43:52 +0900</pubDate>
-      <guid>http://localhost:1313/posts/vue3tutorial9/</guid>
+      <guid>https://kjr020.github.io/posts/vue/vue3tutorial9/</guid>
       <description>&lt;h2 id=&#34;ライフサイクルとテンプレート参照&#34;&gt;ライフサイクルとテンプレート参照&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://ja.vuejs.org/tutorial/#step-8&#34;&gt;https://ja.vuejs.org/tutorial/#step-8&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;onMounted&lt;/code&gt;を例にライフサイクルフックを学習。ライフサイクルフックは、コンポーネントのライフサイクル（生成から削除されるまで）のイベントに応じて、コールバック関数を設定して処理を実行する。&lt;/p&gt;
@@ -33,9 +33,9 @@
     </item>
     <item>
       <title>Vue3 Tutorial8 算出プロパティ</title>
-      <link>http://localhost:1313/posts/vue3tutorial8/</link>
+      <link>https://kjr020.github.io/posts/vue/vue3tutorial8/</link>
       <pubDate>Thu, 26 Sep 2024 07:02:19 +0900</pubDate>
-      <guid>http://localhost:1313/posts/vue3tutorial8/</guid>
+      <guid>https://kjr020.github.io/posts/vue/vue3tutorial8/</guid>
       <description>&lt;h2 id=&#34;vue3の復習-tutorial-step8&#34;&gt;Vue3の復習 tutorial-step8&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://ja.vuejs.org/tutorial/#step-8&#34;&gt;https://ja.vuejs.org/tutorial/#step-8&lt;/a&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -80,11 +80,11 @@
     </item>
     <item>
       <title>Vue3の復習 tutorial-step4-7</title>
-      <link>http://localhost:1313/posts/vue3tutorial4-7/</link>
+      <link>https://kjr020.github.io/posts/vue/vue3tutorial4-7/</link>
       <pubDate>Mon, 23 Sep 2024 06:15:58 +0900</pubDate>
-      <guid>http://localhost:1313/posts/vue3tutorial4-7/</guid>
+      <guid>https://kjr020.github.io/posts/vue/vue3tutorial4-7/</guid>
       <description>&lt;p&gt;今度の案件でVue3を使うことになった
-１年ほど前に少しだけ触ったことがあるが、案件に備えてチュートリアルで復習する&lt;/p&gt;
+たしか１年ほど前に少しだけ触ったことがあるが、案件に備えてチュートリアルで復習する&lt;/p&gt;
 &lt;h2 id=&#34;イベントリスナー-v-on&#34;&gt;イベントリスナー &lt;code&gt;v-on&lt;/code&gt;&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://ja.vuejs.org/tutorial/#step-4&#34;&gt;https://ja.vuejs.org/tutorial/#step-4&lt;/a&gt;&lt;/li&gt;
@@ -130,9 +130,9 @@
     </item>
     <item>
       <title>Svelte Reactivity Tutorial Notes</title>
-      <link>http://localhost:1313/posts/sveltereactivity/</link>
+      <link>https://kjr020.github.io/posts/sveltereactivity/</link>
       <pubDate>Sun, 22 Sep 2024 05:39:36 +0900</pubDate>
-      <guid>http://localhost:1313/posts/sveltereactivity/</guid>
+      <guid>https://kjr020.github.io/posts/sveltereactivity/</guid>
       <description>&lt;p&gt;Svelteの学習メモ。
 &lt;a href=&#34;https://learn.svelte.jp/tutorial/updating-arrays-and-objects&#34;&gt;https://learn.svelte.jp/tutorial/updating-arrays-and-objects&lt;/a&gt;の内容&lt;/p&gt;
 &lt;ul&gt;
@@ -158,9 +158,9 @@
     </item>
     <item>
       <title>DbCについて調べた</title>
-      <link>http://localhost:1313/posts/dbc%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E8%AA%BF%E3%81%B9%E3%81%9F/</link>
+      <link>https://kjr020.github.io/posts/dbc%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E8%AA%BF%E3%81%B9%E3%81%9F/</link>
       <pubDate>Thu, 19 Sep 2024 20:32:22 +0900</pubDate>
-      <guid>http://localhost:1313/posts/dbc%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E8%AA%BF%E3%81%B9%E3%81%9F/</guid>
+      <guid>https://kjr020.github.io/posts/dbc%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E8%AA%BF%E3%81%B9%E3%81%9F/</guid>
       <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
 &lt;p&gt;DbC(Design by Contract)というプログラミング設計手法について、達人プログラマーを読んでいて知った。
 あらかじめ決めた契約を満たすようにプログラムを設計する手法らしい。&lt;/p&gt;
@@ -199,9 +199,9 @@ Wikipediaを見てみると、&lt;/p&gt;
     </item>
     <item>
       <title>Pythonの組み込み関数superについて</title>
-      <link>http://localhost:1313/posts/python%E3%81%AE%E7%B5%84%E3%81%BF%E8%BE%BC%E3%81%BF%E9%96%A2%E6%95%B0super%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/</link>
+      <link>https://kjr020.github.io/posts/python%E3%81%AE%E7%B5%84%E3%81%BF%E8%BE%BC%E3%81%BF%E9%96%A2%E6%95%B0super%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/</link>
       <pubDate>Tue, 03 Sep 2024 21:51:30 +0900</pubDate>
-      <guid>http://localhost:1313/posts/python%E3%81%AE%E7%B5%84%E3%81%BF%E8%BE%BC%E3%81%BF%E9%96%A2%E6%95%B0super%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/</guid>
+      <guid>https://kjr020.github.io/posts/python%E3%81%AE%E7%B5%84%E3%81%BF%E8%BE%BC%E3%81%BF%E9%96%A2%E6%95%B0super%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/</guid>
       <description>&lt;p&gt;Python組み込み関数のsuperについて調べたことをまとめる&lt;/p&gt;
 &lt;h2 id=&#34;経緯&#34;&gt;経緯&lt;/h2&gt;
 &lt;p&gt;super()について、ライブラリの実装を読んでいると時々目にしていたが、&lt;br&gt;
@@ -239,9 +239,9 @@ super().get()とかsuper().post()とか具体的に動かしてみるとする&l
     </item>
     <item>
       <title>ValueObjectとは</title>
-      <link>http://localhost:1313/posts/valueobject%E3%81%A8%E3%81%AF/</link>
+      <link>https://kjr020.github.io/posts/valueobject%E3%81%A8%E3%81%AF/</link>
       <pubDate>Thu, 29 Aug 2024 07:43:34 +0900</pubDate>
-      <guid>http://localhost:1313/posts/valueobject%E3%81%A8%E3%81%AF/</guid>
+      <guid>https://kjr020.github.io/posts/valueobject%E3%81%A8%E3%81%AF/</guid>
       <description>&lt;h3 id=&#34;経緯&#34;&gt;経緯&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&#34;https://zenn.dev/339/articles/e3c174fdcc083e&#34;&gt;https://zenn.dev/339/articles/e3c174fdcc083e&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;を読んでいて、バリューオブジェクトの理解が曖昧だなと思ったので再確認&lt;br&gt;
@@ -261,9 +261,9 @@ A small simple object, like money or a date range, whose equality isn&amp;rsquo;
     </item>
     <item>
       <title>CRLFについて</title>
-      <link>http://localhost:1313/posts/crlf%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/</link>
+      <link>https://kjr020.github.io/posts/crlf%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/</link>
       <pubDate>Sun, 25 Aug 2024 17:06:03 +0900</pubDate>
-      <guid>http://localhost:1313/posts/crlf%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/</guid>
+      <guid>https://kjr020.github.io/posts/crlf%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/</guid>
       <description>&lt;h3 id=&#34;背景&#34;&gt;背景&lt;/h3&gt;
 &lt;p&gt;８月からWebエンジニアに転職し、業務でmacOSを使用することになった。&lt;br&gt;
 学生時代ぶりのmacOSで、ターミナルの操作や環境構築に戸惑いを感じることが多い。
@@ -287,9 +287,9 @@ macOS(unix系OS)では、LFのみを改行コードとして使用している�
     </item>
     <item>
       <title>Cookieとは</title>
-      <link>http://localhost:1313/posts/cookie%E3%81%A8%E3%81%AF/</link>
+      <link>https://kjr020.github.io/posts/cookie%E3%81%A8%E3%81%AF/</link>
       <pubDate>Sun, 25 Aug 2024 17:03:17 +0900</pubDate>
-      <guid>http://localhost:1313/posts/cookie%E3%81%A8%E3%81%AF/</guid>
+      <guid>https://kjr020.github.io/posts/cookie%E3%81%A8%E3%81%AF/</guid>
       <description>&lt;h1 id=&#34;cookieについて&#34;&gt;Cookieについて&lt;/h1&gt;
 &lt;p&gt;技術面接に関して、どのような事を聞かれるのか気になった&lt;br&gt;
 Cookieについて、十分に理解してなかったと気づいた&lt;/p&gt;
@@ -321,9 +321,9 @@ Edgeでは、下記のpathに存在する&lt;br&gt;
     </item>
     <item>
       <title>CORSに関するメモ</title>
-      <link>http://localhost:1313/posts/cors%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E3%83%A1%E3%83%A2/</link>
+      <link>https://kjr020.github.io/posts/cors%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E3%83%A1%E3%83%A2/</link>
       <pubDate>Sun, 25 Aug 2024 17:03:17 +0900</pubDate>
-      <guid>http://localhost:1313/posts/cors%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E3%83%A1%E3%83%A2/</guid>
+      <guid>https://kjr020.github.io/posts/cors%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E3%83%A1%E3%83%A2/</guid>
       <description>&lt;h2 id=&#34;経緯&#34;&gt;経緯&lt;/h2&gt;
 &lt;p&gt;Djangoの本番環境を構築しているとき、CORSの設定をしないと、CORSエラーが発生しコンテンツが読み込めないことがあった。
 CORSとは、Cross-Origin Resource Sharingの略で、異なるオリジン間でのリソース共有を許可するための仕組みらしいが、
@@ -359,9 +359,9 @@ CORSポリシーは、リクエストを送信する際に、リクエストヘ�
     </item>
     <item>
       <title>Djangoチュートリアルその1</title>
-      <link>http://localhost:1313/posts/django%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB%E3%81%9D%E3%81%AE1/</link>
+      <link>https://kjr020.github.io/posts/django%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB%E3%81%9D%E3%81%AE1/</link>
       <pubDate>Sun, 25 Aug 2024 17:03:17 +0900</pubDate>
-      <guid>http://localhost:1313/posts/django%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB%E3%81%9D%E3%81%AE1/</guid>
+      <guid>https://kjr020.github.io/posts/django%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB%E3%81%9D%E3%81%AE1/</guid>
       <description>&lt;p&gt;チュートリアルでは、簡単な(Poll)アプリケーションの作成に取り組む。
 Pollアプリケーションでは、２つのサイトからなる。&lt;/p&gt;
 &lt;ul&gt;
@@ -414,9 +414,9 @@ pollsは独自のURLconfを持っている&lt;/p&gt;
     </item>
     <item>
       <title>Ed25519とは</title>
-      <link>http://localhost:1313/posts/ed25519%E3%81%A8%E3%81%AF/</link>
+      <link>https://kjr020.github.io/posts/ed25519%E3%81%A8%E3%81%AF/</link>
       <pubDate>Sun, 25 Aug 2024 17:03:17 +0900</pubDate>
-      <guid>http://localhost:1313/posts/ed25519%E3%81%A8%E3%81%AF/</guid>
+      <guid>https://kjr020.github.io/posts/ed25519%E3%81%A8%E3%81%AF/</guid>
       <description>&lt;h2 id=&#34;経緯&#34;&gt;経緯&lt;/h2&gt;
 &lt;p&gt;Giteaサーバーに登録しようと思い、sshの暗号キーペアを生成していた。
 暗号化方式で、それまではrsaを選択していたが、ed25519という方式が良いという記事を見かけたので、それを選択した。
@@ -432,9 +432,9 @@ Ed25519の利点とRSAとの違いについて調べた。&lt;/p&gt;
     </item>
     <item>
       <title>git merge strategyとは</title>
-      <link>http://localhost:1313/posts/git_merge_strategy/</link>
+      <link>https://kjr020.github.io/posts/git_merge_strategy/</link>
       <pubDate>Sun, 25 Aug 2024 17:03:17 +0900</pubDate>
-      <guid>http://localhost:1313/posts/git_merge_strategy/</guid>
+      <guid>https://kjr020.github.io/posts/git_merge_strategy/</guid>
       <description>&lt;h2 id=&#34;経緯&#34;&gt;経緯&lt;/h2&gt;
 &lt;p&gt;Git を使っていて、 &amp;lsquo;ort&amp;rsquo; strategyについて気になった。
 それまであまり気にしていなかったが、調べてみた&lt;/p&gt;
@@ -455,9 +455,9 @@ Ed25519の利点とRSAとの違いについて調べた。&lt;/p&gt;
     </item>
     <item>
       <title>git_stash</title>
-      <link>http://localhost:1313/posts/git_stash/</link>
+      <link>https://kjr020.github.io/posts/git_stash/</link>
       <pubDate>Sun, 25 Aug 2024 17:03:17 +0900</pubDate>
-      <guid>http://localhost:1313/posts/git_stash/</guid>
+      <guid>https://kjr020.github.io/posts/git_stash/</guid>
       <description>&lt;h2 id=&#34;経緯s&#34;&gt;経緯S&lt;/h2&gt;
 &lt;p&gt;コマンドラインから&lt;code&gt;git stash&lt;/code&gt;しようとして&lt;br&gt;
 使い方を忘れてしまった。ちゃんと覚えていなかった。
@@ -471,9 +471,9 @@ Ed25519の利点とRSAとの違いについて調べた。&lt;/p&gt;
     </item>
     <item>
       <title>gitでcommit userを変更する</title>
-      <link>http://localhost:1313/posts/git_fix_commit_user/</link>
+      <link>https://kjr020.github.io/posts/git_fix_commit_user/</link>
       <pubDate>Sun, 25 Aug 2024 17:03:17 +0900</pubDate>
-      <guid>http://localhost:1313/posts/git_fix_commit_user/</guid>
+      <guid>https://kjr020.github.io/posts/git_fix_commit_user/</guid>
       <description>&lt;h2 id=&#34;経緯&#34;&gt;経緯&lt;/h2&gt;
 &lt;p&gt;gitを使用していたとき、
 「リモートリポジトリにpush済みのコミットの、ユーザー情報を修正したい」
@@ -499,9 +499,9 @@ Ed25519の利点とRSAとの違いについて調べた。&lt;/p&gt;
     </item>
     <item>
       <title>PromiseAll</title>
-      <link>http://localhost:1313/posts/promiseall/</link>
+      <link>https://kjr020.github.io/posts/promiseall/</link>
       <pubDate>Sun, 25 Aug 2024 17:03:17 +0900</pubDate>
-      <guid>http://localhost:1313/posts/promiseall/</guid>
+      <guid>https://kjr020.github.io/posts/promiseall/</guid>
       <description>&lt;p&gt;Promise.allについて調べたときのメモ&lt;/p&gt;
 &lt;h2 id=&#34;経緯&#34;&gt;経緯&lt;/h2&gt;
 &lt;p&gt;なぜか忘れたけど、Promise.allについて調べていた。
@@ -526,9 +526,9 @@ iterableなPromiseを入力として受取る。
     </item>
     <item>
       <title>Reactのstate管理</title>
-      <link>http://localhost:1313/posts/react%E3%81%AEstate%E7%AE%A1%E7%90%86/</link>
+      <link>https://kjr020.github.io/posts/react%E3%81%AEstate%E7%AE%A1%E7%90%86/</link>
       <pubDate>Sun, 25 Aug 2024 17:03:17 +0900</pubDate>
-      <guid>http://localhost:1313/posts/react%E3%81%AEstate%E7%AE%A1%E7%90%86/</guid>
+      <guid>https://kjr020.github.io/posts/react%E3%81%AEstate%E7%AE%A1%E7%90%86/</guid>
       <description>&lt;h2 id=&#34;経緯&#34;&gt;経緯&lt;/h2&gt;
 &lt;p&gt;転職が決まりWEBエンジニアとして働くことになった。
 転職先では、フロントエンド・バックエンドと別れずに開発を行うらしい。Reactについて学習を始めた。
@@ -552,9 +552,9 @@ Context APIを使用することで、コンポーネント間でstateを共有�
     </item>
     <item>
       <title>SQLServerの認証方式</title>
-      <link>http://localhost:1313/posts/sqlserver%E3%81%AE%E8%AA%8D%E8%A8%BC%E6%96%B9%E5%BC%8F/</link>
+      <link>https://kjr020.github.io/posts/sqlserver%E3%81%AE%E8%AA%8D%E8%A8%BC%E6%96%B9%E5%BC%8F/</link>
       <pubDate>Sun, 25 Aug 2024 17:03:17 +0900</pubDate>
-      <guid>http://localhost:1313/posts/sqlserver%E3%81%AE%E8%AA%8D%E8%A8%BC%E6%96%B9%E5%BC%8F/</guid>
+      <guid>https://kjr020.github.io/posts/sqlserver%E3%81%AE%E8%AA%8D%E8%A8%BC%E6%96%B9%E5%BC%8F/</guid>
       <description>&lt;h2 id=&#34;経緯&#34;&gt;経緯&lt;/h2&gt;
 &lt;p&gt;デプロイ先サーバーの認証情報に関して、聞き取りをした。
 その際に、SQL Serverの認証方式について、どの認証方式なのか？曖昧なまま話していた。
@@ -584,9 +584,9 @@ SQL Serverの認証情報を調べてみた。&lt;/p&gt;
     </item>
     <item>
       <title>VIFとは</title>
-      <link>http://localhost:1313/posts/vif%E3%81%A8%E3%81%AF/</link>
+      <link>https://kjr020.github.io/posts/vif%E3%81%A8%E3%81%AF/</link>
       <pubDate>Sun, 25 Aug 2024 17:03:17 +0900</pubDate>
-      <guid>http://localhost:1313/posts/vif%E3%81%A8%E3%81%AF/</guid>
+      <guid>https://kjr020.github.io/posts/vif%E3%81%A8%E3%81%AF/</guid>
       <description>&lt;h2 id=&#34;経緯&#34;&gt;経緯&lt;/h2&gt;
 &lt;p&gt;製造業におけるデータ分析関連のカンファレンスで発表を聞いていた。&lt;br&gt;
 VIFってなんだっけ？と思った。&lt;br&gt;
@@ -621,9 +621,9 @@ VIFでは、すべての変数を計算に用いるため、全変数間の相�
     </item>
     <item>
       <title>Vimのジャンプ</title>
-      <link>http://localhost:1313/posts/vim_jump/</link>
+      <link>https://kjr020.github.io/posts/vim_jump/</link>
       <pubDate>Sun, 25 Aug 2024 17:03:17 +0900</pubDate>
-      <guid>http://localhost:1313/posts/vim_jump/</guid>
+      <guid>https://kjr020.github.io/posts/vim_jump/</guid>
       <description>&lt;h2 id=&#34;経緯&#34;&gt;経緯&lt;/h2&gt;
 &lt;p&gt;毎回ジャンプして戻るためのコマンドを覚えられない。
 &lt;code&gt;ctrl + o&lt;/code&gt;や&lt;code&gt;ctrl + i&lt;/code&gt;というキーバインドが操作に紐づくイメージがなかったため、詳しく調べて、定着させようと思った。&lt;/p&gt;
@@ -655,9 +655,9 @@ i は &amp;ldquo;Incoming Position&amp;rdquo;
     </item>
     <item>
       <title>VSCodeでファイルエクスプローラのアイコンが消えたときの対処法</title>
-      <link>http://localhost:1313/posts/vscode%E3%81%A7%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%A8%E3%82%AF%E3%82%B9%E3%83%97%E3%83%AD%E3%83%BC%E3%83%A9%E3%81%AE%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3%E3%81%8C%E6%B6%88%E3%81%88%E3%81%9F%E3%81%A8%E3%81%8D%E3%81%AE%E5%AF%BE%E5%87%A6%E6%B3%95/</link>
+      <link>https://kjr020.github.io/posts/vscode%E3%81%A7%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%A8%E3%82%AF%E3%82%B9%E3%83%97%E3%83%AD%E3%83%BC%E3%83%A9%E3%81%AE%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3%E3%81%8C%E6%B6%88%E3%81%88%E3%81%9F%E3%81%A8%E3%81%8D%E3%81%AE%E5%AF%BE%E5%87%A6%E6%B3%95/</link>
       <pubDate>Sun, 25 Aug 2024 17:03:17 +0900</pubDate>
-      <guid>http://localhost:1313/posts/vscode%E3%81%A7%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%A8%E3%82%AF%E3%82%B9%E3%83%97%E3%83%AD%E3%83%BC%E3%83%A9%E3%81%AE%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3%E3%81%8C%E6%B6%88%E3%81%88%E3%81%9F%E3%81%A8%E3%81%8D%E3%81%AE%E5%AF%BE%E5%87%A6%E6%B3%95/</guid>
+      <guid>https://kjr020.github.io/posts/vscode%E3%81%A7%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%A8%E3%82%AF%E3%82%B9%E3%83%97%E3%83%AD%E3%83%BC%E3%83%A9%E3%81%AE%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3%E3%81%8C%E6%B6%88%E3%81%88%E3%81%9F%E3%81%A8%E3%81%8D%E3%81%AE%E5%AF%BE%E5%87%A6%E6%B3%95/</guid>
       <description>&lt;h2 id=&#34;経緯&#34;&gt;経緯&lt;/h2&gt;
 &lt;p&gt;VSCodeを使用していた。
 サイドバーのメニューでファイルエクスプローラーをドラッグしたら、アイコンが消えた。&lt;br&gt;
@@ -674,9 +674,9 @@ i は &amp;ldquo;Incoming Position&amp;rdquo;
     </item>
     <item>
       <title>VSCodeのtaskについて調べた</title>
-      <link>http://localhost:1313/posts/vscode_tasks/</link>
+      <link>https://kjr020.github.io/posts/vscode_tasks/</link>
       <pubDate>Sun, 25 Aug 2024 17:03:17 +0900</pubDate>
-      <guid>http://localhost:1313/posts/vscode_tasks/</guid>
+      <guid>https://kjr020.github.io/posts/vscode_tasks/</guid>
       <description>&lt;h2 id=&#34;経緯&#34;&gt;経緯&lt;/h2&gt;
 &lt;p&gt;VSCode上でTypeScriptのデバッグをしたいと思って調べた。
 やり方として、launch.json上で、TypeScriptのコンパイルするtaskを定義して、&lt;br&gt;
@@ -700,9 +700,9 @@ taskについてよく知らなかったため調べてみた。&lt;/p&gt;
     </item>
     <item>
       <title>WinSWとは</title>
-      <link>http://localhost:1313/posts/winsw/</link>
+      <link>https://kjr020.github.io/posts/winsw/</link>
       <pubDate>Sun, 25 Aug 2024 17:03:17 +0900</pubDate>
-      <guid>http://localhost:1313/posts/winsw/</guid>
+      <guid>https://kjr020.github.io/posts/winsw/</guid>
       <description>&lt;h2 id=&#34;経緯&#34;&gt;経緯&lt;/h2&gt;
 &lt;p&gt;Windows Server上で実行するDjangoとnginxのプロセスをサービスとして登録したいと考えた。&lt;br&gt;
 当初、NSSMを使用することを検討したが、セキュリティツールで弾かれた。&lt;br&gt;
@@ -723,9 +723,9 @@ Windows上でサービスとしてプロセスを登録するためのツール�
     </item>
     <item>
       <title>ソケットについて</title>
-      <link>http://localhost:1313/posts/%E3%82%BD%E3%82%B1%E3%83%83%E3%83%88%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/</link>
+      <link>https://kjr020.github.io/posts/%E3%82%BD%E3%82%B1%E3%83%83%E3%83%88%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/</link>
       <pubDate>Sun, 25 Aug 2024 17:03:17 +0900</pubDate>
-      <guid>http://localhost:1313/posts/%E3%82%BD%E3%82%B1%E3%83%83%E3%83%88%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/</guid>
+      <guid>https://kjr020.github.io/posts/%E3%82%BD%E3%82%B1%E3%83%83%E3%83%88%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/</guid>
       <description>&lt;h2 id=&#34;経緯&#34;&gt;経緯&lt;/h2&gt;
 &lt;p&gt;「DockerのCLIがうまくdocker engineと接続できない」という事があったため、Dockerについて調べた。&lt;br&gt;
 HTTPで通信しているという事をfukabori.FMで聞いた事があったので、解決に向けて調査を進めた。&lt;br&gt;
@@ -767,9 +767,9 @@ UNIXソケットは、ネットワークを介さずにプロセス間通信を�
     </item>
     <item>
       <title>無線キーボードが遅延する仕組み</title>
-      <link>http://localhost:1313/posts/%E7%84%A1%E7%B7%9A%E3%82%AD%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%89%E3%81%8C%E9%81%85%E5%BB%B6%E3%81%99%E3%82%8B%E4%BB%95%E7%B5%84%E3%81%BF/</link>
+      <link>https://kjr020.github.io/posts/%E7%84%A1%E7%B7%9A%E3%82%AD%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%89%E3%81%8C%E9%81%85%E5%BB%B6%E3%81%99%E3%82%8B%E4%BB%95%E7%B5%84%E3%81%BF/</link>
       <pubDate>Sun, 25 Aug 2024 17:03:17 +0900</pubDate>
-      <guid>http://localhost:1313/posts/%E7%84%A1%E7%B7%9A%E3%82%AD%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%89%E3%81%8C%E9%81%85%E5%BB%B6%E3%81%99%E3%82%8B%E4%BB%95%E7%B5%84%E3%81%BF/</guid>
+      <guid>https://kjr020.github.io/posts/%E7%84%A1%E7%B7%9A%E3%82%AD%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%89%E3%81%8C%E9%81%85%E5%BB%B6%E3%81%99%E3%82%8B%E4%BB%95%E7%B5%84%E3%81%BF/</guid>
       <description>&lt;h2 id=&#34;無線キーボードの遅延がなぜ起きるのか&#34;&gt;無線キーボードの遅延がなぜ起きるのか？&lt;/h2&gt;
 &lt;p&gt;職場での雑談中に、Logicoolのワイヤレスキーボードが不調であるという話が出た。&lt;br&gt;
 操作に遅延がある、または反応しないという問題があり、その原因を調べたところ、USB3.0の機器を使用している場合に2.4GHz帯の電波と干渉することがあることがわかった。&lt;/p&gt;

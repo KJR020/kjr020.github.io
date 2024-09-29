@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Cookie on KJR020&#39;s Blog</title>
-    <link>http://localhost:1313/tags/cookie/</link>
+    <link>https://kjr020.github.io/tags/cookie/</link>
     <description>Recent content in Cookie on KJR020&#39;s Blog</description>
     <generator>Hugo -- 0.134.0</generator>
     <language>ja</language>
     <lastBuildDate>Sun, 25 Aug 2024 17:03:17 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/cookie/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://kjr020.github.io/tags/cookie/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Cookieとは</title>
-      <link>http://localhost:1313/posts/cookie%E3%81%A8%E3%81%AF/</link>
+      <link>https://kjr020.github.io/posts/cookie%E3%81%A8%E3%81%AF/</link>
       <pubDate>Sun, 25 Aug 2024 17:03:17 +0900</pubDate>
-      <guid>http://localhost:1313/posts/cookie%E3%81%A8%E3%81%AF/</guid>
+      <guid>https://kjr020.github.io/posts/cookie%E3%81%A8%E3%81%AF/</guid>
       <description>&lt;h1 id=&#34;cookieについて&#34;&gt;Cookieについて&lt;/h1&gt;
 &lt;p&gt;技術面接に関して、どのような事を聞かれるのか気になった&lt;br&gt;
 Cookieについて、十分に理解してなかったと気づいた&lt;/p&gt;
