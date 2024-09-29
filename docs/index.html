@@ -168,12 +168,33 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">Vue3 Tutorial Step10 Watcher
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Vue3 Tutorial Step10 Watcher watcherについて学習した内容です。
+余談ですが、今回から文体を変えてみました。
+理由としては、口頭での説明力を鍛えるためです。
+「人に説明している場面を想像して文章を書く」という方法を取り入れてみました。
+Watcher について Watcherについての概要です。 Tutorialの内容を自分が咀嚼した、まとめたものです。 私の解釈がふくまれているため、正確な情報は公式ドキュメントを参照してください。
+watcherはVueのリアクティブシステムの中心的な機能のひとつ リアクティブな値の変化を監視して、副作用を伴う関数を実行することができる watchメソッドでは、監視するリアクティブな値(refメソッドを使って定義した変数)と、値が変化した時に実行されるコールバック関数を設定する チュートリアルでは、 その一例としてwatchを使用して監視対象が変更した際に、APIからデータを取得する例を示しています。
+大まかな流れは以下の通りです。
+button要素がクリックされると、リアクティブなtodoIdの値がインクリメントされる todoIdの値が変化した時に、fetchData関数が実行される todoIdはボタンのclickイベントでインクリメントされ、fetchData関数がトリガーされる fetchData関数内でREST APIのエンドポイントに対してgetリクエストを送信 todoIdに対応するデータを取得して、todoDataに格納する todoDataの変化を監視して、todoDataが変化した時に、todoDataを表示する チュートリアルのコードを引用します。
+&lt;script setup&gt; import { ref, watch } from &#39;vue&#39; const todoId = ref(0) const todoData = ref(null) async function fetchData() { const response = await fetch( `https://jsonplaceholder.typicode.com/todos/${todoId.value}` ) todoData.value = await response.json() } fetchData() watch(todoId, (todoId) =&gt; { fetchData(); }) &lt;template&gt; &lt;p&gt;Todo id: {{ todoId }}&lt;/p&gt; &lt;button @click=&#34;todoId&#43;&#43;&#34; :disabled=&#34;!todoData&#34;&gt;Fetch Next&lt;/button&gt; &lt;p v-if=&#34;todoData&#34;&gt;Loading...&lt;/p&gt; &lt;pre v-else&gt;{{todoData}}&lt;/pre&gt; &lt;/template&gt; ...</p>
+  </div>
+  <footer class="entry-footer"><span title='2024-09-29 14:56:37 +0900 JST'>September 29, 2024</span>&nbsp;·&nbsp;KJR020</footer>
+  <a class="entry-link" aria-label="post link to Vue3 Tutorial Step10 Watcher" href="https://kjr020.github.io/posts/vue/vue3tutorial10/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">Vue3 Tutorial Step9 ライフサイクルとテンプレート参照
     </h2>
   </header>
   <div class="entry-content">
-    <p>ライフサイクルとテンプレート参照 https://ja.vuejs.org/tutorial/#step-8
-onMountedを例にライフサイクルフックを学習。ライフサイクルフックは、コンポーネントのライフサイクル（生成から削除されるまで）のイベントに応じて、コールバック関数を設定して処理を実行する。
+    <p>ライフサイクルとテンプレート参照 今回のチュートリアルでは、ライフサイクルフックとテンプレート参照について学習した。
+https://ja.vuejs.org/tutorial/#step-9 onMountedを例にライフサイクルフックを学習。
+ライフサイクルフック ライフサイクルフックは、コンポーネントのライフサイクル（生成から削除されるまで）のイベントに応じて、コールバック関数を設定して処理を実行する。
 &lt;script setup&gt; import { onMounted, ref } from &#39;vue&#39; const pElementRef = ref(null) onMounted(() =&gt; { pElementRef.value.textContent = &#34;Mounted!&#34; }) &lt;/script&gt; &lt;template&gt; &lt;p ref=&#34;pElementRef&#34;&gt;Hello&lt;/p&gt; &lt;/template&gt; ...</p>
   </div>
   <footer class="entry-footer"><span title='2024-09-27 07:43:52 +0900 JST'>September 27, 2024</span>&nbsp;·&nbsp;KJR020</footer>
@@ -328,24 +349,6 @@ https://learn.microsoft.com/ja-jp/microsoft-edge/devtools-guide-chromium/storage
   </div>
   <footer class="entry-footer"><span title='2024-08-25 17:03:17 +0900 JST'>August 25, 2024</span>&nbsp;·&nbsp;KJR020</footer>
   <a class="entry-link" aria-label="post link to Cookieとは" href="https://kjr020.github.io/posts/cookie%E3%81%A8%E3%81%AF/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">CORSに関するメモ
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>経緯 Djangoの本番環境を構築しているとき、CORSの設定をしないと、CORSエラーが発生しコンテンツが読み込めないことがあった。 CORSとは、Cross-Origin Resource Sharingの略で、異なるオリジン間でのリソース共有を許可するための仕組みらしいが、 あまり理解していなかったので、調べてみた。
-概要 CORS(Cross Origin Resource Sharing)は、異なるオリジン間で安全にリソース共有するための仕組みである。(XSSやCSRFなどのセキュリティ上のリスクがあるためである。) 通常ブラウザでは、異なるオリジン間でのリソース共有はセキュリティ上の理由から制限されている。SOP(Same Origin Policy)という制約がある。 主に、APIリクエストや非静的ファイルのリクエストに適用される。
-https://developer.mozilla.org/ja/docs/Web/Security/Same-origin_policy オリジンとは そもそもオリジンについて、明確な定義を知らないと気付いた。 オリジンは、スキーマ、ホスト、ポートの組み合わせで識別される。 RFC6454に定義されている。
-https://www.example.com:8080 上記の例では、httpsがスキーマ、www.example.comがFQDN、8080がポートである。
-SOP(Same Origin Policy) SOPは、異なるオリジン間でのリソース共有を制限するための仕組みである。 異なるオリジン間でのリソース共有は、クロスサイトスクリプティング(XSS)やクロスサイトリクエストフォージェリ(CSRF)などのセキュリティ上のリスクがあるため、制限されている。 セキュリティ的に外部のオリジンが信用できる場合,CORSによって制限を解除することができる。
-cors-headerを付与すると何が起こるのか CORSヘッダーを付与すると、 リクエストの際にブラウザはCORSポリシーに従ってリクエストを送信する。 CORSポリシーは、リクエストを送信する際に、リクエストヘッダーにOriginを付与する。 サーバーは、リクエストヘッダーのOriginを見て、リクエストを許可するかどうかを判断する。
-参考 https://datatracker.ietf.org/doc/html/rfc6454 https://qiita.com/shun198/items/9ebf19d8fd2c412396dd https://atmarkit.itmedia.co.jp/ait/articles/1311/26/news007.html </p>
-  </div>
-  <footer class="entry-footer"><span title='2024-08-25 17:03:17 +0900 JST'>August 25, 2024</span>&nbsp;·&nbsp;KJR020</footer>
-  <a class="entry-link" aria-label="post link to CORSに関するメモ" href="https://kjr020.github.io/posts/cors%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E3%83%A1%E3%83%A2/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

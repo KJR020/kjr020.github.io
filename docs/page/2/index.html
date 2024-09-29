@@ -138,6 +138,24 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">CORSに関するメモ
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>経緯 Djangoの本番環境を構築しているとき、CORSの設定をしないと、CORSエラーが発生しコンテンツが読み込めないことがあった。 CORSとは、Cross-Origin Resource Sharingの略で、異なるオリジン間でのリソース共有を許可するための仕組みらしいが、 あまり理解していなかったので、調べてみた。
+概要 CORS(Cross Origin Resource Sharing)は、異なるオリジン間で安全にリソース共有するための仕組みである。(XSSやCSRFなどのセキュリティ上のリスクがあるためである。) 通常ブラウザでは、異なるオリジン間でのリソース共有はセキュリティ上の理由から制限されている。SOP(Same Origin Policy)という制約がある。 主に、APIリクエストや非静的ファイルのリクエストに適用される。
+https://developer.mozilla.org/ja/docs/Web/Security/Same-origin_policy オリジンとは そもそもオリジンについて、明確な定義を知らないと気付いた。 オリジンは、スキーマ、ホスト、ポートの組み合わせで識別される。 RFC6454に定義されている。
+https://www.example.com:8080 上記の例では、httpsがスキーマ、www.example.comがFQDN、8080がポートである。
+SOP(Same Origin Policy) SOPは、異なるオリジン間でのリソース共有を制限するための仕組みである。 異なるオリジン間でのリソース共有は、クロスサイトスクリプティング(XSS)やクロスサイトリクエストフォージェリ(CSRF)などのセキュリティ上のリスクがあるため、制限されている。 セキュリティ的に外部のオリジンが信用できる場合,CORSによって制限を解除することができる。
+cors-headerを付与すると何が起こるのか CORSヘッダーを付与すると、 リクエストの際にブラウザはCORSポリシーに従ってリクエストを送信する。 CORSポリシーは、リクエストを送信する際に、リクエストヘッダーにOriginを付与する。 サーバーは、リクエストヘッダーのOriginを見て、リクエストを許可するかどうかを判断する。
+参考 https://datatracker.ietf.org/doc/html/rfc6454 https://qiita.com/shun198/items/9ebf19d8fd2c412396dd https://atmarkit.itmedia.co.jp/ait/articles/1311/26/news007.html </p>
+  </div>
+  <footer class="entry-footer"><span title='2024-08-25 17:03:17 +0900 JST'>August 25, 2024</span>&nbsp;·&nbsp;KJR020</footer>
+  <a class="entry-link" aria-label="post link to CORSに関するメモ" href="https://kjr020.github.io/posts/cors%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E3%83%A1%E3%83%A2/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">Djangoチュートリアルその1
     </h2>
   </header>
@@ -281,27 +299,6 @@ VIFでは、すべての変数を計算に用いるため、全変数間の相�
   </div>
   <footer class="entry-footer"><span title='2024-08-25 17:03:17 +0900 JST'>August 25, 2024</span>&nbsp;·&nbsp;KJR020</footer>
   <a class="entry-link" aria-label="post link to VIFとは" href="https://kjr020.github.io/posts/vif%E3%81%A8%E3%81%AF/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Vimのジャンプ
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>経緯 毎回ジャンプして戻るためのコマンドを覚えられない。 ctrl &#43; oやctrl &#43; iというキーバインドが操作に紐づくイメージがなかったため、詳しく調べて、定着させようと思った。
-コマンド ctrl &#43; o: ジャンプ前の位置に戻る ctrl &#43; i: 取り消したジャンプ操作を再実行 これらの覚え方を、ChatGPTに考えてもらったところ o は “Older Position” i は “Incoming Position” と覚えると良いと教えてくれた。 なるほど、これなら覚えられそうだ。
-ジャンプリスト GitHub Copilot chatに聞いてみたら、 ctrl &#43; oやctrl &#43; iはジャンプリストを参照しているという補足情報をもらった。
-ジャンプリストなるものが存在すると知った
-:jumpsコマンドから確認できる。
-チェンジリストジャンプ ジャンプリストのうち、ジャンプ後に変更があったものは、チェンジジャンプリストに記録されるらしい。
-これは便利な機能だと思った。
-:changesで表示ができる。
-g;で戻る。g,でやり直し。
-参考 https://vim-jp.org/vimdoc-ja/motion.html#jump-motions https://baubaubau.hatenablog.com/entry/2020/09/19/203537 </p>
-  </div>
-  <footer class="entry-footer"><span title='2024-08-25 17:03:17 +0900 JST'>August 25, 2024</span>&nbsp;·&nbsp;KJR020</footer>
-  <a class="entry-link" aria-label="post link to Vimのジャンプ" href="https://kjr020.github.io/posts/vim_jump/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

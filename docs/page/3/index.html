@@ -138,6 +138,27 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">Vimのジャンプ
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>経緯 毎回ジャンプして戻るためのコマンドを覚えられない。 ctrl &#43; oやctrl &#43; iというキーバインドが操作に紐づくイメージがなかったため、詳しく調べて、定着させようと思った。
+コマンド ctrl &#43; o: ジャンプ前の位置に戻る ctrl &#43; i: 取り消したジャンプ操作を再実行 これらの覚え方を、ChatGPTに考えてもらったところ o は “Older Position” i は “Incoming Position” と覚えると良いと教えてくれた。 なるほど、これなら覚えられそうだ。
+ジャンプリスト GitHub Copilot chatに聞いてみたら、 ctrl &#43; oやctrl &#43; iはジャンプリストを参照しているという補足情報をもらった。
+ジャンプリストなるものが存在すると知った
+:jumpsコマンドから確認できる。
+チェンジリストジャンプ ジャンプリストのうち、ジャンプ後に変更があったものは、チェンジジャンプリストに記録されるらしい。
+これは便利な機能だと思った。
+:changesで表示ができる。
+g;で戻る。g,でやり直し。
+参考 https://vim-jp.org/vimdoc-ja/motion.html#jump-motions https://baubaubau.hatenablog.com/entry/2020/09/19/203537 </p>
+  </div>
+  <footer class="entry-footer"><span title='2024-08-25 17:03:17 +0900 JST'>August 25, 2024</span>&nbsp;·&nbsp;KJR020</footer>
+  <a class="entry-link" aria-label="post link to Vimのジャンプ" href="https://kjr020.github.io/posts/vim_jump/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">VSCodeでファイルエクスプローラのアイコンが消えたときの対処法
     </h2>
   </header>
