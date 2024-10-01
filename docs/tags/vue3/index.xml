@@ -6,8 +6,40 @@
     <description>Recent content in Vue3 on KJR020&#39;s Blog</description>
     <generator>Hugo -- 0.134.0</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 29 Sep 2024 14:56:37 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 30 Sep 2024 07:09:08 +0900</lastBuildDate>
     <atom:link href="https://kjr020.github.io/tags/vue3/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vue3 Tutorial 11-14 ChildComponent</title>
+      <link>https://kjr020.github.io/posts/vue/vue3tutorial11-12/</link>
+      <pubDate>Mon, 30 Sep 2024 07:09:08 +0900</pubDate>
+      <guid>https://kjr020.github.io/posts/vue/vue3tutorial11-12/</guid>
+      <description>&lt;h2 id=&#34;おさらい&#34;&gt;おさらい&lt;/h2&gt;
+&lt;p&gt;Vue3のチュートリアルを進めています。
+前回は、VueのComponentの&lt;code&gt;watch&lt;/code&gt;について学習しました。
+Reactでいう&lt;code&gt;useEffect&lt;/code&gt;のようなもので、
+リアクティブな値の変化を監視して、副作用を伴う関数を実行することができる機能です。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;../Vue3Tutorial10.md&#34;&gt;前回の記事&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;child-component&#34;&gt;Child component&lt;/h2&gt;
+&lt;p&gt;今回は最終回で、チュートリアル11-12までまとめて学習します。
+ChildComponentと&lt;code&gt;Props&lt;/code&gt;について学習します。
+チュートリアルのリンクは以下です。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://ja.vuejs.org/tutorial/#step-11&#34;&gt;ChildComponent&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://ja.vuejs.org/tutorial/#step-12&#34;&gt;Props&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;step11-child-component&#34;&gt;Step11 Child Component&lt;/h3&gt;
+&lt;p&gt;Vueでは、コンポーネントの再利用するための仕組みが用意されています。
+それが、Child Componentです。
+子コンポーネントを作成して、親コンポーネントで使用することができます。&lt;/p&gt;
+&lt;p&gt;実際のチュートリアルのコードを見てみます
+Composition APIとSFC(Single File Component)を前提としています。&lt;/p&gt;
+&lt;h4 id=&#34;child-componentの作成&#34;&gt;Child Componentの作成&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-vue&#34; data-lang=&#34;vue&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;&amp;lt;!--&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;ChildComp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;vue&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;--&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;template&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;h2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;A&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;Child&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;Component&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;h2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;template&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pr</description>
+    </item>
     <item>
       <title>Vue3 Tutorial Step10 Watcher</title>
       <link>https://kjr020.github.io/posts/vue/vue3tutorial10/</link>
