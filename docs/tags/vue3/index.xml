@@ -41,17 +41,17 @@ Composition APIとSFC(Single File Component)を前提としています。&lt;/p
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pr</description>
     </item>
     <item>
-      <title>Vue3 Tutorial Step10 Watcher</title>
+      <title>Vue3 Tutorial Step10 watch</title>
       <link>https://kjr020.github.io/posts/vue/vue3tutorial10/</link>
       <pubDate>Sun, 29 Sep 2024 14:56:37 +0900</pubDate>
       <guid>https://kjr020.github.io/posts/vue/vue3tutorial10/</guid>
-      <description>&lt;h2 id=&#34;vue3-tutorial-step10-watcher&#34;&gt;Vue3 Tutorial Step10 Watcher&lt;/h2&gt;
-&lt;p&gt;watcherについて学習した内容です。&lt;/p&gt;
-&lt;p&gt;余談ですが、今回から文体を変えてみました。&lt;br&gt;
-理由としては、口頭での説明力を鍛えるためです。&lt;br&gt;
-「人に説明している場面を想像して文章を書く」という方法を取り入れてみました。&lt;/p&gt;
-&lt;h3 id=&#34;watcher-について&#34;&gt;Watcher について&lt;/h3&gt;
-&lt;p&gt;Watcherについての概要です。
+      <description>&lt;h2 id=&#34;vue3-tutorial-step10-watch&#34;&gt;Vue3 Tutorial Step10 watch&lt;/h2&gt;
+&lt;p&gt;watchについて学習した内容です。&lt;/p&gt;
+&lt;p&gt;今回から文体を変えてみました。&lt;br&gt;
+理由としては、「だ。である。」調のより「です。ます。」調の文章を書くときのほうが、「人に説明するつもりで書く」という意識が働くと感じたためです。
+より話し言葉に近い文体だからか、意識に差があるように感じます。&lt;/p&gt;
+&lt;h3 id=&#34;watch-について&#34;&gt;watch について&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;watch&lt;/code&gt;についての概要です。
 Tutorialの内容を自分が咀嚼した、まとめたものです。
 私の解釈がふくまれているため、正確な情報は公式ドキュメントを参照してください。&lt;/p&gt;
 &lt;ul&gt;
