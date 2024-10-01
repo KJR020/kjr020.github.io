@@ -1,5 +1,5 @@
 +++
-title = 'Vue3 Tutorial 11-14 ChildComponent'
+title = 'Vue3 Tutorial 11-12 ChildComponent & Props'
 date = 2024-09-30T07:09:08+09:00
 draft = false
 tags = ['Vue3']
@@ -12,7 +12,7 @@ Vue3のチュートリアルを進めています。
 Reactでいう`useEffect`のようなもので、
 リアクティブな値の変化を監視して、副作用を伴う関数を実行することができる機能です。
 
-[前回の記事](../Vue3Tutorial10.md)
+前回の記事はこちら]({{< relref "posts/Vue/Vue3Tutorial10.md" >}})
 
 ## Child component
 

@@ -9,7 +9,7 @@
     <lastBuildDate>Mon, 30 Sep 2024 07:09:08 +0900</lastBuildDate>
     <atom:link href="https://kjr020.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Vue3 Tutorial 11-14 ChildComponent</title>
+      <title>Vue3 Tutorial 11-12 ChildComponent &amp; Props</title>
       <link>https://kjr020.github.io/posts/vue/vue3tutorial11-12/</link>
       <pubDate>Mon, 30 Sep 2024 07:09:08 +0900</pubDate>
       <guid>https://kjr020.github.io/posts/vue/vue3tutorial11-12/</guid>
@@ -18,7 +18,7 @@
 前回は、VueのComponentの&lt;code&gt;watch&lt;/code&gt;について学習しました。
 Reactでいう&lt;code&gt;useEffect&lt;/code&gt;のようなもので、
 リアクティブな値の変化を監視して、副作用を伴う関数を実行することができる機能です。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;../Vue3Tutorial10.md&#34;&gt;前回の記事&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;前回の記事はこちら](/posts/vue/vue3tutorial10/)&lt;/p&gt;
 &lt;h2 id=&#34;child-component&#34;&gt;Child component&lt;/h2&gt;
 &lt;p&gt;今回は最終回で、チュートリアル11-12までまとめて学習します。
 ChildComponentと&lt;code&gt;Props&lt;/code&gt;について学習します。
