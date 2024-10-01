@@ -3,7 +3,6 @@ canonifyurls: false
 languageCode: ja
 title: "KJR020's Blog"
 theme: "PaperMod"
-publishDir: "docs"
 
 enableInlineShortcodes: true
 enableRobotsTXT: true
