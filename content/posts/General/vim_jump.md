@@ -39,3 +39,4 @@ GitHub Copilot chatに聞いてみたら、
 
 - <https://vim-jp.org/vimdoc-ja/motion.html#jump-motions>
 - <https://baubaubau.hatenablog.com/entry/2020/09/19/203537>
+  
