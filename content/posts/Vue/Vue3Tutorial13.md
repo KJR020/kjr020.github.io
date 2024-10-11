@@ -1,7 +1,7 @@
 +++
 title = 'Vue3 Tutorial Step13 Emit'
 date = 2024-10-01T21:36:34+09:00
-draft = true
+draft = false
 +++
 
 今回は、Vue3のチュートリアルのStep13の`emit`についてです
