@@ -41,6 +41,7 @@ Hugoのテーマに`layouts/_default/_markup/render-image.html`を作成しま�
 要注意です。
 
 詳しくは下記を参照してください。
+
 <https://gohugo.io/render-hooks/code-blocks/#examples>
 
 >Although you can use one template with conditional logic to control the behavior on a per-language basis, you can also create language-specific templates.
