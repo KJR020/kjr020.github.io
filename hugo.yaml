@@ -35,7 +35,7 @@ params:
     Content: >
       ブログです。誰に見せるでもなく、自分のために書いています。
 
-  socialIcons:
+  social:
     - name: github
       url: "https://github.com/KJR020"
     - name: X
