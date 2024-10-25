@@ -11,7 +11,7 @@ draft = false
 
 ## Hugoでmermaid記法のグラフを表示する方法
 
-まず検索すると公式ドキュメントに記載されていました。  
+まず検索すると公式ドキュメントがヒットしました。
 それに従って設定をしていきます。  
 リンクは↓です。
 
@@ -24,7 +24,7 @@ Hugoはデフォルトでは、mermaid記法のグラフ表示をサポートし
 code block render hookを使えば良いとのことです。
 親切に手順が書いてあるので、code block render hookが何か理解していなくても設定できました。
 
-1. code block render hookの作成
+### 1. code block render hookの作成
 
 Hugoのテーマに`layouts/_default/_markup/render-image.html`を作成します。
 
@@ -53,7 +53,7 @@ Hugoのテーマに`layouts/_default/_markup/render-image.html`を作成しま�
 >        └── render-codeblock.html
 >```
 
-2. mermaidのスクリプトを読み込む
+### 2. mermaidのスクリプトを読み込む
 
 あとは、mermaidのコードブロックを含んだページにmermaidのスクリプトを読み込むように設定します。
 テーマの`layouts/partials/head.html`に以下のようなスニペットを記述します。  
@@ -71,7 +71,7 @@ Hugoのテーマに`layouts/_default/_markup/render-image.html`を作成しま�
 {{ end }}
 ```
 
-3. mermaid記法をmarkdownで記述
+### 3. mermaid記法をmarkdownで記述
 
 こんな感じで記述します。
 
