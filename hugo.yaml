@@ -33,7 +33,7 @@ params:
   homeInfoParams:
     Title: "KJR020's Blog"
     Content: >
-      ブログです。誰に見せるでもなく、自分のために書いています。
+      ブログです。日々学んだことや思ったことを雑に書きます。
 
   social:
     - name: github
