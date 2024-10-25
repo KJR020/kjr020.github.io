@@ -42,6 +42,4 @@ const msg = ref("Hello, from parent!")
 </template>
 ```
 
-![alt text](image.png)
-
 ここまで、Vue3のチュートリアルのStep14の`slot`についてでした。
