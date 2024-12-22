@@ -29,6 +29,8 @@ params:
         url: archives
       - name: Tags
         url: tags
+      - name: Scrapbox
+        url: https://scrapbox.io/KJR020/
 
   homeInfoParams:
     Title: "KJR020's Blog"
@@ -49,3 +51,6 @@ menu:
     - name: Search
       url: search/
       weight: 10
+    - name: Scrapbox
+      url: https://scrapbox.io/KJR020/
+      weight: 15
