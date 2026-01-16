@@ -1,0 +1,57 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import PostMeta from "@/components/PostMeta.astro";
+
+const posts = await getCollection("posts", ({ data }) => !data.draft);
+const sortedPosts = posts.sort(
+  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+);
+const latestPosts = sortedPosts.slice(0, 10);
+---
+
+<BaseLayout title="KJR020's Blog" description="KJR020の技術ブログ">
+  <div class="container mx-auto px-4 py-8">
+    <section class="mb-12">
+      <h1 class="text-4xl font-bold mb-4">KJR020's Blog</h1>
+      <p class="text-lg text-muted-foreground">
+        プログラミングや技術に関する学習メモを記録しています。
+      </p>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-bold mb-6">最新の記事</h2>
+      <div class="grid gap-4">
+        {latestPosts.map((post) => (
+          <a href={`/posts/${post.id}`} class="block">
+            <Card className="transition-colors hover:bg-accent/50">
+              <CardHeader className="pb-2">
+                <CardTitle className="text-xl">{post.data.title}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <PostMeta date={post.data.date} tags={post.data.tags} />
+                {post.data.description && (
+                  <p class="mt-2 text-sm text-muted-foreground line-clamp-2">
+                    {post.data.description}
+                  </p>
+                )}
+              </CardContent>
+            </Card>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    {sortedPosts.length > 10 && (
+      <div class="mt-8 text-center">
+        <a
+          href="/archive"
+          class="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+        >
+          すべての記事を見る
+        </a>
+      </div>
+    )}
+  </div>
+</BaseLayout>

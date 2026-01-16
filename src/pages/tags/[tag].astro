@@ -1,0 +1,50 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import PostMeta from "@/components/PostMeta.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("posts", ({ data }) => !data.draft);
+
+  const tags = new Set<string>();
+  posts.forEach((post) => {
+    post.data.tags?.forEach((tag) => tags.add(tag));
+  });
+
+  return Array.from(tags).map((tag) => ({
+    params: { tag },
+    props: {
+      tag,
+      posts: posts.filter((post) => post.data.tags?.includes(tag)),
+    },
+  }));
+}
+
+const { tag, posts } = Astro.props;
+const sortedPosts = posts.sort(
+  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+);
+---
+
+<BaseLayout title={`${tag} - KJR020's Blog`} description={`${tag}タグの記事一覧`}>
+  <div class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-4">Tag: {tag}</h1>
+    <p class="text-muted-foreground mb-8">{sortedPosts.length}件の記事</p>
+
+    <div class="grid gap-4">
+      {sortedPosts.map((post) => (
+        <a href={`/posts/${post.id}`} class="block">
+          <Card className="transition-colors hover:bg-accent/50">
+            <CardHeader className="pb-2">
+              <CardTitle className="text-lg">{post.data.title}</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <PostMeta date={post.data.date} tags={post.data.tags} />
+            </CardContent>
+          </Card>
+        </a>
+      ))}
+    </div>
+  </div>
+</BaseLayout>

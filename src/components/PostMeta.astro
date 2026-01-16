@@ -1,0 +1,33 @@
+---
+import { Badge } from "@/components/ui/badge";
+
+interface Props {
+  date: Date;
+  tags?: string[];
+}
+
+const { date, tags = [] } = Astro.props;
+
+const formattedDate = date.toLocaleDateString("ja-JP", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+---
+
+<div class="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
+  <time datetime={date.toISOString()}>
+    {formattedDate}
+  </time>
+  {tags.length > 0 && (
+    <div class="flex flex-wrap gap-1">
+      {tags.map((tag) => (
+        <a href={`/tags/${tag}`}>
+          <Badge variant="secondary" className="cursor-pointer hover:bg-secondary/80">
+            {tag}
+          </Badge>
+        </a>
+      ))}
+    </div>
+  )}
+</div>
