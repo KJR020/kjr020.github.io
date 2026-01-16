@@ -1,0 +1,45 @@
+{
+  "name": "kjr020.github.io",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Personal blog built with Astro",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/KJR020/kjr020.github.io.git"
+  },
+  "keywords": [],
+  "author": "KJR020",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KJR020/kjr020.github.io/issues"
+  },
+  "homepage": "https://kjr020.github.io/",
+  "dependencies": {
+    "@astrojs/react": "^4.4.2",
+    "@astrojs/sitemap": "^3.6.1",
+    "@beoe/rehype-mermaid": "^0.4.2",
+    "@radix-ui/react-slot": "^1.2.4",
+    "astro": "^5.16.9",
+    "astro-pagefind": "^1.8.5",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.562.0",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "tailwind-merge": "^3.4.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.18",
+    "@types/react": "^19.2.8",
+    "@types/react-dom": "^19.2.3",
+    "playwright": "^1.57.0",
+    "tailwindcss": "^4.1.18",
+    "typescript": "^5.9.3"
+  }
+}
