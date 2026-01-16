@@ -1,6 +1,8 @@
 *.code-workspace
-public/
 .vscode/
+
+# Astro build output
+dist/
 
 # Astro cache
 .astro/
