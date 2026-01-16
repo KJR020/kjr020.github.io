@@ -1,0 +1,71 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Search - KJR020's Blog" description="記事を検索">
+  <div class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-8">Search</h1>
+    <div id="search"></div>
+  </div>
+</BaseLayout>
+
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
+
+<style is:global>
+  :root {
+    --pagefind-ui-scale: 1;
+    --pagefind-ui-primary: var(--primary);
+    --pagefind-ui-text: var(--foreground);
+    --pagefind-ui-background: var(--background);
+    --pagefind-ui-border: var(--border);
+    --pagefind-ui-tag: var(--secondary);
+    --pagefind-ui-border-width: 1px;
+    --pagefind-ui-border-radius: 0.5rem;
+    --pagefind-ui-font: inherit;
+  }
+
+  .pagefind-ui__search-input {
+    background-color: var(--background) !important;
+    border-color: var(--border) !important;
+    color: var(--foreground) !important;
+  }
+
+  .pagefind-ui__search-input::placeholder {
+    color: var(--muted-foreground) !important;
+  }
+
+  .pagefind-ui__result {
+    background-color: var(--card) !important;
+    border-color: var(--border) !important;
+  }
+
+  .pagefind-ui__result-link {
+    color: var(--foreground) !important;
+  }
+
+  .pagefind-ui__result-excerpt {
+    color: var(--muted-foreground) !important;
+  }
+
+  .pagefind-ui__message {
+    color: var(--muted-foreground) !important;
+  }
+</style>
+
+<script is:inline>
+  window.addEventListener("DOMContentLoaded", () => {
+    const script = document.createElement("script");
+    script.src = "/pagefind/pagefind-ui.js";
+    script.onload = () => {
+      new window.PagefindUI({
+        element: "#search",
+        showSubResults: true,
+        translations: {
+          placeholder: "記事を検索...",
+          zero_results: "検索結果が見つかりませんでした",
+        },
+      });
+    };
+    document.head.appendChild(script);
+  });
+</script>

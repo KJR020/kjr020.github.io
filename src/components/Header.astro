@@ -1,0 +1,54 @@
+---
+import { ThemeToggle } from "@/components/ThemeToggle";
+
+const navItems = [
+  { href: "/", label: "Home" },
+  { href: "/archive", label: "Archive" },
+  { href: "/search", label: "Search" },
+  { href: "https://scrapbox.io/kjr020/", label: "Scrapbox", external: true },
+];
+---
+
+<header class="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+  <div class="container mx-auto flex h-14 items-center justify-between px-4">
+    <a href="/" class="flex items-center gap-2 text-xl font-bold">
+      <img
+        src="/images/avatar.png"
+        alt="KJR020"
+        class="h-8 w-8 rounded-full"
+      />
+      KJR020's Blog
+    </a>
+    <nav class="flex items-center gap-1">
+      {navItems.map((item) => (
+        <a
+          href={item.href}
+          target={item.external ? "_blank" : undefined}
+          rel={item.external ? "noopener noreferrer" : undefined}
+          class="inline-flex h-9 items-center justify-center rounded-md px-3 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+        >
+          {item.label}
+          {item.external && (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="12"
+              height="12"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="ml-1"
+            >
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+              <polyline points="15 3 21 3 21 9" />
+              <line x1="10" x2="21" y1="14" y2="3" />
+            </svg>
+          )}
+        </a>
+      ))}
+      <ThemeToggle client:load />
+    </nav>
+  </div>
+</header>
