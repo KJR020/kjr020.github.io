@@ -9,3 +9,10 @@ dist/
 
 # Claude Code local settings
 .claude/
+
+# Kiro specs (private)
+.kiro/
+
+# Environment variables
+.env
+.env.local
