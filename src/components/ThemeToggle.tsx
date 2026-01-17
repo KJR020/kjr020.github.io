@@ -1,17 +1,22 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 
+// DOM状態から現在のテーマを取得する関数
+// ThemeInit.astroで設定されたクラスを読み取る
+function getInitialTheme(): "light" | "dark" {
+  if (typeof document !== "undefined") {
+    return document.documentElement.classList.contains("dark") ? "dark" : "light";
+  }
+  return "light";
+}
+
 export function ThemeToggle() {
+  // SSR時は固定値を使用し、ハイドレーションミスマッチを防止
   const [theme, setTheme] = useState<"light" | "dark">("light");
 
+  // マウント後にDOM状態と同期（ThemeInit.astroで設定済みのクラスを読み取る）
   useEffect(() => {
-    const savedTheme = localStorage.getItem("theme") as "light" | "dark" | null;
-    const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? "dark"
-      : "light";
-    const initialTheme = savedTheme || systemTheme;
-    setTheme(initialTheme);
-    document.documentElement.classList.toggle("dark", initialTheme === "dark");
+    setTheme(getInitialTheme());
   }, []);
 
   const toggleTheme = () => {

@@ -1,0 +1,23 @@
+---
+// ThemeInit.astro
+// ページ読み込み時にFOUC（Flash of Unstyled Content）を防ぐための
+// テーマ初期化スクリプトを提供するコンポーネント
+//
+// 使用方法: BaseHead.astroの<head>セクション最上部でインポートして使用
+---
+<script is:inline>
+  (function() {
+    try {
+      var stored = localStorage.getItem("theme");
+      var theme = stored === "dark" || stored === "light"
+        ? stored
+        : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.documentElement.classList.toggle("dark", theme === "dark");
+    } catch (e) {
+      // localStorageアクセス不可時（プライベートブラウジング等）はシステム設定を使用
+      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        document.documentElement.classList.add("dark");
+      }
+    }
+  })();
+</script>
