@@ -5,6 +5,8 @@ import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 import pagefind from "astro-pagefind";
 import { rehypeMermaid } from "@beoe/rehype-mermaid";
+// @ts-ignore
+import remarkLinkCard from "remark-link-card";
 
 // https://astro.build/config
 export default defineConfig({
@@ -24,6 +26,7 @@ export default defineConfig({
       },
       defaultColor: false,
     },
+    remarkPlugins: [[remarkLinkCard, { cache: true, shortenUrl: true }]],
     rehypePlugins: [[rehypeMermaid, { class: "mermaid" }]],
   },
 });
