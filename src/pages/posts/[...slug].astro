@@ -2,6 +2,7 @@
 import { getCollection, render } from "astro:content";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import PostMeta from "@/components/PostMeta.astro";
+import { Comments } from "@/components/Comments";
 
 export async function getStaticPaths() {
   const posts = await getCollection("posts");
@@ -13,6 +14,12 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await render(post);
+
+// Giscus configuration from environment variables
+const giscusRepo = import.meta.env.PUBLIC_GISCUS_REPO as `${string}/${string}`;
+const giscusRepoId = import.meta.env.PUBLIC_GISCUS_REPO_ID;
+const giscusCategory = import.meta.env.PUBLIC_GISCUS_CATEGORY;
+const giscusCategoryId = import.meta.env.PUBLIC_GISCUS_CATEGORY_ID;
 ---
 
 <BaseLayout
@@ -28,6 +35,14 @@ const { Content } = await render(post);
     <div class="prose prose-neutral dark:prose-invert max-w-none">
       <Content />
     </div>
+
+    <Comments
+      repo={giscusRepo}
+      repoId={giscusRepoId}
+      category={giscusCategory}
+      categoryId={giscusCategoryId}
+      client:only="react"
+    />
   </article>
 </BaseLayout>
 
