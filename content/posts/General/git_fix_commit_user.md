@@ -2,6 +2,7 @@
 title = 'gitでcommit userを変更する'
 date = '2024-08-25T17:03:17+09:00'
 draft = false
+tags = ['Git']
 +++
 
 ## 経緯

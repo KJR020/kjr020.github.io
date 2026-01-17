@@ -2,6 +2,7 @@
 title = 'Vimのジャンプ'
 date = '2024-08-25T17:03:17+09:00'
 draft = false
+tags = ['Vim']
 +++
 
 ## 経緯
@@ -37,6 +38,6 @@ GitHub Copilot chatに聞いてみたら、
 
 ## 参考
 
-- <https://vim-jp.org/vimdoc-ja/motion.html#jump-motions>
-- <https://baubaubau.hatenablog.com/entry/2020/09/19/203537>
+<https://vim-jp.org/vimdoc-ja/motion.html#jump-motions>
+<https://baubaubau.hatenablog.com/entry/2020/09/19/203537>
   

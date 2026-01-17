@@ -8,7 +8,8 @@ tags = ['Vue3']
 ## ライフサイクルとテンプレート参照
 
 今回のチュートリアルでは、ライフサイクルフックとテンプレート参照について学習した。
-- <https://ja.vuejs.org/tutorial/#step-9>
+
+<https://ja.vuejs.org/tutorial/#step-9>
 
 `onMounted`を例にライフサイクルフックを学習。  
 

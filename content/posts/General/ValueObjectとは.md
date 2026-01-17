@@ -2,6 +2,7 @@
 title = 'ValueObjectとは'
 date = '2024-08-29T07:43:34+09:00'
 draft = false
+tags = ['DDD']
 +++
 
 ### 経緯
@@ -40,5 +41,5 @@ DDDで提唱された概念の一つで、ドメインモデルを表現する�
 
 ### 参考
 
-- <https://ja.m.wikipedia.org/wiki/Value_object>
-- <https://martinfowler.com/eaaCatalog/valueObject.html>
+<https://ja.m.wikipedia.org/wiki/Value_object>
+<https://martinfowler.com/eaaCatalog/valueObject.html>

@@ -20,8 +20,8 @@ Reactでいう`useEffect`のようなもので、
 ChildComponentと`Props`について学習します。
 チュートリアルのリンクは以下です。
 
-- [ChildComponent](https://ja.vuejs.org/tutorial/#step-11)
-- [Props](https://ja.vuejs.org/tutorial/#step-12)
+<https://ja.vuejs.org/tutorial/#step-11>
+<https://ja.vuejs.org/tutorial/#step-12>
 
 ### Step11 Child Component
 

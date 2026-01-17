@@ -2,6 +2,7 @@
 title = 'Vitestについて'
 date = 2024-10-12T22:20:17+09:00
 draft = false
+tags = ['Vitest']
 +++
 
 ## 経緯
@@ -17,7 +18,7 @@ draft = false
 
 公式サイトをまずは読んでみます。
 
-- <https://vitest.dev/>
+<https://vitest.dev/>
 
 Vite-native ということで、Viteと併せて使うテスティングフレームワークのようです。
 
@@ -27,7 +28,7 @@ Vite-native ということで、Viteと併せて使うテスティングフレ�
 これは確かにそうだなと思うので、私もそれに習いたいと思います。  
 さしあたって、まずは公式ドキュメントのWhy Vitest?のページを読んでみます。
 
-- <https://vitest.dev/guide/why.html>
+<https://vitest.dev/guide/why.html>
 
 The Need for A Native Test Runner
 

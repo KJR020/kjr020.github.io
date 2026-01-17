@@ -2,6 +2,7 @@
 title = 'CORSに関するメモ'
 date = '2024-08-25T17:03:17+09:00'
 draft = false
+tags = ['CORS']
 +++
 
 ## 経緯
@@ -16,7 +17,7 @@ CORS(Cross Origin Resource Sharing)は、異なるオリジン間で安全にリ
 通常ブラウザでは、異なるオリジン間でのリソース共有はセキュリティ上の理由から制限されている。SOP(Same Origin Policy)という制約がある。
 主に、APIリクエストや非静的ファイルのリクエストに適用される。
 
-- <https://developer.mozilla.org/ja/docs/Web/Security/Same-origin_policy>
+<https://developer.mozilla.org/ja/docs/Web/Security/Same-origin_policy>
 
 ### オリジンとは
 
@@ -45,6 +46,6 @@ CORSポリシーは、リクエストを送信する際に、リクエストヘ�
 
 ## 参考
 
-- <https://datatracker.ietf.org/doc/html/rfc6454>
-- <https://qiita.com/shun198/items/9ebf19d8fd2c412396dd>
-- <https://atmarkit.itmedia.co.jp/ait/articles/1311/26/news007.html>
+<https://datatracker.ietf.org/doc/html/rfc6454>
+<https://qiita.com/shun198/items/9ebf19d8fd2c412396dd>
+<https://atmarkit.itmedia.co.jp/ait/articles/1311/26/news007.html>

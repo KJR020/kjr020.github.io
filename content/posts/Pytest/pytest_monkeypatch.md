@@ -2,6 +2,7 @@
 title = 'pytestのmonkeypatchについて調べた'
 date = 2025-01-16T20:04:07+09:00 
 draft = true
+tags = ['Pytest']
 +++
 
 # pytestのmonkeypatchについて調べた
@@ -133,5 +134,5 @@ def test_import_path(monkeypatch):
 
 ## 参考文献
 
-- [pytest公式ドキュメント - monkeypatch](https://docs.pytest.org/en/stable/how-to/monkeypatch.html)
-- [pytest Reference Guide - MonkeyPatch](https://docs.pytest.org/en/stable/reference/reference.html#monkeypatch)
+<https://docs.pytest.org/en/stable/how-to/monkeypatch.html>
+<https://docs.pytest.org/en/stable/reference/reference.html#monkeypatch>

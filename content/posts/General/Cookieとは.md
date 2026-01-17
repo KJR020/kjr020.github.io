@@ -30,10 +30,8 @@ Edgeでは、下記のpathに存在する
 
 ## 参考
 
-- [面接で聞かれた技術的質問🚀](https://zenn.dev/hidebon0630/articles/75022374e28cdf)
-
-- [Googleのポリシーと規約](https://policies.google.com/technologies/cookies?hl=ja)
-
-- https://learn.microsoft.com/ja-jp/microsoft-edge/devtools-guide-chromium/storage/cookies
+<https://zenn.dev/hidebon0630/articles/75022374e28cdf>
+<https://policies.google.com/technologies/cookies?hl=ja>
+<https://learn.microsoft.com/ja-jp/microsoft-edge/devtools-guide-chromium/storage/cookies>
 
  

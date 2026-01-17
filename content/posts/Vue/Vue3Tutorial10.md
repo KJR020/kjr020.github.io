@@ -74,7 +74,7 @@ Tutorialの内容を自分が咀嚼した、まとめたものです。
 理解を深めるために、ReactとVueの比較を調べようと思い、下記の記事にあたりました。
 副作用の項で、Reactの`useEffect`とVueの`watch`の違いについて触れられていました。
 
-- <https://zenn.dev/poteboy/articles/ce47ec05498cfa>
+<https://zenn.dev/poteboy/articles/ce47ec05498cfa>
 
 Reactの`useEffect`とVueの`watch`は、
 役割としてはどちらもリアクティブな値の変動によって副作用を伴う関数をトリガーするものですが、挙動に違いがあるようです。

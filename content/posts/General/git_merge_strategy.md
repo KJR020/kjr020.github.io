@@ -2,6 +2,7 @@
 title = 'git merge strategyとは'
 date = '2024-08-25T17:03:17+09:00'
 draft = false
+tags = ['Git']
 +++
 
 ## 経緯
@@ -26,5 +27,5 @@ optionで指定もできるが、自動的に選択されるもので、
 
 ## 参考
 
-- <https://git-scm.com/docs/merge-strategies>
-- <https://www.atlassian.com/ja/git/tutorials/using-branches/merge-strategy>
+<https://git-scm.com/docs/merge-strategies>
+<https://www.atlassian.com/ja/git/tutorials/using-branches/merge-strategy>

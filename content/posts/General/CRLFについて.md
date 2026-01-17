@@ -2,6 +2,7 @@
 title = 'CRLFについて'
 date = '2024-08-25T17:06:03+09:00'
 draft = false
+tags = ['CRLF']
 +++
 
 ### 背景
@@ -32,4 +33,4 @@ CR(Carriage Return)は復帰、(Line Feed)は改行のための制御文字で�
 CRは行の先頭にカーソルを移動させる制御文字で、LFは次の行にカーソルを移動させる制御文字である。
 macOS(unix系OS)では、LFのみを改行コードとして使用しているため、CRが処理されず問題になる
 
-> <https://developer.mozilla.org/ja/docs/Glossary/CRLF>
+<https://developer.mozilla.org/ja/docs/Glossary/CRLF>

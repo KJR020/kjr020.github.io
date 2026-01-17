@@ -2,6 +2,7 @@
 title = 'JSON.stringify()でのオブジェクト比較について'
 date = 2024-10-10T21:32:15+09:00
 draft = false
+tags = ['JavaScript']
 +++
 
 
@@ -11,11 +12,11 @@ draft = false
 「なぜわざわざ JSON.stringify を使ってオブジェクトを比較するのか？」という疑問があり、気になったので調べてみました。
 調べてみると、以下の記事にあたりました。
 
-- <https://qiita.com/kaeru333/items/eec2b2c204c61cc5e484>
+<https://qiita.com/kaeru333/items/eec2b2c204c61cc5e484>
 
 この記事の参考元をたどると、下記のJavaScript.infoの記事に行き着いたので、そちらを読んでみました。
 
-- <https://ja.javascript.info/object-copy>
+<https://ja.javascript.info/object-copy>
 
 ## オブジェクト比較における JSON.stringify の役割
 
@@ -36,7 +37,7 @@ console.log(obj1 === obj2); // false
 ただ、上記の方法には問題があるようで、下記の記事で指摘されていました。
 `JSON.stringify`をオブジェクトの比較に使うのはあまり推奨されない方法ということです。
 
-- <https://qiita.com/8x9/items/218e24b7e6eea2446beb>
+<https://qiita.com/8x9/items/218e24b7e6eea2446beb>
 
 いくつかの理由があるようですが、
 特に大きな問題はオブジェクトのプロパティの順番が変わる可能性があることだと私は理解しました。

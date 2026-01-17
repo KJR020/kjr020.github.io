@@ -10,13 +10,15 @@ tags = ['Vue3']
 
 ## イベントリスナー `v-on`
 
-- <https://ja.vuejs.org/tutorial/#step-4>
+<https://ja.vuejs.org/tutorial/#step-4>
+
 - `v-on`ディレクティブを使って、イベントリスナーを追加できる
 - `v-on`は`@`で省略できる
 
 ## フォームバインディング
 
-- <https://ja.vuejs.org/tutorial/#step-5>
+<https://ja.vuejs.org/tutorial/#step-5>
+
 - `v-on`,`v-model`を使うと双方向のデータバインディングができる
 - いまさら気づいたが、`data`は関数を返す必要があるらしい
   - objectでもよいのでは？と思ったが、`data`はコンポーネントのインスタンスごとに異なるデータを持つため、関数を返す必要がある
@@ -77,7 +79,8 @@ export default {
 
 ## リストレンダリング
 
-- <https://ja.vuejs.org/tutorial/#step-7>
+<https://ja.vuejs.org/tutorial/#step-7>
+
 - `v-for`ディレクティブを使用すると配列を元にリストをレンダリングできる
 
 ```vue

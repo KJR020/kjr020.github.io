@@ -2,6 +2,7 @@
 title = 'Djangoチュートリアルその1'
 date = '2024-08-25T17:03:17+09:00'
 draft = false
+tags = ['Django']
 +++
 
 チュートリアルでは、簡単な(Poll)アプリケーションの作成に取り組む。
@@ -51,4 +52,4 @@ pollsは独自のURLconfを持っている
 
 ## 参照
 
-1. <https://p-cs.work/interrupt/>
+<https://p-cs.work/interrupt/>

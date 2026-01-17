@@ -2,6 +2,7 @@
 title = 'Terraform入門してみる'
 date = 2025-04-19T05:52:35+09:00
 draft = false
+tags = ['Terraform']
 +++
 
 ## 経緯
@@ -37,7 +38,7 @@ Terraformをdockerで動かして、nginxを起動するチュートリアルを
 brewでインストール可能です。
 注意点としては、リポジトリに`hashicorp/terraform`を追加する必要があります
 
-``` 
+``` bash
 brew tap hashicorp/terraform
 brew install terraform
 ```
@@ -104,7 +105,7 @@ terraform, provider, resourceの3つのセクションがあります。
 ### 初期化
 作成したディレクトリで以下のコマンドを実行し、Terraformを初期化します：
 
-```
+```bash
 terraform init
 ```
 
@@ -114,7 +115,7 @@ terraform init
 
 実際に適用します：
 
-```
+```bash
 terraform apply
 ```
 
@@ -122,7 +123,7 @@ terraform apply
 
 
 
-```
+```bash
 Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
   + create
 
@@ -197,7 +198,7 @@ Do you want to perform these actions?
 
 リソースの破棄は`terraform destroy`コマンドで行います。
 
-```
+```bash
 terraform destroy
 ```
 

@@ -2,6 +2,7 @@
 title = 'Hugoでmermaid記法のグラフを表示する方法'
 date = 2024-10-25T20:46:35+09:00
 draft = false
+tags = ['Hugo', 'Mermaid']
 +++
 
 唐突ですが、このブログはHugoで作成しています。  

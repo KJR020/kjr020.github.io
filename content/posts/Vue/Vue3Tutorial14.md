@@ -1,12 +1,15 @@
 +++
+++
 title = 'Vue3Tutorial14'
 date = 2024-10-11T22:50:50+09:00
 draft = false
+++
+tags = ['Vue3']
 +++
 
 今回は、Vue3のチュートリアルのStep14の`slot`についてです
 
-- [Slot](https://ja.vuejs.org/tutorial/#step-14)
+<https://ja.vuejs.org/tutorial/#step-14>
 
 ## Slotとは
 

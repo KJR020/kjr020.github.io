@@ -2,6 +2,7 @@
 title = 'VSCodeのtaskについて調べた'
 date = '2024-08-25T17:03:17+09:00'
 draft = false
+tags = ['VSCode']
 +++
 
 ## 経緯
@@ -24,6 +25,6 @@ VSCodeには、コマンドライン上の一連の作業をコードとして�
 
 ## 参考
 
-- [公式ドキュメント](https://code.visualstudio.com/docs/editor/tasks)
-- [2022-09-21-VSCodeのTasks機能を使ってまとめてコマンドを実行しよう - 心のデブを信じろ](https://kenpos.dev/2022-09-21-vscodeのtasks機能を使ってまとめてコマンドを実行しよう/)
-- [【VS Code】tasks.jsonで決まった作業を自動化する](https://dev.classmethod.jp/articles/tasks-json-vscode-automation/)
+<https://code.visualstudio.com/docs/editor/tasks>
+<https://kenpos.dev/2022-09-21-vscodeのtasks機能を使ってまとめてコマンドを実行しよう/>
+<https://dev.classmethod.jp/articles/tasks-json-vscode-automation/>

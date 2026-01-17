@@ -2,6 +2,7 @@
 title = 'SQLServerの認証方式'
 date = '2024-08-25T17:03:17+09:00'
 draft = false
+tags = ['SQLServer']
 +++
 
 ## 経緯
@@ -23,6 +24,6 @@ SQL Serverの認証情報を調べてみた。
 
 ## 参考
 
-- <https://learn.microsoft.com/ja-jp/sql/relational-databases/security/choose-an-authentication-mode?view=sql-server-ver16>
-- <https://www.kwbtblog.com/entry/2019/10/11/030233>
-- <https://qiita.com/kazumatsukazu/items/d754457712963c447a50>
+<https://learn.microsoft.com/ja-jp/sql/relational-databases/security/choose-an-authentication-mode?view=sql-server-ver16>
+<https://www.kwbtblog.com/entry/2019/10/11/030233>
+<https://qiita.com/kazumatsukazu/items/d754457712963c447a50>

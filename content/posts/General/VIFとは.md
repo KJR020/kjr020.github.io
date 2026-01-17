@@ -2,6 +2,7 @@
 title = 'VIFとは'
 date = '2024-08-25T17:03:17+09:00'
 draft = false
+tags = ['統計学']
 +++
 
 ## 経緯
@@ -40,5 +41,5 @@ VIFでは、すべての変数を計算に用いるため、全変数間の相�
 
 ## 参考
 
-- <https://ja.wikipedia.org/wiki/分散拡大係数>
-- <https://qiita.com/Ogin0pan/items/4105c0c39869d31f4a75>
+<https://ja.wikipedia.org/wiki/分散拡大係数>
+<https://qiita.com/Ogin0pan/items/4105c0c39869d31f4a75>

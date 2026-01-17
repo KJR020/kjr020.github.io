@@ -2,6 +2,7 @@
 title = 'FetchPolicyについて'
 date = 2024-11-25T21:42:22+09:00
 draft = true
+tags = ['GraphQL']
 +++
 
 ## FetchPolicyについて
@@ -22,5 +23,5 @@ FetchPolicyというパラメータを指定しているのを見かけました
     - cache-only
 
 - 参考
-  - https://www.apollographql.com/docs/react/data/queries
-  - https://qiita.com/ryosuketter/items/398dbfddb9aae5eca5a9
+<https://www.apollographql.com/docs/react/data/queries>
+<https://qiita.com/ryosuketter/items/398dbfddb9aae5eca5a9>

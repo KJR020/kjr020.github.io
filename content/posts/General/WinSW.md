@@ -2,6 +2,7 @@
 title = 'WinSWとは'
 date = '2024-08-25T17:03:17+09:00'
 draft = false
+tags = ['Windows']
 +++
 
 ## 経緯
@@ -21,7 +22,7 @@ Windows上でサービスとしてプロセスを登録するためのツール�
 
 ## 参考
 
-- <https://github.com/winsw/winsw>
-- <https://kiririmode.hatenablog.jp/entry/20170407/1491490800>
-- <https://qiita.com/moni-hide/items/fd26fb223f2d4736cf55>
-- <https://www.rinsymbol.net/entry/2022/03/13/191249>
+<https://github.com/winsw/winsw>
+<https://kiririmode.hatenablog.jp/entry/20170407/1491490800>
+<https://qiita.com/moni-hide/items/fd26fb223f2d4736cf55>
+<https://www.rinsymbol.net/entry/2022/03/13/191249>

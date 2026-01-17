@@ -2,6 +2,7 @@
 title = 'VSCodeでファイルエクスプローラのアイコンが消えたときの対処法'
 date = '2024-08-25T17:03:17+09:00'
 draft = false
+tags = ['VSCode']
 +++
 
 ## 経緯
@@ -21,4 +22,4 @@ VSCodeを使用していた。
 
 ## 参考
 
-- https://www.webdesignleaves.com/wp/htmlcss/2294/#google_vignette
+<https://www.webdesignleaves.com/wp/htmlcss/2294/#google_vignette>

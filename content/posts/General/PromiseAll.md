@@ -2,6 +2,7 @@
 title = 'PromiseAll'
 date = '2024-08-25T17:03:17+09:00'
 draft = false
+tags = ['JavaScript']
 +++
 
 Promise.allについて調べたときのメモ
@@ -50,5 +51,5 @@ Promise([promise1, promise2, promise3]).then((values) =>
 
 ## 参考
 
-- [mdn web docs](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Promise/all)
-- [ECMAScript 2025 Language Specification](https://tc39.es/ecma262/multipage/control-abstraction-objects.html#sec-promise.all)
+<https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Promise/all>
+<https://tc39.es/ecma262/multipage/control-abstraction-objects.html#sec-promise.all>

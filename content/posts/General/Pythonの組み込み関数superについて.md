@@ -2,6 +2,7 @@
 title = 'Pythonの組み込み関数superについて'
 date = '2024-09-03T21:51:30+09:00'
 draft = false
+tags = ['Python']
 +++
 
 Python組み込み関数のsuperについて調べたことをまとめる
