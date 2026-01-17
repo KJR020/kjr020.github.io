@@ -1,40 +1,87 @@
 # KJR020's Blog
 
-This blog is built using [Hugo](https://gohugo.io/), a static site generator.
+Astroで構築した個人ブログ
 
-## Setup
+## 技術スタック
 
-To setup writing environment, install go and hugo.
+- [Astro](https://astro.build/) - 静的サイトジェネレーター
+- [React](https://react.dev/) - UIコンポーネント
+- [Tailwind CSS](https://tailwindcss.com/) - スタイリング
+- [Biome](https://biomejs.dev/) - Linter / Formatter
+- [Vitest](https://vitest.dev/) - テストフレームワーク
+- [Playwright](https://playwright.dev/) - E2Eテスト
 
-Both can be installed using brew.
+## アーキテクチャ
 
-```shell
-brew install go
-brew install hugo
-```
+詳細な設計方針は [docs/architecture/](docs/architecture/) に記載。
 
-## Usage
+## セットアップ
 
-### Creating a New Post
+### 必要な環境
 
-To Create a new post, run the following command:
+- Node.js 22.x 以上
+- pnpm
 
-```shell
-hugo new posts/[post-title].md
-```
-
-### Building the Site
-
-To build the site, run the following command:
+### インストール
 
 ```shell
-hugo
+pnpm install
 ```
 
-### Running the Server
+## 使い方
 
-To run the local development server, use:
+### 開発サーバーの起動
 
 ```shell
-hugo server
+pnpm dev
 ```
+
+### ビルド
+
+```shell
+pnpm build
+```
+
+### プレビュー
+
+```shell
+pnpm preview
+```
+
+### Lint / Format
+
+```shell
+# Lintの実行
+pnpm lint
+
+# Lintの自動修正
+pnpm lint:fix
+
+# フォーマットの実行
+pnpm format
+
+# フォーマットのチェック
+pnpm format:check
+```
+
+### テスト
+
+```shell
+# テストの実行（watchモード）
+pnpm test
+
+# テストの実行（1回のみ）
+pnpm test:run
+```
+
+### 型チェック
+
+```shell
+pnpm typecheck
+```
+
+## デプロイ
+
+GitHub Pagesにデプロイ
+
+https://kjr020.github.io/
