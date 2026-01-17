@@ -13,3 +13,6 @@ dist/
 # Environment variables
 .env
 .env.local
+
+# remark-link-card cache
+public/remark-link-card/

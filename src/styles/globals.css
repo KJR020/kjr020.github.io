@@ -98,3 +98,132 @@
 .dark .astro-code span {
   color: var(--shiki-dark) !important;
 }
+
+/* ========================================
+   remark-link-card スタイル
+   ======================================== */
+
+.rlc-container {
+  --padding-x: 1rem;
+  --padding-y: 0.7rem;
+  --border-radius: calc(var(--radius) - 1px);
+
+  border: 1px solid var(--border);
+  border-radius: calc(var(--border-radius) + 1px);
+  text-decoration: none !important;
+  color: inherit !important;
+  transition: background-color 150ms;
+  width: 100%;
+  margin-bottom: 1.25em;
+  display: grid;
+  grid-template-columns: 1fr 116px;
+  gap: 1rem;
+}
+
+@media (min-width: 60ch) {
+  .rlc-container {
+    grid-template-columns: 1fr 220px;
+  }
+}
+
+.rlc-container:hover {
+  background-color: var(--secondary);
+}
+
+/* .prose a との競合を避ける */
+.prose .rlc-container,
+.rlc-container:visited {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+/* テキスト情報エリア */
+.rlc-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-weight: normal;
+  grid-column: 1;
+  padding: var(--padding-y) 0 var(--padding-y) var(--padding-x);
+  max-width: 100%;
+  min-width: 0;
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
+}
+
+.rlc-title {
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1.3;
+  color: var(--card-foreground);
+  overflow: hidden;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.rlc-description {
+  font-size: 0.8rem;
+  color: var(--muted-foreground);
+  margin-bottom: 0.5em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  -webkit-line-clamp: 1;
+}
+
+.rlc-url-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.rlc-favicon {
+  margin-top: 0.15rem;
+  margin-bottom: 0;
+  width: 16px;
+  height: 16px;
+}
+
+.rlc-url {
+  font-size: 0.8rem;
+  color: var(--muted-foreground);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  -webkit-line-clamp: 1;
+}
+
+/* OG画像エリア */
+.rlc-image-container {
+  grid-column: 2;
+  aspect-ratio: 1 / 1;
+}
+
+@media (min-width: 60ch) {
+  .rlc-image-container {
+    aspect-ratio: 1.91 / 1;
+  }
+}
+
+.rlc-image {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+}
+
+/* ダークモード対応 */
+.dark .rlc-container:hover {
+  background-color: var(--secondary);
+}
+
+.dark .rlc-title {
+  color: var(--card-foreground);
+}
+
+.dark .rlc-description,
+.dark .rlc-url {
+  color: var(--muted-foreground);
+}
