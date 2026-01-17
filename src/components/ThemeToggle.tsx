@@ -11,10 +11,10 @@ function getInitialTheme(): "light" | "dark" {
 }
 
 export function ThemeToggle() {
-  // 初期値としてDOM状態を使用（ThemeInit.astroで既に設定済み）
-  const [theme, setTheme] = useState<"light" | "dark">(getInitialTheme);
+  // SSR時は固定値を使用し、ハイドレーションミスマッチを防止
+  const [theme, setTheme] = useState<"light" | "dark">("light");
 
-  // マウント時にDOM状態と同期（SSR時のハイドレーション対応）
+  // マウント後にDOM状態と同期（ThemeInit.astroで設定済みのクラスを読み取る）
   useEffect(() => {
     setTheme(getInitialTheme());
   }, []);
