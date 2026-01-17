@@ -7,6 +7,7 @@ Kiro-style Spec Driven Development implementation on AI-DLC (AI Development Life
 ### Paths
 - Steering: `.kiro/steering/`
 - Specs: `.kiro/specs/`
+- Architecture: `docs/architecture/`
 
 ### Steering vs Specification
 
@@ -43,3 +44,8 @@ Kiro-style Spec Driven Development implementation on AI-DLC (AI Development Life
 - Load entire `.kiro/steering/` as project memory
 - Default files: `product.md`, `tech.md`, `structure.md`
 - Custom files are supported (managed via `/kiro:steering-custom`)
+
+## Architecture Documents
+プロジェクト全体の技術方針を定義するドキュメント。常に最新の状態に保つ。
+
+- [Test Architecture](docs/architecture/test_architecture.md) - テスト戦略と方針
