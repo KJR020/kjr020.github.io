@@ -26,5 +26,7 @@ VSCodeには、コマンドライン上の一連の作業をコードとして�
 ## 参考
 
 <https://code.visualstudio.com/docs/editor/tasks>
+
 <https://kenpos.dev/2022-09-21-vscodeのtasks機能を使ってまとめてコマンドを実行しよう/>
+
 <https://dev.classmethod.jp/articles/tasks-json-vscode-automation/>

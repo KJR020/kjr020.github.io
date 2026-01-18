@@ -52,4 +52,5 @@ Promise([promise1, promise2, promise3]).then((values) =>
 ## 参考
 
 <https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Promise/all>
+
 <https://tc39.es/ecma262/multipage/control-abstraction-objects.html#sec-promise.all>

@@ -28,4 +28,5 @@ optionで指定もできるが、自動的に選択されるもので、
 ## 参考
 
 <https://git-scm.com/docs/merge-strategies>
+
 <https://www.atlassian.com/ja/git/tutorials/using-branches/merge-strategy>

@@ -47,5 +47,7 @@ CORSポリシーは、リクエストを送信する際に、リクエストヘ�
 ## 参考
 
 <https://datatracker.ietf.org/doc/html/rfc6454>
+
 <https://qiita.com/shun198/items/9ebf19d8fd2c412396dd>
+
 <https://atmarkit.itmedia.co.jp/ait/articles/1311/26/news007.html>

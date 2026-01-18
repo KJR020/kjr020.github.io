@@ -44,4 +44,5 @@ DbCについて調べてみた
 ## 参考文献
 
 <https://en.wikipedia.org/wiki/Design_by_contract>
+
 <https://ja.wikipedia.org/wiki/契約プログラミング>

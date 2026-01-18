@@ -42,4 +42,5 @@ DDDで提唱された概念の一つで、ドメインモデルを表現する�
 ### 参考
 
 <https://ja.m.wikipedia.org/wiki/Value_object>
+
 <https://martinfowler.com/eaaCatalog/valueObject.html>
