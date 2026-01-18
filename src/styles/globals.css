@@ -22,25 +22,17 @@
   --ring: hsl(240 5.9% 10%);
   --radius: 0.5rem;
 
-  /* Callout Colors - Note (blue) */
-  --callout-note-bg: hsl(210 100% 97%);
-  --callout-note-border: hsl(210 100% 50%);
-  --callout-note-title: hsl(210 100% 40%);
+  /* Callout Colors - Note (sky) */
+  --callout-note: hsl(199 89% 48%);
 
-  /* Callout Colors - Tip (green) */
-  --callout-tip-bg: hsl(142 76% 95%);
-  --callout-tip-border: hsl(142 76% 36%);
-  --callout-tip-title: hsl(142 76% 30%);
+  /* Callout Colors - Tip (emerald) */
+  --callout-tip: hsl(160 84% 39%);
 
-  /* Callout Colors - Warning (yellow/orange) */
-  --callout-warning-bg: hsl(45 100% 95%);
-  --callout-warning-border: hsl(45 100% 40%);
-  --callout-warning-title: hsl(30 100% 35%);
+  /* Callout Colors - Warning (amber) */
+  --callout-warning: hsl(38 92% 50%);
 
-  /* Callout Colors - Danger (red) */
-  --callout-danger-bg: hsl(0 100% 97%);
-  --callout-danger-border: hsl(0 84% 60%);
-  --callout-danger-title: hsl(0 84% 40%);
+  /* Callout Colors - Danger (rose) */
+  --callout-danger: hsl(350 89% 60%);
 }
 
 .dark {
@@ -64,25 +56,17 @@
   --input: hsl(240 3.7% 15.9%);
   --ring: hsl(240 4.9% 83.9%);
 
-  /* Callout Colors - Note (blue) */
-  --callout-note-bg: hsl(210 50% 15%);
-  --callout-note-border: hsl(210 100% 60%);
-  --callout-note-title: hsl(210 100% 70%);
+  /* Callout Colors - Note (sky) */
+  --callout-note: hsl(199 89% 48%);
 
-  /* Callout Colors - Tip (green) */
-  --callout-tip-bg: hsl(142 40% 15%);
-  --callout-tip-border: hsl(142 76% 46%);
-  --callout-tip-title: hsl(142 76% 60%);
+  /* Callout Colors - Tip (emerald) */
+  --callout-tip: hsl(160 84% 39%);
 
-  /* Callout Colors - Warning (yellow/orange) */
-  --callout-warning-bg: hsl(45 50% 15%);
-  --callout-warning-border: hsl(45 100% 50%);
-  --callout-warning-title: hsl(45 100% 65%);
+  /* Callout Colors - Warning (amber) */
+  --callout-warning: hsl(38 92% 50%);
 
-  /* Callout Colors - Danger (red) */
-  --callout-danger-bg: hsl(0 50% 15%);
-  --callout-danger-border: hsl(0 84% 55%);
-  --callout-danger-title: hsl(0 84% 70%);
+  /* Callout Colors - Danger (rose) */
+  --callout-danger: hsl(350 89% 60%);
 }
 
 @theme inline {
@@ -276,17 +260,21 @@
 [data-callout] {
   margin: 1.5em 0;
   padding: 1rem 1.25rem;
-  border-left: 4px solid var(--border);
-  border-radius: var(--radius);
-  background-color: var(--secondary);
+  border-left: 2px solid var(--border);
 }
 
 [data-callout-title] {
-  font-weight: 600;
-  margin-bottom: 0.5rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
+}
+
+[data-callout-body] {
+  color: var(--muted-foreground);
+  font-size: 0.875rem;
 }
 
 [data-callout-body] > *:last-child {
@@ -307,39 +295,35 @@
   margin-bottom: 0.75rem;
 }
 
-/* Type-specific Styles */
+/* Type-specific Styles - Minimal with transparency */
 [data-callout-type="note"] {
-  background-color: var(--callout-note-bg);
-  border-left-color: var(--callout-note-border);
+  border-left-color: hsl(199 89% 48% / 0.6);
 }
 
 [data-callout-type="note"] [data-callout-title] {
-  color: var(--callout-note-title);
+  color: hsl(199 89% 48% / 0.9);
 }
 
 [data-callout-type="tip"] {
-  background-color: var(--callout-tip-bg);
-  border-left-color: var(--callout-tip-border);
+  border-left-color: hsl(160 84% 39% / 0.6);
 }
 
 [data-callout-type="tip"] [data-callout-title] {
-  color: var(--callout-tip-title);
+  color: hsl(160 84% 39% / 0.9);
 }
 
 [data-callout-type="warning"] {
-  background-color: var(--callout-warning-bg);
-  border-left-color: var(--callout-warning-border);
+  border-left-color: hsl(38 92% 50% / 0.6);
 }
 
 [data-callout-type="warning"] [data-callout-title] {
-  color: var(--callout-warning-title);
+  color: hsl(38 92% 50% / 0.9);
 }
 
 [data-callout-type="danger"] {
-  background-color: var(--callout-danger-bg);
-  border-left-color: var(--callout-danger-border);
+  border-left-color: hsl(350 89% 60% / 0.6);
 }
 
 [data-callout-type="danger"] [data-callout-title] {
-  color: var(--callout-danger-title);
+  color: hsl(350 89% 60% / 0.9);
 }
