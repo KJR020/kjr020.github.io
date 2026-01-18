@@ -37,6 +37,7 @@
     "@beoe/rehype-mermaid": "^0.4.2",
     "@giscus/react": "^3.1.0",
     "@r4ai/remark-callout": "^0.6.2",
+    "@radix-ui/react-collapsible": "^1.1.12",
     "@radix-ui/react-slot": "^1.2.4",
     "@tanstack/react-query": "^5.90.18",
     "astro": "^5.16.9",
@@ -62,8 +63,8 @@
     "jsdom": "^27.4.0",
     "playwright": "^1.57.0",
     "tailwindcss": "^4.1.18",
-    "vitest": "^4.0.17",
     "tsx": "^4.21.0",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.17"
   }
 }

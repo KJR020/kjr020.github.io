@@ -2,6 +2,8 @@
 import { getCollection, render } from "astro:content";
 import { Comments } from "@/components/Comments";
 import PostMeta from "@/components/PostMeta.astro";
+import type { HeadingItem } from "@/components/toc";
+import { TableOfContents } from "@/components/toc";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 
 export async function getStaticPaths() {
@@ -13,7 +15,16 @@ export async function getStaticPaths() {
 }
 
 const { post } = Astro.props;
-const { Content } = await render(post);
+const { Content, headings: rawHeadings } = await render(post);
+
+// h2, h3のみを抽出して型変換
+const headings: HeadingItem[] = rawHeadings
+  .filter((h) => h.depth === 2 || h.depth === 3)
+  .map((h) => ({
+    id: h.slug,
+    text: h.text,
+    level: h.depth as 2 | 3,
+  }));
 
 // Giscus configuration from environment variables
 const giscusRepo = import.meta.env.PUBLIC_GISCUS_REPO as `${string}/${string}`;
@@ -26,24 +37,39 @@ const giscusCategoryId = import.meta.env.PUBLIC_GISCUS_CATEGORY_ID;
   title={`${post.data.title} - KJR020's Blog`}
   description={post.data.description}
 >
-  <article class="container mx-auto px-4 py-8">
-    <header class="mb-8">
-      <h1 class="text-3xl font-bold mb-4">{post.data.title}</h1>
-      <PostMeta date={post.data.date} tags={post.data.tags} />
-    </header>
+  <div class="container mx-auto px-4 py-8 max-w-6xl">
+    <div class="lg:grid lg:grid-cols-[minmax(0,1fr)_250px] lg:gap-8">
+      {/* 記事本文 */}
+      <article class="min-w-0">
+        <header class="mb-8">
+          <h1 class="text-3xl font-bold mb-4">{post.data.title}</h1>
+          <PostMeta date={post.data.date} tags={post.data.tags} />
+        </header>
 
-    <div class="prose prose-neutral dark:prose-invert max-w-none">
-      <Content />
+        <div class="prose prose-neutral dark:prose-invert max-w-none">
+          <Content />
+        </div>
+
+        <Comments
+          repo={giscusRepo}
+          repoId={giscusRepoId}
+          category={giscusCategory}
+          categoryId={giscusCategoryId}
+          client:only="react"
+        />
+      </article>
+
+      {/* デスクトップ用目次（右側サイドバー） */}
+      <aside class="hidden lg:block">
+        <TableOfContents
+          headings={headings}
+          avatarSrc="/images/avatar.png"
+          avatarAlt="KJR020"
+          client:load
+        />
+      </aside>
     </div>
-
-    <Comments
-      repo={giscusRepo}
-      repoId={giscusRepoId}
-      category={giscusCategory}
-      categoryId={giscusCategoryId}
-      client:only="react"
-    />
-  </article>
+  </div>
 </BaseLayout>
 
 <script is:inline>
