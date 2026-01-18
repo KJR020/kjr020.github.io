@@ -1,0 +1,37 @@
+.scrapbox-carousel {
+  --card-width: 200px;
+  --gap: 1rem;
+
+  display: grid;
+  gap: var(--gap);
+  grid-auto-flow: column;
+  grid-auto-columns: var(--card-width);
+  scroll-snap-type: x mandatory;
+  overflow-x: auto;
+  padding: 1rem 0 2rem;
+  margin: 0;
+  list-style: none;
+
+  /* smooth scrolling */
+  scroll-behavior: smooth;
+
+  /* hide scrollbar */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scrapbox-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.scrapbox-carousel-item {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+}
+
+/* hover/focus state for card meta reveal */
+.scrapbox-carousel-item:hover,
+.scrapbox-carousel-item:focus-within {
+  transform: translateY(-4px);
+  transition: transform 0.3s ease;
+}

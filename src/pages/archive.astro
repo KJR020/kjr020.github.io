@@ -1,7 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import PostMeta from "@/components/PostMeta.astro";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import PostCard from "@/components/PostCard.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 
 const posts = await getCollection("posts", ({ data }) => !data.draft);
@@ -15,19 +14,8 @@ const sortedPosts = posts.sort(
     <h1 class="text-3xl font-bold mb-8">Archive</h1>
     <p class="text-muted-foreground mb-6">{sortedPosts.length}件の記事</p>
 
-    <div class="grid gap-4">
-      {sortedPosts.map((post) => (
-        <a href={`/posts/${post.id}`} class="block">
-          <Card className="transition-colors hover:bg-accent/50">
-            <CardHeader className="pb-2">
-              <CardTitle className="text-lg">{post.data.title}</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <PostMeta date={post.data.date} tags={post.data.tags} />
-            </CardContent>
-          </Card>
-        </a>
-      ))}
+    <div class="grid gap-2">
+      {sortedPosts.map((post) => <PostCard post={post} />)}
     </div>
   </div>
 </BaseLayout>

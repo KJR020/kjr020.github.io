@@ -1,0 +1,30 @@
+---
+import PostMeta from "@/components/PostMeta.astro";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+
+interface Props {
+  post: {
+    id: string;
+    data: {
+      title: string;
+      date: Date;
+      tags?: string[];
+    };
+  };
+}
+
+const { post } = Astro.props;
+---
+
+<Card className="transition-colors hover:bg-accent/50 py-3 gap-2">
+  <CardHeader className="py-0 gap-0">
+    <CardTitle className="text-base">
+      <a href={`/posts/${post.id}`} class="hover:underline">
+        {post.data.title}
+      </a>
+    </CardTitle>
+  </CardHeader>
+  <CardContent className="py-0">
+    <PostMeta date={post.data.date} tags={post.data.tags} />
+  </CardContent>
+</Card>
