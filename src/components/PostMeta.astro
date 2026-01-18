@@ -15,14 +15,14 @@ const formattedDate = date.toLocaleDateString("ja-JP", {
 });
 ---
 
-<div class="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
+<div class="flex flex-wrap items-center gap-3 text-sm text-muted-foreground min-h-7">
   <time datetime={date.toISOString()}>
     {formattedDate}
   </time>
   {tags.length > 0 && (
     <div class="flex flex-wrap gap-1">
       {tags.map((tag) => (
-        <a href={`/tags/${tag}`}>
+        <a href={`/tags/${tag}`} class="relative z-10">
           <Badge variant="secondary" className="cursor-pointer hover:bg-secondary/80">
             {tag}
           </Badge>

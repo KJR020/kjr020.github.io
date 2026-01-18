@@ -1,0 +1,44 @@
+{
+  "feature_name": "scrapbox-card-list",
+  "created_at": "2026-01-17T00:00:00Z",
+  "updated_at": "2026-01-17T00:00:00Z",
+  "language": "ja",
+  "phase": "implementation",
+  "approvals": {
+    "requirements": {
+      "generated": true,
+      "approved": true
+    },
+    "design": {
+      "generated": true,
+      "approved": true
+    },
+    "tasks": {
+      "generated": true,
+      "approved": true
+    }
+  },
+  "ready_for_implementation": true,
+  "future_issues": [
+    {
+      "id": "future-1",
+      "title": "feat: Cloudflare Workers による Scrapbox API Proxy 対応",
+      "description": "リアルタイム更新が必要になった場合の Proxy 構築"
+    },
+    {
+      "id": "future-2",
+      "title": "feat: GitHub Actions による Scrapbox データ定期更新",
+      "description": "schedule トリガーで定期ビルド・自動更新"
+    },
+    {
+      "id": "future-3",
+      "title": "feat: 複数 Scrapbox プロジェクトの統合表示",
+      "description": "複数プロジェクトを1ページで表示"
+    },
+    {
+      "id": "future-4",
+      "title": "feat: Scrapbox カードの検索・フィルタリング機能",
+      "description": "インクリメンタル検索とフィルタリング"
+    }
+  ]
+}

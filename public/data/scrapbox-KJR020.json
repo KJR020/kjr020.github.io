@@ -1,0 +1,166 @@
+{
+  "projectName": "KJR020",
+  "fetchedAt": "2026-01-18T02:37:30Z",
+  "pages": [
+    {
+      "id": "6777da8ce205e30cd89a43bc",
+      "title": "KJR020",
+      "imageUrl": "https://scrapbox.io/files/691c7888bd7de7498418215f.png",
+      "description": " Webエンジニア 株式会社ビープラウド所属",
+      "updatedAt": "2025-12-16T06:49:12Z",
+      "url": "https://scrapbox.io/KJR020/KJR020"
+    },
+    {
+      "id": "68d5473b5f4564eed6b4ab89",
+      "title": "スキルセット",
+      "imageUrl": null,
+      "description": "table:tag 🐉\t得意 or 好きなど自信のある領域 🐕\t 実務で問題なく使える 🔰\t 実務経験あり 🐣\t チュートリアルなど、少し触った経験あり",
+      "updatedAt": "2025-09-29T13:09:00Z",
+      "url": "https://scrapbox.io/KJR020/%E3%82%B9%E3%82%AD%E3%83%AB%E3%82%BB%E3%83%83%E3%83%88"
+    },
+    {
+      "id": "696bbdce6ad6e1e6c0f5cee6",
+      "title": "コピーライターがコピーを考える時間というのは、自分に問いかけをしながら自分で自分の話を聞いていく時間",
+      "imageUrl": null,
+      "description": "",
+      "updatedAt": "2026-01-17T16:50:34Z",
+      "url": "https://scrapbox.io/KJR020/%E3%82%B3%E3%83%94%E3%83%BC%E3%83%A9%E3%82%A4%E3%82%BF%E3%83%BC%E3%81%8C%E3%82%B3%E3%83%94%E3%83%BC%E3%82%92%E8%80%83%E3%81%88%E3%82%8B%E6%99%82%E9%96%93%E3%81%A8%E3%81%84%E3%81%86%E3%81%AE%E3%81%AF%E3%80%81%E8%87%AA%E5%88%86%E3%81%AB%E5%95%8F%E3%81%84%E3%81%8B%E3%81%91%E3%82%92%E3%81%97%E3%81%AA%E3%81%8C%E3%82%89%E8%87%AA%E5%88%86%E3%81%A7%E8%87%AA%E5%88%86%E3%81%AE%E8%A9%B1%E3%82%92%E8%81%9E%E3%81%84%E3%81%A6%E3%81%84%E3%81%8F%E6%99%82%E9%96%93"
+    },
+    {
+      "id": "696ba9ff7763fd43025bd5d5",
+      "title": "OOP: the worst thing that happened to programming",
+      "imageUrl": null,
+      "description": "",
+      "updatedAt": "2026-01-17T15:26:01Z",
+      "url": "https://scrapbox.io/KJR020/OOP%3A%20the%20worst%20thing%20that%20happened%20to%20programming"
+    },
+    {
+      "id": "696ba0229c0a977ca244d3c5",
+      "title": "astro",
+      "imageUrl": "https://scrapbox.io/files/696ba02d262eca074a16e584.png",
+      "description": "  マーケティング、ブログやECサイトなどのコンテンツ中心のウェブサイト向けのフレームワーク 公式では `The web framework for content-driven websites`と謳っている アイランドアーキテクチャ",
+      "updatedAt": "2026-01-17T14:45:54Z",
+      "url": "https://scrapbox.io/KJR020/astro"
+    },
+    {
+      "id": "696b46844e6a3c18592a066c",
+      "title": "Claude.md/Agents.mdのベストプラクティス",
+      "imageUrl": null,
+      "description": "",
+      "updatedAt": "2026-01-17T08:21:47Z",
+      "url": "https://scrapbox.io/KJR020/Claude.md%2FAgents.md%E3%81%AE%E3%83%99%E3%82%B9%E3%83%88%E3%83%97%E3%83%A9%E3%82%AF%E3%83%86%E3%82%A3%E3%82%B9"
+    },
+    {
+      "id": "696b3e8882b3f24075dbd607",
+      "title": "Intersection Observer",
+      "imageUrl": null,
+      "description": "> IntersectionObserver は交差オブザーバー API のインターフェイスで、対象となる要素と祖先要素または文書の最上位のビューポートとがの交差状態（重なり合っている状態）の変化を非同期に監視する方法を提供します。その祖先",
+      "updatedAt": "2026-01-17T07:49:23Z",
+      "url": "https://scrapbox.io/KJR020/Intersection%20Observer"
+    },
+    {
+      "id": "68f9e94afb73649e14596d6f",
+      "title": "TypeScriptにおけるResultの利用",
+      "imageUrl": null,
+      "description": " 型安全になる 型から例外がスローされるかどうかわからない `try-catch`を使用すると、スローされた例外を`catch`する必要がある テストがつらい",
+      "updatedAt": "2026-01-17T07:40:32Z",
+      "url": "https://scrapbox.io/KJR020/TypeScript%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8BResult%E3%81%AE%E5%88%A9%E7%94%A8"
+    },
+    {
+      "id": "696b31abe2fafb74d57b6d84",
+      "title": "remark-link-card",
+      "imageUrl": null,
+      "description": "",
+      "updatedAt": "2026-01-17T07:24:21Z",
+      "url": "https://scrapbox.io/KJR020/remark-link-card"
+    },
+    {
+      "id": "696a246545f4e84498e08c39",
+      "title": "集約ルート",
+      "imageUrl": null,
+      "description": "集約の外部からのインターフェースとなるエンティティ なぜエンティティがルートなのか？ そもそも集約は時間的に変化するエンティティの整合性を保つための概念 エンティティをまとめたものが集約だから集約ルートもエンティティになる と言う理解",
+      "updatedAt": "2026-01-16T11:53:30Z",
+      "url": "https://scrapbox.io/KJR020/%E9%9B%86%E7%B4%84%E3%83%AB%E3%83%BC%E3%83%88"
+    },
+    {
+      "id": "6969c9c330bfb41bc3f159fd",
+      "title": "URLSearchParams",
+      "imageUrl": null,
+      "description": "Web標準API 安全にクエリ文字列を扱える ",
+      "updatedAt": "2026-01-16T05:17:28Z",
+      "url": "https://scrapbox.io/KJR020/URLSearchParams"
+    },
+    {
+      "id": "696997acdffc819301db0abb",
+      "title": "Django 管理サイトをカスタマイズする前に教えてほしかったこと",
+      "imageUrl": null,
+      "description": "",
+      "updatedAt": "2026-01-16T01:43:15Z",
+      "url": "https://scrapbox.io/KJR020/Django%20%E7%AE%A1%E7%90%86%E3%82%B5%E3%82%A4%E3%83%88%E3%82%92%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%9E%E3%82%A4%E3%82%BA%E3%81%99%E3%82%8B%E5%89%8D%E3%81%AB%E6%95%99%E3%81%88%E3%81%A6%E3%81%BB%E3%81%97%E3%81%8B%E3%81%A3%E3%81%9F%E3%81%93%E3%81%A8"
+    },
+    {
+      "id": "6966e881dc2a49451da28ee2",
+      "title": "AskUserQuestion",
+      "imageUrl": "https://scrapbox.io/files/6966e8e0eec0e52e29ef1866.png",
+      "description": "Claude Codeの機能 AskUserQuesitionを使用すると選択肢を提示してくれる テキストで回答する手間が省けるので効率がよい  #Claude_Code",
+      "updatedAt": "2026-01-14T00:53:23Z",
+      "url": "https://scrapbox.io/KJR020/AskUserQuestion"
+    },
+    {
+      "id": "6965af8c382496fd992d6161",
+      "title": "AIエンジニアリング ―基盤モデルを用いたAIアプリケーション開発の基礎と実践",
+      "imageUrl": null,
+      "description": "",
+      "updatedAt": "2026-01-13T02:36:02Z",
+      "url": "https://scrapbox.io/KJR020/AI%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%E3%83%AA%E3%83%B3%E3%82%B0%20%E2%80%95%E5%9F%BA%E7%9B%A4%E3%83%A2%E3%83%87%E3%83%AB%E3%82%92%E7%94%A8%E3%81%84%E3%81%9FAI%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E9%96%8B%E7%99%BA%E3%81%AE%E5%9F%BA%E7%A4%8E%E3%81%A8%E5%AE%9F%E8%B7%B5"
+    },
+    {
+      "id": "6965af5d83a2d3c2c119b901",
+      "title": "LLMのプロンプトエンジニアリング ―GitHub Copilotを生んだ開発者が教える生成AIアプリケーション開発",
+      "imageUrl": null,
+      "description": "",
+      "updatedAt": "2026-01-13T02:35:19Z",
+      "url": "https://scrapbox.io/KJR020/LLM%E3%81%AE%E3%83%97%E3%83%AD%E3%83%B3%E3%83%97%E3%83%88%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%E3%83%AA%E3%83%B3%E3%82%B0%20%E2%80%95GitHub%20Copilot%E3%82%92%E7%94%9F%E3%82%93%E3%81%A0%E9%96%8B%E7%99%BA%E8%80%85%E3%81%8C%E6%95%99%E3%81%88%E3%82%8B%E7%94%9F%E6%88%90AI%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E9%96%8B%E7%99%BA"
+    },
+    {
+      "id": "6965af021468bd70a4036a68",
+      "title": "ソフトウェア設計の結合バランス　持続可能な成長を支えるモジュール化の原則",
+      "imageUrl": null,
+      "description": "Balancing Coupling in Software Design: Universal Design Principles for Architecting Modular Software Systemsの翻訳書 [https:",
+      "updatedAt": "2026-01-13T02:33:57Z",
+      "url": "https://scrapbox.io/KJR020/%E3%82%BD%E3%83%95%E3%83%88%E3%82%A6%E3%82%A7%E3%82%A2%E8%A8%AD%E8%A8%88%E3%81%AE%E7%B5%90%E5%90%88%E3%83%90%E3%83%A9%E3%83%B3%E3%82%B9%E3%80%80%E6%8C%81%E7%B6%9A%E5%8F%AF%E8%83%BD%E3%81%AA%E6%88%90%E9%95%B7%E3%82%92%E6%94%AF%E3%81%88%E3%82%8B%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E5%8C%96%E3%81%AE%E5%8E%9F%E5%89%87"
+    },
+    {
+      "id": "69659af82f5a360f92921862",
+      "title": "CVE-2025-61686",
+      "imageUrl": null,
+      "description": "React Routerの脆弱性 Next.jsの場合、仕組み上React Routerを使用していないから関係はない",
+      "updatedAt": "2026-01-13T01:16:28Z",
+      "url": "https://scrapbox.io/KJR020/CVE-2025-61686"
+    },
+    {
+      "id": "6960c6c3027f2aa4d8afa91b",
+      "title": "require_confirmation",
+      "imageUrl": null,
+      "description": "",
+      "updatedAt": "2026-01-09T09:13:47Z",
+      "url": "https://scrapbox.io/KJR020/require_confirmation"
+    },
+    {
+      "id": "695c70b92a690b7bfce56b0e",
+      "title": "ADK日本語ドキュメント",
+      "imageUrl": null,
+      "description": "`https://adk-labs.github.io/adk-docs/ja/`だと日本語対応されている  #Agent_Development_Kit",
+      "updatedAt": "2026-01-09T07:55:03Z",
+      "url": "https://scrapbox.io/KJR020/ADK%E6%97%A5%E6%9C%AC%E8%AA%9E%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88"
+    },
+    {
+      "id": "69608415a6d575bfea28451b",
+      "title": "A2UI",
+      "imageUrl": null,
+      "description": " ",
+      "updatedAt": "2026-01-09T04:31:59Z",
+      "url": "https://scrapbox.io/KJR020/A2UI"
+    }
+  ]
+}

@@ -127,7 +127,8 @@ Summarize external dependency findings here; deeper investigation (API signature
 ##### Service Interface
 ```typescript
 interface [ComponentName]Service {
-  methodName(input: InputType): Result<OutputType, ErrorType>;
+  methodName(input: InputType): Promise<OutputType>;
+  // Throws: ErrorType (specific error conditions)
 }
 ```
 - Preconditions:
