@@ -1,13 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
-import {
-  RefreshCw,
-  AlertCircle,
-  FileQuestion,
-  ChevronLeft,
-  ChevronRight,
-} from "lucide-react";
+import { RefreshCw, AlertCircle, FileQuestion, ChevronLeft, ChevronRight } from "lucide-react";
 import { QueryProvider } from "@/components/QueryProvider";
 import { useScrapboxData } from "@/hooks/useScrapboxData";
 import { Button } from "@/components/ui/button";
@@ -28,11 +22,7 @@ function formatDate(dateString: string): string {
   });
 }
 
-function ScrapboxCardListInner({
-  project,
-  limit,
-  className,
-}: ScrapboxCardListProps) {
+function ScrapboxCardListInner({ project, limit, className }: ScrapboxCardListProps) {
   const { data, isLoading, isError, error, refetch } = useScrapboxData(
     project,
     limit ? { limit } : undefined,
@@ -63,9 +53,7 @@ function ScrapboxCardListInner({
     return (
       <div className="flex flex-col items-center justify-center gap-4 py-12 text-center">
         <AlertCircle className="h-12 w-12 text-destructive" />
-        <p className="text-muted-foreground">
-          プロジェクト名を指定してください
-        </p>
+        <p className="text-muted-foreground">プロジェクト名を指定してください</p>
       </div>
     );
   }
@@ -73,10 +61,7 @@ function ScrapboxCardListInner({
   // ローディング
   if (isLoading) {
     return (
-      <div
-        className="flex items-center justify-center py-12"
-        data-testid="loading-spinner"
-      >
+      <div className="flex items-center justify-center py-12" data-testid="loading-spinner">
         <RefreshCw className="h-8 w-8 animate-spin text-muted-foreground" />
       </div>
     );
@@ -87,9 +72,7 @@ function ScrapboxCardListInner({
     return (
       <div className="flex flex-col items-center justify-center gap-4 py-12 text-center">
         <AlertCircle className="h-12 w-12 text-destructive" />
-        <p className="text-muted-foreground">
-          {error?.message || "データの取得に失敗しました"}
-        </p>
+        <p className="text-muted-foreground">{error?.message || "データの取得に失敗しました"}</p>
         <Button variant="outline" onClick={() => refetch()}>
           <RefreshCw className="mr-2 h-4 w-4" />
           再試行
@@ -110,72 +93,72 @@ function ScrapboxCardListInner({
 
   return (
     <div className={cn("relative group", className)}>
-        {/* Scroll container */}
-        <div
-          ref={scrollRef}
-          onScroll={checkScroll}
-          className="flex gap-3 overflow-x-auto scrollbar-hide scroll-smooth pb-2"
-          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-        >
-          {data.map((page) => (
-            <a
-              key={page.id}
-              href={page.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={cn(
-                "shrink-0 w-56 p-4",
-                "rounded-lg border border-border/40",
-                "bg-card/50 hover:bg-card hover:border-border",
-                "transition-all duration-200",
-                "group/card",
-                "flex flex-col h-40",
-              )}
-            >
-              <h3 className="text-sm font-medium text-foreground line-clamp-2 leading-snug group-hover/card:text-foreground/90">
-                {page.title}
-              </h3>
-              <p className="text-xs text-muted-foreground/70 line-clamp-2 mt-2 flex-1">
-                {page.description || ""}
-              </p>
-              <span className="text-[10px] text-muted-foreground/50 mt-auto pt-2">
-                {formatDate(page.updatedAt)}
-              </span>
-            </a>
-          ))}
-        </div>
+      {/* Scroll container */}
+      <div
+        ref={scrollRef}
+        onScroll={checkScroll}
+        className="flex gap-3 overflow-x-auto scrollbar-hide scroll-smooth pb-2"
+        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+      >
+        {data.map((page) => (
+          <a
+            key={page.id}
+            href={page.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={cn(
+              "shrink-0 w-56 p-4",
+              "rounded-lg border border-border/40",
+              "bg-card/50 hover:bg-card hover:border-border",
+              "transition-all duration-200",
+              "group/card",
+              "flex flex-col h-40",
+            )}
+          >
+            <h3 className="text-sm font-medium text-foreground line-clamp-2 leading-snug group-hover/card:text-foreground/90">
+              {page.title}
+            </h3>
+            <p className="text-xs text-muted-foreground/70 line-clamp-2 mt-2 flex-1">
+              {page.description || ""}
+            </p>
+            <span className="text-[10px] text-muted-foreground/50 mt-auto pt-2">
+              {formatDate(page.updatedAt)}
+            </span>
+          </a>
+        ))}
+      </div>
 
-        {/* Navigation - only visible on hover */}
-        <button
-          onClick={() => scroll("left")}
-          className={cn(
-            "absolute left-0 top-1/2 -translate-y-1/2 -translate-x-3",
-            "h-8 w-8 rounded-full",
-            "bg-background border border-border shadow-sm",
-            "flex items-center justify-center",
-            "opacity-0 group-hover:opacity-100 transition-opacity duration-200",
-            "hover:bg-muted",
-            !canScrollLeft && "invisible",
-          )}
-          aria-label="前へ"
-        >
-          <ChevronLeft className="h-4 w-4 text-muted-foreground" />
-        </button>
-        <button
-          onClick={() => scroll("right")}
-          className={cn(
-            "absolute right-0 top-1/2 -translate-y-1/2 translate-x-3",
-            "h-8 w-8 rounded-full",
-            "bg-background border border-border shadow-sm",
-            "flex items-center justify-center",
-            "opacity-0 group-hover:opacity-100 transition-opacity duration-200",
-            "hover:bg-muted",
-            !canScrollRight && "invisible",
-          )}
-          aria-label="次へ"
-        >
-          <ChevronRight className="h-4 w-4 text-muted-foreground" />
-        </button>
+      {/* Navigation - only visible on hover */}
+      <button
+        onClick={() => scroll("left")}
+        className={cn(
+          "absolute left-0 top-1/2 -translate-y-1/2 -translate-x-3",
+          "h-8 w-8 rounded-full",
+          "bg-background border border-border shadow-sm",
+          "flex items-center justify-center",
+          "opacity-0 group-hover:opacity-100 transition-opacity duration-200",
+          "hover:bg-muted",
+          !canScrollLeft && "invisible",
+        )}
+        aria-label="前へ"
+      >
+        <ChevronLeft className="h-4 w-4 text-muted-foreground" />
+      </button>
+      <button
+        onClick={() => scroll("right")}
+        className={cn(
+          "absolute right-0 top-1/2 -translate-y-1/2 translate-x-3",
+          "h-8 w-8 rounded-full",
+          "bg-background border border-border shadow-sm",
+          "flex items-center justify-center",
+          "opacity-0 group-hover:opacity-100 transition-opacity duration-200",
+          "hover:bg-muted",
+          !canScrollRight && "invisible",
+        )}
+        aria-label="次へ"
+      >
+        <ChevronRight className="h-4 w-4 text-muted-foreground" />
+      </button>
 
       {/* Subtle fade edges */}
       <div className="absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-background to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity" />

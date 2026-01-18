@@ -21,7 +21,7 @@ draft: false
 JavaScriptでは、オブジェクトを比較する際、参照されているメモリアドレスを比較するため、たとえ値が同じでも異なるオブジェクトとして扱われます。  
 具体的に、次のようなコードでは false が返されます。
 
-```JavaScript
+```javascript
 const obj1 = { a: 1 };
 const obj2 = { a: 1 };
 
@@ -41,7 +41,7 @@ console.log(obj1 === obj2); // false
 特に大きな問題はオブジェクトのプロパティの順番が変わる可能性があることだと私は理解しました。
 例えば、次のような場合です。
 
-```JavaScript
+```javascript
 const obj1 = { a: 1, b: 2 };
 const obj2 = { b: 2, a: 1 };
 

@@ -1,10 +1,5 @@
 import { FileText } from "lucide-react";
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-} from "@/components/ui/card";
+import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { useImageLazyLoad } from "@/hooks/useImageLazyLoad";
 import { cn } from "@/lib/utils";
 import type { ScrapboxPageData } from "@/types/scrapbox";
@@ -15,11 +10,7 @@ interface ScrapboxCardProps {
   isActive?: boolean;
 }
 
-export function ScrapboxCard({
-  page,
-  className,
-  isActive = true,
-}: ScrapboxCardProps) {
+export function ScrapboxCard({ page, className, isActive = true }: ScrapboxCardProps) {
   const { ref, isInView, isLoaded, onLoad } = useImageLazyLoad();
 
   return (
@@ -58,9 +49,7 @@ export function ScrapboxCard({
           )}
         </div>
         <CardHeader className="p-3">
-          <CardTitle className="text-sm font-medium line-clamp-2">
-            {page.title}
-          </CardTitle>
+          <CardTitle className="text-sm font-medium line-clamp-2">{page.title}</CardTitle>
           <CardDescription
             data-testid="card-description"
             className={cn(

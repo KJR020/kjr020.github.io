@@ -12,9 +12,7 @@ interface UseImageLazyLoadResult {
   onLoad: () => void;
 }
 
-export function useImageLazyLoad(
-  options?: UseImageLazyLoadOptions
-): UseImageLazyLoadResult {
+export function useImageLazyLoad(options?: UseImageLazyLoadOptions): UseImageLazyLoadResult {
   const ref = useRef<HTMLImageElement | null>(null);
   const [isInView, setIsInView] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -37,7 +35,7 @@ export function useImageLazyLoad(
       {
         rootMargin: options?.rootMargin ?? "200px",
         threshold: options?.threshold ?? 0.1,
-      }
+      },
     );
 
     observer.observe(element);

@@ -14,11 +14,7 @@ interface ScrapboxCarouselProps {
   className?: string;
 }
 
-function ScrapboxCarouselInner({
-  project,
-  limit = 10,
-  className,
-}: ScrapboxCarouselProps) {
+function ScrapboxCarouselInner({ project, limit = 10, className }: ScrapboxCarouselProps) {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: "start",
     loop: false,
@@ -26,10 +22,7 @@ function ScrapboxCarouselInner({
     dragFree: true,
   });
 
-  const { data, isLoading, isError, error, refetch } = useScrapboxData(
-    project,
-    { limit }
-  );
+  const { data, isLoading, isError, error, refetch } = useScrapboxData(project, { limit });
 
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev();
@@ -44,9 +37,7 @@ function ScrapboxCarouselInner({
     return (
       <div className="flex flex-col items-center justify-center gap-4 py-12 text-center">
         <AlertCircle className="h-12 w-12 text-destructive" />
-        <p className="text-muted-foreground">
-          プロジェクト名を指定してください
-        </p>
+        <p className="text-muted-foreground">プロジェクト名を指定してください</p>
       </div>
     );
   }
@@ -54,10 +45,7 @@ function ScrapboxCarouselInner({
   // ローディング
   if (isLoading) {
     return (
-      <div
-        className="flex items-center justify-center py-12"
-        data-testid="loading-spinner"
-      >
+      <div className="flex items-center justify-center py-12" data-testid="loading-spinner">
         <RefreshCw className="h-8 w-8 animate-spin text-muted-foreground" />
       </div>
     );
@@ -68,9 +56,7 @@ function ScrapboxCarouselInner({
     return (
       <div className="flex flex-col items-center justify-center gap-4 py-12 text-center">
         <AlertCircle className="h-12 w-12 text-destructive" />
-        <p className="text-muted-foreground">
-          {error?.message || "データの取得に失敗しました"}
-        </p>
+        <p className="text-muted-foreground">{error?.message || "データの取得に失敗しました"}</p>
         <Button variant="outline" onClick={() => refetch()}>
           <RefreshCw className="mr-2 h-4 w-4" />
           再試行
@@ -119,10 +105,7 @@ function ScrapboxCarouselInner({
       <div className="overflow-hidden" ref={emblaRef}>
         <div className="flex gap-4">
           {data.map((page) => (
-            <div
-              key={page.id}
-              className="flex-none w-[280px] md:w-[320px]"
-            >
+            <div key={page.id} className="flex-none w-[280px] md:w-[320px]">
               <ScrapboxCard page={page} />
             </div>
           ))}

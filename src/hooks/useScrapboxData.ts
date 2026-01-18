@@ -25,10 +25,7 @@ interface UseScrapboxDataOptions {
   limit?: number;
 }
 
-export function useScrapboxData(
-  project: string,
-  options?: UseScrapboxDataOptions
-) {
+export function useScrapboxData(project: string, options?: UseScrapboxDataOptions) {
   return useQuery({
     queryKey: ["scrapbox", project],
     queryFn: () => fetchScrapboxJson(project),
