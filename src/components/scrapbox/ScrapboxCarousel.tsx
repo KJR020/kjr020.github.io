@@ -1,12 +1,11 @@
-import { useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { AlertCircle, ChevronLeft, ChevronRight, FileQuestion, RefreshCw } from "lucide-react";
+import { useCallback } from "react";
 import { QueryProvider } from "@/components/QueryProvider";
-import { ScrapboxCard } from "./ScrapboxCard";
-import { useScrapboxData } from "@/hooks/useScrapboxData";
 import { Button } from "@/components/ui/button";
+import { useScrapboxData } from "@/hooks/useScrapboxData";
 import { cn } from "@/lib/utils";
-import { RefreshCw, AlertCircle, FileQuestion } from "lucide-react";
+import { ScrapboxCard } from "./ScrapboxCard";
 
 interface ScrapboxCarouselProps {
   project: string;

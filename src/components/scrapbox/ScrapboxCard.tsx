@@ -1,5 +1,5 @@
 import { FileText } from "lucide-react";
-import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useImageLazyLoad } from "@/hooks/useImageLazyLoad";
 import { cn } from "@/lib/utils";
 import type { ScrapboxPageData } from "@/types/scrapbox";

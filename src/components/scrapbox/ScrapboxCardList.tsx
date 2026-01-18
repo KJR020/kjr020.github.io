@@ -1,10 +1,10 @@
 "use client";
 
-import { useState, useRef } from "react";
-import { RefreshCw, AlertCircle, FileQuestion, ChevronLeft, ChevronRight } from "lucide-react";
+import { AlertCircle, ChevronLeft, ChevronRight, FileQuestion, RefreshCw } from "lucide-react";
+import { useRef, useState } from "react";
 import { QueryProvider } from "@/components/QueryProvider";
-import { useScrapboxData } from "@/hooks/useScrapboxData";
 import { Button } from "@/components/ui/button";
+import { useScrapboxData } from "@/hooks/useScrapboxData";
 import { cn } from "@/lib/utils";
 
 interface ScrapboxCardListProps {
@@ -130,6 +130,7 @@ function ScrapboxCardListInner({ project, limit, className }: ScrapboxCardListPr
 
       {/* Navigation - only visible on hover */}
       <button
+        type="button"
         onClick={() => scroll("left")}
         className={cn(
           "absolute left-0 top-1/2 -translate-y-1/2 -translate-x-3",
@@ -145,6 +146,7 @@ function ScrapboxCardListInner({ project, limit, className }: ScrapboxCardListPr
         <ChevronLeft className="h-4 w-4 text-muted-foreground" />
       </button>
       <button
+        type="button"
         onClick={() => scroll("right")}
         className={cn(
           "absolute right-0 top-1/2 -translate-y-1/2 translate-x-3",

@@ -1,8 +1,8 @@
 ---
 import { getCollection } from "astro:content";
 import PostCard from "@/components/PostCard.astro";
-import BaseLayout from "@/layouts/BaseLayout.astro";
 import { ScrapboxCardList } from "@/components/scrapbox";
+import BaseLayout from "@/layouts/BaseLayout.astro";
 
 const posts = await getCollection("posts", ({ data }) => !data.draft);
 const sortedPosts = posts.sort(
