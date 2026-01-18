@@ -16,12 +16,15 @@ interface Props {
 const { post } = Astro.props;
 ---
 
-<Card className="transition-colors hover:bg-accent/50 py-3 gap-2">
+<Card className="relative transition-colors hover:bg-accent/50 py-3 gap-2">
+  <a
+    href={`/posts/${post.id}`}
+    class="absolute inset-0 z-0"
+    aria-label={post.data.title}
+  />
   <CardHeader className="py-0 gap-0">
     <CardTitle className="text-base">
-      <a href={`/posts/${post.id}`} class="hover:underline">
-        {post.data.title}
-      </a>
+      {post.data.title}
     </CardTitle>
   </CardHeader>
   <CardContent className="py-0">

@@ -129,17 +129,16 @@ function ScrapboxCardListInner({
                 "bg-card/50 hover:bg-card hover:border-border",
                 "transition-all duration-200",
                 "group/card",
+                "flex flex-col h-40",
               )}
             >
-              <h3 className="text-sm font-medium text-foreground line-clamp-2 leading-relaxed mb-2 group-hover/card:text-foreground/90">
+              <h3 className="text-sm font-medium text-foreground line-clamp-2 leading-snug group-hover/card:text-foreground/90">
                 {page.title}
               </h3>
-              {page.description && (
-                <p className="text-xs text-muted-foreground/70 line-clamp-2 mb-3">
-                  {page.description}
-                </p>
-              )}
-              <span className="text-[10px] text-muted-foreground/50">
+              <p className="text-xs text-muted-foreground/70 line-clamp-2 mt-2 flex-1">
+                {page.description || ""}
+              </p>
+              <span className="text-[10px] text-muted-foreground/50 mt-auto pt-2">
                 {formatDate(page.updatedAt)}
               </span>
             </a>

@@ -22,7 +22,7 @@ const formattedDate = date.toLocaleDateString("ja-JP", {
   {tags.length > 0 && (
     <div class="flex flex-wrap gap-1">
       {tags.map((tag) => (
-        <a href={`/tags/${tag}`}>
+        <a href={`/tags/${tag}`} class="relative z-10">
           <Badge variant="secondary" className="cursor-pointer hover:bg-secondary/80">
             {tag}
           </Badge>
