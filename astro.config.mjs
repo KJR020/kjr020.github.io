@@ -7,6 +7,15 @@ import pagefind from "astro-pagefind";
 import { rehypeMermaid } from "@beoe/rehype-mermaid";
 // @ts-ignore
 import remarkLinkCard from "remark-link-card";
+import remarkCallout from "@r4ai/remark-callout";
+
+/** @type {Record<string, string>} */
+const calloutIcons = {
+  note: '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>',
+  tip: '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="m6.34 7.34 2.83 2.83"/><path d="M2 12h4"/><path d="m6.34 16.66 2.83-2.83"/><path d="M12 18v4"/><path d="m17.66 16.66-2.83-2.83"/><path d="M22 12h-4"/><path d="m17.66 7.34-2.83 2.83"/></svg>',
+  warning: '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>',
+  danger: '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>',
+};
 
 // https://astro.build/config
 export default defineConfig({
@@ -26,7 +35,16 @@ export default defineConfig({
       },
       defaultColor: false,
     },
-    remarkPlugins: [[remarkLinkCard, { cache: true, shortenUrl: true }]],
+    remarkPlugins: [
+      [
+        remarkCallout,
+        {
+          icon: (/** @type {{ type: string }} */ callout) =>
+            calloutIcons[callout.type] || calloutIcons.note,
+        },
+      ],
+      [remarkLinkCard, { cache: true, shortenUrl: true }],
+    ],
     rehypePlugins: [[rehypeMermaid, { class: "mermaid" }]],
   },
 });
