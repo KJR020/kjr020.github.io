@@ -16,3 +16,7 @@ dist/
 
 # remark-link-card cache
 public/remark-link-card/
+
+# Playwright
+test-results/
+playwright-report/
