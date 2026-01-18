@@ -7,6 +7,7 @@ import pagefind from "astro-pagefind";
 import { rehypeMermaid } from "@beoe/rehype-mermaid";
 // @ts-ignore
 import remarkLinkCard from "remark-link-card";
+import remarkCallout from "@r4ai/remark-callout";
 
 // https://astro.build/config
 export default defineConfig({
@@ -26,7 +27,10 @@ export default defineConfig({
       },
       defaultColor: false,
     },
-    remarkPlugins: [[remarkLinkCard, { cache: true, shortenUrl: true }]],
+    remarkPlugins: [
+      remarkCallout,
+      [remarkLinkCard, { cache: true, shortenUrl: true }],
+    ],
     rehypePlugins: [[rehypeMermaid, { class: "mermaid" }]],
   },
 });

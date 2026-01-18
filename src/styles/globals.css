@@ -21,6 +21,26 @@
   --input: hsl(240 5.9% 90%);
   --ring: hsl(240 5.9% 10%);
   --radius: 0.5rem;
+
+  /* Callout Colors - Note (blue) */
+  --callout-note-bg: hsl(210 100% 97%);
+  --callout-note-border: hsl(210 100% 50%);
+  --callout-note-title: hsl(210 100% 40%);
+
+  /* Callout Colors - Tip (green) */
+  --callout-tip-bg: hsl(142 76% 95%);
+  --callout-tip-border: hsl(142 76% 36%);
+  --callout-tip-title: hsl(142 76% 30%);
+
+  /* Callout Colors - Warning (yellow/orange) */
+  --callout-warning-bg: hsl(45 100% 95%);
+  --callout-warning-border: hsl(45 100% 40%);
+  --callout-warning-title: hsl(30 100% 35%);
+
+  /* Callout Colors - Danger (red) */
+  --callout-danger-bg: hsl(0 100% 97%);
+  --callout-danger-border: hsl(0 84% 60%);
+  --callout-danger-title: hsl(0 84% 40%);
 }
 
 .dark {
@@ -43,6 +63,26 @@
   --border: hsl(240 3.7% 15.9%);
   --input: hsl(240 3.7% 15.9%);
   --ring: hsl(240 4.9% 83.9%);
+
+  /* Callout Colors - Note (blue) */
+  --callout-note-bg: hsl(210 50% 15%);
+  --callout-note-border: hsl(210 100% 60%);
+  --callout-note-title: hsl(210 100% 70%);
+
+  /* Callout Colors - Tip (green) */
+  --callout-tip-bg: hsl(142 40% 15%);
+  --callout-tip-border: hsl(142 76% 46%);
+  --callout-tip-title: hsl(142 76% 60%);
+
+  /* Callout Colors - Warning (yellow/orange) */
+  --callout-warning-bg: hsl(45 50% 15%);
+  --callout-warning-border: hsl(45 100% 50%);
+  --callout-warning-title: hsl(45 100% 65%);
+
+  /* Callout Colors - Danger (red) */
+  --callout-danger-bg: hsl(0 50% 15%);
+  --callout-danger-border: hsl(0 84% 55%);
+  --callout-danger-title: hsl(0 84% 70%);
 }
 
 @theme inline {
@@ -226,4 +266,80 @@
 .dark .rlc-description,
 .dark .rlc-url {
   color: var(--muted-foreground);
+}
+
+/* ========================================
+   remark-callout スタイル
+   ======================================== */
+
+/* Base Callout Styles */
+[data-callout] {
+  margin: 1.5em 0;
+  padding: 1rem 1.25rem;
+  border-left: 4px solid var(--border);
+  border-radius: var(--radius);
+  background-color: var(--secondary);
+}
+
+[data-callout-title] {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+[data-callout-body] > *:last-child {
+  margin-bottom: 0;
+}
+
+/* Callout内のリストスタイル調整 */
+[data-callout-body] ul,
+[data-callout-body] ol {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+}
+
+/* Callout内のコードブロック調整 */
+[data-callout-body] pre {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Type-specific Styles */
+[data-callout-type="note"] {
+  background-color: var(--callout-note-bg);
+  border-left-color: var(--callout-note-border);
+}
+
+[data-callout-type="note"] [data-callout-title] {
+  color: var(--callout-note-title);
+}
+
+[data-callout-type="tip"] {
+  background-color: var(--callout-tip-bg);
+  border-left-color: var(--callout-tip-border);
+}
+
+[data-callout-type="tip"] [data-callout-title] {
+  color: var(--callout-tip-title);
+}
+
+[data-callout-type="warning"] {
+  background-color: var(--callout-warning-bg);
+  border-left-color: var(--callout-warning-border);
+}
+
+[data-callout-type="warning"] [data-callout-title] {
+  color: var(--callout-warning-title);
+}
+
+[data-callout-type="danger"] {
+  background-color: var(--callout-danger-bg);
+  border-left-color: var(--callout-danger-border);
+}
+
+[data-callout-type="danger"] [data-callout-title] {
+  color: var(--callout-danger-title);
 }
