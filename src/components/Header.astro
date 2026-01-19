@@ -1,6 +1,6 @@
 ---
 import { MobileMenu } from "@/components/MobileMenu";
-import { ThemeToggle } from "@/components/ThemeToggle";
+import { ThemeToggleAnimated } from "@/components/ThemeToggleAnimated";
 
 const navItems = [
   { href: "/", label: "Home" },
@@ -54,7 +54,7 @@ const navItems = [
       </nav>
       {/* モバイルメニュー */}
       <MobileMenu navItems={navItems} client:load />
-      <ThemeToggle client:load />
+      <ThemeToggleAnimated client:load />
     </div>
   </div>
 </header>
