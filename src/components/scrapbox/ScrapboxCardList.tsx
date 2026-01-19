@@ -1,6 +1,12 @@
 "use client";
 
-import { AlertCircle, ChevronLeft, ChevronRight, FileQuestion, RefreshCw } from "lucide-react";
+import {
+  AlertCircle,
+  ChevronLeft,
+  ChevronRight,
+  FileQuestion,
+  RefreshCw,
+} from "lucide-react";
 import { useRef, useState } from "react";
 import { QueryProvider } from "@/components/QueryProvider";
 import { Button } from "@/components/ui/button";
@@ -22,7 +28,11 @@ function formatDate(dateString: string): string {
   });
 }
 
-function ScrapboxCardListInner({ project, limit, className }: ScrapboxCardListProps) {
+function ScrapboxCardListInner({
+  project,
+  limit,
+  className,
+}: ScrapboxCardListProps) {
   const { data, isLoading, isError, error, refetch } = useScrapboxData(
     project,
     limit ? { limit } : undefined,
@@ -53,7 +63,9 @@ function ScrapboxCardListInner({ project, limit, className }: ScrapboxCardListPr
     return (
       <div className="flex flex-col items-center justify-center gap-4 py-12 text-center">
         <AlertCircle className="h-12 w-12 text-destructive" />
-        <p className="text-muted-foreground">プロジェクト名を指定してください</p>
+        <p className="text-muted-foreground">
+          プロジェクト名を指定してください
+        </p>
       </div>
     );
   }
@@ -61,7 +73,10 @@ function ScrapboxCardListInner({ project, limit, className }: ScrapboxCardListPr
   // ローディング
   if (isLoading) {
     return (
-      <div className="flex items-center justify-center py-12" data-testid="loading-spinner">
+      <div
+        className="flex items-center justify-center py-12"
+        data-testid="loading-spinner"
+      >
         <RefreshCw className="h-8 w-8 animate-spin text-muted-foreground" />
       </div>
     );
@@ -72,7 +87,9 @@ function ScrapboxCardListInner({ project, limit, className }: ScrapboxCardListPr
     return (
       <div className="flex flex-col items-center justify-center gap-4 py-12 text-center">
         <AlertCircle className="h-12 w-12 text-destructive" />
-        <p className="text-muted-foreground">{error?.message || "データの取得に失敗しました"}</p>
+        <p className="text-muted-foreground">
+          {error?.message || "データの取得に失敗しました"}
+        </p>
         <Button variant="outline" onClick={() => refetch()}>
           <RefreshCw className="mr-2 h-4 w-4" />
           再試行
@@ -108,7 +125,7 @@ function ScrapboxCardListInner({ project, limit, className }: ScrapboxCardListPr
             rel="noopener noreferrer"
             className={cn(
               "shrink-0 w-56 p-4",
-              "rounded-lg border border-border/40",
+              "rounded-lg border border-order",
               "bg-card/50 hover:bg-card hover:border-border",
               "transition-all duration-200",
               "group/card",
