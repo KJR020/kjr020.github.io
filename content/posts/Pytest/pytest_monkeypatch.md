@@ -1,26 +1,29 @@
 +++
 title = 'pytestのmonkeypatchについて調べた'
-date = 2025-01-16T20:04:07+09:00 
-draft = true
+date = 2025-01-16T20:04:07+09:00
+draft = false
 tags = ['Pytest']
 +++
 
-# pytestのmonkeypatchについて調べた
+pytestの`monkeypatch`フィクスチャについて調べたのでまとめます。
 
 ## monkeypatchとは
 
 ### 概要
 
-- `monkeypatch`は、安全にモックやパッチを実行するためのpytestフィクスチャらしい
-  - 安全とは、テストやフィクスチャの実行完了後に自動的に元の状態に復元されることを指す
-- 下記のような用途に使用される
-  - グローバルな設定に依存するコードのテスト
-  - ネットワークアクセスなど、テストが困難な処理の置き換え
-  - 環境変数やシステムパスの一時的な変更
+`monkeypatch`は、安全にモックやパッチを実行するためのpytestフィクスチャです。
+
+「安全」というのは、テストやフィクスチャの実行完了後に自動的に元の状態に復元されることを指すようです。
+
+主に以下のような用途を想定しているようです。
+
+- グローバルな設定に依存するコードのテスト
+- ネットワークアクセスなど、テストが困難な処理の置き換え
+- 環境変数やシステムパスの一時的な変更
 
 ### 提供される機能
 
-公式ドキュメントによると、`monkeypatch`は以下の機能を提供するらしい
+公式ドキュメントによると、`monkeypatch`は以下の機能を提供しています。
 
 #### 1. 属性の操作
 - `monkeypatch.setattr(obj, name, value, raising=True)`
@@ -56,7 +59,12 @@ tags = ['Pytest']
 
 ## 使用例
 
+いくつかの代表的な使用例を紹介します。
+コードは公式ドキュメントから引用したものです。
+
 ### 1. 関数やメソッドの置き換え
+
+外部APIへのリクエストをモックする例です。
 
 ```python
 # テスト対象の関数
@@ -67,26 +75,32 @@ def get_api_data():
 def test_get_api_data(monkeypatch):
     def mock_get(*args, **kwargs):
         return type('MockResponse', (), {'json': lambda: {'data': 'test'}})()
-    
+
     monkeypatch.setattr(requests, 'get', mock_get)
     assert get_api_data() == {'data': 'test'}
 ```
 
 ### 2. 環境変数を使用するコードのテスト
 
+環境変数に依存するコードのテストに便利です。
+
 ```python
 def test_database_url(monkeypatch):
     # パスを含む環境変数の設定（連結あり）
     monkeypatch.setenv('PATH', '/test/bin', prepend=':')
-    
+
     # 通常の環境変数の設定
     monkeypatch.setenv('DB_HOST', 'test-db')
-    
+
     # 環境変数の削除
     monkeypatch.delenv('TEMP_VAR', raising=False)
 ```
 
+テスト終了後に環境変数が自動で元に戻るので、他のテストへの影響を心配せずに済みます。
+
 ### 3. 辞書の操作
+
+設定オブジェクトなど、辞書の値を一時的に変更したい場合
 
 ```python
 def test_config(monkeypatch):
@@ -101,7 +115,11 @@ def test_config(monkeypatch):
     assert config == {'api_key': 'test_key'}
 ```
 
+公式ドキュメントの例ですが、このケースだと環境変数で管理しそうな気もします。実際の使い所はまだ掴めていません。
+
 ### 4. コンテキスト管理の活用
+
+特定のスコープ内でのみパッチを適用したい場合
 
 ```python
 def test_with_context(monkeypatch):
@@ -118,7 +136,11 @@ def test_with_context(monkeypatch):
     assert 'TEMP_VAR' not in os.environ
 ```
 
+テスト全体ではなく、特定の処理だけにパッチを当てたいときに使えます。スコープを細かく制御できるのが便利です。
+
 ### 5. sys.pathの操作
+
+テスト用のモジュールをインポート可能にする例です。
 
 ```python
 def test_import_path(monkeypatch):
@@ -131,6 +153,8 @@ def test_import_path(monkeypatch):
     
     import test_module  # テスト用モジュールがインポート可能に
 ```
+
+テスト専用のモジュールを簡単に追加できます。
 
 ## 参考文献
 
