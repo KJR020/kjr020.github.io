@@ -34,3 +34,16 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+<!-- Google Analytics -->
+{import.meta.env.PROD && (
+  <>
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-ZD39HPYKJ9"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-ZD39HPYKJ9');
+    </script>
+  </>
+)}
