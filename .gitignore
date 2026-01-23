@@ -20,3 +20,6 @@ public/remark-link-card/
 # Playwright
 test-results/
 playwright-report/
+
+personal_docs/
+
