@@ -22,12 +22,9 @@ export function ScrapboxCard({ page, className, isActive = true }: ScrapboxCardP
       data-testid="scrapbox-card"
     >
       <Card
-        className={cn(
-          "h-full overflow-hidden transition-all duration-200 hover:shadow-md",
-          className,
-        )}
+        className={cn("h-full overflow-hidden transition-colors hover:bg-accent/50!", className)}
       >
-        <div className="relative aspect-4/3 w-full overflow-hidden bg-muted">
+        <div className="relative aspect-4/3 w-full overflow-hidden">
           {page.imageUrl ? (
             <img
               ref={ref}

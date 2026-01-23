@@ -108,9 +108,8 @@ function ScrapboxCardListInner({ project, limit, className }: ScrapboxCardListPr
             rel="noopener noreferrer"
             className={cn(
               "shrink-0 w-56 p-4",
-              "rounded-lg border border-order",
-              "bg-card/50 hover:bg-card hover:border-border",
-              "transition-all duration-200",
+              "rounded-lg border",
+              "bg-card transition-colors hover:bg-accent/50",
               "group/card",
               "flex flex-col h-40",
             )}
