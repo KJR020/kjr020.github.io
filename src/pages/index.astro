@@ -12,74 +12,116 @@ const latestPosts = sortedPosts.slice(0, 5);
 ---
 
 <BaseLayout title="KJR020's Blog" description="KJR020の技術ブログ">
-  <div class="container mx-auto px-4 pt-4 pb-8">
-    <section class="mb-6">
-      <p class="text-lg text-muted-foreground">
-        Webエンジニアによる技術ブログ兼思考ログ。
-        日々の学びや感じたことを日記的に書いています。
-      </p>
-    </section>
-    <section class="py-8">
-      <div class="flex items-center justify-between mb-4">
-        <h2 class="text-2xl font-bold mb-2">Latest Posts</h2>
-        {
-          sortedPosts.length > 5 && (
-            <a
-              href="/archive"
-              class="flex items-center gap-1 text-xs text-muted-foreground/60 hover:text-muted-foreground transition-colors"
-            >
-              すべて見る
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="12"
-                height="12"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="m9 18 6-6-6-6" />
-              </svg>
-            </a>
-          )
-        }
-      </div>
-      <div class="grid gap-2">
-        {latestPosts.map((post) => <PostCard post={post} />)}
-      </div>
-    </section>
+  <div class="index-wrapper">
+    <!-- 背景の透かし -->
+    <div class="kuri-background" aria-hidden="true"></div>
 
-    <section class="py-8">
-      <div class="flex items-center justify-between mb-4">
-        <h2 class="text-2xl font-bold mb-2">Scrapbox</h2>
-        <a
-          href="https://scrapbox.io/KJR020"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="flex items-center gap-1 text-xs text-muted-foreground/60 hover:text-muted-foreground transition-colors"
-        >
-          すべて見る
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="12"
-            height="12"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+    <div class="container mx-auto px-4 pt-4 pb-8">
+      <section class="mb-6">
+        <p class="text-lg text-muted-foreground">
+          Webエンジニアによる技術ブログ兼思考ログ。
+          日々の学びや感じたことを日記的に書いています。
+        </p>
+      </section>
+      <section class="py-8">
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="text-2xl font-bold mb-2">Latest Posts</h2>
+          {
+            sortedPosts.length > 5 && (
+              <a
+                href="/archive"
+                class="flex items-center gap-1 text-xs text-muted-foreground/60 hover:text-muted-foreground transition-colors"
+              >
+                すべて見る
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="m9 18 6-6-6-6" />
+                </svg>
+              </a>
+            )
+          }
+        </div>
+        <div class="grid gap-2">
+          {latestPosts.map((post) => <PostCard post={post} />)}
+        </div>
+      </section>
+
+      <section class="py-8">
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="text-2xl font-bold mb-2">Scrapbox</h2>
+          <a
+            href="https://scrapbox.io/KJR020"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-1 text-xs text-muted-foreground/60 hover:text-muted-foreground transition-colors"
           >
-            <path d="M15 3h6v6"></path>
-            <path d="M10 14 21 3"></path>
-            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-            ></path>
-          </svg>
-        </a>
-      </div>
-      <ScrapboxCardList project="KJR020" client:load />
-    </section>
+            すべて見る
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="12"
+              height="12"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M15 3h6v6"></path>
+              <path d="M10 14 21 3"></path>
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+              ></path>
+            </svg>
+          </a>
+        </div>
+        <ScrapboxCardList project="KJR020" client:load />
+      </section>
+    </div>
   </div>
 </BaseLayout>
+
+<style>
+  .index-wrapper {
+    position: relative;
+  }
+
+  .kuri-background {
+    position: absolute;
+    bottom: 20%;
+    right: -2rem;
+    width: 24rem;
+    height: 24rem;
+    background-image: url("/images/kuri.svg");
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: contain;
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  .index-wrapper > .container {
+    position: relative;
+  }
+
+  .index-wrapper :global([data-slot="card"]:hover) {
+    background: hsl(var(--accent) / 0.5);
+  }
+
+  @media (max-width: 768px) {
+    .kuri-background {
+      width: 14rem;
+      right: -1rem;
+      opacity: 0.12;
+    }
+  }
+</style>
