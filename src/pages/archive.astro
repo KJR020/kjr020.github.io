@@ -7,15 +7,148 @@ const posts = await getCollection("posts", ({ data }) => !data.draft);
 const sortedPosts = posts.sort(
   (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
 );
+
+const postsByYear = sortedPosts.reduce<Record<number, typeof sortedPosts>>((acc, post) => {
+  const year = new Date(post.data.date).getFullYear();
+  if (!acc[year]) acc[year] = [];
+  acc[year].push(post);
+  return acc;
+}, {});
+const years = Object.keys(postsByYear)
+  .map(Number)
+  .sort((a, b) => b - a);
 ---
 
 <BaseLayout title="Archive - KJR020's Blog" description="すべての記事一覧">
-  <div class="container mx-auto px-4 py-8">
-    <h1 class="text-3xl font-bold mb-8">Archive</h1>
-    <p class="text-muted-foreground mb-6">{sortedPosts.length}件の記事</p>
+  <div class="archive-page">
+    <div class="archive-header container mx-auto px-4 pt-8 pb-4">
+      <h1 class="text-3xl font-bold mb-2">Archive</h1>
+      <p class="text-muted-foreground">{sortedPosts.length}件の記事</p>
+    </div>
 
-    <div class="grid gap-2">
-      {sortedPosts.map((post) => <PostCard post={post} />)}
+    <div class="archive-body">
+      <div class="kuri-fixed" aria-hidden="true"></div>
+
+      <div class="archive-scroll">
+        <div class="container mx-auto px-4 pb-4">
+          {
+            years.map((year) => (
+              <section class="year-section">
+                <div class="year-label">
+                  <span class="year-text">{year}</span>
+                </div>
+                <div class="year-cards">
+                  {postsByYear[year].map((post) => (
+                    <PostCard post={post} />
+                  ))}
+                </div>
+              </section>
+            ))
+          }
+        </div>
+      </div>
     </div>
   </div>
 </BaseLayout>
+
+<style>
+  .archive-page {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .archive-header {
+    flex-shrink: 0;
+  }
+
+  .archive-body {
+    position: relative;
+    flex: 1;
+    min-height: 0;
+  }
+
+  .kuri-fixed {
+    position: absolute;
+    bottom: 0;
+    right: -2rem;
+    width: 24rem;
+    height: 24rem;
+    background-image: url("/images/kuri.svg");
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: contain;
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  .archive-scroll {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    overflow-y: auto;
+  }
+
+  .year-section {
+    display: grid;
+    grid-template-columns: 5rem 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .year-label {
+    position: sticky;
+    top: 0;
+    align-self: start;
+    padding-top: 0.75rem;
+  }
+
+  .year-text {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: hsl(var(--muted-foreground));
+  }
+
+  .year-cards {
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  :global([data-slot="card"]:hover) {
+    background: hsl(var(--accent) / 0.5);
+  }
+
+  @media (max-width: 768px) {
+    .year-section {
+      grid-template-columns: 3.5rem 1fr;
+      gap: 0.5rem;
+    }
+
+    .year-text {
+      font-size: 0.875rem;
+    }
+
+    .kuri-fixed {
+      width: 14rem;
+      right: -1rem;
+      opacity: 0.12;
+    }
+  }
+</style>
+
+<style is:global>
+  body:has(.archive-page) {
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  body:has(.archive-page) > main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+  }
+</style>
