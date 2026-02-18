@@ -1,166 +1,806 @@
 {
   "projectName": "KJR020",
-  "fetchedAt": "2026-01-18T02:37:30Z",
+  "fetchedAt": "2026-02-18T04:34:17.181Z",
   "pages": [
     {
       "id": "6777da8ce205e30cd89a43bc",
       "title": "KJR020",
       "imageUrl": "https://scrapbox.io/files/691c7888bd7de7498418215f.png",
-      "description": " Webエンジニア 株式会社ビープラウド所属",
-      "updatedAt": "2025-12-16T06:49:12Z",
+      "description": "[https://scrapbox.io/files/691c7888bd7de7498418215f.png] Webエンジニア 株式会社ビープラウド所属",
+      "updatedAt": "2026-01-28T22:04:53.000Z",
       "url": "https://scrapbox.io/KJR020/KJR020"
     },
     {
       "id": "68d5473b5f4564eed6b4ab89",
       "title": "スキルセット",
       "imageUrl": null,
-      "description": "table:tag 🐉\t得意 or 好きなど自信のある領域 🐕\t 実務で問題なく使える 🔰\t 実務経験あり 🐣\t チュートリアルなど、少し触った経験あり",
-      "updatedAt": "2025-09-29T13:09:00Z",
+      "description": "##　プログラミング言語 [Python] 🐕 [JavaScript] 🐕",
+      "updatedAt": "2026-01-19T00:35:49.000Z",
       "url": "https://scrapbox.io/KJR020/%E3%82%B9%E3%82%AD%E3%83%AB%E3%82%BB%E3%83%83%E3%83%88"
     },
     {
-      "id": "696bbdce6ad6e1e6c0f5cee6",
-      "title": "コピーライターがコピーを考える時間というのは、自分に問いかけをしながら自分で自分の話を聞いていく時間",
+      "id": "69953a9ed7d1197c68c00267",
+      "title": "ラストマンシップ",
+      "imageUrl": null,
+      "description": "[https://note.com/tokyo_harbor/n/n9622fb5b6a39 ラストマンシップ｜トーキョーハーバー] [https://new-one.co.jp/method/19735/ 若手社員に持ってもらうべきマインド「ラストマンシップ」 | メソッド | 株式会社NEWONE] [https://digitalbizpro.hatenablog.com/entry/2019/11/12/200711 新卒はとにかくラストマンシップを磨け - わかるブログ]",
+      "updatedAt": "2026-02-18T04:06:01.000Z",
+      "url": "https://scrapbox.io/KJR020/%E3%83%A9%E3%82%B9%E3%83%88%E3%83%9E%E3%83%B3%E3%82%B7%E3%83%83%E3%83%97"
+    },
+    {
+      "id": "69951f768319de0ad582ae26",
+      "title": "GitHub Copilot",
+      "imageUrl": null,
+      "description": "[https://tech-lab.sios.jp/archives/51023 tech-lab.sios.jp/archives/51023]",
+      "updatedAt": "2026-02-18T02:10:10.000Z",
+      "url": "https://scrapbox.io/KJR020/GitHub%20Copilot"
+    },
+    {
+      "id": "69951ebe473f6face929fda8",
+      "title": "やさしい機能仕様",
+      "imageUrl": "https://scrapbox.io/files/69951f073583dfb074d5906f.png",
+      "description": "Joel Splosky 仕様書のドキュメンティングにおける古典的良書 [https://scrapbox.io/files/69951f073583dfb074d5906f.png]",
+      "updatedAt": "2026-02-18T02:08:24.000Z",
+      "url": "https://scrapbox.io/KJR020/%E3%82%84%E3%81%95%E3%81%97%E3%81%84%E6%A9%9F%E8%83%BD%E4%BB%95%E6%A7%98"
+    },
+    {
+      "id": "6995192847c88bf8a36d62bf",
+      "title": "バブル効果",
       "imageUrl": null,
       "description": "",
-      "updatedAt": "2026-01-17T16:50:34Z",
-      "url": "https://scrapbox.io/KJR020/%E3%82%B3%E3%83%94%E3%83%BC%E3%83%A9%E3%82%A4%E3%82%BF%E3%83%BC%E3%81%8C%E3%82%B3%E3%83%94%E3%83%BC%E3%82%92%E8%80%83%E3%81%88%E3%82%8B%E6%99%82%E9%96%93%E3%81%A8%E3%81%84%E3%81%86%E3%81%AE%E3%81%AF%E3%80%81%E8%87%AA%E5%88%86%E3%81%AB%E5%95%8F%E3%81%84%E3%81%8B%E3%81%91%E3%82%92%E3%81%97%E3%81%AA%E3%81%8C%E3%82%89%E8%87%AA%E5%88%86%E3%81%A7%E8%87%AA%E5%88%86%E3%81%AE%E8%A9%B1%E3%82%92%E8%81%9E%E3%81%84%E3%81%A6%E3%81%84%E3%81%8F%E6%99%82%E9%96%93"
+      "updatedAt": "2026-02-18T01:43:08.000Z",
+      "url": "https://scrapbox.io/KJR020/%E3%83%90%E3%83%96%E3%83%AB%E5%8A%B9%E6%9E%9C"
     },
     {
-      "id": "696ba9ff7763fd43025bd5d5",
-      "title": "OOP: the worst thing that happened to programming",
+      "id": "69951921b0d7b1fd47fea4f0",
+      "title": "トポロジカルソート",
       "imageUrl": null,
       "description": "",
-      "updatedAt": "2026-01-17T15:26:01Z",
-      "url": "https://scrapbox.io/KJR020/OOP%3A%20the%20worst%20thing%20that%20happened%20to%20programming"
+      "updatedAt": "2026-02-18T01:43:02.000Z",
+      "url": "https://scrapbox.io/KJR020/%E3%83%88%E3%83%9D%E3%83%AD%E3%82%B8%E3%82%AB%E3%83%AB%E3%82%BD%E3%83%BC%E3%83%88"
     },
     {
-      "id": "696ba0229c0a977ca244d3c5",
-      "title": "astro",
-      "imageUrl": "https://scrapbox.io/files/696ba02d262eca074a16e584.png",
-      "description": "  マーケティング、ブログやECサイトなどのコンテンツ中心のウェブサイト向けのフレームワーク 公式では `The web framework for content-driven websites`と謳っている アイランドアーキテクチャ",
-      "updatedAt": "2026-01-17T14:45:54Z",
-      "url": "https://scrapbox.io/KJR020/astro"
+      "id": "699517c6afa0a2ad527fac97",
+      "title": "Moltbook流出事件",
+      "imageUrl": null,
+      "description": "APIキー150万件など機密情報が大量に流出したらしい Supabaseが原因であるかのような言説を見られたが、これ自体は問題じゃなさそう フロントエンドからBaaSを直で叩く構造になっていたのと、認可の仕組みが適切に実装されていなかったことが問題",
+      "updatedAt": "2026-02-18T01:40:18.000Z",
+      "url": "https://scrapbox.io/KJR020/Moltbook%E6%B5%81%E5%87%BA%E4%BA%8B%E4%BB%B6"
     },
     {
-      "id": "696b46844e6a3c18592a066c",
-      "title": "Claude.md/Agents.mdのベストプラクティス",
+      "id": "699437145666340ed0a73f68",
+      "title": "本を読む本",
+      "imageUrl": "https://scrapbox.io/files/6994378c3583dfb074d4773a.png",
+      "description": "[https://scrapbox.io/files/6994378c3583dfb074d4773a.png] [アーキテクトの教科書]で紹介されていた。 名著らしい[KJR020.icon]",
+      "updatedAt": "2026-02-17T09:41:24.000Z",
+      "url": "https://scrapbox.io/KJR020/%E6%9C%AC%E3%82%92%E8%AA%AD%E3%82%80%E6%9C%AC"
+    },
+    {
+      "id": "6994373acb0d2a990f03d7a9",
+      "title": "アーキテクトの教科書",
+      "imageUrl": "https://scrapbox.io/files/699437413583dfb074d4769b.png",
+      "description": "[https://www.shoeisha.co.jp/book/detail/9784798184777 アーキテクトの教科書 価値を生むソフトウェアのアーキテクチャ構築（米久保 剛）｜翔泳社の本] [https://scrapbox.io/files/699437413583dfb074d4769b.png] #書籍",
+      "updatedAt": "2026-02-17T09:39:32.000Z",
+      "url": "https://scrapbox.io/KJR020/%E3%82%A2%E3%83%BC%E3%82%AD%E3%83%86%E3%82%AF%E3%83%88%E3%81%AE%E6%95%99%E7%A7%91%E6%9B%B8"
+    },
+    {
+      "id": "6993fe34b8de10aa332cf5da",
+      "title": "匠Method Agent",
+      "imageUrl": null,
+      "description": "[https://github.com/haru860/takumi-method-agent/?tab=readme-ov-file haru860/takumi-method-agent: ビジネスデザインのための体系的メソッド「匠Method」を自動化・支援するAI Agentツールです。]",
+      "updatedAt": "2026-02-17T05:35:57.000Z",
+      "url": "https://scrapbox.io/KJR020/%E5%8C%A0Method%20Agent"
+    },
+    {
+      "id": "6993c2d7a4ca69995f7cd6dc",
+      "title": "/handover",
+      "imageUrl": null,
+      "description": "[https://izanami.dev/post/3b2789ca-30ee-403f-af43-83e2c7009fb1 Claude Code のセッション引き継ぎを自動化する - izanami] [https://x.com/commte/status/2023231375198028049?s=20 (18) コムテ on X: \"Claude Code の /handover っていうカスタムコマンド、やってみた セッション終わりに打つだけで、今回やったこと、バグの修正履歴、設計判断の理由、次やるべきこと、全部まとめた HANDOVER .md（引き継ぎノート）を自動生成してくれる リ",
+      "updatedAt": "2026-02-17T01:48:57.000Z",
+      "url": "https://scrapbox.io/KJR020/%2Fhandover"
+    },
+    {
+      "id": "6992850671985240fdd2e365",
+      "title": "GCPのProjectIDはGCP全体でユニーク",
+      "imageUrl": null,
+      "description": ">Project ID: A globally unique identifier for your project. > >A project ID is a unique string used to differentiate your project from all others in Google Cloud. After you enter a project name, the Google Cloud console generates a unique project ID that can be ",
+      "updatedAt": "2026-02-16T06:25:06.000Z",
+      "url": "https://scrapbox.io/KJR020/GCP%E3%81%AEProjectID%E3%81%AFGCP%E5%85%A8%E4%BD%93%E3%81%A7%E3%83%A6%E3%83%8B%E3%83%BC%E3%82%AF"
+    },
+    {
+      "id": "6991b8cf2afb65f5f581555d",
+      "title": "ccresume",
+      "imageUrl": null,
+      "description": "[https://github.com/sasazame/ccresume sasazame/ccresume: A CUI tool for browsing and resuming Claude Code conversations] `npx @sasazame/ccresume@latest`",
+      "updatedAt": "2026-02-15T12:16:42.000Z",
+      "url": "https://scrapbox.io/KJR020/ccresume"
+    },
+    {
+      "id": "69906636a198002eed9d50b4",
+      "title": "x_search",
+      "imageUrl": null,
+      "description": "Grokの内部ツール",
+      "updatedAt": "2026-02-14T12:10:38.000Z",
+      "url": "https://scrapbox.io/KJR020/x_search"
+    },
+    {
+      "id": "699046c3fa6a1fadf6b52674",
+      "title": "Slidev",
+      "imageUrl": null,
+      "description": "[https://sli.dev/resources/theme-gallery Theme Gallery | Slidev] [https://qiita.com/ntaka329/items/47fb89fb6a84d9976d36 「Markdownだけで」顧客提案レベルのスライドを作ってみた【Slidev x Claude Opus 4.6】 #生成AI - Qiita] [https://zenn.dev/takumaru/articles/3faa75c2f09493 【Slidev 超入門】エンジニアだからこそ作れるつよつよスライドの作り方！]",
+      "updatedAt": "2026-02-14T12:08:53.000Z",
+      "url": "https://scrapbox.io/KJR020/Slidev"
+    },
+    {
+      "id": "698fa08d02681ab35f3acf28",
+      "title": "The Art of Doing Science and Engineering",
+      "imageUrl": "https://scrapbox.io/files/698fa12d3583dfb074ce3464.png",
+      "description": "[https://scrapbox.io/files/698fa12d3583dfb074ce3464.png] Richard Hammingが科学やエンジニアリングに対するスタイル、マインドについてまとめた書籍 [https://www.fixedpoint.jp/2012/03/23/art-of-doing-science-and-engineering.html fixedpoint.jp - The Art of Doing Science and Engineering は古びない (2012-03-23)]",
+      "updatedAt": "2026-02-13T22:11:48.000Z",
+      "url": "https://scrapbox.io/KJR020/The%20Art%20of%20Doing%20Science%20and%20Engineering"
+    },
+    {
+      "id": "698f95ab2a7feb01e1a2cf1d",
+      "title": "はじめる力",
+      "imageUrl": "https://i.ytimg.com/vi/bBDgYOJVtG8/mqdefault.jpg",
+      "description": "[https://www.youtube.com/watch?v=bBDgYOJVtG8] [https://www.youtube.com/watch?v=e-VuDVlFoxU&t=24s] リスクには形がある",
+      "updatedAt": "2026-02-13T21:25:29.000Z",
+      "url": "https://scrapbox.io/KJR020/%E3%81%AF%E3%81%98%E3%82%81%E3%82%8B%E5%8A%9B"
+    },
+    {
+      "id": "698eb377f591517559c6defd",
+      "title": "Working Backwards",
+      "imageUrl": null,
+      "description": "#書籍",
+      "updatedAt": "2026-02-13T05:15:43.000Z",
+      "url": "https://scrapbox.io/KJR020/Working%20Backwards"
+    },
+    {
+      "id": "698eb291b441ff0be72a841f",
+      "title": "最適停止問題",
       "imageUrl": null,
       "description": "",
-      "updatedAt": "2026-01-17T08:21:47Z",
-      "url": "https://scrapbox.io/KJR020/Claude.md%2FAgents.md%E3%81%AE%E3%83%99%E3%82%B9%E3%83%88%E3%83%97%E3%83%A9%E3%82%AF%E3%83%86%E3%82%A3%E3%82%B9"
+      "updatedAt": "2026-02-13T05:11:50.000Z",
+      "url": "https://scrapbox.io/KJR020/%E6%9C%80%E9%81%A9%E5%81%9C%E6%AD%A2%E5%95%8F%E9%A1%8C"
     },
     {
-      "id": "696b3e8882b3f24075dbd607",
-      "title": "Intersection Observer",
+      "id": "698eb279ddad5e5edb9b4f39",
+      "title": "Good Strategy Bad Strategy",
       "imageUrl": null,
-      "description": "> IntersectionObserver は交差オブザーバー API のインターフェイスで、対象となる要素と祖先要素または文書の最上位のビューポートとがの交差状態（重なり合っている状態）の変化を非同期に監視する方法を提供します。その祖先",
-      "updatedAt": "2026-01-17T07:49:23Z",
-      "url": "https://scrapbox.io/KJR020/Intersection%20Observer"
+      "description": "#書籍",
+      "updatedAt": "2026-02-13T05:11:29.000Z",
+      "url": "https://scrapbox.io/KJR020/Good%20Strategy%20Bad%20Strategy"
     },
     {
-      "id": "68f9e94afb73649e14596d6f",
-      "title": "TypeScriptにおけるResultの利用",
+      "id": "698eb1340c34f97d1bd1268b",
+      "title": "言語化",
       "imageUrl": null,
-      "description": " 型安全になる 型から例外がスローされるかどうかわからない `try-catch`を使用すると、スローされた例外を`catch`する必要がある テストがつらい",
-      "updatedAt": "2026-01-17T07:40:32Z",
-      "url": "https://scrapbox.io/KJR020/TypeScript%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8BResult%E3%81%AE%E5%88%A9%E7%94%A8"
+      "description": "観察する 思考する 語彙にする",
+      "updatedAt": "2026-02-13T05:06:21.000Z",
+      "url": "https://scrapbox.io/KJR020/%E8%A8%80%E8%AA%9E%E5%8C%96"
     },
     {
-      "id": "696b31abe2fafb74d57b6d84",
-      "title": "remark-link-card",
+      "id": "698e90dd09ec89f594513998",
+      "title": "NODE_OPTIONS",
       "imageUrl": null,
-      "description": "",
-      "updatedAt": "2026-01-17T07:24:21Z",
-      "url": "https://scrapbox.io/KJR020/remark-link-card"
+      "description": "環境変数で指定すると、node.jsのコマンドラインオプションを環境変数で指定できる `NODE_OPTIONS='--import tsx'`",
+      "updatedAt": "2026-02-13T02:48:45.000Z",
+      "url": "https://scrapbox.io/KJR020/NODE_OPTIONS"
     },
     {
-      "id": "696a246545f4e84498e08c39",
-      "title": "集約ルート",
+      "id": "698e76998bb3fe4be2ea11bf",
+      "title": "Cerebras",
       "imageUrl": null,
-      "description": "集約の外部からのインターフェースとなるエンティティ なぜエンティティがルートなのか？ そもそも集約は時間的に変化するエンティティの整合性を保つための概念 エンティティをまとめたものが集約だから集約ルートもエンティティになる と言う理解",
-      "updatedAt": "2026-01-16T11:53:30Z",
-      "url": "https://scrapbox.io/KJR020/%E9%9B%86%E7%B4%84%E3%83%AB%E3%83%BC%E3%83%88"
+      "description": ">Cerebras Systems（セレブラス・システムズ）は、従来のGPUを凌駕する処理能力を持つ世界最大級のAI専用チップ「Wafer Scale Engine (WSE)」と、それを搭載した超高速AIシステム「CS-3」を開発する米国のスタートアップ企業です。 [https://openai.com/ja-JP/index/cerebras-partnership/ OpenAI が Cerebras と提携 | OpenAI] [https://zenn.dev/jnst/articles/cerebras-is-my-fave お前もCerebras推しにならないか？]",
+      "updatedAt": "2026-02-13T00:58:43.000Z",
+      "url": "https://scrapbox.io/KJR020/Cerebras"
     },
     {
-      "id": "6969c9c330bfb41bc3f159fd",
-      "title": "URLSearchParams",
+      "id": "698d6e688c05649109d08bfd",
+      "title": "Azure OpenAIではモデルごとにデプロイメントが必要",
       "imageUrl": null,
-      "description": "Web標準API 安全にクエリ文字列を扱える ",
-      "updatedAt": "2026-01-16T05:17:28Z",
-      "url": "https://scrapbox.io/KJR020/URLSearchParams"
+      "description": "https://zenn.dev/t_kakei/books/ed4777b70e24df/viewer/aoai-deploy",
+      "updatedAt": "2026-02-12T06:09:03.000Z",
+      "url": "https://scrapbox.io/KJR020/Azure%20OpenAI%E3%81%A7%E3%81%AF%E3%83%A2%E3%83%87%E3%83%AB%E3%81%94%E3%81%A8%E3%81%AB%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4%E3%83%A1%E3%83%B3%E3%83%88%E3%81%8C%E5%BF%85%E8%A6%81"
     },
     {
-      "id": "696997acdffc819301db0abb",
-      "title": "Django 管理サイトをカスタマイズする前に教えてほしかったこと",
+      "id": "698d4aeccb74db8b60e847ec",
+      "title": "test.com実在ドメインのため使わない",
       "imageUrl": null,
-      "description": "",
-      "updatedAt": "2026-01-16T01:43:15Z",
-      "url": "https://scrapbox.io/KJR020/Django%20%E7%AE%A1%E7%90%86%E3%82%B5%E3%82%A4%E3%83%88%E3%82%92%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%9E%E3%82%A4%E3%82%BA%E3%81%99%E3%82%8B%E5%89%8D%E3%81%AB%E6%95%99%E3%81%88%E3%81%A6%E3%81%BB%E3%81%97%E3%81%8B%E3%81%A3%E3%81%9F%E3%81%93%E3%81%A8"
+      "description": "example.comはRFCで定義された 例示用のドメインになる https://www.cotegg.com/blog/?p=2538",
+      "updatedAt": "2026-02-12T03:39:01.000Z",
+      "url": "https://scrapbox.io/KJR020/test.com%E5%AE%9F%E5%9C%A8%E3%83%89%E3%83%A1%E3%82%A4%E3%83%B3%E3%81%AE%E3%81%9F%E3%82%81%E4%BD%BF%E3%82%8F%E3%81%AA%E3%81%84"
     },
     {
-      "id": "6966e881dc2a49451da28ee2",
-      "title": "AskUserQuestion",
-      "imageUrl": "https://scrapbox.io/files/6966e8e0eec0e52e29ef1866.png",
-      "description": "Claude Codeの機能 AskUserQuesitionを使用すると選択肢を提示してくれる テキストで回答する手間が省けるので効率がよい  #Claude_Code",
-      "updatedAt": "2026-01-14T00:53:23Z",
-      "url": "https://scrapbox.io/KJR020/AskUserQuestion"
-    },
-    {
-      "id": "6965af8c382496fd992d6161",
-      "title": "AIエンジニアリング ―基盤モデルを用いたAIアプリケーション開発の基礎と実践",
+      "id": "693bbb99cc977f22e0533fc9",
+      "title": "promptfoo",
       "imageUrl": null,
-      "description": "",
-      "updatedAt": "2026-01-13T02:36:02Z",
-      "url": "https://scrapbox.io/KJR020/AI%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%E3%83%AA%E3%83%B3%E3%82%B0%20%E2%80%95%E5%9F%BA%E7%9B%A4%E3%83%A2%E3%83%87%E3%83%AB%E3%82%92%E7%94%A8%E3%81%84%E3%81%9FAI%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E9%96%8B%E7%99%BA%E3%81%AE%E5%9F%BA%E7%A4%8E%E3%81%A8%E5%AE%9F%E8%B7%B5"
+      "description": "プロンプト評価できる CIに組み込める レポートを出力してくれて便利なやつ",
+      "updatedAt": "2026-02-12T01:38:57.000Z",
+      "url": "https://scrapbox.io/KJR020/promptfoo"
     },
     {
-      "id": "6965af5d83a2d3c2c119b901",
-      "title": "LLMのプロンプトエンジニアリング ―GitHub Copilotを生んだ開発者が教える生成AIアプリケーション開発",
+      "id": "698d2aa53a257824b1fdfe2a",
+      "title": "promptfooのloaderをtsxで実装する",
       "imageUrl": null,
-      "description": "",
-      "updatedAt": "2026-01-13T02:35:19Z",
-      "url": "https://scrapbox.io/KJR020/LLM%E3%81%AE%E3%83%97%E3%83%AD%E3%83%B3%E3%83%97%E3%83%88%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%E3%83%AA%E3%83%B3%E3%82%B0%20%E2%80%95GitHub%20Copilot%E3%82%92%E7%94%9F%E3%82%93%E3%81%A0%E9%96%8B%E7%99%BA%E8%80%85%E3%81%8C%E6%95%99%E3%81%88%E3%82%8B%E7%94%9F%E6%88%90AI%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E9%96%8B%E7%99%BA"
+      "description": "やりたいこと アプリケーションで使用してるプロンプトテンプレート`hoge_prompt.txt`がpromptfooのテンプレート構文と一致しない `vars`を設定してもプレースホルダーに置換されない",
+      "updatedAt": "2026-02-12T01:38:13.000Z",
+      "url": "https://scrapbox.io/KJR020/promptfoo%E3%81%AEloader%E3%82%92tsx%E3%81%A7%E5%AE%9F%E8%A3%85%E3%81%99%E3%82%8B"
     },
     {
-      "id": "6965af021468bd70a4036a68",
-      "title": "ソフトウェア設計の結合バランス　持続可能な成長を支えるモジュール化の原則",
+      "id": "692555ce23eab2729d1d9ce7",
+      "title": "tsx",
       "imageUrl": null,
-      "description": "Balancing Coupling in Software Design: Universal Design Principles for Architecting Modular Software Systemsの翻訳書 [https:",
-      "updatedAt": "2026-01-13T02:33:57Z",
-      "url": "https://scrapbox.io/KJR020/%E3%82%BD%E3%83%95%E3%83%88%E3%82%A6%E3%82%A7%E3%82%A2%E8%A8%AD%E8%A8%88%E3%81%AE%E7%B5%90%E5%90%88%E3%83%90%E3%83%A9%E3%83%B3%E3%82%B9%E3%80%80%E6%8C%81%E7%B6%9A%E5%8F%AF%E8%83%BD%E3%81%AA%E6%88%90%E9%95%B7%E3%82%92%E6%94%AF%E3%81%88%E3%82%8B%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E5%8C%96%E3%81%AE%E5%8E%9F%E5%89%87"
+      "description": "tsファイルを直接実行するツール `npx tsx ./script.ts` [https://tsx.is/getting-started Getting started | tsx]",
+      "updatedAt": "2026-02-12T01:19:29.000Z",
+      "url": "https://scrapbox.io/KJR020/tsx"
     },
     {
-      "id": "69659af82f5a360f92921862",
-      "title": "CVE-2025-61686",
+      "id": "698aca72757334b99056b08f",
+      "title": "Claude Code Agent Teams",
       "imageUrl": null,
-      "description": "React Routerの脆弱性 Next.jsの場合、仕組み上React Routerを使用していないから関係はない",
-      "updatedAt": "2026-01-13T01:16:28Z",
-      "url": "https://scrapbox.io/KJR020/CVE-2025-61686"
+      "description": "[https://code.claude.com/docs/en/agent-teams?ref=blog.lai.so Orchestrate teams of Claude Code sessions - Claude Code Docs] [https://blog.lai.so/agent-teams/ Claude Code Agent Teamsのあそびかた] #Claude_Code",
+      "updatedAt": "2026-02-10T06:05:07.000Z",
+      "url": "https://scrapbox.io/KJR020/Claude%20Code%20Agent%20Teams"
     },
     {
-      "id": "6960c6c3027f2aa4d8afa91b",
-      "title": "require_confirmation",
+      "id": "698aca4d16a3b2a8cff8794e",
+      "title": "takt",
       "imageUrl": null,
-      "description": "",
-      "updatedAt": "2026-01-09T09:13:47Z",
-      "url": "https://scrapbox.io/KJR020/require_confirmation"
+      "description": "[https://x.com/nrslib/status/2020824325126009087 (20) nrs on X: \"AIチームを駆使して計54体のエージェントを連携させて開発している話\" / X]",
+      "updatedAt": "2026-02-10T06:04:21.000Z",
+      "url": "https://scrapbox.io/KJR020/takt"
     },
     {
-      "id": "695c70b92a690b7bfce56b0e",
-      "title": "ADK日本語ドキュメント",
+      "id": "6989bf17a0a8ee12b8769fd2",
+      "title": "AWS Cognito - FORCE_CHANGE_PASSWORDステータス",
       "imageUrl": null,
-      "description": "`https://adk-labs.github.io/adk-docs/ja/`だと日本語対応されている  #Agent_Development_Kit",
-      "updatedAt": "2026-01-09T07:55:03Z",
-      "url": "https://scrapbox.io/KJR020/ADK%E6%97%A5%E6%9C%AC%E8%AA%9E%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88"
+      "description": "[* 問題] 管理者がCognitoでユーザーを作成すると、ステータスが[FORCE_CHANGE_PASSWORD]になる 初回ログイン時に[NEW_PASSWORD_REQUIRED]チャレンジが返される",
+      "updatedAt": "2026-02-09T11:05:45.000Z",
+      "url": "https://scrapbox.io/KJR020/AWS%20Cognito%20-%20FORCE_CHANGE_PASSWORD%E3%82%B9%E3%83%86%E3%83%BC%E3%82%BF%E3%82%B9"
     },
     {
-      "id": "69608415a6d575bfea28451b",
-      "title": "A2UI",
+      "id": "69882a58cafeb542bf94b936",
+      "title": "mise",
       "imageUrl": null,
-      "description": " ",
-      "updatedAt": "2026-01-09T04:31:59Z",
-      "url": "https://scrapbox.io/KJR020/A2UI"
+      "description": "[https://github.com/jdx/mise jdx/mise: dev tools, env vars, task runner] [https://qiita.com/umekikazuya/items/388a7aaad767b9e11fa3 開発ツール管理？断然Miseでしょ。 #dotfiles - Qiita]",
+      "updatedAt": "2026-02-08T06:17:14.000Z",
+      "url": "https://scrapbox.io/KJR020/mise"
+    },
+    {
+      "id": "69857ee7bf72abfdc4f3bafe",
+      "title": "MoltBook",
+      "imageUrl": null,
+      "description": "https://www.moltbook.com https://zenn.dev/sakasegawa/articles/9cf4dba3f6b5f3",
+      "updatedAt": "2026-02-06T05:41:04.000Z",
+      "url": "https://scrapbox.io/KJR020/MoltBook"
+    },
+    {
+      "id": "6985761bbf72abfdc4f35b4f",
+      "title": "State of JS 2025",
+      "imageUrl": null,
+      "description": "https://2025.stateofjs.com/ja-JP/libraries/",
+      "updatedAt": "2026-02-06T05:03:42.000Z",
+      "url": "https://scrapbox.io/KJR020/State%20of%20JS%202025"
+    },
+    {
+      "id": "6984a4e1f017e5ddba38dc2b",
+      "title": "kind",
+      "imageUrl": null,
+      "description": "型システムに型を分類するもの 型を分類するための型 値を持つかた `*`",
+      "updatedAt": "2026-02-05T14:12:09.000Z",
+      "url": "https://scrapbox.io/KJR020/kind"
+    },
+    {
+      "id": "6949e08170bf15e9c25a0849",
+      "title": "Ghostty",
+      "imageUrl": "https://scrapbox.io/files/696eed4238d3628546794155.png",
+      "description": "[https://scrapbox.io/files/696eed4238d3628546794155.png] >Ghostty is a fast, feature-rich, and cross-platform terminal emulator that uses platform-native UI and GPU acceleration. ミニマルでUNIX的な思想で作られてる",
+      "updatedAt": "2026-02-05T12:50:47.000Z",
+      "url": "https://scrapbox.io/KJR020/Ghostty"
+    },
+    {
+      "id": "69844483e17fb319b85208d1",
+      "title": "aws-actions/amazon-ecr-login",
+      "imageUrl": "https://scrapbox.io/files/6984448fd2cd7defeac0c1ac.png",
+      "description": "v1ではデフォルトでクレデンシャルがマスクされない いずれかの対応が必要 v2にする",
+      "updatedAt": "2026-02-05T07:21:45.000Z",
+      "url": "https://scrapbox.io/KJR020/aws-actions%2Famazon-ecr-login"
+    },
+    {
+      "id": "69840ec4548bc0fe9173782e",
+      "title": "claude-mem",
+      "imageUrl": null,
+      "description": "> /plugin marketplace add thedotmack/claude-mem > /plugin install claude-mem #Claude_Code",
+      "updatedAt": "2026-02-05T03:30:33.000Z",
+      "url": "https://scrapbox.io/KJR020/claude-mem"
+    },
+    {
+      "id": "695b2f3fe07f19d30aee9907",
+      "title": "Claude Code",
+      "imageUrl": null,
+      "description": "[https://zenn.dev/akino/articles/62e25d7c1b37d6 Claude Code 開発者自身の活用法をまとめてみた] [https://x.com/bcherny Boris Cherny（@bcherny）さん / X] [https://findy-code.io/media/articles/aisaji-tonkotsuboy_com AIは速いのに、人間が遅い？ Claude Codeをさらに加速させる私の「推しツール」 - Findy Media | IT/Webエンジニアの転職・求人サイトFindy – GitHubからスキル偏差値を算出]",
+      "updatedAt": "2026-02-05T03:27:58.000Z",
+      "url": "https://scrapbox.io/KJR020/Claude%20Code"
+    },
+    {
+      "id": "6983f9aa790d0f61c48f457d",
+      "title": "Http Range Request",
+      "imageUrl": null,
+      "description": "[https://developer.mozilla.org/ja/docs/Web/HTTP/Guides/Range_requests HTTP 範囲リクエスト - HTTP | MDN]",
+      "updatedAt": "2026-02-05T02:00:25.000Z",
+      "url": "https://scrapbox.io/KJR020/Http%20Range%20Request"
+    },
+    {
+      "id": "6983eb8490849f4ce4e041c0",
+      "title": "The State of AI-assisted Software Development",
+      "imageUrl": null,
+      "description": "[https://dora.dev/research/2025/dora-report/ DORA | State of AI-assisted Software Development 2025]",
+      "updatedAt": "2026-02-05T01:00:07.000Z",
+      "url": "https://scrapbox.io/KJR020/The%20State%20of%20AI-assisted%20Software%20Development"
+    },
+    {
+      "id": "6983eb6fdbd10ff725676b00",
+      "title": "生成AIでスクラムによる開発はどう変わるか",
+      "imageUrl": null,
+      "description": "[https://www.ryuzee.com/contents/blog/14605 【資料公開】生成AIでスクラムによる開発はどう変わるか | Ryuzee.com]",
+      "updatedAt": "2026-02-05T00:59:36.000Z",
+      "url": "https://scrapbox.io/KJR020/%E7%94%9F%E6%88%90AI%E3%81%A7%E3%82%B9%E3%82%AF%E3%83%A9%E3%83%A0%E3%81%AB%E3%82%88%E3%82%8B%E9%96%8B%E7%99%BA%E3%81%AF%E3%81%A9%E3%81%86%E5%A4%89%E3%82%8F%E3%82%8B%E3%81%8B"
+    },
+    {
+      "id": "69192603a1bd3ebec008bda0",
+      "title": "LayerX TeckBook",
+      "imageUrl": "https://scrapbox.io/files/6922c462ecb5612db645a3d8.png",
+      "description": "[https://scrapbox.io/files/6922c462ecb5612db645a3d8.png] https://techbookfest.org/product/5zbWgnL90mCvjt7MmnwxW2?productVariantID=c6V3eZnfp3KE3JDX4Tg6FG #書籍",
+      "updatedAt": "2026-02-04T14:53:10.000Z",
+      "url": "https://scrapbox.io/KJR020/LayerX%20TeckBook"
+    },
+    {
+      "id": "67afd2f941f934edca379760",
+      "title": "りあクト!",
+      "imageUrl": "https://scrapbox.io/files/69835d0ba8b7808c904c0c4e.png",
+      "description": "[https://scrapbox.io/files/69835d0ba8b7808c904c0c4e.png] ## memo Javascriptは、プロトタイプベースのクラスを採用している",
+      "updatedAt": "2026-02-04T14:52:00.000Z",
+      "url": "https://scrapbox.io/KJR020/%E3%82%8A%E3%81%82%E3%82%AF%E3%83%88!"
+    },
+    {
+      "id": "691c75c01477655bd8a76385",
+      "title": "型システムのしくみ ― TypeScriptで実装しながら学ぶ型とプログラミング言語",
+      "imageUrl": "https://scrapbox.io/files/6983545c24fc170e7e629170.png",
+      "description": "[https://scrapbox.io/files/6983545c24fc170e7e629170.png] https://www.lambdanote.com/collections/type-systems #書籍",
+      "updatedAt": "2026-02-04T14:14:58.000Z",
+      "url": "https://scrapbox.io/KJR020/%E5%9E%8B%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%81%AE%E3%81%97%E3%81%8F%E3%81%BF%20%E2%80%95%20TypeScript%E3%81%A7%E5%AE%9F%E8%A3%85%E3%81%97%E3%81%AA%E3%81%8C%E3%82%89%E5%AD%A6%E3%81%B6%E5%9E%8B%E3%81%A8%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E8%A8%80%E8%AA%9E"
+    },
+    {
+      "id": "698352628687d7e0d3a855f5",
+      "title": "戦略的DDD vs 戦術的DDD",
+      "imageUrl": null,
+      "description": "以下の整理で理解[KJR020.icon] 戦略的DDDは、債務・責務・変更単位の境界をどう区切るか 戦術的DDDは、その境界の中をどう表現・実装するか",
+      "updatedAt": "2026-02-04T14:07:58.000Z",
+      "url": "https://scrapbox.io/KJR020/%E6%88%A6%E7%95%A5%E7%9A%84DDD%20vs%20%E6%88%A6%E8%A1%93%E7%9A%84DDD"
+    },
+    {
+      "id": "6970c386a25ec53f58d43a83",
+      "title": "ドメイン駆動設計をはじめよう",
+      "imageUrl": "https://scrapbox.io/files/69835181ff0b0af179ba9e19.png",
+      "description": "[https://scrapbox.io/files/69835181ff0b0af179ba9e19.png] [https://www.oreilly.co.jp/books/9784814400737/ ドメイン駆動設計をはじめよう - O'Reilly Japan] #書籍",
+      "updatedAt": "2026-02-04T14:02:49.000Z",
+      "url": "https://scrapbox.io/KJR020/%E3%83%89%E3%83%A1%E3%82%A4%E3%83%B3%E9%A7%86%E5%8B%95%E8%A8%AD%E8%A8%88%E3%82%92%E3%81%AF%E3%81%98%E3%82%81%E3%82%88%E3%81%86"
+    },
+    {
+      "id": "69834f4e3a2a809b8d674f7a",
+      "title": "アクティブレコード",
+      "imageUrl": null,
+      "description": "Active Record [DDD]における設計パターンの一つ [トランザクションスクリプト]と並びドメインロジックが比較的シンプルな場合に、境界付けられたドメインを表現する方法として用いられる",
+      "updatedAt": "2026-02-04T14:02:28.000Z",
+      "url": "https://scrapbox.io/KJR020/%E3%82%A2%E3%82%AF%E3%83%86%E3%82%A3%E3%83%96%E3%83%AC%E3%82%B3%E3%83%BC%E3%83%89"
+    },
+    {
+      "id": "68f98b36ce0f144b00b137b9",
+      "title": "図解でなっとく！トラブル知らずのシステム設計　エラー制御・排他制御編",
+      "imageUrl": "https://scrapbox.io/files/68f98b3fecd0919b50950fd7.png",
+      "description": "[https://scrapbox.io/files/68f98b3fecd0919b50950fd7.png] [https://www.amazon.co.jp/dp/B07B649FBM/ 図解でなっとく！トラブル知らずのシステム設計　エラー制御・排他制御編 | 野村総合研究所, エアーダイブ | コンピュータサイエンス | Kindleストア | Amazon] #書籍",
+      "updatedAt": "2026-02-04T13:53:04.000Z",
+      "url": "https://scrapbox.io/KJR020/%E5%9B%B3%E8%A7%A3%E3%81%A7%E3%81%AA%E3%81%A3%E3%81%A8%E3%81%8F%EF%BC%81%E3%83%88%E3%83%A9%E3%83%96%E3%83%AB%E7%9F%A5%E3%82%89%E3%81%9A%E3%81%AE%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E8%A8%AD%E8%A8%88%E3%80%80%E3%82%A8%E3%83%A9%E3%83%BC%E5%88%B6%E5%BE%A1%E3%83%BB%E6%8E%92%E4%BB%96%E5%88%B6%E5%BE%A1%E7%B7%A8"
+    },
+    {
+      "id": "68da474548febe1a2bde5da5",
+      "title": "なぜ月曜日は、頭が働かないのか―心が、脳を「変える」",
+      "imageUrl": "https://scrapbox.io/files/68da47b6e73f8e6834a8fd9b.png",
+      "description": "[https://scrapbox.io/files/68da47b6e73f8e6834a8fd9b.png] 休みボケしやすい #書籍",
+      "updatedAt": "2026-02-04T13:52:29.000Z",
+      "url": "https://scrapbox.io/KJR020/%E3%81%AA%E3%81%9C%E6%9C%88%E6%9B%9C%E6%97%A5%E3%81%AF%E3%80%81%E9%A0%AD%E3%81%8C%E5%83%8D%E3%81%8B%E3%81%AA%E3%81%84%E3%81%AE%E3%81%8B%E2%80%95%E5%BF%83%E3%81%8C%E3%80%81%E8%84%B3%E3%82%92%E3%80%8C%E5%A4%89%E3%81%88%E3%82%8B%E3%80%8D"
+    },
+    {
+      "id": "68cbf99c606488a819947277",
+      "title": "Real World HTTP",
+      "imageUrl": "https://scrapbox.io/files/68cbf9a8975f88e7653973e6.png",
+      "description": "[https://scrapbox.io/files/68cbf9a8975f88e7653973e6.png] [https://www.oreilly.co.jp/books/9784814400669/ Real World HTTP 第3版 - O'Reilly Japan] [ETag]",
+      "updatedAt": "2026-02-04T13:52:17.000Z",
+      "url": "https://scrapbox.io/KJR020/Real%20World%20HTTP"
+    },
+    {
+      "id": "68c2159625ed8b075f445a4c",
+      "title": "Web API: The Good Parts",
+      "imageUrl": "https://scrapbox.io/files/68c215b2b4034286fae1cedc.png",
+      "description": "[https://scrapbox.io/files/68c215b2b4034286fae1cedc.png] Web API設計 基本的にRESTの話",
+      "updatedAt": "2026-02-04T13:52:09.000Z",
+      "url": "https://scrapbox.io/KJR020/Web%20API%3A%20The%20Good%20Parts"
+    },
+    {
+      "id": "68cbed0f186c4ec46422b154",
+      "title": "だまし絵を描かないための- 要件定義のセオリー",
+      "imageUrl": "https://scrapbox.io/files/68cbed3bc48b1920888ceceb.png",
+      "description": "[https://scrapbox.io/files/68cbed3bc48b1920888ceceb.png] ##[*  要求と要件の違い] `要求: 本当にほしいもの`",
+      "updatedAt": "2026-02-04T13:52:00.000Z",
+      "url": "https://scrapbox.io/KJR020/%E3%81%A0%E3%81%BE%E3%81%97%E7%B5%B5%E3%82%92%E6%8F%8F%E3%81%8B%E3%81%AA%E3%81%84%E3%81%9F%E3%82%81%E3%81%AE-%20%E8%A6%81%E4%BB%B6%E5%AE%9A%E7%BE%A9%E3%81%AE%E3%82%BB%E3%82%AA%E3%83%AA%E3%83%BC"
+    },
+    {
+      "id": "68533c8e58a8889080513001",
+      "title": "読んでいない本について堂々と語る方法",
+      "imageUrl": "https://scrapbox.io/files/68533cb0004b0bf18d457371.png",
+      "description": "[https://scrapbox.io/files/68533cb0004b0bf18d457371.png] https://www.amazon.co.jp/読んでいない本について堂々と語る方法-ちくま学芸文庫-ピエール-バイヤール/dp/4480097570 本の位置関係について把握する",
+      "updatedAt": "2026-02-04T13:51:28.000Z",
+      "url": "https://scrapbox.io/KJR020/%E8%AA%AD%E3%82%93%E3%81%A7%E3%81%84%E3%81%AA%E3%81%84%E6%9C%AC%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E5%A0%82%E3%80%85%E3%81%A8%E8%AA%9E%E3%82%8B%E6%96%B9%E6%B3%95"
+    },
+    {
+      "id": "68258058b9b487252de728ae",
+      "title": "新ロジカルシンキング",
+      "imageUrl": "https://scrapbox.io/files/682580649361678a8d29e29d.png",
+      "description": "[https://scrapbox.io/files/682580649361678a8d29e29d.png] #書籍",
+      "updatedAt": "2026-02-04T13:50:41.000Z",
+      "url": "https://scrapbox.io/KJR020/%E6%96%B0%E3%83%AD%E3%82%B8%E3%82%AB%E3%83%AB%E3%82%B7%E3%83%B3%E3%82%AD%E3%83%B3%E3%82%B0"
+    },
+    {
+      "id": "68100830cd5707ae5b9a24f1",
+      "title": "Effective TypeScript",
+      "imageUrl": "https://scrapbox.io/files/6810083f3a7ef9a3fc436dff.png",
+      "description": "[https://scrapbox.io/files/6810083f3a7ef9a3fc436dff.png] TypeScriptには[ADT] がない [https://susisu.hatenablog.com/entry/2025/04/28/202020 Effective TypeScript 読んだ / 郷に入っては郷に従う - Object.create(null)]",
+      "updatedAt": "2026-02-04T13:50:18.000Z",
+      "url": "https://scrapbox.io/KJR020/Effective%20TypeScript"
+    },
+    {
+      "id": "67bacaa85c05782ec7125a89",
+      "title": "型システム入門 −プログラミング言語と型の理論",
+      "imageUrl": "https://scrapbox.io/files/67bacb4e4689d430d12a24ea.png",
+      "description": "[https://scrapbox.io/files/67bacb4e4689d430d12a24ea.png] いつか読んでみたい Types And Programming Languagesの翻訳書らしい",
+      "updatedAt": "2026-02-04T13:49:23.000Z",
+      "url": "https://scrapbox.io/KJR020/%E5%9E%8B%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E5%85%A5%E9%96%80%20%E2%88%92%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E8%A8%80%E8%AA%9E%E3%81%A8%E5%9E%8B%E3%81%AE%E7%90%86%E8%AB%96"
+    },
+    {
+      "id": "67bac52e44a646819c1dd7f6",
+      "title": "メタ認知で〈学ぶ力〉を高める",
+      "imageUrl": "https://scrapbox.io/files/67bac539b465fa959925faa5.png",
+      "description": "[https://scrapbox.io/files/67bac539b465fa959925faa5.png] 第１部　メタ認知を理解するための20のトピック Topic 1　認知とは何か，メタとはどういう意味か",
+      "updatedAt": "2026-02-04T13:49:11.000Z",
+      "url": "https://scrapbox.io/KJR020/%E3%83%A1%E3%82%BF%E8%AA%8D%E7%9F%A5%E3%81%A7%E3%80%88%E5%AD%A6%E3%81%B6%E5%8A%9B%E3%80%89%E3%82%92%E9%AB%98%E3%82%81%E3%82%8B"
+    },
+    {
+      "id": "67aa20b71aa378e827b9f7fb",
+      "title": "事業分析・データ設計のためのモデル作成技術入門",
+      "imageUrl": "https://scrapbox.io/files/67aa2101ee2d7c7228b253ce.png",
+      "description": "[https://scrapbox.io/files/67aa2101ee2d7c7228b253ce.png] [https://amzn.asia/d/7z2Juvk 事業分析・データ設計のためのモデル作成技術入門 | 佐藤 正美, TMの会 |本 | 通販 | Amazon] PrAhaのペアにおすすめしてもらった",
+      "updatedAt": "2026-02-04T13:48:54.000Z",
+      "url": "https://scrapbox.io/KJR020/%E4%BA%8B%E6%A5%AD%E5%88%86%E6%9E%90%E3%83%BB%E3%83%87%E3%83%BC%E3%82%BF%E8%A8%AD%E8%A8%88%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE%E3%83%A2%E3%83%87%E3%83%AB%E4%BD%9C%E6%88%90%E6%8A%80%E8%A1%93%E5%85%A5%E9%96%80"
+    },
+    {
+      "id": "67718a74b246092fdb5a2c77",
+      "title": "入門！論理学",
+      "imageUrl": "https://scrapbox.io/files/69834df3ba97131efa9b0989.png",
+      "description": "[https://scrapbox.io/files/69834df3ba97131efa9b0989.png] ## 概要 野矢茂樹先生の一般向けに書かれた論理学の入門書",
+      "updatedAt": "2026-02-04T13:47:45.000Z",
+      "url": "https://scrapbox.io/KJR020/%E5%85%A5%E9%96%80%EF%BC%81%E8%AB%96%E7%90%86%E5%AD%A6"
+    },
+    {
+      "id": "6770afa3773eb8c9c67e84c9",
+      "title": "エンジニアの知的生産術",
+      "imageUrl": "https://scrapbox.io/files/69834dd12b5b1e89771c005e.png",
+      "description": "[https://scrapbox.io/files/69834dd12b5b1e89771c005e.png] ## 読書メモ amazonで評判を見て購入",
+      "updatedAt": "2026-02-04T13:47:01.000Z",
+      "url": "https://scrapbox.io/KJR020/%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%E3%81%AE%E7%9F%A5%E7%9A%84%E7%94%9F%E7%94%A3%E8%A1%93"
+    },
+    {
+      "id": "6771869cb246092fdb5a227e",
+      "title": "A Philosophy of Software Design",
+      "imageUrl": "https://scrapbox.io/files/678903a087495e85210fefd4.png",
+      "description": "2024/12/30 [https://scrapbox.io/files/678903a087495e85210fefd4.png] スパゲティコードを表現してる？",
+      "updatedAt": "2026-02-04T13:46:37.000Z",
+      "url": "https://scrapbox.io/KJR020/A%20Philosophy%20of%20Software%20Design"
+    },
+    {
+      "id": "678c80dd19f5d3d57721da8d",
+      "title": "Data and Reality",
+      "imageUrl": "https://scrapbox.io/files/678c81f4b3ac30a8d6422220.png",
+      "description": "[https://scrapbox.io/files/678c81f4b3ac30a8d6422220.png] Written by [William Kent] 専門は、学士は化学で修士は数学らしい",
+      "updatedAt": "2026-02-04T13:46:25.000Z",
+      "url": "https://scrapbox.io/KJR020/Data%20and%20Reality"
+    },
+    {
+      "id": "678cfc0f54ce73a79a226059",
+      "title": "Balancing Coupling in Software Design",
+      "imageUrl": "https://scrapbox.io/files/678cfce8b5c17bd4874444a2.png",
+      "description": "2025/01/19 [https://scrapbox.io/files/678cfce8b5c17bd4874444a2.png] *1の引用",
+      "updatedAt": "2026-02-04T13:46:17.000Z",
+      "url": "https://scrapbox.io/KJR020/Balancing%20Coupling%20in%20Software%20Design"
+    },
+    {
+      "id": "67a74a465f6c11b98f0fa2a9",
+      "title": "群論への第一歩",
+      "imageUrl": "https://scrapbox.io/files/67aa26aca8f388f7fe62b15d.png",
+      "description": "[https://scrapbox.io/files/67aa26aca8f388f7fe62b15d.png] 数学ガールの結城浩先生の著書 パッと読んだ感じ、平易で分かりやすい解説だったので、入門に良さそう",
+      "updatedAt": "2026-02-04T13:46:06.000Z",
+      "url": "https://scrapbox.io/KJR020/%E7%BE%A4%E8%AB%96%E3%81%B8%E3%81%AE%E7%AC%AC%E4%B8%80%E6%AD%A9"
+    },
+    {
+      "id": "68c0a2edd9f8aafdb4b4724f",
+      "title": "「悩まない人」の考え方",
+      "imageUrl": "https://scrapbox.io/files/68c0a336e94fea1186a2b851.png",
+      "description": "[https://scrapbox.io/files/68c0a336e94fea1186a2b851.png] 北の達人コーポレーションの創業者代表の本 考え方としては、[GTD]に通じるものがありそう[KJR020.icon]",
+      "updatedAt": "2026-02-04T11:54:13.000Z",
+      "url": "https://scrapbox.io/KJR020/%E3%80%8C%E6%82%A9%E3%81%BE%E3%81%AA%E3%81%84%E4%BA%BA%E3%80%8D%E3%81%AE%E8%80%83%E3%81%88%E6%96%B9"
+    },
+    {
+      "id": "6770aef7abfedbea311f901d",
+      "title": "Tidy First?",
+      "imageUrl": "https://scrapbox.io/files/67bb94c29e295dc2766552a9.png",
+      "description": "[https://scrapbox.io/files/67bb94c29e295dc2766552a9.png] KentBeckが書いたソフトウェア設計に関する書籍 [https://www.amazon.co.jp/dp/4814400918 Tidy First? ―個人で実践する経験主義的ソフトウェア設計 | Kent Beck, 吉羽 龍太郎, 永瀬 美穂, 細澤 あゆみ |本 | 通販 | Amazon]",
+      "updatedAt": "2026-02-04T11:53:55.000Z",
+      "url": "https://scrapbox.io/KJR020/Tidy%20First%3F"
+    },
+    {
+      "id": "6913269cd186863f9a3c2c01",
+      "title": "Clean Architecture 達人に学ぶソフトウェアの構造と設計",
+      "imageUrl": "https://scrapbox.io/files/691326a119ec3e723a90e2b0.png",
+      "description": "[https://scrapbox.io/files/691326a119ec3e723a90e2b0.png] [https://www.kadokawa.co.jp/product/301806000678/ 「Clean Architecture 達人に学ぶソフトウェアの構造と設計」ＲｏｂｅｒｔＣ．Ｍａｒｔｉｎ ＰＣ・理工科学書 - KADOKAWA] #書籍",
+      "updatedAt": "2026-02-04T11:53:32.000Z",
+      "url": "https://scrapbox.io/KJR020/Clean%20Architecture%20%E9%81%94%E4%BA%BA%E3%81%AB%E5%AD%A6%E3%81%B6%E3%82%BD%E3%83%95%E3%83%88%E3%82%A6%E3%82%A7%E3%82%A2%E3%81%AE%E6%A7%8B%E9%80%A0%E3%81%A8%E8%A8%AD%E8%A8%88"
+    },
+    {
+      "id": "68eee53cf1051325bb81a400",
+      "title": "データ指向アプリケーションデザイン",
+      "imageUrl": "https://scrapbox.io/files/68eee54313214149f14d61e7.png",
+      "description": "[https://scrapbox.io/files/68eee54313214149f14d61e7.png] 猪本 ３部構成",
+      "updatedAt": "2026-02-04T11:53:18.000Z",
+      "url": "https://scrapbox.io/KJR020/%E3%83%87%E3%83%BC%E3%82%BF%E6%8C%87%E5%90%91%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3"
+    },
+    {
+      "id": "691c0836effaaf46308cf07b",
+      "title": "オブジェクト指向設計実践ガイド",
+      "imageUrl": "https://scrapbox.io/files/691c08770dc8d07273605ec6.png",
+      "description": "[https://scrapbox.io/files/691c08770dc8d07273605ec6.png] [https://gihyo.jp/book/2016/978-4-7741-8361-9 オブジェクト指向設計実践ガイド | 技術評論社] [https://qiita.com/joker1007/items/25de535cd8bb2857a685 俺が悪かった。素直に間違いを認めるから、もうサービスクラスとか作るのは止めてくれ #Ruby - Qiita]",
+      "updatedAt": "2026-02-04T11:53:07.000Z",
+      "url": "https://scrapbox.io/KJR020/%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E6%8C%87%E5%90%91%E8%A8%AD%E8%A8%88%E5%AE%9F%E8%B7%B5%E3%82%AC%E3%82%A4%E3%83%89"
+    },
+    {
+      "id": "6921063cd326bd649aa9327f",
+      "title": "UNIXという考え方",
+      "imageUrl": "https://scrapbox.io/files/6921065e694f9809b9bc612c.png",
+      "description": "[https://scrapbox.io/files/6921065e694f9809b9bc612c.png] [https://www.ohmsha.co.jp/book/9784274064067/ UNIXという考え方 | Ohmsha] Mike Gancarz 著",
+      "updatedAt": "2026-02-04T11:52:52.000Z",
+      "url": "https://scrapbox.io/KJR020/UNIX%E3%81%A8%E3%81%84%E3%81%86%E8%80%83%E3%81%88%E6%96%B9"
+    },
+    {
+      "id": "692ef2371389205ae937a61b",
+      "title": "セキュア・バイ・デザイン",
+      "imageUrl": "https://scrapbox.io/files/692ef23f87017df44ecb535c.png",
+      "description": "[https://scrapbox.io/files/692ef23f87017df44ecb535c.png] 第1部: 導入編 第1章: なぜ、設計がセキュリティにおいて重要なのか？",
+      "updatedAt": "2026-02-04T11:52:41.000Z",
+      "url": "https://scrapbox.io/KJR020/%E3%82%BB%E3%82%AD%E3%83%A5%E3%82%A2%E3%83%BB%E3%83%90%E3%82%A4%E3%83%BB%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3"
+    },
+    {
+      "id": "693b6ba91fdad0e676b5497f",
+      "title": "ベクトル検索実践入門",
+      "imageUrl": "https://scrapbox.io/files/693b6bb2a23787fd62de41a4.png",
+      "description": "[https://scrapbox.io/files/693b6bb2a23787fd62de41a4.png] [https://gihyo.jp/book/2026/978-4-297-15337-3 ベクトル検索実践入門 | 技術評論社] #書籍",
+      "updatedAt": "2026-02-04T11:52:30.000Z",
+      "url": "https://scrapbox.io/KJR020/%E3%83%99%E3%82%AF%E3%83%88%E3%83%AB%E6%A4%9C%E7%B4%A2%E5%AE%9F%E8%B7%B5%E5%85%A5%E9%96%80"
+    },
+    {
+      "id": "6943bb0d2700aff22d8f3579",
+      "title": "リファクタリング",
+      "imageUrl": "https://scrapbox.io/files/6943bb65b641d31b216a3264.png",
+      "description": "[https://scrapbox.io/files/6943bb65b641d31b216a3264.png] [https://www.ohmsha.co.jp/book/9784274224546/ リファクタリング（第2版） 既存のコードを安全に改善する | Ohmsha] ## memo",
+      "updatedAt": "2026-02-04T11:52:20.000Z",
+      "url": "https://scrapbox.io/KJR020/%E3%83%AA%E3%83%95%E3%82%A1%E3%82%AF%E3%82%BF%E3%83%AA%E3%83%B3%E3%82%B0"
+    },
+    {
+      "id": "694a9ac569cefac6e40d1c23",
+      "title": "単体テストの考え方/使い方",
+      "imageUrl": "https://scrapbox.io/files/694a9ae64137edc0bb73a598.png",
+      "description": "[https://scrapbox.io/files/694a9ae64137edc0bb73a598.png] ## メモ ### コードカバレッジは、`優れたネガティブ指標`ではあるが、`劣ったポジティブ指標`である",
+      "updatedAt": "2026-02-04T11:52:11.000Z",
+      "url": "https://scrapbox.io/KJR020/%E5%8D%98%E4%BD%93%E3%83%86%E3%82%B9%E3%83%88%E3%81%AE%E8%80%83%E3%81%88%E6%96%B9%2F%E4%BD%BF%E3%81%84%E6%96%B9"
+    },
+    {
+      "id": "6951347eb1bec91dd88e31ba",
+      "title": "NewSQL徹底入門",
+      "imageUrl": "https://scrapbox.io/files/69513493542b9386bf0b08aa.png",
+      "description": "[https://scrapbox.io/files/69513493542b9386bf0b08aa.png] [https://www.kspub.co.jp/book/detail/5419526.html NewSQL徹底入門 分散DBのアーキテクチャからユースケースまで | 書籍情報 | 株式会社 講談社サイエンティフィク] [https://zenn.dev/tzkoba/articles/tzkoba-newsql-guides-pulished-202512 『NewSQL徹底入門』が発売になります。]",
+      "updatedAt": "2026-02-04T11:51:51.000Z",
+      "url": "https://scrapbox.io/KJR020/NewSQL%E5%BE%B9%E5%BA%95%E5%85%A5%E9%96%80"
+    },
+    {
+      "id": "69830282758d13a45373435b",
+      "title": "Ambient Agent",
+      "imageUrl": null,
+      "description": "[https://qiita.com/RepKuririn/items/6650d7ff02f28de05133 LangChain: Chatbot を超えるAmbient Agent とは？ #生成AI - Qiita]",
+      "updatedAt": "2026-02-04T08:25:53.000Z",
+      "url": "https://scrapbox.io/KJR020/Ambient%20Agent"
+    },
+    {
+      "id": "6982f40db25f90ba9187edbe",
+      "title": "Notion MCP",
+      "imageUrl": null,
+      "description": "Claude Codeから直接編集させたい メモ ClaudeにはNotionコネクタがある",
+      "updatedAt": "2026-02-04T07:24:34.000Z",
+      "url": "https://scrapbox.io/KJR020/Notion%20MCP"
+    },
+    {
+      "id": "698297911d8bf0b5de2ba4ae",
+      "title": "Oh My OpenCode",
+      "imageUrl": null,
+      "description": "`npx oh-my-opencode install` [https://ohmyopencode.com/ Oh My OpenCode - Orchestration Layer for OpenCode] [https://github.com/code-yeongyu/oh-my-opencode code-yeongyu/oh-my-opencode: The Best Agent Harness. Meet Sisyphus: The Batteries-Included Agent that codes like you.]",
+      "updatedAt": "2026-02-04T02:21:30.000Z",
+      "url": "https://scrapbox.io/KJR020/Oh%20My%20OpenCode"
+    },
+    {
+      "id": "6981bc2fdaa971cec9ec549d",
+      "title": "AI セキュリティチェック",
+      "imageUrl": null,
+      "description": "[https://zenn.dev/mixi/articles/79831816f9fd22 Claude Codeにセキュリティ診断をさせてみた]",
+      "updatedAt": "2026-02-03T09:14:38.000Z",
+      "url": "https://scrapbox.io/KJR020/AI%20%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF"
+    },
+    {
+      "id": "69818bfc9437860a6e29b985",
+      "title": "Dust",
+      "imageUrl": null,
+      "description": "フランスのAIスタートアップ エンタープライズ向けにデータ活用のエージェントを提供している ## 参考",
+      "updatedAt": "2026-02-03T05:48:33.000Z",
+      "url": "https://scrapbox.io/KJR020/Dust"
+    },
+    {
+      "id": "698183108b8245f507b156cf",
+      "title": "How We Taught AI Agents to Navigate Company Data Like a Filesystem",
+      "imageUrl": null,
+      "description": "[https://dust.tt/blog/how-we-taught-ai-agents-to-navigate-company-data-like-a-filesystem How We Taught AI Agents to Navigate Company Data Like a Filesystem | Dust Blog]",
+      "updatedAt": "2026-02-03T05:09:43.000Z",
+      "url": "https://scrapbox.io/KJR020/How%20We%20Taught%20AI%20Agents%20to%20Navigate%20Company%20Data%20Like%20a%20Filesystem"
+    },
+    {
+      "id": "69818246c825434d5d2a6bd9",
+      "title": "Effective context engineering for AI agents",
+      "imageUrl": null,
+      "description": "[https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents Effective context engineering for AI agents \\ Anthropic]",
+      "updatedAt": "2026-02-03T05:06:22.000Z",
+      "url": "https://scrapbox.io/KJR020/Effective%20context%20engineering%20for%20AI%20agents"
+    },
+    {
+      "id": "69806618b8cd8cc6fd391947",
+      "title": "JDocQA: Japanese Document Question Answering Dataset for Generative Language Models",
+      "imageUrl": null,
+      "description": "[https://arxiv.org/abs/2403.19454?utm_source 2403.19454 JDocQA: Japanese Document Question Answering Dataset for Generative Language Models] #RAGベンチマーク",
+      "updatedAt": "2026-02-02T08:54:11.000Z",
+      "url": "https://scrapbox.io/KJR020/JDocQA%3A%20Japanese%20Document%20Question%20Answering%20Dataset%20for%20Generative%20Language%20Models"
+    },
+    {
+      "id": "69806522df6efc32756eb745",
+      "title": "UDA-Benchmark",
+      "imageUrl": null,
+      "description": "pdf / htmlのベンチマーク wikipediaのpdfベースのテストデータ [https://github.com/qinchuanhui/UDA-Benchmark?utm_source=chatgpt.com qinchuanhui/UDA-Benchmark: NeurIPS'24 UDA: A Benchmark Suite for Retrieval Augmented Generation in Real-world Document Analysis]",
+      "updatedAt": "2026-02-02T08:52:27.000Z",
+      "url": "https://scrapbox.io/KJR020/UDA-Benchmark"
+    },
+    {
+      "id": "698065a3440ea6a9ad81a715",
+      "title": "Open RAG Benchmark",
+      "imageUrl": null,
+      "description": "[https://huggingface.co/datasets/vectara/open_ragbench vectara/open_ragbench · Datasets at Hugging Face] #RAGベンチマーク",
+      "updatedAt": "2026-02-02T08:52:17.000Z",
+      "url": "https://scrapbox.io/KJR020/Open%20RAG%20Benchmark"
+    },
+    {
+      "id": "698036c2a556552b43f44b3b",
+      "title": "Claude Codeマルチエージェント",
+      "imageUrl": null,
+      "description": "[https://zenn.dev/shio_shoppaize/articles/8870bbf7c14c22 【続】Claude Codeマルチエージェント：v1.1.0で家老が切腹しかけた話]",
+      "updatedAt": "2026-02-02T05:31:53.000Z",
+      "url": "https://scrapbox.io/KJR020/Claude%20Code%E3%83%9E%E3%83%AB%E3%83%81%E3%82%A8%E3%83%BC%E3%82%B8%E3%82%A7%E3%83%B3%E3%83%88"
+    },
+    {
+      "id": "698034894d32812e27c6deb8",
+      "title": "コグニティブデザイン プロンプト",
+      "imageUrl": null,
+      "description": "[https://qiita.com/makotosaekit/items/0eccb562bf7d3f66fbfa 「あなたはプロの〇〇です」をもうやめたい、 「メタプロンプト」から「コグニティブデザイン」へ #AI - Qiita]",
+      "updatedAt": "2026-02-02T05:22:42.000Z",
+      "url": "https://scrapbox.io/KJR020/%E3%82%B3%E3%82%B0%E3%83%8B%E3%83%86%E3%82%A3%E3%83%96%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%20%E3%83%97%E3%83%AD%E3%83%B3%E3%83%97%E3%83%88"
+    },
+    {
+      "id": "69802d161cb6105175196573",
+      "title": "opencode",
+      "imageUrl": null,
+      "description": "OSSのClaude Code代替のコーディングAIエージェントツール `brew install opencode` [https://knowledge.sakura.ad.jp/47838/ OpenCode – ターミナルで動くClaude Code代替のOSS 〜さくらのAI Engineを使いこなす：主要クライアント実践ガイド(4)〜 | さくらのナレッジ]",
+      "updatedAt": "2026-02-02T04:51:32.000Z",
+      "url": "https://scrapbox.io/KJR020/opencode"
+    },
+    {
+      "id": "69802c92d8886534e316c5e1",
+      "title": "ts-bench",
+      "imageUrl": null,
+      "description": "TypeScriptのコーディングAIエージェントのベンチマークテスト [https://github.com/laiso/ts-bench laiso/ts-bench: Measure and compare the performance of AI coding agents on TypeScript tasks.] [https://blog.lai.so/ts-bench/ TypeScriptファーストなコーディングAIエージェントのベンチマーク「ts-bench」を公開しました]",
+      "updatedAt": "2026-02-02T04:49:00.000Z",
+      "url": "https://scrapbox.io/KJR020/ts-bench"
+    },
+    {
+      "id": "694391ed90c2ea80babed026",
+      "title": "1Password CLI",
+      "imageUrl": null,
+      "description": "`brew install 1password-cli` でinstallできる `op signin` `op vault list`",
+      "updatedAt": "2026-02-01T14:01:13.000Z",
+      "url": "https://scrapbox.io/KJR020/1Password%20CLI"
+    },
+    {
+      "id": "697f1b014a7b004c98846810",
+      "title": "ふろふき大根",
+      "imageUrl": "https://i.ytimg.com/vi/lLHNgcAh3cE/mqdefault.jpg",
+      "description": "[https://www.youtube.com/watch?v=lLHNgcAh3cE]",
+      "updatedAt": "2026-02-01T09:21:16.000Z",
+      "url": "https://scrapbox.io/KJR020/%E3%81%B5%E3%82%8D%E3%81%B5%E3%81%8D%E5%A4%A7%E6%A0%B9"
+    },
+    {
+      "id": "697f1af155065a48a601c1ab",
+      "title": "cookpad.com/jp/recipes/19891601 葉っぱが美味しい！セロリの葉のごま油炒め by ぽてまる太郎 【クックパッド】 簡単おいしいみんなのレシピが392万品",
+      "imageUrl": null,
+      "description": "[https://cookpad.com/jp/recipes/19891601 葉っぱが美味しい！セロリの葉のごま油炒め by ぽてまる太郎 【クックパッド】 簡単おいしいみんなのレシピが392万品]",
+      "updatedAt": "2026-02-01T09:20:54.000Z",
+      "url": "https://scrapbox.io/KJR020/cookpad.com%2Fjp%2Frecipes%2F19891601%20%E8%91%89%E3%81%A3%E3%81%B1%E3%81%8C%E7%BE%8E%E5%91%B3%E3%81%97%E3%81%84%EF%BC%81%E3%82%BB%E3%83%AD%E3%83%AA%E3%81%AE%E8%91%89%E3%81%AE%E3%81%94%E3%81%BE%E6%B2%B9%E7%82%92%E3%82%81%20by%20%E3%81%BD%E3%81%A6%E3%81%BE%E3%82%8B%E5%A4%AA%E9%83%8E%20%E3%80%90%E3%82%AF%E3%83%83%E3%82%AF%E3%83%91%E3%83%83%E3%83%89%E3%80%91%20%E7%B0%A1%E5%8D%98%E3%81%8A%E3%81%84%E3%81%97%E3%81%84%E3%81%BF%E3%82%93%E3%81%AA%E3%81%AE%E3%83%AC%E3%82%B7%E3%83%94%E3%81%8C392%E4%B8%87%E5%93%81"
+    },
+    {
+      "id": "697e012637ee979eaa87c1ec",
+      "title": "www.youtube.com/watch?v=AFu7jzI0ExY",
+      "imageUrl": "https://i.ytimg.com/vi/AFu7jzI0ExY/mqdefault.jpg",
+      "description": "[https://www.youtube.com/watch?v=AFu7jzI0ExY]",
+      "updatedAt": "2026-01-31T13:18:36.000Z",
+      "url": "https://scrapbox.io/KJR020/www.youtube.com%2Fwatch%3Fv%3DAFu7jzI0ExY"
+    },
+    {
+      "id": "697dad5ff95e6ccff02cc8ec",
+      "title": "スープカレー",
+      "imageUrl": "https://i.ytimg.com/vi/esgABvUDqWI/mqdefault.jpg",
+      "description": "[https://www.youtube.com/watch?v=esgABvUDqWI]",
+      "updatedAt": "2026-01-31T07:22:11.000Z",
+      "url": "https://scrapbox.io/KJR020/%E3%82%B9%E3%83%BC%E3%83%97%E3%82%AB%E3%83%AC%E3%83%BC"
+    },
+    {
+      "id": "697d2481b4aa76c0a84cbffa",
+      "title": "なぜLLMより人間の回答が信頼されるのか",
+      "imageUrl": null,
+      "description": "LLMは人間よりもはるかに多くの知識を持っているはずなのに、実務では人間エンジニアの回答の方が信頼される場面がある 少なくとも、知識量だけでは回答の信頼性を説明しきれない場面があるように見える この差を生む理由は一つではない",
+      "updatedAt": "2026-01-30T22:03:45.000Z",
+      "url": "https://scrapbox.io/KJR020/%E3%81%AA%E3%81%9CLLM%E3%82%88%E3%82%8A%E4%BA%BA%E9%96%93%E3%81%AE%E5%9B%9E%E7%AD%94%E3%81%8C%E4%BF%A1%E9%A0%BC%E3%81%95%E3%82%8C%E3%82%8B%E3%81%AE%E3%81%8B"
+    },
+    {
+      "id": "697aec76dbb3aa479f59a744",
+      "title": "Thinking, Fast and Slow",
+      "imageUrl": "https://scrapbox.io/files/697aec87a26643342ad0d07c.png",
+      "description": "[https://scrapbox.io/files/697aec87a26643342ad0d07c.png] [https://www.amazon.co.jp/THINKING-FAST-SLOW-DANIEL-KAHNEMAN/dp/0141033576 Amazon | THINKING,FAST AND SLOW(B) | KAHNEMAN, DANIEL | Behavioral Sciences] [https://en.wikipedia.org/wiki/Thinking,_Fast_and_Slow Thinking, Fast and Slow - Wikipedia]",
+      "updatedAt": "2026-01-29T05:14:24.000Z",
+      "url": "https://scrapbox.io/KJR020/Thinking%2C%20Fast%20and%20Slow"
+    },
+    {
+      "id": "697a879d24f9014b072065af",
+      "title": "Astro コンポーネントの考え方",
+      "imageUrl": null,
+      "description": "https://note.com/qlip_co_ltd/n/n24c152502673 https://qiita.com/yayo1/items/fde86b3f5f13001a241d https://qiita.com/yayo1/items/fde86b3f5f13001a241d",
+      "updatedAt": "2026-01-28T22:03:27.000Z",
+      "url": "https://scrapbox.io/KJR020/Astro%20%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E8%80%83%E3%81%88%E6%96%B9"
+    },
+    {
+      "id": "697a0df321e435c2af46644d",
+      "title": "AIがコードを書く時代になるまでの90年をまとめてみた",
+      "imageUrl": null,
+      "description": "[https://zenn.dev/aircloset/articles/103cd0281871b0 AIがコードを書く時代になるまでの90年をまとめてみた] ワード [Greenの定理証明]",
+      "updatedAt": "2026-01-28T21:25:36.000Z",
+      "url": "https://scrapbox.io/KJR020/AI%E3%81%8C%E3%82%B3%E3%83%BC%E3%83%89%E3%82%92%E6%9B%B8%E3%81%8F%E6%99%82%E4%BB%A3%E3%81%AB%E3%81%AA%E3%82%8B%E3%81%BE%E3%81%A7%E3%81%AE90%E5%B9%B4%E3%82%92%E3%81%BE%E3%81%A8%E3%82%81%E3%81%A6%E3%81%BF%E3%81%9F"
     }
   ]
 }
