@@ -96,7 +96,7 @@ const latestPosts = sortedPosts.slice(0, 5);
 
   .kuri-background {
     position: absolute;
-    bottom: 20%;
+    top: -8rem;
     right: -2rem;
     width: 24rem;
     height: 24rem;
@@ -115,6 +115,10 @@ const latestPosts = sortedPosts.slice(0, 5);
 
   .index-wrapper :global([data-slot="card"]:hover) {
     background: hsl(var(--accent) / 0.5);
+  }
+
+  :global(.dark) .kuri-background {
+    background-image: url("/images/kuri-dark.svg");
   }
 
   @media (max-width: 768px) {

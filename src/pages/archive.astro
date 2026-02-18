@@ -24,14 +24,14 @@ const years = Object.keys(postsByYear)
 
 <BaseLayout title="Archive - KJR020's Blog" description="すべての記事一覧">
   <div class="archive-page">
+    <div class="kuri-fixed" aria-hidden="true"></div>
+
     <div class="archive-header container mx-auto px-4 pt-8 pb-4">
       <h1 class="text-3xl font-bold mb-2">Archive</h1>
       <p class="text-muted-foreground">{sortedPosts.length}件の記事</p>
     </div>
 
     <div class="archive-body">
-      <div class="kuri-fixed" aria-hidden="true"></div>
-
       <div class="archive-scroll">
         <div class="container mx-auto px-4 pb-4">
           {
@@ -56,6 +56,7 @@ const years = Object.keys(postsByYear)
 
 <style>
   .archive-page {
+    position: relative;
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -75,7 +76,7 @@ const years = Object.keys(postsByYear)
 
   .kuri-fixed {
     position: absolute;
-    bottom: -6rem;
+    top: -8rem;
     right: -2rem;
     width: 24rem;
     height: 24rem;
@@ -86,6 +87,10 @@ const years = Object.keys(postsByYear)
     opacity: 0.15;
     pointer-events: none;
     z-index: 10;
+  }
+
+  :global(.dark) .kuri-fixed {
+    background-image: url("/images/kuri-dark.svg");
   }
 
   .archive-scroll {
