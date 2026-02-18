@@ -8,12 +8,15 @@ const sortedPosts = posts.sort(
   (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
 );
 
-const postsByYear = sortedPosts.reduce<Record<number, typeof sortedPosts>>((acc, post) => {
-  const year = new Date(post.data.date).getFullYear();
-  if (!acc[year]) acc[year] = [];
-  acc[year].push(post);
-  return acc;
-}, {});
+const postsByYear = sortedPosts.reduce<Record<number, typeof sortedPosts>>(
+  (acc, post) => {
+    const year = new Date(post.data.date).getFullYear();
+    if (!acc[year]) acc[year] = [];
+    acc[year].push(post);
+    return acc;
+  },
+  {},
+);
 const years = Object.keys(postsByYear)
   .map(Number)
   .sort((a, b) => b - a);
@@ -72,7 +75,7 @@ const years = Object.keys(postsByYear)
 
   .kuri-fixed {
     position: absolute;
-    bottom: 0;
+    bottom: -6rem;
     right: -2rem;
     width: 24rem;
     height: 24rem;
