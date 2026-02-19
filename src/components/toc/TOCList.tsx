@@ -17,9 +17,8 @@ export function TOCList({
 
   // アクティブ項目が変わったら、TOCサイドバー内で見える位置にスクロール
   useEffect(() => {
-    if (activeRef.current) {
-      activeRef.current.scrollIntoView({ behavior: "smooth", block: "nearest" });
-    }
+    if (!activeId || !activeRef.current) return;
+    activeRef.current.scrollIntoView({ behavior: "smooth", block: "nearest" });
   }, [activeId]);
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();

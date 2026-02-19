@@ -1,4 +1,5 @@
 ---
+title: "Tech Trends Newsletter - 2026-02-20"
 tags: [tech-newsletter, ai-coding, vibe-coding, llm-agent, mcp, ai-developer-tools]
 date: 2026-02-20
 ---
