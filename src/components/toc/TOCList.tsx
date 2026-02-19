@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 import type { TOCListProps } from "./types";
 
@@ -12,6 +13,14 @@ export function TOCList({
   avatarSrc,
   avatarAlt = "Avatar",
 }: TOCListProps) {
+  const activeRef = useRef<HTMLLIElement>(null);
+
+  // アクティブ項目が変わったら、TOCサイドバー内で見える位置にスクロール
+  useEffect(() => {
+    if (activeRef.current) {
+      activeRef.current.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }
+  }, [activeId]);
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
 
@@ -41,7 +50,7 @@ export function TOCList({
         const isH3 = heading.level === 3;
 
         return (
-          <li key={heading.id} className="relative">
+          <li key={heading.id} ref={isActive ? activeRef : undefined} className="relative">
             {/* アバターアイコン（デスクトップのみ、アクティブ時） */}
             {avatarSrc && isActive && (
               <img
