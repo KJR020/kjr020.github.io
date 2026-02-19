@@ -1,0 +1,25 @@
+---
+import { getCollection } from "astro:content";
+import NewsletterCard from "@/components/NewsletterCard.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const newsletters = await getCollection("newsletters");
+const sortedNewsletters = newsletters.sort(
+  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
+);
+---
+
+<BaseLayout title="Tech Trends - KJR020's Blog" description="AI・テック系の最新トレンドニュースレター">
+  <div class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-6">Tech Trends Newsletter</h1>
+    {sortedNewsletters.length === 0 ? (
+      <p class="text-muted-foreground">まだニュースレターはありません</p>
+    ) : (
+      <div class="grid gap-2">
+        {sortedNewsletters.map((newsletter) => (
+          <NewsletterCard newsletter={newsletter} />
+        ))}
+      </div>
+    )}
+  </div>
+</BaseLayout>
