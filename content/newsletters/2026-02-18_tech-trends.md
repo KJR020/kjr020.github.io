@@ -24,7 +24,7 @@ date: 2026-02-18T00:00:00+09:00
 - **Source**: Anthropic
 - **Date**: 2026-02-05
 
-https://www.anthropic.com/news/claude-opus-4-6
+<https://www.anthropic.com/news/claude-opus-4-6>
 
 Anthropicが2026年最初の大型モデルClaude Opus 4.6をリリース。1Mトークンコンテキスト（ベータ）、最大128Kトークン出力、Adaptive Thinking（動的推論モード）を搭載。Terminal-Bench 2.0で65.4%（前世代59.8%）、OSWorldで72.7%（前世代66.3%）のSOTAを達成。Claude Codeの「Agent Teams」機能により複数AIエージェントの並列作業が可能に。
 
@@ -34,7 +34,7 @@ Anthropicが2026年最初の大型モデルClaude Opus 4.6をリリース。1M�
 - **Source**: Anthropic
 - **Date**: 2026-02-17
 
-https://www.anthropic.com/news/claude-sonnet-4-6
+<https://www.anthropic.com/news/claude-sonnet-4-6>
 
 Sonnet 4.6はコーディング、コンピュータ使用、長文推論、エージェント計画、デザインの全領域でアップグレード。Claude Codeテストでは70%のユーザーがSonnet 4.5より4.6を選択し、さらにOpus 4.5に対しても59%で好まれた。1Mトークンコンテキスト（ベータ）搭載、価格は$3/$15 per Mトークンで据え置き。
 
@@ -44,7 +44,7 @@ Sonnet 4.6はコーディング、コンピュータ使用、長文推論、エ�
 - **Source**: Anthropic / Figma
 - **Date**: 2026-02-17
 
-https://startupnews.fyi/2026/02/18/figma-partners-with-anthropic-to-launch-code-to-canvas/
+<https://startupnews.fyi/2026/02/18/figma-partners-with-anthropic-to-launch-code-to-canvas/>
 
 FigmaとAnthropicが提携し「Code to Canvas」機能をローンチ。Claude Codeで構築したUIをライブブラウザ状態からキャプチャし、Figmaの編集可能フレームに変換。FigmaのMCPサーバー上で動作し、デザイナーとエンジニアのワークフローを橋渡しする。
 
@@ -54,7 +54,7 @@ FigmaとAnthropicが提携し「Code to Canvas」機能をローンチ。Claude 
 - **Source**: Anthropic
 - **Date**: 2026-01-26
 
-https://techcrunch.com/2026/01/26/anthropic-launches-interactive-claude-apps-including-slack-and-other-workplace-tools/
+<https://techcrunch.com/2026/01/26/anthropic-launches-interactive-claude-apps-including-slack-and-other-workplace-tools/>
 
 AnthropicがMCP Appsオープン仕様をローンチ。MCPサーバーがインタラクティブなUIを提供可能になり、Claude内でSlack、Figma、Asana、Canvaなど10以上の業務ツールを直接操作可能に。Pro/Max/Team/Enterpriseプランで利用可能。
 
@@ -64,7 +64,7 @@ AnthropicがMCP Appsオープン仕様をローンチ。MCPサーバーがイン
 - **Source**: OpenAI
 - **Date**: 2026-02
 
-https://openai.com/index/introducing-gpt-5-3-codex/
+<https://openai.com/index/introducing-gpt-5-3-codex/>
 
 OpenAIがCodexデスクトップアプリ（macOS）とGPT-5.3-Codexを発表。マルチエージェント並列実行、Skillsシステム（コード生成を超えた情報収集・問題解決・ライティングに拡張）、Worktreeサポート（同一リポジトリでの並列作業）を搭載。GPT-5.3-Codexは前世代より25%高速で、自身の学習・デプロイ・テスト評価にも使用された初のモデル。
 
@@ -74,7 +74,7 @@ OpenAIがCodexデスクトップアプリ（macOS）とGPT-5.3-Codexを発表。
 - **Source**: Google
 - **Date**: 2026-02
 
-https://developers.googleblog.com/build-with-google-antigravity-our-new-agentic-development-platform/
+<https://developers.googleblog.com/build-with-google-antigravity-our-new-agentic-development-platform/>
 
 Googleが「エージェントファースト」開発プラットフォーム「Antigravity」をパブリックプレビューで無料公開。Gemini 3 Pro搭載、macOS/Windows/Linux対応。ユーザーはアーキテクトとして機能し、エージェントがエディタ・ターミナル・ブラウザを横断して自律的にタスクを実行。Claude Sonnet 4.5やGPT-OSSもモデルオプションとして利用可能。
 
@@ -88,7 +88,7 @@ Googleが「エージェントファースト」開発プラットフォーム�
 - **Source**: InfoQ
 - **Date**: 2026-02-05
 
-https://www.infoq.com/news/2026/02/google-grpc-mcp-transport/
+<https://www.infoq.com/news/2026/02/google-grpc-mcp-transport/>j
 
 Google CloudがMCPにgRPCトランスポートパッケージを貢献。JSON-RPCの帯域幅消費とCPUオーバーヘッドを削減し、gRPCを標準プロトコルとする企業のAIエージェント統合を容易にする。Spotifyが既に社内でMCP over gRPCの実験的サポートを投資済み。
 
@@ -98,7 +98,7 @@ Google CloudがMCPにgRPCトランスポートパッケージを貢献。JSON-RP
 - **Source**: Anthropic
 - **Date**: 2025-12-09
 
-https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation
+<https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation>
 
 AnthropicがMCPをLinux Foundation傘下の新団体Agentic AI Foundation（AAIF）に寄贈。Anthropic、Block、OpenAIが共同設立し、Google、Microsoft、AWS、Cloudflare、Bloombergが支援。MCP初年度の成果：10,000以上のアクティブ公開MCPサーバー、月間9,700万以上のSDKダウンロード。
 
@@ -108,7 +108,7 @@ AnthropicがMCPをLinux Foundation傘下の新団体Agentic AI Foundation（AAIF
 - **Source**: AddyOsmani.com
 - **Date**: 2026-01-04
 
-https://addyosmani.com/blog/ai-coding-workflow/
+<https://addyosmani.com/blog/ai-coding-workflow/>
 
 Google ChromeチームのAddy OsmaniがAI支援コーディングのワークフローを公開。「AI-augmented software engineering」として、spec.mdの事前作成、小さなチャンクでの反復、頻繁なコミット、人間による監視を推奨。Claude Codeの自身のコードベースの約90%がAI生成であることに言及。
 
@@ -118,7 +118,7 @@ Google ChromeチームのAddy OsmaniがAI支援コーディングのワークフ
 - **Source**: Microsoft Inside Track Blog
 - **Date**: 2026-02-12
 
-https://www.microsoft.com/insidetrack/blog/protecting-ai-conversations-at-microsoft-with-model-context-protocol-security-and-governance/
+<https://www.microsoft.com/insidetrack/blog/protecting-ai-conversations-at-microsoft-with-model-context-protocol-security-and-governance/>
 
 MicrosoftがMCPデプロイメントのセキュリティ・ガバナンスフレームワークを実装中。secure-by-defaultアーキテクチャ、自動化、インベントリ管理の3本柱で「より速く、より安全なエージェント開発環境」の実現を目指す。
 
@@ -126,7 +126,7 @@ MicrosoftがMCPデプロイメントのセキュリティ・ガバナンスフ�
 - **Source**: Reddit / aitooldiscovery.com
 - **Date**: 2026-02-17更新
 
-https://www.aitooldiscovery.com/guides/best-ai-for-coding-reddit
+<https://www.aitooldiscovery.com/guides/best-ai-for-coding-reddit>
 
 Redditコミュニティによる2026年AIコーディングツールランキング：1位 Claude Opus 4.6（★4.9）、2位 Cursor（★4.8）、3位 GitHub Copilot（★4.7）。開発者の生産性向上は20-50%と報告。
 
@@ -140,7 +140,7 @@ Redditコミュニティによる2026年AIコーディングツールランキ�
 - **Source**: Faros.ai
 - **Date**: 2026-01-02（2026-01-30更新）
 
-https://www.faros.ai/blog/best-ai-coding-agents-2026
+<https://www.faros.ai/blog/best-ai-coding-agents-2026>
 
 フロントランナー：Cursor、Claude Code、Codex、GitHub Copilot（Agent Mode）、Cline。評価軸はトークン効率＆コスト、生産性インパクト、コード品質＆ハルシネーション制御、リポジトリ理解、プライバシー＆データ制御の5項目。
 
@@ -150,7 +150,7 @@ https://www.faros.ai/blog/best-ai-coding-agents-2026
 - **Source**: Verdent.ai
 - **Date**: 2026-02-04
 
-https://www.verdent.ai/guides/ai-coding-tools-comparison-2026
+<https://www.verdent.ai/guides/ai-coding-tools-comparison-2026>
 
 AIコーディングツールがアシスタント→エージェント→マルチエージェントプラットフォームへ進化。Claude Codeは「Extended Thinking」による高品質コード生成、CursorはComposerモードのマルチファイル編集が強み。隠れたコスト（クレジットシステムとレート制限）への警告も。
 
@@ -160,7 +160,7 @@ AIコーディングツールがアシスタント→エージェント→マル
 - **Source**: tjo.hatenablog.com
 - **Date**: 2026-02-05
 
-https://tjo.hatenablog.com/entry/2026/02/05/170000
+<https://tjo.hatenablog.com/entry/2026/02/05/170000>
 
 Vibe codingの普及により専門的なコーディングスキルが不要になりつつある現状を踏まえ、理論・アルゴリズムの基礎を重視した書籍リストを更新。実装はAIに任せ、概念理解に注力する学習戦略への転換を提唱。
 
@@ -170,7 +170,7 @@ Vibe codingの普及により専門的なコーディングスキルが不要に
 - **Source**: touch-sp.hatenablog.com
 - **Date**: 2026-01-19（2026-02-04更新）
 
-https://touch-sp.hatenablog.com/entry/2026/01/19/142520
+<https://touch-sp.hatenablog.com/entry/2026/01/19/142520>
 
 Windows 11環境でClaude CodeとOllamaを組み合わせたローカルVibe Codingの実践レポート。Agent Skillsは明示的に指示しないと使用されない点、VRAM解放のためのollama stopコマンドの必要性など、実務的な知見を共有。
 
@@ -180,7 +180,7 @@ Windows 11環境でClaude CodeとOllamaを組み合わせたローカルVibe Cod
 - **Source**: Zenn
 - **Date**: 2025-06-04
 
-https://zenn.dev/govtechtokyo/articles/4ce7378895ab97
+<https://zenn.dev/govtechtokyo/articles/4ce7378895ab97>
 
 GovTech Tokyo職員がClaude Codeでe-Gov法令検索API連携のMCPサーバーを構築。コーディング経験の少ない人がVibe Codingで実用的なツールを作れることを実証。MCPのJSON通信でstdoutにログを出すとエラーになる点など実践的ノウハウも。
 
@@ -190,7 +190,7 @@ GovTech Tokyo職員がClaude Codeでe-Gov法令検索API連携のMCPサーバー
 - **Source**: Interconnects
 - **Date**: 2026-02-09
 
-https://www.interconnects.ai/p/opus-46-vs-codex-53
+<https://www.interconnects.ai/p/opus-46-vs-codex-53>
 
 Opus 4.6はユーザビリティと幅広いタスク対応力で優位、Codex 5.3はバグ発見・修正の専門性で優位。従来のベンチマークではモデル品質を意味のある形で示せなくなっており、実際の使用感が差を分ける時代に。将来はモデルの生の能力よりエージェントオーケストレーションとツールアクセスが競争軸に。
 
@@ -204,7 +204,7 @@ Opus 4.6はユーザビリティと幅広いタスク対応力で優位、Codex 
 - **Source**: arXiv cs.SE
 - **Date**: 2026-02-09
 
-https://arxiv.org/abs/2602.09185
+<https://arxiv.org/abs/2602.09185>
 
 5つのAIコーディングエージェント（OpenAI Codex, Devin, GitHub Copilot, Cursor, Claude Code）が生成した932,791件のPRを116,211リポジトリから収集した大規模データセット。AIエージェントの採用パターンと開発者との協調ダイナミクスを実証的に分析する基盤を提供。
 
@@ -214,7 +214,7 @@ https://arxiv.org/abs/2602.09185
 - **Source**: arXiv cs.SE
 - **Date**: 2026-01-28
 
-https://arxiv.org/abs/2601.20404
+<https://arxiv.org/abs/2601.20404>
 
 AGENTS.mdファイルの存在によりAIエージェントの実行時間が中央値で28.64%短縮、出力トークン消費が16.58%削減されることを実証。タスク完了率は同等を維持しつつ効率化を実現。即座に実務で活用可能な知見。
 
@@ -224,7 +224,7 @@ AGENTS.mdファイルの存在によりAIエージェントの実行時間が中
 - **Source**: arXiv cs.CR
 - **Date**: 2026-02-01
 
-https://arxiv.org/abs/2602.01129
+<https://arxiv.org/abs/2602.01129>
 
 MCPのセキュリティギャップに対処するSMCPを提案。統一ID管理、相互認証、セキュリティコンテキスト伝播、きめ細かいポリシー適用、監査ログを統合。ツールポイゾニング、プロンプトインジェクション、サプライチェーン攻撃への防御策を提供。
 
@@ -234,7 +234,7 @@ MCPのセキュリティギャップに対処するSMCPを提案。統一ID管�
 - **Source**: arXiv cs.SE
 - **Date**: 2025-12-11
 
-https://arxiv.org/abs/2512.10218
+<https://arxiv.org/abs/2512.10218>
 
 SWE-Bench-Verifiedがエージェント能力ではなく訓練データの記憶を反映している可能性を指摘。Claudeモデルの実験で、SWE-Bench-Verifiedでの性能がBeetleBox/SWE-rebenchの3倍、編集ファイル特定は6倍高いことが判明。新しいベンチマークへの移行を提唱。
 
@@ -244,7 +244,7 @@ SWE-Bench-Verifiedがエージェント能力ではなく訓練データの記�
 - **Source**: arXiv cs.SE
 - **Date**: 2026-01-21
 
-https://arxiv.org/abs/2601.15494
+<https://arxiv.org/abs/2601.15494>
 
 Vibe codingがOSSエコシステムに与える影響を経済学的にモデル化。生産性は向上するが、直接的なユーザーエンゲージメントのみで収益化されるOSSではメンテナーの参入・共有が減少し、OSSの可用性と品質が低下するパラドックスを発見。
 
@@ -254,7 +254,7 @@ Vibe codingがOSSエコシステムに与える影響を経済学的にモデル
 - **Source**: arXiv cs.CL
 - **Date**: 2026-02-10
 
-https://arxiv.org/abs/2602.10171
+<https://arxiv.org/abs/2602.10171>
 
 反復的にコードを改善する自己進化型LLMコーディングシステムを評価するベンチマーク。従来のワンショット正確性ではなく、複数試行にわたる正確性・時間・メモリ効率の進化を追跡し、人間プログラマーとの直接比較を実現。
 
