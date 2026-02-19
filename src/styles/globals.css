@@ -238,6 +238,34 @@
   border-radius: 0 var(--border-radius) var(--border-radius) 0;
 }
 
+/* OG画像なし時のフォールバック: ドメインアイコン表示 */
+.rlc-container:not(:has(.rlc-image-container))::after {
+  content: "";
+  grid-column: 2;
+  background-color: var(--muted);
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20'/%3E%3Cpath d='M2 12h20'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 2rem;
+  opacity: 0.5;
+}
+
+/* OG画像エラー時: 壊れた画像をフォールバックに置換 */
+.rlc-image[src=""] {
+  display: none;
+}
+
+.rlc-image-container:has(.rlc-image[src=""]) {
+  background-color: var(--muted);
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20'/%3E%3Cpath d='M2 12h20'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 2rem;
+  opacity: 0.5;
+}
+
 /* ダークモード対応 */
 .dark .rlc-container:hover {
   background-color: var(--secondary);
@@ -250,6 +278,11 @@
 .dark .rlc-description,
 .dark .rlc-url {
   color: var(--muted-foreground);
+}
+
+.dark .rlc-container:not(:has(.rlc-image-container))::after,
+.dark .rlc-image-container:has(.rlc-image[src=""]) {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%239ca3af' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20'/%3E%3Cpath d='M2 12h20'/%3E%3C/svg%3E");
 }
 
 /* ========================================

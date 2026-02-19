@@ -64,6 +64,7 @@ pnpm typecheck    # 型チェック
 3. `/kiro:spec-design {feature}` - 設計
 4. `/kiro:spec-tasks {feature}` - タスク分割
 5. `/kiro:spec-impl {feature}` - 実装
+   - `/kiro:spec-impl-tdd {feature}` - twadaスタイルTDDで実装（オプション）
 6. `/kiro:spec-status {feature}` - 進捗確認
 
 ### 開発ルール

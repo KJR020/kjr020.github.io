@@ -43,7 +43,7 @@ export default defineConfig({
             calloutIcons[callout.type] || calloutIcons.note,
         },
       ],
-      [remarkLinkCard, { cache: true, shortenUrl: true }],
+      [remarkLinkCard, { cache: false, shortenUrl: true }],
     ],
     rehypePlugins: [[rehypeMermaid, { class: "mermaid" }]],
   },
