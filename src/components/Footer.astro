@@ -16,11 +16,18 @@ const socialLinks = [
 ---
 
 <footer class="border-t border-border bg-background">
-  <div class="container mx-auto px-4 py-3">
-    <div class="flex items-center justify-between">
-      <p class="text-sm text-muted-foreground">
-        © {currentYear} KJR020. All rights reserved.
-      </p>
+  <div class="container mx-auto px-4 py-6">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex flex-col sm:flex-row items-center gap-4 text-sm text-muted-foreground">
+        <p>© {currentYear} KJR020</p>
+        <nav class="flex items-center gap-3" aria-label="フッターナビゲーション">
+          <a href="/archive" class="hover:text-foreground transition-colors">Archive</a>
+          <span class="text-border">|</span>
+          <a href="/newsletters" class="hover:text-foreground transition-colors">Tech Trends</a>
+          <span class="text-border">|</span>
+          <a href="/search" class="hover:text-foreground transition-colors">Search</a>
+        </nav>
+      </div>
       <div class="flex items-center gap-4">
         {socialLinks.map((link) => (
           <a

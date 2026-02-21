@@ -22,6 +22,14 @@ function formatDate(dateString: string): string {
   });
 }
 
+function cleanScrapboxDescription(text: string): string {
+  return text
+    .replace(/\[([^\]]*)\]/g, "$1")
+    .replace(/https?:\/\/\S+/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 function ScrapboxCardListInner({ project, limit, className }: ScrapboxCardListProps) {
   const { data, isLoading, isError, error, refetch } = useScrapboxData(
     project,
@@ -118,7 +126,7 @@ function ScrapboxCardListInner({ project, limit, className }: ScrapboxCardListPr
               {page.title}
             </h3>
             <p className="text-xs text-muted-foreground/70 line-clamp-2 mt-2 flex-1">
-              {page.description || ""}
+              {cleanScrapboxDescription(page.description || "")}
             </p>
             <span className="text-[10px] text-muted-foreground/50 mt-auto pt-2">
               {formatDate(page.updatedAt)}

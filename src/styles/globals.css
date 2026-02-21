@@ -1,8 +1,12 @@
 @import "tailwindcss";
 
 :root {
-  --background: hsl(0 0% 100%);
+  --background: hsl(240 5% 96%);
   --foreground: hsl(240 10% 3.9%);
+  --link: hsl(230 70% 50%);
+  --link-hover: hsl(230 70% 40%);
+  --font-heading: "Noto Sans JP", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   --card: hsl(0 0% 100%);
   --card-foreground: hsl(240 10% 3.9%);
   --popover: hsl(0 0% 100%);
@@ -36,9 +40,11 @@
 }
 
 .dark {
-  --background: hsl(240 10% 3.9%);
+  --background: hsl(225 12% 7%);
   --foreground: hsl(0 0% 98%);
-  --card: hsl(240 10% 3.9%);
+  --card: hsl(225 10% 10%);
+  --link: hsl(225 75% 65%);
+  --link-hover: hsl(225 75% 75%);
   --card-foreground: hsl(0 0% 98%);
   --popover: hsl(240 10% 3.9%);
   --popover-foreground: hsl(0 0% 98%);
@@ -92,6 +98,10 @@
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
+  --color-link: var(--link);
+  --color-link-hover: var(--link-hover);
+  --font-family-heading: var(--font-heading);
+  --font-family-mono: var(--font-mono);
 }
 
 @layer base {
@@ -359,4 +369,26 @@
 
 [data-callout-type="danger"] [data-callout-title] {
   color: hsl(350 89% 60% / 0.9);
+}
+
+/* Page-load animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.4s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in-up {
+    animation: none;
+  }
 }

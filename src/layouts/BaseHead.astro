@@ -18,6 +18,14 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 <link rel="apple-touch-icon" href="/images/avatar.png" />
 <link rel="canonical" href={canonicalURL} />
 
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;700;900&family=JetBrains+Mono:wght@400;500&display=swap"
+  rel="stylesheet"
+/>
+
 <title>{title}</title>
 <meta name="description" content={description} />
 
