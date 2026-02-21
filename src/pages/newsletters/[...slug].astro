@@ -30,8 +30,6 @@ const headings: HeadingItem[] = rawHeadings
   description={newsletter.data.description}
 >
   <div class="newsletter-wrapper">
-    <div class="kuri-background" aria-hidden="true"></div>
-
     <div class="container mx-auto px-4 py-8 max-w-6xl">
       <div class="lg:grid lg:grid-cols-[minmax(0,1fr)_250px] lg:gap-8">
         <article class="min-w-0">
@@ -72,35 +70,8 @@ const headings: HeadingItem[] = rawHeadings
     position: relative;
   }
 
-  .kuri-background {
-    position: absolute;
-    top: -8rem;
-    right: -2rem;
-    width: 24rem;
-    height: 24rem;
-    background-image: url("/images/kuri.svg");
-    background-repeat: no-repeat;
-    background-position: right center;
-    background-size: contain;
-    opacity: 0.15;
-    pointer-events: none;
-    z-index: 10;
-  }
-
   .newsletter-wrapper > .container {
     position: relative;
-  }
-
-  :global(.dark) .kuri-background {
-    background-image: url("/images/kuri-dark.svg");
-  }
-
-  @media (max-width: 768px) {
-    .kuri-background {
-      width: 14rem;
-      right: -1rem;
-      opacity: 0.12;
-    }
   }
 </style>
 
