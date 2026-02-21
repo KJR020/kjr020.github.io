@@ -1,3 +1,4 @@
+import { List } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { MobileTOC } from "./MobileTOC";
 import { TOCList } from "./TOCList";
@@ -39,7 +40,10 @@ export function TableOfContents({
         )}
         aria-label="目次"
       >
-        <h2 className="text-sm font-semibold text-foreground mb-4">目次</h2>
+        <h2 className="flex items-center gap-2 text-sm font-semibold text-foreground mb-4">
+          <List className="w-4 h-4" />
+          目次
+        </h2>
         <TOCList
           headings={headings}
           activeId={activeId}
