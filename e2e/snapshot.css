@@ -1,0 +1,35 @@
+/*
+ * スナップショットテスト用安定化CSS
+ * Playwright の toHaveScreenshot() 実行時に自動注入される。
+ * animations: "disabled" のバックアップとして、
+ * OS間差分・動的要素による偽陽性を抑制する。
+ */
+
+/* トランジション・アニメーションの無効化（バックアップ） */
+*,
+*::before,
+*::after {
+  animation-duration: 0s !important;
+  animation-delay: 0s !important;
+  transition-duration: 0s !important;
+  transition-delay: 0s !important;
+}
+
+/* カーソル点滅の停止 */
+* {
+  caret-color: transparent !important;
+}
+
+/* スクロールバーの非表示（OS間差分抑制） */
+::-webkit-scrollbar {
+  display: none !important;
+}
+
+html {
+  scrollbar-width: none !important;
+}
+
+/* 画像の遅延読み込みを即時読み込みに変更 */
+img[loading="lazy"] {
+  loading: eager !important;
+}
