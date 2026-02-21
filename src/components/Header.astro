@@ -9,27 +9,33 @@ const navItems = [
   { href: "/search", label: "Search" },
   { href: "https://scrapbox.io/kjr020/", label: "Scrapbox", external: true },
 ];
+
+const currentPath = Astro.url.pathname;
+const isActive = (href: string) => {
+  if (href === "/") return currentPath === "/";
+  return currentPath.startsWith(href);
+};
 ---
 
 <header class="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
-  <div class="container mx-auto flex h-10 items-center justify-between px-4">
-    <a href="/" class="flex items-center gap-2 text-xl font-bold">
+  <div class="container mx-auto flex h-phi-2xl items-center justify-between px-4">
+    <a href="/" class="flex items-center gap-2 font-bold" style="font-size: var(--font-size-title3);">
       <img
-        src="/images/avatar.png"
+        src="/images/kuri_photo.png"
         alt="KJR020"
         class="h-8 w-8 rounded-full"
       />
       KJR020's Blog
     </a>
-    <div class="flex items-center gap-1">
+    <div class="flex items-center gap-phi-3xs">
       {/* デスクトップナビゲーション */}
-      <nav class="hidden items-center gap-1 md:flex">
+      <nav class="hidden items-center gap-phi-3xs md:flex">
         {navItems.map((item) => (
           <a
             href={item.href}
             target={item.external ? "_blank" : undefined}
             rel={item.external ? "noopener noreferrer" : undefined}
-            class="inline-flex h-9 items-center justify-center rounded-md px-3 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+            class={`inline-flex h-9 items-center justify-center rounded-md px-3 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring ${isActive(item.href) ? "text-link font-semibold" : ""}`}
           >
             {item.label}
             {item.external && (

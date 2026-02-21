@@ -37,12 +37,12 @@ const giscusCategoryId = import.meta.env.PUBLIC_GISCUS_CATEGORY_ID;
   title={`${post.data.title} - KJR020's Blog`}
   description={post.data.description}
 >
-  <div class="container mx-auto px-4 py-8 max-w-6xl">
-    <div class="lg:grid lg:grid-cols-[minmax(0,1fr)_250px] lg:gap-8">
+  <div class="post-page container mx-auto px-4 py-phi-2xl max-w-6xl">
+    <div class="lg:grid lg:grid-cols-[minmax(0,1fr)_250px] lg:gap-phi-2xl">
       {/* 記事本文 */}
       <article class="min-w-0">
-        <header class="mb-8">
-          <h1 class="text-3xl font-bold mb-4">{post.data.title}</h1>
+        <header class="mb-phi-2xl">
+          <h1 class="font-bold font-heading tracking-tight mb-phi-md" style="font-size: var(--font-size-title1); line-height: var(--lh-tight);">{post.data.title}</h1>
           <PostMeta date={post.data.date} tags={post.data.tags} />
         </header>
 
@@ -63,7 +63,7 @@ const giscusCategoryId = import.meta.env.PUBLIC_GISCUS_CATEGORY_ID;
       <aside class="hidden lg:block">
         <TableOfContents
           headings={headings}
-          avatarSrc="/images/avatar.png"
+          avatarSrc="/images/kuri_photo.png"
           avatarAlt="KJR020"
           client:load
         />
@@ -141,38 +141,44 @@ const giscusCategoryId = import.meta.env.PUBLIC_GISCUS_CATEGORY_ID;
   .prose {
     --tw-prose-body: var(--foreground);
     --tw-prose-headings: var(--foreground);
-    --tw-prose-links: var(--primary);
+    --tw-prose-links: var(--link);
     --tw-prose-bold: var(--foreground);
     --tw-prose-code: var(--foreground);
   }
 
   .prose h2 {
-    margin-top: 2rem;
+    margin-top: 2.618rem; /* φ² */
     margin-bottom: 1rem;
-    font-size: 1.5rem;
+    font-size: var(--font-size-title2); /* φ = 1.618rem */
+    line-height: var(--lh-tight); /* √φ = 1.272 */
     font-weight: 700;
+    font-family: var(--font-heading);
+    letter-spacing: -0.01em;
     border-bottom: 1px solid var(--border);
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.618rem; /* 1/φ */
   }
 
   .prose h3 {
-    margin-top: 1.5rem;
-    margin-bottom: 0.75rem;
-    font-size: 1.25rem;
-    font-weight: 600;
+    margin-top: 1.618rem; /* φ */
+    margin-bottom: 0.618rem; /* 1/φ */
+    font-size: var(--font-size-title3); /* √φ = 1.272rem */
+    line-height: var(--lh-tight); /* √φ = 1.272 */
+    font-weight: 500;
+    font-family: var(--font-heading);
+    letter-spacing: -0.005em;
   }
 
   .prose p {
     margin-top: 1rem;
     margin-bottom: 1rem;
-    line-height: 1.75;
+    line-height: var(--lh-body); /* φ = 1.618 */
   }
 
   .prose ul,
   .prose ol {
     margin-top: 1rem;
     margin-bottom: 1rem;
-    padding-left: 1.5rem;
+    padding-left: 1.618rem; /* φ */
   }
 
   /* リストマーカースタイル */
@@ -204,18 +210,18 @@ const giscusCategoryId = import.meta.env.PUBLIC_GISCUS_CATEGORY_ID;
     padding: 0.125rem 0.375rem;
     border-radius: 0.25rem;
     font-size: 0.875em;
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-family: var(--font-mono);
   }
 
   /* コードブロック（Shikiでハイライトされたもの） */
   .prose pre {
     padding: 1rem;
-    border-radius: 0.5rem;
+    border-radius: 0.618rem; /* 1/φ */
     overflow-x: auto;
     margin-top: 1rem;
     margin-bottom: 1rem;
-    font-size: 0.875rem;
-    line-height: 1.7;
+    font-size: var(--font-size-small); /* 1/⁴√φ = 0.886rem */
+    line-height: var(--lh-body); /* φ = 1.618 */
   }
 
   .prose pre code {
@@ -237,19 +243,21 @@ const giscusCategoryId = import.meta.env.PUBLIC_GISCUS_CATEGORY_ID;
   /* Astro標準のShikiスタイル */
   .astro-code {
     padding: 1rem;
-    border-radius: 0.5rem;
+    border-radius: 0.618rem; /* 1/φ */
     overflow-x: auto;
     margin-top: 1rem;
     margin-bottom: 1rem;
   }
 
   .prose a {
-    color: var(--primary);
+    color: var(--link);
     text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: color 150ms;
   }
 
   .prose a:hover {
-    opacity: 0.8;
+    color: var(--link-hover);
   }
 
   /* コードブロックのコピーボタン */
@@ -309,7 +317,7 @@ const giscusCategoryId = import.meta.env.PUBLIC_GISCUS_CATEGORY_ID;
   .prose th,
   .prose td {
     border: 1px solid var(--border);
-    padding: 0.5rem 0.75rem;
+    padding: 0.382rem 0.618rem; /* φ⁻² × φ⁻¹ */
     text-align: left;
   }
 

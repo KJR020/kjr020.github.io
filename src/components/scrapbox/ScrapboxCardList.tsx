@@ -22,6 +22,14 @@ function formatDate(dateString: string): string {
   });
 }
 
+function cleanScrapboxDescription(text: string): string {
+  return text
+    .replace(/\[([^\]]*)\]/g, "$1")
+    .replace(/https?:\/\/\S+/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 function ScrapboxCardListInner({ project, limit, className }: ScrapboxCardListProps) {
   const { data, isLoading, isError, error, refetch } = useScrapboxData(
     project,
@@ -97,7 +105,7 @@ function ScrapboxCardListInner({ project, limit, className }: ScrapboxCardListPr
       <div
         ref={scrollRef}
         onScroll={checkScroll}
-        className="flex gap-3 overflow-x-auto scrollbar-hide scroll-smooth pb-2"
+        className="flex gap-phi-xs overflow-x-auto scrollbar-hide scroll-smooth pb-2"
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
         {data.map((page) => (
@@ -114,11 +122,11 @@ function ScrapboxCardListInner({ project, limit, className }: ScrapboxCardListPr
               "flex flex-col h-40",
             )}
           >
-            <h3 className="text-sm font-medium text-foreground line-clamp-2 leading-snug group-hover/card:text-foreground/90">
+            <h3 className="text-sm font-medium text-foreground line-clamp-2 leading-snug group-hover/card:text-link transition-colors duration-200">
               {page.title}
             </h3>
             <p className="text-xs text-muted-foreground/70 line-clamp-2 mt-2 flex-1">
-              {page.description || ""}
+              {cleanScrapboxDescription(page.description || "")}
             </p>
             <span className="text-[10px] text-muted-foreground/50 mt-auto pt-2">
               {formatDate(page.updatedAt)}

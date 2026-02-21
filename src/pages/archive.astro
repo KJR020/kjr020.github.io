@@ -21,11 +21,14 @@ const years = Object.keys(postsByYear)
 
 <BaseLayout title="Archive - KJR020's Blog" description="すべての記事一覧">
   <div class="archive-page">
-    <div class="kuri-fixed" aria-hidden="true"></div>
-
-    <div class="archive-header container mx-auto px-4 pt-8 pb-4">
-      <h1 class="text-3xl font-bold mb-2">Archive</h1>
-      <p class="text-muted-foreground">{sortedPosts.length}件の記事</p>
+    <div class="archive-header container mx-auto px-4 pt-phi-2xl pb-phi-md">
+      <h1
+        class="font-bold font-heading tracking-tight mb-phi-2xs"
+        style="font-size: var(--font-size-title1); line-height: var(--lh-tight);"
+      >
+        Archive
+      </h1>
+      <p class="text-muted-foreground">ブログ記事一覧です。</p>
     </div>
 
     <div class="archive-body">
@@ -71,25 +74,6 @@ const years = Object.keys(postsByYear)
     min-height: 0;
   }
 
-  .kuri-fixed {
-    position: absolute;
-    top: -8rem;
-    right: -2rem;
-    width: 24rem;
-    height: 24rem;
-    background-image: url("/images/kuri.svg");
-    background-repeat: no-repeat;
-    background-position: right center;
-    background-size: contain;
-    opacity: 0.15;
-    pointer-events: none;
-    z-index: 10;
-  }
-
-  :global(.dark) .kuri-fixed {
-    background-image: url("/images/kuri-dark.svg");
-  }
-
   .archive-scroll {
     position: relative;
     z-index: 1;
@@ -100,26 +84,26 @@ const years = Object.keys(postsByYear)
   .year-section {
     display: grid;
     grid-template-columns: 5rem 1fr;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
+    gap: 1.618rem; /* φ */
+    margin-bottom: 1.618rem; /* φ */
   }
 
   .year-label {
     position: sticky;
     top: 0;
     align-self: start;
-    padding-top: 0.75rem;
+    padding-top: 0.618rem; /* 1/φ */
   }
 
   .year-text {
-    font-size: 1.125rem;
+    font-size: var(--font-size-title3); /* √φ = 1.272rem */
     font-weight: 700;
     color: hsl(var(--muted-foreground));
   }
 
   .year-cards {
     display: grid;
-    gap: 0.5rem;
+    gap: 0.618rem; /* 1/φ */
   }
 
   :global([data-slot="card"]:hover) {
@@ -129,17 +113,11 @@ const years = Object.keys(postsByYear)
   @media (max-width: 768px) {
     .year-section {
       grid-template-columns: 3.5rem 1fr;
-      gap: 0.5rem;
+      gap: 0.618rem; /* 1/φ */
     }
 
     .year-text {
-      font-size: 0.875rem;
-    }
-
-    .kuri-fixed {
-      width: 14rem;
-      right: -1rem;
-      opacity: 0.12;
+      font-size: var(--font-size-small); /* 1/⁴√φ = 0.886rem */
     }
   }
 </style>

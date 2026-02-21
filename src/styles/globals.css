@@ -3,6 +3,10 @@
 :root {
   --background: hsl(0 0% 100%);
   --foreground: hsl(240 10% 3.9%);
+  --link: hsl(230 70% 50%);
+  --link-hover: hsl(230 70% 40%);
+  --font-heading: "Noto Sans JP", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", "Menlo", "Monaco", "Consolas", monospace;
   --card: hsl(0 0% 100%);
   --card-foreground: hsl(240 10% 3.9%);
   --popover: hsl(0 0% 100%);
@@ -20,7 +24,36 @@
   --border: hsl(240 5.9% 90%);
   --input: hsl(240 5.9% 90%);
   --ring: hsl(240 5.9% 10%);
-  --radius: 0.5rem;
+  --radius: 0.618rem; /* 1/φ (golden ratio) */
+
+  /* Golden Ratio Design Tokens (φ = 1.618033...) */
+  --phi: 1.618;
+
+  /* φ Power Scale (rem) */
+  --phi-neg3: 0.236rem;  /* φ⁻³ */
+  --phi-neg2: 0.382rem;  /* φ⁻² */
+  --phi-neg1: 0.618rem;  /* φ⁻¹ */
+  --phi-0: 1rem;         /* φ⁰ */
+  --phi-1: 1.618rem;     /* φ¹ */
+  --phi-2: 2.618rem;     /* φ² */
+  --phi-3: 4.236rem;     /* φ³ */
+  --phi-4: 6.854rem;     /* φ⁴ */
+  --phi-5: 11.09rem;     /* φ⁵ */
+  --phi-6: 17.94rem;     /* φ⁶ */
+  --phi-7: 29.03rem;     /* φ⁷ */
+
+  /* Typography Scale */
+  --font-size-display: 2.618rem; /* φ² */
+  --font-size-title1: 2.058rem; /* φ×√φ */
+  --font-size-title2: 1.618rem; /* φ */
+  --font-size-title3: 1.272rem; /* √φ */
+  --font-size-body: 1rem;
+  --font-size-small: 0.886rem; /* 1/⁴√φ */
+  --font-size-caption: 0.786rem; /* 1/√φ */
+
+  /* Line Heights */
+  --lh-tight: 1.272; /* √φ — headings */
+  --lh-body: 1.618; /* φ — body text */
 
   /* Callout Colors - Note (sky) */
   --callout-note: hsl(199 89% 48%);
@@ -36,9 +69,11 @@
 }
 
 .dark {
-  --background: hsl(240 10% 3.9%);
+  --background: hsl(225 12% 7%);
   --foreground: hsl(0 0% 98%);
-  --card: hsl(240 10% 3.9%);
+  --card: hsl(225 10% 10%);
+  --link: hsl(225 75% 65%);
+  --link-hover: hsl(225 75% 75%);
   --card-foreground: hsl(0 0% 98%);
   --popover: hsl(240 10% 3.9%);
   --popover-foreground: hsl(0 0% 98%);
@@ -70,6 +105,17 @@
 }
 
 @theme inline {
+  /* Golden Ratio Spacing (φ = 1.618) */
+  --spacing-phi-3xs: 0.236rem; /* φ⁻³ */
+  --spacing-phi-2xs: 0.382rem; /* φ⁻² */
+  --spacing-phi-xs: 0.618rem; /* φ⁻¹ */
+  --spacing-phi-sm: 0.786rem; /* 1/√φ */
+  --spacing-phi-md: 1rem;
+  --spacing-phi-lg: 1.272rem; /* √φ */
+  --spacing-phi-xl: 1.618rem; /* φ */
+  --spacing-phi-2xl: 2.618rem; /* φ² */
+  --spacing-phi-3xl: 4.236rem; /* φ³ */
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -92,6 +138,10 @@
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
+  --color-link: var(--link);
+  --color-link-hover: var(--link-hover);
+  --font-family-heading: var(--font-heading);
+  --font-family-mono: var(--font-mono);
 }
 
 @layer base {
@@ -359,4 +409,26 @@
 
 [data-callout-type="danger"] [data-callout-title] {
   color: hsl(350 89% 60% / 0.9);
+}
+
+/* Page-load animation */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.4s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in-up {
+    animation: none;
+  }
 }

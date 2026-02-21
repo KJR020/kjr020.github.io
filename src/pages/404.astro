@@ -2,17 +2,58 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="404 - ページが見つかりません">
-  <div class="container mx-auto px-4 py-16 text-center">
-    <h1 class="text-6xl font-bold mb-4">404</h1>
-    <p class="text-xl text-muted-foreground mb-8">
-      お探しのページが見つかりませんでした。
-    </p>
-    <a
-      href="/"
-      class="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-    >
-      トップページへ戻る
-    </a>
+<BaseLayout title="404 - ページが見つかりません" hideKuri>
+  <div class="not-found-page">
+    <div class="not-found-content text-center">
+      <div class="kuri-mascot" aria-hidden="true"></div>
+      <h1 class="font-bold mb-phi-md" style="font-size: var(--font-size-display); line-height: var(--lh-tight);">404</h1>
+      <p class="text-muted-foreground mb-phi-lg" style="font-size: var(--font-size-title3);">
+        お探しのページが見つかりませんでした。
+      </p>
+      <a
+        href="/"
+        class="inline-flex items-center justify-center rounded-md bg-primary px-phi-xl py-phi-sm text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+      >
+        トップページへ戻る
+      </a>
+    </div>
   </div>
 </BaseLayout>
+
+<style>
+  .not-found-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    padding: 2rem 1rem;
+  }
+
+  .not-found-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .kuri-mascot {
+    width: var(--phi-5);
+    height: var(--phi-5);
+    background-image: url("/images/kuri.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0.25;
+    margin-bottom: var(--phi-0);
+  }
+
+  :global(.dark) .kuri-mascot {
+    background-image: url("/images/kuri-dark.svg");
+  }
+
+  @media (max-width: 768px) {
+    .kuri-mascot {
+      width: var(--phi-4);
+      height: var(--phi-4);
+    }
+  }
+</style>

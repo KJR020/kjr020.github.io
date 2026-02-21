@@ -11,7 +11,7 @@ export function useScrollSpy(
   headingIds: string[],
   options?: UseScrollSpyOptions,
 ): UseScrollSpyReturn {
-  const [activeId, setActiveId] = useState<string | null>(null);
+  const [activeId, setActiveId] = useState<string | null>(headingIds[0] ?? null);
 
   useEffect(() => {
     if (headingIds.length === 0) {

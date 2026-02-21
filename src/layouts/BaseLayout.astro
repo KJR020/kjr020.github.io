@@ -8,9 +8,10 @@ interface Props {
   title: string;
   description?: string;
   image?: string;
+  hideKuri?: boolean;
 }
 
-const { title, description, image } = Astro.props;
+const { title, description, image, hideKuri = false } = Astro.props;
 ---
 
 <!doctype html>
@@ -20,9 +21,39 @@ const { title, description, image } = Astro.props;
   </head>
   <body class="flex min-h-screen flex-col bg-background text-foreground antialiased">
     <Header />
-    <main class="flex-1">
+    <main class="flex-1 relative">
+      {!hideKuri && <div class="kuri-watermark" aria-hidden="true" />}
       <slot />
     </main>
     <Footer />
   </body>
 </html>
+
+<style>
+  .kuri-watermark {
+    position: absolute;
+    top: -4rem;
+    right: -2rem;
+    width: var(--phi-6);
+    height: var(--phi-6);
+    background-image: url("/images/kuri.svg");
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: contain;
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  :global(.dark) .kuri-watermark {
+    background-image: url("/images/kuri-dark.svg");
+  }
+
+  @media (max-width: 768px) {
+    .kuri-watermark {
+      width: var(--phi-5);
+      right: -1rem;
+      opacity: 0.12;
+    }
+  }
+</style>

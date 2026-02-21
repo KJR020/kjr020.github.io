@@ -9,7 +9,7 @@ const posts = await getCollection("posts", ({ data }) => !data.draft);
 const sortedPosts = posts.sort(
   (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
 );
-const latestPosts = sortedPosts.slice(0, 5);
+const latestPosts = sortedPosts.slice(0, 3);
 
 const newsletters = await getCollection("newsletters");
 const sortedNewsletters = newsletters.sort(
@@ -20,21 +20,48 @@ const latestNewsletter = sortedNewsletters.length > 0 ? sortedNewsletters[0] : n
 
 <BaseLayout title="KJR020's Blog" description="KJR020の技術ブログ">
   <div class="index-wrapper">
-    <!-- 背景の透かし -->
-    <div class="kuri-background" aria-hidden="true"></div>
-
-    <div class="container mx-auto px-4 pt-4 pb-8">
-      <section class="mb-6">
-        <p class="text-lg text-muted-foreground">
-          Webエンジニアによる技術ブログ兼思考ログ。
-          日々の学びや感じたことを日記的に書いています。
-        </p>
+    <div class="container mx-auto px-4 pt-phi-md pb-phi-2xl">
+      <section class="mb-phi-2xs pt-phi-xl pb-phi-2xs animate-fade-in-up">
+        <div class="flex items-start gap-phi-md">
+          <img
+            src="/images/kuri_photo.png"
+            alt="KJR020"
+            width="64"
+            height="64"
+            class="h-16 w-16 rounded-full ring-2 ring-border hidden sm:block"
+          />
+          <div>
+            <h1
+              class="font-bold font-heading tracking-tight mb-phi-2xs"
+              style="font-size: var(--font-size-title1); line-height: var(--lh-tight);"
+            >
+              KJR020's Blog
+            </h1>
+            <p
+              class="text-base text-muted-foreground max-w-lg"
+              style="line-height: var(--lh-body);"
+            >
+              Webエンジニアによる技術ブログ兼思考ログ。<br
+                class="hidden sm:inline"
+              />
+              日々の学びや感じたことを日記的に書いています。
+            </p>
+          </div>
+        </div>
       </section>
-      <section class="py-8">
-        <div class="flex items-center justify-between mb-4">
-          <h2 class="text-2xl font-bold mb-2">Latest Posts</h2>
+      <section
+        class="py-phi-xl animate-fade-in-up"
+        style="animation-delay: 80ms"
+      >
+        <div class="flex items-center justify-between mb-phi-md">
+          <h2
+            class="font-bold font-heading tracking-tight border-l-2 border-link pl-3"
+            style="font-size: var(--font-size-title3); line-height: var(--lh-tight);"
+          >
+            Latest Posts
+          </h2>
           {
-            sortedPosts.length > 5 && (
+            sortedPosts.length > 3 && (
               <a
                 href="/archive"
                 class="flex items-center gap-1 text-xs text-muted-foreground/60 hover:text-muted-foreground transition-colors"
@@ -57,44 +84,62 @@ const latestNewsletter = sortedNewsletters.length > 0 ? sortedNewsletters[0] : n
             )
           }
         </div>
-        <div class="grid gap-2">
+        <div class="grid gap-phi-xs">
           {latestPosts.map((post) => <PostCard post={post} />)}
         </div>
       </section>
 
-      {latestNewsletter && (
-        <section class="py-8">
-          <div class="flex items-center justify-between mb-4">
-            <h2 class="text-2xl font-bold mb-2">Tech Trends</h2>
-            <a
-              href="/newsletters"
-              class="flex items-center gap-1 text-xs text-muted-foreground/60 hover:text-muted-foreground transition-colors"
-            >
-              すべて見る
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="12"
-                height="12"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+      {
+        latestNewsletter && (
+          <section
+            class="py-phi-xl animate-fade-in-up"
+            style="animation-delay: 130ms"
+          >
+            <div class="flex items-center justify-between mb-phi-md">
+              <h2
+                class="font-bold font-heading tracking-tight border-l-2 border-link pl-3"
+                style="font-size: var(--font-size-title3); line-height: var(--lh-tight);"
               >
-                <path d="m9 18 6-6-6-6" />
-              </svg>
-            </a>
-          </div>
-          <div class="grid gap-2">
-            <NewsletterCard newsletter={latestNewsletter} />
-          </div>
-        </section>
-      )}
+                Tech Trends
+              </h2>
+              <a
+                href="/newsletters"
+                class="flex items-center gap-1 text-xs text-muted-foreground/60 hover:text-muted-foreground transition-colors"
+              >
+                すべて見る
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="m9 18 6-6-6-6" />
+                </svg>
+              </a>
+            </div>
+            <div class="grid gap-phi-xs">
+              <NewsletterCard newsletter={latestNewsletter} />
+            </div>
+          </section>
+        )
+      }
 
-      <section class="py-8">
-        <div class="flex items-center justify-between mb-4">
-          <h2 class="text-2xl font-bold mb-2">Scrapbox</h2>
+      <section
+        class="py-phi-xl animate-fade-in-up"
+        style="animation-delay: 210ms"
+      >
+        <div class="flex items-center justify-between mb-phi-md">
+          <h2
+            class="font-bold font-heading tracking-tight border-l-2 border-link pl-3"
+            style="font-size: var(--font-size-title3); line-height: var(--lh-tight);"
+          >
+            Scrapbox
+          </h2>
           <a
             href="https://scrapbox.io/KJR020"
             target="_blank"
@@ -131,38 +176,16 @@ const latestNewsletter = sortedNewsletters.length > 0 ? sortedNewsletters[0] : n
     position: relative;
   }
 
-  .kuri-background {
-    position: absolute;
-    top: -8rem;
-    right: -2rem;
-    width: 24rem;
-    height: 24rem;
-    background-image: url("/images/kuri.svg");
-    background-repeat: no-repeat;
-    background-position: right center;
-    background-size: contain;
-    opacity: 0.15;
-    pointer-events: none;
-    z-index: 10;
-  }
-
   .index-wrapper > .container {
     position: relative;
   }
 
+  .index-wrapper > .container > section + section {
+    border-top: 1px solid var(--border);
+    padding-top: 1.618rem; /* φ */
+  }
+
   .index-wrapper :global([data-slot="card"]:hover) {
     background: hsl(var(--accent) / 0.5);
-  }
-
-  :global(.dark) .kuri-background {
-    background-image: url("/images/kuri-dark.svg");
-  }
-
-  @media (max-width: 768px) {
-    .kuri-background {
-      width: 14rem;
-      right: -1rem;
-      opacity: 0.12;
-    }
   }
 </style>

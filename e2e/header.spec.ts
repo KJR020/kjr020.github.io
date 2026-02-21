@@ -17,29 +17,33 @@ test.describe("モバイルビューポートでのメニュー動作", () => {
     await page.goto("/");
     await page.waitForSelector("astro-island[client='load']:not([ssr])");
 
-    const hamburgerButton = page.getByRole("button", { name: /メニューを開く/ });
-    await expect(hamburgerButton).toHaveAttribute("aria-expanded", "false");
+    const menuButton = page.getByRole("button", {
+      name: /メニューを(開く|閉じる)/,
+    });
+    await expect(menuButton).toHaveAttribute("aria-expanded", "false");
 
-    await hamburgerButton.click();
-    await expect(hamburgerButton).toHaveAttribute("aria-expanded", "true");
-    await expect(hamburgerButton).toHaveAttribute("aria-label", "メニューを閉じる");
+    await menuButton.click();
+    await expect(menuButton).toHaveAttribute("aria-expanded", "true");
+    await expect(menuButton).toHaveAttribute("aria-label", "メニューを閉じる");
 
     // モバイルメニュー内のリンクを確認
     const mobileNav = page.locator("astro-island nav");
     const homeLink = mobileNav.getByRole("link", { name: "Home" });
     await expect(homeLink).toBeVisible();
 
-    await hamburgerButton.click();
-    await expect(hamburgerButton).toHaveAttribute("aria-expanded", "false");
+    await menuButton.click();
+    await expect(menuButton).toHaveAttribute("aria-expanded", "false");
   });
 
   test("リンククリック後にメニューが閉じる", async ({ page }) => {
     await page.goto("/");
     await page.waitForSelector("astro-island[client='load']:not([ssr])");
 
-    const hamburgerButton = page.getByRole("button", { name: /メニューを開く/ });
-    await hamburgerButton.click();
-    await expect(hamburgerButton).toHaveAttribute("aria-expanded", "true");
+    const menuButton = page.getByRole("button", {
+      name: /メニューを(開く|閉じる)/,
+    });
+    await menuButton.click();
+    await expect(menuButton).toHaveAttribute("aria-expanded", "true");
 
     // モバイルメニュー内のArchiveリンク
     const mobileNav = page.locator("astro-island nav");
@@ -48,32 +52,35 @@ test.describe("モバイルビューポートでのメニュー動作", () => {
 
     await page.waitForURL(/\/archive/);
     await page.waitForSelector("astro-island[client='load']:not([ssr])");
-    const newHamburgerButton = page.getByRole("button", { name: /メニューを開く/ });
-    await expect(newHamburgerButton).toHaveAttribute("aria-expanded", "false");
+    await expect(menuButton).toHaveAttribute("aria-expanded", "false");
   });
 
   test("Escapeキーでメニューが閉じる", async ({ page }) => {
     await page.goto("/");
     await page.waitForSelector("astro-island[client='load']:not([ssr])");
 
-    const hamburgerButton = page.getByRole("button", { name: /メニューを開く/ });
-    await hamburgerButton.click();
-    await expect(hamburgerButton).toHaveAttribute("aria-expanded", "true");
+    const menuButton = page.getByRole("button", {
+      name: /メニューを(開く|閉じる)/,
+    });
+    await menuButton.click();
+    await expect(menuButton).toHaveAttribute("aria-expanded", "true");
 
     await page.keyboard.press("Escape");
-    await expect(hamburgerButton).toHaveAttribute("aria-expanded", "false");
+    await expect(menuButton).toHaveAttribute("aria-expanded", "false");
   });
 
   test("メニュー外クリックでメニューが閉じる", async ({ page }) => {
     await page.goto("/");
     await page.waitForSelector("astro-island[client='load']:not([ssr])");
 
-    const hamburgerButton = page.getByRole("button", { name: /メニューを開く/ });
-    await hamburgerButton.click();
-    await expect(hamburgerButton).toHaveAttribute("aria-expanded", "true");
+    const menuButton = page.getByRole("button", {
+      name: /メニューを(開く|閉じる)/,
+    });
+    await menuButton.click();
+    await expect(menuButton).toHaveAttribute("aria-expanded", "true");
 
     await page.locator("main").first().click({ force: true });
-    await expect(hamburgerButton).toHaveAttribute("aria-expanded", "false");
+    await expect(menuButton).toHaveAttribute("aria-expanded", "false");
   });
 });
 
