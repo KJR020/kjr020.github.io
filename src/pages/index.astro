@@ -15,8 +15,7 @@ const newsletters = await getCollection("newsletters");
 const sortedNewsletters = newsletters.sort(
   (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
 );
-const latestNewsletter =
-  sortedNewsletters.length > 0 ? sortedNewsletters[0] : null;
+const latestNewsletter = sortedNewsletters.length > 0 ? sortedNewsletters[0] : null;
 ---
 
 <BaseLayout title="KJR020's Blog" description="KJR020の技術ブログ">
@@ -25,7 +24,7 @@ const latestNewsletter =
       <section class="mb-phi-2xs pt-phi-xl pb-phi-2xs animate-fade-in-up">
         <div class="flex items-start gap-phi-md">
           <img
-            src="/images/avatar.png"
+            src="/images/kuri_photo.png"
             alt="KJR020"
             class="h-16 w-16 rounded-full ring-2 ring-border hidden sm:block"
           />

@@ -28,7 +28,7 @@ export interface TableOfContentsProps {
   headings: HeadingItem[];
   /** カスタムクラス名 */
   className?: string;
-  /** アバター画像のパス（public/からの相対パス、例: "/avatar.png"） */
+  /** アバター画像のパス（public/からの相対パス、例: "/images/kuri_photo.png"） */
   avatarSrc?: string;
   /** アバターの代替テキスト */
   avatarAlt?: string;
