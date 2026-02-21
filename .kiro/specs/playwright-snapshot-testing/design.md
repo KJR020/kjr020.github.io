@@ -174,12 +174,18 @@ sequenceDiagram
 ##### Service Interface
 
 ```typescript
-import type { Page } from "playwright/test";
+import type { Page, Locator } from "playwright/test";
+
+interface PageConfig {
+  route: string;
+  name: string;
+  hasIslands: boolean;
+}
 
 /**
  * Astro Islandのハイドレーション完了を待機する
  */
-declare function waitForHydration(page: Page): Promise<void>;
+declare function waitForHydration(page: Page, config: PageConfig): Promise<void>;
 
 /**
  * テーマを設定する（light/dark）
@@ -192,24 +198,26 @@ declare function setTheme(page: Page, theme: "light" | "dark"): Promise<void>;
 /**
  * スナップショット取得のための安定化処理を実行する
  * - ネットワークアイドル待機
+ * - 遅延読み込み画像の即時読み込み
  * - アニメーション完了待機
  */
 declare function stabilizePage(page: Page): Promise<void>;
 
 /**
  * ページのスナップショットを取得する共通処理
- * - ハイドレーション待機
  * - テーマ設定
+ * - ハイドレーション待機
  * - 安定化処理
  * - toHaveScreenshot 呼び出し
  */
 declare function capturePageSnapshot(
   page: Page,
   options: {
-    route: string;
+    config: PageConfig;
     theme: "light" | "dark";
     snapshotName: string;
     fullPage?: boolean;
+    mask?: Locator[];
   }
 ): Promise<void>;
 ```
@@ -376,7 +384,7 @@ e2e:
 
 ### Snapshot File Structure
 
-```
+```text
 e2e/
 ├── header.spec.ts                          # 既存: 振る舞いテスト
 ├── newsletter.spec.ts                      # 既存: ニュースレターテスト

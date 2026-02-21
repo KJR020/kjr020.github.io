@@ -29,7 +29,9 @@ html {
   scrollbar-width: none !important;
 }
 
-/* 画像の遅延読み込みを即時読み込みに変更 */
-img[loading="lazy"] {
-  loading: eager !important;
+/* Webフォントを抑制（OS間フォントレンダリング差異の抑制） */
+*,
+*::before,
+*::after {
+  font-family: system-ui, -apple-system, sans-serif !important;
 }

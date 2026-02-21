@@ -59,6 +59,20 @@ export async function setTheme(
  */
 export async function stabilizePage(page: Page): Promise<void> {
   await page.waitForLoadState("networkidle");
+
+  // 遅延読み込み画像を即時読み込みに変更
+  await page.evaluate(() => {
+    document
+      .querySelectorAll<HTMLImageElement>('img[loading="lazy"]')
+      .forEach((img) => {
+        img.loading = "eager";
+        if (!img.complete) {
+          img.src = img.src;
+        }
+      });
+  });
+  await page.waitForLoadState("networkidle");
+
   // アニメーション完了を待機（snapshot.css で無効化済みだが、安全のため短時間待機）
   await page.waitForTimeout(500);
 }

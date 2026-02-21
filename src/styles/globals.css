@@ -6,7 +6,7 @@
   --link: hsl(230 70% 50%);
   --link-hover: hsl(230 70% 40%);
   --font-heading: "Noto Sans JP", system-ui, -apple-system, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", "Menlo", "Monaco", "Consolas", monospace;
   --card: hsl(0 0% 100%);
   --card-foreground: hsl(240 10% 3.9%);
   --popover: hsl(0 0% 100%);
@@ -412,7 +412,7 @@
 }
 
 /* Page-load animation */
-@keyframes fadeInUp {
+@keyframes fade-in-up {
   from {
     opacity: 0;
     transform: translateY(8px);
@@ -424,7 +424,7 @@
 }
 
 .animate-fade-in-up {
-  animation: fadeInUp 0.4s ease-out both;
+  animation: fade-in-up 0.4s ease-out both;
 }
 
 @media (prefers-reduced-motion: reduce) {
