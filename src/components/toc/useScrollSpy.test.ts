@@ -67,12 +67,12 @@ describe("useScrollSpy", () => {
     expect(MockIntersectionObserver.instances.length).toBe(1);
   });
 
-  it("初期状態ではactiveIdがnull", () => {
+  it("初期状態では最初の見出しがactiveIdになる", () => {
     const headingIds = ["heading-1", "heading-2"];
 
     const { result } = renderHook(() => useScrollSpy(headingIds));
 
-    expect(result.current.activeId).toBe(null);
+    expect(result.current.activeId).toBe("heading-1");
   });
 
   it("見出しがビューポートに入るとactiveIdが更新される", () => {
