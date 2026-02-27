@@ -1,5 +1,5 @@
 +++
-title = 'OpenAIが実践するAgent-First時代の設計思想 — Harness Engineering'
+title = 'OpenAIが実践するAgent-First時代の開発アプローチ — Harness Engineering'
 date = '2026-02-27T00:25:00+09:00'
 draft = false
 tags = ['LLM', 'AI', 'ソフトウェアエンジニアリング']
