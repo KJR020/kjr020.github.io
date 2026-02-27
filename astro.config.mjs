@@ -46,5 +46,9 @@ export default defineConfig({
       [remarkLinkCard, { cache: false, shortenUrl: true }],
     ],
     rehypePlugins: [[rehypeMermaid, { class: "mermaid" }]],
+    remarkRehype: {
+      footnoteLabel: "脚注",
+      footnoteLabelTagName: "h2",
+    },
   },
 });
