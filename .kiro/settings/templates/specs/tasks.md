@@ -1,5 +1,23 @@
 # Implementation Plan
 
+<!--
+**Table of Contents**: Generate a summary table immediately after the document title. Format:
+
+```markdown
+## Overview
+
+| # | Task | Requirements | Parallel |
+|---|------|-------------|----------|
+| 1 | 1-line task summary | 1.1, 2.3 | (P) or - |
+| ... | ... | ... | ... |
+```
+
+Rules:
+- List all major tasks as rows (sub-tasks are omitted from overview)
+- Place this overview before the detailed task list
+- This enables quick scan of the full implementation scope
+-->
+
 ## Task Format Template
 
 Use whichever pattern fits the work breakdown:

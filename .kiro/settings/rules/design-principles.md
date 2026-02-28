@@ -49,6 +49,13 @@
 
 ## Documentation Standards
 
+### Table of Contents (Inspectional Reading)
+- **Every spec document** (design, research, requirements, tasks) includes a TOC table immediately after the document title
+- Format: `| Section | What You'll Learn |` — each row links to a `##`-level section with a 1-line summary (max 20 words)
+- Purpose: Enable readers to grasp the document's structure before diving into details (inspectional reading)
+- Only include sections that are actually present in the document
+- For tasks.md, use an overview table (`| # | Task | Requirements | Parallel |`) instead
+
 ### Language and Tone
 - **Declarative**: "The system authenticates users" not "The system should authenticate"
 - **Precise**: Specific technical terms over vague descriptions

@@ -7,6 +7,22 @@
 - Log research activities and outcomes during the discovery phase.
 - Document design decision trade-offs that are too detailed for `design.md`.
 - Provide references and evidence for future audits or reuse.
+
+**Table of Contents**: Generate a TOC table immediately after the document title. Format:
+
+```markdown
+## Table of Contents
+
+| Section | What You'll Learn |
+|---------|-------------------|
+| [Summary](#summary) | 1-line summary of the section's key insight |
+| ... | ... |
+```
+
+Rules:
+- Include only `##`-level sections that are actually present in the generated document
+- Each "What You'll Learn" cell is a single sentence (max 20 words) describing the key takeaway
+- Place the TOC before the first `##` section
 ---
 
 ## Summary

@@ -10,6 +10,22 @@
 - Use diagrams and tables over lengthy prose
 
 **Warning**: Approaching 1000 lines indicates excessive feature complexity that may require design simplification.
+
+**Table of Contents**: Generate a TOC table immediately after the document title (`# Design Document: <feature>`). The table enables inspectional reading — grasping the document's structure before diving into details. Format:
+
+```markdown
+## Table of Contents
+
+| Section | What You'll Learn |
+|---------|-------------------|
+| [Overview](#overview) | 1-line summary of the section's key insight |
+| ... | ... |
+```
+
+Rules:
+- Include only `##`-level sections that are actually present in the generated document
+- Each "What You'll Learn" cell is a single sentence (max 20 words) describing the key takeaway
+- Place the TOC before the first `##` section
 ---
 
 > Sections may be reordered (e.g., surfacing Requirements Traceability earlier or moving Data Models nearer Architecture) when it improves clarity. Within each section, keep the flow **Summary → Scope → Decisions → Impacts/Risks** so reviewers can scan consistently.

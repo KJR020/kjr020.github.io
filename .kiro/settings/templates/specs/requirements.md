@@ -1,5 +1,24 @@
 # Requirements Document
 
+<!--
+**Table of Contents**: Generate a TOC table immediately after the document title. Format:
+
+```markdown
+## Table of Contents
+
+| Section | What You'll Learn |
+|---------|-------------------|
+| [Introduction](#introduction) | 1-line summary of the section's key insight |
+| [Requirement 1: ...](#requirement-1-) | 1-line summary of the requirement's purpose |
+| ... | ... |
+```
+
+Rules:
+- List Introduction, then each Requirement as a row
+- Each "What You'll Learn" cell is a single sentence (max 20 words) describing the key takeaway
+- Place the TOC before the Introduction section
+-->
+
 ## Introduction
 {{INTRODUCTION}}
 
