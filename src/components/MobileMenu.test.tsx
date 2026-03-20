@@ -8,7 +8,7 @@ import { MobileMenu } from "./MobileMenu";
 
 const mockNavItems = [
   { href: "/", label: "Home" },
-  { href: "/archive", label: "Archive" },
+  { href: "/posts", label: "Posts" },
   { href: "/search", label: "Search" },
   { href: "https://scrapbox.io/kjr020/", label: "Scrapbox", external: true },
 ];
@@ -62,7 +62,7 @@ describe("MobileMenu", () => {
       fireEvent.click(button);
 
       expect(screen.getByRole("link", { name: "Home" })).toBeInTheDocument();
-      expect(screen.getByRole("link", { name: "Archive" })).toBeInTheDocument();
+      expect(screen.getByRole("link", { name: "Posts" })).toBeInTheDocument();
       expect(screen.getByRole("link", { name: "Search" })).toBeInTheDocument();
       expect(screen.getByRole("link", { name: /Scrapbox/ })).toBeInTheDocument();
     });
