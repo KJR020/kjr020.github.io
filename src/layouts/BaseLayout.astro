@@ -20,7 +20,7 @@ const { title, description, image, hideKuri = false } = Astro.props;
   <head>
     <BaseHead title={title} description={description} image={image} />
   </head>
-  <body class="flex min-h-screen flex-col bg-background text-foreground antialiased">
+  <body class="flex min-h-screen flex-col bg-background text-foreground antialiased overflow-x-hidden">
     <Header />
     <main class="flex-1 relative">
       {!hideKuri && <div class="kuri-watermark" aria-hidden="true" />}
