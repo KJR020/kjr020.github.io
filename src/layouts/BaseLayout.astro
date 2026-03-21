@@ -1,5 +1,6 @@
 ---
 import "../styles/globals.css";
+import { CommandPalette } from "@/components/CommandPalette";
 import Footer from "@/components/Footer.astro";
 import Header from "@/components/Header.astro";
 import BaseHead from "./BaseHead.astro";
@@ -26,6 +27,7 @@ const { title, description, image, hideKuri = false } = Astro.props;
       <slot />
     </main>
     <Footer />
+    <CommandPalette client:load />
   </body>
 </html>
 

@@ -38,6 +38,9 @@ const isActive = (href: string) => {
             class={`inline-flex h-9 items-center justify-center rounded-md px-3 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring ${isActive(item.href) ? "text-link font-semibold" : ""}`}
           >
             {item.label}
+            {item.href === "/search" && (
+              <kbd class="ml-1.5 hidden rounded border border-border px-1 py-0.5 text-xs leading-none text-muted-foreground md:inline-flex">⌘K</kbd>
+            )}
             {item.external && (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
