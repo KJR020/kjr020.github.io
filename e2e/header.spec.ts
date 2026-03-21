@@ -45,12 +45,12 @@ test.describe("モバイルビューポートでのメニュー動作", () => {
     await menuButton.click();
     await expect(menuButton).toHaveAttribute("aria-expanded", "true");
 
-    // モバイルメニュー内のArchiveリンク
+    // モバイルメニュー内のPostsリンク
     const mobileNav = page.locator("astro-island nav");
-    const archiveLink = mobileNav.getByRole("link", { name: "Archive" });
-    await archiveLink.click();
+    const postsLink = mobileNav.getByRole("link", { name: "Posts" });
+    await postsLink.click();
 
-    await page.waitForURL(/\/archive/);
+    await page.waitForURL(/\/posts/);
     await page.waitForSelector("astro-island[client='load']:not([ssr])");
     await expect(menuButton).toHaveAttribute("aria-expanded", "false");
   });
@@ -97,26 +97,25 @@ test.describe("デスクトップビューポートでの表示", () => {
 
     const homeLink = desktopNav.getByRole("link", { name: "Home" });
     await expect(homeLink).toBeVisible();
-    const archiveLink = desktopNav.getByRole("link", { name: "Archive" });
-    await expect(archiveLink).toBeVisible();
+    const postsLink = desktopNav.getByRole("link", { name: "Posts" });
+    await expect(postsLink).toBeVisible();
   });
 
   test("ハンバーガーメニューが非表示", async ({ page }) => {
     await page.goto("/");
-    await page.waitForSelector("astro-island[client='load']:not([ssr])");
 
-    // md:hidden クラスにより非表示になっているはず
-    const mobileMenuContainer = page.locator("astro-island .md\\:hidden");
-    await expect(mobileMenuContainer).toBeHidden();
+    // MobileMenuコンポーネントのハンバーガーボタンがデスクトップでは非表示
+    const menuButton = page.getByRole("button", { name: /メニューを開く/ });
+    await expect(menuButton).toBeHidden();
   });
 
   test("既存のナビゲーション動作が正常", async ({ page }) => {
     await page.goto("/");
 
     const header = page.locator("header");
-    const archiveLink = header.locator("nav").getByRole("link", { name: "Archive" });
-    await archiveLink.click();
+    const postsLink = header.locator("nav").getByRole("link", { name: "Posts" });
+    await postsLink.click();
 
-    await expect(page).toHaveURL(/\/archive/);
+    await expect(page).toHaveURL(/\/posts/);
   });
 });
