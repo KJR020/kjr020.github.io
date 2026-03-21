@@ -7,13 +7,14 @@ dist/
 # Astro cache
 .astro/
 
-# Claude Code - track skills/commands/rules, ignore runtime data
-.claude/settings.json
+# Claude Code
+.claude/settings.local.json
 .claude/projects/
-
-# claude-mem auto-generated CLAUDE.md in subdirectories
 **/CLAUDE.md
 !/CLAUDE.md
+
+# Handover (auto-generated)
+HANDOVER.md
 
 # Environment variables
 .env
