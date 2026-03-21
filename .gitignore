@@ -26,5 +26,8 @@ public/remark-link-card/
 test-results/
 playwright-report/
 
+# TAKT
+.takt/
+
 personal_docs/
 
