@@ -91,6 +91,35 @@ Generate technical design document for feature **$1** based on approved requirem
 - Apply design rules: Type Safety, Visual Communication, Formal Tone
 - Use language specified in spec.json
 - Ensure sections reflect updated headings ("Architecture Pattern & Boundary Map", "Technology Stack & Alignment", "Components & Interface Contracts") and reference supporting details from `research.md`
+- **Generate Table of Contents** at the top of design.md (immediately after the main heading):
+  ```markdown
+  ## Table of Contents
+
+  | Section | What You'll Learn |
+  |---------|-------------------|
+  | [Overview](#overview) | 機能の目的・対象ユーザー・影響範囲 |
+  | [Architecture](#architecture) | システム境界と統合方式 |
+  | [Components and Interfaces](#components-and-interfaces) | コンポーネントの責務・依存関係・インターフェース |
+  ```
+- TOC uses Markdown table format with anchor links and brief descriptions
+
+3. **Generate Design Decision Log** (design.adr.md):
+- Create or update `.kiro/specs/$1/design.adr.md` alongside the design document
+- Record significant design decisions made during the design phase using this format:
+  ```markdown
+  # Design Decision Log
+
+  ## DL-001: 決定タイトル
+
+  - **問い**: 何を決める必要があったか
+  - **検討した選択肢**: A. 選択肢1 / B. 選択肢2
+  - **採用**: B（具体的な理由）
+  - **不採用**: A（なぜ不採用か）
+  - **補足**: トレードオフや将来の考慮事項
+  ```
+- Include decisions about: アーキテクチャパターン選択、技術選定、データモデル設計、API設計方針
+- Use `.adr.md` extension (NOT `.md.adr`) to keep file co-located but Claude Code does NOT auto-load it
+- Only record non-trivial decisions where alternatives were genuinely considered
 
 3. **Update Metadata** in spec.json:
 - Set `phase: "design-generated"`

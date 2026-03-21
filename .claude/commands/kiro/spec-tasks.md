@@ -43,6 +43,16 @@ Generate implementation tasks for feature **$1** based on approved requirements 
 **Generate task list following all rules**:
 - Use language specified in spec.json
 - Map all requirements to tasks
+- **Generate Overview Table** at the top of tasks.md (immediately after the main heading):
+  ```markdown
+  ## Overview
+
+  | # | Task | Requirements | Parallel |
+  |---|------|-------------|----------|
+  | 1 | タスク名 | 1, 2 | - |
+  | 2 | タスク名 | 3 | (P) |
+  ```
+- Overview table provides at-a-glance summary of all tasks, their requirement coverage, and parallelizability
 - When documenting requirement coverage, list numeric requirement IDs only (comma-separated) without descriptive suffixes, parentheses, translations, or free-form labels
 - Ensure all design components included
 - Verify task progression is logical and incremental

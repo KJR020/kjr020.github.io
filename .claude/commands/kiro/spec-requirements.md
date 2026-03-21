@@ -38,6 +38,17 @@ Generate complete requirements for feature **$1** based on the project descripti
    - Group related functionality into logical requirement areas
    - Apply EARS format to all acceptance criteria
    - Use language specified in spec.json
+   - **Generate Table of Contents** at the top of requirements.md (immediately after the main heading):
+     ```markdown
+     ## Table of Contents
+
+     | Section | What You'll Learn |
+     |---------|-------------------|
+     | [Introduction](#introduction) | 機能の目的と背景 |
+     | [Requirement 1: タイトル](#requirement-1-タイトル) | 要件1の概要説明 |
+     | [Requirement 2: タイトル](#requirement-2-タイトル) | 要件2の概要説明 |
+     ```
+   - TOC uses Markdown table format with anchor links and brief descriptions
 
 4. **Update Metadata**:
    - Set `phase: "requirements-generated"`
