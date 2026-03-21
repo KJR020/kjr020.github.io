@@ -2,7 +2,7 @@
 title = 'Vue3Tutorial14'
 date = 2024-10-11T22:50:50+09:00
 draft = false
-tags = ['Vue3']
+tags = ['Vue']
 +++
 
 今回は、Vue3のチュートリアルのStep14の`slot`についてです

@@ -2,7 +2,7 @@
 title = 'Vue3 Tutorial 11-12 ChildComponent & Props'
 date = 2024-09-30T07:09:08+09:00
 draft = false
-tags = ['Vue3']
+tags = ['Vue']
 +++
 
 ## おさらい

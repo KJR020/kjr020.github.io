@@ -2,7 +2,7 @@
 title = 'Vue3 Tutorial Step10 watch'
 date = 2024-09-29T14:56:37+09:00
 draft = false
-tags = ['Vue3']
+tags = ['Vue']
 +++
 
 ## Vue3 Tutorial Step10 watch

@@ -2,7 +2,7 @@
 title = 'Vue3 Tutorial Step9 ライフサイクルとテンプレート参照'
 date = '2024-09-27T07:43:52+09:00'
 draft = false
-tags = ['Vue3']
+tags = ['Vue']
 +++
 
 ## ライフサイクルとテンプレート参照

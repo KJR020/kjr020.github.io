@@ -2,7 +2,7 @@
 title = 'Vue3の復習 tutorial-step4-7'
 date = '2024-09-23T06:15:58+09:00'
 draft = false
-tags = ['Vue3']
+tags = ['Vue']
 +++
 
 今度の案件でVue3を使うことになった
