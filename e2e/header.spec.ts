@@ -103,11 +103,10 @@ test.describe("デスクトップビューポートでの表示", () => {
 
   test("ハンバーガーメニューが非表示", async ({ page }) => {
     await page.goto("/");
-    await page.waitForSelector("astro-island[client='load']:not([ssr])");
 
-    // md:hidden クラスにより非表示になっているはず
-    const mobileMenuContainer = page.locator("astro-island .md\\:hidden");
-    await expect(mobileMenuContainer).toBeHidden();
+    // MobileMenuコンポーネントのハンバーガーボタンがデスクトップでは非表示
+    const menuButton = page.getByRole("button", { name: /メニューを開く/ });
+    await expect(menuButton).toBeHidden();
   });
 
   test("既存のナビゲーション動作が正常", async ({ page }) => {

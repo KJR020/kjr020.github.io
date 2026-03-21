@@ -4,7 +4,7 @@ import { capturePageSnapshot } from "./helpers/snapshot";
 
 const staticPages: PageConfig[] = [
   { route: "/", name: "index", hasIslands: true },
-  { route: "/archive", name: "archive", hasIslands: true },
+  { route: "/posts", name: "posts", hasIslands: true },
   { route: "/search", name: "search", hasIslands: true },
   { route: "/404", name: "404", hasIslands: false },
 ];

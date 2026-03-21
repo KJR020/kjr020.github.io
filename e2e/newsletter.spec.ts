@@ -9,10 +9,10 @@ test.describe("ニュースレター一覧ページ", () => {
     await expect(page.locator("h1")).toHaveText("Tech Trends Newsletter");
 
     const cards = page.locator("[data-slot='card']");
-    await expect(cards).toHaveCount(1);
+    await expect(cards).toHaveCount(2);
 
     await expect(
-      cards.first().getByText("Tech Trends Newsletter - 2026-02-18"),
+      cards.first().getByText("Tech Trends Newsletter - 2026-02-20"),
     ).toBeVisible();
   });
 
@@ -23,7 +23,7 @@ test.describe("ニュースレター一覧ページ", () => {
     const link = card.locator("a[href*='/newsletters/']");
     await expect(link).toHaveAttribute(
       "href",
-      "/newsletters/2026-02-18_tech-trends",
+      "/newsletters/2026-02-20_tech-trends",
     );
   });
 });
@@ -80,7 +80,7 @@ test.describe("トップページ Tech Trends セクション", () => {
     await expect(section).toBeVisible();
 
     await expect(
-      section.getByText("Tech Trends Newsletter - 2026-02-18"),
+      section.getByText("Tech Trends Newsletter - 2026-02-20"),
     ).toBeVisible();
 
     const seeAllLink = section.getByText("すべて見る");
