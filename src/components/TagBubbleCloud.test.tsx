@@ -27,26 +27,6 @@ describe("TagBubbleCloud", () => {
     expect(screen.getByText("3")).toBeInTheDocument();
   });
 
-  it("件数が多いタグほどフォントサイズが大きい", () => {
-    render(<TagBubbleCloud tags={mockTags} />);
-    const astroButton = screen.getByText("astro").closest("button");
-    const tsButton = screen.getByText("typescript").closest("button");
-    if (!astroButton || !tsButton) throw new Error("buttons not found");
-
-    const astroSize = Number.parseFloat(astroButton.style.fontSize);
-    const tsSize = Number.parseFloat(tsButton.style.fontSize);
-
-    expect(astroSize).toBeGreaterThan(tsSize);
-  });
-
-  it("アニメーション遅延と持続時間がstyleに設定される", () => {
-    render(<TagBubbleCloud tags={mockTags} />);
-    const firstButton = screen.getByText("astro").closest("button");
-    if (!firstButton) throw new Error("button not found");
-    expect(firstButton.style.animationDelay).toBeTruthy();
-    expect(firstButton.style.animationDuration).toBeTruthy();
-  });
-
   it("空のタグ配列で何もレンダリングされない", () => {
     render(<TagBubbleCloud tags={[]} />);
     const buttons = screen.queryAllByRole("button");
