@@ -18,15 +18,9 @@ const socialLinks = [
 <footer class="border-t border-border bg-background">
   <div class="container mx-auto px-4 py-phi-xl">
     <div class="flex flex-col sm:flex-row items-center justify-between gap-phi-md">
-      <div class="flex flex-col sm:flex-row items-center gap-phi-md text-sm text-muted-foreground">
+      <div class="flex flex-col sm:flex-row items-center gap-phi-md text-xs text-muted-foreground/70">
         <p>© {currentYear} KJR020</p>
-        <nav class="flex items-center gap-3" aria-label="フッターナビゲーション">
-          <a href="/archive" class="hover:text-foreground transition-colors">Archive</a>
-          <span class="text-border">|</span>
-          <a href="/newsletters" class="hover:text-foreground transition-colors">Tech Trends</a>
-          <span class="text-border">|</span>
-          <a href="/search" class="hover:text-foreground transition-colors">Search</a>
-        </nav>
+        <p>当サイトではGoogle Analyticsを使用しています。詳しくは<a href="/privacy" class="underline hover:text-foreground transition-colors">プライバシーポリシー</a>をご覧ください。</p>
       </div>
       <div class="flex items-center gap-phi-md">
         {socialLinks.map((link) => (

@@ -1,0 +1,201 @@
+---
+import PageHero from "@/components/PageHero.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const lastUpdated = "2026-03-21";
+---
+
+<BaseLayout title="Privacy Policy - KJR020 Blog">
+  <PageHero
+    title="Privacy Policy"
+    description="当サイトにおける個人情報の取り扱いについて"
+  />
+
+  <div class="container mx-auto px-4 py-phi-xl max-w-3xl">
+    <p class="text-sm text-muted-foreground mb-phi-lg">
+      最終更新日: {lastUpdated}
+    </p>
+
+    <div class="space-y-phi-lg">
+      <!-- Google Analytics -->
+      <section class="rounded-lg border border-border bg-card p-phi-lg">
+        <div class="flex items-center gap-phi-xs mb-phi-md">
+          <div
+            class="flex size-8 shrink-0 items-center justify-center rounded-md bg-primary/10 text-primary"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              ><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"></path><path
+                d="M3 5v14a2 2 0 0 0 2 2h16v-5"></path><path
+                d="M18 12a2 2 0 0 0 0 4h4v-4Z"></path></svg
+            >
+          </div>
+          <h2
+            class="font-bold font-heading"
+            style="font-size: var(--font-size-title3);"
+          >
+            アクセス解析ツールについて
+          </h2>
+        </div>
+        <ul
+          class="space-y-phi-2xs text-foreground/85 leading-relaxed list-disc list-inside"
+        >
+          <li>
+            当サイトでは、Googleによるアクセス解析ツール「Google
+            アナリティクス」を使用しています
+          </li>
+          <li>
+            Google アナリティクスはデータの収集のためにCookieを使用しています
+          </li>
+          <li>
+            このデータは匿名で収集しており、個人を特定するものではありません
+          </li>
+          <li>
+            Cookieを無効にすることで収集を拒否できます。お使いのブラウザの設定をご確認ください
+          </li>
+        </ul>
+        <div class="mt-phi-md pt-phi-sm border-t border-border">
+          <p class="text-sm text-muted-foreground mb-phi-xs">関連リンク</p>
+          <ul class="space-y-phi-3xs text-sm">
+            <li>
+              <a
+                href="https://marketingplatform.google.com/about/analytics/terms/jp/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-[var(--link)] hover:text-[var(--link-hover)] transition-colors inline-flex items-center gap-1"
+              >
+                Google アナリティクス利用規約
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  ><path
+                    d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                  ></path><polyline points="15 3 21 3 21 9"></polyline><line
+                    x1="10"
+                    y1="14"
+                    x2="21"
+                    y2="3"></line></svg
+                >
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://policies.google.com/technologies/partner-sites?hl=ja"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-[var(--link)] hover:text-[var(--link-hover)] transition-colors inline-flex items-center gap-1"
+              >
+                Google のサービスを使用するサイトやアプリから収集した情報の
+                Google による使用
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  ><path
+                    d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                  ></path><polyline points="15 3 21 3 21 9"></polyline><line
+                    x1="10"
+                    y1="14"
+                    x2="21"
+                    y2="3"></line></svg
+                >
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://policies.google.com/privacy?hl=ja"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-[var(--link)] hover:text-[var(--link-hover)] transition-colors inline-flex items-center gap-1"
+              >
+                Google プライバシーポリシー
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  ><path
+                    d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                  ></path><polyline points="15 3 21 3 21 9"></polyline><line
+                    x1="10"
+                    y1="14"
+                    x2="21"
+                    y2="3"></line></svg
+                >
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 免責事項 -->
+      <section class="rounded-lg border border-border bg-card p-phi-lg">
+        <div class="flex items-center gap-phi-xs mb-phi-md">
+          <div
+            class="flex size-8 shrink-0 items-center justify-center rounded-md bg-primary/10 text-primary"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              ><circle cx="12" cy="12" r="10"></circle><line
+                x1="12"
+                y1="8"
+                x2="12"
+                y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"
+              ></line></svg
+            >
+          </div>
+          <h2
+            class="font-bold font-heading"
+            style="font-size: var(--font-size-title3);"
+          >
+            免責事項
+          </h2>
+        </div>
+        <ul
+          class="space-y-phi-2xs text-foreground/85 leading-relaxed list-disc list-inside"
+        >
+          <li>
+            当サイトに掲載されている情報の正確性について、保証するものではありません
+          </li>
+          <li>
+            当サイトの利用によって生じたいかなる損害についても責任は負いかねます
+          </li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</BaseLayout>
