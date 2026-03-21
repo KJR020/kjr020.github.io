@@ -1,13 +1,13 @@
 {
   "projectName": "KJR020",
-  "fetchedAt": "2026-03-05T14:07:40.809Z",
+  "fetchedAt": "2026-03-21T14:31:30.082Z",
   "pages": [
     {
       "id": "6777da8ce205e30cd89a43bc",
       "title": "KJR020",
       "imageUrl": "https://scrapbox.io/files/691c7888bd7de7498418215f.png",
-      "description": "[https://scrapbox.io/files/691c7888bd7de7498418215f.png] Webエンジニア 株式会社ビープラウド所属",
-      "updatedAt": "2026-02-21T21:51:47.000Z",
+      "description": "[https://scrapbox.io/files/691c7888bd7de7498418215f.png] ## 職業 Webエンジニア",
+      "updatedAt": "2026-03-06T05:49:20.000Z",
       "url": "https://scrapbox.io/KJR020/KJR020"
     },
     {
@@ -17,6 +17,774 @@
       "description": "##　プログラミング言語 [Python] 🐕 [JavaScript] 🐕",
       "updatedAt": "2026-01-19T00:35:49.000Z",
       "url": "https://scrapbox.io/KJR020/%E3%82%B9%E3%82%AD%E3%83%AB%E3%82%BB%E3%83%83%E3%83%88"
+    },
+    {
+      "id": "69be5ba2df74837d08d6d662",
+      "title": "LUNR",
+      "imageUrl": null,
+      "description": "全文検索のライブラリ [https://lunrjs.com/ Lunr: A bit like Solr, but much smaller and not as bright]",
+      "updatedAt": "2026-03-21T08:50:15.000Z",
+      "url": "https://scrapbox.io/KJR020/LUNR"
+    },
+    {
+      "id": "69be5a89467409770587227f",
+      "title": "Fuse.js",
+      "imageUrl": null,
+      "description": "軽量な検索ライブラリ [https://www.fusejs.io/ Fuse.js | Fuse.js] [https://amateur-engineer-blog.com/create-search-bar-to-nextjs-blog 【Fuse.js】Next.jsのブログに検索機能を実装してみた]",
+      "updatedAt": "2026-03-21T08:45:53.000Z",
+      "url": "https://scrapbox.io/KJR020/Fuse.js"
+    },
+    {
+      "id": "69be59e40acbd96d66308f36",
+      "title": "Algolia",
+      "imageUrl": null,
+      "description": "全部見せる。バイバイ。 [https://www.algolia.com/ The AI search and retrieval platform - Agentic | Generative | Search] [https://zenn.dev/manalink_dev/articles/manalink-algolia-search Algoliaが思った以上に凄かった話]",
+      "updatedAt": "2026-03-21T08:44:40.000Z",
+      "url": "https://scrapbox.io/KJR020/Algolia"
+    },
+    {
+      "id": "69be4f65bde409fe3a225e08",
+      "title": "Pagefind",
+      "imageUrl": null,
+      "description": "[https://azukiazusa.dev/blog/static-site-search-engine-and-ui-library-pagefind/ 静的サイト向けの全文検索エンジンと UI ライブラリの Pagefind] [https://zenn.dev/dannya/articles/179d0240881160 What is Pagefind?] [https://github.com/Pagefind/pagefind Pagefind/pagefind: Static low-bandwidth search at scale]",
+      "updatedAt": "2026-03-21T07:57:46.000Z",
+      "url": "https://scrapbox.io/KJR020/Pagefind"
+    },
+    {
+      "id": "69be1652ce0555c9bb6ce97b",
+      "title": "Tag Cloud",
+      "imageUrl": null,
+      "description": "[https://jp.pinterest.com/search/pins/?q=tag%20cloud%20web%20design&rs=ac&len=11&source_id=ac_cwqMwa9P&eq=Tag%20Cloud&etslf=7047 (351) Pinterest] [https://ja.wikipedia.org/wiki/%E3%82%BF%E3%82%B0%E3%82%AF%E3%83%A9%E3%82%A6%E3%83%89 タグクラウド - Wikipedia] [https://rank-quest.jp/column/column/tag-cloud/ タグクラウドとは？作成方法やメリット・デメリットも紹介 - 徹底的にSEO対策するならランクエスト]",
+      "updatedAt": "2026-03-21T04:31:52.000Z",
+      "url": "https://scrapbox.io/KJR020/Tag%20Cloud"
+    },
+    {
+      "id": "69bde436bfe96c9ebf6a791f",
+      "title": "Honeycomb",
+      "imageUrl": null,
+      "description": "ObservabilityのSaaSを提供してる会社 開発者が自分で問題を調査できるツールらしい [https://www.honeycomb.io/ Honeycomb: Observability for Distributed Services]",
+      "updatedAt": "2026-03-21T00:23:58.000Z",
+      "url": "https://scrapbox.io/KJR020/Honeycomb"
+    },
+    {
+      "id": "69bde34fa662dc0123bed19d",
+      "title": "オブザーバビリティ・エンジニアリング",
+      "imageUrl": "https://scrapbox.io/files/69bde357b9e150750aed148d.png",
+      "description": "[https://www.oreilly.co.jp/books/9784814400126/ オブザーバビリティ・エンジニアリング - O'Reilly Japan] [Charity Majors]、Liz Fong-Jones、George Miranda　著 [https://scrapbox.io/files/69bde357b9e150750aed148d.png]",
+      "updatedAt": "2026-03-21T00:19:02.000Z",
+      "url": "https://scrapbox.io/KJR020/%E3%82%AA%E3%83%96%E3%82%B6%E3%83%BC%E3%83%90%E3%83%93%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BB%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%E3%83%AA%E3%83%B3%E3%82%B0"
+    },
+    {
+      "id": "69bde38b0a5e4ee0d66029eb",
+      "title": "Charity Majors",
+      "imageUrl": null,
+      "description": "SRE界隈の有名エンジニア [オブザーバビリティ・エンジニアリング]の著者 [Honeycomb]のCTO",
+      "updatedAt": "2026-03-21T00:17:54.000Z",
+      "url": "https://scrapbox.io/KJR020/Charity%20Majors"
+    },
+    {
+      "id": "69bde2caa1c5f1bd41a341ff",
+      "title": "ロギングのベストプラクティス",
+      "imageUrl": null,
+      "description": "[https://www.honeycomb.io/blog/engineers-checklist-logging-best-practices Logging Best Practices: An Engineer’s Checklist | Honeycomb] [Honeycomb]社のブログ [Charity Majors]",
+      "updatedAt": "2026-03-21T00:17:11.000Z",
+      "url": "https://scrapbox.io/KJR020/%E3%83%AD%E3%82%AE%E3%83%B3%E3%82%B0%E3%81%AE%E3%83%99%E3%82%B9%E3%83%88%E3%83%97%E3%83%A9%E3%82%AF%E3%83%86%E3%82%A3%E3%82%B9"
+    },
+    {
+      "id": "69bb7006e053b930cc9f4b01",
+      "title": "チューリングマシンが作られた背景",
+      "imageUrl": null,
+      "description": "チューリングが向き合っていた大元の問題は、[ヒルベルトの決定問題]（Entscheidungsproblem） ヒルベルトの決定問題を解くためにチューリングマシンが作られた ゲーデルが証明可能性の限界を示し、チャーチとチューリングが計算可能性の限界を示した",
+      "updatedAt": "2026-03-19T03:42:26.000Z",
+      "url": "https://scrapbox.io/KJR020/%E3%83%81%E3%83%A5%E3%83%BC%E3%83%AA%E3%83%B3%E3%82%B0%E3%83%9E%E3%82%B7%E3%83%B3%E3%81%8C%E4%BD%9C%E3%82%89%E3%82%8C%E3%81%9F%E8%83%8C%E6%99%AF"
+    },
+    {
+      "id": "69bb6d9a94b3d0856cb713ad",
+      "title": "チューリング完全",
+      "imageUrl": null,
+      "description": ">計算理論においてチューリング完全（チューリングかんぜん、英語: Turing-complete）あるいは計算完備とは、計算モデルが万能チューリングマシンと同じ計算能力をもっていることを指す。 歴史的には、チューリングマシンが生まれた背景は数理論理学 チューリングが[ヒルベルトの決定問題]を解くために作ったもの",
+      "updatedAt": "2026-03-19T03:39:48.000Z",
+      "url": "https://scrapbox.io/KJR020/%E3%83%81%E3%83%A5%E3%83%BC%E3%83%AA%E3%83%B3%E3%82%B0%E5%AE%8C%E5%85%A8"
+    },
+    {
+      "id": "69ba4c0fe5f04c0f3c66d2eb",
+      "title": "GitHub Repositories",
+      "imageUrl": null,
+      "description": "Cloneせずにリモートリポジトリのコードを読める [https://marketplace.visualstudio.com/items?itemName=GitHub.remotehub GitHub Repositories - Visual Studio Marketplace]",
+      "updatedAt": "2026-03-18T06:54:32.000Z",
+      "url": "https://scrapbox.io/KJR020/GitHub%20Repositories"
+    },
+    {
+      "id": "69ba19bd40b63672495e2a54",
+      "title": "Fire-and-forget",
+      "imageUrl": null,
+      "description": "[https://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A1%E3%82%A4%E3%82%A2%E3%83%BB%E3%82%A2%E3%83%B3%E3%83%89%E3%83%BB%E3%83%95%E3%82%A9%E3%83%BC%E3%82%B2%E3%83%83%E3%83%88 ファイア・アンド・フォーゲット - Wikipedia] [https://zenn.dev/manase/scraps/e10e34289efc2e TypeScriptのAPI Callの際のFire-and-forget(打ちっぱなし)について📝] [https://shinshin86.hateblo.jp/entry/2022/02/10/000000 Pythonのasyncioで投げっぱなしの処理(fire and forget)の実装サンプル - at backyard]",
+      "updatedAt": "2026-03-18T03:20:07.000Z",
+      "url": "https://scrapbox.io/KJR020/Fire-and-forget"
+    },
+    {
+      "id": "69b7b9ebd0e8da4aef108011",
+      "title": "人間がチェックするのは最初と最後だけにする",
+      "imageUrl": null,
+      "description": "AIを使った開発をする上で、人間がボトルネックにならないように気をつけるポイント #メモ",
+      "updatedAt": "2026-03-17T11:23:21.000Z",
+      "url": "https://scrapbox.io/KJR020/%E4%BA%BA%E9%96%93%E3%81%8C%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%81%99%E3%82%8B%E3%81%AE%E3%81%AF%E6%9C%80%E5%88%9D%E3%81%A8%E6%9C%80%E5%BE%8C%E3%81%A0%E3%81%91%E3%81%AB%E3%81%99%E3%82%8B"
+    },
+    {
+      "id": "69b4ecdeb658e21782901cd4",
+      "title": "Practical Foundations for Programming Languages",
+      "imageUrl": "https://scrapbox.io/files/69b4ece3b9e150750ae15a10.png",
+      "description": "[https://scrapbox.io/files/69b4ece3b9e150750ae15a10.png] >This text develops a comprehensive theory of programming languages based on type systems and structural operational semantics. [https://www.cambridge.org/vi/universitypress/subjects/computer-science/programming-languages-and-applied-logic/practical-foundations-programming-languages-2nd-edition?format=HB Practical Foundations ",
+      "updatedAt": "2026-03-17T11:22:40.000Z",
+      "url": "https://scrapbox.io/KJR020/Practical%20Foundations%20for%20Programming%20Languages"
+    },
+    {
+      "id": "69b9335e952e3addf023e38c",
+      "title": "asyncio.Queue",
+      "imageUrl": null,
+      "description": "## 概要 python標準モジュールのasyncioのキュー FIFO Queue",
+      "updatedAt": "2026-03-17T11:22:20.000Z",
+      "url": "https://scrapbox.io/KJR020/asyncio.Queue"
+    },
+    {
+      "id": "69b929af19babdb72852be86",
+      "title": "センチネル",
+      "imageUrl": null,
+      "description": "センチネル、番兵 データの終了を示すために配置される特殊なデータ [https://ja.wikipedia.org/wiki/%E7%95%AA%E5%85%B5 番兵 - Wikipedia]",
+      "updatedAt": "2026-03-17T10:16:09.000Z",
+      "url": "https://scrapbox.io/KJR020/%E3%82%BB%E3%83%B3%E3%83%81%E3%83%8D%E3%83%AB"
+    },
+    {
+      "id": "69b90ed99577f6015a98e0f5",
+      "title": "Context caching",
+      "imageUrl": null,
+      "description": "[https://ai.google.dev/gemini-api/docs/caching Context caching  |  Gemini API  |  Google AI for Developers] [https://ai.google.dev/gemini-api/docs/caching?hl=ja コンテキストのキャッシュ保存  |  Gemini API  |  Google AI for Developers]",
+      "updatedAt": "2026-03-17T08:21:51.000Z",
+      "url": "https://scrapbox.io/KJR020/Context%20caching"
+    },
+    {
+      "id": "69b90eccf86025083bff7e07",
+      "title": "Prompt caching",
+      "imageUrl": null,
+      "description": "[https://developers.openai.com/api/docs/guides/prompt-caching#in-memory-prompt-cache-retention Prompt caching | OpenAI API]",
+      "updatedAt": "2026-03-17T08:20:36.000Z",
+      "url": "https://scrapbox.io/KJR020/Prompt%20caching"
+    },
+    {
+      "id": "69b88712bbe0353461c85335",
+      "title": "Team Topology",
+      "imageUrl": null,
+      "description": "Matthew Skelton と Manuel Pais が提唱した組織設計のフレームワーク ソフトウェアを速く安全に届けるための「チーム構造の設計法」 DevOps",
+      "updatedAt": "2026-03-16T22:50:14.000Z",
+      "url": "https://scrapbox.io/KJR020/Team%20Topology"
+    },
+    {
+      "id": "69b7f8758260e83c68d51eba",
+      "title": "動的意味論 vs 静的意味論",
+      "imageUrl": null,
+      "description": "言語の定義は、コンパイル時(静的)と実行時(動的)の振る舞いに分けられる ## 静的意味論（Statics） 型システム",
+      "updatedAt": "2026-03-16T12:36:49.000Z",
+      "url": "https://scrapbox.io/KJR020/%E5%8B%95%E7%9A%84%E6%84%8F%E5%91%B3%E8%AB%96%20vs%20%E9%9D%99%E7%9A%84%E6%84%8F%E5%91%B3%E8%AB%96"
+    },
+    {
+      "id": "69b7f86390080a1b2244189f",
+      "title": "弱化",
+      "imageUrl": null,
+      "description": "Weakening",
+      "updatedAt": "2026-03-16T12:32:52.000Z",
+      "url": "https://scrapbox.io/KJR020/%E5%BC%B1%E5%8C%96"
+    },
+    {
+      "id": "69b7a5679c444bc93ee4c07f",
+      "title": "エージェントの稼働率を測りたい",
+      "imageUrl": null,
+      "description": "",
+      "updatedAt": "2026-03-16T06:39:06.000Z",
+      "url": "https://scrapbox.io/KJR020/%E3%82%A8%E3%83%BC%E3%82%B8%E3%82%A7%E3%83%B3%E3%83%88%E3%81%AE%E7%A8%BC%E5%83%8D%E7%8E%87%E3%82%92%E6%B8%AC%E3%82%8A%E3%81%9F%E3%81%84"
+    },
+    {
+      "id": "69b77766c4d9e6b4a2ee7a61",
+      "title": "ユーザーにできないことがある場合は、制約としてつたえる",
+      "imageUrl": null,
+      "description": "",
+      "updatedAt": "2026-03-16T03:22:49.000Z",
+      "url": "https://scrapbox.io/KJR020/%E3%83%A6%E3%83%BC%E3%82%B6%E3%83%BC%E3%81%AB%E3%81%A7%E3%81%8D%E3%81%AA%E3%81%84%E3%81%93%E3%81%A8%E3%81%8C%E3%81%82%E3%82%8B%E5%A0%B4%E5%90%88%E3%81%AF%E3%80%81%E5%88%B6%E7%B4%84%E3%81%A8%E3%81%97%E3%81%A6%E3%81%A4%E3%81%9F%E3%81%88%E3%82%8B"
+    },
+    {
+      "id": "69b3eee53d98b61fb3afd99a",
+      "title": "Craft Agents",
+      "imageUrl": null,
+      "description": "[https://agents.craft.do/ Craft Agents - The Open Source Agent Interface] [https://github.com/lukilabs/craft-agents-oss lukilabs/craft-agents-oss]",
+      "updatedAt": "2026-03-16T01:38:23.000Z",
+      "url": "https://scrapbox.io/KJR020/Craft%20Agents"
+    },
+    {
+      "id": "69b56abde06204e191f4be7f",
+      "title": "割り込み",
+      "imageUrl": null,
+      "description": "",
+      "updatedAt": "2026-03-14T14:03:48.000Z",
+      "url": "https://scrapbox.io/KJR020/%E5%89%B2%E3%82%8A%E8%BE%BC%E3%81%BF"
+    },
+    {
+      "id": "69b56aba1687c913d1fe562c",
+      "title": "ブロッキング",
+      "imageUrl": null,
+      "description": "",
+      "updatedAt": "2026-03-14T14:03:41.000Z",
+      "url": "https://scrapbox.io/KJR020/%E3%83%96%E3%83%AD%E3%83%83%E3%82%AD%E3%83%B3%E3%82%B0"
+    },
+    {
+      "id": "69b56ab24d7d2b506082fd4e",
+      "title": "イベントループ",
+      "imageUrl": null,
+      "description": "",
+      "updatedAt": "2026-03-14T14:03:36.000Z",
+      "url": "https://scrapbox.io/KJR020/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%83%AB%E3%83%BC%E3%83%97"
+    },
+    {
+      "id": "69b54e64e97704420623e66d",
+      "title": "Let's build a browser engine!",
+      "imageUrl": null,
+      "description": "[https://limpet.net/mbrubeck/2014/08/08/toy-layout-engine-1.html Let's build a browser engine! Part 1: Getting started] [https://dackdive.hateblo.jp/entry/2021/02/23/113522 「Let's build a browser engine!」を読んでRustで簡易レンダリングエンジンを作った - dackdive's blog] [https://zenn.dev/ryo_kawamata/articles/920baf76bfdf2e Deno で簡易レンダリングエンジンを作ってみた]",
+      "updatedAt": "2026-03-14T12:04:16.000Z",
+      "url": "https://scrapbox.io/KJR020/Let's%20build%20a%20browser%20engine!"
+    },
+    {
+      "id": "69b4f80c2a93fe0d64912a7f",
+      "title": "Cache",
+      "imageUrl": null,
+      "description": "table:cache 種類\t例 CPU/hardware cache\tL1/L2 cache",
+      "updatedAt": "2026-03-14T05:55:55.000Z",
+      "url": "https://scrapbox.io/KJR020/Cache"
+    },
+    {
+      "id": "69b4f47aecfb3cc21c3b882e",
+      "title": "Persistent Cache",
+      "imageUrl": null,
+      "description": "RDBなど 再計算コストや再生成コストが高いため、消えてもよい一時キャッシュではなく、再起動後も残したいケース 技術用語として規格で定義されているわけではない、慣習的に使われるらしい",
+      "updatedAt": "2026-03-14T05:45:16.000Z",
+      "url": "https://scrapbox.io/KJR020/Persistent%20Cache"
+    },
+    {
+      "id": "698aca4d16a3b2a8cff8794e",
+      "title": "takt",
+      "imageUrl": "https://i.ytimg.com/vi/TMipS7-I3Ok/mqdefault.jpg",
+      "description": "[https://x.com/nrslib/status/2020824325126009087 (20) nrs on X: \"AIチームを駆使して計54体のエージェントを連携させて開発している話\" / X] [https://www.youtube.com/live/TMipS7-I3Ok]",
+      "updatedAt": "2026-03-14T04:51:08.000Z",
+      "url": "https://scrapbox.io/KJR020/takt"
+    },
+    {
+      "id": "69b4e59a33a51b7209c622da",
+      "title": "イノシン酸",
+      "imageUrl": null,
+      "description": "筋肉を意味するラテン語(大元はギリシャ語)が語源らしい[KJR020.icon] 諸説あり イノシン酸とグルタミン酸が毎回どっちがどっちか分からなくなるので調べた",
+      "updatedAt": "2026-03-14T04:38:11.000Z",
+      "url": "https://scrapbox.io/KJR020/%E3%82%A4%E3%83%8E%E3%82%B7%E3%83%B3%E9%85%B8"
+    },
+    {
+      "id": "6905b72a3f5b836f5c2d8c42",
+      "title": "AI-DLC",
+      "imageUrl": "https://scrapbox.io/files/6905b7db60d12cce38a0c47c.png",
+      "description": "AWSが提唱するAI 駆動開発ライフサイクル [https://scrapbox.io/files/6905b7db60d12cce38a0c47c.png] Inception",
+      "updatedAt": "2026-03-14T04:29:24.000Z",
+      "url": "https://scrapbox.io/KJR020/AI-DLC"
+    },
+    {
+      "id": "69b4e3dcae4b3dfe142903cc",
+      "title": "たまねぎは西洋のかつおぶし",
+      "imageUrl": null,
+      "description": "[https://noguchi-farm.com/archives/column/onion-umamiseibun 玉ねぎの旨味成分とは？健康にもたらす効果や甘みを出す方法を解説 – 野口ファーム] #料理",
+      "updatedAt": "2026-03-14T04:28:29.000Z",
+      "url": "https://scrapbox.io/KJR020/%E3%81%9F%E3%81%BE%E3%81%AD%E3%81%8E%E3%81%AF%E8%A5%BF%E6%B4%8B%E3%81%AE%E3%81%8B%E3%81%A4%E3%81%8A%E3%81%B6%E3%81%97"
+    },
+    {
+      "id": "69b4e393db211ae9663c974f",
+      "title": "UMAMI",
+      "imageUrl": null,
+      "description": "https://www.umamiinfo.com/what/whatisumami/",
+      "updatedAt": "2026-03-14T04:27:03.000Z",
+      "url": "https://scrapbox.io/KJR020/UMAMI"
+    },
+    {
+      "id": "69ad1f5fe894d174a496ffe4",
+      "title": "至高のグリルチキン",
+      "imageUrl": "https://i.ytimg.com/vi/abgPM73aB3E/mqdefault.jpg",
+      "description": "[https://www.youtube.com/watch?v=abgPM73aB3E] チキンと一緒に野菜を置いて焼くと美味しい アスパラガス",
+      "updatedAt": "2026-03-14T04:26:12.000Z",
+      "url": "https://scrapbox.io/KJR020/%E8%87%B3%E9%AB%98%E3%81%AE%E3%82%B0%E3%83%AA%E3%83%AB%E3%83%81%E3%82%AD%E3%83%B3"
+    },
+    {
+      "id": "69b4df9243ce349719044bae",
+      "title": "A Behavioral Notion of Subtyping",
+      "imageUrl": null,
+      "description": "[https://dl.acm.org/doi/10.1145/197320.197383 A behavioral notion of subtyping | ACM Transactions on Programming Languages and Systems]",
+      "updatedAt": "2026-03-14T04:10:20.000Z",
+      "url": "https://scrapbox.io/KJR020/A%20Behavioral%20Notion%20of%20Subtyping"
+    },
+    {
+      "id": "69b4deab8a5842e88ff9cd57",
+      "title": "Semantics with Applications: An Appetizer",
+      "imageUrl": null,
+      "description": "Hanne Riis Nielson, Flemming Nielson著 操作的・表示的・公理的意味論をまとめて学べる入門で、意味論を「何のためにやるのか」まで含めて掴みやすいらしい >Provides a rigorous introduction to the main approaches to formal semantics of programming languages",
+      "updatedAt": "2026-03-14T04:08:06.000Z",
+      "url": "https://scrapbox.io/KJR020/Semantics%20with%20Applications%3A%20An%20Appetizer"
+    },
+    {
+      "id": "69b3bf6f5e280546cb074ea9",
+      "title": "忙しい人が捕まるタイミングを逃さない",
+      "imageUrl": null,
+      "description": "個人的にうまくいったなと思ったのでメモ 忙しい人を相手にする時の仕事の進め方 タイミングが重要という話",
+      "updatedAt": "2026-03-14T04:02:01.000Z",
+      "url": "https://scrapbox.io/KJR020/%E5%BF%99%E3%81%97%E3%81%84%E4%BA%BA%E3%81%8C%E6%8D%95%E3%81%BE%E3%82%8B%E3%82%BF%E3%82%A4%E3%83%9F%E3%83%B3%E3%82%B0%E3%82%92%E9%80%83%E3%81%95%E3%81%AA%E3%81%84"
+    },
+    {
+      "id": "69b4d993b0fe7331c0774de8",
+      "title": "AIを使って自分の表現のどこが不正確だったかチェックする",
+      "imageUrl": null,
+      "description": "## 経緯 TBDという言葉の使い方を誤っていたことを指摘されたことがあった 本来は、未定かつ決める予定がある(to be determined)という意味",
+      "updatedAt": "2026-03-14T03:57:39.000Z",
+      "url": "https://scrapbox.io/KJR020/AI%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E8%87%AA%E5%88%86%E3%81%AE%E8%A1%A8%E7%8F%BE%E3%81%AE%E3%81%A9%E3%81%93%E3%81%8C%E4%B8%8D%E6%AD%A3%E7%A2%BA%E3%81%A0%E3%81%A3%E3%81%9F%E3%81%8B%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%81%99%E3%82%8B"
+    },
+    {
+      "id": "69b4dbce3d2e2f14dd51be57",
+      "title": "ChatGPT",
+      "imageUrl": "https://scrapbox.io/files/69b4dbeab9e150750ae147b2.png",
+      "description": "[https://scrapbox.io/files/69b4dbeab9e150750ae147b2.png]",
+      "updatedAt": "2026-03-14T03:54:20.000Z",
+      "url": "https://scrapbox.io/KJR020/ChatGPT"
+    },
+    {
+      "id": "69b4cdc2aede4a9f0e9173cc",
+      "title": "複雑な変化を追うのではなく、変わらないものを見極める",
+      "imageUrl": null,
+      "description": "#プログラム意味論 [保存条件]の概念から得た気づき 変化を全て追う事は難しい",
+      "updatedAt": "2026-03-14T02:58:43.000Z",
+      "url": "https://scrapbox.io/KJR020/%E8%A4%87%E9%9B%91%E3%81%AA%E5%A4%89%E5%8C%96%E3%82%92%E8%BF%BD%E3%81%86%E3%81%AE%E3%81%A7%E3%81%AF%E3%81%AA%E3%81%8F%E3%80%81%E5%A4%89%E3%82%8F%E3%82%89%E3%81%AA%E3%81%84%E3%82%82%E3%81%AE%E3%82%92%E8%A6%8B%E6%A5%B5%E3%82%81%E3%82%8B"
+    },
+    {
+      "id": "69b3ec14d00bffb90777ea33",
+      "title": "オーケストレーション用の入力インターフェースとなるセッションを作りたい",
+      "imageUrl": null,
+      "description": "[TAKT]や[Craft Agents]というツールが良さそうと教えてもらった",
+      "updatedAt": "2026-03-13T10:51:35.000Z",
+      "url": "https://scrapbox.io/KJR020/%E3%82%AA%E3%83%BC%E3%82%B1%E3%82%B9%E3%83%88%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E7%94%A8%E3%81%AE%E5%85%A5%E5%8A%9B%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%95%E3%82%A7%E3%83%BC%E3%82%B9%E3%81%A8%E3%81%AA%E3%82%8B%E3%82%BB%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E4%BD%9C%E3%82%8A%E3%81%9F%E3%81%84"
+    },
+    {
+      "id": "69ab74aadc9641345ef76e1b",
+      "title": "不満ボックス",
+      "imageUrl": null,
+      "description": "tmuxセッションどれがどれか混乱する 簡単に思い出せる復活になる表示を作りたい [オーケストレーション用の入力インターフェースとなるセッションを作りたい]",
+      "updatedAt": "2026-03-13T10:50:56.000Z",
+      "url": "https://scrapbox.io/KJR020/%E4%B8%8D%E6%BA%80%E3%83%9C%E3%83%83%E3%82%AF%E3%82%B9"
+    },
+    {
+      "id": "69b3d2956e7dcb32f4ce83ed",
+      "title": "beautiful-mermaid",
+      "imageUrl": null,
+      "description": "[https://qiita.com/TaigoKuriyama/items/a9ccd0734960c16795f3 beautiful-mermaid で Mermaid を洗練する #ClaudeCode - Qiita]",
+      "updatedAt": "2026-03-13T09:02:20.000Z",
+      "url": "https://scrapbox.io/KJR020/beautiful-mermaid"
+    },
+    {
+      "id": "69ad8c5f775b64c355430889",
+      "title": "ダークパターン",
+      "imageUrl": null,
+      "description": "悪意のある誘導をするUI/UXの設計パターン >Deceptive patterns (also known as “dark patterns”) are tricks used in websites and apps that make you do things that you didn't mean to, like buying or signing up for something. > ダークパターンとは、「Webサイトやアプリにおいて、利用者の意図に反して特定の行動（例：商品購入、サービス申込など）をとらせることを目的として設計されたユーザーインターフェース上のトリック」",
+      "updatedAt": "2026-03-13T02:41:05.000Z",
+      "url": "https://scrapbox.io/KJR020/%E3%83%80%E3%83%BC%E3%82%AF%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3"
+    },
+    {
+      "id": "69b35534413665da96e0da9e",
+      "title": "振る舞い",
+      "imageUrl": null,
+      "description": "単純に型や入出力の問題ではない エラーなどの副作用など外から観測できる挙動を含むもの 理論的(数学的?)な定義があり",
+      "updatedAt": "2026-03-13T02:37:27.000Z",
+      "url": "https://scrapbox.io/KJR020/%E6%8C%AF%E3%82%8B%E8%88%9E%E3%81%84"
+    },
+    {
+      "id": "69b375eee9da3ba0752f1824",
+      "title": "Claude Code Meetup Japan #3",
+      "imageUrl": "https://i.ytimg.com/vi/csJhIQFuYJw/mqdefault.jpg",
+      "description": "[https://www.youtube.com/live/csJhIQFuYJw] [https://speakerdeck.com/oikon48/claude-code-0312 Claude Code 2026年 最新アップデート - Speaker Deck] [https://aid.connpass.com/event/384117/ Claude Code Meetup Japan #3 (Claude Code祭り!) - connpass]",
+      "updatedAt": "2026-03-13T02:34:45.000Z",
+      "url": "https://scrapbox.io/KJR020/Claude%20Code%20Meetup%20Japan%20%233"
+    },
+    {
+      "id": "69b358f1d09e41caf6e6977f",
+      "title": "概念が成立する必然性を掴む",
+      "imageUrl": "https://scrapbox.io/files/69b35c74b9e150750adf2687.png",
+      "description": "ChatGPTとの会話で得た気づき 自分の学習をメタ分析してもらった 自分の学習傾向として、その概念が成立する必然性を掴もうとする傾向があるらしい",
+      "updatedAt": "2026-03-13T00:40:21.000Z",
+      "url": "https://scrapbox.io/KJR020/%E6%A6%82%E5%BF%B5%E3%81%8C%E6%88%90%E7%AB%8B%E3%81%99%E3%82%8B%E5%BF%85%E7%84%B6%E6%80%A7%E3%82%92%E6%8E%B4%E3%82%80"
+    },
+    {
+      "id": "69b35b927e6fde4d2e96736d",
+      "title": "テストは仕様の近似",
+      "imageUrl": null,
+      "description": "振る舞いとは、観測可能な挙動のこと 観測可能な挙動はテスト可能 テストは仕様の近似と言う話を聞いて",
+      "updatedAt": "2026-03-13T00:37:02.000Z",
+      "url": "https://scrapbox.io/KJR020/%E3%83%86%E3%82%B9%E3%83%88%E3%81%AF%E4%BB%95%E6%A7%98%E3%81%AE%E8%BF%91%E4%BC%BC"
+    },
+    {
+      "id": "69b355215abc147125bb8a86",
+      "title": "プログラム意味論",
+      "imageUrl": null,
+      "description": "(program semantics)",
+      "updatedAt": "2026-03-13T00:07:06.000Z",
+      "url": "https://scrapbox.io/KJR020/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E6%84%8F%E5%91%B3%E8%AB%96"
+    },
+    {
+      "id": "69b3551cf5714e042eba8d87",
+      "title": "observational equivalence",
+      "imageUrl": null,
+      "description": "",
+      "updatedAt": "2026-03-13T00:06:55.000Z",
+      "url": "https://scrapbox.io/KJR020/observational%20equivalence"
+    },
+    {
+      "id": "69b29faf813ad2389fe95a6f",
+      "title": "single responsibility principle",
+      "imageUrl": null,
+      "description": "Martinの説明 A module should have only one reason to change. DDDの境界づけられたコンテキストにも通じる",
+      "updatedAt": "2026-03-12T11:14:50.000Z",
+      "url": "https://scrapbox.io/KJR020/single%20responsibility%20principle"
+    },
+    {
+      "id": "69b16fae22c3b282ec34144f",
+      "title": "NITS指摘に対する考え",
+      "imageUrl": null,
+      "description": "指摘は受け取り手の処理まで責任を持つべき 重要性と受け手の処理負荷まで考慮することが必要と思った[KJR020.icon] 思考メモ",
+      "updatedAt": "2026-03-11T14:13:42.000Z",
+      "url": "https://scrapbox.io/KJR020/NITS%E6%8C%87%E6%91%98%E3%81%AB%E5%AF%BE%E3%81%99%E3%82%8B%E8%80%83%E3%81%88"
+    },
+    {
+      "id": "69b173c465c77a80271ed212",
+      "title": "常に賛成・反対の視点を意識する",
+      "imageUrl": null,
+      "description": "",
+      "updatedAt": "2026-03-11T13:53:18.000Z",
+      "url": "https://scrapbox.io/KJR020/%E5%B8%B8%E3%81%AB%E8%B3%9B%E6%88%90%E3%83%BB%E5%8F%8D%E5%AF%BE%E3%81%AE%E8%A6%96%E7%82%B9%E3%82%92%E6%84%8F%E8%AD%98%E3%81%99%E3%82%8B"
+    },
+    {
+      "id": "6965af021468bd70a4036a68",
+      "title": "ソフトウェア設計の結合バランス",
+      "imageUrl": null,
+      "description": "持続可能な成長を支えるモジュール化の原則 Balancing Coupling in Software Design: Universal Design Principles for Architecting Modular Software Systemsの翻訳書 第二章結合と複雑性クネビン",
+      "updatedAt": "2026-03-10T09:07:56.000Z",
+      "url": "https://scrapbox.io/KJR020/%E3%82%BD%E3%83%95%E3%83%88%E3%82%A6%E3%82%A7%E3%82%A2%E8%A8%AD%E8%A8%88%E3%81%AE%E7%B5%90%E5%90%88%E3%83%90%E3%83%A9%E3%83%B3%E3%82%B9"
+    },
+    {
+      "id": "69a037083590c0b0f7692d12",
+      "title": "Harness engineering",
+      "imageUrl": null,
+      "description": "https://openai.com/ja-JP/index/harness-engineering/ OpenAIが提唱したAgent-first 開発の設計思想 記事では、エージェントチームとプロダクトを開発をする中で得た学びとして紹介されている",
+      "updatedAt": "2026-03-10T02:55:53.000Z",
+      "url": "https://scrapbox.io/KJR020/Harness%20engineering"
+    },
+    {
+      "id": "69ae6f057345482b5c2daa02",
+      "title": "マネージャー版 \"提案のレベル\" を上げる",
+      "imageUrl": null,
+      "description": "[https://speakerdeck.com/konifar/maneziyaban-ti-an-noreberu-woshang-geru マネージャー版 \"提案のレベル\" を上げる - Speaker Deck]",
+      "updatedAt": "2026-03-09T06:56:13.000Z",
+      "url": "https://scrapbox.io/KJR020/%E3%83%9E%E3%83%8D%E3%83%BC%E3%82%B8%E3%83%A3%E3%83%BC%E7%89%88%20%22%E6%8F%90%E6%A1%88%E3%81%AE%E3%83%AC%E3%83%99%E3%83%AB%22%20%E3%82%92%E4%B8%8A%E3%81%92%E3%82%8B"
+    },
+    {
+      "id": "69ad8c49f83fe1881c77d26d",
+      "title": "PbD",
+      "imageUrl": null,
+      "description": "プライバシーバイデザイン",
+      "updatedAt": "2026-03-08T14:48:52.000Z",
+      "url": "https://scrapbox.io/KJR020/PbD"
+    },
+    {
+      "id": "69ad8b60353a74f5218b1671",
+      "title": "How to solve it",
+      "imageUrl": null,
+      "description": "[https://note.com/t2shimamura/n/naed278553d55 G. Polya \"How to Solve It\" a new aspect of mathematical method.｜Shimamura, T. 島村徹郎] [https://www.amazon.co.jp/dp/B09T94D62K?tag=note0e2a-22&linkCode=ogi&th=1&psc=1 いかにして問題をとくか | G．ポリア, 柿内賢信 | 数学 | Kindleストア | Amazon]",
+      "updatedAt": "2026-03-08T14:46:56.000Z",
+      "url": "https://scrapbox.io/KJR020/How%20to%20solve%20it"
+    },
+    {
+      "id": "69a8309d4bddc6b8050c7f93",
+      "title": "エンジニアとして押さえておきたい法律",
+      "imageUrl": null,
+      "description": "しのゆーさんのツイートを見てメモ https://x.com/shinoyu__/status/2028779420283228386 ちょうど最近法律というか弁護士の思考に対して興味を持ってきた",
+      "updatedAt": "2026-03-08T14:18:37.000Z",
+      "url": "https://scrapbox.io/KJR020/%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%E3%81%A8%E3%81%97%E3%81%A6%E6%8A%BC%E3%81%95%E3%81%88%E3%81%A6%E3%81%8A%E3%81%8D%E3%81%9F%E3%81%84%E6%B3%95%E5%BE%8B"
+    },
+    {
+      "id": "69ad826cafa63000cb28e53d",
+      "title": "ITエンジニアのための【法律】がわかる本",
+      "imageUrl": "https://scrapbox.io/files/69ad82a2f1c53c17322a2abe.png",
+      "description": "[https://scrapbox.io/files/69ad82a2f1c53c17322a2abe.png] [https://www.shoeisha.co.jp/book/detail/9784798110059 ITエンジニアのための【法律】がわかる本（落合 和雄 島津 秀行）｜翔泳社の本] #書籍",
+      "updatedAt": "2026-03-08T14:14:28.000Z",
+      "url": "https://scrapbox.io/KJR020/IT%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE%E3%80%90%E6%B3%95%E5%BE%8B%E3%80%91%E3%81%8C%E3%82%8F%E3%81%8B%E3%82%8B%E6%9C%AC"
+    },
+    {
+      "id": "69ad82f2d1351ca3c75fd657",
+      "title": "電気通信事業法",
+      "imageUrl": null,
+      "description": "ユーザー同士がメッセージをやり取りできるDMのような機能を実装する場合に注意が必要 missskey.ioでも届を出しているらしい https://note.com/hirut/n/n212c18794038",
+      "updatedAt": "2026-03-08T14:14:12.000Z",
+      "url": "https://scrapbox.io/KJR020/%E9%9B%BB%E6%B0%97%E9%80%9A%E4%BF%A1%E4%BA%8B%E6%A5%AD%E6%B3%95"
+    },
+    {
+      "id": "69ad8376b5dc2e3f15e8bca8",
+      "title": "個人情報保護法",
+      "imageUrl": null,
+      "description": "[基礎から学び直す個人情報保護法と最新の実務対応 https://speakerdeck.com/seko_shuhei/ji-chu-karaxue-hizhi-suge-ren-qing-bao-bao-hu-fa-tozui-xin-noshi-wu-dui-ying] #法律",
+      "updatedAt": "2026-03-08T14:13:49.000Z",
+      "url": "https://scrapbox.io/KJR020/%E5%80%8B%E4%BA%BA%E6%83%85%E5%A0%B1%E4%BF%9D%E8%AD%B7%E6%B3%95"
+    },
+    {
+      "id": "69ad840b0d602d43fdc10c48",
+      "title": "法律",
+      "imageUrl": null,
+      "description": "[https://www.nic.ad.jp/ja/materials/iw/2019/proceedings/s11/s11-maruhashi.pdf インターネットに密接に関連する法律(後編)]",
+      "updatedAt": "2026-03-08T14:13:41.000Z",
+      "url": "https://scrapbox.io/KJR020/%E6%B3%95%E5%BE%8B"
+    },
+    {
+      "id": "69ad1e38199296bc501d52ba",
+      "title": "コーンバターごはん",
+      "imageUrl": null,
+      "description": "https://www.hagoromofoods.co.jp/recipe/detail/303.html [https://www.hagoromofoods.co.jp/recipe/detail/303.html コーンバターごはん | レシピ | はごろもフーズ]",
+      "updatedAt": "2026-03-08T07:02:12.000Z",
+      "url": "https://scrapbox.io/KJR020/%E3%82%B3%E3%83%BC%E3%83%B3%E3%83%90%E3%82%BF%E3%83%BC%E3%81%94%E3%81%AF%E3%82%93"
+    },
+    {
+      "id": "699eaf595e66bc604102f77d",
+      "title": "Tailscale",
+      "imageUrl": null,
+      "description": "https://tailscale.com Zero Config VPN 従来のVPNと比較すると設定が簡易的なのが強みっぽい",
+      "updatedAt": "2026-03-08T05:31:26.000Z",
+      "url": "https://scrapbox.io/KJR020/Tailscale"
+    },
+    {
+      "id": "69acb968963053201f338aa3",
+      "title": "IRAC",
+      "imageUrl": null,
+      "description": "法的問題を分析・解決するための思考フレームワーク Issue Rule",
+      "updatedAt": "2026-03-08T05:28:14.000Z",
+      "url": "https://scrapbox.io/KJR020/IRAC"
+    },
+    {
+      "id": "69ad037ac9c02cdb31b1d144",
+      "title": "ソフトウェアの複合/構造化設計",
+      "imageUrl": null,
+      "description": "大局的複雑性 局所的複雑性 構造化設計",
+      "updatedAt": "2026-03-08T05:06:55.000Z",
+      "url": "https://scrapbox.io/KJR020/%E3%82%BD%E3%83%95%E3%83%88%E3%82%A6%E3%82%A7%E3%82%A2%E3%81%AE%E8%A4%87%E5%90%88%2F%E6%A7%8B%E9%80%A0%E5%8C%96%E8%A8%AD%E8%A8%88"
+    },
+    {
+      "id": "69acb951dfc3dca285d13faa",
+      "title": "Strong Inference",
+      "imageUrl": null,
+      "description": "",
+      "updatedAt": "2026-03-07T23:48:36.000Z",
+      "url": "https://scrapbox.io/KJR020/Strong%20Inference"
+    },
+    {
+      "id": "69ab7b7aa7acfc491fb1454d",
+      "title": "PageAgent",
+      "imageUrl": null,
+      "description": "",
+      "updatedAt": "2026-03-07T01:12:28.000Z",
+      "url": "https://scrapbox.io/KJR020/PageAgent"
+    },
+    {
+      "id": "69aade9e153f6767d6774c25",
+      "title": "SQLiteを使った個人RAG",
+      "imageUrl": null,
+      "description": "#アイデア",
+      "updatedAt": "2026-03-06T23:01:43.000Z",
+      "url": "https://scrapbox.io/KJR020/SQLite%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%9F%E5%80%8B%E4%BA%BARAG"
+    },
+    {
+      "id": "69ab5cba3c24999844c82e11",
+      "title": "作業のハブとしてMac Studioが欲しい",
+      "imageUrl": null,
+      "description": "#メモ",
+      "updatedAt": "2026-03-06T23:01:25.000Z",
+      "url": "https://scrapbox.io/KJR020/%E4%BD%9C%E6%A5%AD%E3%81%AE%E3%83%8F%E3%83%96%E3%81%A8%E3%81%97%E3%81%A6Mac%20Studio%E3%81%8C%E6%AC%B2%E3%81%97%E3%81%84"
+    },
+    {
+      "id": "69ab5ad8a7acfc491fb0f4c2",
+      "title": "tmuxのペーン分割を利用してAIと共同作業する",
+      "imageUrl": null,
+      "description": "エージェントに作業させるときにターミナルの内容をチェックしたいときや、 権限の問題で自分で実行する必要があるコマンドがある その場合にtmuxで画面を分割してAIと自分が共同作業できる形にすると捗るという発見",
+      "updatedAt": "2026-03-06T22:59:37.000Z",
+      "url": "https://scrapbox.io/KJR020/tmux%E3%81%AE%E3%83%9A%E3%83%BC%E3%83%B3%E5%88%86%E5%89%B2%E3%82%92%E5%88%A9%E7%94%A8%E3%81%97%E3%81%A6AI%E3%81%A8%E5%85%B1%E5%90%8C%E4%BD%9C%E6%A5%AD%E3%81%99%E3%82%8B"
+    },
+    {
+      "id": "69a836ad80d952d01409c4d8",
+      "title": "tmux",
+      "imageUrl": null,
+      "description": "tmuxは、Server/Client型のツール 同一マシン内のプロセス間通信をする tmux server",
+      "updatedAt": "2026-03-06T22:53:11.000Z",
+      "url": "https://scrapbox.io/KJR020/tmux"
+    },
+    {
+      "id": "69a927db3ee21cd98aec65a8",
+      "title": "tmuxで分割した画面を行ったり来たりするのがめんどくさい",
+      "imageUrl": null,
+      "description": "#tmux",
+      "updatedAt": "2026-03-06T22:27:17.000Z",
+      "url": "https://scrapbox.io/KJR020/tmux%E3%81%A7%E5%88%86%E5%89%B2%E3%81%97%E3%81%9F%E7%94%BB%E9%9D%A2%E3%82%92%E8%A1%8C%E3%81%A3%E3%81%9F%E3%82%8A%E6%9D%A5%E3%81%9F%E3%82%8A%E3%81%99%E3%82%8B%E3%81%AE%E3%81%8C%E3%82%81%E3%82%93%E3%81%A9%E3%81%8F%E3%81%95%E3%81%84"
+    },
+    {
+      "id": "69ab4797bc4fdf05091b1580",
+      "title": "OpenAIの社内データエージェント",
+      "imageUrl": "https://scrapbox.io/files/69ab47f3f1c53c173227e2b5.png",
+      "description": "[https://scrapbox.io/files/69ab47f3f1c53c173227e2b5.png] [https://x.com/yam_dr/status/2029464311329099960 (21) yamaken | CIO@primeNumber on X: \"OpenAIの社内データエージェント記事を読み解く ― 精度を支える「6層コンテキスト設計」とは\" / X] [https://openai.com/ja-JP/index/inside-our-in-house-data-agent/ OpenAI の自社データエージェントの内部 | OpenAI]",
+      "updatedAt": "2026-03-06T21:32:38.000Z",
+      "url": "https://scrapbox.io/KJR020/OpenAI%E3%81%AE%E7%A4%BE%E5%86%85%E3%83%87%E3%83%BC%E3%82%BF%E3%82%A8%E3%83%BC%E3%82%B8%E3%82%A7%E3%83%B3%E3%83%88"
+    },
+    {
+      "id": "69aae1126ca96086e4723441",
+      "title": "作って学ぶAIエージェント",
+      "imageUrl": null,
+      "description": "https://gihyo.jp/book/2026/978-4-297-15565-0",
+      "updatedAt": "2026-03-06T14:13:43.000Z",
+      "url": "https://scrapbox.io/KJR020/%E4%BD%9C%E3%81%A3%E3%81%A6%E5%AD%A6%E3%81%B6AI%E3%82%A8%E3%83%BC%E3%82%B8%E3%82%A7%E3%83%B3%E3%83%88"
+    },
+    {
+      "id": "69aae0ea1f83bacce3f7c5d2",
+      "title": "ポップコーンUI",
+      "imageUrl": null,
+      "description": "https://zenn.dev/akfm/articles/popcorn-ui-anti-pattern",
+      "updatedAt": "2026-03-06T14:13:11.000Z",
+      "url": "https://scrapbox.io/KJR020/%E3%83%9D%E3%83%83%E3%83%97%E3%82%B3%E3%83%BC%E3%83%B3UI"
+    },
+    {
+      "id": "69aadf8f90a7dbd76c1c077e",
+      "title": "claude code statusline",
+      "imageUrl": null,
+      "description": "https://github.com/loadbalance-sudachi-kun/claude-code-statusline",
+      "updatedAt": "2026-03-06T14:07:18.000Z",
+      "url": "https://scrapbox.io/KJR020/claude%20code%20statusline"
+    },
+    {
+      "id": "69aade4d6a668c493afab453",
+      "title": "PEP 827 – Type Manipulation",
+      "imageUrl": null,
+      "description": "https://peps.python.org/pep-0827/",
+      "updatedAt": "2026-03-06T14:02:00.000Z",
+      "url": "https://scrapbox.io/KJR020/PEP%20827%20%E2%80%93%20Type%20Manipulation"
+    },
+    {
+      "id": "69aa929ff4040b99b6dd7ac2",
+      "title": "ICE スコアリング",
+      "imageUrl": null,
+      "description": "",
+      "updatedAt": "2026-03-06T08:39:01.000Z",
+      "url": "https://scrapbox.io/KJR020/ICE%20%E3%82%B9%E3%82%B3%E3%82%A2%E3%83%AA%E3%83%B3%E3%82%B0"
+    },
+    {
+      "id": "69aa8c4be32b9f68e9b95b8b",
+      "title": "意見の作り方",
+      "imageUrl": null,
+      "description": "自分の価値観",
+      "updatedAt": "2026-03-06T08:12:04.000Z",
+      "url": "https://scrapbox.io/KJR020/%E6%84%8F%E8%A6%8B%E3%81%AE%E4%BD%9C%E3%82%8A%E6%96%B9"
+    },
+    {
+      "id": "69aa8c3a52ddd3d2504cda09",
+      "title": "マギシステムをChatGPTでやってみる",
+      "imageUrl": null,
+      "description": "",
+      "updatedAt": "2026-03-06T08:11:53.000Z",
+      "url": "https://scrapbox.io/KJR020/%E3%83%9E%E3%82%AE%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%82%92ChatGPT%E3%81%A7%E3%82%84%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B"
+    },
+    {
+      "id": "69aa8092d00ce34e3b96b4dd",
+      "title": "EARS",
+      "imageUrl": null,
+      "description": "Easy Approach to Requirements Syntax [https://qiita.com/NaokiIshimura/items/490faa689a44c161070f EARS記法 × LLM：Webアプリ要件をEARS記法で整理する #ears - Qiita] [https://www.bgarage.co.jp/news/946/ 見える化する要求仕様 〜 EARS（Easy Approach to Requirements Syntax）を活用したシステム要求の書き方 〜 - ビジネスガレージ株式会社]",
+      "updatedAt": "2026-03-06T07:22:13.000Z",
+      "url": "https://scrapbox.io/KJR020/EARS"
+    },
+    {
+      "id": "69a8bc7ac08882b609dbd10e",
+      "title": "Eat that frog",
+      "imageUrl": "https://scrapbox.io/files/69a8f462f1c53c1732243984.png",
+      "description": "[https://scrapbox.io/files/69a8f462f1c53c1732243984.png] 邦訳書のタイトルは、カエルを食べてしまえ! 朝一番にその日の困難なタスクをやるといいという考え",
+      "updatedAt": "2026-03-06T05:51:32.000Z",
+      "url": "https://scrapbox.io/KJR020/Eat%20that%20frog"
+    },
+    {
+      "id": "69aa50ad5342362eb9a89dd6",
+      "title": "PM的な書籍で読むと良さそうなやつ",
+      "imageUrl": null,
+      "description": "メモしていく。 #書籍",
+      "updatedAt": "2026-03-06T05:50:11.000Z",
+      "url": "https://scrapbox.io/KJR020/PM%E7%9A%84%E3%81%AA%E6%9B%B8%E7%B1%8D%E3%81%A7%E8%AA%AD%E3%82%80%E3%81%A8%E8%89%AF%E3%81%95%E3%81%9D%E3%81%86%E3%81%AA%E3%82%84%E3%81%A4"
+    },
+    {
+      "id": "69aa4f397a3e9b102def5a8b",
+      "title": "提案のレベルを上げる",
+      "imageUrl": null,
+      "description": "重要と思ったので書き留めておく 仕事の進め方のアドバイスで似たような事を言われた経験もあり、肝に銘じておきたい[KJR020.icon] [https://speakerdeck.com/konifar/maneziyaban-ti-an-noreberu-woshang-geru マネージャー版 \"提案のレベル\" を上げる - Speaker Deck]",
+      "updatedAt": "2026-03-06T05:46:12.000Z",
+      "url": "https://scrapbox.io/KJR020/%E6%8F%90%E6%A1%88%E3%81%AE%E3%83%AC%E3%83%99%E3%83%AB%E3%82%92%E4%B8%8A%E3%81%92%E3%82%8B"
+    },
+    {
+      "id": "69aa695294c9ff2853f47e89",
+      "title": "AIアクセシビリティ",
+      "imageUrl": null,
+      "description": "思いつたワードをメモ[KJR020.icon] すでに存在するかどうかは不明 AIアクセシビリティという言葉を思いついたきっかけ",
+      "updatedAt": "2026-03-06T05:44:35.000Z",
+      "url": "https://scrapbox.io/KJR020/AI%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B7%E3%83%93%E3%83%AA%E3%83%86%E3%82%A3"
+    },
+    {
+      "id": "699feb02326c3b9dc5c2aa5a",
+      "title": "Architecture Decision Record",
+      "imageUrl": null,
+      "description": "ADR ## [https://adr.github.io/ Architectural Decision Records (ADRs) | Architectural Decision Records]",
+      "updatedAt": "2026-03-06T02:07:31.000Z",
+      "url": "https://scrapbox.io/KJR020/Architecture%20Decision%20Record"
+    },
+    {
+      "id": "69aa30927411cb74fa4a9636",
+      "title": "kandji",
+      "imageUrl": null,
+      "description": "[https://support.kandji.io/kb/ja/kandji-overview Kandji 概要]",
+      "updatedAt": "2026-03-06T01:40:40.000Z",
+      "url": "https://scrapbox.io/KJR020/kandji"
+    },
+    {
+      "id": "69aa2bef4e821c48862b9e3e",
+      "title": "cc-sddのspecフォルダに連番を振りたい",
+      "imageUrl": null,
+      "description": "時系列が分からないので、どれがいつ実装した機能を探すのがめんどくさい #cc-sdd",
+      "updatedAt": "2026-03-06T01:21:21.000Z",
+      "url": "https://scrapbox.io/KJR020/cc-sdd%E3%81%AEspec%E3%83%95%E3%82%A9%E3%83%AB%E3%83%80%E3%81%AB%E9%80%A3%E7%95%AA%E3%82%92%E6%8C%AF%E3%82%8A%E3%81%9F%E3%81%84"
+    },
+    {
+      "id": "694b352d9ed2dfd0384fc409",
+      "title": "cc-sdd",
+      "imageUrl": null,
+      "description": "`npx cc-sdd@latest --lang ja` [cc-sddのspecフォルダに連番を振りたい] [https://github.com/gotalab/cc-sdd/tree/main gotalab/cc-sdd: Spec-driven development (SDD) for your team's workflow. Kiro style commands that enforce structured requirements→design→tasks workflow and ",
+      "updatedAt": "2026-03-06T01:20:45.000Z",
+      "url": "https://scrapbox.io/KJR020/cc-sdd"
+    },
+    {
+      "id": "69a99d029fb1c427384fd7f4",
+      "title": "AIエージェントの権限境界設計",
+      "imageUrl": null,
+      "description": "",
+      "updatedAt": "2026-03-05T15:10:59.000Z",
+      "url": "https://scrapbox.io/KJR020/AI%E3%82%A8%E3%83%BC%E3%82%B8%E3%82%A7%E3%83%B3%E3%83%88%E3%81%AE%E6%A8%A9%E9%99%90%E5%A2%83%E7%95%8C%E8%A8%AD%E8%A8%88"
+    },
+    {
+      "id": "69a98fb4396f9f7127cc2124",
+      "title": "tech.smarthr.jp/entry/2026/03/05/091302",
+      "imageUrl": null,
+      "description": "https://tech.smarthr.jp/entry/2026/03/05/091302",
+      "updatedAt": "2026-03-05T14:14:16.000Z",
+      "url": "https://scrapbox.io/KJR020/tech.smarthr.jp%2Fentry%2F2026%2F03%2F05%2F091302"
     },
     {
       "id": "69a983cecfe5fa2ea626306f",
@@ -33,774 +801,6 @@
       "description": "サムネイル生成のpythonライブラリ [https://github.com/jazzband/sorl-thumbnail jazzband/sorl-thumbnail: Thumbnails for Django] [https://sorl-thumbnail.readthedocs.io/en/latest/ sorl-thumbnail’s documentation — sorl-thumbnail 12.8.1.dev2+gf62c617 documentation]",
       "updatedAt": "2026-03-05T08:49:47.000Z",
       "url": "https://scrapbox.io/KJR020/sorl-shumbnail"
-    },
-    {
-      "id": "69a94323441fb9826a6fae0d",
-      "title": "ゴールデンテスト",
-      "imageUrl": null,
-      "description": "",
-      "updatedAt": "2026-03-05T08:47:36.000Z",
-      "url": "https://scrapbox.io/KJR020/%E3%82%B4%E3%83%BC%E3%83%AB%E3%83%87%E3%83%B3%E3%83%86%E3%82%B9%E3%83%88"
-    },
-    {
-      "id": "69a9427dc5e406c6e9723898",
-      "title": "Python3.13 GCメモリリーク問題",
-      "imageUrl": null,
-      "description": "",
-      "updatedAt": "2026-03-05T08:45:00.000Z",
-      "url": "https://scrapbox.io/KJR020/Python3.13%20GC%E3%83%A1%E3%83%A2%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%AF%E5%95%8F%E9%A1%8C"
-    },
-    {
-      "id": "69a92f86f80a817b11372962",
-      "title": "Stripe Linkで複数カードを登録する",
-      "imageUrl": null,
-      "description": "[https://revtrona.com/blogs/2183 ClaudeやOpenAIに課金するときは、&#8221;Link by Stripe&#8221;を使うと支払いが楽に完了できた | Revtrona]",
-      "updatedAt": "2026-03-05T07:24:00.000Z",
-      "url": "https://scrapbox.io/KJR020/Stripe%20Link%E3%81%A7%E8%A4%87%E6%95%B0%E3%82%AB%E3%83%BC%E3%83%89%E3%82%92%E7%99%BB%E9%8C%B2%E3%81%99%E3%82%8B"
-    },
-    {
-      "id": "69a927db3ee21cd98aec65a8",
-      "title": "tmuxで分割した画面を行ったり来たりするのがめんどくさい",
-      "imageUrl": null,
-      "description": "",
-      "updatedAt": "2026-03-05T06:51:09.000Z",
-      "url": "https://scrapbox.io/KJR020/tmux%E3%81%A7%E5%88%86%E5%89%B2%E3%81%97%E3%81%9F%E7%94%BB%E9%9D%A2%E3%82%92%E8%A1%8C%E3%81%A3%E3%81%9F%E3%82%8A%E6%9D%A5%E3%81%9F%E3%82%8A%E3%81%99%E3%82%8B%E3%81%AE%E3%81%8C%E3%82%81%E3%82%93%E3%81%A9%E3%81%8F%E3%81%95%E3%81%84"
-    },
-    {
-      "id": "69a8faccea04e0ddcc3d52d1",
-      "title": "aiohttp",
-      "imageUrl": null,
-      "description": "",
-      "updatedAt": "2026-03-05T03:38:56.000Z",
-      "url": "https://scrapbox.io/KJR020/aiohttp"
-    },
-    {
-      "id": "69a8bc7ac08882b609dbd10e",
-      "title": "Eat the frog",
-      "imageUrl": "https://scrapbox.io/files/69a8f462f1c53c1732243984.png",
-      "description": "[https://scrapbox.io/files/69a8f462f1c53c1732243984.png] 朝一番にその日の困難なタスクをやるといい Gemini朝一番に何をするといいかを相談したらEat the Frogが出てきた。",
-      "updatedAt": "2026-03-05T03:11:47.000Z",
-      "url": "https://scrapbox.io/KJR020/Eat%20the%20frog"
-    },
-    {
-      "id": "69a8eb7523b7973196fafbac",
-      "title": "I/OバウンドとCPUバウンドの処理を意識する",
-      "imageUrl": "https://scrapbox.io/files/69a8eb8ef1c53c173224238c.png",
-      "description": "料理や仕事の進め方でも同じ [https://scrapbox.io/files/69a8eb8ef1c53c173224238c.png]",
-      "updatedAt": "2026-03-05T02:33:53.000Z",
-      "url": "https://scrapbox.io/KJR020/I%2FO%E3%83%90%E3%82%A6%E3%83%B3%E3%83%89%E3%81%A8CPU%E3%83%90%E3%82%A6%E3%83%B3%E3%83%89%E3%81%AE%E5%87%A6%E7%90%86%E3%82%92%E6%84%8F%E8%AD%98%E3%81%99%E3%82%8B"
-    },
-    {
-      "id": "69a8b3106764523c2ec2d57a",
-      "title": "Nix",
-      "imageUrl": null,
-      "description": "再現性・宣言的・信頼性がNixの重要なコンセプトらしい [https://zenn.dev/kawarimidoll/articles/0a4ec8bab8a8ba Homebrew管理下のCLIをNixに移してみる] [https://zenn.dev/asa1984/books/nix-introduction Nix入門]",
-      "updatedAt": "2026-03-04T22:36:51.000Z",
-      "url": "https://scrapbox.io/KJR020/Nix"
-    },
-    {
-      "id": "69a836ad80d952d01409c4d8",
-      "title": "tmux",
-      "imageUrl": null,
-      "description": "tmuxは、Server/Client型のツール 同一マシン内のプロセス間通信をする tmux server",
-      "updatedAt": "2026-03-04T14:40:43.000Z",
-      "url": "https://scrapbox.io/KJR020/tmux"
-    },
-    {
-      "id": "69a3f521a9ffc82809b694d7",
-      "title": "サーモンの刺身の切り方",
-      "imageUrl": "https://i.ytimg.com/vi/iS0Tg7OH6B0/mqdefault.jpg",
-      "description": "[https://youtu.be/iS0Tg7OH6B0?si=l52FO4RKNPO9YiNq] [** ペインポイント] 薄切りが苦手。きれいに刺身を切りたいのに形が崩れる[KJR020.icon]",
-      "updatedAt": "2026-03-04T14:26:50.000Z",
-      "url": "https://scrapbox.io/KJR020/%E3%82%B5%E3%83%BC%E3%83%A2%E3%83%B3%E3%81%AE%E5%88%BA%E8%BA%AB%E3%81%AE%E5%88%87%E3%82%8A%E6%96%B9"
-    },
-    {
-      "id": "69a2f22fe56d52ed98ef988f",
-      "title": "判断は常に前提（コンテキスト）に依存する",
-      "imageUrl": null,
-      "description": "型理論において、なぜ深さ優先探索なのか、幅優先探索じゃないのかという問いを考えていた 以下の例で考える `(1 + false) ? true : false`",
-      "updatedAt": "2026-03-04T14:24:48.000Z",
-      "url": "https://scrapbox.io/KJR020/%E5%88%A4%E6%96%AD%E3%81%AF%E5%B8%B8%E3%81%AB%E5%89%8D%E6%8F%90%EF%BC%88%E3%82%B3%E3%83%B3%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88%EF%BC%89%E3%81%AB%E4%BE%9D%E5%AD%98%E3%81%99%E3%82%8B"
-    },
-    {
-      "id": "691c75c01477655bd8a76385",
-      "title": "型システムのしくみ ― TypeScriptで実装しながら学ぶ型とプログラミング言語",
-      "imageUrl": "https://scrapbox.io/files/6983545c24fc170e7e629170.png",
-      "description": "[https://scrapbox.io/files/6983545c24fc170e7e629170.png] https://www.lambdanote.com/collections/type-systems [* 第2章 真偽値の型と数値の型]",
-      "updatedAt": "2026-03-04T14:23:34.000Z",
-      "url": "https://scrapbox.io/KJR020/%E5%9E%8B%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%81%AE%E3%81%97%E3%81%8F%E3%81%BF%20%E2%80%95%20TypeScript%E3%81%A7%E5%AE%9F%E8%A3%85%E3%81%97%E3%81%AA%E3%81%8C%E3%82%89%E5%AD%A6%E3%81%B6%E5%9E%8B%E3%81%A8%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E8%A8%80%E8%AA%9E"
-    },
-    {
-      "id": "69a83fa6d7098184e9859032",
-      "title": "Less is More",
-      "imageUrl": null,
-      "description": "",
-      "updatedAt": "2026-03-04T14:20:24.000Z",
-      "url": "https://scrapbox.io/KJR020/Less%20is%20More"
-    },
-    {
-      "id": "69a83affc8b7be7ff224387f",
-      "title": "tmux capture-paneで別ペインの情報をAIにコンテキストとしてわたす",
-      "imageUrl": null,
-      "description": "tmux capture-paneを実行すると別ペインの情報を取得できる これをAIに実行可能にすることでコンテキストの受け渡しが効率的になる 左ペイン：AI（Claude Codeなど）",
-      "updatedAt": "2026-03-04T14:20:00.000Z",
-      "url": "https://scrapbox.io/KJR020/tmux%20capture-pane%E3%81%A7%E5%88%A5%E3%83%9A%E3%82%A4%E3%83%B3%E3%81%AE%E6%83%85%E5%A0%B1%E3%82%92AI%E3%81%AB%E3%82%B3%E3%83%B3%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88%E3%81%A8%E3%81%97%E3%81%A6%E3%82%8F%E3%81%9F%E3%81%99"
-    },
-    {
-      "id": "69a83701c74f8db07b316df9",
-      "title": "リモートサーバー上でtmuxのセッションを開始して作業をする",
-      "imageUrl": null,
-      "description": "tmuxのTips `tmux new -s work` のような形でリモートサーバー上でtmuxのセッションを立ち上げて作業すると、SSHの接続が切れても続きから作業を再開できる",
-      "updatedAt": "2026-03-04T13:44:37.000Z",
-      "url": "https://scrapbox.io/KJR020/%E3%83%AA%E3%83%A2%E3%83%BC%E3%83%88%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E4%B8%8A%E3%81%A7tmux%E3%81%AE%E3%82%BB%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E9%96%8B%E5%A7%8B%E3%81%97%E3%81%A6%E4%BD%9C%E6%A5%AD%E3%82%92%E3%81%99%E3%82%8B"
-    },
-    {
-      "id": "69a83634a09e5404d07ec0b7",
-      "title": "caffeinate",
-      "imageUrl": null,
-      "description": "Macのスリープを止めるコマンド [https://gist.github.com/blockworks/cbe9003c88c070e8a4ca23679dd954e0 Macのスリープをとめるcaffeinateコマンド]",
-      "updatedAt": "2026-03-04T13:40:38.000Z",
-      "url": "https://scrapbox.io/KJR020/caffeinate"
-    },
-    {
-      "id": "69a834e5a09e5404d07eb7d3",
-      "title": "Claude Codeにtmuxのペーンを見させる",
-      "imageUrl": "https://scrapbox.io/files/69a834f0f1c53c1732234e59.png",
-      "description": "[https://scrapbox.io/files/69a834f0f1c53c1732234e59.png] https://x.com/suin/status/2029018006572212477",
-      "updatedAt": "2026-03-04T13:34:59.000Z",
-      "url": "https://scrapbox.io/KJR020/Claude%20Code%E3%81%ABtmux%E3%81%AE%E3%83%9A%E3%83%BC%E3%83%B3%E3%82%92%E8%A6%8B%E3%81%95%E3%81%9B%E3%82%8B"
-    },
-    {
-      "id": "69a833af058781c193dab52e",
-      "title": "ブラウザを作る",
-      "imageUrl": null,
-      "description": "https://x.com/mizchi/status/2029157436507209776",
-      "updatedAt": "2026-03-04T13:29:30.000Z",
-      "url": "https://scrapbox.io/KJR020/%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%82%92%E4%BD%9C%E3%82%8B"
-    },
-    {
-      "id": "69a83221c3f506635d51b4ad",
-      "title": "要件定義",
-      "imageUrl": null,
-      "description": "[https://speakerdeck.com/orgachem/guidelines-for-requirements-definition-specification-writing-design-and-verification?slide=69 要求定義・仕様記述・設計・検証の手引き - 理論から学ぶ明確で統一された成果物定義 - Speaker Deck]",
-      "updatedAt": "2026-03-04T13:22:45.000Z",
-      "url": "https://scrapbox.io/KJR020/%E8%A6%81%E4%BB%B6%E5%AE%9A%E7%BE%A9"
-    },
-    {
-      "id": "69a8309d4bddc6b8050c7f93",
-      "title": "エンジニアとして押さえておきたい法律",
-      "imageUrl": null,
-      "description": "しのゆーさんのツイートを見てメモ https://x.com/shinoyu__/status/2028779420283228386 ちょうど最近法律というか弁護士の思考に対して興味を持ってきた",
-      "updatedAt": "2026-03-04T13:21:34.000Z",
-      "url": "https://scrapbox.io/KJR020/%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%E3%81%A8%E3%81%97%E3%81%A6%E6%8A%BC%E3%81%95%E3%81%88%E3%81%A6%E3%81%8A%E3%81%8D%E3%81%9F%E3%81%84%E6%B3%95%E5%BE%8B"
-    },
-    {
-      "id": "69a8302c363fbcf9e6a39400",
-      "title": "LINE Messengerの次世代ストレージ選定",
-      "imageUrl": null,
-      "description": "[https://speakerdeck.com/lycorptech_jp/20260226a LINE Messengerの次世代ストレージ選定 - Speaker Deck]",
-      "updatedAt": "2026-03-04T13:14:36.000Z",
-      "url": "https://scrapbox.io/KJR020/LINE%20Messenger%E3%81%AE%E6%AC%A1%E4%B8%96%E4%BB%A3%E3%82%B9%E3%83%88%E3%83%AC%E3%83%BC%E3%82%B8%E9%81%B8%E5%AE%9A"
-    },
-    {
-      "id": "69a82f772ee0f1658da11c67",
-      "title": "93% Faster Next.js in (your) Kubernetes",
-      "imageUrl": null,
-      "description": "[https://blog.platformatic.dev/93-faster-nextjs-in-your-kubernetes Accelerate Next.js in Kubernetes] #Next.js",
-      "updatedAt": "2026-03-04T13:11:58.000Z",
-      "url": "https://scrapbox.io/KJR020/93%25%20Faster%20Next.js%20in%20(your)%20Kubernetes"
-    },
-    {
-      "id": "69a82ee42ee0f1658da119de",
-      "title": "How SQLite Is Tested",
-      "imageUrl": null,
-      "description": "SQLiteのテストがすごいという話 [https://sqlite.org/testing.html How SQLite Is Tested]",
-      "updatedAt": "2026-03-04T13:09:21.000Z",
-      "url": "https://scrapbox.io/KJR020/How%20SQLite%20Is%20Tested"
-    },
-    {
-      "id": "69a82d23c74f8db07b311203",
-      "title": "Osaka-等幅",
-      "imageUrl": null,
-      "description": "[ghostty]のおすすめフォントらしい",
-      "updatedAt": "2026-03-04T13:01:46.000Z",
-      "url": "https://scrapbox.io/KJR020/Osaka-%E7%AD%89%E5%B9%85"
-    },
-    {
-      "id": "69a82865f527c75bfdb9c7d3",
-      "title": "agent-browser",
-      "imageUrl": null,
-      "description": "[https://github.com/vercel-labs/agent-browser vercel-labs/agent-browser: Browser automation CLI for AI agents] [https://zenn.dev/suwash/articles/agent-browser_20260221 技術調査 - agent-browser]",
-      "updatedAt": "2026-03-04T12:41:14.000Z",
-      "url": "https://scrapbox.io/KJR020/agent-browser"
-    },
-    {
-      "id": "69a804fca09e5404d07dbe47",
-      "title": "libvirt",
-      "imageUrl": null,
-      "description": "",
-      "updatedAt": "2026-03-04T10:10:05.000Z",
-      "url": "https://scrapbox.io/KJR020/libvirt"
-    },
-    {
-      "id": "69a804f5768161d0faab631c",
-      "title": "KVM",
-      "imageUrl": null,
-      "description": "",
-      "updatedAt": "2026-03-04T10:10:03.000Z",
-      "url": "https://scrapbox.io/KJR020/KVM"
-    },
-    {
-      "id": "69a7a97e628dcabf59fbfe45",
-      "title": "Atomic Habits",
-      "imageUrl": "https://scrapbox.io/files/69a7a99ef1c53c17322252db.png",
-      "description": "[https://scrapbox.io/files/69a7a99ef1c53c17322252db.png]",
-      "updatedAt": "2026-03-04T03:40:17.000Z",
-      "url": "https://scrapbox.io/KJR020/Atomic%20Habits"
-    },
-    {
-      "id": "69a7a9219e7a1ebf23c560d8",
-      "title": "真の行動変容はアイデンティティの変容",
-      "imageUrl": null,
-      "description": "#Atomic_Habits",
-      "updatedAt": "2026-03-04T03:39:37.000Z",
-      "url": "https://scrapbox.io/KJR020/%E7%9C%9F%E3%81%AE%E8%A1%8C%E5%8B%95%E5%A4%89%E5%AE%B9%E3%81%AF%E3%82%A2%E3%82%A4%E3%83%87%E3%83%B3%E3%83%86%E3%82%A3%E3%83%86%E3%82%A3%E3%81%AE%E5%A4%89%E5%AE%B9"
-    },
-    {
-      "id": "69a7975e93680c076870847c",
-      "title": "説明の段取りについて考える",
-      "imageUrl": null,
-      "description": "チームメンバーのオンボーディングのサポートをする時に、何をどういう順番で説明したらいいか迷った。 コードリーディングなど、説明の型が欲しいなと思った いつか調べたいと思いメモ",
-      "updatedAt": "2026-03-04T02:23:44.000Z",
-      "url": "https://scrapbox.io/KJR020/%E8%AA%AC%E6%98%8E%E3%81%AE%E6%AE%B5%E5%8F%96%E3%82%8A%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E8%80%83%E3%81%88%E3%82%8B"
-    },
-    {
-      "id": "69a7704da5ce255700ac1f81",
-      "title": "忘却と緩和の活用",
-      "imageUrl": null,
-      "description": "外山滋比古やバーバラ・オークリーが説くように、24時間集中し続けることは不可能 意識的な学習の後に、意図的な緩和モードや睡眠の時間を設ける 脳内の情報が整理され、鈴木宏昭のいう「ひらめきの創発」が起きるための土壌を整える",
-      "updatedAt": "2026-03-03T23:36:30.000Z",
-      "url": "https://scrapbox.io/KJR020/%E5%BF%98%E5%8D%B4%E3%81%A8%E7%B7%A9%E5%92%8C%E3%81%AE%E6%B4%BB%E7%94%A8"
-    },
-    {
-      "id": "69a6ee545d6fa84de5e57b8a",
-      "title": "Claude Memory import",
-      "imageUrl": null,
-      "description": "[https://www.fastcompany.com/91501002/anthropic-claude-app-import-chats-from-open-ai-chatgpt-gemini-copilot-memory-tool Switching to Anthropic? Claude can now take your memories from ChatGPT, Gemini, ",
-      "updatedAt": "2026-03-03T14:21:15.000Z",
-      "url": "https://scrapbox.io/KJR020/Claude%20Memory%20import"
-    },
-    {
-      "id": "69a615fa0cdf3a75ba58523b",
-      "title": "Cynefin",
-      "imageUrl": null,
-      "description": "クネビンフレームワークは意思決定フレームワーク 状況に適した意思決定や問題解決のアプローチを導き出す Clear",
-      "updatedAt": "2026-03-02T23:00:50.000Z",
-      "url": "https://scrapbox.io/KJR020/Cynefin"
-    },
-    {
-      "id": "69a3625d0e552b4448467720",
-      "title": "変数束縛",
-      "imageUrl": null,
-      "description": "variable binding `const x = 1;`、はx という変数を1 に束縛している 型理論では「束縛」という概念は重要らしい",
-      "updatedAt": "2026-02-28T21:49:37.000Z",
-      "url": "https://scrapbox.io/KJR020/%E5%A4%89%E6%95%B0%E6%9D%9F%E7%B8%9B"
-    },
-    {
-      "id": "69a36262261df281dc3ea079",
-      "title": "逐次実行",
-      "imageUrl": null,
-      "description": "sequence jsでは`;`で区切る",
-      "updatedAt": "2026-02-28T21:47:55.000Z",
-      "url": "https://scrapbox.io/KJR020/%E9%80%90%E6%AC%A1%E5%AE%9F%E8%A1%8C"
-    },
-    {
-      "id": "69a36257e253b6b79b52606e",
-      "title": "関数適用",
-      "imageUrl": null,
-      "description": "",
-      "updatedAt": "2026-02-28T21:47:06.000Z",
-      "url": "https://scrapbox.io/KJR020/%E9%96%A2%E6%95%B0%E9%81%A9%E7%94%A8"
-    },
-    {
-      "id": "69a3602d81be4109b121ef75",
-      "title": "仮引数と実引数",
-      "imageUrl": null,
-      "description": "#型理論",
-      "updatedAt": "2026-02-28T21:38:02.000Z",
-      "url": "https://scrapbox.io/KJR020/%E4%BB%AE%E5%BC%95%E6%95%B0%E3%81%A8%E5%AE%9F%E5%BC%95%E6%95%B0"
-    },
-    {
-      "id": "69a2b5f0e636c395aad84c2b",
-      "title": "海鮮の甘酢炒め",
-      "imageUrl": null,
-      "description": "https://tuberecipe.com/recipe/16250/detail",
-      "updatedAt": "2026-02-28T09:32:20.000Z",
-      "url": "https://scrapbox.io/KJR020/%E6%B5%B7%E9%AE%AE%E3%81%AE%E7%94%98%E9%85%A2%E7%82%92%E3%82%81"
-    },
-    {
-      "id": "69a21d86c6179635bac289cb",
-      "title": "Mac Studio",
-      "imageUrl": null,
-      "description": "[https://www.apple.com/jp/shop/buy-mac/mac-studio Mac Studioを購入 - Apple（日本）]",
-      "updatedAt": "2026-02-27T22:41:15.000Z",
-      "url": "https://scrapbox.io/KJR020/Mac%20Studio"
-    },
-    {
-      "id": "69a219a0168c4879d03e07b3",
-      "title": "MoE",
-      "imageUrl": null,
-      "description": "Mixture of Experts",
-      "updatedAt": "2026-02-27T22:24:50.000Z",
-      "url": "https://scrapbox.io/KJR020/MoE"
-    },
-    {
-      "id": "69a21980d08a98919b1875b5",
-      "title": "lfm2",
-      "imageUrl": null,
-      "description": "[MoE] model [https://ollama.com/library/lfm2 lfm2]",
-      "updatedAt": "2026-02-27T22:24:29.000Z",
-      "url": "https://scrapbox.io/KJR020/lfm2"
-    },
-    {
-      "id": "69a2131c2bd98051922bdf39",
-      "title": "qwen",
-      "imageUrl": null,
-      "description": "alibabaの LLM 日本語も強い",
-      "updatedAt": "2026-02-27T21:57:08.000Z",
-      "url": "https://scrapbox.io/KJR020/qwen"
-    },
-    {
-      "id": "69a1a3c8ea9c5a4a8408a2ef",
-      "title": "MartinFowler.com",
-      "imageUrl": null,
-      "description": "実はMartin個人ブログではないらしい[KJR020.icon] 当初は個人ブログとして始めたが、2026/02/27時点ではThoughtworksの技術メディア的な位置付け > The topics of the articles I publish cover a broad range of software development, from writers who share my broad philosophy favoring agile approaches that appreciate the importance of technical ski",
-      "updatedAt": "2026-02-27T14:06:33.000Z",
-      "url": "https://scrapbox.io/KJR020/MartinFowler.com"
-    },
-    {
-      "id": "69a18d032afa99532db3da65",
-      "title": "文書の構成に対比を取り入れる",
-      "imageUrl": null,
-      "description": "",
-      "updatedAt": "2026-02-27T12:24:45.000Z",
-      "url": "https://scrapbox.io/KJR020/%E6%96%87%E6%9B%B8%E3%81%AE%E6%A7%8B%E6%88%90%E3%81%AB%E5%AF%BE%E6%AF%94%E3%82%92%E5%8F%96%E3%82%8A%E5%85%A5%E3%82%8C%E3%82%8B"
-    },
-    {
-      "id": "69a18b998c6c5906e2b97dce",
-      "title": "弁護士の反証論法みたいな方法論をスキルに取り入れる",
-      "imageUrl": null,
-      "description": "#アイデア",
-      "updatedAt": "2026-02-27T12:19:07.000Z",
-      "url": "https://scrapbox.io/KJR020/%E5%BC%81%E8%AD%B7%E5%A3%AB%E3%81%AE%E5%8F%8D%E8%A8%BC%E8%AB%96%E6%B3%95%E3%81%BF%E3%81%9F%E3%81%84%E3%81%AA%E6%96%B9%E6%B3%95%E8%AB%96%E3%82%92%E3%82%B9%E3%82%AD%E3%83%AB%E3%81%AB%E5%8F%96%E3%82%8A%E5%85%A5%E3%82%8C%E3%82%8B"
-    },
-    {
-      "id": "69a037083590c0b0f7692d12",
-      "title": "Harness engineering",
-      "imageUrl": null,
-      "description": "https://openai.com/ja-JP/index/harness-engineering/ OpenAIが提唱したAgent-first 開発の設計思想 記事では、エージェントチームとプロダクトを開発をする中で得た学びとして紹介されている",
-      "updatedAt": "2026-02-27T12:08:19.000Z",
-      "url": "https://scrapbox.io/KJR020/Harness%20engineering"
-    },
-    {
-      "id": "69a188c749650bbc76677d41",
-      "title": "エージェントが生成するコードの問題点は、コードのどの部分が指示によって生成されたもの（指定されたもの）で、どの部分が「感覚」で生成されたもの（指定されていないもの）なのかが不明確であることです。",
-      "imageUrl": null,
-      "description": "エージェントが生成するコードの問題点は、コードのどの部分が指示によって生成されたもの（指定されたもの）で、どの部分が「感覚」で生成されたもの（指定されていないもの）なのかが不明確であることです。 [https://x.com/btaylor/status/2026784092398776760 (1) Bret Taylor on X: \"I’ve been trying to simulate using Codex for the next year and what will change about my perspectives on software engineering a",
-      "updatedAt": "2026-02-27T12:07:30.000Z",
-      "url": "https://scrapbox.io/KJR020/%E3%82%A8%E3%83%BC%E3%82%B8%E3%82%A7%E3%83%B3%E3%83%88%E3%81%8C%E7%94%9F%E6%88%90%E3%81%99%E3%82%8B%E3%82%B3%E3%83%BC%E3%83%89%E3%81%AE%E5%95%8F%E9%A1%8C%E7%82%B9%E3%81%AF%E3%80%81%E3%82%B3%E3%83%BC%E3%83%89%E3%81%AE%E3%81%A9%E3%81%AE%E9%83%A8%E5%88%86%E3%81%8C%E6%8C%87%E7%A4%BA%E3%81%AB%E3%82%88%E3%81%A3%E3%81%A6%E7%94%9F%E6%88%90%E3%81%95%E3%82%8C%E3%81%9F%E3%82%82%E3%81%AE%EF%BC%88%E6%8C%87%E5%AE%9A%E3%81%95%E3%82%8C%E3%81%9F%E3%82%82%E3%81%AE%EF%BC%89%E3%81%A7%E3%80%81%E3%81%A9%E3%81%AE%E9%83%A8%E5%88%86%E3%81%8C%E3%80%8C%E6%84%9F%E8%A6%9A%E3%80%8D%E3%81%A7%E7%94%9F%E6%88%90%E3%81%95%E3%82%8C%E3%81%9F%E3%82%82%E3%81%AE%EF%BC%88%E6%8C%87%E5%AE%9A%E3%81%95%E3%82%8C%E3%81%A6%E3%81%84%E3%81%AA%E3%81%84%E3%82%82%E3%81%AE%EF%BC%89%E3%81%AA%E3%81%AE%E3%81%8B%E3%81%8C%E4%B8%8D%E6%98%8E%E7%A2%BA%E3%81%A7%E3%81%82%E3%82%8B%E3%81%93%E3%81%A8%E3%81%A7%E3%81%99%E3%80%82"
-    },
-    {
-      "id": "69a169e8d42ac9da6e424593",
-      "title": "部分適用",
-      "imageUrl": null,
-      "description": "[https://qiita.com/rokumura7/items/033a930354b2733e097a 【TypeScript】カリー化・部分適用は便利だよ！ #関数型プログラミング - Qiita]",
-      "updatedAt": "2026-02-27T09:54:50.000Z",
-      "url": "https://scrapbox.io/KJR020/%E9%83%A8%E5%88%86%E9%81%A9%E7%94%A8"
-    },
-    {
-      "id": "68534066dfeed4f3f8d31c5d",
-      "title": "カリー化",
-      "imageUrl": null,
-      "description": "カリー化(Currying)は、複数引数を受け取る関数を、１引数ずつ受け取る高階関数に変換するテクニック [部分適用]しやすい *1参照",
-      "updatedAt": "2026-02-27T09:54:47.000Z",
-      "url": "https://scrapbox.io/KJR020/%E3%82%AB%E3%83%AA%E3%83%BC%E5%8C%96"
-    },
-    {
-      "id": "69a16945dc75dc79862f1d3a",
-      "title": "util関数を部分適用でドメインロジックに落とし込む",
-      "imageUrl": null,
-      "description": "Just Idea 考えをまとめたい カリー化・部分適用はスキルにも応用できる",
-      "updatedAt": "2026-02-27T09:54:07.000Z",
-      "url": "https://scrapbox.io/KJR020/util%E9%96%A2%E6%95%B0%E3%82%92%E9%83%A8%E5%88%86%E9%81%A9%E7%94%A8%E3%81%A7%E3%83%89%E3%83%A1%E3%82%A4%E3%83%B3%E3%83%AD%E3%82%B8%E3%83%83%E3%82%AF%E3%81%AB%E8%90%BD%E3%81%A8%E3%81%97%E8%BE%BC%E3%82%80"
-    },
-    {
-      "id": "69a15a770fdb1d0c0b7d996e",
-      "title": "画像生成プロンプトは最初のプロンプトにこだわりすぎると局所解に陥ることがある",
-      "imageUrl": null,
-      "description": "",
-      "updatedAt": "2026-02-27T08:49:25.000Z",
-      "url": "https://scrapbox.io/KJR020/%E7%94%BB%E5%83%8F%E7%94%9F%E6%88%90%E3%83%97%E3%83%AD%E3%83%B3%E3%83%97%E3%83%88%E3%81%AF%E6%9C%80%E5%88%9D%E3%81%AE%E3%83%97%E3%83%AD%E3%83%B3%E3%83%97%E3%83%88%E3%81%AB%E3%81%93%E3%81%A0%E3%82%8F%E3%82%8A%E3%81%99%E3%81%8E%E3%82%8B%E3%81%A8%E5%B1%80%E6%89%80%E8%A7%A3%E3%81%AB%E9%99%A5%E3%82%8B%E3%81%93%E3%81%A8%E3%81%8C%E3%81%82%E3%82%8B"
-    },
-    {
-      "id": "69a14d031c37db1bd3955cee",
-      "title": "レビュー依頼の内容を明確にしよう",
-      "imageUrl": null,
-      "description": "[https://guide.beproud.jp/communication/#id62 BeProudコミュニケーションガイド - BeProudガイド documentation] #レビュー",
-      "updatedAt": "2026-02-27T07:52:00.000Z",
-      "url": "https://scrapbox.io/KJR020/%E3%83%AC%E3%83%93%E3%83%A5%E3%83%BC%E4%BE%9D%E9%A0%BC%E3%81%AE%E5%86%85%E5%AE%B9%E3%82%92%E6%98%8E%E7%A2%BA%E3%81%AB%E3%81%97%E3%82%88%E3%81%86"
-    },
-    {
-      "id": "69a122143fb98cca6636b897",
-      "title": "政策議事録をLLMで分析する設計：RAG（ベクトル検索）で精度が出なかった理由と多段階圧縮",
-      "imageUrl": null,
-      "description": "[https://zenn.dev/polipoli/articles/4498643487aa68 政策議事録をLLMで分析する設計：RAG（ベクトル検索）で精度が出なかった理由と多段階圧縮] #RAG",
-      "updatedAt": "2026-02-27T04:48:44.000Z",
-      "url": "https://scrapbox.io/KJR020/%E6%94%BF%E7%AD%96%E8%AD%B0%E4%BA%8B%E9%8C%B2%E3%82%92LLM%E3%81%A7%E5%88%86%E6%9E%90%E3%81%99%E3%82%8B%E8%A8%AD%E8%A8%88%EF%BC%9ARAG%EF%BC%88%E3%83%99%E3%82%AF%E3%83%88%E3%83%AB%E6%A4%9C%E7%B4%A2%EF%BC%89%E3%81%A7%E7%B2%BE%E5%BA%A6%E3%81%8C%E5%87%BA%E3%81%AA%E3%81%8B%E3%81%A3%E3%81%9F%E7%90%86%E7%94%B1%E3%81%A8%E5%A4%9A%E6%AE%B5%E9%9A%8E%E5%9C%A7%E7%B8%AE"
-    },
-    {
-      "id": "69a10b39e801d61b14e7e5af",
-      "title": "Local LLM運用メモ",
-      "imageUrl": null,
-      "description": "モデルのサイズがでかい Windows機でWSL上で開発していた。 ただ実際開発はワークステーションじゃなくて良いということに気づいた",
-      "updatedAt": "2026-02-27T03:14:17.000Z",
-      "url": "https://scrapbox.io/KJR020/Local%20LLM%E9%81%8B%E7%94%A8%E3%83%A1%E3%83%A2"
-    },
-    {
-      "id": "6997c491b7b93c6efc30099a",
-      "title": "プレゼンテーション層とアプリケーション層のエラーマッピングの仕方",
-      "imageUrl": null,
-      "description": "アプリケーションエラーとHTTP例外のステータスコードのマッピングが気になっている。 なぜかというと、サービス層でアプリケーションエラーを定義したときにステータスコードまで気にしないといけないとなると、プレゼンテーションの事情がサービス層に漏れ出ているように感じる。 ユーザー向けのメッセージをどこで考えるべきかという問題な気もしている。",
-      "updatedAt": "2026-02-27T03:00:10.000Z",
-      "url": "https://scrapbox.io/KJR020/%E3%83%97%E3%83%AC%E3%82%BC%E3%83%B3%E3%83%86%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E5%B1%A4%E3%81%A8%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E5%B1%A4%E3%81%AE%E3%82%A8%E3%83%A9%E3%83%BC%E3%83%9E%E3%83%83%E3%83%94%E3%83%B3%E3%82%B0%E3%81%AE%E4%BB%95%E6%96%B9"
-    },
-    {
-      "id": "69a107a007261ebcb93e7061",
-      "title": "見切りをつけない",
-      "imageUrl": null,
-      "description": "見切りをつけるとそこで学びが止まってしまうということを感じている 見切りをつけて切り捨てることは簡単だが、そうすることによってそれ以上学びがなくなる 例えば集合研修のような場面では、",
-      "updatedAt": "2026-02-27T02:59:07.000Z",
-      "url": "https://scrapbox.io/KJR020/%E8%A6%8B%E5%88%87%E3%82%8A%E3%82%92%E3%81%A4%E3%81%91%E3%81%AA%E3%81%84"
-    },
-    {
-      "id": "69a0e94d8cfadc9eb415bea9",
-      "title": "SwitchBot AIハブ",
-      "imageUrl": null,
-      "description": "[https://www.watch.impress.co.jp/docs/news/2089038.html SwitchBot AIハブ、AIエージェント「OpenClaw」に対応　単体の実行環境に - Impress Watch]",
-      "updatedAt": "2026-02-27T00:46:10.000Z",
-      "url": "https://scrapbox.io/KJR020/SwitchBot%20AI%E3%83%8F%E3%83%96"
-    },
-    {
-      "id": "69a052bd6353aa6aad481a05",
-      "title": "PromQL",
-      "imageUrl": null,
-      "description": "",
-      "updatedAt": "2026-02-26T14:03:42.000Z",
-      "url": "https://scrapbox.io/KJR020/PromQL"
-    },
-    {
-      "id": "69a052b69a4d130a7d68260f",
-      "title": "LogQL",
-      "imageUrl": null,
-      "description": "",
-      "updatedAt": "2026-02-26T14:03:40.000Z",
-      "url": "https://scrapbox.io/KJR020/LogQL"
-    },
-    {
-      "id": "699e6caee6c6c546dc47186c",
-      "title": "Claude Code: Remote Control",
-      "imageUrl": null,
-      "description": "[https://x.com/claudeai/status/2026418433911603668 (20) Claude on X: \"New in Claude Code: Remote Control. Kick off a task in your terminal and pick it up from your phone while you take a walk or join  [https://code.claude.com/docs/en/remote-control Continue local sessions from any device with Remote Control - Claude Code Docs] [https://zenn.dev/ubie_dev/articles/claude-code-remote-control-intro Claude Code Remote Controlが登場。ソファでも移動中でも、ローカルセッションをスマホから動かす]",
-      "updatedAt": "2026-02-26T12:14:05.000Z",
-      "url": "https://scrapbox.io/KJR020/Claude%20Code%3A%20Remote%20Control"
-    },
-    {
-      "id": "69a038cae4bea70a68633890",
-      "title": "NotebookLM MCP",
-      "imageUrl": null,
-      "description": "TypeScript版とPython版が存在 `uv tool install notebooklm-mcp-cli` `claude mcp add notebooklm -- npx notebooklm-mcp@latest`",
-      "updatedAt": "2026-02-26T12:13:41.000Z",
-      "url": "https://scrapbox.io/KJR020/NotebookLM%20MCP"
-    },
-    {
-      "id": "69a037e44e3a9e9894f75511",
-      "title": "Redis Streams",
-      "imageUrl": null,
-      "description": "[https://techblog.lycorp.co.jp/ja/20260225a 同時接続数30万超のチャットサービスのメッセージ配信基盤をRedis Pub/SubからRedis Streamsにした話]",
-      "updatedAt": "2026-02-26T12:09:13.000Z",
-      "url": "https://scrapbox.io/KJR020/Redis%20Streams"
-    },
-    {
-      "id": "69a03304aac422b9678105de",
-      "title": "構造化RAG",
-      "imageUrl": null,
-      "description": "layout-aware retrieval structure-aware retrieval 的なチャンキングをさらに高度化したような考え方と認識",
-      "updatedAt": "2026-02-26T11:49:53.000Z",
-      "url": "https://scrapbox.io/KJR020/%E6%A7%8B%E9%80%A0%E5%8C%96RAG"
-    },
-    {
-      "id": "69a031ed2e47023f18f8f134",
-      "title": "Vision-Guided Chunking",
-      "imageUrl": null,
-      "description": "VGC 画像を使ってチャンキングする手法 意味単位を画像のレイアウト情報から解析する",
-      "updatedAt": "2026-02-26T11:44:31.000Z",
-      "url": "https://scrapbox.io/KJR020/Vision-Guided%20Chunking"
-    },
-    {
-      "id": "69a030a27748d6add8bd8ff4",
-      "title": "LlamaParse",
-      "imageUrl": null,
-      "description": "PDFの構造を守ったままテキストに変換するツール [LlamaIndex]が開発",
-      "updatedAt": "2026-02-26T11:43:22.000Z",
-      "url": "https://scrapbox.io/KJR020/LlamaParse"
-    },
-    {
-      "id": "69a03094c6bc93e4dcbd3c1c",
-      "title": "VLM",
-      "imageUrl": null,
-      "description": "",
-      "updatedAt": "2026-02-26T11:37:58.000Z",
-      "url": "https://scrapbox.io/KJR020/VLM"
-    },
-    {
-      "id": "69a001704cff1c5461667383",
-      "title": "キーワードミュート",
-      "imageUrl": null,
-      "description": "うさんくさいやつ、喧嘩してるやつが 使いそうなやつのミュート 「プロフの最後」",
-      "updatedAt": "2026-02-26T08:19:29.000Z",
-      "url": "https://scrapbox.io/KJR020/%E3%82%AD%E3%83%BC%E3%83%AF%E3%83%BC%E3%83%89%E3%83%9F%E3%83%A5%E3%83%BC%E3%83%88"
-    },
-    {
-      "id": "684ab827ce92cf711330ad2d",
-      "title": "Grok",
-      "imageUrl": null,
-      "description": "構造化ログのパターン Grok Perserなるものがあるらしい [https://newrelic.com/jp/blog/how-to-relic/how-to-use-grok-log-parsing New RelicでGrokパターンを使ったLog解析による構造化の方法 | New Relic]",
-      "updatedAt": "2026-02-26T08:14:31.000Z",
-      "url": "https://scrapbox.io/KJR020/Grok"
-    },
-    {
-      "id": "699ffec3538e0655719ca95b",
-      "title": "CC Workflow Studio",
-      "imageUrl": null,
-      "description": "AskUserQuestionを使って半自動のワークフローにできる イシュー〜設計〜実装まで半自動化できる エージェンティックワークフローを簡単に構築できる",
-      "updatedAt": "2026-02-26T08:13:48.000Z",
-      "url": "https://scrapbox.io/KJR020/CC%20Workflow%20Studio"
-    },
-    {
-      "id": "699ff08b8a299aec62693b85",
-      "title": "v0",
-      "imageUrl": null,
-      "description": "[https://zenn.dev/fairydevices/articles/424e0d1b558cb2#%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB エンジニアじゃない人が Vercel の v0 でプロトタイピングをしてみた]",
-      "updatedAt": "2026-02-26T07:04:46.000Z",
-      "url": "https://scrapbox.io/KJR020/v0"
-    },
-    {
-      "id": "699feb02326c3b9dc5c2aa5a",
-      "title": "Architecture Decision Record",
-      "imageUrl": null,
-      "description": "ADR ## [https://adr.github.io/ Architectural Decision Records (ADRs) | Architectural Decision Records]",
-      "updatedAt": "2026-02-26T06:41:55.000Z",
-      "url": "https://scrapbox.io/KJR020/Architecture%20Decision%20Record"
-    },
-    {
-      "id": "699fd2ec3a3048e97efcd7f2",
-      "title": "intermittent connectivity",
-      "imageUrl": null,
-      "description": "断続的に切断されたりする状態",
-      "updatedAt": "2026-02-26T04:59:01.000Z",
-      "url": "https://scrapbox.io/KJR020/intermittent%20connectivity"
-    },
-    {
-      "id": "699eaf5b5301ae0381ada78e",
-      "title": "Mosh",
-      "imageUrl": null,
-      "description": "mobile shell >Remote terminal application that allows roaming, Support intermittent connectivity and provide intelligent local echo and line editing of user keystrokes. [https://mosh.org/ Mosh: the mobile shell]",
-      "updatedAt": "2026-02-26T04:54:35.000Z",
-      "url": "https://scrapbox.io/KJR020/Mosh"
-    },
-    {
-      "id": "68e7c367b77c7931a2ed8d00",
-      "title": "useEffect",
-      "imageUrl": null,
-      "description": "実行タイミングが同じという理由で異なる処理を同じuseEffect内部で処理しない > Each Effect represents a separate synchronization process > Resist adding unrelated logic to your Effect only because this logic needs to run at the same time as an Effect you already wrote.",
-      "updatedAt": "2026-02-26T04:10:06.000Z",
-      "url": "https://scrapbox.io/KJR020/useEffect"
-    },
-    {
-      "id": "699fae86e4621f52d960805a",
-      "title": "2つの帽子",
-      "imageUrl": null,
-      "description": "[Kent Beck]が考案した作業区分における考え方 機能追加とリファクタリングで考え方を変える必要がある メンタルモデルの切り替え的な",
-      "updatedAt": "2026-02-26T02:24:38.000Z",
-      "url": "https://scrapbox.io/KJR020/2%E3%81%A4%E3%81%AE%E5%B8%BD%E5%AD%90"
-    },
-    {
-      "id": "699facc86ecbd4643f958ce1",
-      "title": "視点を切り替える",
-      "imageUrl": null,
-      "description": "ステークホルダーの情報は、所属によって視点を切り替えて書く必要があるということに気づき、 そこから抽象化して視点を切り替えるという発想方法が必要と思ったのでメモ 次のようなシチュエーションだった",
-      "updatedAt": "2026-02-26T02:23:01.000Z",
-      "url": "https://scrapbox.io/KJR020/%E8%A6%96%E7%82%B9%E3%82%92%E5%88%87%E3%82%8A%E6%9B%BF%E3%81%88%E3%82%8B"
-    },
-    {
-      "id": "699f017f4e003060ddee540d",
-      "title": "データメッシュ",
-      "imageUrl": null,
-      "description": "提唱者 / 時期 提唱者は Zhamak Dehghani（Thoughtworks） Thoughtworksの著者紹介では、「2018年にData Meshの概念を創始」 とされている",
-      "updatedAt": "2026-02-25T14:05:07.000Z",
-      "url": "https://scrapbox.io/KJR020/%E3%83%87%E3%83%BC%E3%82%BF%E3%83%A1%E3%83%83%E3%82%B7%E3%83%A5"
-    },
-    {
-      "id": "6970c386a25ec53f58d43a83",
-      "title": "ドメイン駆動設計をはじめよう",
-      "imageUrl": "https://scrapbox.io/files/69835181ff0b0af179ba9e19.png",
-      "description": "[https://scrapbox.io/files/69835181ff0b0af179ba9e19.png] [https://www.oreilly.co.jp/books/9784814400737/ ドメイン駆動設計をはじめよう - O'Reilly Japan] ソフトウェア設計の主要な課題は境界",
-      "updatedAt": "2026-02-25T14:04:45.000Z",
-      "url": "https://scrapbox.io/KJR020/%E3%83%89%E3%83%A1%E3%82%A4%E3%83%B3%E9%A7%86%E5%8B%95%E8%A8%AD%E8%A8%88%E3%82%92%E3%81%AF%E3%81%98%E3%82%81%E3%82%88%E3%81%86"
-    },
-    {
-      "id": "699ef52de1a494ab06e53790",
-      "title": "Chat SDK",
-      "imageUrl": null,
-      "description": "https://x.com/haydenbleasel/status/2026359649499492395",
-      "updatedAt": "2026-02-25T13:12:54.000Z",
-      "url": "https://scrapbox.io/KJR020/Chat%20SDK"
-    },
-    {
-      "id": "699ef2202d939fd11b4508d8",
-      "title": "FastAPI 0.131.0",
-      "imageUrl": null,
-      "description": "[https://zenn.dev/maguro_alterna/articles/ee730afa94f52e FastAPIのJSONレスポンスに型を書くだけでレスポンスが速くなるらしい]",
-      "updatedAt": "2026-02-25T12:59:26.000Z",
-      "url": "https://scrapbox.io/KJR020/FastAPI%200.131.0"
-    },
-    {
-      "id": "699ef1cb67e1b6cdc1f80e47",
-      "title": "ブラウザUAF脆弱性",
-      "imageUrl": null,
-      "description": "[https://zenn.dev/kg_filled/articles/dc576c8e7def9b CSSを表示しただけでコード実行 -- ブラウザUAF脆弱性の仕組み]",
-      "updatedAt": "2026-02-25T12:58:02.000Z",
-      "url": "https://scrapbox.io/KJR020/%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6UAF%E8%84%86%E5%BC%B1%E6%80%A7"
-    },
-    {
-      "id": "699ee884b5453cbac3f130f2",
-      "title": "シェルのショートカット",
-      "imageUrl": null,
-      "description": "カーソル移動 Ctrl + A : 行頭へ Ctrl + E : 行末へ",
-      "updatedAt": "2026-02-25T12:19:41.000Z",
-      "url": "https://scrapbox.io/KJR020/%E3%82%B7%E3%82%A7%E3%83%AB%E3%81%AE%E3%82%B7%E3%83%A7%E3%83%BC%E3%83%88%E3%82%AB%E3%83%83%E3%83%88"
-    },
-    {
-      "id": "699eaf84a38c18c49fe7bc3f",
-      "title": "Echo",
-      "imageUrl": null,
-      "description": "",
-      "updatedAt": "2026-02-25T08:15:03.000Z",
-      "url": "https://scrapbox.io/KJR020/Echo"
-    },
-    {
-      "id": "699eaf6110f239bec6200c5c",
-      "title": "Moshi",
-      "imageUrl": null,
-      "description": "",
-      "updatedAt": "2026-02-25T08:14:43.000Z",
-      "url": "https://scrapbox.io/KJR020/Moshi"
-    },
-    {
-      "id": "699eaf595e66bc604102f77d",
-      "title": "Tailscale",
-      "imageUrl": null,
-      "description": "",
-      "updatedAt": "2026-02-25T08:14:18.000Z",
-      "url": "https://scrapbox.io/KJR020/Tailscale"
-    },
-    {
-      "id": "699e90a818678e6f2337c5de",
-      "title": "シンボル解析",
-      "imageUrl": null,
-      "description": "Serena MCPはシンボル解析を行っている 構文・意味レベルで読むための解析をする 文字列ではなく、どれが関数で引数がこれで、定義はこれでみたいなことがわかるらしい",
-      "updatedAt": "2026-02-25T06:04:26.000Z",
-      "url": "https://scrapbox.io/KJR020/%E3%82%B7%E3%83%B3%E3%83%9C%E3%83%AB%E8%A7%A3%E6%9E%90"
-    },
-    {
-      "id": "699e8c84b783a71b320d428c",
-      "title": "浅く考えろ、世の中舐めろ、保身に走るな、勝っても攻めろ",
-      "imageUrl": null,
-      "description": "[https://hyakuemu-anime.com/ 映画『ひゃくえむ。』公式サイト | 9月19日(金)全国公開] [https://note.com/rich_sorrel6651/n/nd9c16cb79133 【本日の名言】「浅く考えろ、世の中舐めろ、保身に走るな、勝っても攻めろ」映画『ひゃくえむ。』｜K]",
-      "updatedAt": "2026-02-25T05:47:57.000Z",
-      "url": "https://scrapbox.io/KJR020/%E6%B5%85%E3%81%8F%E8%80%83%E3%81%88%E3%82%8D%E3%80%81%E4%B8%96%E3%81%AE%E4%B8%AD%E8%88%90%E3%82%81%E3%82%8D%E3%80%81%E4%BF%9D%E8%BA%AB%E3%81%AB%E8%B5%B0%E3%82%8B%E3%81%AA%E3%80%81%E5%8B%9D%E3%81%A3%E3%81%A6%E3%82%82%E6%94%BB%E3%82%81%E3%82%8D"
-    },
-    {
-      "id": "699e80a3d016a5b2fa06e09c",
-      "title": "SOFT SKILLS ソフトウェア開発者の人生マニュアル",
-      "imageUrl": "https://scrapbox.io/files/699e80bcf1c53c173214df9e.png",
-      "description": "[https://scrapbox.io/files/699e80bcf1c53c173214df9e.png] [https://www.amazon.co.jp/dp/B09S3J33NR Amazon.co.jp: SOFT SKILLS ソフトウェア開発者の人生マニュアル 第2版 eBook : ジョン・ソンメズ, 長尾 高弘, まつもとゆきひろ: 本]",
-      "updatedAt": "2026-02-25T04:55:28.000Z",
-      "url": "https://scrapbox.io/KJR020/SOFT%20SKILLS%20%E3%82%BD%E3%83%95%E3%83%88%E3%82%A6%E3%82%A7%E3%82%A2%E9%96%8B%E7%99%BA%E8%80%85%E3%81%AE%E4%BA%BA%E7%94%9F%E3%83%9E%E3%83%8B%E3%83%A5%E3%82%A2%E3%83%AB"
-    },
-    {
-      "id": "699e7a18d4b24f337bec3d4e",
-      "title": "グッドハートの法則",
-      "imageUrl": null,
-      "description": "指標が目標になると、その指標は機能しなくなる",
-      "updatedAt": "2026-02-25T04:27:26.000Z",
-      "url": "https://scrapbox.io/KJR020/%E3%82%B0%E3%83%83%E3%83%89%E3%83%8F%E3%83%BC%E3%83%88%E3%81%AE%E6%B3%95%E5%89%87"
-    },
-    {
-      "id": "699e796aa6f88a6c6748d3b4",
-      "title": "あの人も読んでる",
-      "imageUrl": null,
-      "description": "[https://findy-code.io/media/series/modoku あの人も読んでる - Findy Media | IT/Webエンジニアの転職・求人サイトFindy – GitHubからスキル偏差値を算出]",
-      "updatedAt": "2026-02-25T04:24:15.000Z",
-      "url": "https://scrapbox.io/KJR020/%E3%81%82%E3%81%AE%E4%BA%BA%E3%82%82%E8%AA%AD%E3%82%93%E3%81%A7%E3%82%8B"
-    },
-    {
-      "id": "699e6bbcf8915c84971f3565",
-      "title": "LLMの原理、RAG・エージェント開発から読み解く コンテキストエンジニアリング",
-      "imageUrl": "https://scrapbox.io/files/699e6bccf1c53c173214ae21.png",
-      "description": "[https://scrapbox.io/files/699e6bccf1c53c173214ae21.png] 蒲生弘郷　著 [https://gihyo.jp/book/2026/978-4-297-15419-6 LLMの原理、RAG・エージェント開発から読み解く コンテキストエンジニアリング | 技術評論社]",
-      "updatedAt": "2026-02-25T03:26:16.000Z",
-      "url": "https://scrapbox.io/KJR020/LLM%E3%81%AE%E5%8E%9F%E7%90%86%E3%80%81RAG%E3%83%BB%E3%82%A8%E3%83%BC%E3%82%B8%E3%82%A7%E3%83%B3%E3%83%88%E9%96%8B%E7%99%BA%E3%81%8B%E3%82%89%E8%AA%AD%E3%81%BF%E8%A7%A3%E3%81%8F%20%E3%82%B3%E3%83%B3%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%E3%83%AA%E3%83%B3%E3%82%B0"
-    },
-    {
-      "id": "69951ebe473f6face929fda8",
-      "title": "やさしい機能仕様",
-      "imageUrl": "https://scrapbox.io/files/69951f073583dfb074d5906f.png",
-      "description": "[https://scrapbox.io/files/69951f073583dfb074d5906f.png] Joel Splosky著作 仕様書のドキュメンティングにおける古典良書らしい",
-      "updatedAt": "2026-02-25T03:15:26.000Z",
-      "url": "https://scrapbox.io/KJR020/%E3%82%84%E3%81%95%E3%81%97%E3%81%84%E6%A9%9F%E8%83%BD%E4%BB%95%E6%A7%98"
-    },
-    {
-      "id": "699af7d735ccbe9f65285ea1",
-      "title": "寝る前に難問を考える",
-      "imageUrl": null,
-      "description": "睡眠中に問題を脳が勝手に整理してくれて解決につながるというTips #Tips #A_Mind_for_Numbers",
-      "updatedAt": "2026-02-25T03:11:26.000Z",
-      "url": "https://scrapbox.io/KJR020/%E5%AF%9D%E3%82%8B%E5%89%8D%E3%81%AB%E9%9B%A3%E5%95%8F%E3%82%92%E8%80%83%E3%81%88%E3%82%8B"
-    },
-    {
-      "id": "699a59abab5c30ec6943f707",
-      "title": "ゼロ・トゥ・ワン",
-      "imageUrl": null,
-      "description": "> 賛成する人がほとんどいない大切な真実",
-      "updatedAt": "2026-02-25T03:10:27.000Z",
-      "url": "https://scrapbox.io/KJR020/%E3%82%BC%E3%83%AD%E3%83%BB%E3%83%88%E3%82%A5%E3%83%BB%E3%83%AF%E3%83%B3"
-    },
-    {
-      "id": "699e668d43db638e105f5e76",
-      "title": "固有名詞なのか総称なのか確認する",
-      "imageUrl": null,
-      "description": "新しい概念を学ぶときの定型の質問パターンや切り口として意識したいと思い、考えをメモに残す ## 経緯 [Edge Runtime]という用語が固有名詞的に使われている場面があり、理解の妨げになった",
-      "updatedAt": "2026-02-25T03:09:00.000Z",
-      "url": "https://scrapbox.io/KJR020/%E5%9B%BA%E6%9C%89%E5%90%8D%E8%A9%9E%E3%81%AA%E3%81%AE%E3%81%8B%E7%B7%8F%E7%A7%B0%E3%81%AA%E3%81%AE%E3%81%8B%E7%A2%BA%E8%AA%8D%E3%81%99%E3%82%8B"
-    },
-    {
-      "id": "699e61a69bb52c1c3b7d93ae",
-      "title": "Server-Side Request Forgery",
-      "imageUrl": null,
-      "description": "SSRF サーバーサイド・リクエスト・フォージェリ 攻撃対象のサーバーを踏み台にして、本来触れない内部リソースに不正アクセスする攻撃",
-      "updatedAt": "2026-02-25T02:45:27.000Z",
-      "url": "https://scrapbox.io/KJR020/Server-Side%20Request%20Forgery"
     }
   ]
 }
