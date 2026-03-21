@@ -1,3 +1,12 @@
+---
+paths:
+  - "src/**/*.ts"
+  - "src/**/*.tsx"
+  - "src/**/*.astro"
+  - "biome.json"
+  - "tsconfig.json"
+---
+
 # コード品質ルール
 
 このルールは、TypeScript・Biome・コード品質全般に関するガイドラインを定義する。

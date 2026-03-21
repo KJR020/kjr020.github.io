@@ -1,3 +1,10 @@
+---
+paths:
+  - "src/**/*.test.ts"
+  - "src/**/*.test.tsx"
+  - "e2e/**/*.spec.ts"
+---
+
 # テストルール
 
 このルールは、Vitest（ユニット/コンポーネント）とPlaywright（E2E）のテスト実装に関するガイドラインを定義する。

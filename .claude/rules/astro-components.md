@@ -1,3 +1,11 @@
+---
+paths:
+  - "src/components/**/*.astro"
+  - "src/components/**/*.tsx"
+  - "src/layouts/**/*.astro"
+  - "src/pages/**/*.astro"
+---
+
 # Astro/React コンポーネント設計ルール
 
 このルールは、Astro/Reactコンポーネントの設計・実装に関するガイドラインを定義する。
