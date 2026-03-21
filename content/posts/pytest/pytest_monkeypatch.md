@@ -2,7 +2,7 @@
 title = 'pytestのmonkeypatchについて調べた'
 date = 2025-01-16T20:04:07+09:00
 draft = false
-tags = ['Pytest']
+tags = ['pytest']
 +++
 
 pytestの`monkeypatch`フィクスチャについて調べたのでまとめます。

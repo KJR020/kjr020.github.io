@@ -2,7 +2,7 @@
 title: "Python標準ライブラリgraphlibでDAG並列実行エンジンを作った"
 date: "2026-02-24T21:00:00+09:00"
 draft: true
-tags: [python, graphlib, 並列処理, 設計, LLM]
+tags: [Python, graphlib, 並列処理, 設計, LLM]
 description: "依存関係のあるLLMタスクを並列実行するために、6つのアプローチを比較検討し、Python標準ライブラリgraphlib.TopologicalSorterとThreadPoolExecutorでReady-Queue方式の並列実行エンジンを設計した過程を記録する。"
 ---
 

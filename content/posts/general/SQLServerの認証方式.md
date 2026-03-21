@@ -2,7 +2,7 @@
 title = 'SQLServerの認証方式'
 date = '2024-08-25T17:03:17+09:00'
 draft = false
-tags = ['SQLServer']
+tags = ['SQL Server']
 +++
 
 ## 経緯
