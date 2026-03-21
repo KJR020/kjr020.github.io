@@ -31,3 +31,7 @@ playwright-report/
 
 personal_docs/
 
+# Blog writing process logs
+*.process.md
+*.analysis.md
+
