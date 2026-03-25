@@ -5,7 +5,6 @@
   "description": "Personal blog built with Astro",
   "scripts": {
     "dev": "astro dev",
-    "prebuild": "npx tsx scripts/fetch-scrapbox.ts",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
@@ -16,7 +15,6 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest",
     "test:run": "vitest run",
-    "fetch:scrapbox": "npx tsx scripts/fetch-scrapbox.ts",
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui",
     "test:e2e:update-snapshots": "playwright test --update-snapshots"
@@ -56,6 +54,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^2.3.11",
+    "@cloudflare/workers-types": "4.20260317.1",
     "@tailwindcss/vite": "^4.1.18",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.1",
