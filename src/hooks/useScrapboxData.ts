@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import type { ScrapboxPageData } from "@/types/scrapbox";
 
 async function fetchFromProxy(project: string): Promise<ScrapboxPageData[]> {
-  const response = await fetch(`/api/pages/${project}?limit=100`);
+  const response = await fetch(`/api/pages/${encodeURIComponent(project)}?limit=100`);
 
   if (!response.ok) {
     throw new Error(`API error: ${response.status}`);
@@ -20,7 +20,7 @@ export function useScrapboxData(project: string, options?: UseScrapboxDataOption
     queryKey: ["scrapbox", project],
     queryFn: () => fetchFromProxy(project),
     select: (pages: ScrapboxPageData[]): ScrapboxPageData[] =>
-      options?.limit ? pages.slice(0, options.limit) : pages,
+      options?.limit !== undefined ? pages.slice(0, options.limit) : pages,
     enabled: !!project,
   });
 }
