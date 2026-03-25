@@ -1,24 +1,14 @@
 import { useQuery } from "@tanstack/react-query";
-import type { ScrapboxDataFile, ScrapboxPageData } from "@/types/scrapbox";
+import type { ScrapboxPageData } from "@/types/scrapbox";
 
-async function fetchScrapboxJson(project: string): Promise<ScrapboxDataFile> {
-  const response = await fetch(`/data/scrapbox-${project}.json`);
+async function fetchFromProxy(project: string): Promise<ScrapboxPageData[]> {
+  const response = await fetch(`/api/pages/${project}?limit=100`);
 
   if (!response.ok) {
-    if (response.status === 404) {
-      throw new Error("データが見つかりません");
-    }
-    throw new Error("データの取得に失敗しました");
+    throw new Error(`API error: ${response.status}`);
   }
 
-  const data: ScrapboxDataFile = await response.json();
-
-  // 簡易バリデーション
-  if (!data.projectName || !Array.isArray(data.pages)) {
-    throw new Error("不正なデータ形式です");
-  }
-
-  return data;
+  return response.json();
 }
 
 interface UseScrapboxDataOptions {
@@ -28,9 +18,9 @@ interface UseScrapboxDataOptions {
 export function useScrapboxData(project: string, options?: UseScrapboxDataOptions) {
   return useQuery({
     queryKey: ["scrapbox", project],
-    queryFn: () => fetchScrapboxJson(project),
-    select: (data: ScrapboxDataFile): ScrapboxPageData[] =>
-      options?.limit ? data.pages.slice(0, options.limit) : data.pages,
+    queryFn: () => fetchFromProxy(project),
+    select: (pages: ScrapboxPageData[]): ScrapboxPageData[] =>
+      options?.limit ? pages.slice(0, options.limit) : pages,
     enabled: !!project,
   });
 }
