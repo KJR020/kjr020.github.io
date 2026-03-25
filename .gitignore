@@ -36,3 +36,4 @@ personal_docs/
 *.process.md
 *.analysis.md
 
+.wrangler/
