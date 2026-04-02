@@ -11,6 +11,9 @@ concurrency:
   group: ci-${{ github.ref }}
   cancel-in-progress: true
 
+env:
+  npm_config_registry: https://npm.flatt.tech
+
 jobs:
   # Lintチェック
   lint:
@@ -27,6 +30,8 @@ jobs:
         with:
           node-version: "22"
           cache: "pnpm"
+      - name: Configure Takumi Guard auth
+        run: echo "//npm.flatt.tech/:_authToken=${{ secrets.TAKUMI_GUARD_TOKEN }}" >> ~/.npmrc
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Lint
@@ -47,6 +52,8 @@ jobs:
         with:
           node-version: "22"
           cache: "pnpm"
+      - name: Configure Takumi Guard auth
+        run: echo "//npm.flatt.tech/:_authToken=${{ secrets.TAKUMI_GUARD_TOKEN }}" >> ~/.npmrc
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Format check
@@ -67,6 +74,8 @@ jobs:
         with:
           node-version: "22"
           cache: "pnpm"
+      - name: Configure Takumi Guard auth
+        run: echo "//npm.flatt.tech/:_authToken=${{ secrets.TAKUMI_GUARD_TOKEN }}" >> ~/.npmrc
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Sync Astro types
@@ -89,6 +98,8 @@ jobs:
         with:
           node-version: "22"
           cache: "pnpm"
+      - name: Configure Takumi Guard auth
+        run: echo "//npm.flatt.tech/:_authToken=${{ secrets.TAKUMI_GUARD_TOKEN }}" >> ~/.npmrc
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Test
@@ -109,6 +120,8 @@ jobs:
         with:
           node-version: "22"
           cache: "pnpm"
+      - name: Configure Takumi Guard auth
+        run: echo "//npm.flatt.tech/:_authToken=${{ secrets.TAKUMI_GUARD_TOKEN }}" >> ~/.npmrc
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Sync Astro types
@@ -136,6 +149,8 @@ jobs:
         with:
           node-version: "22"
           cache: "pnpm"
+      - name: Configure Takumi Guard auth
+        run: echo "//npm.flatt.tech/:_authToken=${{ secrets.TAKUMI_GUARD_TOKEN }}" >> ~/.npmrc
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Install Playwright browsers
