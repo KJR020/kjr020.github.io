@@ -1,0 +1,22 @@
+{
+	"feature_name": "20260325-knowledge-system",
+	"created_at": "2026-03-25T13:30:00+09:00",
+	"updated_at": "2026-03-25T14:15:00+09:00",
+	"language": "ja",
+	"phase": "tasks",
+	"approvals": {
+		"requirements": {
+			"generated": true,
+			"approved": true
+		},
+		"design": {
+			"generated": true,
+			"approved": false
+		},
+		"tasks": {
+			"generated": true,
+			"approved": false
+		}
+	},
+	"ready_for_implementation": false
+}
