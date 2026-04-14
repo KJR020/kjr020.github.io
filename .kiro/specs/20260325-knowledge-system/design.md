@@ -12,6 +12,16 @@
 - **採用**: ギャップ分析はClaude Codeスキルで対話的に実施。ブログはビジュアライザーに徹する
 - **付随**: 体系タグ (`[体系/SE/...]`) も導入しない。既存のハッシュタグ・リンクをそのまま使う
 
+**変更3: 固定ドメイン (14個) → 撤廃 (2026-04-14)**
+- **当初案**: `frameworks/domains.json` で 14 ドメイン (設計/データ/Web/API/認証/AI...) を定義し、UIで白枠・色分け・セクション分離
+- **問題点**:
+  - 「何をドメインとするか」の判断をファイルメンテで続ける必要があり、YAML参照フレームワーク案を却下した時と同じ管理コスト問題
+  - 「知識の濃淡を俯瞰する」という目的には、固定カテゴリよりページ数そのものを見る方が直接的
+- **採用: 全タグ同等扱い**
+  - ノード色は `tagColor(name)` でタグ名からハッシュ→HSL生成 (決定論的、キュレーション不要)
+  - 一覧もフラット化 (ページ数降順、同数は被リンク数で tiebreak)
+  - `src/lib/domains.ts` / `frameworks/domains.json` を削除、`TagSummary.isDomain` 廃止
+
 **変更2: ページリンクグラフ → タグ共起グラフに変更 (2026-04-13)**
 - **当初案 (Phase 2 Req 5/6/7)**: ページ詳細APIで `links`/`relatedPages` を取得し、ページ間リンクをCytoscape.jsで可視化
 - **問題点**:
@@ -52,14 +62,15 @@ graph TB
         subgraph New["新規: /knowledge"]
             HOOK["useKnowledgeData"]
             PAGE["knowledge.astro"]
-            LIST["DomainList<br/>タグ別一覧"]
-            TAGGRAPH["KnowledgeGraph<br/>タグ共起グラフ"]
+            CONTAINER["KnowledgeGraph<br/>コンテナ(タブ切替)"]
+            LIST["TagList<br/>タグ別一覧"]
+            TAGGRAPH["TagGraph<br/>タグ共起グラフ"]
             MAP["EmbeddingMap<br/>2D分布<br/><i>Phase 3 将来</i>"]
-            PAGE -->|"client:load"| LIST
-            PAGE -->|"client:load"| TAGGRAPH
-            PAGE -->|"client:visible"| MAP
-            HOOK --> LIST
-            HOOK --> TAGGRAPH
+            PAGE -->|"client:load"| CONTAINER
+            CONTAINER --> LIST
+            CONTAINER --> TAGGRAPH
+            CONTAINER -.->|"Phase 3"| MAP
+            HOOK --> CONTAINER
         end
     end
 
@@ -181,9 +192,15 @@ interface KnowledgeProxyResponse {
 ```typescript
 // functions/_lib/hashtag-parser.ts
 
-/** descriptions配列からハッシュタグを抽出 */
-const HASHTAG_PATTERN = /#([\w\u3000-\u9FFF]+)/g;
+/** `[...]` 内は URL fragment / ページリンクなのでタグ対象外 */
+const BRACKET_PATTERN = /\[[^\]]*\]/g;
+/** 空白または行頭に続く `#タグ名` のみ抽出 (URL fragment / 単語途中の # を除外) */
+const HASHTAG_PATTERN = /(?:^|\s)#([\w\u3000-\u9FFF]+)/g;
 
+/**
+ * Scrapboxタグはスペースが使えないため、慣例として `_` でスペースを代用する。
+ * (例: `#Claude_Code` = "Claude Code")
+ */
 function extractHashtags(descriptions: string[]): string[];
 ```
 
@@ -192,12 +209,17 @@ function extractHashtags(descriptions: string[]): string[];
 ```typescript
 // src/hooks/useKnowledgeData.ts
 
+interface TagSummary {
+  name: string;
+  count: number;
+  totalLinked: number;
+  totalLines: number;
+}
+
 interface UseKnowledgeDataReturn {
   pages: KnowledgePageData[];
-  /** タグ → ページ配列のマップ */
-  domainMap: Map<string, KnowledgePageData[]>;
-  /** ユニークタグ一覧（ページ数降順） */
-  tags: { name: string; count: number }[];
+  /** ページ数降順のタグサマリー。同数は totalLinked で tiebreak */
+  tags: TagSummary[];
   totalPages: number;
   isLoading: boolean;
   error: Error | null;
@@ -209,17 +231,29 @@ function useKnowledgeData(project: string): UseKnowledgeDataReturn;
 ### UI Components
 
 ```typescript
-// src/components/knowledge/DomainList.tsx
-interface DomainListProps {
-  domainMap: Map<string, KnowledgePageData[]>;
-  tags: { name: string; count: number }[];
+// src/components/knowledge/KnowledgeGraph.tsx — コンテナ。タブ切り替え + 統計ヘッダ
+export function KnowledgeGraph(): JSX.Element;
+
+// src/components/knowledge/TagGraph.tsx — Cytoscape.js タグ共起グラフ
+interface TagGraphProps {
+  tags: TagSummary[];
+  pages: KnowledgePageData[];
+  selectedNode: SelectedNode | null;
+  onNodeSelect: (node: SelectedNode | null) => void;
   isLoading: boolean;
 }
 
-// src/components/knowledge/KnowledgeGraph.tsx (Phase 2)
-interface KnowledgeGraphProps {
+// src/components/knowledge/TagList.tsx — タグ別ページアコーディオン
+interface TagListProps {
+  tags: TagSummary[];
   pages: KnowledgePageData[];
-  graphData: { nodes: GraphNode[]; edges: GraphEdge[] };
+}
+
+// src/components/knowledge/PageList.tsx — タグ選択時の詳細パネル
+interface PageListProps {
+  pages: KnowledgePageData[];
+  selectedTag: string | null;
+  onClose: () => void;
 }
 ```
 
@@ -228,46 +262,39 @@ interface KnowledgeGraphProps {
 ```
 functions/
 ├── _lib/
-│   ├── hashtag-parser.ts          # ハッシュタグ抽出
+│   ├── hashtag-parser.ts          # ハッシュタグ抽出 (bracket除外 / _ → space)
 │   ├── hashtag-parser.test.ts
-│   ├── knowledge-proxy.ts         # Proxy変換ロジック
-│   └── knowledge-proxy.test.ts
+│   └── knowledge-proxy.ts         # Scrapbox API 集約 (並列度3)
 └── api/knowledge/
     └── [project].ts               # /api/knowledge/:project
 
 src/
 ├── hooks/
-│   └── useKnowledgeData.ts
+│   └── useKnowledgeData.ts        # TanStack Query + タグ集計
 ├── components/knowledge/
 │   ├── index.ts
-│   ├── KnowledgeMap.tsx           # コンテナ（ビュー切り替え）
-│   ├── DomainList.tsx             # タグ別一覧
-│   └── DomainList.test.tsx
+│   ├── KnowledgeGraph.tsx         # コンテナ (タブ切り替え)
+│   ├── TagGraph.tsx               # Cytoscape.js タグ共起グラフ
+│   ├── TagList.tsx                # タグ別ページアコーディオン
+│   ├── PageList.tsx               # タグ選択時の詳細パネル
+│   ├── format.ts                  # scrapboxUrl / formatRelativeDate
+│   └── format.test.ts
 ├── pages/
-│   └── knowledge.astro
+│   └── knowledge.astro            # /knowledge ページ
 └── types/
-    └── knowledge.ts
+    └── knowledge.ts               # KnowledgePageData / TagSummary 等
 ```
 
-Phase 1に追加 (当初Phase 2から移動):
-```
-src/components/knowledge/
-├── KnowledgeGraph.tsx             # Cytoscape.js タグ共起グラフ
-└── PageList.tsx                   # タグ選択時の詳細パネル
+**タグ色**: ドメイン固定色の概念は撤廃。`TagGraph.tsx` 内で `tagColor(name)` がタグ名から決定論的に HSL を生成する (同じタグは常に同じ色、キュレーション不要)。
 
-src/lib/
-└── domains.ts                     # 14ドメインの色定義 (domains.json と同期)
-
-frameworks/
-└── domains.json                   # ドメインタグ定義
-```
-
-~~Phase 2 (撤回)~~:
+~~Phase 2 (撤回)~~ および ~~ドメイン固定色 (撤回)~~ のファイル:
 ```
 ~~functions/api/pages/[project]/[title].ts~~  # ページ詳細API
-~~functions/_lib/graph-builder.ts~~            # グラフ構築
+~~functions/_lib/graph-builder.ts~~            # ページリンクからグラフ構築
 ~~src/hooks/useKnowledgeGraph.ts~~             # グラフデータ取得
 ~~functions/api/knowledge/[project]/graph.ts~~ # グラフAPI
+~~src/lib/domains.ts~~                         # 14ドメインの色/判定 (撤廃)
+~~frameworks/domains.json~~                    # ドメインタグ定義 (撤廃)
 ```
 
 ---

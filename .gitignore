@@ -10,6 +10,7 @@ dist/
 # Claude Code
 .claude/settings.local.json
 .claude/projects/
+.claude/scheduled_tasks.lock
 **/CLAUDE.md
 !/CLAUDE.md
 
@@ -19,6 +20,7 @@ HANDOVER.md
 # Environment variables
 .env
 .env.local
+.dev.vars
 
 # remark-link-card cache
 public/remark-link-card/
