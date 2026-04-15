@@ -126,7 +126,8 @@ export function TagList({ tags, pages, project = "KJR020" }: TagListProps) {
   const untaggedPages = pagesByTag.get(UNTAGGED_KEY) ?? [];
 
   return (
-    <div className="flex flex-col gap-2" role="tabpanel" aria-label="一覧ビュー">
+    // tabpanel / aria-labelledby は親 (KnowledgeGraph) で付与される
+    <div className="flex flex-col gap-2">
       {tags.map((tag) => (
         <TagSection
           key={tag.name}

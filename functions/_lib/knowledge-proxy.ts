@@ -4,6 +4,7 @@ import { extractHashtags } from "./hashtag-parser";
 const UPSTREAM_BASE = "https://scrapbox.io/api/pages";
 const BATCH_SIZE = 100;
 const MAX_CONCURRENCY = 3;
+const FETCH_TIMEOUT_MS = 10_000;
 
 export interface KnowledgePageData {
   id: string;
@@ -41,22 +42,40 @@ function transformPage(page: ScrapboxApiPage): KnowledgePageData {
   };
 }
 
+type FetchBatchError = {
+  ok: false;
+  code: "network_error" | "upstream_error";
+  message: string;
+  status?: number;
+};
+
+function isFetchBatchError(value: unknown): value is FetchBatchError {
+  return (
+    typeof value === "object" &&
+    value !== null &&
+    "ok" in value &&
+    (value as { ok: unknown }).ok === false &&
+    "code" in value
+  );
+}
+
 async function fetchBatch(
   project: string,
   skip: number,
   scrapboxSid: string,
-): Promise<
-  | { ok: true; data: ScrapboxApiResponse }
-  | { ok: false; code: "network_error" | "upstream_error"; message: string; status?: number }
-> {
+): Promise<{ ok: true; data: ScrapboxApiResponse } | FetchBatchError> {
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
   let response: Response;
   try {
-    response = await fetch(
-      `${UPSTREAM_BASE}/${project}?limit=${BATCH_SIZE}&skip=${skip}`,
-      { headers: { Cookie: `connect.sid=${scrapboxSid}` } },
-    );
+    response = await fetch(`${UPSTREAM_BASE}/${project}?limit=${BATCH_SIZE}&skip=${skip}`, {
+      headers: { Cookie: `connect.sid=${scrapboxSid}` },
+      signal: controller.signal,
+    });
   } catch (error) {
     return { ok: false, code: "network_error", message: String(error) };
+  } finally {
+    clearTimeout(timeoutId);
   }
 
   if (!response.ok) {
@@ -123,7 +142,8 @@ export async function fetchAllKnowledgePages(
     remainingBatches.push(async () => {
       const result = await fetchBatch(project, currentSkip, scrapboxSid);
       if (!result.ok) {
-        throw new Error(`Batch fetch failed at skip=${currentSkip}: ${result.message}`);
+        // FetchBatchError をそのまま投げて outer catch で code / status を保持する
+        throw result;
       }
       return result.data.pages;
     });
@@ -134,6 +154,14 @@ export async function fetchAllKnowledgePages(
     try {
       batchResults = await fetchWithConcurrencyLimit(remainingBatches, MAX_CONCURRENCY);
     } catch (error) {
+      if (isFetchBatchError(error)) {
+        return {
+          ok: false,
+          code: error.code,
+          message: error.message,
+          ...(error.status !== undefined ? { status: error.status } : {}),
+        };
+      }
       return { ok: false, code: "network_error", message: String(error) };
     }
     for (const pages of batchResults) {

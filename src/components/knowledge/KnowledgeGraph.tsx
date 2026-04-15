@@ -115,9 +115,11 @@ function KnowledgeGraphInner() {
           {TABS.map((tab) => (
             <button
               key={tab.id}
+              id={`tab-${tab.id}`}
               type="button"
               role="tab"
               aria-selected={activeTab === tab.id}
+              aria-controls={`panel-${tab.id}`}
               onClick={() => handleTabChange(tab.id)}
               className={cn(
                 "flex items-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-medium transition-colors",
@@ -134,11 +136,20 @@ function KnowledgeGraphInner() {
       </nav>
 
       {/* List view */}
-      {activeTab === "list" && <TagList tags={tags} pages={pages} />}
+      {activeTab === "list" && (
+        <div id="panel-list" role="tabpanel" aria-labelledby="tab-list">
+          <TagList tags={tags} pages={pages} />
+        </div>
+      )}
 
       {/* Tag co-occurrence graph */}
       {activeTab === "tag-graph" && (
-        <div className="relative" role="tabpanel" aria-label="タグ共起グラフビュー">
+        <div
+          id="panel-tag-graph"
+          className="relative"
+          role="tabpanel"
+          aria-labelledby="tab-tag-graph"
+        >
           <TagGraph
             tags={tags}
             pages={pages}
