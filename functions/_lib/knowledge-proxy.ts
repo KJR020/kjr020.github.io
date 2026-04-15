@@ -109,13 +109,20 @@ export async function fetchWithConcurrencyLimit<T>(
   const results: T[] = [];
   const executing = new Set<Promise<void>>();
   for (const task of tasks) {
-    const p = task().then((r) => {
-      results.push(r);
-    });
+    // `p.finally()` が返す新 promise を追跡しないと、reject 時に unhandled になる。
+    // チェーン結果自体を executing に格納して、rejection も Promise.all で拾えるようにする。
+    const p: Promise<void> = task()
+      .then((r) => {
+        results.push(r);
+      })
+      .finally(() => {
+        executing.delete(p);
+      });
     executing.add(p);
-    p.finally(() => executing.delete(p));
     if (executing.size >= limit) {
-      await Promise.race(executing);
+      // 1件失敗しても残りの Promise.race を継続できるよう catch でエラーを飲む。
+      // 最終的なエラーは後段の Promise.all で伝播する。
+      await Promise.race(executing).catch(() => {});
     }
   }
   await Promise.all(executing);

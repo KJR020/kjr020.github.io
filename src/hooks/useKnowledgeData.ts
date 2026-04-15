@@ -20,6 +20,40 @@ interface UseKnowledgeDataReturn {
   error: Error | null;
 }
 
+/**
+ * ページ配列からタグサマリーを生成する。
+ * ページ数降順、同数なら被リンク数合計でタイブレークして返す。
+ */
+export function summarizeTags(pages: KnowledgePageData[]): TagSummary[] {
+  const tagToPages = new Map<string, KnowledgePageData[]>();
+  for (const page of pages) {
+    for (const tag of page.hashtags) {
+      const existing = tagToPages.get(tag);
+      if (existing) {
+        existing.push(page);
+      } else {
+        tagToPages.set(tag, [page]);
+      }
+    }
+  }
+
+  const summaries: TagSummary[] = [];
+  for (const [name, tagPages] of tagToPages) {
+    summaries.push({
+      name,
+      count: tagPages.length,
+      totalLinked: tagPages.reduce((sum, p) => sum + p.linked, 0),
+      totalLines: tagPages.reduce((sum, p) => sum + p.linesCount, 0),
+    });
+  }
+
+  summaries.sort((a, b) => {
+    if (a.count !== b.count) return b.count - a.count;
+    return b.totalLinked - a.totalLinked;
+  });
+  return summaries;
+}
+
 export function useKnowledgeData(project: string): UseKnowledgeDataReturn {
   const query = useQuery({
     queryKey: ["knowledge", project],
@@ -31,36 +65,7 @@ export function useKnowledgeData(project: string): UseKnowledgeDataReturn {
   const pages = query.data?.pages ?? [];
   const totalPages = query.data?.count ?? 0;
 
-  const tags = useMemo(() => {
-    const tagToPages = new Map<string, KnowledgePageData[]>();
-    for (const page of pages) {
-      for (const tag of page.hashtags) {
-        const existing = tagToPages.get(tag);
-        if (existing) {
-          existing.push(page);
-        } else {
-          tagToPages.set(tag, [page]);
-        }
-      }
-    }
-
-    const summaries: TagSummary[] = [];
-    for (const [name, tagPages] of tagToPages) {
-      summaries.push({
-        name,
-        count: tagPages.length,
-        totalLinked: tagPages.reduce((sum, p) => sum + p.linked, 0),
-        totalLines: tagPages.reduce((sum, p) => sum + p.linesCount, 0),
-      });
-    }
-
-    // ページ数降順、同数なら被リンク数でタイブレーク
-    summaries.sort((a, b) => {
-      if (a.count !== b.count) return b.count - a.count;
-      return b.totalLinked - a.totalLinked;
-    });
-    return summaries;
-  }, [pages]);
+  const tags = useMemo(() => summarizeTags(pages), [pages]);
 
   return {
     pages,
