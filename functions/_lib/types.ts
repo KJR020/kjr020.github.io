@@ -15,5 +15,6 @@ export interface ScrapboxApiPage {
   created: number;
   views: number;
   linked: number;
+  linesCount: number;
   pin: number;
 }

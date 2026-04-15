@@ -43,6 +43,7 @@
     "astro-pagefind": "^1.8.5",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "cytoscape": "^3.33.1",
     "embla-carousel-autoplay": "^8.6.0",
     "embla-carousel-react": "^8.6.0",
     "lucide-react": "^0.562.0",
@@ -65,6 +66,7 @@
     "tailwindcss": "^4.1.18",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3",
-    "vitest": "^4.0.17"
+    "vitest": "^4.0.17",
+    "wrangler": "^4.79.0"
   }
 }
