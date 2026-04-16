@@ -56,6 +56,44 @@ describe("validateProject", () => {
   it("空文字を拒否する", () => {
     expect(validateProject("")).toBe(false);
   });
+
+  // --- Pentest hardening: path traversal / control chars / DoS ---
+  it("URL エンコードされたパストラバーサル (%2e%2e%2f) を拒否する", () => {
+    expect(validateProject("%2e%2e%2fetc")).toBe(false);
+  });
+  it("URL エンコードされたパストラバーサル (大文字 %2E%2E/) を拒否する", () => {
+    expect(validateProject("%2E%2E%2Fetc")).toBe(false);
+  });
+  it("NULL 文字 (\\0) を含むプロジェクト名を拒否する", () => {
+    expect(validateProject("abc\u0000def")).toBe(false);
+  });
+  it("改行文字 (\\n) を含むプロジェクト名を拒否する", () => {
+    expect(validateProject("abc\ndef")).toBe(false);
+  });
+  it("キャリッジリターン (\\r) を含むプロジェクト名を拒否する", () => {
+    expect(validateProject("abc\rdef")).toBe(false);
+  });
+  it("極端に長いプロジェクト名 (10KB) を拒否する", () => {
+    const huge = "a".repeat(10_000);
+    expect(validateProject(huge)).toBe(false);
+  });
+  it("境界ちょうど (64 文字) は許可する", () => {
+    expect(validateProject("a".repeat(64))).toBe(true);
+  });
+  it("境界超え (65 文字) は拒否する", () => {
+    expect(validateProject("a".repeat(65))).toBe(false);
+  });
+  it("ドット (.) 単独を拒否する", () => {
+    expect(validateProject(".")).toBe(false);
+    expect(validateProject("..")).toBe(false);
+  });
+  it("クエリ文字 (?, &, =) を拒否する", () => {
+    expect(validateProject("proj?x=1")).toBe(false);
+    expect(validateProject("proj&bar")).toBe(false);
+  });
+  it("スペースを含むプロジェクト名を拒否する", () => {
+    expect(validateProject("my project")).toBe(false);
+  });
 });
 
 describe("fetchPages", () => {

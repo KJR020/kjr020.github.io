@@ -149,6 +149,29 @@ describe("fetchAllKnowledgePages", () => {
     if (result.ok) return;
     expect(result.code).toBe("network_error");
   });
+
+  // --- Pentest hardening: secret leak / error body ---
+  it("エラー戻り値 (network_error) に connect.sid の値や `SCRAPBOX_SID` 文字列が含まれない", async () => {
+    const secret = "s:super-secret-sid.signature";
+    vi.stubGlobal("fetch", vi.fn().mockRejectedValue(new Error("boom")));
+    const result = await fetchAllKnowledgePages("KJR020", secret);
+    const serialized = JSON.stringify(result);
+    expect(serialized).not.toContain(secret);
+    expect(serialized).not.toContain("connect.sid");
+    expect(serialized).not.toContain("SCRAPBOX_SID");
+  });
+
+  it("エラー戻り値 (upstream_error 401) に Secret が含まれない", async () => {
+    const secret = "s:super-secret-sid.signature";
+    vi.stubGlobal(
+      "fetch",
+      vi.fn().mockResolvedValue(new Response("Unauthorized", { status: 401 })),
+    );
+    const result = await fetchAllKnowledgePages("KJR020", secret);
+    const serialized = JSON.stringify(result);
+    expect(serialized).not.toContain(secret);
+    expect(serialized).not.toContain("connect.sid");
+  });
 });
 
 describe("fetchWithConcurrencyLimit", () => {

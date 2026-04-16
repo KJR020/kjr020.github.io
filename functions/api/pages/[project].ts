@@ -1,15 +1,9 @@
-import { validateProject, fetchPages } from "../../_lib/cms-proxy";
+import { fetchPages, validateProject } from "../../_lib/cms-proxy";
+import { jsonResponse } from "../../_lib/http";
 import { logError } from "../../_lib/logger";
 
 interface Env {
   SCRAPBOX_SID: string;
-}
-
-function jsonResponse(body: unknown, status: number): Response {
-  return new Response(JSON.stringify(body), {
-    status,
-    headers: { "Content-Type": "application/json" },
-  });
 }
 
 export const onRequestGet: PagesFunction<Env> = async (context) => {
@@ -17,10 +11,10 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
   const scrapboxSid = context.env.SCRAPBOX_SID;
 
   if (!validateProject(project)) {
-    return jsonResponse({ error: "Invalid project name" }, 400);
+    return jsonResponse({ error: "Invalid project name" }, 400, context.request);
   }
   if (!scrapboxSid) {
-    return jsonResponse({ error: "Server misconfigured" }, 500);
+    return jsonResponse({ error: "Server misconfigured" }, 500, context.request);
   }
 
   const { search } = new URL(context.request.url);
@@ -37,8 +31,8 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
     });
     const status =
       result.code === "upstream_error" && result.status ? result.status : 500;
-    return jsonResponse({ error: "Internal server error" }, status);
+    return jsonResponse({ error: "Internal server error" }, status, context.request);
   }
 
-  return jsonResponse(result.pages, 200);
+  return jsonResponse(result.pages, 200, context.request);
 };
