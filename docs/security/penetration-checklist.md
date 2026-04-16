@@ -12,7 +12,8 @@ Cloudflare Pages Functions で提供している Scrapbox API Proxy (`/api/pages
 
 - 対象環境の URL を環境変数で切り替える:
   ```shell
-  export BASE_URL="https://kjr020.pages.dev"          # Preview / 本番
+  export BASE_URL="https://kjr020.dev"                # 本番 (カスタムドメイン)
+  # export BASE_URL="https://kjr020.pages.dev"         # Preview / Cloudflare Pages デフォルト
   # export BASE_URL="http://localhost:8788"            # wrangler pages dev
   export PROJECT="KJR020"
   ```
@@ -42,17 +43,18 @@ Cloudflare Pages Functions で提供している Scrapbox API Proxy (`/api/pages
 
 | # | コマンド | 期待レスポンス |
 |---|---|---|
-| 2-1 | `curl -i -H "Origin: https://kjr020.github.io" "$BASE_URL/api/knowledge/$PROJECT"` | `Access-Control-Allow-Origin: https://kjr020.github.io` + `Vary: Origin` |
+| 2-1 | `curl -i -H "Origin: https://kjr020.dev" "$BASE_URL/api/knowledge/$PROJECT"` | `Access-Control-Allow-Origin: https://kjr020.dev` + `Vary: Origin` |
 | 2-2 | `curl -i -H "Origin: https://kjr020.pages.dev" "$BASE_URL/api/knowledge/$PROJECT"` | `Access-Control-Allow-Origin: https://kjr020.pages.dev` |
 | 2-3 | `curl -i -H "Origin: http://localhost:4321" "$BASE_URL/api/knowledge/$PROJECT"` | `Access-Control-Allow-Origin: http://localhost:4321` |
 | 2-4 | `curl -i "$BASE_URL/api/knowledge/$PROJECT"` (Origin なし) | `Access-Control-Allow-Origin` ヘッダが**付かない** |
 | 2-5 | `curl -i -H "Origin: null" "$BASE_URL/api/knowledge/$PROJECT"` | `Access-Control-Allow-Origin` なし |
 | 2-6 | `curl -i -H "Origin: file://" "$BASE_URL/api/knowledge/$PROJECT"` | `Access-Control-Allow-Origin` なし |
-| 2-7 | `curl -i -H "Origin: https://kjr020.github.io/" "$BASE_URL/api/knowledge/$PROJECT"` (末尾スラッシュ) | `Access-Control-Allow-Origin` なし |
-| 2-8 | `curl -i -H "Origin: https://KJR020.github.io" "$BASE_URL/api/knowledge/$PROJECT"` (大文字違い) | `Access-Control-Allow-Origin` なし |
-| 2-9 | `curl -i -H "Origin: https://kjr020.github.io.evil.com" "$BASE_URL/api/knowledge/$PROJECT"` (サブドメイン偽装) | `Access-Control-Allow-Origin` なし |
-| 2-10 | `curl -i -H "Origin: http://kjr020.github.io" "$BASE_URL/api/knowledge/$PROJECT"` (http スキーム) | `Access-Control-Allow-Origin` なし |
+| 2-7 | `curl -i -H "Origin: https://kjr020.dev/" "$BASE_URL/api/knowledge/$PROJECT"` (末尾スラッシュ) | `Access-Control-Allow-Origin` なし |
+| 2-8 | `curl -i -H "Origin: https://KJR020.dev" "$BASE_URL/api/knowledge/$PROJECT"` (大文字違い) | `Access-Control-Allow-Origin` なし |
+| 2-9 | `curl -i -H "Origin: https://kjr020.dev.evil.com" "$BASE_URL/api/knowledge/$PROJECT"` (サブドメイン偽装) | `Access-Control-Allow-Origin` なし |
+| 2-10 | `curl -i -H "Origin: http://kjr020.dev" "$BASE_URL/api/knowledge/$PROJECT"` (http スキーム) | `Access-Control-Allow-Origin` なし |
 | 2-11 | `curl -i -H "Origin: http://localhost.evil.com" "$BASE_URL/api/knowledge/$PROJECT"` | `Access-Control-Allow-Origin` なし |
+| 2-12 | `curl -i -H "Origin: https://kjr020.github.io" "$BASE_URL/api/knowledge/$PROJECT"` (廃止された旧本番ドメイン) | `Access-Control-Allow-Origin` なし |
 
 ### 3. Secret 非露出 (K-1, K-3)
 

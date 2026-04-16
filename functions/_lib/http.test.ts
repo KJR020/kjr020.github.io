@@ -9,16 +9,19 @@ function reqWith(origin?: string | null): Request {
 }
 
 describe("getAllowedOrigin", () => {
-  it("本番ドメイン (github.io) をそのまま返す", () => {
-    expect(getAllowedOrigin(reqWith("https://kjr020.github.io"))).toBe(
-      "https://kjr020.github.io",
-    );
+  it("本番ドメイン (kjr020.dev) をそのまま返す", () => {
+    expect(getAllowedOrigin(reqWith("https://kjr020.dev"))).toBe("https://kjr020.dev");
   });
 
-  it("本番ドメイン (pages.dev) をそのまま返す", () => {
+  it("Cloudflare Pages プレビュー (pages.dev) をそのまま返す", () => {
     expect(getAllowedOrigin(reqWith("https://kjr020.pages.dev"))).toBe(
       "https://kjr020.pages.dev",
     );
+  });
+
+  it("廃止された github.io ドメインは拒否する", () => {
+    // GitHub Pages を廃止したので許可リストから外した
+    expect(getAllowedOrigin(reqWith("https://kjr020.github.io"))).toBeNull();
   });
 
   it("localhost は任意ポートを許可する", () => {
@@ -43,21 +46,19 @@ describe("getAllowedOrigin", () => {
   });
 
   it("末尾スラッシュ付き許可ドメインは拒否する", () => {
-    expect(getAllowedOrigin(reqWith("https://kjr020.github.io/"))).toBeNull();
+    expect(getAllowedOrigin(reqWith("https://kjr020.dev/"))).toBeNull();
   });
 
-  it("サブドメイン偽装 (github.io.evil.com) は拒否する", () => {
-    expect(
-      getAllowedOrigin(reqWith("https://kjr020.github.io.evil.com")),
-    ).toBeNull();
+  it("サブドメイン偽装 (kjr020.dev.evil.com) は拒否する", () => {
+    expect(getAllowedOrigin(reqWith("https://kjr020.dev.evil.com"))).toBeNull();
   });
 
   it("大文字違いは拒否する (厳密一致)", () => {
-    expect(getAllowedOrigin(reqWith("https://KJR020.github.io"))).toBeNull();
+    expect(getAllowedOrigin(reqWith("https://KJR020.dev"))).toBeNull();
   });
 
   it("http スキームの本番ドメインは拒否する", () => {
-    expect(getAllowedOrigin(reqWith("http://kjr020.github.io"))).toBeNull();
+    expect(getAllowedOrigin(reqWith("http://kjr020.dev"))).toBeNull();
   });
 
   it("localhost 以外の 127.0.0.1 は拒否する", () => {
@@ -88,10 +89,8 @@ describe("jsonResponse", () => {
   });
 
   it("許可 Origin では Access-Control-Allow-Origin + Vary: Origin を付与", () => {
-    const res = jsonResponse({ ok: true }, 200, reqWith("https://kjr020.github.io"));
-    expect(res.headers.get("Access-Control-Allow-Origin")).toBe(
-      "https://kjr020.github.io",
-    );
+    const res = jsonResponse({ ok: true }, 200, reqWith("https://kjr020.dev"));
+    expect(res.headers.get("Access-Control-Allow-Origin")).toBe("https://kjr020.dev");
     expect(res.headers.get("Vary")).toBe("Origin");
   });
 

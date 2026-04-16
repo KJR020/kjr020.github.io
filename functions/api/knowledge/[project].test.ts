@@ -90,9 +90,16 @@ describe("GET /api/knowledge/:project", () => {
 
   it("本番ドメイン Origin は CORS で許可される", async () => {
     vi.stubGlobal("fetch", mockSuccessfulScrapboxFetch());
+    const ctx = createContext("KJR020", { origin: "https://kjr020.dev" });
+    const res = await onRequestGet(ctx);
+    expect(res.headers.get("Access-Control-Allow-Origin")).toBe("https://kjr020.dev");
+  });
+
+  it("廃止された github.io ドメインは CORS で弾かれる", async () => {
+    vi.stubGlobal("fetch", mockSuccessfulScrapboxFetch());
     const ctx = createContext("KJR020", { origin: "https://kjr020.github.io" });
     const res = await onRequestGet(ctx);
-    expect(res.headers.get("Access-Control-Allow-Origin")).toBe("https://kjr020.github.io");
+    expect(res.headers.get("Access-Control-Allow-Origin")).toBeNull();
   });
 
   it("許可外ドメイン Origin は Access-Control-Allow-Origin を付与しない", async () => {
@@ -140,32 +147,32 @@ describe("GET /api/knowledge/:project", () => {
     expect(res.headers.get("Access-Control-Allow-Origin")).toBeNull();
   });
 
-  it("末尾スラッシュ付きの許可ドメイン (https://kjr020.github.io/) は CORS で弾かれる", async () => {
+  it("末尾スラッシュ付きの許可ドメイン (https://kjr020.dev/) は CORS で弾かれる", async () => {
     vi.stubGlobal("fetch", mockSuccessfulScrapboxFetch());
-    const ctx = createContext("KJR020", { origin: "https://kjr020.github.io/" });
+    const ctx = createContext("KJR020", { origin: "https://kjr020.dev/" });
     const res = await onRequestGet(ctx);
     expect(res.headers.get("Access-Control-Allow-Origin")).toBeNull();
   });
 
-  it("サブドメイン偽装 (https://kjr020.github.io.evil.com) は CORS で弾かれる", async () => {
+  it("サブドメイン偽装 (https://kjr020.dev.evil.com) は CORS で弾かれる", async () => {
     vi.stubGlobal("fetch", mockSuccessfulScrapboxFetch());
     const ctx = createContext("KJR020", {
-      origin: "https://kjr020.github.io.evil.com",
+      origin: "https://kjr020.dev.evil.com",
     });
     const res = await onRequestGet(ctx);
     expect(res.headers.get("Access-Control-Allow-Origin")).toBeNull();
   });
 
-  it("大文字違いの許可ドメイン (https://KJR020.github.io) は CORS で弾かれる", async () => {
+  it("大文字違いの許可ドメイン (https://KJR020.dev) は CORS で弾かれる", async () => {
     vi.stubGlobal("fetch", mockSuccessfulScrapboxFetch());
-    const ctx = createContext("KJR020", { origin: "https://KJR020.github.io" });
+    const ctx = createContext("KJR020", { origin: "https://KJR020.dev" });
     const res = await onRequestGet(ctx);
     expect(res.headers.get("Access-Control-Allow-Origin")).toBeNull();
   });
 
   it("http:// スキームの本番ドメインは CORS で弾かれる", async () => {
     vi.stubGlobal("fetch", mockSuccessfulScrapboxFetch());
-    const ctx = createContext("KJR020", { origin: "http://kjr020.github.io" });
+    const ctx = createContext("KJR020", { origin: "http://kjr020.dev" });
     const res = await onRequestGet(ctx);
     expect(res.headers.get("Access-Control-Allow-Origin")).toBeNull();
   });

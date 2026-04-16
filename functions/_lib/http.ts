@@ -8,14 +8,14 @@
 
 /** 本番ドメインとして許可する Origin のホワイトリスト */
 export const ALLOWED_ORIGINS: readonly string[] = [
-  "https://kjr020.github.io",
-  "https://kjr020.pages.dev",
+  "https://kjr020.dev", // 本番カスタムドメイン
+  "https://kjr020.pages.dev", // Cloudflare Pages プレビュー URL
 ];
 
 /**
  * リクエストの Origin ヘッダが許可リストに含まれるかを判定する。
  *
- * - 大文字小文字違いや末尾スラッシュ違いは厳密一致しないので拒否する (例: `https://kjr020.github.io/`)
+ * - 大文字小文字違いや末尾スラッシュ違いは厳密一致しないので拒否する (例: `https://kjr020.dev/`)
  * - `Origin: null` や `Origin: file://` のようなブラウザ特殊値も一致しないため拒否される
  * - 開発用途のため `http://localhost:*` のみ例外的に許可する
  *
