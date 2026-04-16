@@ -258,7 +258,6 @@ npx wrangler deploy
 | `/posts/astro/...` （個別記事） | |
 | `/tags/` （タグ一覧） | |
 | `/tags/astro` （タグ別記事） | |
-| `/newsletters/` | |
 | `/search/` | |
 | `/404` | |
 
