@@ -20,12 +20,6 @@ const dynamicPages: PageConfig[] = [
     hasIslands: true,
   },
   { route: "/tags/DbC", name: "tag-list", hasIslands: true },
-  { route: "/newsletters", name: "newsletter-index", hasIslands: true },
-  {
-    route: "/newsletters/2026-02-18_tech-trends",
-    name: "newsletter-detail",
-    hasIslands: true,
-  },
 ];
 
 const themes = ["light", "dark"] as const;
