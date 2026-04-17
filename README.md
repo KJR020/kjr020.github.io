@@ -82,6 +82,6 @@ pnpm typecheck
 
 ## デプロイ
 
-GitHub Pagesにデプロイ
+Cloudflare Pages にデプロイ
 
-https://kjr020.github.io/
+https://kjr020.dev/

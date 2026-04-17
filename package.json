@@ -30,7 +30,7 @@
   "bugs": {
     "url": "https://github.com/KJR020/kjr020.github.io/issues"
   },
-  "homepage": "https://kjr020.github.io/",
+  "homepage": "https://kjr020.dev/",
   "dependencies": {
     "@astrojs/react": "^4.4.2",
     "@astrojs/sitemap": "^3.6.1",
