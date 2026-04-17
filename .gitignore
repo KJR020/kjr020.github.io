@@ -29,6 +29,9 @@ public/remark-link-card/
 test-results/
 playwright-report/
 
+# Coverage reports
+coverage/
+
 # TAKT
 .takt/
 
