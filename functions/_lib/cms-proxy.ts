@@ -2,6 +2,11 @@ import type { ScrapboxApiResponse, ScrapboxApiPage } from "./types";
 
 const UPSTREAM_BASE = "https://scrapbox.io/api/pages";
 const PROJECT_NAME_PATTERN = /^[\w-]+$/;
+/**
+ * プロジェクト名の最大長。Scrapbox 公式の実際のプロジェクト名は十数文字オーダーで収まるため
+ * 64 文字を上限とする。極端に長い入力 (数 KB 等) での DoS / ログ肥大化を防ぐための境界。
+ */
+const PROJECT_NAME_MAX_LENGTH = 64;
 
 /** Proxy の出力型（フロントエンドとの契約） */
 export interface PageData {
@@ -23,6 +28,8 @@ export type ProxyResult =
     };
 
 export function validateProject(project: string): boolean {
+  if (typeof project !== "string") return false;
+  if (project.length === 0 || project.length > PROJECT_NAME_MAX_LENGTH) return false;
   return PROJECT_NAME_PATTERN.test(project);
 }
 

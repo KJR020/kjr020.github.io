@@ -1,42 +1,10 @@
 import { validateProject } from "../../_lib/cms-proxy";
+import { jsonResponse } from "../../_lib/http";
 import { fetchAllKnowledgePages } from "../../_lib/knowledge-proxy";
 import { logError } from "../../_lib/logger";
 
 interface Env {
   SCRAPBOX_SID: string;
-}
-
-const ALLOWED_ORIGINS = [
-  "https://kjr020.github.io",
-  "https://kjr020.pages.dev",
-];
-
-function getAllowedOrigin(request: Request): string | null {
-  const origin = request.headers.get("Origin");
-  if (!origin) return null;
-
-  if (ALLOWED_ORIGINS.includes(origin)) return origin;
-
-  // Allow localhost in development
-  if (origin.startsWith("http://localhost:")) return origin;
-
-  return null;
-}
-
-function jsonResponse(body: unknown, status: number, request: Request): Response {
-  const headers: Record<string, string> = {
-    "Content-Type": "application/json",
-    // エラーレスポンスをキャッシュすると回復後も影響するため、成功時のみキャッシュを許可
-    "Cache-Control": status >= 400 ? "no-store" : "public, max-age=300",
-  };
-
-  const allowedOrigin = getAllowedOrigin(request);
-  if (allowedOrigin) {
-    headers["Access-Control-Allow-Origin"] = allowedOrigin;
-    headers["Vary"] = "Origin";
-  }
-
-  return new Response(JSON.stringify(body), { status, headers });
 }
 
 export const onRequestGet: PagesFunction<Env> = async (context) => {
