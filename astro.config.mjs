@@ -19,7 +19,7 @@ const calloutIcons = {
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://kjr020.github.io",
+  site: "https://kjr020.dev",
   build: {
     format: "directory",
   },

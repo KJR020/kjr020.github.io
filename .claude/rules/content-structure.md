@@ -41,8 +41,8 @@ const posts = defineCollection({
 
 ```typescript
 // Good: 既存パターンに合わせた定義
-const newsletters = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./content/newsletters" }),
+const guides = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./content/guides" }),
   schema: z.object({
     title: z.string(),
     date: z.coerce.date(),
@@ -50,7 +50,7 @@ const newsletters = defineCollection({
   }),
 });
 
-export const collections = { posts, newsletters };
+export const collections = { posts, guides };
 ```
 
 **注意:** スキーマ変更後は `npx astro sync` を実行して型を再生成する。
