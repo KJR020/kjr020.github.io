@@ -10,7 +10,6 @@ export interface PageConfig {
 /**
  * Astro Islandのハイドレーション完了を待機する。
  * hasIslands: true のページのみ待機し、false のページではスキップする。
- * /search ページは追加で .pagefind-ui セレクタの出現を待機する。
  */
 export async function waitForHydration(
   page: Page,
@@ -26,13 +25,6 @@ export async function waitForHydration(
     state: "attached",
     timeout: 30_000,
   });
-
-  if (config.route === "/search") {
-    await page.waitForSelector(".pagefind-ui", {
-      state: "attached",
-      timeout: 30_000,
-    });
-  }
 }
 
 /**
