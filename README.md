@@ -118,7 +118,9 @@ pnpm install
 | `pnpm format`        | フォーマット             |
 | `pnpm typecheck`     | TypeScript 型チェック  |
 | `pnpm test:run`      | Vitest 実行        |
-| `pnpm test:coverage` | カバレッジ計測          |
+| `pnpm test:coverage:report` | カバレッジ計測（閾値チェックなし） |
+| `pnpm test:coverage` | カバレッジ閾値チェック      |
+| `pnpm test:coverage:check` | カバレッジ閾値チェック（明示名） |
 | `pnpm test:e2e`      | Playwright E2E テスト |
 
 ### Cloudflare Pages Functions のローカル実行
