@@ -1,7 +1,8 @@
 import { execFileSync } from "node:child_process";
-import { readdirSync, readFileSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 
+import sharp from "sharp";
 import { beforeAll, describe, expect, it } from "vitest";
 
 const distDir = join(process.cwd(), "dist");
@@ -53,7 +54,28 @@ describe("BaseHead OGP meta tags", () => {
 
     expect(indexHtml).toContain('<meta property="og:type" content="website">');
     expect(indexHtml).toContain('<meta property="og:locale" content="ja_JP">');
+    expect(indexHtml).toContain(
+      '<meta property="og:image" content="https://kjr020.dev/og-image.png">',
+    );
+    expect(indexHtml).toContain('<meta property="og:image:width" content="1200">');
+    expect(indexHtml).toContain('<meta property="og:image:height" content="630">');
+    expect(indexHtml).toContain('<meta property="og:image:type" content="image/png">');
+    expect(indexHtml).toContain(
+      '<meta name="twitter:image" content="https://kjr020.dev/og-image.png">',
+    );
     expect(indexHtml).not.toContain('<meta property="article:published_time"');
     expect(indexHtml).not.toContain('<meta property="article:tag"');
+  });
+
+  it("ships the default OGP image at the recommended dimensions", async () => {
+    const ogImagePath = join(process.cwd(), "public", "og-image.png");
+
+    expect(existsSync(ogImagePath)).toBe(true);
+
+    const metadata = await sharp(ogImagePath).metadata();
+
+    expect(metadata.format).toBe("png");
+    expect(metadata.width).toBe(1200);
+    expect(metadata.height).toBe(630);
   });
 });
