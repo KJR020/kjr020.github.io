@@ -36,6 +36,7 @@
   "homepage": "https://kjr020.dev/",
   "dependencies": {
     "@astrojs/react": "^4.4.2",
+    "@astrojs/rss": "^4.0.18",
     "@astrojs/sitemap": "^3.6.1",
     "@beoe/rehype-mermaid": "^0.4.2",
     "@giscus/react": "^3.1.0",
