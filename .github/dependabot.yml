@@ -1,0 +1,28 @@
+version: 2
+registries:
+  takumi-guard:
+    type: npm-registry
+    url: https://npm.flatt.tech
+    token: ${{secrets.TAKUMI_GUARD_TOKEN}}
+    replaces-base: true
+
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    registries:
+      - takumi-guard
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "Asia/Tokyo"
+    open-pull-requests-limit: 5
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "Asia/Tokyo"
+    open-pull-requests-limit: 5
