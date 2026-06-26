@@ -4,7 +4,7 @@ npm パッケージと GitHub Actions のサプライチェーン侵害を前提
 
 ## パッケージマネージャ
 
-- pnpm 11.x を使う。`package.json` の `packageManager` と GitHub Actions の pnpm major を揃える。
+- pnpm 11.x を使う。GitHub Actions は `package.json` の `packageManager` から pnpm version を決定する。
 - lockfile は `pnpm-lock.yaml` に一本化する。`package-lock.json` / `yarn.lock` は追加しない。
 - registry は `.npmrc` の `https://npm.flatt.tech` に統一する。CI と Dependabot では `TAKUMI_GUARD_TOKEN` を secret から渡す。
 - CI は `pnpm install --frozen-lockfile` を使い、lockfile と manifest の不整合を検出する。
