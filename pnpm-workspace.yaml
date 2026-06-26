@@ -1,1 +1,10 @@
-{"pnpm":{"executionEnv":{"nodeVersion":""},"onlyBuiltDependencies":["esbuild","sharp"]}}
+allowBuilds:
+  esbuild: true
+  sharp: true
+  workerd: true
+pnpm:
+  executionEnv:
+    nodeVersion: ""
+  onlyBuiltDependencies:
+    - esbuild
+    - sharp
