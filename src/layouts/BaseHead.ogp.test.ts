@@ -1,5 +1,5 @@
 import { execFileSync } from "node:child_process";
-import { readdirSync, readFileSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 
 import { beforeAll, describe, expect, it } from "vitest";
@@ -26,6 +26,12 @@ function readHtmlFiles(dir: string): string[] {
   });
 }
 
+function readStructuredData(html: string) {
+  const matches = [...html.matchAll(/<script type="application\/ld\+json">(.+?)<\/script>/gs)];
+
+  return matches.map((match) => JSON.parse(match[1]));
+}
+
 describe("BaseHead OGP meta tags", () => {
   beforeAll(() => {
     buildSite();
@@ -48,6 +54,36 @@ describe("BaseHead OGP meta tags", () => {
     expect(postHtml).not.toContain('<meta property="article:modified_time"');
   });
 
+  it("renders WebSite, Person, and BlogPosting JSON-LD on post pages", () => {
+    const postHtml = readHtmlFiles(join(distDir, "posts")).find(
+      (html) =>
+        html.includes("<title>Cookieとは - KJR020&#39;s Blog</title>") &&
+        html.includes('<meta property="article:tag" content="Cookie">'),
+    );
+
+    expect(postHtml).toBeDefined();
+
+    const structuredData = readStructuredData(postHtml ?? "");
+    const graph = structuredData[0]["@graph"];
+
+    expect(structuredData).toHaveLength(1);
+    expect(graph.map((entry: { "@type": string }) => entry["@type"])).toEqual([
+      "WebSite",
+      "Person",
+      "BlogPosting",
+    ]);
+    expect(graph[2]).toMatchObject({
+      "@type": "BlogPosting",
+      "@id": "https://kjr020.dev/posts/general/cookie%E3%81%A8%E3%81%AF/#blogposting",
+      headline: "Cookieとは",
+      description: "KJR020の技術ブログ",
+      datePublished: "2024-08-25T08:03:17.000Z",
+      dateModified: "2024-08-25T08:03:17.000Z",
+      author: { "@id": "https://kjr020.dev/#person" },
+      keywords: ["Cookie", "Web", "HTTP"],
+    });
+  });
+
   it("keeps website OGP type on non-post pages", () => {
     const indexHtml = readFileSync(join(distDir, "index.html"), "utf8");
 
@@ -55,5 +91,22 @@ describe("BaseHead OGP meta tags", () => {
     expect(indexHtml).toContain('<meta property="og:locale" content="ja_JP">');
     expect(indexHtml).not.toContain('<meta property="article:published_time"');
     expect(indexHtml).not.toContain('<meta property="article:tag"');
+
+    const structuredData = readStructuredData(indexHtml);
+    const graph = structuredData[0]["@graph"];
+
+    expect(graph.map((entry: { "@type": string }) => entry["@type"])).toEqual([
+      "WebSite",
+      "Person",
+    ]);
+    expect(graph.some((entry: { "@type": string }) => entry["@type"] === "BlogPosting")).toBe(
+      false,
+    );
+  });
+
+  it("does not generate draft post pages", () => {
+    expect(existsSync(join(distDir, "posts", "graphql", "fetchpolicyについて", "index.html"))).toBe(
+      false,
+    );
   });
 });

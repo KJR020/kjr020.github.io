@@ -7,7 +7,7 @@ import { TableOfContents } from "@/components/toc";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 
 export async function getStaticPaths() {
-  const posts = await getCollection("posts");
+  const posts = await getCollection("posts", ({ data }) => !data.draft);
   return posts.map((post) => ({
     params: { slug: post.id },
     props: { post },
@@ -37,6 +37,7 @@ const giscusCategoryId = import.meta.env.PUBLIC_GISCUS_CATEGORY_ID;
   title={`${post.data.title} - KJR020's Blog`}
   description={post.data.description}
   ogType="article"
+  articleHeadline={post.data.title}
   articlePublishedTime={post.data.date}
   articleTags={post.data.tags}
 >
