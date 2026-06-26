@@ -10,6 +10,7 @@ dist/
 # Claude Code
 .claude/settings.local.json
 .claude/projects/
+.claude/worktrees/
 .claude/scheduled_tasks.lock
 **/CLAUDE.md
 !/CLAUDE.md
