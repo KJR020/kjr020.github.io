@@ -39,8 +39,13 @@ function readStructuredData(html: string) {
 }
 
 describe("BaseHead OGP meta tags", () => {
+  let rssXml = "";
+
   beforeAll(() => {
     buildSite();
+
+    const rssPath = join(distDir, "rss.xml");
+    rssXml = existsSync(rssPath) ? readFileSync(rssPath, "utf8") : "";
   }, 60_000);
 
   it("renders article OGP meta tags on post pages", () => {
@@ -110,6 +115,11 @@ describe("BaseHead OGP meta tags", () => {
 
   it("keeps website OGP type on non-post pages", () => {
     const indexHtml = readFileSync(join(distDir, "index.html"), "utf8");
+    const indexDoc = new DOMParser().parseFromString(indexHtml, "text/html");
+    const rssHeadLink = indexDoc.querySelector(
+      'link[rel="alternate"][type="application/rss+xml"]',
+    );
+    const rssFooterLink = indexDoc.querySelector('a[aria-label="RSS"]');
 
     expect(indexHtml).toContain('<meta property="og:type" content="website">');
     expect(indexHtml).toContain('<meta property="og:locale" content="ja_JP">');
@@ -122,6 +132,9 @@ describe("BaseHead OGP meta tags", () => {
     expect(indexHtml).toContain(
       '<meta name="twitter:image" content="https://kjr020.dev/og-image.png">',
     );
+    expect(rssHeadLink?.getAttribute("title")).toBe("KJR020 Blog RSS Feed");
+    expect(rssHeadLink?.getAttribute("href")).toBe("https://kjr020.dev/rss.xml");
+    expect(rssFooterLink?.getAttribute("href")).toBe("/rss.xml");
     expect(indexHtml).not.toContain('<meta property="article:published_time"');
     expect(indexHtml).not.toContain('<meta property="article:tag"');
 
@@ -157,5 +170,39 @@ describe("BaseHead OGP meta tags", () => {
     expect(metadata.format).toBe("png");
     expect(metadata.width).toBe(1200);
     expect(metadata.height).toBe(630);
+  });
+
+  it("generates an RSS feed for subscribers", () => {
+    const rssDoc = new DOMParser().parseFromString(rssXml, "application/xml");
+
+    expect(rssXml).toContain("<rss");
+    expect(rssXml).toContain("<channel>");
+    expect(rssDoc.querySelector("channel > title")?.textContent).toBe("KJR020's Blog");
+    expect(rssDoc.querySelector("channel > link")?.textContent).toBe("https://kjr020.dev/");
+  });
+
+  it("includes public posts and excludes draft posts from the RSS feed", () => {
+    const rssDoc = new DOMParser().parseFromString(rssXml, "application/xml");
+    const itemTitles = Array.from(rssDoc.querySelectorAll("item > title")).map((title) =>
+      title.textContent?.trim(),
+    );
+
+    expect(itemTitles).toContain(
+      "OpenAIが実践するAgent-First時代の開発アプローチ — Harness Engineering",
+    );
+    expect(itemTitles).toContain("Cookieとは");
+    expect(itemTitles).not.toContain("Python標準ライブラリgraphlibでDAG並列実行エンジンを作った");
+    expect(itemTitles).not.toContain("FetchPolicyについて");
+  });
+
+  it("orders RSS feed items by publish date descending", () => {
+    const rssDoc = new DOMParser().parseFromString(rssXml, "application/xml");
+    const pubDates = Array.from(rssDoc.querySelectorAll("item > pubDate")).map((pubDate) =>
+      Date.parse(pubDate.textContent ?? ""),
+    );
+
+    expect(pubDates.length).toBeGreaterThan(1);
+    expect(pubDates.every(Number.isFinite)).toBe(true);
+    expect(pubDates).toEqual([...pubDates].sort((a, b) => b - a));
   });
 });
