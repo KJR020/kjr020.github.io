@@ -10,15 +10,36 @@ interface Props {
   description?: string;
   image?: string;
   hideKuri?: boolean;
+  ogType?: "website" | "article";
+  articlePublishedTime?: Date | string;
+  articleModifiedTime?: Date | string;
+  articleTags?: string[];
 }
 
-const { title, description, image, hideKuri = false } = Astro.props;
+const {
+  title,
+  description,
+  image,
+  hideKuri = false,
+  ogType,
+  articlePublishedTime,
+  articleModifiedTime,
+  articleTags,
+} = Astro.props;
 ---
 
 <!doctype html>
 <html lang="ja" class="scroll-smooth">
   <head>
-    <BaseHead title={title} description={description} image={image} />
+    <BaseHead
+      title={title}
+      description={description}
+      image={image}
+      ogType={ogType}
+      articlePublishedTime={articlePublishedTime}
+      articleModifiedTime={articleModifiedTime}
+      articleTags={articleTags}
+    />
   </head>
   <body class="flex min-h-screen flex-col bg-background text-foreground antialiased overflow-x-hidden">
     <Header />
