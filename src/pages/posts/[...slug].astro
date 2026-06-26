@@ -36,6 +36,9 @@ const giscusCategoryId = import.meta.env.PUBLIC_GISCUS_CATEGORY_ID;
 <BaseLayout
   title={`${post.data.title} - KJR020's Blog`}
   description={post.data.description}
+  ogType="article"
+  articlePublishedTime={post.data.date}
+  articleTags={post.data.tags}
 >
   <div class="post-page container mx-auto px-4 py-phi-2xl max-w-6xl">
     <div class="lg:grid lg:grid-cols-[minmax(0,1fr)_250px] lg:gap-phi-2xl">
