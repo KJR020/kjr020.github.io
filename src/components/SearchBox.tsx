@@ -39,28 +39,6 @@ export function SearchBox() {
   const allResultsRef = useRef<PagefindResult[]>([]);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  useEffect(() => {
-    async function loadPagefind() {
-      try {
-        // ビルド時にRollupが解決しないよう、動的にimportパスを構築
-        const pagefindPath = "/pagefind/pagefind.js";
-        const pf = await import(/* @vite-ignore */ pagefindPath);
-        await pf.init();
-        pagefindRef.current = pf;
-
-        const params = new URLSearchParams(window.location.search);
-        const q = params.get("q");
-        if (q) {
-          setQuery(q);
-          performSearch(pf, q);
-        }
-      } catch {
-        // pagefind not available (dev mode)
-      }
-    }
-    loadPagefind();
-  }, []);
-
   const performSearch = useCallback(async (pf: Pagefind, searchQuery: string) => {
     if (!searchQuery.trim()) {
       setResults([]);
@@ -90,6 +68,28 @@ export function SearchBox() {
     );
     setIsLoading(false);
   }, []);
+
+  useEffect(() => {
+    async function loadPagefind() {
+      try {
+        // ビルド時にRollupが解決しないよう、動的にimportパスを構築
+        const pagefindPath = "/pagefind/pagefind.js";
+        const pf = await import(/* @vite-ignore */ pagefindPath);
+        await pf.init();
+        pagefindRef.current = pf;
+
+        const params = new URLSearchParams(window.location.search);
+        const q = params.get("q");
+        if (q) {
+          setQuery(q);
+          performSearch(pf, q);
+        }
+      } catch {
+        // pagefind not available (dev mode)
+      }
+    }
+    loadPagefind();
+  }, [performSearch]);
 
   const handleInput = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -140,6 +140,8 @@ export function SearchBox() {
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
+            aria-hidden="true"
+            focusable="false"
           >
             <circle cx="11" cy="11" r="8" />
             <path d="m21 21-4.3-4.3" />
@@ -192,10 +194,9 @@ export function SearchBox() {
                   >
                     {result.title}
                   </a>
-                  <p
-                    className="mt-1 text-sm text-muted-foreground line-clamp-2"
-                    dangerouslySetInnerHTML={{ __html: result.excerpt }}
-                  />
+                  <p className="mt-1 text-sm text-muted-foreground line-clamp-2">
+                    <SearchExcerpt excerpt={result.excerpt} />
+                  </p>
                 </li>
               ))}
             </ol>
@@ -218,4 +219,24 @@ export function SearchBox() {
       )}
     </div>
   );
+}
+
+function SearchExcerpt({ excerpt }: { excerpt: string }) {
+  return <>{parsePagefindExcerpt(excerpt)}</>;
+}
+
+function parsePagefindExcerpt(excerpt: string) {
+  return excerpt.split(/(<\/?mark>)/g).map((part, index, parts) => {
+    if (part === "<mark>" || part === "</mark>") return null;
+
+    const isMarked = parts[index - 1] === "<mark>" && parts[index + 1] === "</mark>";
+    const text = stripHtmlTags(part);
+    if (!text) return null;
+
+    return isMarked ? <mark key={`${index}-${text}`}>{text}</mark> : text;
+  });
+}
+
+function stripHtmlTags(value: string) {
+  return value.replace(/<[^>]*>/g, "");
 }
