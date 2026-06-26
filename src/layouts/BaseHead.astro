@@ -1,5 +1,6 @@
 ---
 import ThemeInit from "@/components/ThemeInit.astro";
+import { buildPageStructuredData, serializeJsonLd } from "@/lib/structuredData";
 
 interface Props {
   title: string;
@@ -9,6 +10,7 @@ interface Props {
   imageHeight?: number;
   imageType?: string;
   ogType?: "website" | "article";
+  articleHeadline?: string;
   articlePublishedTime?: Date | string;
   articleModifiedTime?: Date | string;
   articleTags?: string[];
@@ -22,12 +24,14 @@ const {
   imageHeight = 630,
   imageType = "image/png",
   ogType = "website",
+  articleHeadline,
   articlePublishedTime,
   articleModifiedTime,
   articleTags = [],
 } = Astro.props;
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const imageURL = new URL(image, Astro.site ?? Astro.url);
+const siteURL = Astro.site ?? new URL("/", Astro.url);
+const canonicalURL = new URL(Astro.url.pathname, siteURL);
+const imageURL = new URL(image, siteURL);
 
 function toMetaDateTime(value: Date | string | undefined) {
   if (!value) {
@@ -39,6 +43,22 @@ function toMetaDateTime(value: Date | string | undefined) {
 
 const publishedTime = toMetaDateTime(articlePublishedTime);
 const modifiedTime = toMetaDateTime(articleModifiedTime);
+const structuredData = buildPageStructuredData({
+  siteUrl: siteURL,
+  pageUrl: canonicalURL,
+  article:
+    ogType === "article" && articleHeadline && articlePublishedTime
+      ? {
+          headline: articleHeadline,
+          description,
+          datePublished: articlePublishedTime,
+          dateModified: articleModifiedTime,
+          image: imageURL,
+          tags: articleTags,
+        }
+      : undefined,
+});
+const serializedStructuredData = serializeJsonLd(structuredData);
 ---
 
 <ThemeInit />
@@ -79,6 +99,8 @@ const modifiedTime = toMetaDateTime(articleModifiedTime);
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={imageURL} />
+
+<script type="application/ld+json" set:html={serializedStructuredData} />
 
 <!-- Google Analytics -->
 {import.meta.env.PROD && (
