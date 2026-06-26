@@ -106,7 +106,7 @@ docs/
 ### 必要な環境
 
 - Node.js 22.x
-- pnpm 10.x
+- pnpm 11.x
 
 ### セットアップ
 
@@ -155,6 +155,10 @@ SCRAPBOX_SID=your-connect-sid-value
 Cloudflare Pages に自動デプロイ。`main` ブランチへの push で GitHub Actions → Cloudflare Pages にビルド・デプロイされる。
 
 `kjr020.github.io` から `kjr020.dev` への旧URL互換リダイレクトは、GitHub Pages の `/docs` 配信で維持している。`docs/index.html` と `docs/404.html` は生成物ではなく、このリダイレクト用途の手動管理ファイル。
+
+## セキュリティ
+
+依存追加・更新時のサプライチェーン対策は [Supply Chain Security](docs/security/supply-chain.md) を参照。
 
 ## ライセンス
 
