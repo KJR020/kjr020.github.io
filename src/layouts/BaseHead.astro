@@ -32,6 +32,7 @@ function toMetaDateTime(value: Date | string | undefined) {
 
 const publishedTime = toMetaDateTime(articlePublishedTime);
 const modifiedTime = toMetaDateTime(articleModifiedTime);
+const rssFeedURL = new URL("/rss.xml", Astro.site);
 ---
 
 <ThemeInit />
@@ -40,6 +41,12 @@ const modifiedTime = toMetaDateTime(articleModifiedTime);
 <link rel="icon" type="image/png" href="/images/kuri_photo.png" />
 <link rel="apple-touch-icon" href="/images/kuri_photo.png" />
 <link rel="canonical" href={canonicalURL} />
+<link
+  rel="alternate"
+  type="application/rss+xml"
+  title="KJR020 Blog RSS Feed"
+  href={rssFeedURL}
+/>
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
