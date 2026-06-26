@@ -10,10 +10,11 @@
 - CI/CD パイプラインでの自動テスト実行
 
 ### テストフレームワーク
-- **Vitest**: Vite ネイティブのテストランナー（Astro 公式推奨）
+- **Vitest**: Unit / Component テスト用の Vite ネイティブテストランナー
+- **Playwright**: E2E / Visual regression テスト用のブラウザテストランナー
 
 ### ファイル配置
-テストファイルはソースファイルと同じディレクトリに配置する（コロケーション）。
+Unit / Component テストファイルは、ソースファイルと同じディレクトリに配置する（コロケーション）。
 
 ```
 src/
@@ -24,6 +25,17 @@ src/
     └── ui/
         ├── button.tsx
         └── button.test.tsx
+```
+
+E2E テストは `playwright.config.ts` の `testDir` に合わせて配置する。現状は `e2e/` を使用している。
+
+```
+e2e/
+├── header.spec.ts
+├── snapshot.spec.ts
+├── snapshot.css
+└── helpers/
+    └── snapshot.ts
 ```
 
 ## テスト対象の評価基準
@@ -50,17 +62,19 @@ src/
 
 ### Unit Tests
 - 純粋関数、ユーティリティ関数
-- テスト環境: `node`
+- テスト環境: `jsdom`（現行設定）
 - 依存関係: なし
 
-### Component Tests（将来）
+### Component Tests
 - React コンポーネントのロジック
-- テスト環境: `jsdom` または `happy-dom`
+- テスト環境: `jsdom`
 - 依存関係: `@testing-library/react`
 
-### E2E Tests（スコープ外）
-- Playwright を使用（別途導入済み）
-- 本ドキュメントのスコープ外
+### E2E Tests
+- Playwright を使用
+- 配置: `e2e/**/*.spec.ts`
+- `pnpm test:e2e` で実行
+- スナップショット安定化CSSは `e2e/snapshot.css`
 
 ## 設定ファイル
 
@@ -72,9 +86,25 @@ import { getViteConfig } from "astro/config";
 
 export default getViteConfig({
   test: {
-    environment: "node",
-    include: ["src/**/*.test.{ts,tsx}"],
+    environment: "jsdom",
     globals: true,
+    include: ["src/**/*.test.{ts,tsx}", "functions/**/*.test.ts"],
+    setupFiles: ["./src/test/setup.ts"],
+  },
+});
+```
+
+### playwright.config.ts
+
+```typescript
+import { defineConfig } from "playwright/test";
+
+export default defineConfig({
+  testDir: "./e2e",
+  expect: {
+    toHaveScreenshot: {
+      stylePath: "./e2e/snapshot.css",
+    },
   },
 });
 ```
@@ -86,7 +116,7 @@ export default getViteConfig({
   "scripts": {
     "test": "vitest",
     "test:run": "vitest run",
-    "test:watch": "vitest watch"
+    "test:e2e": "playwright test"
   }
 }
 ```
@@ -101,9 +131,14 @@ export default getViteConfig({
 - `--passWithNoTests`: テストファイルがない場合もエラーにしない
 - `test:run`: ウォッチモードではなく単発実行
 
+```yaml
+- name: Run E2E tests
+  run: pnpm test:e2e
+```
+
 ## カバレッジ計測
 
-現時点ではカバレッジ計測は行わない。必要に応じて以下を追加:
+Vitest のカバレッジ計測を使用する。測定対象は `vitest.config.ts` の `coverage.include` で明示する。
 
 ```typescript
 // vitest.config.ts
@@ -111,8 +146,8 @@ export default getViteConfig({
   test: {
     coverage: {
       provider: "v8",
-      reporter: ["text", "html"],
-      include: ["src/**/*.ts"],
+      reporter: ["text", "html", "lcov"],
+      include: ["functions/**/*.ts", "src/lib/**/*.ts", "src/hooks/**/*.ts"],
     },
   },
 });

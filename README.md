@@ -73,7 +73,6 @@ graph TB
 src/
 ├── components/          # UI コンポーネント (Astro / React)
 │   └── knowledge/       #   Knowledge Graph 関連
-├── content/posts/       # ブログ記事 (Markdown)
 ├── hooks/               # React Hooks
 ├── layouts/             # ページレイアウト
 ├── lib/                 # ユーティリティ
@@ -87,9 +86,18 @@ functions/
     ├── pages/           # Scrapbox ページ一覧 Proxy
     └── knowledge/       # Knowledge Graph 用全ページ取得 Proxy
 
+content/
+└── posts/               # ブログ記事 (Markdown)
+
+e2e/
+├── helpers/             # Playwright E2E / visual regression helper
+└── *.spec.ts            # E2E テスト
+
 docs/
+├── index.html           # GitHub Pages 旧URLから kjr020.dev へのリダイレクト
+├── 404.html             # GitHub Pages 旧パスから kjr020.dev 同一パスへのリダイレクト
 ├── architecture/        # 設計ドキュメント
-└── security/            # セキュリティ検証チェックリスト
+└── security/            # セキュリティ検証・依存管理チェックリスト
 ```
 
 <details>
@@ -146,6 +154,8 @@ SCRAPBOX_SID=your-connect-sid-value
 
 Cloudflare Pages に自動デプロイ。`main` ブランチへの push で GitHub Actions → Cloudflare Pages にビルド・デプロイされる。
 
+`kjr020.github.io` から `kjr020.dev` への旧URL互換リダイレクトは、GitHub Pages の `/docs` 配信で維持している。`docs/index.html` と `docs/404.html` は生成物ではなく、このリダイレクト用途の手動管理ファイル。
+
 ## ライセンス
 
-記事コンテンツ (`src/content/`) の著作権は著者に帰属します。ソースコードは自由に参照してください。
+記事コンテンツ (`content/posts/`) の著作権は著者に帰属します。ソースコードは自由に参照してください。
