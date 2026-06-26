@@ -1,0 +1,23 @@
+{
+  "feature_name": "theme-toggle-animation-refinement",
+  "issue": "https://github.com/KJR020/kjr020.github.io/issues/23",
+  "created_at": "2026-05-03T07:50:55+09:00",
+  "updated_at": "2026-05-05T00:00:00+09:00",
+  "language": "ja",
+  "phase": "tasks",
+  "approvals": {
+    "requirements": {
+      "generated": true,
+      "approved": false
+    },
+    "design": {
+      "generated": true,
+      "approved": false
+    },
+    "tasks": {
+      "generated": true,
+      "approved": false
+    }
+  },
+  "ready_for_implementation": false
+}
