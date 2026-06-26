@@ -172,7 +172,7 @@ GitHub Actionsで以下の5ジョブが並列実行される:
 4. **Test**: `pnpm test:run --passWithNoTests`
 5. **Build**: `pnpm build`
 
-環境: Node.js 22, pnpm 11, `--frozen-lockfile` でバージョン固定。
+環境: Node.js 22。pnpm は `package.json` の `packageManager` に従う。依存関係は `pnpm-lock.yaml` に固定し、`--frozen-lockfile` で `package.json` との整合性を検証する。
 
 ---
 
