@@ -3,6 +3,20 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { MoonIcon, SunIcon } from "./icons";
 
+const QUIET_ECLIPSE_MOTION = {
+  switchAtMs: 260,
+  waveMs: 560,
+  fadeMs: 140,
+  settleMs: 720,
+  easing: "cubic-bezier(0.16, 1, 0.3, 1)",
+} as const;
+
+interface WaveGeometry {
+  left: number;
+  top: number;
+  size: number;
+}
+
 // DOM状態から現在のテーマを取得（ThemeInit.astroで設定済み）
 function getInitialTheme(): boolean {
   if (typeof document !== "undefined") {
@@ -11,13 +25,31 @@ function getInitialTheme(): boolean {
   return false;
 }
 
+function getWaveGeometry(button: HTMLButtonElement): WaveGeometry {
+  const rect = button.getBoundingClientRect();
+  const left = rect.left + rect.width / 2;
+  const top = rect.top + rect.height / 2;
+  const corners = [
+    [0, 0],
+    [window.innerWidth, 0],
+    [0, window.innerHeight],
+    [window.innerWidth, window.innerHeight],
+  ] as const;
+  const radius = Math.max(...corners.map(([x, y]) => Math.hypot(x - left, y - top)));
+
+  return {
+    left,
+    top,
+    size: radius * 2,
+  };
+}
+
 export function ThemeToggleAnimated() {
   const [isDark, setIsDark] = useState(false);
   const [mounted, setMounted] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
   const [showWave, setShowWave] = useState(false);
   const [waveStyle, setWaveStyle] = useState<React.CSSProperties>({});
-  const [iconPhase, setIconPhase] = useState<"idle" | "exit" | "enter">("idle");
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   // マウント時にテーマ状態を同期
@@ -28,26 +60,25 @@ export function ThemeToggleAnimated() {
 
   const toggleTheme = useCallback(() => {
     if (isAnimating) return;
+    const button = buttonRef.current;
+    if (!button) return;
 
-    // 波の起点を決定
-    // ダーク→ライト: 左下から右上へ
-    // ライト→ダーク: 右上から左下へ
-    const waveX = isDark ? 0 : window.innerWidth;
-    const waveY = isDark ? window.innerHeight : 0;
-
-    // 画面の対角線の長さを計算（波が画面全体を覆うために必要な半径）
-    const maxDistance = Math.sqrt(window.innerWidth ** 2 + window.innerHeight ** 2);
+    const geometry = getWaveGeometry(button);
+    const nextDark = !isDark;
+    const effectColor = nextDark ? "rgb(10, 10, 10)" : "rgb(250, 250, 250)";
 
     setIsAnimating(true);
-    setIconPhase("exit");
 
-    // 波のスタイルを設定
+    // ボタン起点の静かな円形波を設定
     setWaveStyle({
-      left: waveX,
-      top: waveY,
-      width: maxDistance * 2,
-      height: maxDistance * 2,
+      left: geometry.left,
+      top: geometry.top,
+      width: geometry.size,
+      height: geometry.size,
       transform: "translate(-50%, -50%) scale(0)",
+      borderRadius: "999px",
+      opacity: 0.86,
+      backgroundColor: effectColor,
     });
     setShowWave(true);
 
@@ -56,35 +87,35 @@ export function ThemeToggleAnimated() {
       setWaveStyle((prev) => ({
         ...prev,
         transform: "translate(-50%, -50%) scale(1)",
-        transition: "transform 600ms cubic-bezier(0.16, 1, 0.3, 1)",
+        transition: [
+          `transform ${QUIET_ECLIPSE_MOTION.waveMs}ms ${QUIET_ECLIPSE_MOTION.easing}`,
+          `opacity ${QUIET_ECLIPSE_MOTION.fadeMs}ms ease-out ${QUIET_ECLIPSE_MOTION.waveMs}ms`,
+        ].join(", "),
       }));
     });
 
-    // テーマを切り替え（波が半分くらい広がったタイミング）
+    // テーマを切り替え（波が半分ほど広がったタイミング）
     setTimeout(() => {
-      const newDark = !isDark;
-      setIsDark(newDark);
-      if (newDark) {
+      setIsDark(nextDark);
+      if (nextDark) {
         document.documentElement.classList.add("dark");
         localStorage.setItem("theme", "dark");
       } else {
         document.documentElement.classList.remove("dark");
         localStorage.setItem("theme", "light");
       }
-      setIconPhase("enter");
-    }, 300);
+    }, QUIET_ECLIPSE_MOTION.switchAtMs);
 
     // 波をフェードアウト
     setTimeout(() => {
       setShowWave(false);
-    }, 600);
+    }, QUIET_ECLIPSE_MOTION.waveMs);
 
     // アニメーション完了
     setTimeout(() => {
       setIsAnimating(false);
-      setIconPhase("idle");
       setWaveStyle({});
-    }, 900);
+    }, QUIET_ECLIPSE_MOTION.settleMs);
   }, [isDark, isAnimating]);
 
   // SSRハイドレーション対策：マウント前はプレースホルダーを返す
@@ -107,55 +138,10 @@ export function ThemeToggleAnimated() {
           className={`fixed inset-0 z-60 pointer-events-none overflow-hidden transition-opacity duration-200 ${
             showWave ? "opacity-100" : "opacity-0"
           }`}
+          aria-hidden="true"
         >
-          {/* 波（円形に広がる） */}
-          <div
-            className="absolute rounded-full opacity-80"
-            style={{
-              ...waveStyle,
-              backgroundColor: isDark ? "rgb(250, 250, 250)" : "rgb(10, 10, 10)",
-            }}
-          />
-        </div>,
-        document.body,
-      )}
-
-      {/* アイコンオーバーレイ - React Portal でbody直下にレンダリング */}
-      {createPortal(
-        <div
-          className={`fixed inset-0 z-70 flex items-center justify-center pointer-events-none transition-opacity duration-200 ${
-            iconPhase !== "idle" ? "opacity-100" : "opacity-0"
-          }`}
-        >
-          <div className="relative w-32 h-32">
-            {/* 太陽アイコン（大）- ライトモードへ切り替え時に表示（下から上へ） */}
-            <SunIcon
-              strokeWidth={1.25}
-              className={`absolute inset-0 w-full h-full text-foreground transition-all duration-300 ease-out ${
-                !isDark && iconPhase === "enter"
-                  ? "translate-y-0 opacity-100"
-                  : !isDark && iconPhase === "exit"
-                    ? "-translate-y-full opacity-0"
-                    : isDark && iconPhase === "exit"
-                      ? "translate-y-full opacity-0"
-                      : "translate-y-full opacity-0"
-              }`}
-            />
-
-            {/* 月アイコン（大）- ダークモードへ切り替え時に表示（上から下へ） */}
-            <MoonIcon
-              strokeWidth={1.25}
-              className={`absolute inset-0 w-full h-full text-foreground transition-all duration-300 ease-out ${
-                isDark && iconPhase === "enter"
-                  ? "translate-y-0 opacity-100"
-                  : isDark && iconPhase === "exit"
-                    ? "translate-y-full opacity-0"
-                    : !isDark && iconPhase === "exit"
-                      ? "-translate-y-full opacity-0"
-                      : "-translate-y-full opacity-0"
-              }`}
-            />
-          </div>
+          {/* ボタン起点の円形波 */}
+          <div className="absolute rounded-full" style={waveStyle} />
         </div>,
         document.body,
       )}
@@ -167,7 +153,7 @@ export function ThemeToggleAnimated() {
         onClick={toggleTheme}
         disabled={isAnimating}
         className="relative w-10 h-10 rounded-full flex items-center justify-center hover:bg-muted transition-colors disabled:cursor-not-allowed z-50"
-        aria-label="テーマを切り替える"
+        aria-label={isDark ? "ライトモードに切り替える" : "ダークモードに切り替える"}
       >
         <div className="relative w-5 h-5 overflow-hidden">
           {/* 太陽アイコン（小） */}
