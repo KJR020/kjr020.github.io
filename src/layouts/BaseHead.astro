@@ -100,7 +100,7 @@ const serializedStructuredData = serializeJsonLd(structuredData);
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={imageURL} />
 
-<script type="application/ld+json" set:html={serializedStructuredData} />
+<script type="application/ld+json" set:html={serializedStructuredData}></script>
 
 <!-- Google Analytics -->
 {import.meta.env.PROD && (
