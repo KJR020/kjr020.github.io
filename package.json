@@ -6,6 +6,7 @@
   "packageManager": "pnpm@11.7.0",
   "scripts": {
     "dev": "astro dev",
+    "prebuild": "tsx scripts/prepare-public-build.ts",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
