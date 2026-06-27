@@ -130,6 +130,13 @@ pnpm install
 | `pnpm test:coverage` | カバレッジ閾値チェック      |
 | `pnpm test:coverage:check` | カバレッジ閾値チェック（明示名） |
 | `pnpm test:e2e`      | Playwright E2E テスト |
+| `pnpm test:e2e:update-snapshots` | 現在の実行環境用スナップショット更新 |
+
+### スナップショット更新
+
+Linux 用の基準画像は GitHub Actions の `CI` workflow を手動実行して更新する。`update_snapshots=true` と対象ブランチを指定すると、生成された `*-linux.png` が同じブランチへコミットされる。
+
+macOS ローカルで `pnpm test:e2e:update-snapshots` を実行すると macOS 用の `*-darwin.png` が更新される。CI 用の `*-linux.png` 更新には使わない。
 
 ### Cloudflare Pages Functions のローカル実行
 
