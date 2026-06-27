@@ -68,7 +68,7 @@ describe("BaseHead OGP meta tags", () => {
   });
 
   it("ships the default OGP image at the recommended dimensions", async () => {
-    const ogImagePath = join(process.cwd(), "public", "og-image.png");
+    const ogImagePath = join(distDir, "og-image.png");
 
     expect(existsSync(ogImagePath)).toBe(true);
 
