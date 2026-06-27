@@ -1,11 +1,12 @@
 import { execFileSync } from "node:child_process";
-import { existsSync, readdirSync, readFileSync } from "node:fs";
+import { readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 
 import { beforeAll, describe, expect, it } from "vitest";
 
 const distDir = join(process.cwd(), "dist");
 const astroBin = join(process.cwd(), "node_modules", ".bin", "astro");
+const baseHeadPath = join(process.cwd(), "src", "layouts", "BaseHead.astro");
 
 function buildSite() {
   execFileSync(astroBin, ["build"], {
@@ -27,7 +28,11 @@ function readHtmlFiles(dir: string): string[] {
 }
 
 function readStructuredData(html: string) {
-  const matches = [...html.matchAll(/<script type="application\/ld\+json">(.+?)<\/script>/gs)];
+  const matches = [
+    ...html.matchAll(
+      /<script\b(?=[^>]*\btype\s*=\s*["']application\/ld\+json["'])[^>]*>([\s\S]*?)<\/script>/gi,
+    ),
+  ];
 
   return matches.map((match) => JSON.parse(match[1]));
 }
@@ -84,6 +89,24 @@ describe("BaseHead OGP meta tags", () => {
     });
   });
 
+  it("renders JSON-LD script with an explicit closing tag", () => {
+    const baseHeadSource = readFileSync(baseHeadPath, "utf8");
+
+    expect(baseHeadSource).toContain('<script type="application/ld+json"');
+    expect(baseHeadSource).not.toMatch(/<script[^>]*type="application\/ld\+json"[^>]*\/>/);
+    expect(baseHeadSource).toMatch(/<script[^>]*type="application\/ld\+json"[^>]*><\/script>/);
+  });
+
+  it("reads JSON-LD script even when script attributes change order or spacing", () => {
+    const [structuredData] = readStructuredData(
+      '<script data-kind="structured-data" type = \'application/ld+json\' nonce="abc">{"@context":"https://schema.org"}</script>',
+    );
+
+    expect(structuredData).toEqual({
+      "@context": "https://schema.org",
+    });
+  });
+
   it("keeps website OGP type on non-post pages", () => {
     const indexHtml = readFileSync(join(distDir, "index.html"), "utf8");
 
@@ -105,8 +128,12 @@ describe("BaseHead OGP meta tags", () => {
   });
 
   it("does not generate draft post pages", () => {
-    expect(existsSync(join(distDir, "posts", "graphql", "fetchpolicyについて", "index.html"))).toBe(
-      false,
-    );
+    const postHtmlFiles = readHtmlFiles(join(distDir, "posts"));
+
+    expect(
+      postHtmlFiles.some((html) =>
+        html.includes("<title>fetchPolicyについて - KJR020&#39;s Blog</title>"),
+      ),
+    ).toBe(false);
   });
 });
