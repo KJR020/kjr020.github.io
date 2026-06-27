@@ -263,6 +263,134 @@ const giscusCategoryId = import.meta.env.PUBLIC_GISCUS_CATEGORY_ID;
     color: var(--link-hover);
   }
 
+  /* GFM脚注 */
+  .prose [data-footnotes] {
+    margin-top: 2.618rem; /* φ² */
+    padding-top: 1.618rem; /* φ */
+    border-top: 1px solid var(--border);
+    color: var(--muted-foreground);
+    font-size: var(--font-size-small);
+  }
+
+  .prose [data-footnotes] > h2 {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0 0 1rem;
+    padding: 0;
+    overflow: visible;
+    clip: auto;
+    clip-path: none;
+    white-space: normal;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 0;
+    color: var(--foreground);
+    font-size: var(--font-size-title3);
+    line-height: var(--lh-tight);
+    font-weight: 600;
+    letter-spacing: 0;
+  }
+
+  .prose [data-footnotes] > h2::before {
+    content: "※";
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.618rem; /* φ */
+    height: 1.618rem; /* φ */
+    border-radius: 999px;
+    background-color: color-mix(in srgb, var(--link) 12%, transparent);
+    color: var(--link);
+    font-size: 0.875rem;
+    line-height: 1;
+  }
+
+  .prose [data-footnotes] ol {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 1.618rem; /* φ */
+  }
+
+  .prose [data-footnotes] li {
+    margin-top: 0.618rem; /* 1/φ */
+    margin-bottom: 0.618rem; /* 1/φ */
+    padding-left: 0.382rem; /* φ⁻² */
+  }
+
+  .prose [data-footnotes] li::marker {
+    color: var(--muted-foreground);
+    font-weight: 600;
+  }
+
+  .prose [data-footnotes] p {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: var(--lh-body);
+  }
+
+  .prose [data-footnote-ref] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 1.25rem;
+    height: 1.25rem;
+    padding: 0 0.382rem; /* φ⁻² */
+    border-radius: 999px;
+    background-color: color-mix(in srgb, var(--link) 12%, transparent);
+    color: var(--link);
+    font-size: 0.75em;
+    font-weight: 600;
+    line-height: 1;
+    text-decoration: none;
+  }
+
+  .prose [data-footnote-ref]:hover {
+    background-color: color-mix(in srgb, var(--link-hover) 18%, transparent);
+    color: var(--link-hover);
+  }
+
+  .prose [data-footnote-backref] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 1.5rem;
+    height: 1.5rem;
+    margin-left: 0.236rem; /* φ⁻³ */
+    padding: 0 0.382rem; /* φ⁻² */
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background-color: var(--background);
+    color: var(--muted-foreground);
+    font-size: 0;
+    font-weight: 600;
+    line-height: 1;
+    text-decoration: none;
+    vertical-align: middle;
+  }
+
+  .prose [data-footnote-backref]::before {
+    content: "↩︎";
+    font-size: 0.75rem;
+  }
+
+  .prose [data-footnote-backref] sup {
+    margin-left: 0.05rem;
+    font-size: 0.65rem;
+  }
+
+  .prose [data-footnote-backref]:hover {
+    background-color: var(--muted);
+    color: var(--foreground);
+  }
+
+  .prose [data-footnote-ref]:focus-visible,
+  .prose [data-footnote-backref]:focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+
   /* コードブロックのコピーボタン */
   .code-block-wrapper {
     position: relative;
