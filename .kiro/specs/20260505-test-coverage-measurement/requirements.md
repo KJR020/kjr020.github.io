@@ -31,7 +31,7 @@
 
 #### Acceptance Criteria
 
-1. When 開発者が依存関係を同期した状態で測定コマンドを実行する, the Vitest coverage shall `functions/**/*.ts`, `src/lib/**/*.ts`, `src/hooks/**/*.ts`, `src/components/knowledge/format.ts` を測定対象にする
+1. When 開発者が依存関係を同期した状態で測定コマンドを実行する, the Vitest coverage shall `functions/**/*.ts`, `src/lib/**/*.ts`, `src/hooks/**/*.ts` を測定対象にする
 2. When 測定対象にテストファイルや生成物が含まれる, the Vitest coverage shall `**/*.test.ts`, `**/*.test.tsx`, `node_modules/**`, `dist/**`, `coverage/**` を測定対象から除外する
 3. If `node_modules` が lockfile と同期していない, then the developer workflow shall `pnpm install --frozen-lockfile` を先に実行する手順を示す
 4. The measurement workflow shall Playwright E2E/snapshot test を coverage の対象に含めない

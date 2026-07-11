@@ -1,20 +1,12 @@
 # KJR020's Blog
 
-KJR020の技術ブログ。Astro + Cloudflare Pages で構築し、Scrapbox の知識体系を可視化する Knowledge Graph 機能を備える。
+KJR020の技術ブログ。Astro + Cloudflare Pages で構築。
 
 [![CI](https://github.com/KJR020/kjr020.github.io/actions/workflows/ci.yml/badge.svg)](https://github.com/KJR020/kjr020.github.io/actions/workflows/ci.yml)
 
 **https://kjr020.dev/**
 
 ## 特徴
-
-### Knowledge Graph
-
-Scrapbox に蓄積した 1,788 ページのハッシュタグ共起関係を [Cytoscape.js](https://js.cytoscape.org/) で可視化。ノードサイズがページ数を反映し、知識の濃淡が一目で分かる。
-
-- タグ共起グラフ + タグ別ページ一覧の 2 ビュー
-- Cloudflare Pages Functions 経由で Scrapbox API を安全に中継（descriptions 原文非公開、CORS 制限、Cache-Control）
-- ハッシュタグは `[...]` 内の URL fragment を除外し `_` をスペースに正規化して抽出
 
 ### 全文検索
 
@@ -35,13 +27,11 @@ graph TB
     subgraph Browser
         ASTRO["Astro 静的ページ"]
         SEARCH["Pagefind 全文検索"]
-        KG["Knowledge Graph<br/>(Cytoscape.js)"]
     end
 
     subgraph CF["Cloudflare Pages"]
         STATIC["静的ホスティング"]
         FN_PAGES["Pages Function<br/>GET /api/pages/:project"]
-        FN_KNOWLEDGE["Pages Function<br/>GET /api/knowledge/:project"]
     end
 
     subgraph External
@@ -49,9 +39,7 @@ graph TB
     end
 
     ASTRO --> STATIC
-    KG --> FN_KNOWLEDGE
     FN_PAGES --> SB
-    FN_KNOWLEDGE --> SB
 ```
 
 ## 技術スタック
@@ -60,7 +48,6 @@ graph TB
 |---------------|-----------------------------------------------------------------------|
 | フレームワーク       | [Astro](https://astro.build/) 5.x + [React](https://react.dev/) 19    |
 | スタイリング        | [Tailwind CSS](https://tailwindcss.com/) 4                            |
-| 可視化        | [Cytoscape.js](https://js.cytoscape.org/) (Knowledge Graph)           |
 | 検索          | [Pagefind](https://pagefind.app/) (クライアントサイド全文検索)                 |
 | インフラ          | [Cloudflare Pages](https://pages.cloudflare.com/) + Pages Functions   |
 | Lint / Format | [Biome](https://biomejs.dev/)                                         |
@@ -72,7 +59,6 @@ graph TB
 ```text
 src/
 ├── components/          # UI コンポーネント (Astro / React)
-│   └── knowledge/       #   Knowledge Graph 関連
 ├── hooks/               # React Hooks
 ├── layouts/             # ページレイアウト
 ├── lib/                 # ユーティリティ
@@ -81,10 +67,8 @@ src/
 └── types/               # 型定義
 
 functions/
-├── _lib/                # Proxy 共通ロジック (hashtag parser, http helper)
-└── api/
-    ├── pages/           # Scrapbox ページ一覧 Proxy
-    └── knowledge/       # Knowledge Graph 用全ページ取得 Proxy
+├── _lib/                # Proxy 共通ロジック
+└── api/pages/           # Scrapbox ページ一覧 Proxy
 
 content/
 └── posts/               # ブログ記事 (Markdown)

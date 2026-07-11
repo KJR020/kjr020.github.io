@@ -46,7 +46,7 @@
   - `src/**/*.test.{ts,tsx}`
   - `functions/**/*.test.ts`
 - **Findings**:
-  - Coverage include は `functions/**/*.ts`, `src/lib/**/*.ts`, `src/hooks/**/*.ts`, `src/components/knowledge/format.ts`。
+  - Coverage include は `functions/**/*.ts`, `src/lib/**/*.ts`, `src/hooks/**/*.ts`。
   - React コンポーネント全体ではなく、関数・hook・API proxy 周辺を主対象にしている。
   - 未カバーの主な低下要因は `src/hooks/useImageLazyLoad.ts`, `src/hooks/useScrapboxData.ts`, `src/lib/queryClient.ts`。
 - **Implications**:
