@@ -11,6 +11,7 @@ interface Props {
   image?: string;
   hideKuri?: boolean;
   ogType?: "website" | "article";
+  articleHeadline?: string;
   articlePublishedTime?: Date | string;
   articleModifiedTime?: Date | string;
   articleTags?: string[];
@@ -22,6 +23,7 @@ const {
   image,
   hideKuri = false,
   ogType,
+  articleHeadline,
   articlePublishedTime,
   articleModifiedTime,
   articleTags,
@@ -36,6 +38,7 @@ const {
       description={description}
       image={image}
       ogType={ogType}
+      articleHeadline={articleHeadline}
       articlePublishedTime={articlePublishedTime}
       articleModifiedTime={articleModifiedTime}
       articleTags={articleTags}
