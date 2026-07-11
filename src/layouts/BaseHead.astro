@@ -59,6 +59,7 @@ const structuredData = buildPageStructuredData({
       : undefined,
 });
 const serializedStructuredData = serializeJsonLd(structuredData);
+const rssFeedURL = new URL("/rss.xml", siteURL);
 ---
 
 <ThemeInit />
@@ -67,6 +68,12 @@ const serializedStructuredData = serializeJsonLd(structuredData);
 <link rel="icon" type="image/png" href="/images/kuri_photo.png" />
 <link rel="apple-touch-icon" href="/images/kuri_photo.png" />
 <link rel="canonical" href={canonicalURL} />
+<link
+  rel="alternate"
+  type="application/rss+xml"
+  title="KJR020 Blog RSS Feed"
+  href={rssFeedURL}
+/>
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
