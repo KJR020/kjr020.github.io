@@ -2,7 +2,7 @@
 
 import { readdirSync, rmSync, statSync } from "node:fs";
 import path from "node:path";
-import { findForbiddenPublicPageFiles } from "../src/lib/publicBuildInputs";
+import { preparePublicBuild } from "../src/lib/publicBuildInputs";
 
 const publicInputDirs = ["src/pages", "public"];
 const outputDir = "dist";
@@ -15,8 +15,14 @@ function listFiles(directory: string): string[] {
   });
 }
 
-const publicInputFiles = publicInputDirs.flatMap(listFiles);
-const forbiddenFiles = findForbiddenPublicPageFiles(publicInputFiles);
+const forbiddenFiles = preparePublicBuild({
+  publicInputDirs,
+  outputDir,
+  listFiles,
+  removeOutputDir: (directory) => {
+    rmSync(directory, { recursive: true, force: true });
+  },
+});
 
 if (forbiddenFiles.length > 0) {
   console.error("Public build input check failed. Move these files outside public build inputs:");
@@ -25,5 +31,3 @@ if (forbiddenFiles.length > 0) {
   }
   process.exit(1);
 }
-
-rmSync(outputDir, { recursive: true, force: true });
