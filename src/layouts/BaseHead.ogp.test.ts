@@ -116,9 +116,7 @@ describe("BaseHead OGP meta tags", () => {
   it("keeps website OGP type on non-post pages", () => {
     const indexHtml = readFileSync(join(distDir, "index.html"), "utf8");
     const indexDoc = new DOMParser().parseFromString(indexHtml, "text/html");
-    const rssHeadLink = indexDoc.querySelector(
-      'link[rel="alternate"][type="application/rss+xml"]',
-    );
+    const rssHeadLink = indexDoc.querySelector('link[rel="alternate"][type="application/rss+xml"]');
     const rssFooterLink = indexDoc.querySelector('a[aria-label="RSS"]');
 
     expect(indexHtml).toContain('<meta property="og:type" content="website">');
@@ -178,7 +176,7 @@ describe("BaseHead OGP meta tags", () => {
     expect(rssXml).toContain("<rss");
     expect(rssXml).toContain("<channel>");
     expect(rssDoc.querySelector("channel > title")?.textContent).toBe("KJR020's Blog");
-    expect(rssDoc.querySelector("channel > link")?.textContent).toBe("https://kjr020.dev/");
+    expect(rssDoc.querySelector("channel > link")?.textContent).toBe("https://kjr020.dev");
   });
 
   it("includes public posts and excludes draft posts from the RSS feed", () => {
@@ -204,5 +202,16 @@ describe("BaseHead OGP meta tags", () => {
     expect(pubDates.length).toBeGreaterThan(1);
     expect(pubDates.every(Number.isFinite)).toBe(true);
     expect(pubDates).toEqual([...pubDates].sort((a, b) => b - a));
+  });
+
+  it("uses canonical post links without trailing slashes in RSS items", () => {
+    const rssDoc = new DOMParser().parseFromString(rssXml, "application/xml");
+    const itemLinks = Array.from(rssDoc.querySelectorAll("item > link")).map((link) =>
+      link.textContent?.trim(),
+    );
+
+    expect(itemLinks.length).toBeGreaterThan(1);
+    expect(itemLinks.every((link) => link?.startsWith("https://kjr020.dev/posts/"))).toBe(true);
+    expect(itemLinks.every((link) => !link?.endsWith("/"))).toBe(true);
   });
 });

@@ -12,6 +12,7 @@ export async function GET(context: APIContext) {
     title: "KJR020's Blog",
     description: "KJR020の技術ブログ",
     site: context.site?.toString() ?? "https://kjr020.dev",
+    trailingSlash: false,
     items: sortedPosts.map((post) => ({
       title: post.data.title,
       description: post.data.description,
