@@ -1,5 +1,6 @@
 // @ts-check
 import { defineConfig } from "astro/config";
+import { unified } from "@astrojs/markdown-remark";
 import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
@@ -20,6 +21,7 @@ const calloutIcons = {
 // https://astro.build/config
 export default defineConfig({
   site: "https://kjr020.dev",
+  compressHTML: true,
   build: {
     format: "directory",
   },
@@ -28,27 +30,29 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   markdown: {
+    processor: unified({
+      remarkPlugins: [
+        [
+          remarkCallout,
+          {
+            icon: (/** @type {{ type: string }} */ callout) =>
+              calloutIcons[callout.type] || calloutIcons.note,
+          },
+        ],
+        [remarkLinkCard, { cache: false, shortenUrl: true }],
+      ],
+      rehypePlugins: [[rehypeMermaid, { class: "mermaid" }]],
+      remarkRehype: {
+        footnoteLabel: "脚注",
+        footnoteLabelTagName: "h2",
+      },
+    }),
     shikiConfig: {
       themes: {
         light: "github-light",
         dark: "github-dark",
       },
       defaultColor: false,
-    },
-    remarkPlugins: [
-      [
-        remarkCallout,
-        {
-          icon: (/** @type {{ type: string }} */ callout) =>
-            calloutIcons[callout.type] || calloutIcons.note,
-        },
-      ],
-      [remarkLinkCard, { cache: false, shortenUrl: true }],
-    ],
-    rehypePlugins: [[rehypeMermaid, { class: "mermaid" }]],
-    remarkRehype: {
-      footnoteLabel: "脚注",
-      footnoteLabelTagName: "h2",
     },
   },
 });
