@@ -15,31 +15,22 @@ const latestPosts = sortedPosts.slice(0, 3);
   <div class="index-wrapper">
     <div class="container mx-auto px-4 pt-phi-md pb-phi-2xl">
       <section class="mb-phi-2xs pt-phi-xl pb-phi-2xs animate-fade-in-up">
-        <div class="flex items-start gap-phi-md">
-          <img
-            src="/images/kuri_photo.png"
-            alt="KJR020"
-            width="64"
-            height="64"
-            class="h-16 w-16 rounded-full ring-2 ring-border hidden sm:block"
-          />
-          <div>
-            <h1
-              class="font-bold font-heading tracking-tight mb-phi-2xs"
-              style="font-size: var(--font-size-title1); line-height: var(--lh-tight);"
-            >
-              KJR020's Blog
-            </h1>
-            <p
-              class="text-base text-muted-foreground max-w-lg"
-              style="line-height: var(--lh-body);"
-            >
-              Webエンジニアによる技術ブログ兼思考ログ。<br
-                class="hidden sm:inline"
-              />
-              日々の学びや感じたことを日記的に書いています。
-            </p>
-          </div>
+        <div class="max-w-2xl">
+          <h1
+            class="hero-title font-bold font-heading tracking-tight mb-phi-2xs"
+            style="font-size: var(--font-size-title1); line-height: var(--lh-tight);"
+          >
+            KJR020's Blog
+          </h1>
+          <p
+            class="hero-copy text-base text-muted-foreground max-w-lg"
+            style="line-height: var(--lh-body);"
+          >
+            とあるWebエンジニアのブログ。<br
+              class="hidden sm:inline"
+            />
+            調べたこと、やってみたことを書いています。
+          </p>
         </div>
       </section>
       <section
@@ -140,5 +131,13 @@ const latestPosts = sortedPosts.slice(0, 3);
 
   .index-wrapper :global([data-slot="card"]:hover) {
     background: hsl(var(--accent) / 0.5);
+  }
+
+  .hero-title {
+    text-wrap: balance;
+  }
+
+  .hero-copy {
+    text-wrap: pretty;
   }
 </style>
