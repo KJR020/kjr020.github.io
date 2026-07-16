@@ -45,7 +45,7 @@
 - `vitest.config.ts`
   - `coverage.provider`: `v8`
   - `coverage.reporter`: `text`, `html`, `lcov`
-  - `coverage.include`: Functions, lib, hooks, knowledge format
+  - `coverage.include`: Functions, lib, hooks
   - `coverage.thresholds`: lines/functions/statements/branches 80%
 - `.github/workflows/ci.yml`
   - `test` job で `pnpm test:run --passWithNoTests`

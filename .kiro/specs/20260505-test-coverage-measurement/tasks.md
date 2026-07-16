@@ -49,14 +49,12 @@
 - [x] 6. カバレッジ改善対象を優先順位付けする (P)
   - First priority: `src/hooks/useImageLazyLoad.ts` と `src/hooks/useScrapboxData.ts` の基本分岐をテストする
   - Second priority: `src/lib/queryClient.ts` の初期化挙動をテストする
-  - Third priority: `functions/_lib/knowledge-proxy.ts` の未カバー分岐を補う
   - 低価値な snapshot 的テストではなく、エラー処理・分岐・副作用境界を優先する
   - _Requirements: 3.3_
 
 - [x] 7. hook/libテストを追加して全体80%以上に引き上げる
   - `src/hooks/useImageLazyLoad.test.tsx` を追加し、IntersectionObserver連携、loadイベント、cleanupを検証する
   - `src/hooks/useScrapboxData.test.tsx` を追加し、fetch成功、limit適用、disabled query、API errorを検証する
-  - `src/hooks/useKnowledgeDataHook.test.tsx` を追加し、knowledge proxy成功、API error、disabled queryを検証する
   - `src/lib/queryClient.test.ts` を追加し、React Query の既定値を検証する
   - hook/libテスト追加後の値: statements 97.47%, branches 88.78%, functions 95.23%, lines 98.90%
   - _Requirements: 3.3_

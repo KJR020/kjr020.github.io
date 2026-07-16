@@ -14,7 +14,6 @@ export default getViteConfig({
         "functions/**/*.ts",
         "src/lib/**/*.ts",
         "src/hooks/**/*.ts",
-        "src/components/knowledge/format.ts",
       ],
       exclude: [
         "**/*.test.ts",
