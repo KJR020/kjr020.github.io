@@ -1,5 +1,5 @@
 import { type Page, test } from "playwright/test";
-import type { ScrapboxPageData } from "../src/types/scrapbox";
+import type { ScrapboxPageData } from "../src/components/scrapbox/types";
 import type { PageConfig } from "./helpers/snapshot";
 import { capturePageSnapshot } from "./helpers/snapshot";
 

@@ -1,8 +1,8 @@
 import { render, screen, waitFor } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { queryClient } from "@/lib/queryClient";
-import type { ScrapboxPageData } from "@/types/scrapbox";
+import { queryClient } from "./queryClient";
 import { ScrapboxCardList } from "./ScrapboxCardList";
+import type { ScrapboxPageData } from "./types";
 
 function page(id: string, overrides?: Partial<ScrapboxPageData>): ScrapboxPageData {
   return {

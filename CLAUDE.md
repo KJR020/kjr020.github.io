@@ -27,15 +27,26 @@ Astroで構築した個人ブログ。技術記事の発信とポートフォリ
 ## Directory Structure
 
 ```
-src/
-├── components/    # UIコンポーネント（Astro/React）
-├── content/       # ブログ記事（Markdown）
-│   └── posts/     # 記事本体
-├── layouts/       # ページレイアウト
-├── lib/           # ユーティリティ関数
-├── pages/         # ルーティング（ファイルベース）
-└── styles/        # グローバルスタイル
+.
+├── content/
+│   └── posts/          # ブログ記事（Markdown）
+├── e2e/                # Playwright E2Eテスト
+├── functions/          # Cloudflare Pages Functions
+├── scripts/            # ビルド補助スクリプト
+└── src/
+    ├── components/     # UIコンポーネント（Astro/React、機能単位でcolocation）
+    │   ├── scrapbox/   # Scrapboxのcomponent/hook/type/provider
+    │   ├── search/     # 検索UI
+    │   ├── theme/      # テーマ切替と初期化
+    │   └── toc/        # 目次UIとhook/type
+    ├── layouts/        # ページレイアウト
+    ├── lib/            # 共有ユーティリティ関数
+    ├── pages/          # ルーティング（ファイルベース）
+    └── styles/         # グローバルスタイル
 ```
+
+複数ファイルで構成される機能では、private な component / hook / type / provider を
+`components/<feature>/` にcolocationする。
 
 ## Commands
 
@@ -48,6 +59,10 @@ pnpm format       # フォーマット
 pnpm test:run     # テスト実行
 pnpm typecheck    # 型チェック
 ```
+
+## Development Guides
+
+- [Pull Request 作成ガイド](docs/development/pull-request-guidelines.md)
 
 ## Spec-Driven Development
 

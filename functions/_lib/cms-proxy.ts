@@ -8,7 +8,7 @@ const PROJECT_NAME_PATTERN = /^[\w-]+$/;
  */
 const PROJECT_NAME_MAX_LENGTH = 64;
 
-/** Proxy の出力型（フロントエンドとの契約） */
+/** Proxy の出力型（フロントエンドとの契約）。src/components/scrapbox/types.ts と同期する。 */
 export interface PageData {
   id: string;
   title: string;

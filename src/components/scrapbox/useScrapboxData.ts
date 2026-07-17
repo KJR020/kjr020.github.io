@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import type { ScrapboxPageData } from "@/types/scrapbox";
+import type { ScrapboxPageData } from "./types";
 
 async function fetchFromProxy(project: string): Promise<ScrapboxPageData[]> {
   const response = await fetch(`/api/pages/${encodeURIComponent(project)}?limit=100`);

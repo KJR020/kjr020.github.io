@@ -13,7 +13,8 @@ export default getViteConfig({
       include: [
         "functions/**/*.ts",
         "src/lib/**/*.ts",
-        "src/hooks/**/*.ts",
+        "src/components/**/use*.ts",
+        "src/components/scrapbox/queryClient.ts",
       ],
       exclude: [
         "**/*.test.ts",
