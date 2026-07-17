@@ -2,10 +2,10 @@
 
 import { AlertCircle, ChevronLeft, ChevronRight, FileQuestion, RefreshCw } from "lucide-react";
 import { useRef, useState } from "react";
-import { QueryProvider } from "@/components/QueryProvider";
 import { Button } from "@/components/ui/button";
-import { useScrapboxData } from "@/hooks/useScrapboxData";
 import { cn } from "@/lib/utils";
+import { QueryProvider } from "./QueryProvider";
+import { useScrapboxData } from "./useScrapboxData";
 
 interface ScrapboxCardListProps {
   project: string;

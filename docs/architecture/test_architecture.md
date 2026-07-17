@@ -147,7 +147,12 @@ export default getViteConfig({
     coverage: {
       provider: "v8",
       reporter: ["text", "html", "lcov"],
-      include: ["functions/**/*.ts", "src/lib/**/*.ts", "src/hooks/**/*.ts"],
+      include: [
+        "functions/**/*.ts",
+        "src/lib/**/*.ts",
+        "src/components/**/use*.ts",
+        "src/components/scrapbox/queryClient.ts",
+      ],
     },
   },
 });

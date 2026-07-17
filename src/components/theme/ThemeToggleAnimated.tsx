@@ -1,7 +1,8 @@
 import type React from "react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { MoonIcon, SunIcon } from "./icons";
+import { MoonIcon } from "./MoonIcon";
+import { SunIcon } from "./SunIcon";
 
 // DOM状態から現在のテーマを取得（ThemeInit.astroで設定済み）
 function getInitialTheme(): boolean {
