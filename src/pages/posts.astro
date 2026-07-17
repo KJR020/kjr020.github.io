@@ -55,32 +55,6 @@ const years = Object.keys(postsByYear)
 </BaseLayout>
 
 <style>
-  .archive-page {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    min-height: 0;
-    overflow: hidden;
-  }
-
-  .archive-header {
-    flex-shrink: 0;
-  }
-
-  .archive-body {
-    position: relative;
-    flex: 1;
-    min-height: 0;
-  }
-
-  .archive-scroll {
-    position: relative;
-    z-index: 1;
-    height: 100%;
-    overflow-y: auto;
-  }
-
   .year-section {
     display: grid;
     grid-template-columns: 5rem 1fr;
@@ -121,19 +95,5 @@ const years = Object.keys(postsByYear)
     .year-text {
       font-size: var(--font-size-small); /* 1/⁴√φ = 0.886rem */
     }
-  }
-</style>
-
-<style is:global>
-  body:has(.archive-page) {
-    height: 100vh;
-    overflow: hidden;
-  }
-
-  body:has(.archive-page) > main {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    min-height: 0;
   }
 </style>
