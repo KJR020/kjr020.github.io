@@ -9,6 +9,7 @@ import { rehypeMermaid } from "@beoe/rehype-mermaid";
 // @ts-ignore
 import remarkLinkCard from "remark-link-card";
 import remarkCallout from "@r4ai/remark-callout";
+import { devDesignSystem } from "./src/integrations/devDesignSystem.ts";
 
 /** @type {Record<string, string>} */
 const calloutIcons = {
@@ -25,7 +26,7 @@ export default defineConfig({
   build: {
     format: "directory",
   },
-  integrations: [react(), sitemap(), pagefind()],
+  integrations: [react(), sitemap(), pagefind(), devDesignSystem()],
   vite: {
     plugins: [tailwindcss()],
   },

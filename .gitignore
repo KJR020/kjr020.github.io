@@ -43,3 +43,6 @@ personal_docs/
 *.analysis.md
 
 .wrangler/
+
+# Replaced by the dev-only Living Design System route
+docs/KJR020ブログ\ デザインシステム見本帳\ v0.1.html

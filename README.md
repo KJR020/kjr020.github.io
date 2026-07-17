@@ -59,7 +59,9 @@ graph TB
 ```text
 src/
 ├── components/          # UI コンポーネント (Astro / React)
+├── design-system/       # 開発時限定のLiving Design System
 ├── hooks/               # React Hooks
+├── integrations/        # Astroカスタムintegration
 ├── layouts/             # ページレイアウト
 ├── lib/                 # ユーティリティ
 ├── pages/               # ルーティング (ファイルベース)
@@ -114,7 +116,12 @@ pnpm install
 | `pnpm test:coverage` | カバレッジ閾値チェック      |
 | `pnpm test:coverage:check` | カバレッジ閾値チェック（明示名） |
 | `pnpm test:e2e`      | Playwright E2E テスト |
+| `pnpm test:design-system` | Living Design System E2Eテスト |
 | `pnpm test:e2e:update-snapshots` | 現在の実行環境用スナップショット更新 |
+
+### Living Design System
+
+`pnpm dev`の実行中だけ、`http://localhost:4321/design-system`でデザインシステムを確認できる。本番ビルドにはこのルートを含めない。
 
 ### スナップショット更新
 
