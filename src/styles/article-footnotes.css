@@ -1,0 +1,188 @@
+/* GFM脚注 */
+.prose [data-footnotes] {
+  margin-top: 2.618rem;
+  padding-top: 1.618rem;
+  border-top: 1px solid var(--border);
+  color: var(--muted-foreground);
+  font-size: var(--font-size-small);
+}
+
+.prose [data-footnotes] > h2 {
+  position: static;
+  display: flex;
+  width: auto;
+  height: auto;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 1rem;
+  padding: 0;
+  overflow: visible;
+  border: 0;
+  color: var(--foreground);
+  font-size: var(--font-size-title3);
+  font-weight: 600;
+  line-height: var(--lh-tight);
+  letter-spacing: 0;
+  white-space: normal;
+  clip: auto;
+  clip-path: none;
+}
+
+.prose [data-footnotes] > h2::before {
+  color: var(--link);
+  font-size: var(--font-size-title3);
+  font-weight: 700;
+  line-height: 1;
+  content: "※";
+}
+
+.prose [data-footnotes] ol {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 1.618rem;
+}
+
+.prose [data-footnotes] li {
+  margin-top: 0.618rem;
+  margin-bottom: 0.618rem;
+  padding-left: 0.382rem;
+}
+
+.prose [data-footnotes] li::marker {
+  color: var(--muted-foreground);
+  font-weight: 600;
+}
+
+.prose [data-footnotes] p {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: var(--lh-body);
+}
+
+.prose .footnote-reference {
+  position: relative;
+  display: inline;
+  font-size: 1em;
+  line-height: 0;
+  vertical-align: super;
+}
+
+.prose [data-footnote-ref] {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  min-width: 1.25rem;
+  height: 1.25rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.18rem;
+  border-radius: var(--phi-neg3);
+  background-color: color-mix(in srgb, var(--link) 8%, transparent);
+  color: var(--link);
+  font-family: var(--font-heading);
+  font-size: var(--font-size-caption);
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+  line-height: 1;
+  text-decoration: none;
+  transition:
+    background-color 150ms ease-out,
+    color 150ms ease-out;
+}
+
+.prose [data-footnote-ref]::before {
+  content: "[";
+}
+
+.prose [data-footnote-ref]::after {
+  content: "]";
+}
+
+.prose [data-footnote-ref]:hover {
+  background-color: color-mix(in srgb, var(--link-hover) 14%, transparent);
+  color: var(--link-hover);
+}
+
+.prose .footnote-preview {
+  position: absolute;
+  inset-block-end: calc(100% + 0.65rem);
+  inset-inline-start: 50%;
+  z-index: 20;
+  visibility: hidden;
+  width: min(22rem, calc(100vw - 2rem));
+  padding: var(--phi-neg1) var(--phi-0);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--card);
+  box-shadow: var(--shadow-card);
+  color: var(--foreground);
+  font-family: var(--font-heading);
+  font-size: var(--font-size-small);
+  font-weight: 400;
+  line-height: 1.6;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 0.25rem);
+  transition:
+    opacity 150ms ease-out,
+    transform 150ms ease-out,
+    visibility 150ms;
+}
+
+.prose .footnote-reference:hover .footnote-preview,
+.prose .footnote-reference:focus-within .footnote-preview {
+  visibility: visible;
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.prose [data-footnote-backref] {
+  display: inline-flex;
+  min-width: 1.5rem;
+  height: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0.236rem;
+  padding: 0 0.382rem;
+  border: 0;
+  border-radius: var(--phi-neg3);
+  background-color: color-mix(in srgb, var(--link) 8%, transparent);
+  color: var(--link);
+  font-size: 0;
+  font-weight: 500;
+  line-height: 1;
+  text-decoration: none;
+  vertical-align: middle;
+  transition:
+    background-color 150ms ease-out,
+    color 150ms ease-out;
+}
+
+.prose [data-footnote-backref]::before {
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 500;
+  content: "↩︎";
+}
+
+.prose [data-footnote-backref] sup {
+  margin-left: 0.05rem;
+  font-size: 0.65rem;
+}
+
+.prose [data-footnote-backref]:hover {
+  background-color: color-mix(in srgb, var(--link-hover) 14%, transparent);
+  color: var(--link-hover);
+}
+
+.prose [data-footnote-ref]:focus-visible,
+.prose [data-footnote-backref]:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .prose .footnote-preview {
+    transition-duration: 0s;
+  }
+}

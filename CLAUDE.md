@@ -64,6 +64,25 @@ pnpm typecheck    # 型チェック
 
 - [Pull Request 作成ガイド](docs/development/pull-request-guidelines.md)
 
+## Design System
+
+[KJR020ブログ デザインシステム](docs/blog-design-system.md)を、ブログの視覚言語、UI部品、状態、ページ構造に関する正規仕様として参照する。
+
+### 参照ルール
+
+- UI、レイアウト、スタイル、タイポグラフィ、モーション、UIライティング、アクセシビリティを変更する前に、デザインシステムと対象領域の既存実装を確認する。
+- レイアウト変更では[Grid system](docs/grid-system.md)、文言変更では[UIライティングガイドライン](docs/ui-writing-guidelines.md)も参照する。
+- 値は`src/styles/globals.css`、部品の構造とvariantは`src/components/`、言葉とレイアウトの原則は`docs/`をSource of Truthとして扱う。
+- 新しい値や部品を追加する前に、既存のsemantic token、primitive、ブログパターンで表現できないか確認する。
+- `pnpm dev`で開発サーバーを起動し、`/design-system`の標本をライト/ダーク、Desktop/Mobile、主要な操作・データ状態で確認する。
+
+### 更新ルール
+
+- デザインシステムへ記載するのは採用済みの仕様だけとし、改善候補、優先度、移行状況、実装との差分はIssueまたはADRで管理する。
+- 仕様を変更する場合は、変更対象のSource of Truth、関連ガイド、`src/design-system/`の標本、実装、テストを同じ変更で更新する。
+- Catalog側へCSS値やコンポーネントの見た目を複製せず、実装済みのトークンとコンポーネントから標本を描画する。
+- 変更後は`pnpm test:design-system`を実行し、`pnpm build`でデザインシステムが公開成果物へ含まれないことを確認する。
+
 ## Spec-Driven Development
 
 機能開発にはKiro-style Spec Driven Developmentを採用。

@@ -10,6 +10,7 @@ import { rehypeMermaid } from "@beoe/rehype-mermaid";
 import remarkLinkCard from "remark-link-card";
 import remarkCallout from "@r4ai/remark-callout";
 import { devDesignSystem } from "./src/integrations/devDesignSystem.ts";
+import { rehypeArticleFigures } from "./src/integrations/rehypeArticleFigures.ts";
 
 /** @type {Record<string, string>} */
 const calloutIcons = {
@@ -42,7 +43,7 @@ export default defineConfig({
         ],
         [remarkLinkCard, { cache: false, shortenUrl: true }],
       ],
-      rehypePlugins: [[rehypeMermaid, { class: "mermaid" }]],
+      rehypePlugins: [rehypeArticleFigures, [rehypeMermaid, { class: "mermaid" }]],
       remarkRehype: {
         footnoteLabel: "脚注",
         footnoteLabelTagName: "h2",

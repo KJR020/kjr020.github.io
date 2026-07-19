@@ -1,0 +1,118 @@
+---
+import ArticleReadingSpec from "./ArticleReadingSpec.astro";
+
+const codeExample = `const phi = 1.618;
+const spacing = phi ** 2;`;
+---
+
+<section class="spec" id="article">
+  <h2>7. 記事コンテンツ</h2>
+
+  <div class="spec-item" id="markdown-content">
+    <h3>7-1. Markdown本文</h3>
+    <p class="src">記事は最大幅を親グリッドに委ね、h2/h3、本文、list、inline code、Shiki code、blockquote、tableをグローバルに整形する。</p>
+    <article class="demo article-prose">
+      <h2>セクション見出し</h2>
+      <p>本文は読み続けられる行間を保ち、<a href="#article">リンク</a>と<code>inline code</code>を文章の流れに含める。</p>
+      <h3>小見出し</h3>
+      <ul><li>箇条書きはdiscで示す</li><li>番号付きリストはdecimalで示す</li></ul>
+      <pre tabindex="0"><code>{codeExample}</code></pre>
+      <blockquote>引用は左4pxの境界とmuted foregroundで本文から分ける。</blockquote>
+      <div class="table-scroll">
+        <table><thead><tr><th>要素</th><th>表現</th></tr></thead><tbody><tr><td>見出し</td><td>下境界＋余白</td></tr><tr><td>コード</td><td>Mono＋テーマ背景</td></tr></tbody></table>
+      </div>
+    </article>
+    <p class="source-row"><strong>Source</strong><code>src/pages/posts/[...slug].astro</code><code>src/styles/globals.css</code></p>
+  </div>
+
+  <div class="spec-item" id="callout">
+    <h3>7-2. Callout</h3>
+    <p class="src">remark-callout。本文より小さい文字と左境界で、補足の強さを抑える。色は種別の識別だけに使用する。</p>
+    <div class="demo callout-grid">
+      <aside data-callout data-callout-type="note"><div data-callout-title>Note</div><div data-callout-body>追加の背景情報や参照。</div></aside>
+      <aside data-callout data-callout-type="tip"><div data-callout-title>Tip</div><div data-callout-body>実装を進めるためのヒント。</div></aside>
+      <aside data-callout data-callout-type="warning"><div data-callout-title>Warning</div><div data-callout-body>注意が必要な条件。</div></aside>
+      <aside data-callout data-callout-type="danger"><div data-callout-title>Danger</div><div data-callout-body>破壊的・危険な操作。</div></aside>
+    </div>
+    <p class="source-row"><strong>Source</strong><code>src/styles/globals.css</code><code>@r4ai/remark-callout</code></p>
+  </div>
+
+  <div class="spec-item" id="link-card">
+    <h3>7-3. Link Card</h3>
+    <p class="src">remark-link-card。モバイルは本文＋116px正方形画像、60ch以上は本文＋220px・1.91:1画像。画像なしはglobe iconへfallbackする。</p>
+    <div class="demo link-card-specimens">
+      <a class="rlc-container" href="https://docs.astro.build/" target="_blank" rel="noreferrer">
+        <span class="rlc-info">
+          <strong class="rlc-title">Astro Documentation</strong>
+          <span class="rlc-description">Build faster websites with less client-side JavaScript.</span>
+          <span class="rlc-url-container"><span class="rlc-url">docs.astro.build</span></span>
+        </span>
+        <span class="rlc-image-container"><img class="rlc-image" src="/images/kuri_photo.png" alt="" /></span>
+      </a>
+      <a class="rlc-container" href="#link-card">
+        <span class="rlc-info">
+          <strong class="rlc-title">画像がないリンク</strong>
+          <span class="rlc-description">OG画像を取得できない場合も移動先と概要を伝える。</span>
+          <span class="rlc-url-container"><span class="rlc-url">example.com</span></span>
+        </span>
+      </a>
+    </div>
+    <p class="source-row"><strong>Source</strong><code>src/styles/globals.css</code><code>remark-link-card</code></p>
+  </div>
+
+  <div class="spec-item" id="code-image">
+    <h3>7-4. Code Copy / Image</h3>
+    <p class="src">code blockは言語、横スクロール、Copy操作、完了通知を同じ構造で提供する。画像はFigureへ変換し、Captionと拡大表示を組み合わせる。</p>
+    <div class="demo code-image-grid">
+      <div class="code-sample code-sample-inline">
+        <pre class="article-code" data-language="javascript" tabindex="0"><code>{codeExample}</code></pre>
+      </div>
+      <figure class="article-figure">
+        <a class="article-image-trigger" href="/images/kuri_photo.png" aria-label="画像を拡大: ブログの栗マスコット" data-article-image-trigger>
+          <img src="/images/kuri_photo.png" alt="ブログの栗マスコット" width="320" height="320" />
+        </a>
+        <figcaption><p>Captionは画像の内容を繰り返さず、読者が確認すべき点を示す。</p></figcaption>
+      </figure>
+    </div>
+    <p class="source-row"><strong>Source</strong><code>src/lib/articleCode.ts</code><code>src/integrations/rehypeArticleFigures.ts</code><code>src/components/article/ImageLightbox.astro</code><code>src/styles/article-content.css</code></p>
+  </div>
+</section>
+
+<section class="spec" id="pages">
+  <h2>8. ページの型</h2>
+  <p class="src">ページを「目的・主構造・固有部品」で分類し、読者が目的へ到達する情報順序を固定する。</p>
+
+  <div class="spec-item" id="home-page">
+    <h3>8-1. ホーム</h3>
+    <p class="src">ブログを紹介し、最新の記事とScrapboxへ案内する。プロフィール → Latest Posts → Scrapboxの順で配置する。</p>
+    <article class="demo page-card" aria-label="ホームのページ構造">
+      <div class="wire"><div class="wire-title"></div><div class="wire-line wire-medium"></div><div class="wire-card"></div><div class="wire-card"></div><div class="wire-line wire-short"></div></div>
+    </article>
+  </div>
+
+  <div class="spec-item" id="post-archive-page">
+    <h3>8-2. 記事一覧</h3>
+    <p class="src">記事を時系列またはタグで探せるようにする。PageHero → 年sticky label → PostCard listの順で配置する。</p>
+    <article class="demo page-card" aria-label="記事一覧のページ構造">
+      <div class="wire"><div class="wire-title wire-short"></div><div class="wire-two-col"><div><div class="wire-card"></div><div class="wire-card"></div></div><div class="wire-line"></div></div></div>
+    </article>
+  </div>
+
+  <ArticleReadingSpec />
+
+  <div class="spec-item" id="search-page">
+    <h3>8-4. 検索</h3>
+    <p class="src">全文またはタグから記事を探せるようにする。SearchBoxとTagBubbleCloudを組み合わせ、検索結果を主領域へ表示する。</p>
+    <article class="demo page-card" aria-label="検索のページ構造">
+      <div class="wire"><div class="wire-title wire-short"></div><div class="wire-two-col"><div class="wire-card"></div><div><div class="wire-line"></div><div class="wire-line"></div><div class="wire-line"></div></div></div></div>
+    </article>
+  </div>
+
+  <div class="spec-item" id="policy-state-page">
+    <h3>8-5. ポリシー・状態</h3>
+    <p class="src">規約または単一の状態を伝える。内容に応じてnarrow cardまたはcentered panelを使用する。</p>
+    <article class="demo page-card" aria-label="ポリシー・状態のページ構造">
+      <div class="wire"><div class="wire-title wire-short"></div><div class="wire-card"></div><div class="wire-line wire-medium"></div></div>
+    </article>
+  </div>
+</section>

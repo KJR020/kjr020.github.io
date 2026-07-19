@@ -13,24 +13,35 @@ const latestPosts = sortedPosts.slice(0, 3);
 
 <BaseLayout title="KJR020's Blog" description="KJR020の技術ブログ">
   <div class="index-wrapper">
-    <div class="container mx-auto px-4 pt-phi-md pb-phi-2xl">
-      <section class="mb-phi-2xs pt-phi-xl pb-phi-2xs animate-fade-in-up">
-        <div class="max-w-2xl">
-          <h1
-            class="hero-title font-bold font-heading tracking-tight mb-phi-2xs"
-            style="font-size: var(--font-size-title1); line-height: var(--lh-tight);"
-          >
-            KJR020's Blog
-          </h1>
-          <p
-            class="hero-copy text-base text-muted-foreground max-w-lg"
-            style="line-height: var(--lh-body);"
-          >
-            とあるWebエンジニアのブログ。<br
-              class="hidden sm:inline"
+    <div class="container mx-auto px-4 pb-phi-2xl">
+      <section class="py-phi-xl animate-fade-in-up">
+        <div class="flex items-start gap-phi-md">
+          <div class="hero-image-frame hidden sm:block">
+            <img
+              src="/images/kuri_photo.png"
+              alt="KJR020"
+              width="500"
+              height="500"
+              class="h-full w-full rounded-full object-cover ring-2 ring-border"
             />
-            調べたこと、やってみたことを書いています。
-          </p>
+          </div>
+          <div class="max-w-2xl">
+            <h1
+              class="hero-title font-bold font-heading tracking-tight mb-phi-2xs"
+              style="font-size: var(--font-size-title1); line-height: var(--lh-tight);"
+            >
+              KJR020's Blog
+            </h1>
+            <p
+              class="hero-copy text-base text-muted-foreground max-w-lg"
+              style="line-height: var(--lh-body);"
+            >
+              とあるWebエンジニアのブログ。<br
+                class="hidden sm:inline"
+              />
+              調べたこと、やってみたことを書いています。
+            </p>
+          </div>
         </div>
       </section>
       <section
@@ -135,6 +146,22 @@ const latestPosts = sortedPosts.slice(0, 3);
 
   .hero-title {
     text-wrap: balance;
+  }
+
+  .hero-image-frame {
+    --hero-lockup-size: calc(
+      var(--phi-2) + var(--phi-1) + var(--phi-1) + var(--phi-neg2)
+    );
+
+    block-size: var(--hero-lockup-size);
+    flex: none;
+    inline-size: var(--hero-lockup-size);
+    position: relative;
+  }
+
+  .hero-image-frame img {
+    inset: 0;
+    position: absolute;
   }
 
   .hero-copy {

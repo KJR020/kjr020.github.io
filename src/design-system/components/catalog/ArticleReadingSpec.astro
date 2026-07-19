@@ -1,0 +1,197 @@
+---
+import ImageLightbox from "@/components/article/ImageLightbox.astro";
+import "../../article-reading.css";
+import "@/styles/article-code.css";
+import "@/styles/article-content.css";
+
+const codeSample = `export function getReadingWidth(viewport: number) {
+  const readingMeasure = viewport >= 1024 ? "38ic" : "100%";
+
+  return {
+    readingMeasure,
+    lineHeight: 1.7,
+    fontSize: "1.0625rem",
+  };
+}`;
+---
+
+<div class="spec-item article-reading-spec" id="article-reading">
+  <h3>8-3. 記事ページ</h3>
+  <p class="src">
+    技術記事の読書体験を定義する。文字・画像・コードを同じ情報構造の中で扱い、内容に応じて読むための幅と表示方法を使い分ける。
+  </p>
+  <div class="scope-note article-reading-scope">
+    <strong>適用範囲</strong>
+    <span>記事ページのArticle header、本文、目次、画像、コード、参照情報に適用する。</span>
+  </div>
+
+  <section class="spec article-reading-section" id="reading-model">
+    <h4>Content model</h4>
+    <p class="src">
+      Articleをキーオブジェクトとし、Sectionから目次を導出する。画像やコードは装飾ではなく、本文と同じく意味を伝えるコンテンツとして扱う。
+    </p>
+
+    <div class="demo object-model" aria-label="記事ページのコンテンツ構造">
+      <div class="object-card object-card-primary">
+        <span>KEY OBJECT</span>
+        <strong>Article</strong>
+        <small>title · description · date · tags</small>
+      </div>
+      <div class="object-branch" aria-hidden="true"></div>
+      <div class="object-children">
+        <div class="object-card">
+          <span>1</span><strong>Article header</strong><small>記事の識別</small>
+        </div>
+        <div class="object-card">
+          <span>1..n</span><strong>Section</strong><small>読む順序</small>
+        </div>
+        <div class="object-card">
+          <span>0..n</span><strong>Figure</strong><small>視覚的な説明</small>
+        </div>
+        <div class="object-card">
+          <span>0..n</span><strong>Code example</strong><small>再利用できる手順</small>
+        </div>
+        <div class="object-card">
+          <span>0..1</span><strong>TOC</strong><small>Sectionから生成</small>
+        </div>
+        <div class="object-card">
+          <span>0..n</span><strong>Reference</strong><small>根拠への接続</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="task-strip">
+      <strong>主要な読書行動</strong>
+      <ol>
+        <li>概要をつかむ</li>
+        <li>本文を続けて読む</li>
+        <li>図を詳しく見る</li>
+        <li>コードを確認・コピーする</li>
+        <li>見出し間を移動する</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="spec article-reading-section" id="reading-layout">
+    <h4>Layout</h4>
+    <p class="src">
+      12 columnsはページ全体の配置に使い、本文はReading laneへ絞る。画像・コード・表は必要に応じてWide laneへ広げ、目次は独立したRailへ置く。
+    </p>
+
+    <div class="demo layout-specimen">
+      <div class="column-ruler" aria-hidden="true">
+        {Array.from({ length: 12 }, (_, index) => (
+          <span>{String(index + 1).padStart(2, "0")}</span>
+        ))}
+      </div>
+      <div class="lane-map">
+        <div class="lane lane-reading">
+          <span>READING LANE · 7 COL</span>
+          <strong>本文・見出し・リスト</strong>
+          <p>視線が次の行頭を見失わない幅を優先する。</p>
+        </div>
+        <div class="lane lane-wide">
+          <span>WIDE LANE · 9 COL</span>
+          <strong>画像・コード・表</strong>
+          <p>情報量が必要なコンテンツだけを広げる。</p>
+        </div>
+        <aside class="lane lane-rail">
+          <span>RAIL · 3 COL</span>
+          <strong>目次</strong>
+          <p>本文より弱い階層で現在位置を示す。</p>
+        </aside>
+      </div>
+    </div>
+
+    <div class="responsive-rule">
+      <div><strong>Desktop</strong><span>Reading + Wide + Rail</span></div>
+      <div><strong>Tablet</strong><span>Reading + Wide、目次は本文前</span></div>
+      <div><strong>Mobile</strong><span>Single column、Wideは領域内でスクロール</span></div>
+    </div>
+  </section>
+
+  <section class="spec article-reading-section" id="reading-typography">
+    <h4>Typography</h4>
+    <p class="src">
+      本文は17px、行高1.70、最大38字を基準とする。長文を続けて読める行間を保ち、コードや図と行き来しても本文の位置を見失いにくい行長に制限する。
+    </p>
+
+    <article class="demo type-specimen type-candidate" data-reading-lane>
+      <header><span>BODY</span><strong>17px / 1.70 / 38字</strong></header>
+      <p>
+        Pagefindは静的サイト向けの全文検索ライブラリです。ビルド後のHTMLを解析して検索インデックスを生成するため、専用サーバーを必要としません。
+      </p>
+      <small>本文の連続性を優先し、視線が次の行頭を見失わない幅に制限する。</small>
+    </article>
+  </section>
+
+  <section class="spec article-reading-section" id="figure-pattern">
+    <h4>Figure</h4>
+    <p class="src">
+      スクリーンショットは本文幅へ押し込まず、情報が読める幅まで広げる。画像リンクは原寸表示へフォールバックし、JavaScript利用時はDialogで拡大する。Captionは読者が確認すべき点を示す。
+    </p>
+
+    <figure class="demo article-figure article-figure-wide">
+      <a
+        class="article-image-trigger"
+        href="/images/posts/astro-pagefind-search/search-command-palette.png"
+        aria-label="画像を拡大: 検索語Astroに一致する記事が並ぶコマンドパレット"
+        data-article-image-trigger
+      >
+        <img
+          src="/images/posts/astro-pagefind-search/search-command-palette.png"
+          alt="検索語Astroに一致する記事が並ぶコマンドパレット"
+          width="1078"
+          height="970"
+          loading="lazy"
+        />
+      </a>
+      <figcaption>
+        <span class="article-figure-label" aria-hidden="true">FIGURE 01</span>
+        <p>
+          検索結果では、記事タイトルを主、公開日と抜粋を従として配置する。画像内の小さな文字まで読める表示幅を確保する。
+        </p>
+      </figcaption>
+    </figure>
+
+    <div class="pattern-rules">
+      <div><strong>Content</strong><span>本文の補助。Reading laneに揃える</span></div>
+      <div><strong>Wide</strong><span>UIスクリーンショットや図。9 columnsまで広げる</span></div>
+      <div><strong>Zoom</strong><span>画像リンクをDialogへ拡張し、閉じた後はリンクへ戻る</span></div>
+    </div>
+  </section>
+
+  <section class="spec article-reading-section" id="code-pattern">
+    <h4>Code example</h4>
+    <p class="src">
+      Shikiのdata-languageから言語を示し、Copy操作をコード上の定位置へ置く。長い行はコード領域の中だけで横スクロールさせ、完了結果はアイコンとpolite通知で伝える。
+    </p>
+
+    <div class="demo">
+      <pre class="astro-code article-code" data-language="typescript" tabindex="0"><code>{codeSample}</code></pre>
+    </div>
+
+    <div class="pattern-rules code-rules">
+      <div><strong>14px / 1.5</strong><span>等幅フォントの語形を識別できる密度</span></div>
+      <div><strong>Horizontal scroll</strong><span>コードとコマンドは原則として折り返さない</span></div>
+      <div><strong>Visible action</strong><span>TouchとKeyboardでもCopyを見つけられる</span></div>
+    </div>
+  </section>
+
+  <p class="source-row">
+    <strong>Source</strong><code>src/pages/posts/[...slug].astro</code><code>src/integrations/rehypeArticleFigures.ts</code><code>src/components/article/ImageLightbox.astro</code><code>src/lib/articleCode.ts</code><code>src/styles/article-content.css</code>
+  </p>
+
+  <ImageLightbox />
+</div>
+
+<script>
+  import { enhanceArticleCodeBlocks } from "@/lib/articleCode";
+
+  function initializeArticleCodeSpecimens() {
+    enhanceArticleCodeBlocks(document);
+  }
+
+  initializeArticleCodeSpecimens();
+  document.addEventListener("astro:page-load", initializeArticleCodeSpecimens);
+</script>

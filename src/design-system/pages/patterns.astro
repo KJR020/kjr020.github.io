@@ -1,0 +1,19 @@
+---
+import ContentCatalog from "../components/catalog/ContentCatalog.astro";
+import FoundationsCatalog from "../components/catalog/FoundationsCatalog.astro";
+import DesignSystemLayout from "../components/DesignSystemLayout.astro";
+---
+
+<DesignSystemLayout
+  activePage="patterns"
+  title="パターン - KJR020's Blog デザインシステム"
+  description="KJR020's Blogの状態、記事コンテンツ、ページパターン"
+>
+  <header class="book-intro" id="overview">
+    <h1 class="book-title">パターン</h1>
+    <p class="book-lead">複数の部品を組み合わせ、状態・記事・ページを一貫して表現する方法を定義する。</p>
+  </header>
+
+  <FoundationsCatalog sections={["states"]} />
+  <ContentCatalog />
+</DesignSystemLayout>

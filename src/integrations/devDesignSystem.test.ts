@@ -21,15 +21,21 @@ function getDesignSystemSetupHook(): SetupHook {
 }
 
 describe("devDesignSystem integration", () => {
-  it("開発サーバーでは正規仕様の見本帳だけを注入する", async () => {
+  it("開発サーバーでは6つのデザインシステムページと互換ルートを注入する", async () => {
     const injectRoute = vi.fn<(route: InjectedRoute) => void>();
 
     await getDesignSystemSetupHook()({ command: "dev", injectRoute });
 
-    expect(injectRoute).toHaveBeenCalledTimes(1);
-    expect(injectRoute).toHaveBeenCalledWith(
-      expect.objectContaining({ pattern: "/design-system" }),
-    );
+    expect(injectRoute.mock.calls.map(([route]) => route.pattern)).toEqual([
+      "/design-system",
+      "/design-system/foundations",
+      "/design-system/components",
+      "/design-system/patterns",
+      "/design-system/content",
+      "/design-system/governance",
+      "/design-system/patterns/article-reading",
+      "/design-system/article-reading",
+    ]);
   });
 
   it.each(["build", "preview", "sync"] as const)("%s ではルートを注入しない", async (command) => {

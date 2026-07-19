@@ -1,0 +1,17 @@
+---
+import ComponentsCatalog from "../components/catalog/ComponentsCatalog.astro";
+import DesignSystemLayout from "../components/DesignSystemLayout.astro";
+---
+
+<DesignSystemLayout
+  activePage="components"
+  title="コンポーネント - KJR020's Blog デザインシステム"
+  description="KJR020's Blogの基本部品、ナビゲーション、ブログ固有部品"
+>
+  <header class="book-intro" id="overview">
+    <h1 class="book-title">コンポーネント</h1>
+    <p class="book-lead">ブログの操作と情報表示を構成する、再利用可能な部品の仕様を定義する。</p>
+  </header>
+
+  <ComponentsCatalog />
+</DesignSystemLayout>

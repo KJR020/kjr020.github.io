@@ -1,0 +1,59 @@
+<dialog class="article-image-dialog" aria-label="画像を拡大表示" data-article-image-dialog>
+  <div class="article-image-dialog-panel">
+    <button type="button" class="article-image-dialog-close" aria-label="拡大表示を閉じる" data-article-image-close>
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M18 6 6 18"></path>
+        <path d="m6 6 12 12"></path>
+      </svg>
+    </button>
+    <img alt="" data-article-image-dialog-image />
+    <p data-article-image-dialog-caption hidden></p>
+  </div>
+</dialog>
+
+<script>
+  function initializeArticleImageDialog() {
+    const dialog = document.querySelector<HTMLDialogElement>("[data-article-image-dialog]");
+    const dialogImage = dialog?.querySelector<HTMLImageElement>("[data-article-image-dialog-image]");
+    const dialogCaption = dialog?.querySelector<HTMLElement>("[data-article-image-dialog-caption]");
+    const closeButton = dialog?.querySelector<HTMLButtonElement>("[data-article-image-close]");
+    if (!dialog || !dialogImage || !dialogCaption || !closeButton) return;
+
+    let activeTrigger: HTMLAnchorElement | null = null;
+
+    document.querySelectorAll<HTMLAnchorElement>("[data-article-image-trigger]").forEach((trigger) => {
+      if (trigger.dataset.articleImageBound === "true") return;
+      trigger.dataset.articleImageBound = "true";
+
+      trigger.addEventListener("click", (event) => {
+        if (typeof dialog.showModal !== "function") return;
+
+        event.preventDefault();
+        const image = trigger.querySelector<HTMLImageElement>("img");
+        if (!image) return;
+
+        activeTrigger = trigger;
+        dialogImage.setAttribute("src", trigger.getAttribute("href") ?? image.currentSrc);
+        dialogImage.alt = image.alt;
+
+        const caption = trigger.closest("figure")?.querySelector("figcaption p")?.textContent?.trim();
+        dialogCaption.textContent = caption ?? "";
+        dialogCaption.hidden = !caption;
+        dialog.showModal();
+        closeButton.focus();
+      });
+    });
+
+    if (dialog.dataset.articleImageDialogBound === "true") return;
+    dialog.dataset.articleImageDialogBound = "true";
+
+    closeButton.addEventListener("click", () => dialog.close());
+    dialog.addEventListener("click", (event) => {
+      if (event.target === dialog) dialog.close();
+    });
+    dialog.addEventListener("close", () => activeTrigger?.focus());
+  }
+
+  initializeArticleImageDialog();
+  document.addEventListener("astro:page-load", initializeArticleImageDialog);
+</script>

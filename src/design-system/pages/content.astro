@@ -1,0 +1,17 @@
+---
+import GuidelinesCatalog from "../components/catalog/GuidelinesCatalog.astro";
+import DesignSystemLayout from "../components/DesignSystemLayout.astro";
+---
+
+<DesignSystemLayout
+  activePage="content"
+  title="コンテンツ - KJR020's Blog デザインシステム"
+  description="KJR020's BlogのUIライティングと状態メッセージ"
+>
+  <header class="book-intro" id="overview">
+    <h1 class="book-title">コンテンツ</h1>
+    <p class="book-lead">読者が探す・読む・戻る判断を支える、UIの声と文言の原則を定義する。</p>
+  </header>
+
+  <GuidelinesCatalog sections={["writing"]} />
+</DesignSystemLayout>

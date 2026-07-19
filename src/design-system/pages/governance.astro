@@ -1,0 +1,17 @@
+---
+import GuidelinesCatalog from "../components/catalog/GuidelinesCatalog.astro";
+import DesignSystemLayout from "../components/DesignSystemLayout.astro";
+---
+
+<DesignSystemLayout
+  activePage="governance"
+  title="ガバナンス - KJR020's Blog デザインシステム"
+  description="KJR020's BlogのSource of Truth、適合ルール、更新方法"
+>
+  <header class="book-intro" id="overview">
+    <h1 class="book-title">ガバナンス</h1>
+    <p class="book-lead">デザインシステムを正規仕様として保ち、実装と一致させるためのルールを定義する。</p>
+  </header>
+
+  <GuidelinesCatalog sections={["governance"]} />
+</DesignSystemLayout>
