@@ -190,6 +190,8 @@ jobs:
         run: pnpm exec playwright install --with-deps chromium
       - name: Sync Astro types
         run: pnpm astro sync
+      - name: Run design system E2E tests
+        run: pnpm test:design-system
       - name: Build
         run: pnpm build
         env:
