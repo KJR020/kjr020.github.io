@@ -1,0 +1,19 @@
+---
+import FoundationsCatalog from "../components/catalog/FoundationsCatalog.astro";
+import GuidelinesCatalog from "../components/catalog/GuidelinesCatalog.astro";
+import DesignSystemLayout from "../components/DesignSystemLayout.astro";
+---
+
+<DesignSystemLayout
+  activePage="foundations"
+  title="基盤 - KJR020's Blog デザインシステム"
+  description="KJR020's Blogのトークン、レイアウト、レスポンシブとアクセシビリティ"
+>
+  <header class="book-intro" id="overview">
+    <h1 class="book-title">基盤</h1>
+    <p class="book-lead">すべてのページと部品が共有する、視覚言語と配置の原則を定義する。</p>
+  </header>
+
+  <FoundationsCatalog sections={["tokens", "layout"]} />
+  <GuidelinesCatalog sections={["responsive"]} />
+</DesignSystemLayout>

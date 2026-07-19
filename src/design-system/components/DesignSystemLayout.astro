@@ -1,0 +1,76 @@
+---
+import Header from "@/components/Header.astro";
+import BaseHead from "@/layouts/BaseHead.astro";
+import "@/styles/globals.css";
+import type { DesignSystemPageId } from "../navigation";
+import DesignSystemSidebar from "./DesignSystemSidebar.astro";
+import "../styles.css";
+
+interface Props {
+  activePage: DesignSystemPageId;
+  description: string;
+  mainClass?: string;
+  title: string;
+}
+
+const { activePage, description, mainClass, title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="ja" class="scroll-smooth">
+  <head>
+    <BaseHead title={title} description={description} />
+    <meta name="robots" content="noindex,nofollow" />
+  </head>
+  <body data-layout="specimen-book" class="bg-background text-foreground antialiased">
+    <a class="skip-link" href="#main-content">本文へ移動</a>
+    <Header />
+
+    <div class="book-shell">
+      <DesignSystemSidebar activePage={activePage} />
+
+      <main id="main-content" class:list={["book", mainClass]} tabindex="-1">
+        <slot />
+
+        <slot name="footer">
+          <footer class="book-footer">
+            <span>KJR020's Blog デザインシステム</span>
+            <a href="#main-content">ページ上部へ</a>
+          </footer>
+        </slot>
+      </main>
+    </div>
+
+    <p class="copy-status" aria-live="polite"></p>
+
+    <script>
+      const updateTokenValues = () => {
+        const styles = getComputedStyle(document.documentElement);
+        document.querySelectorAll<HTMLElement>("[data-token-value]").forEach((element) => {
+          const token = element.dataset.tokenValue;
+          if (token) element.textContent = styles.getPropertyValue(token).trim();
+        });
+      };
+      updateTokenValues();
+      new MutationObserver(updateTokenValues).observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ["class"],
+      });
+
+      const copyStatus = document.querySelector<HTMLElement>(".copy-status");
+      document.querySelectorAll<HTMLButtonElement>("[data-copy-button]").forEach((button) => {
+        button.addEventListener("click", async () => {
+          const code = button.closest(".code-sample")?.querySelector("code")?.textContent;
+          if (!code) return;
+          await navigator.clipboard.writeText(code);
+          if (copyStatus) copyStatus.textContent = "コードをコピーしました";
+          button.textContent = "コピーしました";
+          window.setTimeout(() => {
+            button.textContent = "コピー";
+            if (copyStatus) copyStatus.textContent = "";
+          }, 1600);
+        });
+      });
+    </script>
+  </body>
+</html>

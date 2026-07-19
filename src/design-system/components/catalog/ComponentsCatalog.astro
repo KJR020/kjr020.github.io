@@ -1,0 +1,253 @@
+---
+import { getCollection } from "astro:content";
+import PageHero from "@/components/PageHero.astro";
+import PostCard from "@/components/PostCard.astro";
+import PostMeta from "@/components/PostMeta.astro";
+import { ScrapboxCard } from "@/components/scrapbox";
+import { CommandPalette } from "@/components/search/CommandPalette";
+import { SearchBox } from "@/components/search/SearchBox";
+import { ThemeToggleAnimated } from "@/components/theme/ThemeToggleAnimated";
+import { TOCList } from "@/components/toc/TOCList";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardAction,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+
+const posts = await getCollection("posts", ({ data }) => !data.draft);
+const specimenPost = posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())[0] ?? {
+  id: "design-system-specimen",
+  data: {
+    title: "デザインシステムをブログと育てる",
+    date: new Date("2026-07-16"),
+    tags: ["Design System", "Astro"],
+  },
+};
+
+const tocHeadings = [
+  { id: "markdown-content", text: "Markdown本文", level: 2 as const },
+  { id: "callout", text: "Callout", level: 2 as const },
+  { id: "link-card", text: "Link Card", level: 3 as const },
+  { id: "code-image", text: "Code Copy / Image", level: 2 as const },
+];
+
+const scrapboxPages = [
+  {
+    id: "agent-harness",
+    title: "Agent Harness設計メモ",
+    imageUrl: null,
+    description: "日々の調査メモや実装時の気づきをScrapboxから取得して表示。",
+    updatedAt: "2026-07-11T00:00:00.000Z",
+    url: "https://scrapbox.io/KJR020/Agent_Harness設計メモ",
+  },
+  {
+    id: "astro-content-collection",
+    title: "Astro Content Collection",
+    imageUrl: null,
+    description: "記事データとタグの扱いについて。",
+    updatedAt: "2026-07-08T00:00:00.000Z",
+    url: "https://scrapbox.io/KJR020/Astro_Content_Collection",
+  },
+];
+
+const buttonCode = `<Button variant="default">記事を読む</Button>
+<Button variant="outline">下書きを確認</Button>
+<Button variant="destructive">削除する</Button>`;
+---
+
+<section class="spec" id="primitives">
+  <h2>4. 基本部品</h2>
+
+  <div class="spec-item" id="button">
+    <h3>4-1. Button</h3>
+    <p class="src">操作を開始する。ラベルには押したあとに起きることを具体的に書く。6 variantsと用途別のsizeを同じprimitiveで扱う。</p>
+    <div class="demo component-demo">
+      <div class="button-row">
+        <Button>記事を読む</Button>
+        <Button variant="destructive">削除する</Button>
+        <Button variant="outline">下書きを確認</Button>
+        <Button variant="secondary">さらに表示</Button>
+        <Button variant="ghost">閉じる</Button>
+        <Button variant="link">記事一覧へ</Button>
+      </div>
+      <div class="button-row">
+        <Button size="sm">Small</Button>
+        <Button>Default</Button>
+        <Button size="lg">Large</Button>
+        <Button disabled>読み込み中…</Button>
+      </div>
+    </div>
+    <details class="code-sample">
+      <summary>使用例を表示</summary>
+      <div><pre><code>{buttonCode}</code></pre><Button type="button" variant="outline" size="sm" data-copy-button>コピー</Button></div>
+    </details>
+    <p class="source-row"><strong>Source</strong><code>src/components/ui/button.tsx</code></p>
+  </div>
+
+  <div class="spec-item" id="badge">
+    <h3>4-2. Badge / Tag</h3>
+    <p class="src">Badgeは短い状態、Tagは記事の分類と絞り込みへのリンクを示す。主要な操作や長い説明には使わない。</p>
+    <div class="demo component-demo">
+      <div class="button-row">
+        <Badge>Default</Badge>
+        <Badge variant="secondary">Astro</Badge>
+        <Badge variant="destructive">Error</Badge>
+        <Badge variant="outline">Design System</Badge>
+      </div>
+      <section class="tag-interaction" data-specification="tag-interaction">
+        <div>
+          <h4>Tag interaction</h4>
+          <p>記事メタ情報のTagは、PostMetaの実装をそのまま使用する。</p>
+        </div>
+        <div class="tag-interaction-preview">
+          <PostMeta date={new Date("2026-07-16")} tags={["Astro", "Design System"]} />
+        </div>
+        <div class="table-scroll">
+          <table class="map">
+            <thead><tr><th>状態</th><th>正規仕様</th></tr></thead>
+            <tbody>
+              <tr><td>Rest</td><td>Secondaryの面と通常の文字色を表示する</td></tr>
+              <tr><td>Hover / Focus</td><td>前景色6%の面を14deg傾け、220ms ease-in-outで左から通す。文字色はLinkへ変える</td></tr>
+              <tr><td>Card coordination</td><td>Tag上では親PostCardの背景色とタイトル色のhoverを重ねない</td></tr>
+              <tr><td>Reduced motion</td><td><code>prefers-reduced-motion: reduce</code>では遷移時間を0sにし、状態変化は維持する</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+    <p class="source-row"><strong>Source</strong><code>src/components/ui/badge.tsx</code><code>src/components/PostMeta.astro</code></p>
+  </div>
+
+  <div class="spec-item" id="card">
+    <h3>4-3. Card</h3>
+    <p class="src">関連する情報と操作を1つの単位にまとめる。Card / Header / Title / Description / Content / Footerの合成部品として扱う。</p>
+    <div class="demo card-demo">
+      <Card className="specimen-card">
+        <CardHeader>
+          <CardTitle>デザインシステム</CardTitle>
+          <CardDescription>実装と同じ部品を確認できる形で並べる。</CardDescription>
+          <CardAction><Badge variant="outline">Connected</Badge></CardAction>
+        </CardHeader>
+        <CardContent><p>カード内ではspacing tokenで情報の関係を表す。</p></CardContent>
+        <CardFooter className="border-t"><Button variant="outline" size="sm">詳細を見る</Button></CardFooter>
+      </Card>
+    </div>
+    <p class="source-row"><strong>Source</strong><code>src/components/ui/card.tsx</code></p>
+  </div>
+
+  <div class="spec-item" id="input">
+    <h3>4-4. Input / TextLink / Kbd</h3>
+    <p class="src">Inputの目的はlabelで伝え、Placeholderは入力内容の補助に限定する。TextLinkは遷移、Kbdは利用可能なショートカットを示す。</p>
+    <div class="demo input-grid input-grid-complete">
+      <label><span>記事を検索</span><Input placeholder="キーワードを入力" /></label>
+      <label><span>無効な入力</span><Input defaultValue="Astro" aria-invalid="true" readOnly /></label>
+      <div class="inline-primitives">
+        <a class="text-link-specimen" href="#primitives">テキストリンク</a>
+        <kbd>⌘K</kbd>
+      </div>
+    </div>
+    <p class="source-row"><strong>Source</strong><code>src/components/ui/input.tsx</code><code>src/components/Header.astro</code></p>
+  </div>
+</section>
+
+<section class="spec" id="navigation">
+  <h2>5. ナビゲーション・検索部品</h2>
+
+  <div class="spec-item" id="global-navigation">
+    <h3>5-1. Header / Global Navigation</h3>
+    <p class="src">高さφ²、sticky、背景95%＋backdrop blur。ブランドリンクは透明背景の目のシンボルとブログ名を組み合わせる。シンボルは白い面、細いMuted輪郭、独立した黒目とまぶたで構成する。Desktopは水平ナビ、MobileはMenu buttonへ切り替える。</p>
+    <div class="demo site-header-demo">
+      <a class="site-brand-demo" href="#global-navigation"><img src="/images/kjr020-eyes.svg" alt="" width="50" height="32" />KJR020's Blog</a>
+      <nav class="nav-demo" aria-label="ヘッダー例">
+        <a class="is-active" href="#global-navigation" aria-current="page">Home</a>
+        <a href="#global-navigation">Posts</a>
+        <a href="#global-navigation">Search <kbd>⌘K</kbd></a>
+        <a href="https://scrapbox.io/KJR020">Scrapbox</a>
+      </nav>
+    </div>
+    <p class="source-row"><strong>Source</strong><code>src/components/Header.astro</code></p>
+  </div>
+
+  <div class="spec-item" id="search-box">
+    <h3>5-2. SearchBox</h3>
+    <p class="src">Pagefindを動的ロードし、入力に応じて検索する。1回5件を表示し、「さらに表示」で追加する。条件をクリアした後は入力へfocusを戻す。</p>
+    <div class="demo search-box-specimen">
+      <SearchBox client:load />
+    </div>
+    <p class="source-row"><strong>Source</strong><code>src/components/search/SearchBox.tsx</code></p>
+  </div>
+
+  <div class="spec-item" id="command-palette">
+    <h3>5-3. Command Palette</h3>
+    <p class="src"><kbd>⌘K</kbd> / <kbd>Ctrl K</kbd> でnative dialogを開く。Arrow Up/Downで選択、Enterで遷移、Escape/背景クリックで閉じる。</p>
+    <div class="demo command-demo">
+      <div class="command-search"><span aria-hidden="true">⌕</span><span>記事を検索</span><kbd>Esc</kbd></div>
+      <div class="command-results" role="listbox" aria-label="検索候補の例">
+        <div class="command-option is-selected" role="option" aria-selected="true">Astroブログに全文検索を導入した<small>Pagefindを使った検索UIの実装</small></div>
+        <div class="command-option" role="option" aria-selected="false">Astroブログにコールアウト機能を追加した<small>記事表現を拡張する</small></div>
+      </div>
+      <p class="demo-instruction">このページでも <kbd>⌘K</kbd> / <kbd>Ctrl K</kbd> で実装されたdialogを確認できる。</p>
+      <CommandPalette client:load />
+    </div>
+    <p class="source-row"><strong>Source</strong><code>src/components/search/CommandPalette.tsx</code></p>
+  </div>
+
+  <div class="spec-item" id="theme-mobile">
+    <h3>5-4. Theme Toggle / Mobile Menu</h3>
+    <p class="src">Theme Toggleは画面全体を覆う波とアイコン遷移を使う。Mobile Menuは右上からfixed dropdownで開き、外側クリックとEscapeで閉じる。</p>
+    <div class="demo navigation-actions-demo">
+      <div><span>Theme Toggle</span><ThemeToggleAnimated client:load /></div>
+      <div><span>Mobile Menu</span><button type="button" aria-label="メニューを開く" aria-expanded="false">☰</button></div>
+      <dl>
+        <div><dt>Theme state</dt><dd>localStorageとdocument classを同期</dd></div>
+        <div><dt>Menu dismissal</dt><dd>Escape / 外側クリック / リンク選択</dd></div>
+      </dl>
+    </div>
+    <p class="source-row"><strong>Source</strong><code>src/components/theme/ThemeToggleAnimated.tsx</code><code>src/components/MobileMenu.tsx</code></p>
+  </div>
+</section>
+
+<section class="spec" id="blog-components">
+  <h2>6. ブログ固有部品</h2>
+
+  <div class="spec-item" id="page-hero">
+    <h3>6-1. PageHero</h3>
+    <p class="src">ページタイトルと任意のdescriptionを提示し、ページの目的を一覧本文より先に伝える。</p>
+    <div class="demo page-demo"><PageHero title="Posts" description="技術記事と思考ログを掲載しています。" /></div>
+    <p class="source-row"><strong>Source</strong><code>src/components/PageHero.astro</code></p>
+  </div>
+
+  <div class="spec-item" id="post-card">
+    <h3>6-2. PostCard / PostMeta</h3>
+    <p class="src">カード全体を記事リンクにし、タグリンクだけz-indexで前面へ出す。hoverで背景・shadow・タイトル色を変える。</p>
+    <div class="demo post-card-wrap"><PostCard post={specimenPost} /></div>
+    <p class="source-row"><strong>Source</strong><code>src/components/PostCard.astro</code><code>src/components/PostMeta.astro</code></p>
+  </div>
+
+  <div class="spec-item" id="table-of-contents">
+    <h3>6-3. Table of Contents</h3>
+    <p class="src">Desktopは右側250px・sticky・内部scroll。MobileはRadix Collapsibleで開閉し、項目選択後に閉じる。</p>
+    <div class="demo toc-specimen">
+      <nav aria-label="記事目次の標本"><h4>目次</h4><TOCList headings={tocHeadings} activeId="callout" client:load /></nav>
+      <div><strong>Desktop</strong><span>sticky · 250px · internal scroll</span><strong>Mobile</strong><span>Collapsible · aria-expanded</span></div>
+    </div>
+    <p class="source-row"><strong>Source</strong><code>src/components/toc/TableOfContents.tsx</code><code>src/components/toc/MobileTOC.tsx</code></p>
+  </div>
+
+  <div class="spec-item" id="scrapbox-card-list">
+    <h3>6-4. Scrapbox Card List</h3>
+    <p class="src">横スクロールカードとして並べる。hover時に左右操作と端のfadeを表示し、外部リンクで開く。画像は表示領域へ近づいてから読み込む。</p>
+    <div class="demo scrapbox-specimen">
+      {scrapboxPages.map((page) => <ScrapboxCard page={page} client:visible />)}
+    </div>
+    <p class="source-row"><strong>Source</strong><code>src/components/scrapbox/ScrapboxCardList.tsx</code><code>src/components/scrapbox/ScrapboxCard.tsx</code></p>
+  </div>
+
+</section>

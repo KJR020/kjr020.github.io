@@ -1,0 +1,229 @@
+---
+import {
+  type DesignSystemPageId,
+  designSystemPageGroups,
+  designSystemPages,
+  isTopLevelPageCurrent,
+} from "../navigation";
+
+interface Props {
+  activePage: DesignSystemPageId;
+}
+
+const { activePage } = Astro.props;
+const navigationPages = designSystemPages.map((page) => ({
+  ...page,
+  groups: designSystemPageGroups[page.id],
+  isCurrentCategory: isTopLevelPageCurrent(activePage, page.id),
+  isCurrentPage: activePage === page.id,
+}));
+---
+
+<aside
+  class="design-system-sidebar"
+  aria-label="デザインシステムの目次"
+  data-design-system-sidebar
+  data-open="false"
+>
+  <button
+    type="button"
+    class="sidebar-toggle"
+    aria-expanded="false"
+    aria-controls="design-system-sidebar-panel"
+    data-sidebar-toggle
+  >
+    <span>デザインシステムの目次</span>
+    <span class="sidebar-toggle-mark" aria-hidden="true">⌄</span>
+  </button>
+
+  <div class="sidebar-panel" id="design-system-sidebar-panel" data-sidebar-panel>
+    <label class="sidebar-search">
+      <span>セクションを検索</span>
+      <input
+        type="search"
+        placeholder="セクションを検索"
+        autocomplete="off"
+        data-sidebar-search
+      />
+    </label>
+
+    <nav class="sidebar-navigation" aria-label="デザインシステム">
+      <ul class="sidebar-root-list">
+        {navigationPages.map((page) => (
+          <li
+            class="sidebar-page"
+            data-sidebar-page
+            data-current-category={String(page.isCurrentCategory)}
+          >
+            <div class="sidebar-page-row">
+              <a
+                class="sidebar-link sidebar-link-root"
+                href={page.href}
+                aria-current={page.isCurrentPage ? "page" : undefined}
+                data-sidebar-page-link
+                data-sidebar-link
+              >{page.label}</a>
+
+              {page.groups.length > 0 && (
+                <button
+                  type="button"
+                  class="sidebar-disclosure"
+                  aria-label={`${page.label}のセクションを開閉`}
+                  aria-expanded={String(page.isCurrentCategory)}
+                  aria-controls={`sidebar-sections-${page.id}`}
+                  data-sidebar-disclosure
+                >
+                  <span aria-hidden="true">›</span>
+                </button>
+              )}
+            </div>
+
+            {page.groups.length > 0 && (
+              <div
+                class="sidebar-page-sections"
+                id={`sidebar-sections-${page.id}`}
+                hidden={!page.isCurrentCategory}
+                data-sidebar-page-sections
+              >
+                {page.groups.map((group) => (
+                  <section class="sidebar-group" data-sidebar-group>
+                    <h2>
+                      <a
+                        href={group.href}
+                        data-sidebar-group-link
+                        data-sidebar-link
+                      >{group.label}</a>
+                    </h2>
+                    <ul>
+                      {group.links.map((link) => (
+                        <li data-sidebar-section-item>
+                          <a
+                            class="sidebar-link"
+                            href={link.href}
+                            data-sidebar-link
+                          >
+                            <span aria-hidden="true"></span>
+                            {link.label}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </section>
+                ))}
+              </div>
+            )}
+          </li>
+        ))}
+      </ul>
+
+      <p class="sidebar-empty" hidden data-sidebar-empty>一致するセクションはありません。</p>
+    </nav>
+  </div>
+</aside>
+
+<script>
+  const mobileSidebarQuery = window.matchMedia("(max-width: 56rem)");
+
+  document.querySelectorAll<HTMLElement>("[data-design-system-sidebar]").forEach((sidebar) => {
+    const toggle = sidebar.querySelector<HTMLButtonElement>("[data-sidebar-toggle]");
+    const search = sidebar.querySelector<HTMLInputElement>("[data-sidebar-search]");
+    const empty = sidebar.querySelector<HTMLElement>("[data-sidebar-empty]");
+    const pages = Array.from(sidebar.querySelectorAll<HTMLElement>("[data-sidebar-page]"));
+    const disclosures = Array.from(
+      sidebar.querySelectorAll<HTMLButtonElement>("[data-sidebar-disclosure]"),
+    );
+    let searchIsActive = false;
+
+    const setOpen = (open: boolean) => {
+      sidebar.dataset.open = String(open);
+      toggle?.setAttribute("aria-expanded", String(open));
+    };
+
+    const setPageExpanded = (disclosure: HTMLButtonElement, expanded: boolean) => {
+      const sectionId = disclosure.getAttribute("aria-controls");
+      const sections = sectionId
+        ? sidebar.querySelector<HTMLElement>(`#${sectionId}`)
+        : undefined;
+
+      disclosure.setAttribute("aria-expanded", String(expanded));
+      if (sections) sections.hidden = !expanded;
+    };
+
+    toggle?.addEventListener("click", () => {
+      setOpen(sidebar.dataset.open !== "true");
+    });
+
+    disclosures.forEach((disclosure) => {
+      disclosure.addEventListener("click", () => {
+        setPageExpanded(disclosure, disclosure.getAttribute("aria-expanded") !== "true");
+      });
+    });
+
+    search?.addEventListener("input", () => {
+      const query = search.value.trim().toLocaleLowerCase("ja");
+      const hasQuery = query.length > 0;
+
+      if (hasQuery && !searchIsActive) {
+        disclosures.forEach((disclosure) => {
+          disclosure.dataset.expandedBeforeSearch = disclosure.getAttribute("aria-expanded") ?? "false";
+        });
+      }
+
+      pages.forEach((page) => {
+        const pageLink = page.querySelector<HTMLElement>("[data-sidebar-page-link]");
+        const titleMatches = pageLink?.textContent?.toLocaleLowerCase("ja").includes(query) ?? false;
+        const groups = Array.from(page.querySelectorAll<HTMLElement>("[data-sidebar-group]"));
+        let hasMatchingSection = false;
+
+        groups.forEach((group) => {
+          const groupTitle = group.querySelector("h2")?.textContent?.toLocaleLowerCase("ja") ?? "";
+          const groupMatches = hasQuery && groupTitle.includes(query);
+          const items = Array.from(
+            group.querySelectorAll<HTMLElement>("[data-sidebar-section-item]"),
+          );
+
+          items.forEach((item) => {
+            const matches =
+              !hasQuery ||
+              groupMatches ||
+              (item.textContent?.toLocaleLowerCase("ja").includes(query) ?? false);
+            item.hidden = !matches;
+            if (hasQuery && matches) hasMatchingSection = true;
+          });
+
+          group.hidden = hasQuery && !items.some((item) => !item.hidden);
+        });
+
+        page.hidden = hasQuery && !titleMatches && !hasMatchingSection;
+
+        const disclosure = page.querySelector<HTMLButtonElement>("[data-sidebar-disclosure]");
+        if (hasQuery && disclosure) setPageExpanded(disclosure, hasMatchingSection);
+      });
+
+      if (!hasQuery && searchIsActive) {
+        pages.forEach((page) => {
+          page.hidden = false;
+          page.querySelectorAll<HTMLElement>("[data-sidebar-group]").forEach((group) => {
+            group.hidden = false;
+          });
+          page.querySelectorAll<HTMLElement>("[data-sidebar-section-item]").forEach((item) => {
+            item.hidden = false;
+          });
+        });
+        disclosures.forEach((disclosure) => {
+          setPageExpanded(disclosure, disclosure.dataset.expandedBeforeSearch === "true");
+          delete disclosure.dataset.expandedBeforeSearch;
+        });
+      }
+
+      searchIsActive = hasQuery;
+      if (empty) empty.hidden = pages.some((page) => !page.hidden);
+    });
+
+    sidebar.querySelectorAll<HTMLAnchorElement>("[data-sidebar-link]").forEach((link) => {
+      link.addEventListener("click", () => {
+        if (mobileSidebarQuery.matches) setOpen(false);
+      });
+    });
+  });
+</script>

@@ -1,11 +1,15 @@
 ---
 import { getCollection, render } from "astro:content";
+import ImageLightbox from "@/components/article/ImageLightbox.astro";
 import { Comments } from "@/components/Comments";
 import PostMeta from "@/components/PostMeta.astro";
 import type { HeadingItem } from "@/components/toc";
 import { TableOfContents } from "@/components/toc";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { createPublishedPostStaticPaths } from "@/lib/postRoutes";
+import "@/styles/article-code.css";
+import "@/styles/article-content.css";
+import "@/styles/article-footnotes.css";
 
 export async function getStaticPaths() {
   const posts = await getCollection("posts");
@@ -48,9 +52,11 @@ const giscusCategoryId = import.meta.env.PUBLIC_GISCUS_CATEGORY_ID;
           <PostMeta date={post.data.date} tags={post.data.tags} />
         </header>
 
-        <div class="prose prose-neutral dark:prose-invert max-w-none">
+        <div class="prose prose-neutral dark:prose-invert max-w-none article-reading-content">
           <Content />
         </div>
+
+        <ImageLightbox />
 
         <Comments
           repo={giscusRepo}
@@ -74,69 +80,24 @@ const giscusCategoryId = import.meta.env.PUBLIC_GISCUS_CATEGORY_ID;
   </div>
 </BaseLayout>
 
-<script is:inline>
-  // コードブロックにコピーボタンを追加
-  function addCopyButtons() {
-    const codeBlocks = document.querySelectorAll('pre:not(.copy-button-added)');
+<script>
+  import { enhanceArticleCodeBlocks } from "@/lib/articleCode";
+  import { enhanceFootnotes } from "@/lib/footnotes";
 
-    codeBlocks.forEach((pre) => {
-      pre.classList.add('copy-button-added');
-
-      // コンテナを作成
-      const wrapper = document.createElement('div');
-      wrapper.className = 'code-block-wrapper';
-      pre.parentNode?.insertBefore(wrapper, pre);
-      wrapper.appendChild(pre);
-
-      // コピーボタンを作成
-      const copyButton = document.createElement('button');
-      copyButton.className = 'copy-button';
-      copyButton.innerHTML = `
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-        </svg>
-      `;
-      copyButton.setAttribute('aria-label', 'コードをコピー');
-      wrapper.appendChild(copyButton);
-
-      // クリックイベント
-      copyButton.addEventListener('click', async () => {
-        const code = pre.querySelector('code')?.textContent || pre.textContent || '';
-
-        try {
-          await navigator.clipboard.writeText(code);
-          copyButton.innerHTML = `
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="20 6 9 17 4 12"></polyline>
-            </svg>
-          `;
-          copyButton.classList.add('copied');
-
-          setTimeout(() => {
-            copyButton.innerHTML = `
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-              </svg>
-            `;
-            copyButton.classList.remove('copied');
-          }, 2000);
-        } catch (err) {
-          console.error('コピーに失敗しました:', err);
-        }
-      });
-    });
+  function initializePostContent() {
+    const article = document.querySelector(".article-reading-content");
+    if (article) enhanceArticleCodeBlocks(article);
+    enhanceFootnotes();
   }
 
   // DOMContentLoadedで確実に実行
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', addCopyButtons);
+    document.addEventListener('DOMContentLoaded', initializePostContent);
   } else {
-    addCopyButtons();
+    initializePostContent();
   }
   // View Transitions対応
-  document.addEventListener('astro:page-load', addCopyButtons);
+  document.addEventListener('astro:page-load', initializePostContent);
 </script>
 
 <style is:global>
@@ -215,42 +176,6 @@ const giscusCategoryId = import.meta.env.PUBLIC_GISCUS_CATEGORY_ID;
     font-family: var(--font-mono);
   }
 
-  /* コードブロック（Shikiでハイライトされたもの） */
-  .prose pre {
-    padding: 1rem;
-    border-radius: 0.618rem; /* 1/φ */
-    overflow-x: auto;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    font-size: var(--font-size-small); /* 1/⁴√φ = 0.886rem */
-    line-height: var(--lh-body); /* φ = 1.618 */
-  }
-
-  .prose pre code {
-    background-color: transparent;
-    padding: 0;
-    border-radius: 0;
-    font-size: inherit;
-  }
-
-  /* Shikiのスタイルを上書きしない */
-  .prose pre[data-language] {
-    background-color: var(--shiki-light-bg, #f6f8fa);
-  }
-
-  .dark .prose pre[data-language] {
-    background-color: var(--shiki-dark-bg, #24292e);
-  }
-
-  /* Astro標準のShikiスタイル */
-  .astro-code {
-    padding: 1rem;
-    border-radius: 0.618rem; /* 1/φ */
-    overflow-x: auto;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-  }
-
   .prose a {
     color: var(--link);
     text-decoration: underline;
@@ -260,169 +185,6 @@ const giscusCategoryId = import.meta.env.PUBLIC_GISCUS_CATEGORY_ID;
 
   .prose a:hover {
     color: var(--link-hover);
-  }
-
-  /* GFM脚注 */
-  .prose [data-footnotes] {
-    margin-top: 2.618rem; /* φ² */
-    padding-top: 1.618rem; /* φ */
-    border-top: 1px solid var(--border);
-    color: var(--muted-foreground);
-    font-size: var(--font-size-small);
-  }
-
-  .prose [data-footnotes] > h2 {
-    position: static;
-    width: auto;
-    height: auto;
-    margin: 0 0 1rem;
-    padding: 0;
-    overflow: visible;
-    clip: auto;
-    clip-path: none;
-    white-space: normal;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    border: 0;
-    color: var(--foreground);
-    font-size: var(--font-size-title3);
-    line-height: var(--lh-tight);
-    font-weight: 600;
-    letter-spacing: 0;
-  }
-
-  .prose [data-footnotes] > h2::before {
-    content: "※";
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 1.618rem; /* φ */
-    height: 1.618rem; /* φ */
-    border-radius: 999px;
-    background-color: color-mix(in srgb, var(--link) 12%, transparent);
-    color: var(--link);
-    font-size: 0.875rem;
-    line-height: 1;
-  }
-
-  .prose [data-footnotes] ol {
-    margin-top: 0;
-    margin-bottom: 0;
-    padding-left: 1.618rem; /* φ */
-  }
-
-  .prose [data-footnotes] li {
-    margin-top: 0.618rem; /* 1/φ */
-    margin-bottom: 0.618rem; /* 1/φ */
-    padding-left: 0.382rem; /* φ⁻² */
-  }
-
-  .prose [data-footnotes] li::marker {
-    color: var(--muted-foreground);
-    font-weight: 600;
-  }
-
-  .prose [data-footnotes] p {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: var(--lh-body);
-  }
-
-  .prose [data-footnote-ref] {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 1.25rem;
-    height: 1.25rem;
-    padding: 0 0.382rem; /* φ⁻² */
-    border-radius: 999px;
-    background-color: color-mix(in srgb, var(--link) 12%, transparent);
-    color: var(--link);
-    font-size: 0.75em;
-    font-weight: 600;
-    line-height: 1;
-    text-decoration: none;
-  }
-
-  .prose [data-footnote-ref]:hover {
-    background-color: color-mix(in srgb, var(--link-hover) 18%, transparent);
-    color: var(--link-hover);
-  }
-
-  .prose [data-footnote-backref] {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 1.5rem;
-    height: 1.5rem;
-    margin-left: 0.236rem; /* φ⁻³ */
-    padding: 0 0.382rem; /* φ⁻² */
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    background-color: var(--background);
-    color: var(--muted-foreground);
-    font-size: 0;
-    font-weight: 600;
-    line-height: 1;
-    text-decoration: none;
-    vertical-align: middle;
-  }
-
-  .prose [data-footnote-backref]::before {
-    content: "↩︎";
-    font-size: 0.75rem;
-  }
-
-  .prose [data-footnote-backref] sup {
-    margin-left: 0.05rem;
-    font-size: 0.65rem;
-  }
-
-  .prose [data-footnote-backref]:hover {
-    background-color: var(--muted);
-    color: var(--foreground);
-  }
-
-  .prose [data-footnote-ref]:focus-visible,
-  .prose [data-footnote-backref]:focus-visible {
-    outline: 2px solid var(--ring);
-    outline-offset: 2px;
-  }
-
-  /* コードブロックのコピーボタン */
-  .code-block-wrapper {
-    position: relative;
-  }
-
-  .copy-button {
-    position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
-    padding: 0.5rem;
-    background-color: var(--muted);
-    border: 1px solid var(--border);
-    border-radius: 0.375rem;
-    color: var(--muted-foreground);
-    cursor: pointer;
-    opacity: 0;
-    transition: opacity 0.2s, background-color 0.2s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .code-block-wrapper:hover .copy-button {
-    opacity: 1;
-  }
-
-  .copy-button:hover {
-    background-color: var(--accent);
-    color: var(--accent-foreground);
-  }
-
-  .copy-button.copied {
-    color: hsl(142 76% 36%);
   }
 
   .prose img {
