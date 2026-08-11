@@ -4,8 +4,7 @@
 
 .object-card > span,
 .lane > span,
-.type-candidate header > span,
-.article-figure figcaption > span {
+.type-candidate header > span {
   margin: 0;
   color: var(--link);
   font-family: var(--font-mono);
@@ -158,21 +157,28 @@
   font-size: var(--font-size-small);
 }
 
-.lane-reading {
-  grid-column: 1 / span 7;
-  grid-row: 1;
-}
-
-.lane-wide {
+.lane-content {
   grid-column: 1 / span 9;
   grid-row: 2;
-  border-color: color-mix(in srgb, var(--link) 40%, var(--border));
+  inline-size: 100%;
+  max-inline-size: var(--article-reading-measure);
+}
+
+.lane-header {
+  grid-column: 1 / span 9;
+  grid-row: 1;
+  min-block-size: 6rem;
 }
 
 .lane-rail {
   grid-column: 10 / span 3;
-  grid-row: 1 / span 2;
+  grid-row: 2;
   background: var(--secondary);
+}
+
+.content-measure-specimen {
+  inline-size: 100%;
+  max-inline-size: var(--article-reading-measure);
 }
 
 .responsive-rule,
@@ -226,7 +232,7 @@
 }
 
 .type-candidate p {
-  max-inline-size: 38ic;
+  max-inline-size: var(--article-reading-measure);
   margin: 0 0 var(--phi-0);
   font-size: 1.0625rem;
   line-height: 1.7;
@@ -264,9 +270,6 @@
     display: none;
   }
 
-  .type-candidate p {
-    max-inline-size: none;
-  }
 }
 
 @media (max-width: 40rem) {
@@ -280,12 +283,15 @@
     background-image: none;
   }
 
-  .lane-reading,
-  .lane-wide,
+  .lane-header,
+  .lane-content,
   .lane-rail {
     grid-column: 1;
-    grid-row: auto;
   }
+
+  .lane-header { grid-row: 1; }
+  .lane-rail { grid-row: 2; }
+  .lane-content { grid-row: 3; }
 
   .lane {
     min-block-size: auto;

@@ -6,8 +6,8 @@ import { useScrollSpy } from "./useScrollSpy";
 
 /**
  * 目次コンポーネント
- * デスクトップ: 右側スティッキー表示
- * モバイル: 折りたたみアコーディオン表示
+ * 1280px以上: 右側スティッキー表示
+ * 1280px未満: 折りたたみアコーディオン表示
  */
 export function TableOfContents({
   headings,
@@ -31,7 +31,7 @@ export function TableOfContents({
       {/* デスクトップ表示: スティッキーサイドバー */}
       <nav
         className={cn(
-          "hidden lg:block",
+          "hidden xl:block",
           "sticky top-24",
           "max-h-[calc(100vh-8rem)] overflow-y-auto",
           "pl-8",

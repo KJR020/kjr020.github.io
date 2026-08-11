@@ -44,39 +44,51 @@ const giscusCategoryId = import.meta.env.PUBLIC_GISCUS_CATEGORY_ID;
   articleTags={post.data.tags}
 >
   <div class="post-page container mx-auto px-4 py-phi-2xl max-w-6xl">
-    <div class="lg:grid lg:grid-cols-[minmax(0,1fr)_250px] lg:gap-phi-2xl">
-      {/* 記事本文 */}
-      <article class="min-w-0">
-        <header class="mb-phi-2xl">
+    <article>
+      <header
+        class="mb-phi-2xl xl:grid xl:grid-cols-[minmax(0,1fr)_250px] xl:gap-phi-2xl"
+        data-article-header
+      >
+        <div>
           <h1 class="font-bold font-heading tracking-tight mb-phi-md" style="font-size: var(--font-size-title1); line-height: var(--lh-tight);">{post.data.title}</h1>
           <PostMeta date={post.data.date} tags={post.data.tags} />
-        </header>
-
-        <div class="prose prose-neutral dark:prose-invert max-w-none article-reading-content">
-          <Content />
         </div>
+      </header>
 
-        <ImageLightbox />
+      <div
+        class="xl:grid xl:grid-cols-[minmax(0,1fr)_250px] xl:gap-phi-2xl"
+        data-article-reading-layout
+      >
+        <aside
+          class="mb-phi-xl xl:col-start-2 xl:row-start-1 xl:mb-0"
+          data-article-toc
+        >
+          <TableOfContents
+            headings={headings}
+            avatarSrc="/images/kuri_photo.png"
+            avatarAlt="KJR020"
+            client:load
+          />
+        </aside>
 
-        <Comments
-          repo={giscusRepo}
-          repoId={giscusRepoId}
-          category={giscusCategory}
-          categoryId={giscusCategoryId}
-          client:only="react"
-        />
-      </article>
+        {/* 記事本文 */}
+        <div class="min-w-0 xl:col-start-1 xl:row-start-1" data-article-body>
+          <div class="prose prose-neutral dark:prose-invert max-w-none article-reading-content">
+            <Content />
+          </div>
 
-      {/* デスクトップ用目次（右側サイドバー） */}
-      <aside class="hidden lg:block">
-        <TableOfContents
-          headings={headings}
-          avatarSrc="/images/kuri_photo.png"
-          avatarAlt="KJR020"
-          client:load
-        />
-      </aside>
-    </div>
+          <ImageLightbox />
+
+          <Comments
+            repo={giscusRepo}
+            repoId={giscusRepoId}
+            category={giscusCategory}
+            categoryId={giscusCategoryId}
+            client:only="react"
+          />
+        </div>
+      </div>
+    </article>
   </div>
 </BaseLayout>
 

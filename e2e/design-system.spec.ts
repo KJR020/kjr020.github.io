@@ -27,6 +27,12 @@ test("デザインシステムを6つのトップレベルページに分けて�
   }
 });
 
+test("公開するデザインシステムを記事検索の索引から除外する", async ({ page }) => {
+  await page.goto("/design-system");
+
+  await expect(page.locator("body")).toHaveAttribute("data-pagefind-ignore", "all");
+});
+
 test("カテゴリカードはカード全体をリンクにして補助ラベルを重ねない", async ({ page }) => {
   await page.goto("/design-system");
 
@@ -216,10 +222,7 @@ test("実装とつながったデザインシステムを表示する", async ({
       name: "KJR020's Blog デザインシステム",
     }),
   ).toBeVisible();
-  await expect(page.locator('meta[name="robots"]')).toHaveAttribute(
-    "content",
-    "noindex,nofollow",
-  );
+  await expect(page.locator('meta[name="robots"][content*="noindex"]')).toHaveCount(0);
 
   await expect(page.locator('body[data-layout="specimen-book"]')).toBeVisible();
   const header = page.getByRole("banner");
@@ -540,10 +543,7 @@ test("記事ページの読書設計をパターンの共通レイアウト内�
   await expect(page.locator("body")).not.toContainText("DEV ONLY");
   await expect(page.locator("body")).not.toContainText("開発環境限定");
   await expect(header.getByText("DRAFT", { exact: true })).toHaveCount(0);
-  await expect(page.locator('meta[name="robots"]')).toHaveAttribute(
-    "content",
-    "noindex,nofollow",
-  );
+  await expect(page.locator('meta[name="robots"][content*="noindex"]')).toHaveCount(0);
   await expect(page.getByText("適用範囲", { exact: true })).toBeVisible();
   await expect(page.getByText("正規仕様ではありません")).toHaveCount(0);
   await expect(page.getByRole("link", { name: "パターンへ戻る" })).toHaveCount(0);
@@ -568,8 +568,17 @@ test("記事ページの読書設計をパターンの共通レイアウト内�
   await expect(page.locator("#code-pattern")).toBeVisible();
 
   await expect(page.locator("[data-reading-lane]")).toBeVisible();
+  await expect(page.locator("[data-content-measure-lane]")).toContainText("40ic");
+  await expect(page.locator("[data-article-header-lane]")).toContainText(
+    "Article header",
+  );
+  await expect(page.locator("#reading-layout")).toContainText(
+    "本文の開始位置に揃える",
+  );
+  await expect(page.locator("#reading-layout")).toContainText("1280px以上");
   await expect(page.locator("#figure-pattern figure img")).toHaveAttribute("width", "1078");
   await expect(page.locator("#figure-pattern figcaption")).toBeVisible();
+  await expect(page.locator("#figure-pattern .article-figure-label")).toHaveCount(0);
   const imageTrigger = page
     .locator("#figure-pattern")
     .getByRole("link", { name: /画像を拡大/ });

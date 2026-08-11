@@ -25,7 +25,7 @@ export function MobileTOC({ headings, activeId, onItemClick }: MobileTOCProps) {
   };
 
   return (
-    <Collapsible.Root open={isOpen} onOpenChange={setIsOpen} className="lg:hidden">
+    <Collapsible.Root open={isOpen} onOpenChange={setIsOpen} className="xl:hidden">
       <Collapsible.Trigger
         className={cn(
           "flex items-center justify-between w-full px-4 py-3",
