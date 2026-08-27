@@ -1,23 +1,14 @@
 .article-reading-content {
-  display: grid;
-  grid-template-columns: repeat(9, minmax(0, 1fr));
+  inline-size: 100%;
+  max-inline-size: var(--article-reading-measure);
   font-size: 1.0625rem;
   line-height: 1.7;
 }
 
 .article-reading-content > * {
-  grid-column: 1 / span 7;
+  inline-size: 100%;
   min-inline-size: 0;
-}
-
-.article-reading-content > :where(
-  .article-figure-wide,
-  .article-code-example,
-  pre,
-  table,
-  .mermaid
-) {
-  grid-column: 1 / -1;
+  max-inline-size: 100%;
 }
 
 .article-reading-content.prose :where(p, li) {
@@ -60,18 +51,9 @@
 }
 
 .article-figure figcaption {
-  display: grid;
-  grid-template-columns: 7rem minmax(0, 1fr);
-  gap: var(--phi-0);
   padding-block: var(--phi-neg1);
   border-block-end: 1px solid var(--border);
   color: var(--muted-foreground);
-}
-
-.article-figure-label {
-  color: var(--link);
-  font-family: var(--font-mono);
-  font-size: var(--font-size-caption);
 }
 
 .article-figure figcaption p {
@@ -152,15 +134,6 @@
 }
 
 @media (max-width: 48rem) {
-  .article-reading-content > * {
-    grid-column: 1 / -1;
-  }
-
-  .article-figure figcaption {
-    grid-template-columns: 1fr;
-    gap: var(--phi-neg2);
-  }
-
   .article-image-dialog {
     inline-size: calc(100vw - 1rem);
     max-block-size: calc(100dvh - 1rem);

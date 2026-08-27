@@ -4,11 +4,12 @@ import "../../article-reading.css";
 import "@/styles/article-code.css";
 import "@/styles/article-content.css";
 
-const codeSample = `export function getReadingWidth(viewport: number) {
-  const readingMeasure = viewport >= 1024 ? "38ic" : "100%";
+const codeSample = `export function getReadingStyle() {
+  const readingMeasure = "40ic";
 
   return {
-    readingMeasure,
+    inlineSize: "100%",
+    maxInlineSize: readingMeasure,
     lineHeight: 1.7,
     fontSize: "1.0625rem",
   };
@@ -18,7 +19,7 @@ const codeSample = `export function getReadingWidth(viewport: number) {
 <div class="spec-item article-reading-spec" id="article-reading">
   <h3>8-3. 記事ページ</h3>
   <p class="src">
-    技術記事の読書体験を定義する。文字・画像・コードを同じ情報構造の中で扱い、内容に応じて読むための幅と表示方法を使い分ける。
+    技術記事の読書体験を定義する。文字・画像・コードを同じ情報構造とContent measureで扱い、内容に応じた表示方法を定める。
   </p>
   <div class="scope-note article-reading-scope">
     <strong>適用範囲</strong>
@@ -75,7 +76,7 @@ const codeSample = `export function getReadingWidth(viewport: number) {
   <section class="spec article-reading-section" id="reading-layout">
     <h4>Layout</h4>
     <p class="src">
-      12 columnsはページ全体の配置に使い、本文はReading laneへ絞る。画像・コード・表は必要に応じてWide laneへ広げ、目次は独立したRailへ置く。
+      Article headerを本文と目次より先に置く。本文・画像・コード・表は40icのContent measureへ揃え、目次は独立したRailへ置いて本文の開始位置に揃える。
     </p>
 
     <div class="demo layout-specimen">
@@ -85,15 +86,15 @@ const codeSample = `export function getReadingWidth(viewport: number) {
         ))}
       </div>
       <div class="lane-map">
-        <div class="lane lane-reading">
-          <span>READING LANE · 7 COL</span>
-          <strong>本文・見出し・リスト</strong>
-          <p>視線が次の行頭を見失わない幅を優先する。</p>
+        <div class="lane lane-header" data-article-header-lane>
+          <span>ARTICLE HEADER · 9 COL</span>
+          <strong>Article header</strong>
+          <p>タイトル・公開日・タグを本文と目次より先に示す。</p>
         </div>
-        <div class="lane lane-wide">
-          <span>WIDE LANE · 9 COL</span>
-          <strong>画像・コード・表</strong>
-          <p>情報量が必要なコンテンツだけを広げる。</p>
+        <div class="lane lane-content" data-content-measure-lane>
+          <span>CONTENT MEASURE · 40ic</span>
+          <strong>本文・画像・コード・表</strong>
+          <p>すべてのコンテンツの開始位置と終了位置を揃える。</p>
         </div>
         <aside class="lane lane-rail">
           <span>RAIL · 3 COL</span>
@@ -104,20 +105,20 @@ const codeSample = `export function getReadingWidth(viewport: number) {
     </div>
 
     <div class="responsive-rule">
-      <div><strong>Desktop</strong><span>Reading + Wide + Rail</span></div>
-      <div><strong>Tablet</strong><span>Reading + Wide、目次は本文前</span></div>
-      <div><strong>Mobile</strong><span>Single column、Wideは領域内でスクロール</span></div>
+      <div><strong>1280px以上</strong><span>Article header → Content measure / Rail</span></div>
+      <div><strong>768–1279px</strong><span>Article header → 折りたたみ目次 → Content measure</span></div>
+      <div><strong>767px以下</strong><span>Content measureを領域幅まで縮小</span></div>
     </div>
   </section>
 
   <section class="spec article-reading-section" id="reading-typography">
     <h4>Typography</h4>
     <p class="src">
-      本文は17px、行高1.70、最大38字を基準とする。長文を続けて読める行間を保ち、コードや図と行き来しても本文の位置を見失いにくい行長に制限する。
+      本文は17px、行高1.70、最大40字を基準とする。長文を続けて読める行間を保ち、コードや図と行き来しても本文の位置を見失いにくい行長に制限する。
     </p>
 
     <article class="demo type-specimen type-candidate" data-reading-lane>
-      <header><span>BODY</span><strong>17px / 1.70 / 38字</strong></header>
+      <header><span>BODY</span><strong>17px / 1.70 / 40字</strong></header>
       <p>
         Pagefindは静的サイト向けの全文検索ライブラリです。ビルド後のHTMLを解析して検索インデックスを生成するため、専用サーバーを必要としません。
       </p>
@@ -128,10 +129,10 @@ const codeSample = `export function getReadingWidth(viewport: number) {
   <section class="spec article-reading-section" id="figure-pattern">
     <h4>Figure</h4>
     <p class="src">
-      スクリーンショットは本文幅へ押し込まず、情報が読める幅まで広げる。画像リンクは原寸表示へフォールバックし、JavaScript利用時はDialogで拡大する。Captionは読者が確認すべき点を示す。
+      スクリーンショットはContent measureへ揃える。画像リンクは原寸表示へフォールバックし、JavaScript利用時はDialogで拡大する。Captionは読者が確認すべき点を示す。
     </p>
 
-    <figure class="demo article-figure article-figure-wide">
+    <figure class="demo article-figure content-measure-specimen">
       <a
         class="article-image-trigger"
         href="/images/posts/astro-pagefind-search/search-command-palette.png"
@@ -147,7 +148,6 @@ const codeSample = `export function getReadingWidth(viewport: number) {
         />
       </a>
       <figcaption>
-        <span class="article-figure-label" aria-hidden="true">FIGURE 01</span>
         <p>
           検索結果では、記事タイトルを主、公開日と抜粋を従として配置する。画像内の小さな文字まで読める表示幅を確保する。
         </p>
@@ -155,8 +155,8 @@ const codeSample = `export function getReadingWidth(viewport: number) {
     </figure>
 
     <div class="pattern-rules">
-      <div><strong>Content</strong><span>本文の補助。Reading laneに揃える</span></div>
-      <div><strong>Wide</strong><span>UIスクリーンショットや図。9 columnsまで広げる</span></div>
+      <div><strong>Measure</strong><span>本文と同じ40icへ揃える</span></div>
+      <div><strong>Reflow</strong><span>狭い領域では100%まで縮小する</span></div>
       <div><strong>Zoom</strong><span>画像リンクをDialogへ拡張し、閉じた後はリンクへ戻る</span></div>
     </div>
   </section>
@@ -167,7 +167,7 @@ const codeSample = `export function getReadingWidth(viewport: number) {
       Shikiのdata-languageから言語を示し、Copy操作をコード上の定位置へ置く。長い行はコード領域の中だけで横スクロールさせ、完了結果はアイコンとpolite通知で伝える。
     </p>
 
-    <div class="demo">
+    <div class="demo content-measure-specimen">
       <pre class="astro-code article-code" data-language="typescript" tabindex="0"><code>{codeSample}</code></pre>
     </div>
 

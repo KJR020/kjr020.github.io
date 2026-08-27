@@ -38,9 +38,9 @@ Source of Truthは役割ごとに分ける。値は`globals.css`、部品の構�
 - [Grid system](grid-system.md)
 - [UIライティングガイドライン](ui-writing-guidelines.md)
 - [デザインシステム実装](../src/design-system/pages/index.astro)
-- [開発時限定ルート](../src/integrations/devDesignSystem.ts)
+- [公開ルート](../src/integrations/designSystem.ts)
 
-`pnpm dev`を起動し、`http://localhost:4321/design-system`を開く。色・文字・spacingは`globals.css`のCSS変数、Button・Badge・Input・Card・ブログパターンは実コンポーネントから描画される。全ページを共通のHeader・Sidebar・トークンで描画し、ライトとダークの両方で確認できる。
+公開URLは`https://kjr020.dev/design-system`とする。ローカルでは`pnpm dev`を起動し、`http://localhost:4321/design-system`で確認する。色・文字・spacingは`globals.css`のCSS変数、Button・Badge・Input・Card・ブログパターンは実コンポーネントから描画される。全ページを共通のHeader・Sidebar・トークンで描画し、ライトとダークの両方で確認できる。
 
 ### ページ構成
 
@@ -55,7 +55,7 @@ Source of Truthは役割ごとに分ける。値は`globals.css`、部品の構�
 
 記事ページの読書仕様は`/design-system/patterns#article-reading`へ統合し、`8-3. 記事ページ`としてページの型から参照できるようにする。サイドバーはすべてのページで6カテゴリと下位項目を同じ構造で保持し、現在のカテゴリだけを初期展開する。カテゴリ名はページへのリンク、右端の開閉ボタンは下位項目の表示切り替えに用い、複数カテゴリを同時に展開できる。
 
-このルートはAstroの`dev`コマンドでだけ注入する。`build`、`preview`、`sync`では登録せず、公開成果物へ出力しない。検索エンジン向けにも`noindex,nofollow`を指定する。
+このルートはAstro integrationから`dev`、`build`、`preview`、`sync`へ共通で注入し、公開成果物とSitemapへ出力する。各ページは通常の公開ページとしてcanonical、OGP、構造化データを持ち、検索エンジンによるクロールを許可する。ブログ内検索は記事を探す機能として維持するため、デザインシステムの本文は`data-pagefind-ignore="all"`でPagefindの索引対象から除外する。
 
 ## デザインシステムの構成
 
@@ -82,6 +82,7 @@ Source of Truthは役割ごとに分ける。値は`globals.css`、部品の構�
 - 新しい視覚表現はオーナーと合意し、デザインシステムへ正規仕様として定義してから実装する。
 - トークンには用途を表す名前を付け、値と意味を一対一で管理する。
 - 部品名は実装のコンポーネント名と対応させる。
+- 説明は「何を定義するか」「なぜ共通化するか」「どの判断に使うか」「制約」の順で書き、実装値だけの説明にしない。
 - 仕様を変更するときは、デザインシステムと関連ガイドを同時に更新する。
 - 実装とテストはデザインシステムへ適合させる。
 
@@ -91,7 +92,7 @@ Source of Truthは役割ごとに分ける。値は`globals.css`、部品の構�
 2. デザインシステムへ正規仕様として定義し、変更対象のSource of Truthを更新する。
 3. 実装と関連ガイドを正規仕様へ揃える。
 4. `pnpm test:design-system`で実コンポーネントとの接続を確認する。
-5. `pnpm build`で`dist/design-system`が生成されないことを確認する。
+5. `pnpm build`で`dist/design-system`とSitemapのURLが生成されることを確認する。
 
 デザインシステム側へCSS値やコンポーネントの見た目を再実装しない。標本固有のレイアウトだけを`src/design-system/styles.css`へ置く。
 
@@ -124,13 +125,14 @@ Headerのブランドリンクは、栗マスコットの目を切り出した�
 
 ### 記事の読書設計
 
-記事本文は、続けて読む情報と詳細を確認する情報で幅を使い分ける。記事とデザインシステムの標本は、同じMarkdown変換、DOM拡張、CSSを使用する。
+記事本文は、文字・画像・コード・表を共通のContent measureへ揃える。記事とデザインシステムの標本は、同じMarkdown変換、DOM拡張、CSSを使用する。
 
 | 項目 | 正規仕様 |
 | --- | --- |
-| Reading lane | 本文・見出し・リストはArticle内の7 / 9、17px、行高1.70、最大38字を基準とする |
-| Wide lane | Figure・Code・TableはArticle内の9 / 9を使用する。Compactでは1 columnに戻す |
-| Figure | Markdown画像と直後の強調文を`figure`と`figcaption`へ変換する |
+| Article header / TOC | タイトル・公開日・タグを本文と目次より先に置く。1280px以上では目次Railを本文の開始位置へ揃え、1280px未満では折りたたみ目次をArticle headerと本文の間に置く |
+| Content measure | 本文・見出し・リスト・Figure・Code・Tableは`--article-reading-measure: 40ic`へ揃え、17px、行高1.70を基準とする |
+| Reflow | Content measureは`inline-size: 100%`で領域幅まで縮小する。CodeとTableの長い行は領域内で横スクロールし、画像は拡大表示で詳細を確認できるようにする |
+| Figure | Markdown画像と直後の強調文を`figure`と`figcaption`へ変換する。キャプションは説明文のみを表示し、本文から参照しない図番号は付与しない |
 | Image zoom | 画像は原寸へのリンクとし、JavaScript利用時はDialogで拡大する。閉じた後は画像リンクへフォーカスを戻す |
 | Code language | Shikiが生成する`data-language`を可視ラベルへ変換する |
 | Code copy | Copy操作を右上へ置き、成功・失敗をAccessible Nameと`aria-live="polite"`で伝える |
@@ -148,6 +150,10 @@ Headerのブランドリンクは、栗マスコットの目を切り出した�
 | Reduced motion | `prefers-reduced-motion: reduce`では面移動の遷移時間を0sにし、状態変化は維持する |
 | Source of Truth | `src/components/PostMeta.astro`、`src/components/PostCard.astro` |
 
+## 参考資料
+
+- [SmartHR Design System「デザイントークン」](https://smarthr.design/products/design-tokens/) - 目的、種類、用途を分けて説明する情報構造の参考
+
 ## 関連ファイル
 
 - [globals.css](../src/styles/globals.css) - グローバルトークンと記事表現
@@ -155,7 +161,7 @@ Headerのブランドリンクは、栗マスコットの目を切り出した�
 - [共通レイアウト](../src/design-system/components/DesignSystemLayout.astro) - Header・Sidebar・Footer・共通script
 - [ページナビゲーション](../src/design-system/navigation.ts) - 6ページとセクションの対応
 - [デザインシステム固有スタイル](../src/design-system/styles.css) - 標本固有のレイアウト
-- [Dev integration](../src/integrations/devDesignSystem.ts) - 非公開ルートの登録条件
+- [Design System integration](../src/integrations/designSystem.ts) - 公開ルートの登録
 - [デザインシステム E2E](../e2e/design-system.spec.ts) - 実装との接続、章目次、Mobile表示
 - [button.tsx](../src/components/ui/button.tsx) - Button variants
 - [badge.tsx](../src/components/ui/badge.tsx) - Badge variants
@@ -166,8 +172,8 @@ Headerのブランドリンクは、栗マスコットの目を切り出した�
 - [PostCard.astro](../src/components/PostCard.astro) - 記事一覧パターン
 - [SearchBox.tsx](../src/components/search/SearchBox.tsx) - 全文検索
 - [TableOfContents.tsx](../src/components/toc/TableOfContents.tsx) - 記事目次
-- [記事ページ](../src/pages/posts/[...slug].astro) - Reading / Wide laneと記事本文
+- [記事ページ](../src/pages/posts/[...slug].astro) - Content measureと記事本文
 - [Figure変換](../src/integrations/rehypeArticleFigures.ts) - Markdown画像とCaptionの構造化
 - [画像拡大](../src/components/article/ImageLightbox.astro) - FigureのDialog拡大
 - [コード拡張](../src/lib/articleCode.ts) - 言語表示、Copy操作、完了通知
-- [記事コンテンツスタイル](../src/styles/article-content.css) - Reading / Wide laneとFigure
+- [記事コンテンツスタイル](../src/styles/article-content.css) - Content measureとFigure

@@ -70,9 +70,12 @@ Command PaletteなどのoverlayはGridの外に浮く要素なので、Grid type
 | --- | --- | --- |
 | Compact | 2 / 2 columns | 本文上部の折りたたみ領域 |
 | Medium | 6 / 6 columns | 本文上部の折りたたみ領域 |
-| Wide | 9 / 12 columns | 3 / 12 columns |
+| Wide（1024–1279px） | 12 / 12 columns | 本文上部の折りたたみ領域 |
+| Wide Rail（1280px以上） | 9 / 12 columns | 3 / 12 columns |
 
-Wideでは記事と目次の間に1 gutterを置く。Article内は外側のPage Gridとは独立した9 tracksで構成し、本文・見出し・リストを7 / 9、Figure・Code・Tableを9 / 9へ配置する。Compactでは両方を1 columnへ戻す。
+Wide Railでは記事と目次の間に1 gutterを置く。Article内の本文・見出し・リスト・Figure・Code・Tableは`--article-reading-measure: 40ic`へ揃え、Page Gridの列比率で本文幅を重ねて制限しない。狭い領域ではContent measureを100%まで縮小し、CodeとTableの長い行は領域内で横スクロールする。
+
+Article headerは本文と目次より先に配置する。1280px以上では9 / 12 columnsを使い、その下からArticleとTable of contentsを同じ行で開始する。1280px未満ではDOM順をArticle header、折りたたみ目次、Article本文とし、単一columnで表示する。
 
 ### 検索
 
