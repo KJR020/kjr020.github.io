@@ -2,7 +2,7 @@
 
 import { readdirSync, rmSync, statSync } from "node:fs";
 import path from "node:path";
-import { generateOgImage } from "../src/lib/ogImage";
+import { generateOgImage } from "../src/lib/og-image";
 import { preparePublicBuild } from "../src/lib/publicBuildInputs";
 
 const publicInputDirs = ["src/pages", "public"];

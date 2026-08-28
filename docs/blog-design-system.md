@@ -141,7 +141,7 @@ OGPはブログ名、ページの主題、サイトURL、栗マスコットを�
 | Typography | 見出し、説明、メタデータをNoto Sans JPのローカルフォントで統一する |
 | Generation | SatoriでSVGを組み立て、SharpでPNGへ変換する |
 | Routing | 全体ページは`/og-image.png`、記事は`/og/posts/{記事ID}.png`を使用する |
-| Source of Truth | `src/lib/ogImage.tsx`、`src/pages/og/posts/[...slug].png.ts`、`src/lib/siteCopy.ts`、`src/assets/og/` |
+| Source of Truth | `src/lib/og-image/`、`src/pages/og/posts/[...slug].png.ts`、`src/lib/siteCopy.ts`、`src/assets/og/` |
 
 ### 記事の読書設計
 

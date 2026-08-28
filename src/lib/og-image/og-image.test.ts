@@ -1,3 +1,4 @@
+import { existsSync } from "node:fs";
 import { mkdtemp, readFile, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
@@ -5,12 +6,12 @@ import { join } from "node:path";
 import sharp from "sharp";
 import { afterEach, describe, expect, it } from "vitest";
 
-import * as ogImageModule from "./ogImage";
-import { createOgImageSvg, generateOgImage, OG_IMAGE_COPY, OG_IMAGE_SIZE } from "./ogImage";
+import * as ogImageModule from ".";
+import { createOgImageSvg, generateOgImage, OG_IMAGE_COPY, OG_IMAGE_SIZE } from ".";
 
 const temporaryDirectories: string[] = [];
 const ogAssetDirectory = join(process.cwd(), "src", "assets", "og");
-const ogImageSourcePath = join(process.cwd(), "src", "lib", "ogImage.tsx");
+const ogImageSourcePath = join(process.cwd(), "src", "lib", "og-image", "template.tsx");
 
 async function createTemporaryDirectory(): Promise<string> {
   const directory = await mkdtemp(join(tmpdir(), "kjr020-og-image-"));
@@ -25,6 +26,15 @@ afterEach(async () => {
 });
 
 describe("OG image content", () => {
+  it("organizes the OGP implementation by responsibility", () => {
+    const ogImageDirectory = join(process.cwd(), "src", "lib", "og-image");
+    const expectedFiles = ["generate.ts", "index.ts", "layout.ts", "template.tsx"];
+
+    expect(expectedFiles.every((fileName) => existsSync(join(ogImageDirectory, fileName)))).toBe(
+      true,
+    );
+  });
+
   it("derives the spacing ladder from the golden ratio", () => {
     const spacing = (
       ogImageModule as typeof ogImageModule & {
@@ -225,7 +235,7 @@ describe("generateOgImage", () => {
 
     expect(packageJson.scripts["generate:og-image"]).toBe("tsx scripts/generate-og-image.ts");
     expect(packageJson.scripts.prebuild).toBe("tsx scripts/prepare-public-build.ts");
-    expect(prebuildSource).toContain('import { generateOgImage } from "../src/lib/ogImage";');
+    expect(prebuildSource).toContain('import { generateOgImage } from "../src/lib/og-image";');
     expect(prebuildSource).toContain(
       'outputPath: path.join(projectRoot, "public", "og-image.png")',
     );

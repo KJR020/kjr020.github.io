@@ -2,7 +2,7 @@ import { getCollection } from "astro:content";
 import path from "node:path";
 import type { APIRoute } from "astro";
 
-import { createOgImagePng, OG_IMAGE_COPY } from "@/lib/ogImage";
+import { createOgImagePng, OG_IMAGE_COPY } from "@/lib/og-image";
 
 const projectRoot = process.cwd();
 const publishedPosts = getCollection("posts", ({ data }) => !data.draft);
