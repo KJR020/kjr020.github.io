@@ -154,7 +154,7 @@
   outline-offset: 2px;
 }
 
-@media (max-width: 48rem) {
+@media (max-width: 47.999rem) {
   .article-reading-content > * {
     grid-column: 1 / -1;
     max-inline-size: none;

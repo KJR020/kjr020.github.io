@@ -115,6 +115,14 @@ test("目次標本は本番と同じ開閉操作を試せる", async ({ page }) 
   await expect(navigation).toBeVisible();
 });
 
+test("本文組版の標本も768pxからMediumの文字サイズを使う", async ({ page }) => {
+  await page.setViewportSize({ width: 768, height: 900 });
+  await page.goto("/design-system/patterns#reading-typography");
+
+  const paragraph = page.locator("#reading-typography .type-candidate p");
+  await expect(paragraph).toHaveCSS("font-size", "17px");
+});
+
 test("サイドバーはどのページでも全カテゴリの項目を保持する", async ({ page }) => {
   await page.goto("/design-system/foundations");
 

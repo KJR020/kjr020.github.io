@@ -37,6 +37,24 @@ test("画面幅に応じた本文組版を使い、FigureをWide laneへ広げ�
   }
 });
 
+test("768pxからMediumの本文組版へ切り替える", async ({ page }) => {
+  await page.setViewportSize({ width: 768, height: 900 });
+  await page.goto(articlePath);
+
+  const content = page.locator(".article-reading-content");
+  const paragraph = content.locator(":scope > p").first();
+  const [contentBox, paragraphBox] = await Promise.all([
+    content.boundingBox(),
+    paragraph.boundingBox(),
+  ]);
+  const fontSize = await paragraph.evaluate((element) =>
+    Number.parseFloat(getComputedStyle(element).fontSize),
+  );
+
+  expect(fontSize).toBe(17);
+  expect(paragraphBox?.width).toBeLessThan(contentBox?.width ?? 0);
+});
+
 test("モバイルでは記事ヘッダー直後に折りたたみ目次を表示する", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto(articlePath);

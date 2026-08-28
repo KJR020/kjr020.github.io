@@ -263,7 +263,9 @@
   .object-children::before {
     display: none;
   }
+}
 
+@media (max-width: 47.999rem) {
   .type-candidate p {
     max-inline-size: none;
     font-size: 1rem;
