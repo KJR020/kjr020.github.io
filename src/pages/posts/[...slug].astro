@@ -45,9 +45,11 @@ const giscusCategoryId = import.meta.env.PUBLIC_GISCUS_CATEGORY_ID;
 >
   <div class="post-page container mx-auto px-4 py-phi-2xl max-w-6xl">
     <article class="min-w-0">
-      <header class="mb-phi-2xl">
-        <h1 class="post-title font-bold font-heading tracking-tight mb-phi-md">{post.data.title}</h1>
-        <PostMeta date={post.data.date} tags={post.data.tags} />
+      <header class="post-article-header mb-phi-2xl">
+        <div class="post-header-content min-w-0">
+          <h1 class="post-title font-bold font-heading tracking-tight mb-phi-md">{post.data.title}</h1>
+          <PostMeta date={post.data.date} tags={post.data.tags} />
+        </div>
       </header>
 
       <div class="post-mobile-toc mb-phi-2xl lg:hidden">
@@ -240,12 +242,27 @@ const giscusCategoryId = import.meta.env.PUBLIC_GISCUS_CATEGORY_ID;
   }
 
   @media (min-width: 64rem) {
+    .post-article-header {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 250px;
+    }
+
+    .post-header-content {
+      grid-column: 1;
+    }
+
     .post-reading-layout:has([data-desktop-toc-open="false"]) {
       grid-template-columns: minmax(0, 1fr) max-content;
     }
 
     .post-title {
       font-size: var(--font-size-display);
+    }
+  }
+
+  @media (max-width: 63.999rem) {
+    main:has(.post-page) > .kuri-watermark {
+      display: none;
     }
   }
 </style>

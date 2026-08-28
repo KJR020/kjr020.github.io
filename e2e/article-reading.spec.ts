@@ -86,6 +86,26 @@ test("デスクトップでは記事ヘッダーの下に本文と目次を並�
   expect(tocBox?.x ?? 0).toBeGreaterThan((mainBox?.x ?? 0) + (mainBox?.width ?? 0));
 });
 
+test("デスクトップでは記事タイトルをキャラクター領域に重ねない", async ({ page }) => {
+  await page.setViewportSize({ width: 1051, height: 900 });
+  await page.goto("/posts/ux/ai-era-user-experience-design");
+
+  const title = page.getByRole("heading", {
+    level: 1,
+    name: "AI時代にUX設計を学ぶため、『The Elements of User Experience』を読んだ",
+  });
+  const character = page.locator(".kuri-watermark");
+  const [titleBox, characterBox] = await Promise.all([
+    title.boundingBox(),
+    character.boundingBox(),
+  ]);
+
+  expect(titleBox).not.toBeNull();
+  expect(characterBox).not.toBeNull();
+  expect(titleBox?.x ?? 0).toBeLessThan(characterBox?.x ?? 0);
+  expect((titleBox?.x ?? 0) + (titleBox?.width ?? 0)).toBeLessThanOrEqual(characterBox?.x ?? 0);
+});
+
 test("モバイルでは記事ヘッダー直後に折りたたみ目次を表示する", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto(articlePath);
@@ -94,6 +114,7 @@ test("モバイルでは記事ヘッダー直後に折りたたみ目次を表�
   const mobileToc = article.locator(".post-mobile-toc");
   const trigger = mobileToc.getByRole("button", { name: "目次を開く" });
 
+  await expect(page.locator(".kuri-watermark")).toBeHidden();
   await expect(mobileToc).toBeVisible();
   await expect(trigger).toHaveAttribute("aria-expanded", "false");
   await trigger.click();

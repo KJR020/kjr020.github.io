@@ -53,6 +53,9 @@ test("記事ページの仕様をパターンページに統合して表示す�
   await expect(page.locator("#reading-model")).toBeVisible();
   await expect(page.locator("#reading-layout")).toBeVisible();
   await expect(page.locator("#reading-layout .lane-header")).toContainText("記事ヘッダー");
+  await expect(page.locator("#reading-layout .lane-character-area")).toContainText(
+    "キャラクター領域",
+  );
   await expect(page.locator("#reading-typography")).toBeVisible();
   await expect(page.locator("#figure-pattern")).toBeVisible();
   await expect(page.locator("#code-pattern")).toBeVisible();

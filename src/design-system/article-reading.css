@@ -4,6 +4,8 @@
 
 .object-card > span,
 .lane > span,
+.lane-header-content > span,
+.lane-character-area > span,
 .type-candidate header > span {
   margin: 0;
   color: var(--link);
@@ -160,7 +162,20 @@
 .lane-header {
   grid-column: 1 / -1;
   grid-row: 1;
+  grid-template-columns: minmax(0, 3fr) minmax(8rem, 1fr);
   min-block-size: 0;
+}
+
+.lane-header-content,
+.lane-character-area {
+  display: grid;
+  align-content: start;
+  gap: var(--phi-neg2);
+}
+
+.lane-character-area {
+  padding-inline-start: var(--phi-0);
+  border-inline-start: 1px solid var(--border);
 }
 
 .lane-reading {
@@ -298,6 +313,14 @@
 
   .lane {
     min-block-size: auto;
+  }
+
+  .lane-header {
+    grid-template-columns: 1fr;
+  }
+
+  .lane-character-area {
+    display: none;
   }
 
   .responsive-rule > div,
