@@ -24,6 +24,7 @@ const ARTICLE_TITLE_FONT_SIZES = [
   Math.round(DISPLAY_FONT_SIZE / PHI_QUARTER_STEP ** 3),
   Math.round(DISPLAY_FONT_SIZE / PHI_QUARTER_STEP ** 4),
 ] as const;
+const MAX_ARTICLE_TITLE_LINES = 3;
 
 export const OG_IMAGE_LAYOUT = {
   articleBrandTop: 128,
@@ -99,9 +100,42 @@ function getLargestFittingTitleFontSize(lines: string[], availableWidth: number)
 
   return (
     ARTICLE_TITLE_FONT_SIZES.find((fontSize) => longestLineLength * fontSize <= availableWidth) ??
-    ARTICLE_TITLE_FONT_SIZES.at(-1) ??
-    DISPLAY_FONT_SIZE
+    Math.max(1, Math.floor(availableWidth / longestLineLength))
   );
+}
+
+function splitTitleIntoBalancedLines(title: string, lineCount: number): string[] {
+  const characters = Array.from(title);
+  const lines: string[] = [];
+  let characterIndex = 0;
+
+  for (let lineIndex = 0; lineIndex < lineCount; lineIndex += 1) {
+    const remainingLines = lineCount - lineIndex;
+    const remainingTitle = characters.slice(characterIndex).join("");
+    const targetLineLength = measureTitleLength(remainingTitle) / remainingLines;
+    let currentLine = "";
+
+    while (characterIndex < characters.length) {
+      const character = characters[characterIndex];
+      const candidateLine = currentLine + character;
+      const remainingCharacters = characters.length - characterIndex - 1;
+
+      if (
+        currentLine &&
+        measureTitleLength(candidateLine) > targetLineLength &&
+        remainingCharacters >= remainingLines - 1
+      ) {
+        break;
+      }
+
+      currentLine = candidateLine;
+      characterIndex += 1;
+    }
+
+    lines.push(currentLine);
+  }
+
+  return lines;
 }
 
 export function createArticleTitleLayout(
@@ -114,9 +148,34 @@ export function createArticleTitleLayout(
   const semanticLines = findQuotedTitleParts(title);
 
   if (!semanticLines) {
+    const singleLineFontSize = getArticleTitleFontSize(title);
+
+    if (measureTitleLength(title) * singleLineFontSize <= resolvedAvailableWidth) {
+      return {
+        fontSize: singleLineFontSize,
+        lines: [title],
+      };
+    }
+
+    const minimumFontSize = ARTICLE_TITLE_FONT_SIZES.at(-1) ?? DISPLAY_FONT_SIZE;
+    const lineCount = Math.min(
+      MAX_ARTICLE_TITLE_LINES,
+      Math.max(
+        2,
+        Math.ceil((measureTitleLength(title) * minimumFontSize) / resolvedAvailableWidth),
+      ),
+    );
+    const lines = splitTitleIntoBalancedLines(title, lineCount);
+    const longestLine = lines.reduce((longest, line) =>
+      measureTitleLength(line) > measureTitleLength(longest) ? line : longest,
+    );
+
     return {
-      fontSize: getArticleTitleFontSize(title),
-      lines: [title],
+      fontSize: Math.min(
+        getArticleTitleFontSize(longestLine),
+        getLargestFittingTitleFontSize(lines, resolvedAvailableWidth),
+      ),
+      lines,
     };
   }
 

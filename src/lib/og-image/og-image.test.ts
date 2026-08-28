@@ -7,7 +7,13 @@ import sharp from "sharp";
 import { afterEach, describe, expect, it } from "vitest";
 
 import * as ogImageModule from ".";
-import { createOgImageSvg, generateOgImage, OG_IMAGE_COPY, OG_IMAGE_SIZE } from ".";
+import {
+  createArticleTitleLayout,
+  createOgImageSvg,
+  generateOgImage,
+  OG_IMAGE_COPY,
+  OG_IMAGE_SIZE,
+} from ".";
 
 const temporaryDirectories: string[] = [];
 const ogAssetDirectory = join(process.cwd(), "src", "assets", "og");
@@ -176,6 +182,20 @@ describe("OG image content", () => {
       "『The Elements of User Experience』を読んだ",
     ]);
     expect(layout?.fontSize).toBe(42);
+  });
+
+  it("splits a long unquoted title into lines that fit the available width", () => {
+    const title = "業務フローを整理せずテーブル設計をしようとして失敗した話";
+    const availableWidth = 984;
+    const layout = createArticleTitleLayout(title, availableWidth);
+
+    expect(layout.lines.length).toBeGreaterThan(1);
+    expect(layout.lines.length).toBeLessThanOrEqual(3);
+    expect(layout.lines.join("")).toBe(title);
+
+    for (const line of layout.lines) {
+      expect(Array.from(line).length * layout.fontSize).toBeLessThanOrEqual(availableWidth);
+    }
   });
 });
 
