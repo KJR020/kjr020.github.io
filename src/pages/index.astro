@@ -3,12 +3,14 @@ import { getCollection } from "astro:content";
 import PostCard from "@/components/PostCard.astro";
 import { ScrapboxCardList } from "@/components/scrapbox";
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import { HOME_DESCRIPTION_LINES } from "@/lib/siteCopy";
 
 const posts = await getCollection("posts", ({ data }) => !data.draft);
 const sortedPosts = posts.sort(
   (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
 );
 const latestPosts = sortedPosts.slice(0, 3);
+const [homeDescriptionLead, homeDescriptionDetail] = HOME_DESCRIPTION_LINES;
 ---
 
 <BaseLayout title="KJR020's Blog" description="KJR020の技術ブログ">
@@ -36,10 +38,10 @@ const latestPosts = sortedPosts.slice(0, 3);
               class="hero-copy text-base text-muted-foreground max-w-lg"
               style="line-height: var(--lh-body);"
             >
-              とあるWebエンジニアのブログ。<br
+              {homeDescriptionLead}<br
                 class="hidden sm:inline"
               />
-              調べたこと、やってみたことを書いています。
+              {homeDescriptionDetail}
             </p>
           </div>
         </div>

@@ -38,6 +38,7 @@ const giscusCategoryId = import.meta.env.PUBLIC_GISCUS_CATEGORY_ID;
 <BaseLayout
   title={`${post.data.title} - KJR020's Blog`}
   description={post.data.description}
+  image={`/og/posts/${post.id}.png`}
   ogType="article"
   articleHeadline={post.data.title}
   articlePublishedTime={post.data.date}

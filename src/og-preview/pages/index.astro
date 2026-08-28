@@ -1,0 +1,235 @@
+---
+import BaseHead from "@/layouts/BaseHead.astro";
+import "@/styles/globals.css";
+import { OG_PREVIEW_DEFAULT_TITLE, OG_PREVIEW_LAYOUT_FIELDS, OG_PREVIEW_PRESETS } from "../config";
+import "../styles.css";
+
+const currentLayout = OG_PREVIEW_PRESETS.current;
+---
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <BaseHead
+      title="OGPプレビュー"
+      description="KJR020's BlogのOGPテンプレートを開発時に調整するプレビュー"
+    />
+    <meta name="robots" content="noindex,nofollow" />
+  </head>
+  <body class="og-preview-body">
+    <a class="og-preview-skip-link" href="#preview-stage">プレビューへ移動</a>
+
+    <main class="og-preview-app" data-og-preview data-preview-scale="social">
+      <header class="og-preview-header">
+        <div>
+          <p class="og-preview-kicker">Development tool</p>
+          <h1>OGPプレビュー</h1>
+          <p>
+            共通画像と記事別画像を、実際の生成テンプレートで比較します。変更はプレビューだけに適用されます。
+          </p>
+        </div>
+        <a href="/design-system">デザインシステムへ</a>
+      </header>
+
+      <div class="og-preview-layout">
+        <aside class="og-preview-controls" aria-label="OGPの調整項目">
+          <section aria-labelledby="preset-heading">
+            <h2 id="preset-heading">比較</h2>
+            <div class="og-preview-button-group">
+              <button
+                type="button"
+                data-preset={JSON.stringify(OG_PREVIEW_PRESETS.current)}
+              >現在の設定</button>
+              <button
+                type="button"
+                data-preset={JSON.stringify(OG_PREVIEW_PRESETS.previous)}
+              >ひとつ前の設定</button>
+            </div>
+          </section>
+
+          <form data-preview-form>
+            <section aria-labelledby="content-heading">
+              <h2 id="content-heading">内容</h2>
+              <label class="og-preview-field og-preview-field-text" for="article-title">
+                <span>記事タイトル</span>
+                <textarea id="article-title" name="title" rows="4">{OG_PREVIEW_DEFAULT_TITLE}</textarea>
+              </label>
+            </section>
+
+            <section aria-labelledby="layout-heading">
+              <h2 id="layout-heading">余白と配置</h2>
+              <div class="og-preview-range-list">
+                {OG_PREVIEW_LAYOUT_FIELDS.map((field) => (
+                  <label class="og-preview-field" for={`layout-${field.key}`}>
+                    <span>{field.label}</span>
+                    <span class="og-preview-range-row">
+                      <input
+                        id={`layout-${field.key}`}
+                        data-layout-input
+                        max={field.max}
+                        min={field.min}
+                        name={field.key}
+                        step={field.step}
+                        type="range"
+                        value={currentLayout[field.key]}
+                      />
+                      <output for={`layout-${field.key}`} data-layout-output>
+                        {currentLayout[field.key]}px
+                      </output>
+                    </span>
+                  </label>
+                ))}
+              </div>
+            </section>
+          </form>
+
+          <section aria-labelledby="display-heading">
+            <h2 id="display-heading">表示サイズ</h2>
+            <div class="og-preview-scale-options" role="radiogroup" aria-label="プレビュー表示サイズ">
+              <label><input type="radio" name="preview-scale" value="social" checked />Xカード相当</label>
+              <label><input type="radio" name="preview-scale" value="half" />50%</label>
+              <label><input type="radio" name="preview-scale" value="actual" />実寸</label>
+            </div>
+          </section>
+
+          <button class="og-preview-copy-button" type="button" data-copy-layout>
+            設定値をコピー
+          </button>
+          <p class="og-preview-status" data-copy-status aria-live="polite"></p>
+        </aside>
+
+        <section class="og-preview-stage" id="preview-stage" aria-label="OGP画像のプレビュー">
+          <article class="og-preview-specimen">
+            <header>
+              <div>
+                <h2>共通OGP</h2>
+                <p>トップページや一覧ページで使用</p>
+              </div>
+              <span>1200 × 630</span>
+            </header>
+            <div class="og-preview-canvas">
+              <img
+                alt="共通OGPのプレビュー"
+                data-preview-image="site"
+                height="630"
+                src="/og-preview/image.png?kind=site"
+                width="1200"
+              />
+            </div>
+          </article>
+
+          <article class="og-preview-specimen">
+            <header>
+              <div>
+                <h2>記事別OGP</h2>
+                <p>入力した記事タイトルで折り返しを確認</p>
+              </div>
+              <span>1200 × 630</span>
+            </header>
+            <div class="og-preview-canvas">
+              <img
+                alt="記事別OGPのプレビュー"
+                data-preview-image="article"
+                height="630"
+                src="/og-preview/image.png?kind=article"
+                width="1200"
+              />
+            </div>
+          </article>
+        </section>
+      </div>
+    </main>
+
+    <script>
+      const previewRoot = document.querySelector<HTMLElement>("[data-og-preview]");
+      const previewForm = document.querySelector<HTMLFormElement>("[data-preview-form]");
+      const titleInput = document.querySelector<HTMLTextAreaElement>("#article-title");
+      const siteImage = document.querySelector<HTMLImageElement>('[data-preview-image="site"]');
+      const articleImage = document.querySelector<HTMLImageElement>(
+        '[data-preview-image="article"]',
+      );
+      const layoutInputs = Array.from(
+        document.querySelectorAll<HTMLInputElement>("[data-layout-input]"),
+      );
+      let refreshTimer: number | undefined;
+
+      const getLayoutParams = () => {
+        const params = new URLSearchParams();
+        for (const input of layoutInputs) params.set(input.name, input.value);
+        return params;
+      };
+
+      const updateOutputs = () => {
+        for (const input of layoutInputs) {
+          const output = input.closest("label")?.querySelector<HTMLOutputElement>("output");
+          if (output) output.value = `${input.value}px`;
+        }
+      };
+
+      const updatePreviewImages = () => {
+        if (!siteImage || !articleImage || !titleInput) return;
+
+        const sharedParams = getLayoutParams();
+        const refreshKey = Date.now().toString();
+        const siteParams = new URLSearchParams(sharedParams);
+        const articleParams = new URLSearchParams(sharedParams);
+        siteParams.set("kind", "site");
+        siteParams.set("refresh", refreshKey);
+        articleParams.set("kind", "article");
+        articleParams.set("title", titleInput.value);
+        articleParams.set("refresh", refreshKey);
+        siteImage.src = `/og-preview/image.png?${siteParams.toString()}`;
+        articleImage.src = `/og-preview/image.png?${articleParams.toString()}`;
+      };
+
+      const schedulePreviewUpdate = () => {
+        window.clearTimeout(refreshTimer);
+        refreshTimer = window.setTimeout(updatePreviewImages, 120);
+      };
+
+      previewForm?.addEventListener("input", () => {
+        updateOutputs();
+        schedulePreviewUpdate();
+      });
+
+      document.querySelectorAll<HTMLButtonElement>("[data-preset]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const preset = JSON.parse(button.dataset.preset ?? "{}") as Record<string, number>;
+          for (const input of layoutInputs) {
+            const value = preset[input.name];
+            if (typeof value === "number") input.value = String(value);
+          }
+          updateOutputs();
+          updatePreviewImages();
+        });
+      });
+
+      document.querySelectorAll<HTMLInputElement>('input[name="preview-scale"]').forEach((input) => {
+        input.addEventListener("change", () => {
+          if (previewRoot && input.checked) previewRoot.dataset.previewScale = input.value;
+        });
+      });
+
+      document
+        .querySelector<HTMLButtonElement>("[data-copy-layout]")
+        ?.addEventListener("click", async () => {
+          const status = document.querySelector<HTMLElement>("[data-copy-status]");
+          const layout = Object.fromEntries(
+            layoutInputs.map((input) => [input.name, Number(input.value)]),
+          );
+
+          try {
+            await navigator.clipboard.writeText(JSON.stringify(layout, null, 2));
+            if (status) status.textContent = "設定値をコピーしました";
+          } catch {
+            if (status) {
+              status.textContent = "コピーできませんでした。ブラウザーの権限を確認してください";
+            }
+          }
+        });
+
+      updateOutputs();
+      updatePreviewImages();
+    </script>
+  </body>
+</html>
