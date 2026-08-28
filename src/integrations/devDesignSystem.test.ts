@@ -21,7 +21,7 @@ function getDesignSystemSetupHook(): SetupHook {
 }
 
 describe("devDesignSystem integration", () => {
-  it("開発サーバーではデザインシステムとOGPプレビューのルートを注入する", async () => {
+  it("開発サーバーではデザインシステムのルートだけを注入する", async () => {
     const injectRoute = vi.fn<(route: InjectedRoute) => void>();
 
     await getDesignSystemSetupHook()({ command: "dev", injectRoute });
@@ -35,8 +35,6 @@ describe("devDesignSystem integration", () => {
       "/design-system/governance",
       "/design-system/patterns/article-reading",
       "/design-system/article-reading",
-      "/og-preview",
-      "/og-preview/image.png",
     ]);
   });
 

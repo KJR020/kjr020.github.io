@@ -4,7 +4,7 @@ const port = process.env.DESIGN_SYSTEM_PORT ?? "4321";
 
 export default defineConfig({
   testDir: "./e2e",
-  testMatch: ["design-system.spec.ts", "og-preview.spec.ts", "post-tags.spec.ts"],
+  testMatch: ["design-system.spec.ts", "post-tags.spec.ts"],
   reporter: "list",
   use: {
     ...devices["Desktop Chrome"],

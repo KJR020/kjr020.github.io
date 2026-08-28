@@ -1,7 +1,7 @@
 import type { AstroIntegration } from "astro";
 
 /**
- * 開発サーバーでだけデザインシステムと制作ツールを公開する。
+ * 開発サーバーでだけデザインシステムを公開する。
  *
  * ページ本体を `src/pages` の外に置き、production build へ混入しないことを
  * integration の責務として保証する。
@@ -52,14 +52,6 @@ export function devDesignSystem(): AstroIntegration {
             "../design-system/pages/article-reading-redirect.astro",
             import.meta.url,
           ),
-        });
-        injectRoute({
-          pattern: "/og-preview",
-          entrypoint: new URL("../og-preview/pages/index.astro", import.meta.url),
-        });
-        injectRoute({
-          pattern: "/og-preview/image.png",
-          entrypoint: new URL("../og-preview/pages/image.png.ts", import.meta.url),
         });
       },
     },
