@@ -28,3 +28,9 @@
 html {
   scrollbar-width: none !important;
 }
+
+/* ローカルのAstro開発サーバーを再利用してもDev Toolbarは撮影しない */
+astro-dev-toolbar,
+#dev-toolbar-root {
+  display: none !important;
+}
