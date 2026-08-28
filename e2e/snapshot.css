@@ -28,10 +28,3 @@
 html {
   scrollbar-width: none !important;
 }
-
-/* Webフォントを抑制（OS間フォントレンダリング差異の抑制） */
-*,
-*::before,
-*::after {
-  font-family: system-ui, -apple-system, sans-serif !important;
-}

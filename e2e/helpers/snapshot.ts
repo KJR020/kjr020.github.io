@@ -52,6 +52,11 @@ export async function setTheme(
 export async function stabilizePage(page: Page): Promise<void> {
   await page.waitForLoadState("networkidle");
 
+  // Webフォントの読み込みを待ち、フォールバックフォントのまま撮影されるのを防ぐ
+  await page.evaluate(async () => {
+    await document.fonts.ready;
+  });
+
   // 遅延読み込み画像を即時読み込みに変更
   await page.evaluate(() => {
     document
@@ -89,7 +94,7 @@ export async function capturePageSnapshot(
   await stabilizePage(page);
 
   await expect(page).toHaveScreenshot(`${options.snapshotName}.png`, {
-    fullPage: options.fullPage ?? false,
+    fullPage: options.fullPage ?? true,
     mask: options.mask,
   });
 }
