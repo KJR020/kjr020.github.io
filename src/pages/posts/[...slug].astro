@@ -48,9 +48,13 @@ const giscusCategoryId = import.meta.env.PUBLIC_GISCUS_CATEGORY_ID;
       {/* 記事本文 */}
       <article class="min-w-0">
         <header class="mb-phi-2xl">
-          <h1 class="font-bold font-heading tracking-tight mb-phi-md" style="font-size: var(--font-size-title1); line-height: var(--lh-tight);">{post.data.title}</h1>
+          <h1 class="post-title font-bold font-heading tracking-tight mb-phi-md">{post.data.title}</h1>
           <PostMeta date={post.data.date} tags={post.data.tags} />
         </header>
+
+        <div class="post-mobile-toc mb-phi-2xl lg:hidden">
+          <TableOfContents headings={headings} variant="mobile" client:load />
+        </div>
 
         <div class="prose prose-neutral dark:prose-invert max-w-none article-reading-content">
           <Content />
@@ -71,6 +75,7 @@ const giscusCategoryId = import.meta.env.PUBLIC_GISCUS_CATEGORY_ID;
       <aside class="hidden lg:block">
         <TableOfContents
           headings={headings}
+          variant="desktop"
           avatarSrc="/images/kuri_photo.png"
           avatarAlt="KJR020"
           client:load
@@ -101,6 +106,11 @@ const giscusCategoryId = import.meta.env.PUBLIC_GISCUS_CATEGORY_ID;
 </script>
 
 <style is:global>
+  .post-title {
+    font-size: var(--font-size-title1);
+    line-height: var(--lh-tight);
+  }
+
   .prose {
     --tw-prose-body: var(--foreground);
     --tw-prose-headings: var(--foreground);
@@ -110,8 +120,8 @@ const giscusCategoryId = import.meta.env.PUBLIC_GISCUS_CATEGORY_ID;
   }
 
   .prose h2 {
-    margin-top: 2.618rem; /* φ² */
-    margin-bottom: 1rem;
+    margin-top: var(--phi-3);
+    margin-bottom: var(--phi-1);
     font-size: var(--font-size-title2); /* φ = 1.618rem */
     line-height: var(--lh-tight); /* √φ = 1.272 */
     font-weight: 700;
@@ -122,8 +132,8 @@ const giscusCategoryId = import.meta.env.PUBLIC_GISCUS_CATEGORY_ID;
   }
 
   .prose h3 {
-    margin-top: 1.618rem; /* φ */
-    margin-bottom: 0.618rem; /* 1/φ */
+    margin-top: var(--phi-2);
+    margin-bottom: var(--phi-neg1);
     font-size: var(--font-size-title3); /* √φ = 1.272rem */
     line-height: var(--lh-tight); /* √φ = 1.272 */
     font-weight: 500;
@@ -132,15 +142,14 @@ const giscusCategoryId = import.meta.env.PUBLIC_GISCUS_CATEGORY_ID;
   }
 
   .prose p {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    line-height: var(--lh-body); /* φ = 1.618 */
+    margin-top: var(--spacing-phi-lg);
+    margin-bottom: var(--spacing-phi-lg);
   }
 
   .prose ul,
   .prose ol {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-top: var(--spacing-phi-lg);
+    margin-bottom: var(--spacing-phi-lg);
     padding-left: 1.618rem; /* φ */
   }
 
@@ -226,5 +235,11 @@ const giscusCategoryId = import.meta.env.PUBLIC_GISCUS_CATEGORY_ID;
 
   .prose tbody tr:nth-child(even) {
     background-color: color-mix(in srgb, var(--muted) 50%, transparent);
+  }
+
+  @media (min-width: 64rem) {
+    .post-title {
+      font-size: var(--font-size-display);
+    }
   }
 </style>

@@ -2,7 +2,7 @@ import { expect, test } from "playwright/test";
 
 const articlePath = "/posts/astro/astro-pagefind-search";
 
-test("本文をReading laneへ絞り、FigureをWide laneへ広げる", async ({ page }, testInfo) => {
+test("画面幅に応じた本文組版を使い、FigureをWide laneへ広げる", async ({ page }, testInfo) => {
   await page.goto(articlePath);
 
   const content = page.locator(".article-reading-content");
@@ -17,9 +17,13 @@ test("本文をReading laneへ絞り、FigureをWide laneへ広げる", async ({
     };
   });
 
-  expect(typography.fontSize).toBe(17);
-  expect(typography.lineHeight / typography.fontSize).toBeCloseTo(1.7, 1);
-  expect(typography.width).toBeLessThanOrEqual(17 * 38 + 1);
+  const isCompact = testInfo.project.name === "Mobile Chrome";
+  const expectedFontSize = isCompact ? 16 : 17;
+  const expectedLineHeight = isCompact ? 1.9 : 2;
+
+  expect(typography.fontSize).toBe(expectedFontSize);
+  expect(typography.lineHeight / typography.fontSize).toBeCloseTo(expectedLineHeight, 1);
+  expect(typography.width).toBeLessThanOrEqual(expectedFontSize * 40 + 1);
   await expect(figure.locator("figcaption")).toContainText(
     "検索結果から直接記事に遷移できる",
   );
@@ -31,6 +35,25 @@ test("本文をReading laneへ絞り、FigureをWide laneへ広げる", async ({
     ]);
     expect(figureBox?.width).toBeGreaterThan(paragraphBox?.width ?? 0);
   }
+});
+
+test("モバイルでは記事ヘッダー直後に折りたたみ目次を表示する", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto(articlePath);
+
+  const article = page.getByRole("article");
+  const mobileToc = article.locator(".post-mobile-toc");
+  const trigger = mobileToc.getByRole("button", { name: "目次を開く" });
+
+  await expect(mobileToc).toBeVisible();
+  await expect(trigger).toHaveAttribute("aria-expanded", "false");
+  await trigger.click();
+  await expect(mobileToc.getByRole("navigation", { name: "目次" })).toBeVisible();
+  await expect(mobileToc.getByRole("button", { name: "目次を閉じる" })).toHaveAttribute(
+    "aria-expanded",
+    "true",
+  );
+  await expect(article.locator("header + .post-mobile-toc")).toBeVisible();
 });
 
 test("記事画像を拡大表示し、閉じると画像リンクへフォーカスを戻す", async ({ page }) => {

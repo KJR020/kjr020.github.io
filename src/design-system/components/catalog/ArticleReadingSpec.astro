@@ -5,12 +5,12 @@ import "@/styles/article-code.css";
 import "@/styles/article-content.css";
 
 const codeSample = `export function getReadingWidth(viewport: number) {
-  const readingMeasure = viewport >= 1024 ? "38ic" : "100%";
+  const readingMeasure = viewport >= 768 ? "40ic" : "100%";
 
   return {
     readingMeasure,
-    lineHeight: 1.7,
-    fontSize: "1.0625rem",
+    lineHeight: viewport >= 768 ? 2 : 1.9,
+    fontSize: viewport >= 768 ? "1.0625rem" : "1rem",
   };
 }`;
 ---
@@ -86,7 +86,7 @@ const codeSample = `export function getReadingWidth(viewport: number) {
       </div>
       <div class="lane-map">
         <div class="lane lane-reading">
-          <span>READING LANE · 7 COL</span>
+          <span>READING LANE · 8 COL</span>
           <strong>本文・見出し・リスト</strong>
           <p>視線が次の行頭を見失わない幅を優先する。</p>
         </div>
@@ -105,19 +105,19 @@ const codeSample = `export function getReadingWidth(viewport: number) {
 
     <div class="responsive-rule">
       <div><strong>Desktop</strong><span>Reading + Wide + Rail</span></div>
-      <div><strong>Tablet</strong><span>Reading + Wide、目次は本文前</span></div>
-      <div><strong>Mobile</strong><span>Single column、Wideは領域内でスクロール</span></div>
+      <div><strong>Tablet</strong><span>Reading + Wide、目次は記事ヘッダー直後</span></div>
+      <div><strong>Mobile</strong><span>Single column、目次は記事ヘッダー直後</span></div>
     </div>
   </section>
 
   <section class="spec article-reading-section" id="reading-typography">
     <h4>Typography</h4>
     <p class="src">
-      本文は17px、行高1.70、最大38字を基準とする。長文を続けて読める行間を保ち、コードや図と行き来しても本文の位置を見失いにくい行長に制限する。
+      Compactでは16px・行高1.90、Medium以上では17px・行高2.00、最大40字を基準とする。長文を続けて読める行間を保ち、コードや図と行き来しても本文の位置を見失いにくい行長に制限する。
     </p>
 
     <article class="demo type-specimen type-candidate" data-reading-lane>
-      <header><span>BODY</span><strong>17px / 1.70 / 38字</strong></header>
+      <header><span>BODY</span><strong>16–17px / 1.90–2.00 / 40字</strong></header>
       <p>
         Pagefindは静的サイト向けの全文検索ライブラリです。ビルド後のHTMLを解析して検索インデックスを生成するため、専用サーバーを必要としません。
       </p>

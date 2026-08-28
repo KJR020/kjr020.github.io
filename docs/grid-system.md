@@ -72,7 +72,7 @@ Command PaletteなどのoverlayはGridの外に浮く要素なので、Grid type
 | Medium | 6 / 6 columns | 本文上部の折りたたみ領域 |
 | Wide | 9 / 12 columns | 3 / 12 columns |
 
-Wideでは記事と目次の間に1 gutterを置く。Article内は外側のPage Gridとは独立した9 tracksで構成し、本文・見出し・リストを7 / 9、Figure・Code・Tableを9 / 9へ配置する。Compactでは両方を1 columnへ戻す。
+Wideでは記事と目次の間に1 gutterを置く。Article内は外側のPage Gridとは独立した9 tracksで構成し、本文・見出し・リストを8 / 9、Figure・Code・Tableを9 / 9へ配置する。Compactでは両方を1 columnへ戻す。CompactとMediumの目次は、記事ヘッダーの直後へインラインに配置する。
 
 ### 検索
 

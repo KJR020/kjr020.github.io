@@ -159,7 +159,7 @@
 }
 
 .lane-reading {
-  grid-column: 1 / span 7;
+  grid-column: 1 / span 8;
   grid-row: 1;
 }
 
@@ -226,10 +226,10 @@
 }
 
 .type-candidate p {
-  max-inline-size: 38ic;
+  max-inline-size: 40ic;
   margin: 0 0 var(--phi-0);
   font-size: 1.0625rem;
-  line-height: 1.7;
+  line-height: 2;
   text-wrap: pretty;
 }
 
@@ -266,6 +266,8 @@
 
   .type-candidate p {
     max-inline-size: none;
+    font-size: 1rem;
+    line-height: 1.9;
   }
 }
 

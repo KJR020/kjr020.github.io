@@ -233,10 +233,10 @@ const buttonCode = `<Button variant="default">記事を読む</Button>
 
   <div class="spec-item" id="table-of-contents">
     <h3>6-3. Table of Contents</h3>
-    <p class="src">Desktopは右側250px・sticky・内部scroll。MobileはRadix Collapsibleで開閉し、項目選択後に閉じる。</p>
+    <p class="src">Desktopは右側250px・sticky・内部scroll。Mobileは記事ヘッダー直後に置き、Radix Collapsibleで開閉して、項目選択後に閉じる。</p>
     <div class="demo toc-specimen">
       <nav aria-label="記事目次の標本"><h4>目次</h4><TOCList headings={tocHeadings} activeId="callout" client:load /></nav>
-      <div><strong>Desktop</strong><span>sticky · 250px · internal scroll</span><strong>Mobile</strong><span>Collapsible · aria-expanded</span></div>
+      <div><strong>Desktop</strong><span>sticky · 250px · internal scroll</span><strong>Mobile</strong><span>Inline · Collapsible · aria-expanded</span></div>
     </div>
     <p class="source-row"><strong>Source</strong><code>src/components/toc/TableOfContents.tsx</code><code>src/components/toc/MobileTOC.tsx</code></p>
   </div>

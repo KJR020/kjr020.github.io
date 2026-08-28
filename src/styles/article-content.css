@@ -1,12 +1,14 @@
 .article-reading-content {
   display: grid;
   grid-template-columns: repeat(9, minmax(0, 1fr));
-  font-size: 1.0625rem;
-  line-height: 1.7;
+  font-size: 1rem;
+  line-height: 1.9;
 }
 
 .article-reading-content > * {
-  grid-column: 1 / span 7;
+  grid-column: 1 / span 8;
+  inline-size: 100%;
+  max-inline-size: 40ic;
   min-inline-size: 0;
 }
 
@@ -18,10 +20,11 @@
   .mermaid
 ) {
   grid-column: 1 / -1;
+  max-inline-size: none;
 }
 
 .article-reading-content.prose :where(p, li) {
-  line-height: 1.7;
+  line-height: inherit;
 }
 
 .article-figure {
@@ -154,6 +157,7 @@
 @media (max-width: 48rem) {
   .article-reading-content > * {
     grid-column: 1 / -1;
+    max-inline-size: none;
   }
 
   .article-figure figcaption {
@@ -164,6 +168,13 @@
   .article-image-dialog {
     inline-size: calc(100vw - 1rem);
     max-block-size: calc(100dvh - 1rem);
+  }
+}
+
+@media (min-width: 48rem) {
+  .article-reading-content {
+    font-size: 1.0625rem;
+    line-height: 2;
   }
 }
 
