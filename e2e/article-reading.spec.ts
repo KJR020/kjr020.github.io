@@ -27,6 +27,7 @@ test("画面幅に応じた本文組版を使い、FigureをWide laneへ広げ�
   await expect(figure.locator("figcaption")).toContainText(
     "検索結果から直接記事に遷移できる",
   );
+  await expect(figure.locator("figcaption")).not.toContainText(/FIGURE \d+/);
 
   if (testInfo.project.name === "chromium") {
     const [paragraphBox, figureBox] = await Promise.all([

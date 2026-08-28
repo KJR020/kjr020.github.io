@@ -4,8 +4,7 @@
 
 .object-card > span,
 .lane > span,
-.type-candidate header > span,
-.article-figure figcaption > span {
+.type-candidate header > span {
   margin: 0;
   color: var(--link);
   font-family: var(--font-mono);

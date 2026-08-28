@@ -63,18 +63,9 @@
 }
 
 .article-figure figcaption {
-  display: grid;
-  grid-template-columns: 7rem minmax(0, 1fr);
-  gap: var(--phi-0);
   padding-block: var(--phi-neg1);
   border-block-end: 1px solid var(--border);
   color: var(--muted-foreground);
-}
-
-.article-figure-label {
-  color: var(--link);
-  font-family: var(--font-mono);
-  font-size: var(--font-size-caption);
 }
 
 .article-figure figcaption p {
@@ -158,11 +149,6 @@
   .article-reading-content > * {
     grid-column: 1 / -1;
     max-inline-size: none;
-  }
-
-  .article-figure figcaption {
-    grid-template-columns: 1fr;
-    gap: var(--phi-neg2);
   }
 
   .article-image-dialog {

@@ -130,7 +130,7 @@ Headerのブランドリンクは、栗マスコットの目を切り出した�
 | --- | --- |
 | Reading lane | 本文・見出し・リストはArticle内の8 / 9、Compactでは16px・行高1.90、Medium以上では17px・行高2.00、最大40字を基準とする |
 | Wide lane | Figure・Code・TableはArticle内の9 / 9を使用する。Compactでは1 columnに戻す |
-| Figure | Markdown画像と直後の強調文を`figure`と`figcaption`へ変換する |
+| Figure | Markdown画像と直後の強調文を`figure`と`figcaption`へ変換する。キャプションには説明文だけを表示し、連番ラベルは付けない |
 | Image zoom | 画像は原寸へのリンクとし、JavaScript利用時はDialogで拡大する。閉じた後は画像リンクへフォーカスを戻す |
 | Code language | Shikiが生成する`data-language`を可視ラベルへ変換する |
 | Code copy | Copy操作を右上へ置き、成功・失敗をAccessible Nameと`aria-live="polite"`で伝える |

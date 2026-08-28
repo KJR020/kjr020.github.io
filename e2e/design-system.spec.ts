@@ -593,6 +593,7 @@ test("記事ページの読書設計をパターンの共通レイアウト内�
   await expect(page.locator("[data-reading-lane]")).toBeVisible();
   await expect(page.locator("#figure-pattern figure img")).toHaveAttribute("width", "1078");
   await expect(page.locator("#figure-pattern figcaption")).toBeVisible();
+  await expect(page.locator("#figure-pattern figcaption")).not.toContainText(/FIGURE \d+/);
   const imageTrigger = page
     .locator("#figure-pattern")
     .getByRole("link", { name: /画像を拡大/ });
