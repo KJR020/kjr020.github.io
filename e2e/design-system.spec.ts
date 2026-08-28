@@ -119,6 +119,26 @@ test("目次標本は本番と同じ開閉操作を試せる", async ({ page }) 
   await expect(navigation).toBeVisible();
 });
 
+test("目次標本はモバイル幅でインライン目次を開閉できる", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/design-system/components#table-of-contents");
+
+  const specimen = page.locator("#table-of-contents");
+  const trigger = specimen.getByRole("button", { name: "目次を開く" });
+
+  await expect(trigger).toBeVisible();
+  await trigger.click();
+  await expect(specimen.getByRole("navigation", { name: "目次" })).toBeVisible();
+  await expect(specimen.getByRole("button", { name: "目次を閉じる" })).toBeVisible();
+});
+
+test("Mediumでは記事ヘッダーのキャラクター領域を表示しない", async ({ page }) => {
+  await page.setViewportSize({ width: 900, height: 900 });
+  await page.goto("/design-system/patterns#reading-layout");
+
+  await expect(page.locator("#reading-layout .lane-character-area")).toBeHidden();
+});
+
 test("本文組版の標本も768pxからMediumの文字サイズを使う", async ({ page }) => {
   await page.setViewportSize({ width: 768, height: 900 });
   await page.goto("/design-system/patterns#reading-typography");

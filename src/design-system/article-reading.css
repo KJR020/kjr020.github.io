@@ -293,6 +293,16 @@
   }
 }
 
+@media (max-width: 63.999rem) {
+  .lane-header {
+    grid-template-columns: 1fr;
+  }
+
+  .lane-character-area {
+    display: none;
+  }
+}
+
 @media (max-width: 40rem) {
   .responsive-rule,
   .pattern-rules {
@@ -317,10 +327,6 @@
 
   .lane-header {
     grid-template-columns: 1fr;
-  }
-
-  .lane-character-area {
-    display: none;
   }
 
   .responsive-rule > div,

@@ -4,7 +4,7 @@ import ImageLightbox from "@/components/article/ImageLightbox.astro";
 import { Comments } from "@/components/Comments";
 import PostMeta from "@/components/PostMeta.astro";
 import type { HeadingItem } from "@/components/toc";
-import { TableOfContents } from "@/components/toc";
+import { hasTableOfContents, TableOfContents } from "@/components/toc";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { createPublishedPostStaticPaths } from "@/lib/postRoutes";
 import "@/styles/article-code.css";
@@ -27,6 +27,7 @@ const headings: HeadingItem[] = rawHeadings
     text: h.text,
     level: h.depth as 2 | 3,
   }));
+const showsTableOfContents = hasTableOfContents(headings);
 
 // Giscus configuration from environment variables
 const giscusRepo = import.meta.env.PUBLIC_GISCUS_REPO as `${string}/${string}`;
@@ -52,11 +53,19 @@ const giscusCategoryId = import.meta.env.PUBLIC_GISCUS_CATEGORY_ID;
         </div>
       </header>
 
-      <div class="post-mobile-toc mb-phi-2xl lg:hidden">
-        <TableOfContents headings={headings} variant="mobile" client:load />
-      </div>
+      {showsTableOfContents && (
+        <div class="post-mobile-toc mb-phi-2xl lg:hidden">
+          <TableOfContents headings={headings} variant="mobile" client:load />
+        </div>
+      )}
 
-      <div class="post-reading-layout lg:grid lg:grid-cols-[minmax(0,1fr)_250px] lg:gap-phi-2xl">
+      <div
+        class:list={[
+          "post-reading-layout",
+          showsTableOfContents &&
+            "lg:grid lg:grid-cols-[minmax(0,1fr)_250px] lg:gap-phi-2xl",
+        ]}
+      >
         {/* 記事本文 */}
         <div class="post-reading-main min-w-0">
           <div class="prose prose-neutral dark:prose-invert max-w-none article-reading-content">
@@ -75,15 +84,17 @@ const giscusCategoryId = import.meta.env.PUBLIC_GISCUS_CATEGORY_ID;
         </div>
 
         {/* デスクトップ用目次（右側サイドバー） */}
-        <aside class="post-desktop-toc hidden lg:block">
-          <TableOfContents
-            headings={headings}
-            variant="desktop"
-            avatarSrc="/images/kuri_photo.png"
-            avatarAlt="KJR020"
-            client:load
-          />
-        </aside>
+        {showsTableOfContents && (
+          <aside class="post-desktop-toc hidden lg:block">
+            <TableOfContents
+              headings={headings}
+              variant="desktop"
+              avatarSrc="/images/kuri_photo.png"
+              avatarAlt="KJR020"
+              client:load
+            />
+          </aside>
+        )}
       </div>
     </article>
   </div>
