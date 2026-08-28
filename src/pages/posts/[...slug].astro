@@ -255,6 +255,10 @@ const giscusCategoryId = import.meta.env.PUBLIC_GISCUS_CATEGORY_ID;
       grid-template-columns: minmax(0, 1fr) max-content;
     }
 
+    .post-reading-layout:has([data-desktop-toc-open="false"]) .article-reading-content {
+      --article-reading-measure: 48ic;
+    }
+
     .post-title {
       font-size: var(--font-size-display);
     }

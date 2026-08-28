@@ -42,25 +42,27 @@ export function TableOfContents({
         <Collapsible.Root
           open={isDesktopOpen}
           onOpenChange={setIsDesktopOpen}
-          className={cn("hidden lg:block", "sticky top-24", "pl-8", className)}
+          className={cn("hidden lg:block", "sticky top-24", className)}
           data-desktop-toc-open={isDesktopOpen ? "true" : "false"}
         >
-          <div className={cn("flex items-center gap-2", isDesktopOpen && "mb-4 justify-between")}>
+          <div
+            className={cn(
+              "flex items-center gap-2",
+              isDesktopOpen ? "mb-4 justify-between pl-8" : "justify-end",
+            )}
+          >
             {isDesktopOpen && <h2 className="text-sm font-semibold text-foreground">目次</h2>}
             <Collapsible.Trigger asChild>
               <Button
                 type="button"
                 variant="ghost"
-                size={isDesktopOpen ? "icon-sm" : "sm"}
+                size="icon-sm"
                 aria-label={isDesktopOpen ? "目次を隠す" : "目次を表示"}
               >
                 {isDesktopOpen ? (
                   <PanelRightClose aria-hidden="true" />
                 ) : (
-                  <>
-                    <List aria-hidden="true" />
-                    <span>目次を表示</span>
-                  </>
+                  <List aria-hidden="true" />
                 )}
               </Button>
             </Collapsible.Trigger>
@@ -68,7 +70,7 @@ export function TableOfContents({
 
           <Collapsible.Content asChild>
             <nav
-              className="max-h-[calc(100vh-11rem)] overflow-y-auto"
+              className="max-h-[calc(100vh-11rem)] overflow-y-auto pl-8"
               aria-label="目次"
               data-toc-scroll-container="true"
             >

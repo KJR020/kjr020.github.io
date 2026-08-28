@@ -75,7 +75,7 @@ const codeSample = `export function getReadingWidth(viewport: number) {
   <section class="spec article-reading-section" id="reading-layout">
     <h4>Layout</h4>
     <p class="src">
-      記事ヘッダーは12 columnsの全幅に置き、Wideでは右側をキャラクター領域として空ける。その下で本文をReading laneへ絞り、画像・コード・表は必要に応じてWide laneへ広げ、目次は独立したRailへ置く。
+      記事ヘッダーは12 columnsの全幅に置き、Wideでは右側をキャラクター領域として空ける。その下で本文をReading laneへ絞り、画像・コード・表は必要に応じてWide laneへ広げ、目次は現在位置を示しながら画面内に追従するRailへ置く。
     </p>
 
     <div class="demo layout-specimen">
@@ -110,7 +110,7 @@ const codeSample = `export function getReadingWidth(viewport: number) {
         <aside class="lane lane-rail">
           <span>RAIL · 3 COL</span>
           <strong>目次</strong>
-          <p>本文より弱い階層で現在位置を示す。</p>
+          <p>画面内に追従し、本文より弱い階層で現在位置を示す。</p>
         </aside>
       </div>
     </div>
@@ -125,7 +125,7 @@ const codeSample = `export function getReadingWidth(viewport: number) {
   <section class="spec article-reading-section" id="reading-typography">
     <h4>Typography</h4>
     <p class="src">
-      Compactでは16px・行高1.90、Medium以上では17px・行高2.00、最大40字を基準とする。長文を続けて読める行間を保ち、コードや図と行き来しても本文の位置を見失いにくい行長に制限する。
+      Compactでは16px・行高1.90、Medium以上では17px・行高2.00、最大40字を基準とする。Wideで目次を閉じたときは最大48字まで広げる。長文を続けて読める行間を保ち、コードや図と行き来しても本文の位置を見失いにくい行長に制限する。
     </p>
 
     <article class="demo type-specimen type-candidate" data-reading-lane>

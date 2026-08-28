@@ -1,4 +1,6 @@
 .article-reading-content {
+  --article-reading-measure: 40ic;
+
   display: grid;
   grid-template-columns: repeat(9, minmax(0, 1fr));
   font-size: 1rem;
@@ -8,7 +10,7 @@
 .article-reading-content > * {
   grid-column: 1 / span 8;
   inline-size: 100%;
-  max-inline-size: 40ic;
+  max-inline-size: var(--article-reading-measure);
   min-inline-size: 0;
 }
 

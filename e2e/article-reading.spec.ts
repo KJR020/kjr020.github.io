@@ -131,22 +131,88 @@ test("デスクトップでは目次を隠して再表示できる", async ({ pa
   await page.goto(articlePath);
 
   const readingMain = page.locator(".post-reading-main");
-  const desktopToc = page.locator("aside");
+  const paragraph = page.locator(".article-reading-content > p").first();
+  const desktopToc = page.locator(".post-desktop-toc");
   const navigation = desktopToc.getByRole("navigation", { name: "目次" });
   const initialReadingMainWidth = (await readingMain.boundingBox())?.width ?? 0;
+  const initialParagraphWidth = (await paragraph.boundingBox())?.width ?? 0;
 
+  await expect(desktopToc.locator("astro-island:not([ssr])")).toBeAttached();
   await expect(navigation).toBeVisible();
   await desktopToc.getByRole("button", { name: "目次を隠す" }).click();
   await expect(navigation).toBeHidden();
   await expect
     .poll(async () => (await readingMain.boundingBox())?.width ?? 0)
-    .toBeGreaterThan(initialReadingMainWidth);
+    .toBeGreaterThan(initialReadingMainWidth + 180);
+  await expect
+    .poll(async () => (await paragraph.boundingBox())?.width ?? 0)
+    .toBeGreaterThan(initialParagraphWidth + 100);
 
   await desktopToc.getByRole("button", { name: "目次を表示" }).click();
   await expect(navigation).toBeVisible();
   await expect
     .poll(async () => (await readingMain.boundingBox())?.width ?? 0)
     .toBe(initialReadingMainWidth);
+  await expect
+    .poll(async () => (await paragraph.boundingBox())?.width ?? 0)
+    .toBe(initialParagraphWidth);
+});
+
+test("デスクトップ目次の現在位置アイコンをスクロール領域内に表示する", async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 720 });
+  await page.goto(articlePath);
+
+  const desktopToc = page.locator(".post-desktop-toc");
+  const navigation = desktopToc.getByRole("navigation", { name: "目次" });
+  const currentLocationIcon = desktopToc.getByRole("img", { name: "KJR020" });
+  const [navigationBox, iconBox] = await Promise.all([
+    navigation.boundingBox(),
+    currentLocationIcon.boundingBox(),
+  ]);
+
+  expect(navigationBox).not.toBeNull();
+  expect(iconBox).not.toBeNull();
+  expect(iconBox?.x ?? 0).toBeGreaterThanOrEqual(navigationBox?.x ?? 0);
+  expect((iconBox?.x ?? 0) + (iconBox?.width ?? 0)).toBeLessThanOrEqual(
+    (navigationBox?.x ?? 0) + (navigationBox?.width ?? 0),
+  );
+});
+
+test("デスクトップ目次はページをスクロールしても画面内に追従する", async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 720 });
+  await page.goto("/posts/ux/ai-era-user-experience-design");
+
+  const desktopToc = page.locator(".post-desktop-toc [data-desktop-toc-open]");
+  await expect(desktopToc).toBeVisible();
+
+  await page.mouse.wheel(0, 1_200);
+  await expect.poll(() => page.evaluate(() => window.scrollY)).toBeGreaterThan(1_000);
+
+  const firstScrolledTop = (await desktopToc.boundingBox())?.y;
+  expect(firstScrolledTop).toBeCloseTo(96, 0);
+
+  await page.mouse.wheel(0, 1_200);
+  await expect.poll(() => page.evaluate(() => window.scrollY)).toBeGreaterThan(2_000);
+
+  const secondScrolledTop = (await desktopToc.boundingBox())?.y;
+  expect(secondScrolledTop).toBeCloseTo(firstScrolledTop ?? 0, 0);
+});
+
+test("本文をスクロールすると現在の見出しへ目次マーカーが移動する", async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 720 });
+  await page.goto("/posts/ux/ai-era-user-experience-design");
+
+  const targetHeading = page.getByRole("heading", { name: "構造レイヤー" });
+  const targetTop = (await targetHeading.boundingBox())?.y;
+  expect(targetTop).toBeDefined();
+
+  await page.mouse.wheel(0, (targetTop ?? 0) - 96);
+  await expect.poll(() => targetHeading.boundingBox().then((box) => box?.y ?? 0)).toBeCloseTo(96, 0);
+
+  const currentHeading = page
+    .locator(".post-desktop-toc")
+    .locator('[aria-current="location"]');
+  await expect(currentHeading).toHaveText("構造レイヤー");
 });
 
 test("見出しへの直接リンクを開いても目次の更新でページ上部へ戻らない", async ({ page }) => {
