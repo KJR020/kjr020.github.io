@@ -62,6 +62,12 @@ describe("BaseHead OGP meta tags", () => {
     expect(postHtml).toContain('<meta property="article:tag" content="Cookie">');
     expect(postHtml).toContain('<meta property="article:tag" content="Web">');
     expect(postHtml).toContain('<meta property="article:tag" content="HTTP">');
+    expect(postHtml).toContain(
+      '<meta property="og:image" content="https://kjr020.dev/og/posts/general/cookie%E3%81%A8%E3%81%AF.png">',
+    );
+    expect(postHtml).toContain(
+      '<meta name="twitter:image" content="https://kjr020.dev/og/posts/general/cookie%E3%81%A8%E3%81%AF.png">',
+    );
     expect(postHtml).not.toContain('<meta property="article:modified_time"');
   });
 
@@ -168,6 +174,16 @@ describe("BaseHead OGP meta tags", () => {
     expect(metadata.format).toBe("png");
     expect(metadata.width).toBe(1200);
     expect(metadata.height).toBe(630);
+  });
+
+  it("builds article-specific OGP images at the recommended dimensions", async () => {
+    const ogImagePath = join(distDir, "og", "posts", "general", "cookieとは.png");
+
+    expect(existsSync(ogImagePath)).toBe(true);
+
+    const metadata = await sharp(ogImagePath).metadata();
+
+    expect(metadata).toMatchObject({ format: "png", width: 1200, height: 630 });
   });
 
   it("generates an RSS feed for subscribers", () => {

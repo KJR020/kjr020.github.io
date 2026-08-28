@@ -21,7 +21,7 @@ function getDesignSystemSetupHook(): SetupHook {
 }
 
 describe("devDesignSystem integration", () => {
-  it("開発サーバーでは6つのデザインシステムページと互換ルートを注入する", async () => {
+  it("開発サーバーではデザインシステムのルートだけを注入する", async () => {
     const injectRoute = vi.fn<(route: InjectedRoute) => void>();
 
     await getDesignSystemSetupHook()({ command: "dev", injectRoute });

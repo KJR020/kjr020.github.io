@@ -122,6 +122,27 @@ Headerのブランドリンクは、栗マスコットの目を切り出した�
 | Accessibility | 隣接するブログ名がリンクのAccessible Nameを担うため、シンボルは空の代替テキストで装飾画像として扱う |
 | Source of Truth | `public/images/kjr020-eyes.svg`、`src/components/Header.astro` |
 
+### OGPのブランド表現
+
+OGPはブログ名、ページの主題、サイトURL、栗マスコットを組み合わせる。生成AIや手作業で完成画像を編集せず、ローカルアセットと固定レイアウトからビルド時に再生成する。サイト全体用と記事別で同じ視覚言語を使い、記事別画像だけにタイトルと公開日を差し込む。
+
+| 項目 | 正規仕様 |
+| --- | --- |
+| Canvas | 1200×630pxのPNG |
+| Surface | ニュートラルな背景上へ、細い境界と控えめな影を持つ白い面を配置する |
+| Accent | 左端の青い縦線と青いブログ名でブランドを示す |
+| Spacing | 主要な配置座標は8pxグリッドへ揃え、外周32px、内容左端96pxを基準にする。文字サイズと要素間隔にはCanvas高とφ（1.618）から導く14 / 22 / 36 / 58 / 93 / 151pxの乗算ラダーも併用する |
+| Mascot | `src/assets/og/kuri-cutout.png`を右下へ小さく配置する |
+| Site variant | `KJR020's Blog`を大見出しにし、その直下へ`HOME_DESCRIPTION_LINES`の先頭文を小さく表示する |
+| Article variant | 記事タイトルを文字量に応じて42〜68pxのφ¼ステップを基準に調整し、長いタイトルは必要に応じて縮小しながら最大3行に収める。書名などの引用部分は途中で分断せず、前後の意味単位で改行する |
+| Metadata | 区切り線の下へ、記事では公開日と`kjr020.dev`、サイト全体用では`kjr020.dev`だけを表示する |
+| URL | `kjr020.dev`をブログ名と同じNoto Sans JPのプレーンテキストで表示する |
+| Content | 技術スタックなど、ホームの説明に含まれない補助文言は表示しない |
+| Typography | 見出し、説明、メタデータをNoto Sans JPのローカルフォントで統一する |
+| Generation | SatoriでSVGを組み立て、SharpでPNGへ変換する |
+| Routing | 全体ページは`/og-image.png`、記事は`/og/posts/{記事ID}.png`を使用する |
+| Source of Truth | `src/lib/og-image/`、`src/pages/og/posts/[...slug].png.ts`、`src/lib/siteCopy.ts`、`src/assets/og/` |
+
 ### 記事の読書設計
 
 記事本文は、続けて読む情報と詳細を確認する情報で幅を使い分ける。記事とデザインシステムの標本は、同じMarkdown変換、DOM拡張、CSSを使用する。
