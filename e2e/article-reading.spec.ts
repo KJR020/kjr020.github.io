@@ -56,6 +56,36 @@ test("768pxからMediumの本文組版へ切り替える", async ({ page }) => {
   expect(paragraphBox?.width).toBeLessThan(contentBox?.width ?? 0);
 });
 
+test("デスクトップでは記事ヘッダーの下に本文と目次を並べる", async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 720 });
+  await page.goto(articlePath);
+
+  const article = page.getByRole("article");
+  const header = article.locator(":scope > header");
+  const readingLayout = article.locator(":scope > .post-reading-layout");
+  const main = readingLayout.locator(":scope > .post-reading-main");
+  const desktopToc = readingLayout.locator(":scope > aside");
+
+  await expect(readingLayout).toBeVisible();
+  const [headerBox, layoutBox, mainBox, tocBox] = await Promise.all([
+    header.boundingBox(),
+    readingLayout.boundingBox(),
+    main.boundingBox(),
+    desktopToc.boundingBox(),
+  ]);
+
+  expect(headerBox).not.toBeNull();
+  expect(layoutBox).not.toBeNull();
+  expect(mainBox).not.toBeNull();
+  expect(tocBox).not.toBeNull();
+  expect(headerBox?.x).toBeCloseTo(layoutBox?.x ?? 0, 0);
+  expect(headerBox?.width).toBeCloseTo(layoutBox?.width ?? 0, 0);
+  expect(layoutBox?.y ?? 0).toBeGreaterThanOrEqual(
+    (headerBox?.y ?? 0) + (headerBox?.height ?? 0),
+  );
+  expect(tocBox?.x ?? 0).toBeGreaterThan((mainBox?.x ?? 0) + (mainBox?.width ?? 0));
+});
+
 test("モバイルでは記事ヘッダー直後に折りたたみ目次を表示する", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto(articlePath);
@@ -79,21 +109,23 @@ test("デスクトップでは目次を隠して再表示できる", async ({ pa
   await page.setViewportSize({ width: 1280, height: 720 });
   await page.goto(articlePath);
 
-  const article = page.getByRole("article");
+  const readingMain = page.locator(".post-reading-main");
   const desktopToc = page.locator("aside");
   const navigation = desktopToc.getByRole("navigation", { name: "目次" });
-  const initialArticleWidth = (await article.boundingBox())?.width ?? 0;
+  const initialReadingMainWidth = (await readingMain.boundingBox())?.width ?? 0;
 
   await expect(navigation).toBeVisible();
   await desktopToc.getByRole("button", { name: "目次を隠す" }).click();
   await expect(navigation).toBeHidden();
   await expect
-    .poll(async () => (await article.boundingBox())?.width ?? 0)
-    .toBeGreaterThan(initialArticleWidth);
+    .poll(async () => (await readingMain.boundingBox())?.width ?? 0)
+    .toBeGreaterThan(initialReadingMainWidth);
 
   await desktopToc.getByRole("button", { name: "目次を表示" }).click();
   await expect(navigation).toBeVisible();
-  await expect.poll(async () => (await article.boundingBox())?.width ?? 0).toBe(initialArticleWidth);
+  await expect
+    .poll(async () => (await readingMain.boundingBox())?.width ?? 0)
+    .toBe(initialReadingMainWidth);
 });
 
 test("見出しへの直接リンクを開いても目次の更新でページ上部へ戻らない", async ({ page }) => {

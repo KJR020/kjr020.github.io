@@ -75,7 +75,7 @@ const codeSample = `export function getReadingWidth(viewport: number) {
   <section class="spec article-reading-section" id="reading-layout">
     <h4>Layout</h4>
     <p class="src">
-      12 columnsはページ全体の配置に使い、本文はReading laneへ絞る。画像・コード・表は必要に応じてWide laneへ広げ、目次は独立したRailへ置く。
+      記事ヘッダーは12 columnsの全幅に置く。その下で本文をReading laneへ絞り、画像・コード・表は必要に応じてWide laneへ広げ、目次は独立したRailへ置く。
     </p>
 
     <div class="demo layout-specimen">
@@ -85,6 +85,11 @@ const codeSample = `export function getReadingWidth(viewport: number) {
         ))}
       </div>
       <div class="lane-map">
+        <div class="lane lane-header">
+          <span>ARTICLE HEADER · 12 COL</span>
+          <strong>記事ヘッダー</strong>
+          <p>タイトルとメタ情報を本文・目次の上に置く。</p>
+        </div>
         <div class="lane lane-reading">
           <span>READING LANE · 8 COL</span>
           <strong>本文・見出し・リスト</strong>

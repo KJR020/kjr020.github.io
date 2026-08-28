@@ -44,44 +44,46 @@ const giscusCategoryId = import.meta.env.PUBLIC_GISCUS_CATEGORY_ID;
   articleTags={post.data.tags}
 >
   <div class="post-page container mx-auto px-4 py-phi-2xl max-w-6xl">
-    <div class="post-reading-layout lg:grid lg:grid-cols-[minmax(0,1fr)_250px] lg:gap-phi-2xl">
-      {/* 記事本文 */}
-      <article class="min-w-0">
-        <header class="mb-phi-2xl">
-          <h1 class="post-title font-bold font-heading tracking-tight mb-phi-md">{post.data.title}</h1>
-          <PostMeta date={post.data.date} tags={post.data.tags} />
-        </header>
+    <article class="min-w-0">
+      <header class="mb-phi-2xl">
+        <h1 class="post-title font-bold font-heading tracking-tight mb-phi-md">{post.data.title}</h1>
+        <PostMeta date={post.data.date} tags={post.data.tags} />
+      </header>
 
-        <div class="post-mobile-toc mb-phi-2xl lg:hidden">
-          <TableOfContents headings={headings} variant="mobile" client:load />
+      <div class="post-mobile-toc mb-phi-2xl lg:hidden">
+        <TableOfContents headings={headings} variant="mobile" client:load />
+      </div>
+
+      <div class="post-reading-layout lg:grid lg:grid-cols-[minmax(0,1fr)_250px] lg:gap-phi-2xl">
+        {/* 記事本文 */}
+        <div class="post-reading-main min-w-0">
+          <div class="prose prose-neutral dark:prose-invert max-w-none article-reading-content">
+            <Content />
+          </div>
+
+          <ImageLightbox />
+
+          <Comments
+            repo={giscusRepo}
+            repoId={giscusRepoId}
+            category={giscusCategory}
+            categoryId={giscusCategoryId}
+            client:only="react"
+          />
         </div>
 
-        <div class="prose prose-neutral dark:prose-invert max-w-none article-reading-content">
-          <Content />
-        </div>
-
-        <ImageLightbox />
-
-        <Comments
-          repo={giscusRepo}
-          repoId={giscusRepoId}
-          category={giscusCategory}
-          categoryId={giscusCategoryId}
-          client:only="react"
-        />
-      </article>
-
-      {/* デスクトップ用目次（右側サイドバー） */}
-      <aside class="post-desktop-toc hidden lg:block">
-        <TableOfContents
-          headings={headings}
-          variant="desktop"
-          avatarSrc="/images/kuri_photo.png"
-          avatarAlt="KJR020"
-          client:load
-        />
-      </aside>
-    </div>
+        {/* デスクトップ用目次（右側サイドバー） */}
+        <aside class="post-desktop-toc hidden lg:block">
+          <TableOfContents
+            headings={headings}
+            variant="desktop"
+            avatarSrc="/images/kuri_photo.png"
+            avatarAlt="KJR020"
+            client:load
+          />
+        </aside>
+      </div>
+    </article>
   </div>
 </BaseLayout>
 
