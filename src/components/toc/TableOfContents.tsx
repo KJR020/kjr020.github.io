@@ -1,3 +1,7 @@
+import * as Collapsible from "@radix-ui/react-collapsible";
+import { List, PanelRightClose } from "lucide-react";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { MobileTOC } from "./MobileTOC";
 import { TOCList } from "./TOCList";
@@ -6,7 +10,7 @@ import { useScrollSpy } from "./useScrollSpy";
 
 /**
  * 目次コンポーネント
- * デスクトップ: 右側スティッキー表示
+ * デスクトップ: 開閉できる右側スティッキー表示
  * モバイル: 折りたたみアコーディオン表示
  */
 export function TableOfContents({
@@ -16,6 +20,7 @@ export function TableOfContents({
   avatarSrc,
   avatarAlt,
 }: TableOfContentsProps) {
+  const [isDesktopOpen, setIsDesktopOpen] = useState(true);
   const headingIds = headings.map((h) => h.id);
   const { activeId } = useScrollSpy(headingIds);
 
@@ -34,24 +39,48 @@ export function TableOfContents({
 
       {/* デスクトップ表示: スティッキーサイドバー */}
       {showsDesktop && (
-        <nav
-          className={cn(
-            "hidden lg:block",
-            "sticky top-24",
-            "max-h-[calc(100vh-8rem)] overflow-y-auto",
-            "pl-8",
-            className,
-          )}
-          aria-label="目次"
+        <Collapsible.Root
+          open={isDesktopOpen}
+          onOpenChange={setIsDesktopOpen}
+          className={cn("hidden lg:block", "sticky top-24", "pl-8", className)}
+          data-desktop-toc-open={isDesktopOpen ? "true" : "false"}
         >
-          <h2 className="text-sm font-semibold text-foreground mb-4">目次</h2>
-          <TOCList
-            headings={headings}
-            activeId={activeId}
-            avatarSrc={avatarSrc}
-            avatarAlt={avatarAlt}
-          />
-        </nav>
+          <div className={cn("flex items-center gap-2", isDesktopOpen && "mb-4 justify-between")}>
+            {isDesktopOpen && <h2 className="text-sm font-semibold text-foreground">目次</h2>}
+            <Collapsible.Trigger asChild>
+              <Button
+                type="button"
+                variant="ghost"
+                size={isDesktopOpen ? "icon-sm" : "sm"}
+                aria-label={isDesktopOpen ? "目次を隠す" : "目次を表示"}
+              >
+                {isDesktopOpen ? (
+                  <PanelRightClose aria-hidden="true" />
+                ) : (
+                  <>
+                    <List aria-hidden="true" />
+                    <span>目次を表示</span>
+                  </>
+                )}
+              </Button>
+            </Collapsible.Trigger>
+          </div>
+
+          <Collapsible.Content asChild>
+            <nav
+              className="max-h-[calc(100vh-11rem)] overflow-y-auto"
+              aria-label="目次"
+              data-toc-scroll-container="true"
+            >
+              <TOCList
+                headings={headings}
+                activeId={activeId}
+                avatarSrc={avatarSrc}
+                avatarAlt={avatarAlt}
+              />
+            </nav>
+          </Collapsible.Content>
+        </Collapsible.Root>
       )}
     </>
   );

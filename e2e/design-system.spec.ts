@@ -100,6 +100,21 @@ test("Header標本は本番と同じ目のシンボルを表示する", async ({
   await expect(brandMark).toHaveAttribute("alt", "");
 });
 
+test("目次標本は本番と同じ開閉操作を試せる", async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 720 });
+  await page.goto("/design-system/components#table-of-contents");
+
+  const specimen = page.locator("#table-of-contents");
+  const navigation = specimen.getByRole("navigation", { name: "目次" });
+
+  await expect(navigation).toBeVisible();
+  await specimen.getByRole("button", { name: "目次を隠す" }).click();
+  await expect(navigation).toBeHidden();
+
+  await specimen.getByRole("button", { name: "目次を表示" }).click();
+  await expect(navigation).toBeVisible();
+});
+
 test("サイドバーはどのページでも全カテゴリの項目を保持する", async ({ page }) => {
   await page.goto("/design-system/foundations");
 

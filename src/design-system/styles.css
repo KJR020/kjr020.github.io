@@ -1174,17 +1174,7 @@ table.map th {
   gap: var(--phi-1);
 }
 
-.toc-specimen nav {
-  padding: var(--phi-0);
-  border-inline-start: 1px solid var(--border);
-}
-
-.toc-specimen h4 {
-  margin: 0 0 var(--phi-neg1);
-  font-size: var(--font-size-small);
-}
-
-.toc-specimen > div {
+.toc-specimen > .toc-specimen-summary {
   display: grid;
   grid-template-columns: auto 1fr;
   align-content: start;
@@ -1194,7 +1184,7 @@ table.map th {
   font-size: var(--font-size-small);
 }
 
-.toc-specimen > div span {
+.toc-specimen > .toc-specimen-summary span {
   color: var(--muted-foreground);
 }
 

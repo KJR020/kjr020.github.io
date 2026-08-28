@@ -44,7 +44,7 @@ const giscusCategoryId = import.meta.env.PUBLIC_GISCUS_CATEGORY_ID;
   articleTags={post.data.tags}
 >
   <div class="post-page container mx-auto px-4 py-phi-2xl max-w-6xl">
-    <div class="lg:grid lg:grid-cols-[minmax(0,1fr)_250px] lg:gap-phi-2xl">
+    <div class="post-reading-layout lg:grid lg:grid-cols-[minmax(0,1fr)_250px] lg:gap-phi-2xl">
       {/* 記事本文 */}
       <article class="min-w-0">
         <header class="mb-phi-2xl">
@@ -72,7 +72,7 @@ const giscusCategoryId = import.meta.env.PUBLIC_GISCUS_CATEGORY_ID;
       </article>
 
       {/* デスクトップ用目次（右側サイドバー） */}
-      <aside class="hidden lg:block">
+      <aside class="post-desktop-toc hidden lg:block">
         <TableOfContents
           headings={headings}
           variant="desktop"
@@ -238,6 +238,10 @@ const giscusCategoryId = import.meta.env.PUBLIC_GISCUS_CATEGORY_ID;
   }
 
   @media (min-width: 64rem) {
+    .post-reading-layout:has([data-desktop-toc-open="false"]) {
+      grid-template-columns: minmax(0, 1fr) max-content;
+    }
+
     .post-title {
       font-size: var(--font-size-display);
     }

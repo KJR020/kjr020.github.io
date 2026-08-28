@@ -136,7 +136,7 @@ Headerのブランドリンクは、栗マスコットの目を切り出した�
 | Code copy | Copy操作を右上へ置き、成功・失敗をAccessible Nameと`aria-live="polite"`で伝える |
 | Source of Truth | `src/pages/posts/[...slug].astro`、`src/integrations/rehypeArticleFigures.ts`、`src/components/article/ImageLightbox.astro`、`src/lib/articleCode.ts`、`src/styles/article-content.css`、`src/styles/article-code.css` |
 
-CompactとMediumでは、目次を記事ヘッダーの直後に折りたたみ領域として配置する。Wideでは本文右側のRailへ移し、現在位置を示す。
+CompactとMediumでは、目次を記事ヘッダーの直後に折りたたみ領域として配置する。Wideでは本文右側のRailへ移し、現在位置を示す。Wideの目次も読書中に隠して再表示できるようにし、閉じたときは再表示操作を残してArticleを広げる。
 
 ## Tag interaction
 

@@ -56,6 +56,37 @@ test("モバイルでは記事ヘッダー直後に折りたたみ目次を表�
   await expect(article.locator("header + .post-mobile-toc")).toBeVisible();
 });
 
+test("デスクトップでは目次を隠して再表示できる", async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 720 });
+  await page.goto(articlePath);
+
+  const article = page.getByRole("article");
+  const desktopToc = page.locator("aside");
+  const navigation = desktopToc.getByRole("navigation", { name: "目次" });
+  const initialArticleWidth = (await article.boundingBox())?.width ?? 0;
+
+  await expect(navigation).toBeVisible();
+  await desktopToc.getByRole("button", { name: "目次を隠す" }).click();
+  await expect(navigation).toBeHidden();
+  await expect
+    .poll(async () => (await article.boundingBox())?.width ?? 0)
+    .toBeGreaterThan(initialArticleWidth);
+
+  await desktopToc.getByRole("button", { name: "目次を表示" }).click();
+  await expect(navigation).toBeVisible();
+  await expect.poll(async () => (await article.boundingBox())?.width ?? 0).toBe(initialArticleWidth);
+});
+
+test("見出しへの直接リンクを開いても目次の更新でページ上部へ戻らない", async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 720 });
+  await page.goto("/posts/ux/ai-era-user-experience-design#表層レイヤー");
+
+  const heading = page.getByRole("heading", { name: "表層レイヤー" });
+  await page.waitForTimeout(1_000);
+
+  await expect(heading).toBeInViewport();
+});
+
 test("記事画像を拡大表示し、閉じると画像リンクへフォーカスを戻す", async ({ page }) => {
   await page.goto(articlePath);
 
