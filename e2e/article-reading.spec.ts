@@ -59,6 +59,12 @@ test("モバイルでは記事ヘッダー直後に折りたたみ目次を表�
 test("記事画像を拡大表示し、閉じると画像リンクへフォーカスを戻す", async ({ page }) => {
   await page.goto(articlePath);
 
+  const viewportWidths = await page.evaluate(() => ({
+    client: document.documentElement.clientWidth,
+    scroll: document.documentElement.scrollWidth,
+  }));
+  expect(viewportWidths.scroll).toBe(viewportWidths.client);
+
   const trigger = page.getByRole("link", { name: "画像を拡大: ⌘Kコマンドパレット" });
   await trigger.click();
 
