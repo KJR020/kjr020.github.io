@@ -149,9 +149,10 @@ OGPはブログ名、ページの主題、サイトURL、栗マスコットを�
 
 | 項目 | 正規仕様 |
 | --- | --- |
-| Reading lane | 本文・見出し・リストはArticle内の8 / 9、Compactでは16px・行高1.90、Medium以上では17px・行高2.00、最大40字を基準とする。Wideで目次を閉じたときは最大48字まで広げる |
-| Wide lane | Figure・Code・TableはArticle内の9 / 9を使用する。Compactでは1 columnに戻す |
-| Figure | Markdown画像と直後の強調文を`figure`と`figcaption`へ変換する。キャプションには説明文だけを表示し、連番ラベルは付けない |
+| Reading lane | 本文・見出し・リスト・Figure・DiagramはArticle内の8 / 9、Compactでは16px・行高1.90、Medium以上では17px・行高2.00、最大40字を基準とする。Wideで目次を閉じたときは最大48字まで広げる |
+| Wide lane | Code・TableはArticle内の9 / 9を使用する。Compactでは1 columnに戻す |
+| Figure | Markdown画像と直後の強調文を`figure`と`figcaption`へ変換し、本文と同じ横幅へ揃える。キャプションには説明文だけを表示し、連番ラベルは付けない |
+| Diagram | Mermaid図は本文と同じ横幅へ揃える |
 | Image zoom | 画像は原寸へのリンクとし、JavaScript利用時はDialogで拡大する。閉じた後は画像リンクへフォーカスを戻す |
 | Code language | Shikiが生成する`data-language`を可視ラベルへ変換する |
 | Code copy | Copy操作を右上へ置き、成功・失敗をAccessible Nameと`aria-live="polite"`で伝える |

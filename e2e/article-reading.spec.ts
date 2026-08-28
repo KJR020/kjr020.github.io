@@ -2,12 +2,11 @@ import { expect, test } from "playwright/test";
 
 const articlePath = "/posts/astro/astro-pagefind-search";
 
-test("画面幅に応じた本文組版を使い、FigureをWide laneへ広げる", async ({ page }, testInfo) => {
+test("画面幅に応じた本文組版を使う", async ({ page }, testInfo) => {
   await page.goto(articlePath);
 
   const content = page.locator(".article-reading-content");
   const paragraph = content.locator(":scope > p").first();
-  const figure = content.locator("figure.article-figure").last();
   const typography = await paragraph.evaluate((element) => {
     const style = getComputedStyle(element);
     return {
@@ -24,6 +23,15 @@ test("画面幅に応じた本文組版を使い、FigureをWide laneへ広げ�
   expect(typography.fontSize).toBe(expectedFontSize);
   expect(typography.lineHeight / typography.fontSize).toBeCloseTo(expectedLineHeight, 1);
   expect(typography.width).toBeLessThanOrEqual(expectedFontSize * 40 + 1);
+});
+
+test("Figureを本文と同じReading laneへ揃える", async ({ page }, testInfo) => {
+  await page.goto(articlePath);
+
+  const content = page.locator(".article-reading-content");
+  const paragraph = content.locator(":scope > p").first();
+  const figure = content.locator("figure.article-figure").last();
+
   await expect(figure.locator("figcaption")).toContainText(
     "検索結果から直接記事に遷移できる",
   );
@@ -34,8 +42,28 @@ test("画面幅に応じた本文組版を使い、FigureをWide laneへ広げ�
       paragraph.boundingBox(),
       figure.boundingBox(),
     ]);
-    expect(figureBox?.width).toBeGreaterThan(paragraphBox?.width ?? 0);
+    expect(figureBox?.width).toBeCloseTo(paragraphBox?.width ?? 0, 0);
   }
+});
+
+test("Mermaid図を本文と同じReading laneへ揃える", async ({ page }, testInfo) => {
+  test.skip(testInfo.project.name !== "chromium");
+  await page.goto(articlePath);
+
+  const content = page.locator(".article-reading-content");
+  const paragraph = content.locator(":scope > p").first();
+  await content.evaluate((element) => {
+    const diagram = document.createElement("div");
+    diagram.className = "mermaid";
+    diagram.textContent = "Types → Config → Repo → Service → Runtime → UI";
+    element.append(diagram);
+  });
+
+  const [paragraphBox, diagramBox] = await Promise.all([
+    paragraph.boundingBox(),
+    content.locator(":scope > .mermaid").boundingBox(),
+  ]);
+  expect(diagramBox?.width).toBeCloseTo(paragraphBox?.width ?? 0, 0);
 });
 
 test("768pxからMediumの本文組版へ切り替える", async ({ page }) => {

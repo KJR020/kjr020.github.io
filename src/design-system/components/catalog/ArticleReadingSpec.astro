@@ -75,7 +75,7 @@ const codeSample = `export function getReadingWidth(viewport: number) {
   <section class="spec article-reading-section" id="reading-layout">
     <h4>Layout</h4>
     <p class="src">
-      記事ヘッダーは12 columnsの全幅に置き、Wideでは右側をキャラクター領域として空ける。その下で本文をReading laneへ絞り、画像・コード・表は必要に応じてWide laneへ広げ、目次は現在位置を示しながら画面内に追従するRailへ置く。
+      記事ヘッダーは12 columnsの全幅に置き、Wideでは右側をキャラクター領域として空ける。その下で本文・画像・図をReading laneへ揃え、コード・表は必要に応じてWide laneへ広げ、目次は現在位置を示しながら画面内に追従するRailへ置く。
     </p>
 
     <div class="demo layout-specimen">
@@ -99,12 +99,12 @@ const codeSample = `export function getReadingWidth(viewport: number) {
         </div>
         <div class="lane lane-reading">
           <span>READING LANE · 8 COL</span>
-          <strong>本文・見出し・リスト</strong>
+          <strong>本文・見出し・リスト・画像・図</strong>
           <p>視線が次の行頭を見失わない幅を優先する。</p>
         </div>
         <div class="lane lane-wide">
           <span>WIDE LANE · 9 COL</span>
-          <strong>画像・コード・表</strong>
+          <strong>コード・表</strong>
           <p>情報量が必要なコンテンツだけを広げる。</p>
         </div>
         <aside class="lane lane-rail">
@@ -140,10 +140,10 @@ const codeSample = `export function getReadingWidth(viewport: number) {
   <section class="spec article-reading-section" id="figure-pattern">
     <h4>Figure</h4>
     <p class="src">
-      スクリーンショットは本文幅へ押し込まず、情報が読める幅まで広げる。画像リンクは原寸表示へフォールバックし、JavaScript利用時はDialogで拡大する。Captionは読者が確認すべき点を示す。
+      図と文章の左右端を揃えて読書の流れを保つ。画像リンクは原寸表示へフォールバックし、JavaScript利用時はDialogで拡大する。Captionは読者が確認すべき点を示す。
     </p>
 
-    <figure class="demo article-figure article-figure-wide">
+    <figure class="demo article-figure">
       <a
         class="article-image-trigger"
         href="/images/posts/astro-pagefind-search/search-command-palette.png"
@@ -166,8 +166,8 @@ const codeSample = `export function getReadingWidth(viewport: number) {
     </figure>
 
     <div class="pattern-rules">
-      <div><strong>Content</strong><span>本文の補助。Reading laneに揃える</span></div>
-      <div><strong>Wide</strong><span>UIスクリーンショットや図。9 columnsまで広げる</span></div>
+      <div><strong>Alignment</strong><span>本文と同じ8 columnsへ揃える</span></div>
+      <div><strong>Detail</strong><span>小さな文字や細部は原寸画像で確認できる</span></div>
       <div><strong>Zoom</strong><span>画像リンクをDialogへ拡張し、閉じた後はリンクへ戻る</span></div>
     </div>
   </section>
