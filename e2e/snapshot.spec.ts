@@ -1,4 +1,4 @@
-import { type Page, test } from "playwright/test";
+import { expect, type Page, test } from "playwright/test";
 import type { ScrapboxPageData } from "../src/components/scrapbox/types";
 import type { PageConfig } from "./helpers/snapshot";
 import { capturePageSnapshot } from "./helpers/snapshot";
@@ -53,6 +53,15 @@ const dynamicPages: PageConfig[] = [
 ];
 
 const themes = ["light", "dark"] as const;
+
+test("スナップショット用CSSでAstro Dev Toolbarを非表示にする", async ({
+  page,
+}) => {
+  await page.setContent("<astro-dev-toolbar>Toolbar</astro-dev-toolbar>");
+  await page.addStyleTag({ path: "e2e/snapshot.css" });
+
+  await expect(page.locator("astro-dev-toolbar")).toBeHidden();
+});
 
 test.describe("静的ページのスナップショット", () => {
   for (const pageConfig of staticPages) {

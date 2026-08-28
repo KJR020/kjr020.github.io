@@ -18,7 +18,22 @@ export function TOCList({
   // アクティブ項目が変わったら、TOCサイドバー内で見える位置にスクロール
   useEffect(() => {
     if (!activeId || !activeRef.current) return;
-    activeRef.current.scrollIntoView({ behavior: "smooth", block: "nearest" });
+
+    const scrollContainer = activeRef.current.closest<HTMLElement>("[data-toc-scroll-container]");
+    if (!scrollContainer) return;
+
+    const itemRect = activeRef.current.getBoundingClientRect();
+    const containerRect = scrollContainer.getBoundingClientRect();
+    const offset =
+      itemRect.top < containerRect.top
+        ? itemRect.top - containerRect.top
+        : itemRect.bottom > containerRect.bottom
+          ? itemRect.bottom - containerRect.bottom
+          : 0;
+
+    if (offset !== 0) {
+      scrollContainer.scrollBy({ behavior: "smooth", top: offset });
+    }
   }, [activeId]);
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();

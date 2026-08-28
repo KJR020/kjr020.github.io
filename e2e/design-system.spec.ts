@@ -52,6 +52,10 @@ test("記事ページの仕様をパターンページに統合して表示す�
   ).toBeVisible();
   await expect(page.locator("#reading-model")).toBeVisible();
   await expect(page.locator("#reading-layout")).toBeVisible();
+  await expect(page.locator("#reading-layout .lane-header")).toContainText("記事ヘッダー");
+  await expect(page.locator("#reading-layout .lane-character-area")).toContainText(
+    "キャラクター領域",
+  );
   await expect(page.locator("#reading-typography")).toBeVisible();
   await expect(page.locator("#figure-pattern")).toBeVisible();
   await expect(page.locator("#code-pattern")).toBeVisible();
@@ -98,6 +102,49 @@ test("Header標本は本番と同じ目のシンボルを表示する", async ({
   await expect(brandMark).toHaveAttribute("width", "50");
   await expect(brandMark).toHaveAttribute("height", "32");
   await expect(brandMark).toHaveAttribute("alt", "");
+});
+
+test("目次標本は本番と同じ開閉操作を試せる", async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 720 });
+  await page.goto("/design-system/components#table-of-contents");
+
+  const specimen = page.locator("#table-of-contents");
+  const navigation = specimen.getByRole("navigation", { name: "目次" });
+
+  await expect(navigation).toBeVisible();
+  await specimen.getByRole("button", { name: "目次を隠す" }).click();
+  await expect(navigation).toBeHidden();
+
+  await specimen.getByRole("button", { name: "目次を表示" }).click();
+  await expect(navigation).toBeVisible();
+});
+
+test("目次標本はモバイル幅でインライン目次を開閉できる", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/design-system/components#table-of-contents");
+
+  const specimen = page.locator("#table-of-contents");
+  const trigger = specimen.getByRole("button", { name: "目次を開く" });
+
+  await expect(trigger).toBeVisible();
+  await trigger.click();
+  await expect(specimen.getByRole("navigation", { name: "目次" })).toBeVisible();
+  await expect(specimen.getByRole("button", { name: "目次を閉じる" })).toBeVisible();
+});
+
+test("Mediumでは記事ヘッダーのキャラクター領域を表示しない", async ({ page }) => {
+  await page.setViewportSize({ width: 900, height: 900 });
+  await page.goto("/design-system/patterns#reading-layout");
+
+  await expect(page.locator("#reading-layout .lane-character-area")).toBeHidden();
+});
+
+test("本文組版の標本も768pxからMediumの文字サイズを使う", async ({ page }) => {
+  await page.setViewportSize({ width: 768, height: 900 });
+  await page.goto("/design-system/patterns#reading-typography");
+
+  const paragraph = page.locator("#reading-typography .type-candidate p");
+  await expect(paragraph).toHaveCSS("font-size", "17px");
 });
 
 test("サイドバーはどのページでも全カテゴリの項目を保持する", async ({ page }) => {
@@ -570,6 +617,7 @@ test("記事ページの読書設計をパターンの共通レイアウト内�
   await expect(page.locator("[data-reading-lane]")).toBeVisible();
   await expect(page.locator("#figure-pattern figure img")).toHaveAttribute("width", "1078");
   await expect(page.locator("#figure-pattern figcaption")).toBeVisible();
+  await expect(page.locator("#figure-pattern figcaption")).not.toContainText(/FIGURE \d+/);
   const imageTrigger = page
     .locator("#figure-pattern")
     .getByRole("link", { name: /画像を拡大/ });

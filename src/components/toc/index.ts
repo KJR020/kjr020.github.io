@@ -1,3 +1,4 @@
+export { hasTableOfContents } from "./hasTableOfContents";
 export { MobileTOC } from "./MobileTOC";
 export { TableOfContents } from "./TableOfContents";
 export { TOCList } from "./TOCList";

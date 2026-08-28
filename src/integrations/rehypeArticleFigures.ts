@@ -16,7 +16,7 @@ function asText(value: unknown): string {
   return typeof value === "string" ? value : "";
 }
 
-function createFigure(paragraph: HastNode, figureIndex: number): HastNode | null {
+function createFigure(paragraph: HastNode): HastNode | null {
   const children = paragraph.children?.filter((child) => !isWhitespace(child)) ?? [];
   const [image, caption] = children;
 
@@ -49,17 +49,6 @@ function createFigure(paragraph: HastNode, figureIndex: number): HastNode | null
       children: [
         {
           type: "element",
-          tagName: "span",
-          properties: { className: ["article-figure-label"], ariaHidden: "true" },
-          children: [
-            {
-              type: "text",
-              value: `FIGURE ${String(figureIndex).padStart(2, "0")}`,
-            },
-          ],
-        },
-        {
-          type: "element",
           tagName: "p",
           properties: {},
           children: caption.children ?? [],
@@ -76,23 +65,20 @@ function createFigure(paragraph: HastNode, figureIndex: number): HastNode | null
   };
 }
 
-function transformChildren(node: HastNode, figureCount: { value: number }): void {
+function transformChildren(node: HastNode): void {
   if (!node.children) return;
 
   node.children = node.children.map((child) => {
-    const figure = createFigure(child, figureCount.value + 1);
-    if (figure) {
-      figureCount.value += 1;
-      return figure;
-    }
+    const figure = createFigure(child);
+    if (figure) return figure;
 
-    transformChildren(child, figureCount);
+    transformChildren(child);
     return child;
   });
 }
 
 export function rehypeArticleFigures() {
   return (tree: HastNode): void => {
-    transformChildren(tree, { value: 0 });
+    transformChildren(tree);
   };
 }

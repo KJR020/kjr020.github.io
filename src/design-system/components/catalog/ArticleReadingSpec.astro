@@ -5,12 +5,12 @@ import "@/styles/article-code.css";
 import "@/styles/article-content.css";
 
 const codeSample = `export function getReadingWidth(viewport: number) {
-  const readingMeasure = viewport >= 1024 ? "38ic" : "100%";
+  const readingMeasure = viewport >= 768 ? "40ic" : "100%";
 
   return {
     readingMeasure,
-    lineHeight: 1.7,
-    fontSize: "1.0625rem",
+    lineHeight: viewport >= 768 ? 2 : 1.9,
+    fontSize: viewport >= 768 ? "1.0625rem" : "1rem",
   };
 }`;
 ---
@@ -75,7 +75,7 @@ const codeSample = `export function getReadingWidth(viewport: number) {
   <section class="spec article-reading-section" id="reading-layout">
     <h4>Layout</h4>
     <p class="src">
-      12 columnsはページ全体の配置に使い、本文はReading laneへ絞る。画像・コード・表は必要に応じてWide laneへ広げ、目次は独立したRailへ置く。
+      記事ヘッダーは12 columnsの全幅に置き、Wideでは右側をキャラクター領域として空ける。その下で本文をReading laneへ絞り、画像・コード・表は必要に応じてWide laneへ広げ、目次は現在位置を示しながら画面内に追従するRailへ置く。
     </p>
 
     <div class="demo layout-specimen">
@@ -85,8 +85,20 @@ const codeSample = `export function getReadingWidth(viewport: number) {
         ))}
       </div>
       <div class="lane-map">
+        <div class="lane lane-header">
+          <div class="lane-header-content">
+            <span>ARTICLE HEADER · 9 COL</span>
+            <strong>記事ヘッダー</strong>
+            <p>タイトルとメタ情報を本文・目次の上に置く。</p>
+          </div>
+          <div class="lane-character-area">
+            <span>CHARACTER · 3 COL</span>
+            <strong>キャラクター領域</strong>
+            <p>タイトルを重ねない。</p>
+          </div>
+        </div>
         <div class="lane lane-reading">
-          <span>READING LANE · 7 COL</span>
+          <span>READING LANE · 8 COL</span>
           <strong>本文・見出し・リスト</strong>
           <p>視線が次の行頭を見失わない幅を優先する。</p>
         </div>
@@ -98,26 +110,26 @@ const codeSample = `export function getReadingWidth(viewport: number) {
         <aside class="lane lane-rail">
           <span>RAIL · 3 COL</span>
           <strong>目次</strong>
-          <p>本文より弱い階層で現在位置を示す。</p>
+          <p>画面内に追従し、本文より弱い階層で現在位置を示す。</p>
         </aside>
       </div>
     </div>
 
     <div class="responsive-rule">
       <div><strong>Desktop</strong><span>Reading + Wide + Rail</span></div>
-      <div><strong>Tablet</strong><span>Reading + Wide、目次は本文前</span></div>
-      <div><strong>Mobile</strong><span>Single column、Wideは領域内でスクロール</span></div>
+      <div><strong>Tablet</strong><span>Reading + Wide、目次は記事ヘッダー直後</span></div>
+      <div><strong>Mobile</strong><span>Single column、目次は記事ヘッダー直後</span></div>
     </div>
   </section>
 
   <section class="spec article-reading-section" id="reading-typography">
     <h4>Typography</h4>
     <p class="src">
-      本文は17px、行高1.70、最大38字を基準とする。長文を続けて読める行間を保ち、コードや図と行き来しても本文の位置を見失いにくい行長に制限する。
+      Compactでは16px・行高1.90、Medium以上では17px・行高2.00、最大40字を基準とする。Wideで目次を閉じたときは最大48字まで広げる。長文を続けて読める行間を保ち、コードや図と行き来しても本文の位置を見失いにくい行長に制限する。
     </p>
 
     <article class="demo type-specimen type-candidate" data-reading-lane>
-      <header><span>BODY</span><strong>17px / 1.70 / 38字</strong></header>
+      <header><span>BODY</span><strong>16–17px / 1.90–2.00 / 40字</strong></header>
       <p>
         Pagefindは静的サイト向けの全文検索ライブラリです。ビルド後のHTMLを解析して検索インデックスを生成するため、専用サーバーを必要としません。
       </p>
@@ -147,7 +159,6 @@ const codeSample = `export function getReadingWidth(viewport: number) {
         />
       </a>
       <figcaption>
-        <span class="article-figure-label" aria-hidden="true">FIGURE 01</span>
         <p>
           検索結果では、記事タイトルを主、公開日と抜粋を従として配置する。画像内の小さな文字まで読める表示幅を確保する。
         </p>

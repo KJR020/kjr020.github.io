@@ -26,6 +26,8 @@ export interface UseScrollSpyReturn {
 export interface TableOfContentsProps {
   /** 記事内の見出し一覧 */
   headings: HeadingItem[];
+  /** 表示するレイアウト */
+  variant?: "responsive" | "mobile" | "desktop";
   /** カスタムクラス名 */
   className?: string;
   /** アバター画像のパス（public/からの相対パス、例: "/images/kuri_photo.png"） */

@@ -4,7 +4,7 @@ import ImageLightbox from "@/components/article/ImageLightbox.astro";
 import { Comments } from "@/components/Comments";
 import PostMeta from "@/components/PostMeta.astro";
 import type { HeadingItem } from "@/components/toc";
-import { TableOfContents } from "@/components/toc";
+import { hasTableOfContents, TableOfContents } from "@/components/toc";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { createPublishedPostStaticPaths } from "@/lib/postRoutes";
 import "@/styles/article-code.css";
@@ -27,6 +27,7 @@ const headings: HeadingItem[] = rawHeadings
     text: h.text,
     level: h.depth as 2 | 3,
   }));
+const showsTableOfContents = hasTableOfContents(headings);
 
 // Giscus configuration from environment variables
 const giscusRepo = import.meta.env.PUBLIC_GISCUS_REPO as `${string}/${string}`;
@@ -45,39 +46,58 @@ const giscusCategoryId = import.meta.env.PUBLIC_GISCUS_CATEGORY_ID;
   articleTags={post.data.tags}
 >
   <div class="post-page container mx-auto px-4 py-phi-2xl max-w-6xl">
-    <div class="lg:grid lg:grid-cols-[minmax(0,1fr)_250px] lg:gap-phi-2xl">
-      {/* 記事本文 */}
-      <article class="min-w-0">
-        <header class="mb-phi-2xl">
-          <h1 class="font-bold font-heading tracking-tight mb-phi-md" style="font-size: var(--font-size-title1); line-height: var(--lh-tight);">{post.data.title}</h1>
+    <article class="min-w-0">
+      <header class="post-article-header mb-phi-2xl">
+        <div class="post-header-content min-w-0">
+          <h1 class="post-title font-bold font-heading tracking-tight mb-phi-md">{post.data.title}</h1>
           <PostMeta date={post.data.date} tags={post.data.tags} />
-        </header>
+        </div>
+      </header>
 
-        <div class="prose prose-neutral dark:prose-invert max-w-none article-reading-content">
-          <Content />
+      {showsTableOfContents && (
+        <div class="post-mobile-toc mb-phi-2xl lg:hidden">
+          <TableOfContents headings={headings} variant="mobile" client:load />
+        </div>
+      )}
+
+      <div
+        class:list={[
+          "post-reading-layout",
+          showsTableOfContents &&
+            "lg:grid lg:grid-cols-[minmax(0,1fr)_250px] lg:gap-phi-2xl",
+        ]}
+      >
+        {/* 記事本文 */}
+        <div class="post-reading-main min-w-0">
+          <div class="prose prose-neutral dark:prose-invert max-w-none article-reading-content">
+            <Content />
+          </div>
+
+          <ImageLightbox />
+
+          <Comments
+            repo={giscusRepo}
+            repoId={giscusRepoId}
+            category={giscusCategory}
+            categoryId={giscusCategoryId}
+            client:only="react"
+          />
         </div>
 
-        <ImageLightbox />
-
-        <Comments
-          repo={giscusRepo}
-          repoId={giscusRepoId}
-          category={giscusCategory}
-          categoryId={giscusCategoryId}
-          client:only="react"
-        />
-      </article>
-
-      {/* デスクトップ用目次（右側サイドバー） */}
-      <aside class="hidden lg:block">
-        <TableOfContents
-          headings={headings}
-          avatarSrc="/images/kuri_photo.png"
-          avatarAlt="KJR020"
-          client:load
-        />
-      </aside>
-    </div>
+        {/* デスクトップ用目次（右側サイドバー） */}
+        {showsTableOfContents && (
+          <aside class="post-desktop-toc hidden lg:block">
+            <TableOfContents
+              headings={headings}
+              variant="desktop"
+              avatarSrc="/images/kuri_photo.png"
+              avatarAlt="KJR020"
+              client:load
+            />
+          </aside>
+        )}
+      </div>
+    </article>
   </div>
 </BaseLayout>
 
@@ -102,6 +122,11 @@ const giscusCategoryId = import.meta.env.PUBLIC_GISCUS_CATEGORY_ID;
 </script>
 
 <style is:global>
+  .post-title {
+    font-size: var(--font-size-title1);
+    line-height: var(--lh-tight);
+  }
+
   .prose {
     --tw-prose-body: var(--foreground);
     --tw-prose-headings: var(--foreground);
@@ -111,8 +136,8 @@ const giscusCategoryId = import.meta.env.PUBLIC_GISCUS_CATEGORY_ID;
   }
 
   .prose h2 {
-    margin-top: 2.618rem; /* φ² */
-    margin-bottom: 1rem;
+    margin-top: var(--phi-3);
+    margin-bottom: var(--phi-1);
     font-size: var(--font-size-title2); /* φ = 1.618rem */
     line-height: var(--lh-tight); /* √φ = 1.272 */
     font-weight: 700;
@@ -123,8 +148,8 @@ const giscusCategoryId = import.meta.env.PUBLIC_GISCUS_CATEGORY_ID;
   }
 
   .prose h3 {
-    margin-top: 1.618rem; /* φ */
-    margin-bottom: 0.618rem; /* 1/φ */
+    margin-top: var(--phi-2);
+    margin-bottom: var(--phi-neg1);
     font-size: var(--font-size-title3); /* √φ = 1.272rem */
     line-height: var(--lh-tight); /* √φ = 1.272 */
     font-weight: 500;
@@ -133,15 +158,14 @@ const giscusCategoryId = import.meta.env.PUBLIC_GISCUS_CATEGORY_ID;
   }
 
   .prose p {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    line-height: var(--lh-body); /* φ = 1.618 */
+    margin-top: var(--spacing-phi-lg);
+    margin-bottom: var(--spacing-phi-lg);
   }
 
   .prose ul,
   .prose ol {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-top: var(--spacing-phi-lg);
+    margin-bottom: var(--spacing-phi-lg);
     padding-left: 1.618rem; /* φ */
   }
 
@@ -227,5 +251,34 @@ const giscusCategoryId = import.meta.env.PUBLIC_GISCUS_CATEGORY_ID;
 
   .prose tbody tr:nth-child(even) {
     background-color: color-mix(in srgb, var(--muted) 50%, transparent);
+  }
+
+  @media (min-width: 64rem) {
+    .post-article-header {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 250px;
+    }
+
+    .post-header-content {
+      grid-column: 1;
+    }
+
+    .post-reading-layout:has([data-desktop-toc-open="false"]) {
+      grid-template-columns: minmax(0, 1fr) max-content;
+    }
+
+    .post-reading-layout:has([data-desktop-toc-open="false"]) .article-reading-content {
+      --article-reading-measure: 48ic;
+    }
+
+    .post-title {
+      font-size: var(--font-size-display);
+    }
+  }
+
+  @media (max-width: 63.999rem) {
+    main:has(.post-page) > .kuri-watermark {
+      display: none;
+    }
   }
 </style>
