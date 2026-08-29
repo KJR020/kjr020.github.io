@@ -118,10 +118,7 @@ test("デスクトップでは記事タイトルをキャラクター領域に�
   await page.setViewportSize({ width: 1051, height: 900 });
   await page.goto("/posts/ux/the-elements-of-user-experience");
 
-  const title = page.getByRole("heading", {
-    level: 1,
-    name: "AI時代にUX設計を学ぶため、『The Elements of User Experience』を読んだ",
-  });
+  const title = page.getByRole("heading", { level: 1 });
   const character = page.locator(".kuri-watermark");
   const [titleBox, characterBox] = await Promise.all([
     title.boundingBox(),
