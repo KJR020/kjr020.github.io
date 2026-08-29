@@ -60,7 +60,7 @@ function createFigure(paragraph: HastNode): HastNode | null {
   return {
     type: "element",
     tagName: "figure",
-    properties: { className: ["article-figure", "article-figure-wide"] },
+    properties: { className: ["article-figure"] },
     children: figureChildren,
   };
 }

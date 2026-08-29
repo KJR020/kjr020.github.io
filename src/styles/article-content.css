@@ -15,11 +15,9 @@
 }
 
 .article-reading-content > :where(
-  .article-figure-wide,
   .article-code-example,
   pre,
-  table,
-  .mermaid
+  table
 ) {
   grid-column: 1 / -1;
   max-inline-size: none;

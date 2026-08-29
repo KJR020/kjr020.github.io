@@ -618,6 +618,9 @@ test("記事ページの読書設計をパターンの共通レイアウト内�
   await expect(page.locator("#figure-pattern figure img")).toHaveAttribute("width", "1078");
   await expect(page.locator("#figure-pattern figcaption")).toBeVisible();
   await expect(page.locator("#figure-pattern figcaption")).not.toContainText(/FIGURE \d+/);
+  await expect(page.locator("#figure-pattern")).toContainText(
+    "本文と同じ8 columnsへ揃える",
+  );
   const imageTrigger = page
     .locator("#figure-pattern")
     .getByRole("link", { name: /画像を拡大/ });
