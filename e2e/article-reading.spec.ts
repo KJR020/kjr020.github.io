@@ -116,12 +116,9 @@ test("デスクトップでは記事ヘッダーの下に本文と目次を並�
 
 test("デスクトップでは記事タイトルをキャラクター領域に重ねない", async ({ page }) => {
   await page.setViewportSize({ width: 1051, height: 900 });
-  await page.goto("/posts/ux/ai-era-user-experience-design");
+  await page.goto("/posts/ux/the-elements-of-user-experience");
 
-  const title = page.getByRole("heading", {
-    level: 1,
-    name: "AI時代にUX設計を学ぶため、『The Elements of User Experience』を読んだ",
-  });
+  const title = page.getByRole("heading", { level: 1 });
   const character = page.locator(".kuri-watermark");
   const [titleBox, characterBox] = await Promise.all([
     title.boundingBox(),
@@ -208,7 +205,7 @@ test("デスクトップ目次の現在位置アイコンをスクロール領�
 
 test("デスクトップ目次はページをスクロールしても画面内に追従する", async ({ page }) => {
   await page.setViewportSize({ width: 1280, height: 720 });
-  await page.goto("/posts/ux/ai-era-user-experience-design");
+  await page.goto("/posts/ux/the-elements-of-user-experience");
 
   const desktopToc = page.locator(".post-desktop-toc [data-desktop-toc-open]");
   await expect(desktopToc).toBeVisible();
@@ -228,7 +225,7 @@ test("デスクトップ目次はページをスクロールしても画面内�
 
 test("本文をスクロールすると現在の見出しへ目次マーカーが移動する", async ({ page }) => {
   await page.setViewportSize({ width: 1280, height: 720 });
-  await page.goto("/posts/ux/ai-era-user-experience-design");
+  await page.goto("/posts/ux/the-elements-of-user-experience");
 
   const targetHeading = page.getByRole("heading", { name: "構造レイヤー" });
   const targetTop = (await targetHeading.boundingBox())?.y;
@@ -245,7 +242,7 @@ test("本文をスクロールすると現在の見出しへ目次マーカー�
 
 test("見出しへの直接リンクを開いても目次の更新でページ上部へ戻らない", async ({ page }) => {
   await page.setViewportSize({ width: 1280, height: 720 });
-  await page.goto("/posts/ux/ai-era-user-experience-design#表層レイヤー");
+  await page.goto("/posts/ux/the-elements-of-user-experience#表層レイヤー");
 
   const heading = page.getByRole("heading", { name: "表層レイヤー" });
   await page.waitForTimeout(1_000);
