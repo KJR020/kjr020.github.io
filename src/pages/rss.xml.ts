@@ -7,11 +7,14 @@ export async function GET(context: APIContext) {
   const sortedPosts = posts.sort(
     (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
   );
+  const site = context.site?.toString() ?? "https://kjr020.dev";
+  const feedUrl = new URL("/rss.xml", site).toString();
+  const latestPublishedAt = sortedPosts.at(0)?.data.date.toUTCString();
 
   return rss({
     title: "KJR020's Blog",
     description: "KJR020の技術ブログ",
-    site: context.site?.toString() ?? "https://kjr020.dev",
+    site,
     trailingSlash: false,
     items: sortedPosts.map((post) => ({
       title: post.data.title,
@@ -20,6 +23,10 @@ export async function GET(context: APIContext) {
       link: `/posts/${post.id}`,
       categories: post.data.tags,
     })),
-    customData: "<language>ja-jp</language>",
+    customData: [
+      "<language>ja-jp</language>",
+      latestPublishedAt ? `<lastBuildDate>${latestPublishedAt}</lastBuildDate>` : "",
+      `<atom:link href="${feedUrl}" rel="self" type="application/rss+xml" xmlns:atom="http://www.w3.org/2005/Atom" />`,
+    ].join(""),
   });
 }

@@ -188,11 +188,18 @@ describe("BaseHead OGP meta tags", () => {
 
   it("generates an RSS feed for subscribers", () => {
     const rssDoc = new DOMParser().parseFromString(rssXml, "application/xml");
+    const atomNamespace = "http://www.w3.org/2005/Atom";
 
     expect(rssXml).toContain("<rss");
     expect(rssXml).toContain("<channel>");
     expect(rssDoc.querySelector("channel > title")?.textContent).toBe("KJR020's Blog");
     expect(rssDoc.querySelector("channel > link")?.textContent).toBe("https://kjr020.dev");
+    expect(rssDoc.querySelector("channel > lastBuildDate")?.textContent).toBe(
+      rssDoc.querySelector("channel > item > pubDate")?.textContent,
+    );
+    expect(rssDoc.getElementsByTagNameNS(atomNamespace, "link")[0]?.getAttribute("href")).toBe(
+      "https://kjr020.dev/rss.xml",
+    );
   });
 
   it("includes public posts and excludes draft posts from the RSS feed", () => {
